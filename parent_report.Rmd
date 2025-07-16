@@ -2,17 +2,6 @@
 title: 
 csl: utils/plos.csl
 fontsize: 10pt
-output:
-  bookdown::pdf_document2:
-    includes:
-      in_header: utils/header1_midatlantic.tex
-    keep_tex: yes
-    toc: false
-    number_sections: false
-  bookdown::html_document2: 
-    df_print: paged
-  bookdown::word_document2:
-    toc: false
 link-citations: yes
 geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
 subparagraph: yes
@@ -21,7 +10,7 @@ urlcolor: blue
 always_allow_html: true
 params:
   region: "MidAtlantic"
-  header: "utils/header1_midatlantic.tex"
+  fig_caption: "utils/fig-captions.csv"
 ---
 
 
@@ -51,6 +40,29 @@ set_flextable_defaults(
   line_spacing = 1,
   font.family = "Palatino"
 )
+
+FitFlextableToPage <- function(ft, pgwidth = 6) {
+  ft_out <- ft %>% autofit()
+
+  ft_out <- width(ft_out, width = dim(ft_out)$widths * pgwidth / (flextable_dim(ft_out)$widths))
+  return(ft_out)
+}
+
+epus <- dplyr::case_when(
+  params$region == "MidAtlantic" ~ "Mid-Atlantic Bight, MAB",
+  params$region == "NewEngland" ~ "Gulf of Maine (GOM) and Georges Bank (GB)"
+)
+
+region <- dplyr::case_when(
+  params$region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
+  params$region == "NewEngland" ~ "New England"
+)
+
+caption_key <- read.csv(params$fig_caption) |>
+  dplyr::mutate(caption = dplyr::case_when(
+    params$region == "MidAtlantic" ~ fig_cap_ma,
+    params$region == "NewEngland" ~ fig_cap_ne
+  ))
 ```
 
 \setcounter{page}{4}
@@ -76,3 +88,125 @@ if (params$region == "MidAtlantic") {
 cat(res, sep = "\n\n")
 ```
 The information in this report is organized into two main sections; [performance measured against ecosystem-level management objectives](#performance-relative-to-fishery-management-objectives) (Table \ref{tab:management-objectives}), and potential [risks to meeting fishery management objectives](#risks-to-meeting-fishery-management-objectives) (Table \ref{tab:management-risks}: [climate change](#climate-and-ecosystem-change) and [other ocean uses](#other-ocean-uses-offshore-wind)). A final section highlights [notable 2024 ecosystem observations](#highlights).
+
+## Report structure
+
+A glossary of terms^[https://noaa-edab.github.io/tech-doc/glossary.html], detailed technical methods documentation^[https://noaa-edab.github.io/tech-doc/], indicator data^[https://noaa-edab.github.io/ecodata/], and detailed indicator descriptions^[https://noaa-edab.github.io/catalog/index.html]  are available online. We recommend new readers first review the details of standard figure formatting (Fig. \ref{fig:docformat}a), categorization of fish and invertebrate species into feeding guilds (Table \ref{tab:species-groupings}), and definitions of ecological production units (EPUs, including the `r epus`; Fig. \ref{fig:docformat}b) provided at the end of the document. 
+
+The two main sections contain subsections for each management objective or potential risk. Within each subsection, we first review observed trends for indicators representing each objective or risk, including the status of the most recent data year relative to a threshold (if available) or relative to the long-term average. Second, we identify potential drivers of observed trends, and synthesize results of indicators related to those drivers to outline potential implications for management. For example, if there are multiple drivers related to an indicator trend, do indicators associated with the drivers have similar trends, and can any drivers be affected by management action(s)? We emphasize that these implications are intended to represent testable hypotheses at present, rather than “answers,” because the science behind these indicators and syntheses continues to develop.
+
+
+```{r management-objectives, ft.arraystretch = 1}
+mng_obj <- data.frame(
+  "Objective Categories" = c(
+    "Seafood Production",
+    "Commercial Profits", "Recreational Opportunities",
+    "Stability", "Social & Cultural",
+    "Protected Species",
+    "Management", "Biomass", "Environment"
+    # ,"Productivity",
+    # "Trophic structure","Habitat"
+  ),
+  "Indicators reported" = c(
+    "Landings; commercial total and by feeding guild; recreational harvest",
+    "Revenue decomposed to price and volume",
+    "Angler trips; recreational fleet diversity",
+    "Diversity indices (fishery and ecosystem)",
+    "Community fishing engagement and social vulnerability status",
+    "Bycatch; population (adult and juvenile) numbers; mortalities",
+    "Stock status; catch compared with catch limits",
+    "Biomass or abundance by feeding guild from surveys",
+    "Climate and ecosystem risk indicators listed in Table 2"
+    # "Condition and recruitment of managed species, primary productivity",
+    # "Relative biomass of feeding guilds, zooplankton",
+    # "Estuarine and offshore habitat conditions"
+  )
+)
+
+mng_obj$service <- c(
+  rep("Objectives: Provisioning and Cultural Services", 6),
+  rep("Potential Drivers: Supporting and Regulating Services", 3)
+)
+
+mng_obj <- as.tibble(mng_obj)
+
+flextable::as_grouped_data(mng_obj, groups = "service") %>%
+  flextable::as_flextable(hide_grouplabel = TRUE) %>%
+  flextable::align(i = ~ !is.na(service), align = "left") %>%
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
+  flextable::set_header_labels(
+    Objective.Categories = "Objective categories",
+    Indicators.reported = "Indicators reported"
+  ) %>%
+  flextable::set_caption(paste("Ecosystem-scale fishery management objectives in", region)) %>%
+  flextable::autofit()
+```
+ \newpage
+```{r management-risks, ft.arraystretch = 1}
+mng_obj <- data.frame(
+  "Risks" = c(
+    "Risks to Managing Spatially",
+    "Risks to Managing Seasonally",
+    "Risks to Setting Catch Limits",
+    "Offshore Wind Risks"
+  ),
+  "Observation Indicators" = c(
+    "Managed species (fish and cetacean) distribution shifts",
+    "Managed species spawning and migration timing changes",
+    "Managed species body condition and recruitment changes",
+    "Fishery revenue and landings from wind lease areas by species and port"
+  ),
+  "Potential Driver Indicators" = c(
+    "Benthic and pelagic forage distribution; ocean temperature, changes in currents and cold pool",
+    "Habitat timing: Length of ocean summer, cold pool seasonal persistence",
+    "Benthic and pelagic forage quality & abundance: ocean temperature & acidification ",
+    "Wind development speed; Protected species presence and  hotspots"
+  )
+)
+
+mng_obj$service <- c(
+  rep("Climate and Ecosystem Risks", 3),
+  rep("Other Ocean Uses Risks", 1)
+)
+
+tab <- flextable::as_grouped_data(mng_obj, groups = "service") %>%
+  flextable::as_flextable(hide_grouplabel = TRUE) %>%
+  flextable::align(i = ~ !is.na(service), align = "left") %>%
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
+  flextable::set_header_labels(
+    Risks = "Risk categories",
+    Observation.Indicators = "Observation indicators reported",
+    Potential.Driver.Indicators = "Potential driver indicators reported"
+  ) %>%
+  flextable::set_caption(paste("Risks to meeting fishery management objectives in", region)) # %>%
+# flextable::autofit()
+
+FitFlextableToPage(tab)
+```
+
+# Performance Relative to Fishery Management Objectives
+
+In this section, we examine indicators related to broad, ecosystem-level fishery management objectives. We also provide hypotheses on the implications of these trends—why we are seeing them, what’s driving them, and potential or observed regime shifts or changes in ecosystem structure. Identifying multiple drivers, regime shifts, and potential changes to ecosystem structure, as well as identifying the most vulnerable resources, can help managers determine whether anything needs to be done differently to meet objectives and how to prioritize upcoming issues/risks.
+
+## Seafood Production 
+
+### Indicators: Landings; commercial and recreational
+```{r, total-landings-text, results = "asis"}
+if (params$region == "MidAtlantic") {
+  res <- knitr::knit_child(
+    text = "This year, we present updated indicators for total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html), (includes seafood, bait, and industrial landings), U.S. seafood landings, and Council-managed U.S. seafood landings. Total commercial landings within the Mid-Atlantic have declined over the long term, and both total U.S. and Mid-Atlantic managed seafood landings are near their all time low (Fig. \\ref{fig:total-landings}).",
+    quiet = TRUE
+  )
+} else if (params$region == "NewEngland") {
+  res <- knitr::knit_child(
+    text = "This year, we present updated indicators for total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html), U.S. seafood landings (includes seafood, bait, and industrial landings), and Council-managed U.S. seafood landings through 2023. There are long-term declines in all New England landings time series except for total commercial landings on GB (Fig. \\ref{fig:total-landings}). There exist long-term declines in commercial seafood landings and NEFMC managed seafood landings for both the GOM and GB, but over the last decade there is no trend in managed seafood landings in the GOM.",
+    quiet = TRUE
+  )
+}
+
+cat(res)
+```
+
+```{r, total-landings, fig.width = 7.5, fig.cap = caption_key$caption[which(caption_key$chunk_name == " total-landings")]}
+ecodata::plot_comdat(report = params$region, varName = "landings", n = 10)
+```
