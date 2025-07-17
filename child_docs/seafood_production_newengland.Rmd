@@ -1,0 +1,4 @@
+This year, we present updated indicators for total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html), U.S. seafood landings (includes seafood, bait, and industrial landings), and Council-managed U.S. seafood landings through 2023. There are long-term declines in all New England landings time series except for total commercial landings on GB (Fig. \ref{fig:total-landings}). There exist long-term declines in commercial seafood landings and NEFMC managed seafood landings for both the GOM and GB, but over the last decade there is no trend in managed seafood landings in the GOM. 
+ 
+```{r, fig.width = 7.5, fig.asp = 0.4, ref.label="total-landings"}
+```

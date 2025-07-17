@@ -1,0 +1,12 @@
+
+```{r, total-landings}
+ecodata::plot_comdat(report = params$region, varName = "landings", n = 10)
+```
+
+```{r, comm-landings}
+ecodata::plot_comdat(report = params$region, plottype = "guild", n=10)
+```
+
+```{r climatevul-land}
+ecodata::plot_community_climate_vulnerability(report = params$region, plottype = "regionland", n=100)
+```

@@ -1,13 +1,13 @@
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
-  output_file = here::here("output/parent_report_midatlantic.pdf"),
+  output_file = here::here("midatlantic.pdf"),
   params = list(
     region = "MidAtlantic",
     fig_caption = here::here("utils/fig-captions.csv")
   ),
-  intermediates_dir = here::here("output"),
-  knit_root_dir = here::here("output"),
-  output_dir = here::here("output"),
+  # intermediates_dir = here::here("output"),
+  # knit_root_dir = here::here("output"),
+  # output_dir = here::here("output"),
   output_format = # c(
     bookdown::pdf_document2(
       includes = rmarkdown::includes(in_header = here::here("utils/header1_midatlantic.tex")),
@@ -21,11 +21,11 @@ rmarkdown::render(
 )
 
 rmarkdown::render(here::here("parent_report.Rmd"),
-  output_file = here::here("parent_report_newengland.pdf"),
+  output_file = here::here("newengland.pdf"),
   params = list(region = "NewEngland"),
-  intermediates_dir = here::here("output"),
-  knit_root_dir = here::here("output"),
-  output_dir = here::here("output"),
+  # intermediates_dir = here::here("output"),
+  # knit_root_dir = here::here("output"),
+  # output_dir = here::here("output"),
   output_format = bookdown::pdf_document2(
     includes = rmarkdown::includes(in_header = here::here("utils/header1_newengland.tex")),
     keep_tex = TRUE,

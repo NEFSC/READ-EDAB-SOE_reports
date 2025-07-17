@@ -1,0 +1,16 @@
+### Indicators: Landings; commercial and recreational
+
+This year, we present updated indicators for total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html), (includes seafood, bait, and industrial landings), U.S. seafood landings, and Council-managed U.S. seafood landings. Total commercial landings within the Mid-Atlantic have declined over the long term, and both total U.S. and Mid-Atlantic managed seafood landings are near their all time low (Fig. \ref{fig:total-landings}).
+
+```{r, total-landings, fig.asp=.7, fig.cap = return_caption(chunk_name = "total-landings")}
+```
+
+Commercial landings by guild include all species and all uses, and are reported as total for the guild and the MAFMC managed species within the [guild](https://noaa-edab.github.io/catalog/species_groupings.html). Landings of benthos have been below the long term average since 2010, primarily driven by surf clam and ocean quahog, with scallops now contributing to the decline as well. Total landings of planktivores is presenting a significant downward trend, primarily due to decreases in species not managed by the MAFMC (Atlantic herring and Atlantic menhaden; Fig. \ref{fig:comm-landings}).
+
+```{r, comm-landings, fig.asp=1.6, fig.cap = return_caption(chunk_name = "comm-landings")}
+```
+
+[Community Climate Change Risk indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) have been developed to evaluate port specific landings and revenue risk in terms of commercial species climate vulnerability. The total climate vulnerability is a measure of to what degree a region’s landings (or revenue) is dependent on species sensitive to different climate and environmental change factors including temperature and acidification. For ports combined across Mid-Atlantic states, the total climate vulnerability of landings ranged between moderate and high with a long term increase from 2000-2021 (Fig. \ref{fig:climatevul-land}). 
+
+```{r climatevul-land, fig.width = 8, fig.asp = 0.5, fig.cap = return_caption(chunk_name = "climatevul-land")}
+```
