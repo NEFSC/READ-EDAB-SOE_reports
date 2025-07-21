@@ -217,6 +217,82 @@ In this section, we examine indicators related to broad, ecosystem-level fishery
 
 ## Climate and Ecosystem Change
 
+### Risks to managing spatially
+
+Shifting species distributions (changes in spatial extent or center of gravity) alter both species interactions and fishery interactions. In particular, shifting species distributions can affect expected management outcomes from spatial allocations and bycatch measures based on historical fish and protected species distributions. Species availability to surveys can also change as distributions shift within survey footprints, complicating the interpretation of survey trends.
+
+Coastwide indicators are reviewed in this section to evaluate spatial change throughout the Northeast US shelf. Indicators are identical between the Mid Atlantic and New England reports.
+
+#### Indicators: Fish and protected species distribution shifts
+As noted in the [Seafood Production Implications section above](#implications), the center of [distribution](https://noaa-edab.github.io/catalog/species_dist.html) for a suite of 48 commercially or ecologically important fish species combined along the entire Northeast Shelf continues to show movement towards the northeast and generally into deeper water (Fig. \ref{fig:species-dist}). Distribution shifts have been noted for several [highly migratory species](https://noaa-edab.github.io/catalog/species_dist.html), including sharks, billfish and tunas between 2002 and 2019. 
+
+[Habitat model-based species richness](https://noaa-edab.github.io/catalog/habitat_diversity.html) suggests shifts of both cooler and warmer water species to the northeast. Similar patterns have been found for [marine mammals](https://noaa-edab.github.io/catalog/cetacean_dist.html), with multiple species shifting northeast between 2010 and 2017 in most seasons (Fig. \ref{fig:protectedspp-dist-shifts}).
+  
+```{r species-dist, fig.cap = "Aggregate species distribution metrics for species in the Northeast Large Marine Ecosystem: along shelf distance with increasing trend (orange), and depth with decreasing trend indicating deeper water (purple).", fig.width = 8, fig.asp=0.27}
+a <- ecodata::plot_species_dist(varName = "along", n=10) + ggplot2::coord_cartesian(xlim = c(1969,2021))
+b <- ecodata::plot_species_dist(varName = "depth", n=10) + ggplot2::coord_cartesian(xlim = c(1969,2021)) 
+
+a+b
+```  
+
+
+```{r protectedspp-dist-shifts, fig.cap="Direction and magnitude of core habitat shifts, represented by the length of the line of the seasonal weighted centroid for species with more than 70 km difference between 2010 and 2017 (tip of arrow).", fig.width=6.5, fig.asp=0.8}
+ecodata::plot_cetacean_dist() + ggplot2::ggtitle("Whale and Dolphin Distribution Shifts")
+```
+
+
+#### Drivers: 
+
+Mobile populations shift distributions to maintain suitable temperature and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is related, in part, to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has been more variable over time.  [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring. 
+
+```{r forageshifts, fig.cap="Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity.", fig.width = 8, fig.asp = .3}
+ecodata::plot_forage_index(varName = "cog", n=10) +
+  ggplot2::coord_cartesian(xlim = c(1982, 2023)) +
+  ggplot2::ggtitle("Northeast U.S. Forage Fish Distribution") +
+  ggplot2::ylab("Center of Gravity, km")
+```
+
+In contrast, [macrobenthos](https://noaa-edab.github.io/catalog/benthos_index.html) center of gravity has shifted westward (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. [Large copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4) have a similar pattern to macrobenthos, trending westward in fall.
+
+```{r macrobenthosshifts, fig.cap="Eastward (left) and northward (right) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf", fig.width = 8,fig.asp = .3}
+ecodata::plot_benthos_index(plottype = "cog", varName = "Macrobenthos", n=10) + 
+  ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
+  ggplot2::ggtitle("Northeast U.S. Macrobenthos Distribution") +
+  ggplot2::ylab("Center of Gravity, km")
+```
+
+
+Ocean temperatures influence the distribution, seasonal timing, and productivity of managed species (see sections below). The Northeast US shelf, including the Mid-Atlantic, has experienced a continued warming trend for both the [long term annual sea surface](https://noaa-edab.github.io/catalog/long_term_sst.html) (Fig. \ref{fig:long-term-sst}) and [seasonal  surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) and [bottom temperature](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html). However, 2024 surface and bottom temperatures were near normal to cooler than normal conditions in all seasons in the MAB (see also the [2024 Highlights section](#highlights)).
+
+```{r long-term-sst, fig.cap="Northeast US annual sea surface temperature (SST, black), with increasing trend (orange)."}
+ecodata::plot_long_term_sst(n=10)
+```
+
+
+Species suitable habitat can expand or contract when changes in temperature and major oceanographic conditions alter distinct water mass habitats.The variability of the Gulf Stream is a major driver of the predominant oceanographic conditions of the Northeast U.S. continental shelf. As the [Gulf Stream](https://noaa-edab.github.io/catalog/gsi.html) has become less stable and shifted northward in the last decade (Fig. \ref{fig:GSI}), warmer ocean temperatures have been observed on the northeast shelf and a higher proportion of [Warm Slope Water](https://noaa-edab.github.io/catalog/slopewater.html) has been present in the Northeast Channel. Since 2008, the Gulf Stream has moved closer to the Grand Banks, reducing the supply of cold, fresh, and oxygen-rich Labrador Current waters to the Northwest Atlantic Shelf. In 2024, however, the [eastern portion of the Gulf Stream was further south](https://noaa-edab.github.io/catalog/gsi.html), which could affect the composition of the source water entering the Gulf of Maine through the Northeast Channel (see [2024 Highlights](#highlights)).
+
+```{r GSI, fig.cap = "Index representing changes in the location of the western (between 64 and 55 degrees W) Gulf Stream north wall (black). Positive values represent a more northerly Gulf Stream position, with increasing trend (orange)."}
+ecodata::plot_gsi(varName = "westgsi", n=10)
+```
+
+Changes in ocean temperature and circulation alter habitat features such as the Middle Atlantic Bight [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html), a band of relatively cold near-bottom water from spring to fall over the  northern MAB. The cold pool represents essential fish spawning and nursery habitat, and affects fish distribution and behavior. The cold pool has been getting warmer and its areal extent has been shrinking over time (Fig. \ref{fig:cold-pool-size}). In 2024, however, the cold pool index and extent were near the long-term average, likely due to the influx of Labrador Slope and Scotian Shelf waters into the system.
+
+```{r cold-pool-size, fig.cap="Seasonal cold pool mean temperature (left) and spatial extent index (right), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple).", fig.width = 7.5, fig.asp = 0.3, results='hide'}
+a <- ecodata::plot_cold_pool(varName = "cold_pool", n=10)
+b <- ecodata::plot_cold_pool(varName = "extent", n=10)
+
+a+b
+```
+
+#### Future Considerations 
+
+Distribution shifts caused by changes in thermal habitat and ocean circulation are likely to continue as long as long-term trends persist. Episodic and short-term events (see [2024 Highlights](#highlights)) may increase variability in the trends, however species distributions are unlikely to reverse to historical ranges in the short term. Increased mechanistic understanding of distribution drivers is needed to better understand future distribution shifts: species with high mobility or short lifespans react differently from immobile or long lived species. 
+
+Long-term oceanographic projections forecast a temporary pause in warming over the next decade due to internal variability in circulation and a southward shift of the Gulf Stream. Near-term forecasts are being evaluated to determine how well they are able to predict episodic and anomalous events that are outside of the long-term patterns.
+
+Adapting management to changing stock distributions and dynamic ocean processes will require continued monitoring of populations in space and evaluating management measures against a range of possible future spatial distributions. Processes like the [East Coast Climate Scenario Planning](https://www.mafmc.org/climate-change-scenario-planning), and subsequent formation of the [East Coast Climate Coordination Group](https://www.mafmc.org/e3cg), can help coordinate management.
+
+
 ## Other Ocean Uses: Offshore Wind
 
 \newpage
