@@ -66,3 +66,21 @@ ecodata::plot_recdat(report = params$region, varName = "effort", n=10)
 ```{r rec-div}
 ecodata::plot_recdat(report = params$region, varName = "effortdiversity", n=10)
 ```
+
+```{r comm-div-fleet}
+a <- ecodata::plot_commercial_div(report =params$region, varName = "Fleet count", n=100)
+b <- ecodata::plot_commercial_div(report = params$region, varName = "Fleet diversity in revenue", n=100)
+
+a+b
+```
+
+```{r commercial-div-species-div}
+ecodata::plot_commercial_div(report = params$region, varName = "Permit revenue species diversity", n=100)
+```
+
+```{r recdat-div-catch}
+ecodata::plot_recdat(report = params$region, varName = "catchdiversity", n=10)
+```
+
+
+

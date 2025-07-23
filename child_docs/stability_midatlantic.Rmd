@@ -1,0 +1,71 @@
+## Stability 
+
+### Indicators: fishery fleet and catch diversity, ecological component diversity 
+While there are many potential metrics of stability, we use diversity indices to evaluate overall stability in fisheries and ecosystems. In general, diversity that remains constant over time suggests a similar capacity to respond to change over time. A significant change in diversity over time does not necessarily indicate a problem or an improvement, but does indicate a need for further investigation. We examine diversity in commercial fleet and species catch, recreational species catch (with fleet effort diversity discussed above), zooplankton, adult fishes, and fish traits (e.g. size and fecundity).
+
+#### Fishery Stability 
+Several [diversity](https://noaa-edab.github.io/catalog/commercial_div.html) estimates are used to evaluate stability for fleets landing federally managed species, and species landed by commercial vessels with Mid-Atlantic permits. Commercial fishery fleet count has declined while fleet revenue diversity has been stable over time in the MAB, with no trend identified, but current values are above the long-term average (Fig. \ref{fig:comm-div-fleet}). 
+
+```{r comm-div-fleet, fig.width = 7.5, fig.asp = 0.3, fig.cap=return_caption(chunk_name = "comm-div-fleet")}
+```
+
+This indicates different commercial fleet composition but similar diversity in species targeting opportunities over time, for those fleets continuing to fish (Fig. \ref{fig:commercial-div-species-div}). Of note is that the current lack of vessel data available for surf clam and ocean quahog prior to 2003 precludes the assessment of longer term dynamics with these indicators.
+
+```{r commercial-div-species-div,  fig.cap = return_caption(chunk_name = "commercial-div-species-div")}
+```
+
+As noted [above](#recreational-opportunities), [recreational fleet effort diversity](https://noaa-edab.github.io/catalog/recdat.html) is declining (Fig. \ref{fig:rec-div}), suggesting a shift in recreational fishing opportunities. However, recreational species catch diversity has no long term trend so is considered stable, and has been at or above the long term average since 2016 (Fig. \ref{fig:recdat-div-catch}). 
+
+```{r recdat-div-catch, fig.cap =return_caption(chunk_name = "recdat-div-catch")}
+```
+
+#### Ecological Stability
+
+Ecological diversity indices show mixed trends. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html) is a measure of the total amount of carbon (i.e. energy ) produced by phytoplankton per year. Total primary production in the Mid Atlantic Bight has no clear trend (Fig. \ref{fig:totpp}), suggesting stability in energy at the base of the food web. 
+
+```{r totpp, fig.cap="Total areal annual primary production for the MAB. The dashed line represents the long-term (1998-2024) annual mean."}
+
+ecodata::plot_annual_chl_pp(report = "MidAtlantic", varName = "pp", plottype = "total") +
+  ggplot2::coord_cartesian(ylim = c(1e+07, 4e+07), xlim = c(1998, 2023)) + 
+  ggplot2::ggtitle("MAB Primary Production") +
+  ggplot2::ylab("Carbon (mt)")
+```
+
+[Zooplankton diversity](https://noaa-edab.github.io/catalog/zoo_diversity.html) is increasing in the MAB (Fig. \ref{fig:zoo-diversity}), while [adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html), the expected number of species in a standard number of individuals sampled from the NEFSC bottom trawl survey, appears stable over time, with current values within one standard deviation from most historic estimates (Fig. \ref{fig:exp-n}). 
+
+```{r zoo-diversity, fig.cap = "Zooplankton diversity in the Mid-Atlantic Bight, Shannon diversity index (black) with significant increase (orange line).", fig.asp=.47}
+#, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-zoo-diversity.R")
+
+ecodata::plot_zoo_diversity(report = "MidAtlantic", n=10) +
+  ggplot2::ggtitle("Zooplankton Diversity") +
+  ggplot2::theme(plot.title = element_text(vjust=-5)) +
+  ggplot2::ylab("Shannon Index")
+```
+
+
+```{r exp-n, fig.cap = "Adult fish diversity in the Mid-Atlantic Bight, based on expected number of species. Results from survey vessels Albatross and Bigelow are reported separately due to catchability differences.", fig.width=5, fig.asp=.4}
+#, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-exp-n.R")
+
+ecodata::plot_exp_n(report = "MidAtlantic", varName = "fall", n=10)
+```
+
+[Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, maximum body size, or fecundity, can synthesize change across complex, diverse communities. Monitoring changes in functional trait distributions for the fish community can provide a means of assessing ecosystem-scale resilience. There is evidence of long term change in trait distributions in the MAB (Fig. \ref{fig:traits}). The spring finfish community in the MAB is showing long-term shifts towards slower life history strategies with higher length and maturity and lower fecundity. In contrast, the fall MAB finfish community has shifted towards decreased length at maturity, smaller offspring size, and lower trophic level indicative of faster life histories. 
+
+```{r traits, fig.width = 5, fig.asp=0.5, fig.cap="Fish community functional traits in the Mid Atlantic Bight based on Fall (red) and Spring (blue) survey data. Length at maturity for the full finfish community has increased in spring (orange line), but decreased in fall (purple lines)"}
+
+ecodata::plot_finfish_traits(varName = "length_maturity")
+
+```
+
+
+
+### Implications
+Fleet diversity indices are used by the MAFMC in their EAFM risk assessment to evaluate stability objectives as well as risks to fishery resilience and maintaining equity in access to fishery resources. Instability in the commercial fleet count metric suggests potentially lower capacity to respond to the current range of fishing opportunities. Commercial species permit revenue diversity is relatively stable but comparisons are limited by missing clam fishery data prior to 2003.
+
+Declining recreational fleet effort diversity, as noted above, indicates that the party/charter boat sector continues to contract, with shoreside angling becoming more important as a percentage of recreational angler trips. Stability in recreational species catch diversity has been maintained by a different set of species over time. A recent increase in Atlantic States Marine Fisheries Commission (ASMFC) and South Atlantic Fishery Management Council (SAFMC) managed species in recreational catch is helping to maintain diversity in the same range that MAFMC and New England Fishery Management Council (NEFMC) managed species supported in the 1990s. These changes in effort and species trends may necessitate new or changing management considerations to ensure effective tools and opportunities are in place to support recreational fisheries.
+
+Production at the base of the food web is variable, but stable over time. Stable adult fish diversity indicates the same overall number and evenness over time, but doesn’t rule out species substitutions (e.g., warm-water replacing cold-water).
+
+There was evidence for long term change in finfish trait distributions in the mid-Atlantic Bight, with spring and fall communities showing shifts in different directions. This suggests instability in seasonal dominance of fish with faster or slower life histories.
+
+In the MAB, existing diversity indicators suggest some instability in the fisheries and ecosystem components examined. In addition, declining recreational fleet diversity suggests a potential loss in the range of recreational fishing opportunities. Increasing zooplankton diversity (due to increases in abundance of several taxa and stable or declining dominance of an important copepod species) suggests a shift in the zooplankton community that warrants continued monitoring to determine if managed species are affected. The species revenue diversity in commercial landings also warrants continued attention given its relatively low index value indicating average reliance on a small number of species for revenue.
