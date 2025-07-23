@@ -1,9 +1,9 @@
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
-  output_file = here::here("midatlantic.pdf"),
+  output_file = "midatlantic.pdf",
   params = list(
     region = "MidAtlantic",
-    fig_caption = here::here("utils/fig-captions.csv")
+    fig_caption = here::here("utils/figure_captions_summary.csv")
   ),
   # intermediates_dir = here::here("output"),
   # knit_root_dir = here::here("output"),

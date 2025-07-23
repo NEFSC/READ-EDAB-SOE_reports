@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.15)  17 JUL 2025 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.23)  23 JUL 2025 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic.tex
-(c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic.tex
+**midatlantic.tex
+(./midatlantic.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-11>
+L3 programming layer <2025-07-19>
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
@@ -825,107 +825,219 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
  <./images/NOAA_logo.png>]
 Package marginnote Info: Using workaround for absolute page number on input line 294.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/total-landings-1.pdf, id=59, 289.08pt x 201.75375pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/total-landings-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/total-landings-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/total-landings-1.pdf  used on input line 386.
+<midatlantic_files/figure-latex/total-landings-1.pdf, id=59, 289.08pt x 201.75375pt>
+File: midatlantic_files/figure-latex/total-landings-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/total-landings-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/total-landings-1.pdf  used on input line 386.
 (pdftex.def)             Requested size: 289.0837pt x 201.75632pt.
 
 
-[5 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/total-landings-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/comm-landings-1.pdf, id=77, 289.08pt x 461.725pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/comm-landings-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/comm-landings-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/comm-landings-1.pdf  used on input line 397.
+[5 <./midatlantic_files/figure-latex/total-landings-1.pdf>]
+<midatlantic_files/figure-latex/comm-landings-1.pdf, id=77, 289.08pt x 461.725pt>
+File: midatlantic_files/figure-latex/comm-landings-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/comm-landings-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/comm-landings-1.pdf  used on input line 397.
 (pdftex.def)             Requested size: 289.07928pt x 461.72388pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/climatevul-land-1.pdf, id=80, 578.16pt x 289.08pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/climatevul-land-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/climatevul-land-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/climatevul-land-1.pdf  used on input line 408.
+<midatlantic_files/figure-latex/climatevul-land-1.pdf, id=80, 578.16pt x 289.08pt>
+File: midatlantic_files/figure-latex/climatevul-land-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/climatevul-land-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/climatevul-land-1.pdf  used on input line 408.
 (pdftex.def)             Requested size: 500.48087pt x 250.24042pt.
 
 
-[6 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/comm-landings-1.pdf>]
+[6 <./midatlantic_files/figure-latex/comm-landings-1.pdf>]
+<midatlantic_files/figure-latex/rec-landings-1.pdf, id=97, 289.08pt x 129.48375pt>
+File: midatlantic_files/figure-latex/rec-landings-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/rec-landings-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/rec-landings-1.pdf  used on input line 419.
+(pdftex.def)             Requested size: 289.09251pt x 129.48933pt.
+<midatlantic_files/figure-latex/rec-hms-1.pdf, id=100, 578.16pt x 201.75375pt>
+File: midatlantic_files/figure-latex/rec-hms-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/rec-hms-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/rec-hms-1.pdf  used on input line 430.
+(pdftex.def)             Requested size: 500.48087pt x 174.64696pt.
 
-[7 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/climatevul-land-1.pdf>]
-<midatlantic_files/figure-latex/slopesea-1.png, id=115, 198.7425pt x 194.6472pt>
+
+[7 <./midatlantic_files/figure-latex/climatevul-land-1.pdf> <./midatlantic_files/figure-latex/rec-landings-1.pdf
+
+pdfTeX warning: pdflatex.exe (file ./midatlantic_files/figure-latex/rec-landings-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<midatlantic_files/figure-latex/stock-status-1.pdf, id=126, 542.025pt x 271.0125pt>
+File: midatlantic_files/figure-latex/stock-status-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/stock-status-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/stock-status-1.pdf  used on input line 451.
+(pdftex.def)             Requested size: 500.50513pt x 250.25255pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 455.
+
+
+[8 <./midatlantic_files/figure-latex/rec-hms-1.pdf>]
+<midatlantic_files/figure-latex/abcacl-stacked-1.pdf, id=147, 433.62pt x 172.645pt>
+File: midatlantic_files/figure-latex/abcacl-stacked-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/abcacl-stacked-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/abcacl-stacked-1.pdf  used on input line 540.
+(pdftex.def)             Requested size: 433.62555pt x 172.64719pt.
+
+
+[9{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./midatlantic_files/figure-latex/stock-status-1.pdf>]
+<midatlantic_files/figure-latex/abcacl-catch-1.pdf, id=170, 289.08pt x 129.48375pt>
+File: midatlantic_files/figure-latex/abcacl-catch-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/abcacl-catch-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/abcacl-catch-1.pdf  used on input line 551.
+(pdftex.def)             Requested size: 289.09251pt x 129.48933pt.
+<midatlantic_files/figure-latex/nefsc-biomass-mab-1.pdf, id=173, 578.16pt x 433.62pt>
+File: midatlantic_files/figure-latex/nefsc-biomass-mab-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/nefsc-biomass-mab-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/nefsc-biomass-mab-1.pdf  used on input line 564.
+(pdftex.def)             Requested size: 500.48087pt x 375.36066pt.
+
+
+[10 <./midatlantic_files/figure-latex/abcacl-stacked-1.pdf> <./midatlantic_files/figure-latex/abcacl-catch-1.pdf
+
+pdfTeX warning: pdflatex.exe (file ./midatlantic_files/figure-latex/abcacl-catch-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+[11 <./midatlantic_files/figure-latex/nefsc-biomass-mab-1.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 584.
+(c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<midatlantic_files/figure-latex/species-dist-1.pdf, id=227, 578.16pt x 155.58125pt>
+File: midatlantic_files/figure-latex/species-dist-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/species-dist-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/species-dist-1.pdf  used on input line 621.
+(pdftex.def)             Requested size: 500.48087pt x 134.678pt.
+
+
+[12{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+<midatlantic_files/figure-latex/protectedspp-dist-shifts-1.pdf, id=245, 469.755pt x 375.4025pt>
+File: midatlantic_files/figure-latex/protectedspp-dist-shifts-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/protectedspp-dist-shifts-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/protectedspp-dist-shifts-1.pdf  used on input line 630.
+(pdftex.def)             Requested size: 469.75386pt x 375.40158pt.
+
+
+[13 <./midatlantic_files/figure-latex/species-dist-1.pdf> <./midatlantic_files/figure-latex/protectedspp-dist-shifts-1.pdf
+
+pdfTeX warning: pdflatex.exe (file ./midatlantic_files/figure-latex/protectedspp-dist-shifts-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<midatlantic_files/figure-latex/forageshifts-1.pdf, id=277, 578.16pt x 172.645pt>
+File: midatlantic_files/figure-latex/forageshifts-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/forageshifts-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/forageshifts-1.pdf  used on input line 643.
+(pdftex.def)             Requested size: 500.48087pt x 149.44913pt.
+<midatlantic_files/figure-latex/macrobenthosshifts-1.pdf, id=281, 578.16pt x 172.645pt>
+File: midatlantic_files/figure-latex/macrobenthosshifts-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/macrobenthosshifts-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/macrobenthosshifts-1.pdf  used on input line 654.
+(pdftex.def)             Requested size: 500.48087pt x 149.44913pt.
+<midatlantic_files/figure-latex/long-term-sst-1.pdf, id=287, 289.08pt x 129.48375pt>
+File: midatlantic_files/figure-latex/long-term-sst-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/long-term-sst-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/long-term-sst-1.pdf  used on input line 665.
+(pdftex.def)             Requested size: 289.09251pt x 129.48933pt.
+
+
+[14 <./midatlantic_files/figure-latex/forageshifts-1.pdf> <./midatlantic_files/figure-latex/macrobenthosshifts-1.pdf
+
+pdfTeX warning: pdflatex.exe (file ./midatlantic_files/figure-latex/macrobenthosshifts-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<midatlantic_files/figure-latex/GSI-1.pdf, id=316, 289.08pt x 129.48375pt>
+File: midatlantic_files/figure-latex/GSI-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/GSI-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/GSI-1.pdf  used on input line 676.
+(pdftex.def)             Requested size: 289.09251pt x 129.48933pt.
+<midatlantic_files/figure-latex/cold-pool-size-1.pdf, id=319, 542.025pt x 162.6075pt>
+File: midatlantic_files/figure-latex/cold-pool-size-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/cold-pool-size-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/cold-pool-size-1.pdf  used on input line 687.
+(pdftex.def)             Requested size: 500.50513pt x 150.15154pt.
+
+
+[15 <./midatlantic_files/figure-latex/long-term-sst-1.pdf> <./midatlantic_files/figure-latex/GSI-1.pdf
+
+pdfTeX warning: pdflatex.exe (file ./midatlantic_files/figure-latex/GSI-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+[16 <./midatlantic_files/figure-latex/cold-pool-size-1.pdf>]
+<midatlantic_files/figure-latex/slopesea-1.png, id=368, 198.7425pt x 194.6472pt>
 File: midatlantic_files/figure-latex/slopesea-1.png Graphic file (type png)
 <use midatlantic_files/figure-latex/slopesea-1.png>
-Package pdftex.def Info: midatlantic_files/figure-latex/slopesea-1.png  used on input line 445.
+Package pdftex.def Info: midatlantic_files/figure-latex/slopesea-1.png  used on input line 718.
 (pdftex.def)             Requested size: 198.74806pt x 194.65265pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/slopewater-1.pdf, id=120, 289.08pt x 144.54pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/slopewater-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/slopewater-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/slopewater-1.pdf  used on input line 456.
+<midatlantic_files/figure-latex/slopewater-1.pdf, id=373, 289.08pt x 144.54pt>
+File: midatlantic_files/figure-latex/slopewater-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/slopewater-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/slopewater-1.pdf  used on input line 729.
 (pdftex.def)             Requested size: 289.09251pt x 144.54623pt.
 
 
-[8 <./midatlantic_files/figure-latex/slopesea-1.png>]
-<midatlantic_files/figure-latex/cocobloom-1.png, id=129, 803.0pt x 576.1525pt>
+[17 <./midatlantic_files/figure-latex/slopesea-1.png>]
+<midatlantic_files/figure-latex/cocobloom-1.png, id=382, 803.0pt x 576.1525pt>
 File: midatlantic_files/figure-latex/cocobloom-1.png Graphic file (type png)
 <use midatlantic_files/figure-latex/cocobloom-1.png>
-Package pdftex.def Info: midatlantic_files/figure-latex/cocobloom-1.png  used on input line 473.
+Package pdftex.def Info: midatlantic_files/figure-latex/cocobloom-1.png  used on input line 746.
 (pdftex.def)             Requested size: 275.2709pt x 197.50687pt.
 
 
-[9 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/slopewater-1.pdf>]
-<midatlantic_files/figure-latex/GOMoa-1.png, id=149, 397.485pt x 264.99pt>
+[18 <./midatlantic_files/figure-latex/slopewater-1.pdf>]
+<midatlantic_files/figure-latex/GOMoa-1.png, id=401, 397.485pt x 264.99pt>
 File: midatlantic_files/figure-latex/GOMoa-1.png Graphic file (type png)
 <use midatlantic_files/figure-latex/GOMoa-1.png>
-Package pdftex.def Info: midatlantic_files/figure-latex/GOMoa-1.png  used on input line 484.
+Package pdftex.def Info: midatlantic_files/figure-latex/GOMoa-1.png  used on input line 757.
 (pdftex.def)             Requested size: 300.30252pt x 200.20168pt.
 
 
-[10{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./midatlantic_files/figure-latex/cocobloom-1.png> <./midatlantic_files/figure-latex/GOMoa-1.png>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/docformat-1.pdf, id=162, 578.16pt x 259.97125pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/docformat-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/docformat-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/docformat-1.pdf  used on input line 505.
+[19{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./midatlantic_files/figure-latex/cocobloom-1.png> <./midatlantic_files/figure-latex/GOMoa-1.png>]
+<midatlantic_files/figure-latex/docformat-1.pdf, id=414, 578.16pt x 259.97125pt>
+File: midatlantic_files/figure-latex/docformat-1.pdf Graphic file (type pdf)
+<use midatlantic_files/figure-latex/docformat-1.pdf>
+Package pdftex.def Info: midatlantic_files/figure-latex/docformat-1.pdf  used on input line 778.
 (pdftex.def)             Requested size: 500.48087pt x 225.0426pt.
 
 
-[11]
-Overfull \hbox (25.40596pt too wide) in alignment at lines 526--534
+[20]
+Overfull \hbox (25.40596pt too wide) in alignment at lines 799--807
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.40596pt too wide) in alignment at lines 534--540
+Overfull \hbox (25.40596pt too wide) in alignment at lines 807--813
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.40596pt too wide) in alignment at lines 540--574
+Overfull \hbox (25.40596pt too wide) in alignment at lines 813--847
  [] [] [] [] [] 
  []
 
-[12 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/midatlantic_files/figure-latex/docformat-1.pdf>]
+[21 <./midatlantic_files/figure-latex/docformat-1.pdf>]
 
-[13] (./midatlantic.aux * soulpos - computing points - it may take a few seconds *
+[22] (./midatlantic.aux * soulpos - computing points - it may take a few seconds *
 \openout3 = `midatlantic.upb'.
 
 (./midatlantic.upa))
  ***********
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-11>
+L3 programming layer <2025-07-19>
  ***********
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 21517 strings out of 469736
- 392716 string characters out of 5477847
- 868230 words of memory out of 5000000
- 49334 multiletter control sequences out of 15000+600000
- 715960 words of font info for 180 fonts, out of 8000000 for 9000
+ 21790 strings out of 469736
+ 399247 string characters out of 5477847
+ 872077 words of memory out of 5000000
+ 49522 multiletter control sequences out of 15000+600000
+ 722338 words of font info for 209 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 77i,15n,117p,2757b,625s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb>
-Output written on midatlantic.pdf (10 pages, 4231023 bytes).
+ 77i,15n,117p,2696b,625s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb>
+Output written on midatlantic.pdf (19 pages, 6564047 bytes).
 PDF statistics:
- 309 PDF objects out of 1000 (max. 8388607)
- 247 compressed objects within 3 object streams
- 45 named destinations out of 1000 (max. 500000)
- 51382 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 586 PDF objects out of 1000 (max. 8388607)
+ 461 compressed objects within 5 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 55559 words of extra memory for PDF output out of 61914 (max. 10000000)
 
