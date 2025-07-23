@@ -1,0 +1,87 @@
+```{r management-objectives, ft.arraystretch = 1}
+mng_obj <- data.frame(
+  "Objective Categories" = c(
+    "Seafood Production",
+    "Commercial Profits", "Recreational Opportunities",
+    "Stability", "Social & Cultural",
+    "Protected Species",
+    "Management", "Biomass", "Environment"
+    # ,"Productivity",
+    # "Trophic structure","Habitat"
+  ),
+  "Indicators reported" = c(
+    "Landings; commercial total and by feeding guild; recreational harvest",
+    "Revenue decomposed to price and volume",
+    "Angler trips; recreational fleet diversity",
+    "Diversity indices (fishery and ecosystem)",
+    "Community fishing engagement and social vulnerability status",
+    "Bycatch; population (adult and juvenile) numbers; mortalities",
+    "Stock status; catch compared with catch limits",
+    "Biomass or abundance by feeding guild from surveys",
+    "Climate and ecosystem risk indicators listed in Table 2"
+    # "Condition and recruitment of managed species, primary productivity",
+    # "Relative biomass of feeding guilds, zooplankton",
+    # "Estuarine and offshore habitat conditions"
+  )
+)
+
+mng_obj$service <- c(
+  rep("Objectives: Provisioning and Cultural Services", 6),
+  rep("Potential Drivers: Supporting and Regulating Services", 3)
+)
+
+mng_obj <- as.tibble(mng_obj)
+
+flextable::as_grouped_data(mng_obj, groups = "service") %>%
+  flextable::as_flextable(hide_grouplabel = TRUE) %>%
+  flextable::align(i = ~ !is.na(service), align = "left") %>%
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
+  flextable::set_header_labels(
+    Objective.Categories = "Objective categories",
+    Indicators.reported = "Indicators reported"
+  ) %>%
+  flextable::set_caption(paste("Ecosystem-scale fishery management objectives in", region)) %>%
+  flextable::autofit()
+```
+ \newpage
+```{r management-risks, ft.arraystretch = 1}
+mng_obj <- data.frame(
+  "Risks" = c(
+    "Risks to Managing Spatially",
+    "Risks to Managing Seasonally",
+    "Risks to Setting Catch Limits",
+    "Offshore Wind Risks"
+  ),
+  "Observation Indicators" = c(
+    "Managed species (fish and cetacean) distribution shifts",
+    "Managed species spawning and migration timing changes",
+    "Managed species body condition and recruitment changes",
+    "Fishery revenue and landings from wind lease areas by species and port"
+  ),
+  "Potential Driver Indicators" = c(
+    "Benthic and pelagic forage distribution; ocean temperature, changes in currents and cold pool",
+    "Habitat timing: Length of ocean summer, cold pool seasonal persistence",
+    "Benthic and pelagic forage quality & abundance: ocean temperature & acidification ",
+    "Wind development speed; Protected species presence and  hotspots"
+  )
+)
+
+mng_obj$service <- c(
+  rep("Climate and Ecosystem Risks", 3),
+  rep("Other Ocean Uses Risks", 1)
+)
+
+tab <- flextable::as_grouped_data(mng_obj, groups = "service") %>%
+  flextable::as_flextable(hide_grouplabel = TRUE) %>%
+  flextable::align(i = ~ !is.na(service), align = "left") %>%
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
+  flextable::set_header_labels(
+    Risks = "Risk categories",
+    Observation.Indicators = "Observation indicators reported",
+    Potential.Driver.Indicators = "Potential driver indicators reported"
+  ) %>%
+  flextable::set_caption(paste("Risks to meeting fishery management objectives in", region)) # %>%
+# flextable::autofit()
+
+FitFlextableToPage(tab)
+```

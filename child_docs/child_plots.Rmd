@@ -10,3 +10,34 @@ ecodata::plot_comdat(report = params$region, plottype = "guild", n=10)
 ```{r climatevul-land}
 ecodata::plot_community_climate_vulnerability(report = params$region, plottype = "regionland", n=100)
 ```
+
+```{r, rec-landings}
+ecodata::plot_recdat(report = params$region, varName ="landings", n=10)
+```
+
+```{r rec-hms}
+a <- ecodata::plot_rec_hms(report=params$region, n=100)  +
+  ggplot2::scale_color_discrete(        
+    limits = c("LargeCoastal",  "Prohibited", "SmallCoastal"),         
+    labels = c("Large Coastal", "Prohibited", "Small Coastal")
+    ) +
+  ggplot2::ggtitle(paste(params$region2, "Recreational Shark Landings"))
+
+b <- ecodata::plot_lps_sharks(report=params$region, n=100) + 
+  ggplot2::ggtitle(paste(params$region2, "Rec. Pelagic Shark Landings"))
+
+a+b
+```
+
+```{r stock-status-plot}
+a <- ecodata::plot_stock_status(report = params$region)
+```
+
+```{r abcacl-stacked}
+ecodata::plot_abc_acl(report = params$region, plottype = "Stacked")
+```
+
+```{r abcacl-catch}
+ecodata::plot_abc_acl(report = params$region, plottype = "Catch")
+```
+
