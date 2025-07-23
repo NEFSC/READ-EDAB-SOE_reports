@@ -1,0 +1,16 @@
+### Indicators: Angler trips, fleet diversity  
+[Recreational effort](https://noaa-edab.github.io/catalog/recdat.html) (angler trips) in 2023 continues to be above the long-term average (Fig. \ref{fig:rec-op}). in the MAB. However, recreational fleet diversity (i.e., effort by shoreside, private boat, and for-hire anglers) has declined over the long term (Fig. \ref{fig:rec-div}). 
+
+```{r rec-op, fig.cap = return_caption(chunk_name = "rec-op")}
+```
+
+```{r rec-div, fig.cap = return_caption(chunk_name = "rec-div")}
+```
+
+### Implications
+While the overall number of recreational opportunities in the MAB is above the long-term average, the continuing decline in recreational fleet effort diversity suggests a potentially reduced range of recreational fishing options.
+
+The downward effort diversity trend is driven by party/charter contraction (down from 2.2% in 2021 to 1.3% of trips in 2023), and a shift toward shorebased angling, which currently makes up 60% of all angler trips. Effort in private boats has remained relatively stable from 2022 values.
+
+Changes in recreational fleet diversity can be considered when managers seek options to maintain recreational opportunities. Shore anglers will have access to different species than vessel-based anglers, and when the same species is accessible both from shore and from a vessel, shore anglers typically have access to smaller individuals. Many states have developed shore-based regulations where the minimum size is lower than in other areas and sectors to maintain opportunities in the shore angling sector. MAFMC is currently considering recreational sector separation which might establish different options for managing the for-hire sector from other modes.  
+

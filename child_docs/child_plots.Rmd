@@ -41,3 +41,28 @@ ecodata::plot_abc_acl(report = params$region, plottype = "Stacked")
 ecodata::plot_abc_acl(report = params$region, plottype = "Catch")
 ```
 
+```{r comm-revenue}
+ecodata::plot_comdat(report=params$region, varName="revenue", n=10) + 
+  ggplot2::theme(legend.position = "right",
+                      legend.title = ggplot2::element_blank())
+```
+
+```{r bennet}
+ecodata::plot_bennet(report = params$region, varName = "total")
+```
+
+```{r bennet-all}
+ecodata::plot_bennet(report=params$region)
+```
+
+```{r climatevul-rev}
+ecodata::plot_community_climate_vulnerability(report=params$region, plottype = "regionrev", n=100)
+```
+
+```{r rec-op}
+ecodata::plot_recdat(report = params$region, varName = "effort", n=10)
+```
+
+```{r rec-div}
+ecodata::plot_recdat(report = params$region, varName = "effortdiversity", n=10)
+```

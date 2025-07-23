@@ -3,7 +3,9 @@ rmarkdown::render(
   output_file = "midatlantic.pdf",
   params = list(
     region = "MidAtlantic",
-    fig_caption = here::here("utils/figure_captions_summary.csv")
+    fig_caption = here::here("utils/figure_captions_summary.csv"),
+    ## TODO: caching saves as parent file name, could cause problems with regions
+    cache = TRUE
   ),
   # intermediates_dir = here::here("output"),
   # knit_root_dir = here::here("output"),

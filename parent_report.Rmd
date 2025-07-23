@@ -129,7 +129,13 @@ In this section, we examine indicators related to broad, ecosystem-level fishery
 
 ## Commercial Profits
 
+```{r, child = here::here(paste0("child_docs/commercial_profits_", stringr::str_to_lower(params$region), ".Rmd"))}
+```
+
 ## Recreational Opportunities
+
+```{r, child = here::here(paste0("child_docs/recreational_opportunities_", stringr::str_to_lower(params$region), ".Rmd"))}
+```
 
 ## Stability
 
