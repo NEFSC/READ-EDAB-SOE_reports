@@ -1,9 +1,9 @@
 
-# Performance relative to fishery management objectives
+<!-- # Performance relative to fishery management objectives -->
 
-## Commercial & recreational landings
+<!-- ## Commercial & recreational landings -->
 
-### Indicators
+<!-- ### Indicators -->
 ```{r, total-landings}
 ecodata::plot_comdat(report = params$region, varName = "landings", n = 10)
 ```
@@ -34,7 +34,7 @@ b <- ecodata::plot_lps_sharks(report=params$region, n=100) +
 a+b
 ```
 
-### Implications
+<!-- ### Implications -->
 
 ```{r stock-status-plot}
 a <- ecodata::plot_stock_status(report = params$region)
@@ -48,9 +48,9 @@ ecodata::plot_abc_acl(report = params$region, plottype = "Stacked")
 ecodata::plot_abc_acl(report = params$region, plottype = "Catch")
 ```
 
-## Commercial profits
+<!-- ## Commercial profits -->
 
-### Indicators
+<!-- ### Indicators -->
 ```{r comm-revenue}
 ecodata::plot_comdat(report=params$region, varName="revenue", n=10) + 
   ggplot2::theme(legend.position = "right",
@@ -69,9 +69,9 @@ ecodata::plot_bennet(report=params$region)
 ecodata::plot_community_climate_vulnerability(report=params$region, plottype = "regionrev", n=100)
 ```
 
-## Recreational opportunities
+<!-- ## Recreational opportunities -->
 
-### Indicators
+<!-- ### Indicators -->
 
 ```{r rec-op}
 ecodata::plot_recdat(report = params$region, varName = "effort", n=10)
@@ -81,9 +81,9 @@ ecodata::plot_recdat(report = params$region, varName = "effort", n=10)
 ecodata::plot_recdat(report = params$region, varName = "effortdiversity", n=10)
 ```
 
-## Stability
+<!-- ## Stability -->
 
-### Indicators
+<!-- ### Indicators -->
 
 ```{r comm-div-fleet}
 a <- ecodata::plot_commercial_div(report =params$region, varName = "Fleet count", n=100)
@@ -117,7 +117,7 @@ ecodata::plot_exp_n(report = params$region, varName = "fall", n=10)
 ecodata::plot_finfish_traits(report = params$region, varName = "length_maturity")
 ```
 
-## Community social and climate vulnerability
+<!-- ## Community social and climate vulnerability -->
 
 ```{r commercial-engagement, results='hide'}
 a <- ecodata::plot_engagement(report = params$region, varName = "Commercial")
@@ -131,11 +131,11 @@ a <- ecodata::plot_engagement(report = params$region, varName = "Recreational")
 ecodata::plot_community_climate_vulnerability(report = params$region, n=100)
 ```
 
-# Risks to meeting fishery management objectives
+<!-- # Risks to meeting fishery management objectives -->
 
-## Climte and ecosystem change
+<!-- ## Climte and ecosystem change -->
 
-### Risks to managing seasonally
+<!-- ### Risks to managing seasonally -->
 
 ```{r cold-pool-time, results='hide'}
 ecodata::plot_cold_pool(varName = "persistence", n=10)
@@ -145,7 +145,7 @@ ecodata::plot_cold_pool(varName = "persistence", n=10)
 ecodata::plot_chl_pp(report = params$region, plottype = "monthly", n=100) 
 ```
 
-### Risks to setting catch limits
+<!-- ### Risks to setting catch limits -->
 
 ```{r productivity-anomaly}
 ## TODO: move aesthetics into ecodata function
@@ -213,7 +213,7 @@ ecodata::plot_thermal_habitat_gridded(params$region)
 magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
 ```
 
-# Other ocean uses: offshore wind
+<!-- # Other ocean uses: offshore wind -->
 
 ```{r wea-spp-rev}
 ecodata::plot_wind_revenue(report = params$region, varName = "value", plottype = "nofacets")

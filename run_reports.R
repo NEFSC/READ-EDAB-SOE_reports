@@ -1,3 +1,7 @@
+
+
+# mid report -- pdf
+
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
   output_file = "midatlantic.pdf",
@@ -19,8 +23,25 @@ rmarkdown::render(
     ) # ,
   # bookdown::html_document2(df_print = "paged")#,
   # bookdown::word_document2(toc = FALSE)
-  # )
+  )
 )
+
+## mid report -- html
+
+rmarkdown::render(
+  input = here::here("parent_report.Rmd"),
+  # output_file = "midatlantic.pdf",
+  output_file = "midatlantic.html",
+  params = list(
+    region = "MidAtlantic",
+    fig_caption = here::here("utils/figure_captions_summary.csv"),
+    ## TODO: caching saves as parent file name, could cause problems with regions
+    cache = TRUE
+  ),
+  output_format = bookdown::html_document2()
+)
+
+## NE report
 
 rmarkdown::render(here::here("parent_report.Rmd"),
   output_file = here::here("newengland.pdf"),

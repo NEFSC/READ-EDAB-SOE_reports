@@ -7,13 +7,6 @@ Indicators of [fish productivity](https://noaa-edab.github.io/catalog/productivi
 The health of individual fish (i.e. fish condition, measured as weight for a given length) can contribute to population productivity through improved growth, reproduction and survival. [Fish condition](https://noaa-edab.github.io/catalog/condition.html) in the MAB was generally good prior to 2000, poor from 2001-2010 (concurrent with declines in productivity, Fig. \ref{fig:productivity-anomaly}), and a mix of good and poor since 2011. In 2024, condition continued to be mixed, with general improvement since a relatively low condition year in 2021 (Fig. \ref{fig:mab-cf}). Preliminary analyses show that changes in temperature, zooplankton, fishing pressure, and population size influence the condition of different fish species.
 
 ```{r mab-cf, fig.cap = return_caption(chunk_name = "mab-cf"), fig.width=9, fig.asp=.7}
-ecodata::plot_condition() +
-  theme(#legend.position = 'bottom',
-        legend.text = element_text(size = 10),
-        legend.title = element_text(size = 11),
-        axis.text.x = element_text(size = 12),
-        axis.text.y = element_text(size = 10),
-        plot.title = element_text(size = 12))
 ```
 
 #### Drivers:
