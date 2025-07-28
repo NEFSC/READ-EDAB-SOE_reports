@@ -33,7 +33,6 @@ Aquaculture production is not yet included in total seafood landings. Available 
 
 #### Stock Status and Catch Limits
 
-#### Stock Status and Catch Limits
 Single species [management objectives](https://noaa-edab.github.io/catalog/stock_status.html) (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are being met for all but three MAFMC-managed species (Fig. \ref{fig:stock-status}), though the status of six stocks is unknown (Table \ref{tab:unkstocks}). 
 
 ```{r stock-status-plot}
@@ -78,7 +77,7 @@ Nevertheless, the percentage caught (landings and discards) for each stock’s A
 Although [aggregate biomass](https://noaa-edab.github.io/catalog/aggregate_biomass.html) trends derived from scientific resource surveys are mostly stable in the MAB, spring piscivores, fall benthivores, and fall benthos show long-term increases (Fig. \ref{fig:nefsc-biomass-mab}). While managed species make up varying proportions of aggregate biomass, trends in landings are not mirroring shifts in the overall trophic structure of survey-sampled fish and invertebrates. Therefore, major shifts in feeding guilds or ecosystem trophic structure are unlikely to be driving the decline in landings. 
 
 ```{r nefsc-biomass-mab, fig.cap =  return_caption(chunk_name = "nefsc-biomass-mab"), fig.width=8, fig.asp = 0.75, results='hide'}
-ecodata::plot_aggregate_biomass(report = "MidAtlantic", n = 10)
+ecodata::plot_aggregate_biomass(report = params$region, EPU = "MAB", n = 10)
 ```
 
 #### Effect on Seafood Production

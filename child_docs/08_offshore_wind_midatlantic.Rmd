@@ -1,0 +1,108 @@
+Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) from trips in the current offshore wind lease areas, including the newly designated lease areas in the Central Atlantic, have varied annually from 2008-2023, with less than \$1 million in maximum annual revenue overlapping with these areas for most fisheries with the exception of the surfclam, monkfish, and longfin squid fisheries. Some fisheries see periodic spikes in revenue overlap with wind energy lease areas, including the surfclam (\$6.5 million), longfin squid (\$4.8 million), monkfish (\$2.5 million), and summer flounder (\$1.3 million) fisheries (Fig. \ref{fig:wea-spp-rev}). 
+
+```{r wea-spp-rev, fig.cap=return_caption(chunk_name = "wea-spp-rev"),  fig.width=5, fig.asp=.4}
+```
+
+Of MAFMC managed fisheries, the surfclam fishery would be the most affected by offshore wind development, with a maximum of 15% of annual regional fishery revenue occurring within existing wind lease areas during 2008-2023 (see Table \ref{tab:wea-landings-rev}). It should be noted that 2023 surfclam landings/revenue within lease areas may be artificially low due to potential misreporting issues. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.  
+
+`r wind_indicator_paragraph`
+
+```{r wea-landings-rev, ft.arraystretch = 1}
+```
+
+```{r wea-landings-rev-1, ft.arraystretch = 1}
+## TODO: this and previous chunk should be turned into a function
+flextable::flextable(dt) %>%
+  flextable::set_caption("Mid-Atlantic managed species Landings and Revenue from Wind Energy Areas. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species.") %>%
+  flextable::width(width = c(2,2,2))
+```
+
+`r wind_interactions`
+
+`r socio_intro`
+
+```{r wea-port-rev, fig.cap=return_caption(chunk_name = "wea-port-rev"),  fig.width=6.5, fig.asp=.82, fig.align='left'}
+```
+
+For example, Atlantic City, NJ was in the top three potential revenue loss (historical minimum of 3% and maximum of 24%, respectively) from potential wind development areas based on 2008-2023 total port fisheries revenue. BOEM reports that cumulative offshore wind development (if all proposed projects are developed) could have moderate impacts on low-income members of communities with socio-demographic concerns who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation and increased vessel traffic, as well as existing vulnerabilities of low-income workers to economic impacts.
+
+Some ports in New England land Mid-Atlantic managed species from wind areas as well. For the maximum percent value reported in each New England port, the majority (at least 50% based on both value and pounds) of those landings were Mid-Atlantic managed species within wind areas for Davisville/North Kingston and Point Judith, RI, and Hyannis and Menemsha, MA (Fig. \ref{fig:wind-rev-NE-MAFMC}).
+
+```{r wind-rev-NE-MAFMC, fig.cap=return_caption(chunk_name = "wind-rev-NE-MAFMC"), fig.width=6.5, fig.asp=.35, fig.align='left'}
+## TODO: this should be turned into a function
+
+# Email from Abby 30 January 2025
+# Here are the ports that have >=50% of their total revenue coming from species managed outside of the port region:
+# ##  [1] "BARNEGAT LIGHT, NJ"             "BRIELLE, NJ"                   
+# ##  [3] "CAPE MAY, NJ"                   "DAVISVILLE/NORTH KINGSTOWN, RI"
+# ##  [5] "HAMPTON, VA"                    "LONG BEACH (TOWN OF), NJ"      
+# ##  [7] "NEWPORT NEWS, VA"               "POINT JUDITH, RI"              
+# ##  [9] "WILDWOOD, NJ"                   "HYANNIS, MA"                   
+# ## [11] "FAIRHAVEN, MA"                  "MENEMSHA, MA"
+# And here are the ports that have >=50% of their revenue within the WEAs coming from species managed outside of the port region:
+# ##  [1] "BARNEGAT LIGHT, NJ"             "BRIELLE, NJ"                   
+# ##  [3] "CAPE MAY, NJ"                   "DAVISVILLE/NORTH KINGSTOWN, RI"
+# ##  [5] "HAMPTON, VA"                    "LONG BEACH (TOWN OF), NJ"      
+# ##  [7] "NEWPORT NEWS, VA"               "POINT JUDITH, RI"              
+# ##  [9] "POINT LOOKOUT, NY"              "POINT PLEASANT, NJ"            
+# ## [11] "WILDWOOD, NJ"                   "HYANNIS, MA"                   
+# ## [13] "MENEMSHA, MA"
+
+df.symbol <- ecodata::wind_port %>% filter(EPU == "NE", 
+                                           !Var %in% c("MaxVal", "TOT_MAX", 
+                                                     "perc_MIN", "perc_MAX")) %>% 
+   tidyr::pivot_wider( names_from = Var, values_from = Value) %>%
+  dplyr::mutate(City = paste0(City,",", State)) %>% 
+  dplyr::filter(City %in% c("POINT JUDITH, RI",
+                            "DAVISVILLE/NORTH KINGSTOWN, RI",
+                            "HYANNIS, MA",
+                            "MENEMSHA, MA")) %>%
+  dplyr::select(City, EJ, Gentrification) %>% 
+  pivot_longer(cols = c(EJ, Gentrification), names_to = "Variable") %>% 
+  filter(!value == "NA") %>% 
+  dplyr::mutate(symbol = recode(Variable, EJ = -7, Gentrification = -3), 
+                Variable = recode(Variable,"EJ"= "Mid-High to High Social-Demographic Concerns" , 
+                                  "Gentrification" ="Mid-High to High Gentrificaiton Concerns"))
+
+# Percentage plot
+
+df.all.perc<- ecodata::wind_port %>% filter(EPU == "NE") %>%
+  tidyr::pivot_wider( names_from = Var, values_from = Value) %>%
+  dplyr::mutate(ordering = MaxVal,
+                   City = paste0(City, ",", State),
+                   perc_dif =  c(perc_MAX - perc_MIN),
+                   TOT_MAX = c(100 - perc_dif - perc_MIN)) %>% 
+  tidyr::pivot_longer(cols = c(perc_MIN,  perc_dif, TOT_MAX), names_to="Var", values_to = "Value") %>% 
+  dplyr::arrange(desc(ordering)) %>%
+  dplyr::filter(City %in% c("POINT JUDITH, RI",
+                            "DAVISVILLE/NORTH KINGSTOWN, RI",
+                            "HYANNIS, MA",
+                            "MENEMSHA, MA")) %>%
+  dplyr::mutate(City = factor(City, levels = unique(City))) %>% 
+  dplyr::filter(!Var %in% c("MaxVal", "EJ", "Gentrification")) %>% 
+  dplyr::mutate(Var = recode(Var,"perc_MIN"= "WEA Revenue" , 
+                             "perc_dif" ="WEA Revenue Range", 
+                             "TOT_MAX" = "Non-WEA Revenue"), 
+                Var = factor(Var, levels = c("Non-WEA Revenue", 
+                                             "WEA Revenue Range", 
+                                             "WEA Revenue")))
+p2<-ggplot2::ggplot()+
+  ggplot2::geom_bar(data = df.all.perc, aes(fill = Var, y = reorder(City, ordering), x = Value), stat="identity" )+
+  ggplot2::scale_fill_brewer()+
+  ggplot2::theme(legend.position = "bottom", 
+                 legend.title = element_blank(), 
+                 legend.box="vertical", legend.margin=margin())+
+  ggplot2::geom_point(data = df.symbol, aes(x = symbol,y = City, shape = Variable)) +
+  ggplot2::scale_shape_manual(values = c(17, 16)) +
+  ggplot2::ggtitle("Port Revenue from WEA, majority MAFMC species")+
+  ggplot2::xlab(expression("Port Revenue (%)"))+
+  ggplot2::ylab(element_blank())+
+  ecodata::theme_ts()
+
+p2
+```
+
+
+Top fishing communities with [socio-demographic concerns](https://noaa-edab.github.io/catalog/engagement.html) (i.e., Atlantic City, NJ,  and Hampton Bays, NY) should be considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of underserved communities. These are communities where we need to provide further resources to reach underserved and underrepresented groups and create opportunities for and directly involve these groups in the decision-making process.
+
+

@@ -1,0 +1,69 @@
+### Indicators: Fishing Engagement and Community Social Vulnerability
+
+The [engagement](https://noaa-edab.github.io/catalog/engagement.html) indices demonstrate the importance of commercial and recreational fishing to a given community relative to other coastal communities in a region. Social vulnerability indicators measure social factors that shape a community’s ability to adapt to change.  For this report, we focus on top communities with the highest engagement scores, the top communities with the highest population relative engagement scores, and on three socio-demographic indicators within the CSVI toolset (poverty, personal disruption, population composition). 
+
+In 2022, Cape May, NJ; Reedville, VA; and Montauk, NY were the most engaged commercial fishing communities. Barnegat Light, NJ is much more engaged in commercial fishing relative to its population size when compared to other communities in the Mid-Atlantic  (Fig.\ref{fig:commercial-engagement}). Cape May, NJ also ranked medium on the population composition index (calculated based on proportions of non-white, non-English speaking, and younger populations) and Atlantic City, NJ ranked high for all socio-demographic indicators suggesting that this important commercial fishing community may be more vulnerable to change in the future (Table \ref{tab:comvultab}). 
+ 
+ Manteo, Vandemere, and Hobuken, NC are no longer listed as top ten recreational communities, replaced by Cape May and Barnegat Light, NJ; Orient, NY; Topsail Beach, Avon and Rodanthe, NC (Fig.\ref{fig:recreational-engagement}). 
+
+ 
+```{r commercial-engagement, results='hide'}
+```
+
+```{r commercial-engagement-2, fig.cap= return_caption(chunk_name = "commercial-engagement"), fig.width = 7, fig.asp = 0.85, results='hide'}
+a + ggplot2::theme(plot.title=element_text(vjust = 0))
+```
+
+
+```{r comvultab}
+## TODO: this can probably be moved to child_plots.Rmd
+## TODO: move flextable aesthetics into ecodata function
+tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for", region2, "communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.")
+
+t <- ecodata::plot_engagement(varName = "Commercial", plottype = "Social")
+t |>
+  flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
+                               pop_composition_rank = "Population Composition",
+                               poverty_rank = "Poverty") |>
+  flextable::colformat_num(na_str = "-") |>
+  flextable::set_caption(tbl_caption) |>
+  flextable::autofit() 
+  
+```
+
+Several communities ranked in the top communities for both commercial and recreational indices; Montauk, NY, Cape May, NJ, Barnegat Light, NJ, Point Pleasant Beach, NJ, Ocean City, MD, and Wachapreague, VA (Fig. \ref{fig:recreational-engagement}), meaning these communities may be impacted simultaneously (to a greater degree than others) by commercial and recreational regulatory changes. Of those included in the top-ranked recreational communities, both Bivalve, MD and Morehead City, NC had medium or higher ranks for two of three socio-demographic indicators examined here (Table \ref{tab:recvultab}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
+
+```{r recreational-engagement, results='hide'}
+```
+
+```{r recreational-engagement-2, fig.cap= return_caption(chunk_name = "recreational-engagement"), fig.width = 7, fig.asp = 0.85, results='hide'}
+a + ggplot2::theme(plot.title=element_text(vjust = 0))
+```
+
+
+```{r recvultab}
+## TODO: this can probably be moved to child_plots.Rmd
+## TODO: move flextable aesthetics into ecodata function
+t <- ecodata::plot_engagement(varName = "Recreational", plottype = "Social")
+t |>
+  flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
+                               pop_composition_rank = "Population Composition",
+                               poverty_rank = "Poverty") |>
+  flextable::colformat_num(na_str = "-") |>
+  flextable::set_caption(tbl_caption) |>
+  flextable::autofit() 
+```
+
+
+### Indicators: Community Climate Vulnerability in the Mid-Atlantic
+
+The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) are calculated by multiplying the percent contribution of species to the total value landed in a community by their respective Total Vulnerability scores (based on NOAA’s Climate Vulnerability Assessment) for different sensitivity and exposure factors and then summing the resulting values by year. As a community (or region) shifts towards climate vulnerable species, its risk score increases. While there is not a long-term trend in total climate vulnerability across Mid Atlantic communities as a whole, a majority of communities rank either high or very high risk (Fig. \ref{fig:commvulex}). This suggests that a majority of Mid-Atlantic communities depend on climate vulnerable species to generate commercial fishery revenue.
+
+```{r commvulex, fig.width = 6.5, fig.asp=.5, fig.cap=return_caption(chunk_name = "commvulex")}
+```
+
+
+### Implications
+A range of socioeconomic and climate vulnerability concerns are found throughout Mid-Atlantic fishing communities. These indicators provide a snapshot of the presence of socio-demographic concerns in most highly engaged commercial and recreational fishing communities in the Mid-Atlantic. These communities may be especially vulnerable to changes in fishing patterns due to regulations and/or ecosystem changes. Several of these top fishing communities, both commercial and recreational fishing communities, demonstrated medium to high socio-demographic vulnerability, indicating that they may be at a disadvantage responding to change.
+
+There is evidence that a majority of Mid-Atlantic communities have high to very high total climate vulnerability based on revenue. Coastal fishing communities are greatly affected by climate change, both because of their physical location and because of their frequent social, cultural, and economic dependence on fishing. These impacts are expected to become more pressing as climatic changes become more extensive. Changes in [ocean temperature](https://noaa-edab.github.io/catalog/bottom_temp_insitu.html) and [acidification](https://noaa-edab.github.io/catalog/ocean_acidification.html) affecting marine life have the potential to directly impact fisheries and fishery dependent livelihoods.  

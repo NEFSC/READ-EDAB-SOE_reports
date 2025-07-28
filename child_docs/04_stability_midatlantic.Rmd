@@ -23,9 +23,8 @@ As noted [above](#recreational-opportunities), [recreational fleet effort divers
 
 Ecological diversity indices show mixed trends. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html) is a measure of the total amount of carbon (i.e. energy ) produced by phytoplankton per year. Total primary production in the Mid Atlantic Bight has no clear trend (Fig. \ref{fig:totpp}), suggesting stability in energy at the base of the food web. 
 
-```{r totpp, fig.cap="Total areal annual primary production for the MAB. The dashed line represents the long-term (1998-2024) annual mean."}
-
-ecodata::plot_annual_chl_pp(report = "MidAtlantic", varName = "pp", plottype = "total") +
+```{r totpp, fig.cap=return_caption(chunk_name = "totpp")}
+ecodata::plot_annual_chl_pp(report = params$region, varName = "pp", plottype = "total", EPU = "MAB") +
   ggplot2::coord_cartesian(ylim = c(1e+07, 4e+07), xlim = c(1998, 2023)) + 
   ggplot2::ggtitle("MAB Primary Production") +
   ggplot2::ylab("Carbon (mt)")
@@ -33,30 +32,17 @@ ecodata::plot_annual_chl_pp(report = "MidAtlantic", varName = "pp", plottype = "
 
 [Zooplankton diversity](https://noaa-edab.github.io/catalog/zoo_diversity.html) is increasing in the MAB (Fig. \ref{fig:zoo-diversity}), while [adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html), the expected number of species in a standard number of individuals sampled from the NEFSC bottom trawl survey, appears stable over time, with current values within one standard deviation from most historic estimates (Fig. \ref{fig:exp-n}). 
 
-```{r zoo-diversity, fig.cap = "Zooplankton diversity in the Mid-Atlantic Bight, Shannon diversity index (black) with significant increase (orange line).", fig.asp=.47}
-#, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-zoo-diversity.R")
-
-ecodata::plot_zoo_diversity(report = "MidAtlantic", n=10) +
-  ggplot2::ggtitle("Zooplankton Diversity") +
-  ggplot2::theme(plot.title = element_text(vjust=-5)) +
-  ggplot2::ylab("Shannon Index")
+```{r zoo-diversity, fig.cap = return_caption(chunk_name = "zoo-diversity"), fig.asp=.47}
 ```
 
 
-```{r exp-n, fig.cap = "Adult fish diversity in the Mid-Atlantic Bight, based on expected number of species. Results from survey vessels Albatross and Bigelow are reported separately due to catchability differences.", fig.width=5, fig.asp=.4}
-#, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-exp-n.R")
-
-ecodata::plot_exp_n(report = "MidAtlantic", varName = "fall", n=10)
+```{r exp-n, fig.cap = return_caption(chunk_name = "exp-n"), fig.width=5, fig.asp=.4}
 ```
 
 [Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, maximum body size, or fecundity, can synthesize change across complex, diverse communities. Monitoring changes in functional trait distributions for the fish community can provide a means of assessing ecosystem-scale resilience. There is evidence of long term change in trait distributions in the MAB (Fig. \ref{fig:traits}). The spring finfish community in the MAB is showing long-term shifts towards slower life history strategies with higher length and maturity and lower fecundity. In contrast, the fall MAB finfish community has shifted towards decreased length at maturity, smaller offspring size, and lower trophic level indicative of faster life histories. 
 
-```{r traits, fig.width = 5, fig.asp=0.5, fig.cap="Fish community functional traits in the Mid Atlantic Bight based on Fall (red) and Spring (blue) survey data. Length at maturity for the full finfish community has increased in spring (orange line), but decreased in fall (purple lines)"}
-
-ecodata::plot_finfish_traits(varName = "length_maturity")
-
+```{r traits, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits")}
 ```
-
 
 
 ### Implications

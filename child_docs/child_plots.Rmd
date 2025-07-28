@@ -1,4 +1,9 @@
 
+# Performance relative to fishery management objectives
+
+## Commercial & recreational landings
+
+### Indicators
 ```{r, total-landings}
 ecodata::plot_comdat(report = params$region, varName = "landings", n = 10)
 ```
@@ -29,6 +34,8 @@ b <- ecodata::plot_lps_sharks(report=params$region, n=100) +
 a+b
 ```
 
+### Implications
+
 ```{r stock-status-plot}
 a <- ecodata::plot_stock_status(report = params$region)
 ```
@@ -41,6 +48,9 @@ ecodata::plot_abc_acl(report = params$region, plottype = "Stacked")
 ecodata::plot_abc_acl(report = params$region, plottype = "Catch")
 ```
 
+## Commercial profits
+
+### Indicators
 ```{r comm-revenue}
 ecodata::plot_comdat(report=params$region, varName="revenue", n=10) + 
   ggplot2::theme(legend.position = "right",
@@ -59,6 +69,10 @@ ecodata::plot_bennet(report=params$region)
 ecodata::plot_community_climate_vulnerability(report=params$region, plottype = "regionrev", n=100)
 ```
 
+## Recreational opportunities
+
+### Indicators
+
 ```{r rec-op}
 ecodata::plot_recdat(report = params$region, varName = "effort", n=10)
 ```
@@ -66,6 +80,10 @@ ecodata::plot_recdat(report = params$region, varName = "effort", n=10)
 ```{r rec-div}
 ecodata::plot_recdat(report = params$region, varName = "effortdiversity", n=10)
 ```
+
+## Stability
+
+### Indicators
 
 ```{r comm-div-fleet}
 a <- ecodata::plot_commercial_div(report =params$region, varName = "Fleet count", n=100)
@@ -80,6 +98,141 @@ ecodata::plot_commercial_div(report = params$region, varName = "Permit revenue s
 
 ```{r recdat-div-catch}
 ecodata::plot_recdat(report = params$region, varName = "catchdiversity", n=10)
+```
+
+```{r zoo-diversity}
+ecodata::plot_zoo_diversity(report = params$region, n=10) +
+  ## TODO: can label changes be transferred to ecodata function?
+  ggplot2::ggtitle("Zooplankton Diversity") +
+  ## TODO: does this title adjustment need to be hardcoded in? 
+  ggplot2::theme(plot.title = element_text(vjust=-5)) +
+  ggplot2::ylab("Shannon Index")
+```
+
+```{r exp-n}
+ecodata::plot_exp_n(report = params$region, varName = "fall", n=10)
+```
+
+```{r traits}
+ecodata::plot_finfish_traits(report = params$region, varName = "length_maturity")
+```
+
+## Community social and climate vulnerability
+
+```{r commercial-engagement, results='hide'}
+a <- ecodata::plot_engagement(report = params$region, varName = "Commercial")
+```
+
+```{r recreational-engagement, results='hide'}
+a <- ecodata::plot_engagement(report = params$region, varName = "Recreational")
+```
+
+```{r commvulex}
+ecodata::plot_community_climate_vulnerability(report = params$region, n=100)
+```
+
+# Risks to meeting fishery management objectives
+
+## Climte and ecosystem change
+
+### Risks to managing seasonally
+
+```{r cold-pool-time, results='hide'}
+ecodata::plot_cold_pool(varName = "persistence", n=10)
+```
+
+```{r montlychl}
+ecodata::plot_chl_pp(report = params$region, plottype = "monthly", n=100) 
+```
+
+### Risks to setting catch limits
+
+```{r productivity-anomaly}
+## TODO: move aesthetics into ecodata function
+a <- ecodata::plot_productivity_anomaly(report = params$region) + 
+  ggplot2::guides(fill=guide_legend(ncol=2)) + 
+  ggplot2::theme(legend.position = "bottom",
+                      legend.title = ggplot2::element_blank(),
+                 plot.title =element_text(size = 11))
+
+b <- ecodata::plot_productivity_anomaly(report = params$region, varName = "assessment")+ 
+  ggplot2::guides(fill=guide_legend(ncol=2)) +
+  ggplot2::theme(legend.position = "bottom",
+                      legend.title = ggplot2::element_blank(),
+                 plot.title =element_text(size = 11))
+
+a + b
+```
+
+```{r mab-cf}
+## TODO: move aesthetics into ecodata function
+ecodata::plot_condition(report = params$region) +
+  theme(#legend.position = 'bottom',
+        legend.text = element_text(size = 10),
+        legend.title = element_text(size = 11),
+        axis.text.x = element_text(size = 12),
+        axis.text.y = element_text(size = 10),
+        plot.title = element_text(size = 12))
+```
+
+```{r energy-density}
+ecodata::plot_energy_density(report = params$region)
+```
+
+```{r foragebio}
+ecodata::plot_forage_index(report = params$region, n=10)
+```
+
+```{r benthos}
+c <- ecodata::plot_benthos_index(report = params$region, varName = "Megabenthos", n=10) + 
+  ggplot2::theme(legend.position = "none")
+d <- ecodata::plot_benthos_index(report = params$region, varName = "Macrobenthos", n=10) + 
+  ggplot2::theme(legend.position = "right")
+
+c+d
+```
+
+```{r zoopanom}
+a <- ecodata::plot_zooplankton_index(report = params$region, varName = "Lgcopeall", n=10) + 
+  ggplot2::theme(legend.position = "none")
+b <- ecodata::plot_zooplankton_index(report = params$region, varName = "Smallcopeall", n=10) + 
+  ggplot2::theme(legend.position = "bottom")
+c <- ecodata::plot_zooplankton_index(report = params$region, varName = "Euph", n=10) + 
+  ggplot2::theme(legend.position = "none")
+
+a+b + c
+```
+
+
+```{r therm-hab-persist-2024}
+ecodata::plot_thermal_habitat_gridded(params$region)
+```
+
+```{r mab-oa}
+# this figure is in both reports, despite chunk name
+magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
+```
+
+# Other ocean uses: offshore wind
+
+```{r wea-spp-rev}
+ecodata::plot_wind_revenue(report = params$region, varName = "value", plottype = "nofacets")
+```
+
+```{r wea-landings-rev, ft.arraystretch = 1}
+council <- dplyr::case_when(params$region == "MidAtlantic" ~ "MAFMC",
+                            params$region == "NewEngland" ~ "NEFMC")
+
+dt<- ecodata::wea_landings_rev |> 
+  dplyr::filter(Council %in% c(council, "MAFMC/NEFMC")) |>
+  dplyr::select("NEFMC, MAFMC, and ASMFC Managed Species", "perc_landings_max",
+                "perc_revenue_max" ) %>%
+  dplyr::rename("Maximum Percent Total Annual Regional Species Landings"="perc_landings_max",
+    "Maximum Percent Total Annual Regional Species Revenue"="perc_revenue_max")
+```
+
+```{r wea-port-rev}
+ecodata::plot_wind_port(report = params$region) 
 ```
 
 

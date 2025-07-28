@@ -75,7 +75,9 @@ caption_key <- read.csv(params$fig_caption) |>
   dplyr::mutate(caption = dplyr::case_when(
     params$region == "MidAtlantic" ~ fig_cap_ma,
     params$region == "NewEngland" ~ fig_cap_ne
-  ))
+  )) |>
+  dplyr::mutate(caption = dplyr::case_when(is.na(caption) ~ fig_cap_both,
+                                           TRUE ~ caption))
 ```
 
 \setcounter{page}{4}
@@ -124,24 +126,83 @@ In this section, we examine indicators related to broad, ecosystem-level fishery
 
 ## Seafood Production 
 
-```{r, child = here::here(paste0("child_docs/seafood_production_", stringr::str_to_lower(params$region), ".Rmd"))}
+```{r, child = here::here(paste0("child_docs/01_seafood_production_", stringr::str_to_lower(params$region), ".Rmd"))}
 ```
 
 ## Commercial Profits
 
-```{r, child = here::here(paste0("child_docs/commercial_profits_", stringr::str_to_lower(params$region), ".Rmd"))}
+```{r, child = here::here(paste0("child_docs/02_commercial_profits_", stringr::str_to_lower(params$region), ".Rmd"))}
 ```
 
 ## Recreational Opportunities
 
-```{r, child = here::here(paste0("child_docs/recreational_opportunities_", stringr::str_to_lower(params$region), ".Rmd"))}
+```{r, child = here::here(paste0("child_docs/03_recreational_opportunities_", stringr::str_to_lower(params$region), ".Rmd"))}
 ```
 
 ## Stability
 
-## Community Social and Climate Vulnerability
+```{r, child = here::here(paste0("child_docs/04_stability_", stringr::str_to_lower(params$region), ".Rmd"))}
+```
+
+## Community Social and Climate Vulnerability 
+
+Providing for sustained participation of fishing communities, and avoiding adverse economic impacts to fishing communities are objectives of fishery management. We report the top communities most engaged in commercial and recreational fisheries and the degree to which these communities may be vulnerable to change based on their socioeconomic conditions using data for the most recent available year (2022).
+
+Coastal fishing communities worldwide have or are likely to experience social, economic, and cultural impacts from climate change, both negative (e.g., loss of infrastructure, fish stock decline) and positive (e.g., increased abundance of valuable species). Changes in marine fisheries as a consequence of climate change will require adaptation by coastal fishing communities and fisheries managers alike. The Community Climate Change Risk Indicators were developed to help examine trends in climate change vulnerability in U.S. coastal fishing communities in the Northeast Region using indicators developed to understand fishing community level risk to climate change as based on species dependency. 
+
+```{r, child = here::here(paste0("child_docs/05_csvi_", stringr::str_to_lower(params$region), ".Rmd"))}
+```
 
 ## Protected Species
+
+## Protected Species
+Fishery management objectives for protected species generally focus on reducing threats and on habitat conservation/restoration. Protected species include marine mammals protected under the Marine Mammal Protection Act, endangered and threatened species protected under the Endangered Species Act, and migratory birds protected under the Migratory Bird Treaty Act. In the Northeast U.S., endangered/threatened species include Atlantic salmon, Atlantic and shortnose sturgeon, all sea turtle species, giant manta ray, oceanic whitetip shark, and five baleen whales. Protected species objectives include managing bycatch to remain below potential biological removal (PBR) thresholds, recovering endangered populations, and monitoring unusual mortality events (UMEs). Here we report on performance relative to these objectives with available indicator data, as well as indicating the potential for future interactions driven by observed and predicted ecosystem changes in the Northeast U.S.  
+
+### Indicators: bycatch, population (adult and juvenile) numbers, mortalities
+Average indices for both [harbor porpoise](https://noaa-edab.github.io/catalog/harborporpoise.html) (Fig. \ref{fig:harborporpoise}) and [gray seal](https://noaa-edab.github.io/catalog/grayseal.html) bycatch (Fig. \ref{fig:grayseal}) are below current PBR thresholds, meeting management objectives, although uncertainty in the gray seal bycatch estimate has increased recently, and gray seal bycatch is among the highest for marine mammals in the U.S.
+
+```{r harborporpoise, fig.cap=return_caption(chunk_name = "harborporpoise"), fig.width=5, fig.asp=0.47}
+ecodata::plot_harborporpoise()
+```
+
+The annual estimate for gray seal bycatch, most of which occurs in New England, has declined since 2019, in part driven by declining gillnet landings. In addition, estimates since 2019 have greater uncertainty stemming from low observer coverage in some times and areas since 2019. The rolling mean confidence interval remains just below the PBR threshold. 
+
+```{r grayseal, fig.cap=return_caption(chunk_name = "grayseal"), fig.width=5, fig.asp=0.47}
+ecodata::plot_grayseal()
+```
+
+The [North Atlantic right whale population](https://noaa-edab.github.io/catalog/narw.html) was on a recovery trajectory until 2010, but has since declined (Fig. \ref{fig:narw-abundance}). The sharp decline observed from 2015-2020 appears to have slowed, although the right whale population continues to experience annual mortalities above recovery thresholds. Reduced survival rates of adult females lead to diverging abundance trends between sexes. It is estimated that there are fewer than 70 adult females remaining in the population.
+
+```{r narw-abundance, fig.cap = return_caption(chunk_name = "narw-abundance")}
+ecodata::plot_narw(varName = "adult", n=10) + 
+  ggplot2::ggtitle("North Atlantic right whale abundance")
+```
+
+North Atlantic right whale [calf counts](https://noaa-edab.github.io/catalog/narw.html) have generally declined after 2009 to the point of having zero new calves observed in 2018 (Fig. \ref{fig:NARW-calf-abundance}). However, since 2020, calf births have been closer to the long-term average.
+
+```{r NARW-calf-abundance, fig.cap = return_caption(chunk_name = "NARW-calf-abundance")}
+ecodata::plot_narw(varName = "calf", n=10) + 
+  ggplot2::ggtitle("North Atlantic right whale calf abundance")
+```
+
+This year, the Unusual Mortality Event (UME) for North Atlantic right whales continued. From 2017 through 2 January 2025, the total UME right whale mortalities includes 41 dead stranded whales, 19 in the US and 22 in Canada. When alive but seriously injured whales (39) and sublethal injuries or ill whales (71) are taken into account, 151 individual whales are included in the UME. Recent research suggests that many mortalities go unobserved and the true number of mortalities are about three times the count of the observed mortalities. The primary cause of death is “human interaction” from entanglements or vessel strikes.
+
+A UME continued from previous years for humpback whales (2016-present) and Atlantic minke whales (2018-present); suspected causes include human interactions. A UME for Northeast pinnipeds that began in 2018 for infectious disease is pending closure as of February 2025.
+
+
+### Implications
+Bycatch management measures have been implemented to maintain bycatch below PBR thresholds. The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort. The increasing trend in gray seal bycatch may be related to an increase in the gray seal population ([U.S. pup counts](https://noaa-edab.github.io/catalog/seal_pups.html)), supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
+
+```{r seals, fig.cap = return_caption(chunk_name = "seals"),fig.width = 7.5, fig.asp = 0.4, eval = params$region == "NewEngland"}
+ecodata::plot_seal_pups(report = params$region)+
+  theme(legend.position = 'bottom')
+```
+
+Strong evidence exists to suggest that interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. Further, right whale distribution has changed since 2010. [Recent research](https://noaa-edab.github.io/catalog/narw.html) suggests that recent climate driven changes in ocean circulation have resulted in right whale distribution changes driven by increased warm water influx through the Northeast Channel, which has reduced the primary right whale prey (the copepod *Calanus finmarchicus*) in the central and eastern portions of the Gulf of Maine. Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat. This area is also a primary right whale winter foraging habitat. Additional information can be found in the [offshore wind risks section](#other-ocean-uses-offshore-wind).
+
+The UMEs are under investigation and are likely the result of multiple drivers. For all large whale UMEs, human interaction appears to have contributed to increased mortalities, although investigations are not complete.
+
+A climate vulnerability assessment is published for Atlantic and Gulf marine mammal populations.
 
 # Risks to Meeting Fishery Management Objectives
 
@@ -158,7 +219,8 @@ As noted in the [Seafood Production Implications section above](#implications), 
 
 [Habitat model-based species richness](https://noaa-edab.github.io/catalog/habitat_diversity.html) suggests shifts of both cooler and warmer water species to the northeast. Similar patterns have been found for [marine mammals](https://noaa-edab.github.io/catalog/cetacean_dist.html), with multiple species shifting northeast between 2010 and 2017 in most seasons (Fig. \ref{fig:protectedspp-dist-shifts}).
   
-```{r species-dist, fig.cap = "Aggregate species distribution metrics for species in the Northeast Large Marine Ecosystem: along shelf distance with increasing trend (orange), and depth with decreasing trend indicating deeper water (purple).", fig.width = 8, fig.asp=0.27}
+```{r species-dist, fig.cap = return_caption(chunk_name = "species-dist"), fig.width = 8, fig.asp=0.27}
+# TODO: these xlims are outdated?
 a <- ecodata::plot_species_dist(varName = "along", n = 10) + ggplot2::coord_cartesian(xlim = c(1969, 2021))
 b <- ecodata::plot_species_dist(varName = "depth", n = 10) + ggplot2::coord_cartesian(xlim = c(1969, 2021))
 
@@ -166,8 +228,9 @@ a + b
 ```  
 
 
-```{r protectedspp-dist-shifts, fig.cap="Direction and magnitude of core habitat shifts, represented by the length of the line of the seasonal weighted centroid for species with more than 70 km difference between 2010 and 2017 (tip of arrow).", fig.width=6.5, fig.asp=0.8}
-ecodata::plot_cetacean_dist() + ggplot2::ggtitle("Whale and Dolphin Distribution Shifts")
+```{r protectedspp-dist-shifts, fig.cap= return_caption(chunk_name = "protectedspp-dist-shifts"), fig.width=6.5, fig.asp=0.8}
+ecodata::plot_cetacean_dist() + 
+  ggplot2::ggtitle("Whale and Dolphin Distribution Shifts")
 ```
 
 
@@ -175,7 +238,8 @@ ecodata::plot_cetacean_dist() + ggplot2::ggtitle("Whale and Dolphin Distribution
 
 Mobile populations shift distributions to maintain suitable temperature and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is related, in part, to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has been more variable over time.  [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring. 
 
-```{r forageshifts, fig.cap="Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity.", fig.width = 8, fig.asp = .3}
+```{r forageshifts, fig.cap=return_caption(chunk_name = "forageshifts"), fig.width = 8, fig.asp = .3}
+## TODO: move these aesthetic updates into ecodata function
 ecodata::plot_forage_index(varName = "cog", n = 10) +
   ggplot2::coord_cartesian(xlim = c(1982, 2023)) +
   ggplot2::ggtitle("Northeast U.S. Forage Fish Distribution") +
@@ -184,30 +248,29 @@ ecodata::plot_forage_index(varName = "cog", n = 10) +
 
 In contrast, [macrobenthos](https://noaa-edab.github.io/catalog/benthos_index.html) center of gravity has shifted westward (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. [Large copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4) have a similar pattern to macrobenthos, trending westward in fall.
 
-```{r macrobenthosshifts, fig.cap="Eastward (left) and northward (right) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf", fig.width = 8,fig.asp = .3}
+```{r macrobenthosshifts, fig.cap=return_caption(chunk_name = "macrobenthosshifts"), fig.width = 8,fig.asp = .3}
+## TODO: move these aesthetic updates into ecodata function
 ecodata::plot_benthos_index(plottype = "cog", varName = "Macrobenthos", n = 10) +
   ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
   ggplot2::ggtitle("Northeast U.S. Macrobenthos Distribution") +
   ggplot2::ylab("Center of Gravity, km")
 ```
 
-
 Ocean temperatures influence the distribution, seasonal timing, and productivity of managed species (see sections below). The Northeast US shelf, including the Mid-Atlantic, has experienced a continued warming trend for both the [long term annual sea surface](https://noaa-edab.github.io/catalog/long_term_sst.html) (Fig. \ref{fig:long-term-sst}) and [seasonal  surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) and [bottom temperature](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html). However, 2024 surface and bottom temperatures were near normal to cooler than normal conditions in all seasons in the MAB (see also the [2024 Highlights section](#highlights)).
 
-```{r long-term-sst, fig.cap="Northeast US annual sea surface temperature (SST, black), with increasing trend (orange)."}
+```{r long-term-sst, fig.cap=return_caption(chunk_name = "long-term-sst")}
 ecodata::plot_long_term_sst(n = 10)
 ```
 
-
 Species suitable habitat can expand or contract when changes in temperature and major oceanographic conditions alter distinct water mass habitats.The variability of the Gulf Stream is a major driver of the predominant oceanographic conditions of the Northeast U.S. continental shelf. As the [Gulf Stream](https://noaa-edab.github.io/catalog/gsi.html) has become less stable and shifted northward in the last decade (Fig. \ref{fig:GSI}), warmer ocean temperatures have been observed on the northeast shelf and a higher proportion of [Warm Slope Water](https://noaa-edab.github.io/catalog/slopewater.html) has been present in the Northeast Channel. Since 2008, the Gulf Stream has moved closer to the Grand Banks, reducing the supply of cold, fresh, and oxygen-rich Labrador Current waters to the Northwest Atlantic Shelf. In 2024, however, the [eastern portion of the Gulf Stream was further south](https://noaa-edab.github.io/catalog/gsi.html), which could affect the composition of the source water entering the Gulf of Maine through the Northeast Channel (see [2024 Highlights](#highlights)).
 
-```{r GSI, fig.cap = "Index representing changes in the location of the western (between 64 and 55 degrees W) Gulf Stream north wall (black). Positive values represent a more northerly Gulf Stream position, with increasing trend (orange)."}
+```{r GSI, fig.cap = fig.cap=return_caption(chunk_name = "GSI")}
 ecodata::plot_gsi(varName = "westgsi", n = 10)
 ```
 
 Changes in ocean temperature and circulation alter habitat features such as the Middle Atlantic Bight [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html), a band of relatively cold near-bottom water from spring to fall over the  northern MAB. The cold pool represents essential fish spawning and nursery habitat, and affects fish distribution and behavior. The cold pool has been getting warmer and its areal extent has been shrinking over time (Fig. \ref{fig:cold-pool-size}). In 2024, however, the cold pool index and extent were near the long-term average, likely due to the influx of Labrador Slope and Scotian Shelf waters into the system.
 
-```{r cold-pool-size, fig.cap="Seasonal cold pool mean temperature (left) and spatial extent index (right), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple).", fig.width = 7.5, fig.asp = 0.3, results='hide'}
+```{r cold-pool-size, fig.cap=return_caption(chunk_name = "cold-pool-size"), fig.width = 7.5, fig.asp = 0.3, results='hide'}
 a <- ecodata::plot_cold_pool(varName = "cold_pool", n = 10)
 b <- ecodata::plot_cold_pool(varName = "extent", n = 10)
 
@@ -224,9 +287,88 @@ Adapting management to changing stock distributions and dynamic ocean processes 
 
 ### Risks to managing seasonally
 
+The effectiveness of seasonal management actions (fishing seasons or area opening/closing) depends on a proper alignment with the seasonal life cycle events (phenology) of fish stocks (e.g. migration timing and spawning). Changes in the timing of these biological cycles can reduce the effectiveness of management measures if not accounted for. The timing of seasonal patterns can also change the interactions between fisheries and non-target species thus influencing the amount of bycatch and the availability of species to surveys.
+
+#### Indicators: Timing shifts
+
+[Spawning timing](https://noaa-edab.github.io/catalog/spawn_timing.html) is shifting earlier for multiple stocks, including haddock and yellowtail flounder. Spawning of both haddock stocks occurred earlier in the year, as indicated by more resting (post-spawning) stage fish in the 2010s as compared to earlier in the time series (Fig. \ref{fig:spawntiming}). The northern (Cape Cod/GOM) yellowtail flounder stock shows earlier active spawning in recent years with a decline in pre-spawning resting females.The recent increase in resting females in the southern (SNE) stock also indicates a shift to earlier spawning (i.e. more post-spawn fish). Yellowtail flounder spawning is related to bottom temperature, week of year, and decade sampled for each of the three stocks.
+
+```{r spawntiming, fig.cap=return_caption(chunk_name = "spawntiming"), fig.width = 7, fig.asp=.5}
+ecodata::plot_spawn_timing(n=10) + 
+  ggplot2::ggtitle("Spring Resting Maturity Stage")
+```
+
+[Migration timing](https://noaa-edab.github.io/catalog/timing_shifts.html) of some tuna and large whale migrations has changed. An analysis of recreational fishing data between 2019 and 2022 identified multiple shifts in important HMS species. For example, Bigeye tuna were caught 50 days earlier; small and large bluefin tuna were caught 38 and 80 days earlier respectively in Massachusetts; and blue marlin in New York were caught 27 days earlier. In Cape Cod Bay, peak spring habitat use by right and humpback whales has shifted 18-19 days later over time.
+
+Understanding whether seasonal patterns are changing for stocks requires regular observations throughout the year. For example, baseline work on [cetacean presence in Southern New England](https://noaa-edab.github.io/catalog/cetacean_acoustic.html) shows different seasonal use patterns for whale and dolphin species. Despite the importance of understanding seasonal patterns,  we have few indicators that directly assess timing shifts of species. We plan on incorporating more indicators of timing shifts and phenology in future reports.
+
+#### Drivers: 
+
+The drivers of timing shifts in managed stocks are generally coupled to shifts in environmental or biological conditions, since these can result in changes in habitat quality or food availability within the year. Changes in the timing of fall phytoplankton blooms and seasonal shifts in zooplankton communities are indicators of changes in seasonal food availability to stocks.
+
+Along with the overall warming trends in `r region`, ocean summer conditions have been lasting longer (Fig. \ref{fig:transition}) due to the later [transition](https://noaa-edab.github.io/catalog/trans_dates.html) from warm summer conditions to cooler fall temperatures. These transition dates relate how daily temperatures compare to the seasonal norm. Changes in the timing of seasonal environmental cycles can alter biological processes (migrations, spawning, etc.) that are triggered by seasonal events.  
+
+```{r transition, fig.cap=return_caption(chunk_name = "transition")}
+## TODO: move aesthetics into ecodata function
+ecodata::plot_trans_dates(report = params$region, varName = "length", n=10) + 
+  ggplot2::ggtitle(paste("Time between spring and fall transition in", region)) + 
+  theme(
+  strip.background = element_blank(),
+  strip.text.x = element_blank()
+)
+```
+
+```{r, child = here::here(paste0("child_docs/06_risk_seasonal_", stringr::str_to_lower(params$region), ".Rmd"))}
+```
+
+#### Future Considerations
+
+For species  reliant on environmental processes to dictate the timing of their behavior (e.g. phytoplankton bloom timing, thermal transition, or the duration of the cold pool), it is possible that some changes are episodic and have interannual variability, while other timing effects can change on scales of years to decades. Other species may rely on the general seasonal succession of environmental drivers (e.g. the timing of the fall turnover) to cue biological processes, and these long-term trends are unlikely to reverse in coming years. Such timing shifts in migration or spawning may continue. Management actions that rely on effective alignment of fisheries availability and biological processes should continue to evaluate whether prior assumptions on seasonal timings still hold, and new indicators should be developed to monitor timing shifts for stocks.
+
 ### Risks to setting catch limits
 
-### Other Ocean Uses: Offshore Wind
+The efficacy of short-term stock projections and rebuilding plans rely on accurate understanding of processes affecting stock growth, reproduction, and natural mortality. These biological processes are often driven by underlying environmental change. When observed environmental change occurs, there is a risk that established stock-level biological reference points may no longer reflect the current population and short-term projections become more uncertain.
+
+```{r, child = here::here(paste0("child_docs/07_risk_setting_catch_limits_", stringr::str_to_lower(params$region), ".Rmd"))}
+```
+
+#### Future Considerations
+The processes that control fish productivity and mortality are dynamic, complex, and are the result of the interactions between multiple system drivers. There is a real risk that short-term predictions in assessments and rebuilding plans that assume unchanging underlying conditions will be highly uncertain and not be as effective, given the observed change documented in the prior sections in both ecological and environmental processes. Assumptions for species’ growth, reproduction, and natural mortality should continue to be evaluated for individual species. With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management.
+
+## Other Ocean Uses: Offshore Wind
+
+### Indicators: development timeline, revenue in lease areas, coastal community vulnerability
+All reported potential offshore wind projected development timelines and data are subject to change and have been based on BOEM Environmental Impact Statements.  Offshore wind development schedule and areas are subject to change based on the Executive Order [Temporary Withdrawal of All Areas on the Outer Continental Shelf from Offshore Wind Leasing and Review of the Federal Government's Leasing and Permitting Practices for Wind Projects](https://www.whitehouse.gov/presidential-actions/2025/01/temporary-withdrawal-of-all-areas-on-the-outer-continental-shelf-from-offshore-wind-leasing-and-review-of-the-federal-governments-leasing-and-permitting-practices-for-wind-projects/).
+
+As of January 2025, 30 offshore [wind development](https://noaa-edab.github.io/catalog/wind_dev_speed.html) projects are proposed for construction over the next decade in the Northeast (timelines and project data for 2025 are based on the Maryland Offshore Wind Final Environmental Impact Statement, Appendix D). Offshore wind areas are anticipated to cover more than 2.3 million acres by 2030 in the Greater Atlantic region (Fig. \ref{fig:wind-proposed-dev}). An additional 800,000 lease acres are proposed for development beyond 2030 and 17 million acres are identified by BOEM as designated planning areas (Fig. \ref{fig:wind-dev-cumul}).
+
+```{r wind-proposed-dev, fig.cap=return_caption(chunk_name = "wind-proposed-dev"), fig.width=5}
+ecodata::plot_wind_dev_speed()
+```
+
+Just over 3,200 foundations and more than 12,000 miles of inter-array and offshore export cables are proposed to date (Fig. \ref{fig:wind-dev-cumul}). Based on current timelines, the areas affected would be spread out such that it is unlikely that any one region would experience full development at one time. Construction of three projects in Southern New England (Vineyard Wind, South Fork Wind Farm, and Revolution Wind) and two more in the Mid-Atlantic/New York Bight (Coastal Virginia Offshore Wind and Empire Wind 1) during 2024 affected fisheries managed by the Mid-Atlantic Fishery Management Council. It is likely that construction will begin on other projects in Southern New England and possibly the New York Bight during 2025 that will further affect regional fisheries.
+
+```{r wind-dev-cumul, fig.cap = return_caption(chunk_name = "wind-dev-cumul"), out.width='90%'}
+magick::image_read_pdf("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/UpdatedWindFigure49(MAFMC)andFig50(NEFMC)-AngelaSilva_2025.pdf") 
+```
+
+```{r, child = here::here(paste0("child_docs/08_offshore_wind_", stringr::str_to_lower(params$region), ".Rmd"))}
+```
+
+
+### Implications
+Current plans for buildout of offshore wind in a patchwork of areas spreads the impacts differentially throughout the region (Fig. \ref{fig:wind-dev-cumul}).  `r wind_impact` in lease areas could be forgone or reduced and associated effort displaced if all sites are developed. Displaced fishing effort can alter historic fishing area, timing, and method patterns, which can in turn change habitat, species (managed and protected), and fleet interactions. Several factors, including fishery regulations, fishery availability, and user conflicts affect where, when, and how fishing effort may be displaced, along with impacts to and responses of affected fish species.  
+
+Planned development [overlaps NARW](https://noaa-edab.github.io/catalog/persistent_hotspots.html) mother and calf migration corridors and a significant foraging habitat that is used throughout the year (Fig. \ref{fig:whales-wind}). Turbine presence and extraction of energy from the system could alter local oceanography and may affect right whale prey availability. For example, persistent foraging hotspots of right whales and seabirds overlap on Nantucket Shoals, where unique hydrography aggregates enhanced prey densities. Wind leases (OCS-A 0521 and OCS-A 0522) currently intersect these hotspots on the southwestern corner of Nantucket Shoals and a prominent tidal front associated with invertebrate prey swarms important to seabirds and possibly right whales. Proposed wind development areas also bring increased vessel strike risk from construction and operation vessels. In addition, there are a number of potential impacts to whales from pile driving and operational noise such as displacement, increased levels of communication masking, and elevated stress hormones.  
+
+```{r whales-wind, out.width="55%", fig.cap=return_caption(chunk_name = "whales-wind")}
+magick::image_read("https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/NARW_hotspots_final_2024.jpg")
+```
+
+Scientific data collection surveys for ocean and ecosystem conditions, fish, and protected species will be altered, potentially increasing uncertainty for stock assessments and associated management decision making.
+
+The increase of offshore wind development can have both positive (e.g., employment opportunities) and negative (e.g., space-use conflicts) effects. Continued increase in coastal development and gentrification pressure has resulted in loss of fishing infrastructure space within ports. Understanding these existing pressures can allow for avoiding and mitigating negative impacts to our shore support industry and communities dependent on fishing. Some of the communities with the highest fisheries revenue overlap with offshore wind development areas that are also vulnerable to gentrification pressure are `r gentrification_ports`.
+
 
 \newpage
 ### 2024 Highlights {#highlights}
