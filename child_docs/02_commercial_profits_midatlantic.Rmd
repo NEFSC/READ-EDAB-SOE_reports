@@ -11,12 +11,12 @@ In the Mid-Atlantic region revenues were above the 1982 baseline for all years i
 ```{r bennet, fig.cap = return_caption(chunk_name = "bennet"), fig.width=6, fig.asp=.35}
 ```
 
-```{r bennet-all, fig.cap = return_caption(chunk_name = "bennet-all"),  fig.width = 7.5, fig.asp = 0.35}
+```{r bennet-all, fig.cap = return_caption(chunk_name = "bennet-all"),  fig.width = 6.5, fig.asp = 0.35}
 ```
 
 For ports combined across Mid-Atlantic states, [total climate vulnerability](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) of revenue ranged from high to very high from 2000-2021, with no long-term trend. This suggests that Mid-Atlantic port commercial fishing revenue has been highly reliant on climate-sensitive species for most of the period since 2000 (Fig. \ref{fig:climatevul-rev}). 
 
-```{r climatevul-rev, fig.width=8, fig.asp=0.5, fig.cap=return_caption(chunk_name = "climatevul-rev")}
+```{r climatevul-rev, fig.width=6.5, fig.asp=0.5, fig.cap=return_caption(chunk_name = "climatevul-rev")}
 ```
 
 ### Implications 

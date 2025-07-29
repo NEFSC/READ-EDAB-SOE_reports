@@ -5,7 +5,7 @@ While there are many potential metrics of stability, we use diversity indices to
 #### Fishery Stability 
 Several [diversity](https://noaa-edab.github.io/catalog/commercial_div.html) estimates are used to evaluate stability for fleets landing federally managed species, and species landed by commercial vessels with Mid-Atlantic permits. Commercial fishery fleet count has declined while fleet revenue diversity has been stable over time in the MAB, with no trend identified, but current values are above the long-term average (Fig. \ref{fig:comm-div-fleet}). 
 
-```{r comm-div-fleet, fig.width = 7.5, fig.asp = 0.3, fig.cap=return_caption(chunk_name = "comm-div-fleet")}
+```{r comm-div-fleet, fig.width = 6.5, fig.asp = 0.3, fig.cap=return_caption(chunk_name = "comm-div-fleet")}
 ```
 
 This indicates different commercial fleet composition but similar diversity in species targeting opportunities over time, for those fleets continuing to fish (Fig. \ref{fig:commercial-div-species-div}). Of note is that the current lack of vessel data available for surf clam and ocean quahog prior to 2003 precludes the assessment of longer term dynamics with these indicators.

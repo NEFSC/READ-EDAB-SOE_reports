@@ -1,0 +1,20 @@
+---
+title: "Untitled"
+output: pdf_document
+date: "2025-07-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r mab-oa}
+# this figure is in both reports, despite chunk name
+magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
+```
+
+
+```{r mab-oa2}
+# this figure is in both reports, despite chunk name
+knitr::include_graphics("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
+```

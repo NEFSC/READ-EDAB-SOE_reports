@@ -191,7 +191,7 @@ A UME continued from previous years for humpback whales (2016-present) and Atlan
 ### Implications
 Bycatch management measures have been implemented to maintain bycatch below PBR thresholds. The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort. The increasing trend in gray seal bycatch may be related to an increase in the gray seal population ([U.S. pup counts](https://noaa-edab.github.io/catalog/seal_pups.html)), supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
 
-```{r seals, fig.cap = return_caption(chunk_name = "seals"),fig.width = 7.5, fig.asp = 0.4, eval = params$region == "NewEngland"}
+```{r seals, fig.cap = return_caption(chunk_name = "seals"),fig.width = 6.5, fig.asp = 0.4, eval = params$region == "NewEngland"}
 ecodata::plot_seal_pups(report = params$region)+
   theme(legend.position = 'bottom')
 ```
@@ -217,7 +217,7 @@ As noted in the [Seafood Production Implications section above](#implications), 
 
 [Habitat model-based species richness](https://noaa-edab.github.io/catalog/habitat_diversity.html) suggests shifts of both cooler and warmer water species to the northeast. Similar patterns have been found for [marine mammals](https://noaa-edab.github.io/catalog/cetacean_dist.html), with multiple species shifting northeast between 2010 and 2017 in most seasons (Fig. \ref{fig:protectedspp-dist-shifts}).
   
-```{r species-dist, fig.cap = return_caption(chunk_name = "species-dist"), fig.width = 8, fig.asp=0.27}
+```{r species-dist, fig.cap = return_caption(chunk_name = "species-dist"), fig.width = 6.5, fig.asp=0.27}
 # TODO: these xlims are outdated?
 a <- ecodata::plot_species_dist(varName = "along", n = 10) + ggplot2::coord_cartesian(xlim = c(1969, 2021))
 b <- ecodata::plot_species_dist(varName = "depth", n = 10) + ggplot2::coord_cartesian(xlim = c(1969, 2021))
@@ -236,7 +236,7 @@ ecodata::plot_cetacean_dist() +
 
 Mobile populations shift distributions to maintain suitable temperature and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is related, in part, to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has been more variable over time.  [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring. 
 
-```{r forageshifts, fig.cap=return_caption(chunk_name = "forageshifts"), fig.width = 8, fig.asp = .3}
+```{r forageshifts, fig.cap=return_caption(chunk_name = "forageshifts"), fig.width = 6.5, fig.asp = .3}
 ## TODO: move these aesthetic updates into ecodata function
 ecodata::plot_forage_index(varName = "cog", n = 10) +
   ggplot2::coord_cartesian(xlim = c(1982, 2023)) +
@@ -246,7 +246,7 @@ ecodata::plot_forage_index(varName = "cog", n = 10) +
 
 In contrast, [macrobenthos](https://noaa-edab.github.io/catalog/benthos_index.html) center of gravity has shifted westward (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. [Large copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4) have a similar pattern to macrobenthos, trending westward in fall.
 
-```{r macrobenthosshifts, fig.cap=return_caption(chunk_name = "macrobenthosshifts"), fig.width = 8,fig.asp = .3}
+```{r macrobenthosshifts, fig.cap=return_caption(chunk_name = "macrobenthosshifts"), fig.width = 6.5,fig.asp = .3}
 ## TODO: move these aesthetic updates into ecodata function
 ecodata::plot_benthos_index(plottype = "cog", varName = "Macrobenthos", n = 10) +
   ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
@@ -268,7 +268,7 @@ ecodata::plot_gsi(varName = "westgsi", n = 10)
 
 Changes in ocean temperature and circulation alter habitat features such as the Middle Atlantic Bight [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html), a band of relatively cold near-bottom water from spring to fall over the  northern MAB. The cold pool represents essential fish spawning and nursery habitat, and affects fish distribution and behavior. The cold pool has been getting warmer and its areal extent has been shrinking over time (Fig. \ref{fig:cold-pool-size}). In 2024, however, the cold pool index and extent were near the long-term average, likely due to the influx of Labrador Slope and Scotian Shelf waters into the system.
 
-```{r cold-pool-size, fig.cap=return_caption(chunk_name = "cold-pool-size"), fig.width = 7.5, fig.asp = 0.3, results='hide'}
+```{r cold-pool-size, fig.cap=return_caption(chunk_name = "cold-pool-size"), fig.width = 6.5, fig.asp = 0.3, results='hide'}
 a <- ecodata::plot_cold_pool(varName = "cold_pool", n = 10)
 b <- ecodata::plot_cold_pool(varName = "extent", n = 10)
 
@@ -291,7 +291,7 @@ The effectiveness of seasonal management actions (fishing seasons or area openin
 
 [Spawning timing](https://noaa-edab.github.io/catalog/spawn_timing.html) is shifting earlier for multiple stocks, including haddock and yellowtail flounder. Spawning of both haddock stocks occurred earlier in the year, as indicated by more resting (post-spawning) stage fish in the 2010s as compared to earlier in the time series (Fig. \ref{fig:spawntiming}). The northern (Cape Cod/GOM) yellowtail flounder stock shows earlier active spawning in recent years with a decline in pre-spawning resting females.The recent increase in resting females in the southern (SNE) stock also indicates a shift to earlier spawning (i.e. more post-spawn fish). Yellowtail flounder spawning is related to bottom temperature, week of year, and decade sampled for each of the three stocks.
 
-```{r spawntiming, fig.cap=return_caption(chunk_name = "spawntiming"), fig.width = 7, fig.asp=.5}
+```{r spawntiming, fig.cap=return_caption(chunk_name = "spawntiming"), fig.width = 6.5, fig.asp=.5}
 ecodata::plot_spawn_timing(n=10) + 
   ggplot2::ggtitle("Spring Resting Maturity Stage")
 ```
@@ -421,7 +421,7 @@ In contrast to the  documented die-off of scallops in the Mid-Atlantic Elephant 
 
 The figure format is illustrated in Fig \ref{fig:docformat}a. Trend lines are shown when slope is significantly different from 0 at the p < 0.05 level. An orange line signifies an overall positive trend, and purple signifies a negative trend. To minimize bias introduced by small sample size, no trend is fit for < 30 year time series. Dashed lines represent mean values of time series unless the indicator is an anomaly, in which case the dashed line is equal to 0. Shaded regions indicate the past ten years. If there are no new data for 2022, the shaded region will still cover this time period. The spatial scale of indicators is either coastwide, Mid-Atlantic states (New York, New Jersey, Delaware, Maryland, Virginia, North Carolina), or at the Mid-Atlantic Bight (MAB) Ecosystem Production Unit (EPU, Fig. \ref{fig:docformat}b) level.
 
-```{r docformat, fig.cap = "Document orientation. a. Key to figures. b.The Northeast Large Marine Ecosystem.",  fig.width = 8, fig.height = 2.5}
+```{r docformat, fig.cap = "Document orientation. a. Key to figures. b.The Northeast Large Marine Ecosystem.",  fig.width = 6.5, fig.height = 2.5}
 ecodata::plot_demo(n = 10)
 ```
 
