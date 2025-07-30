@@ -1,6 +1,6 @@
 ---
 title: "Untitled"
-output: pdf_document
+output: bookdown::pdf_document2
 date: "2025-07-29"
 ---
 
@@ -8,13 +8,52 @@ date: "2025-07-29"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r mab-oa}
+```{r mab-oa, fig.cap = "Ocean acidification in the Mid-Atlantic Bight. Figure from Grace Saba."}
 # this figure is in both reports, despite chunk name
 magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
 ```
 
 
-```{r mab-oa2}
-# this figure is in both reports, despite chunk name
-knitr::include_graphics("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
+this is a test (Fig. \ref{fig:mab-oa})
+
+
+## test 1
+
+```{r}
+txt <- "this is a test (Fig. \ref{fig:mab-oa})"
 ```
+
+`r txt`
+
+```{r test, results = "asis"}
+res <- knitr::knit_child(text = txt,
+                         quiet = TRUE)
+cat(res, sep = "\n\n")
+```
+
+## test 2
+```{r}
+txt <- "this is a test (Fig. \\ref{fig:mab-oa})"
+```
+
+`r txt`
+```{r test, results = "asis"}
+```
+
+## test 3
+
+```{r}
+txt <- "this is a test (Fig. \\\\ref{fig:mab-oa})"
+```
+
+`r txt`
+```{r test, results = "asis"}
+```
+
+## test 4
+
+```{r wea-spp-rev, fig.cap = "Wind energy revenue in the Mid-Atlantic Bight."}
+ecodata::plot_wind_revenue(report = "MidAtlantic", varName = "value", plottype = "nofacets")
+```
+
+this is a test (Fig. \ref{fig:wea-spp-rev})

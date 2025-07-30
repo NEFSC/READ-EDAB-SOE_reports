@@ -3,7 +3,7 @@ Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-
 ```{r wea-spp-rev, fig.cap=return_caption(chunk_name = "wea-spp-rev"),  fig.width=5, fig.asp=.4}
 ```
 
-Of MAFMC managed fisheries, the surfclam fishery would be the most affected by offshore wind development, with a maximum of 15% of annual regional fishery revenue occurring within existing wind lease areas during 2008-2023 (see Table \ref{tab:wea-landings-rev}). It should be noted that 2023 surfclam landings/revenue within lease areas may be artificially low due to potential misreporting issues. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.  
+Of MAFMC managed fisheries, the surfclam fishery would be the most affected by offshore wind development, with a maximum of 15% of annual regional fishery revenue occurring within existing wind lease areas during 2008-2023 (see Table \ref{tab:wea-landings-rev-1}). It should be noted that 2023 surfclam landings/revenue within lease areas may be artificially low due to potential misreporting issues. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.  
 
 `r wind_indicator_paragraph`
 

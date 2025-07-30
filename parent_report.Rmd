@@ -80,6 +80,14 @@ caption_key <- read.csv(params$fig_caption) |>
                                            TRUE ~ caption))
 ```
 
+```{r mab-oa, include = FALSE}
+# this figure is in both reports, despite chunk name
+## TODO: only this figure is stored in a subfolder of child_docs, preventing pdf from compiling. ???
+# https://stackoverflow.com/questions/28912868/how-to-insert-image-from-url-in-markdown
+## this needs to be in the parent report
+magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
+```
+
 \setcounter{page}{4}
 \thispagestyle{fancy}
 
@@ -340,7 +348,12 @@ All reported potential offshore wind projected development timelines and data ar
 
 As of January 2025, 30 offshore [wind development](https://noaa-edab.github.io/catalog/wind_dev_speed.html) projects are proposed for construction over the next decade in the Northeast (timelines and project data for 2025 are based on the Maryland Offshore Wind Final Environmental Impact Statement, Appendix D). Offshore wind areas are anticipated to cover more than 2.3 million acres by 2030 in the Greater Atlantic region (Fig. \ref{fig:wind-proposed-dev}). An additional 800,000 lease acres are proposed for development beyond 2030 and 17 million acres are identified by BOEM as designated planning areas (Fig. \ref{fig:wind-dev-cumul}).
 
-```{r wind-proposed-dev, fig.cap=return_caption(chunk_name = "wind-proposed-dev"), fig.width=5}
+```{r}
+## TODO: this is a workaroune because this caption wasn't coming through in the chunk header
+txt <- return_caption(chunk_name = "wind-proposed-dev")
+```
+
+```{r wind-proposed-dev, fig.cap=txt, fig.width=5}
 ecodata::plot_wind_dev_speed()
 ```
 

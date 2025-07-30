@@ -208,12 +208,7 @@ a+b + c
 ecodata::plot_thermal_habitat_gridded(params$region)
 ```
 
-```{r mab-oa, eval=TRUE}
-# this figure is in both reports, despite chunk name
-## TODO: only this figure is stored in a subfolder of child_docs, preventing pdf from compiling. ???
-# https://stackoverflow.com/questions/28912868/how-to-insert-image-from-url-in-markdown
-magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
-```
+<!-- mab-oa chunk moved to parent report -->
 
 <!-- # Other ocean uses: offshore wind -->
 

@@ -31,7 +31,7 @@ harborporpoise,Harbor porpoise average bycatch estimate for Mid-Atlantic and New
 long-term-sst,NA,NA,"Northeast US annual sea surface temperature (SST, black), with increasing trend (orange)."
 longterm-sst,Mean sea surface temperature across the entire Northeast U.S. shelf.,NA,
 mab-cf,NA,"Condition factor for fish species in the MAB based on fall NEFSC bottom trawl survey data. MAB data are missing for 2017 due to survey delays, and no survey was conducted in 2020.",
-mab-oa,NA,"Locations where bottom aragonite saturation state ($\\Omega_{Arag}$; summer only: June-August) were at or below the laboratory-derived sensitivity level for Atlantic sea scallop (left panel) and longfin squid (right panel) for the time periods 2007-2022 (dark cyan), 2023 only (magenta) and 2024 only (cyan). Gray circles indicate locations where bottom $\\Omega_{Arag}$ values were above the species specific sensitivity values..",
+mab-oa,NA,"Locations where bottom aragonite saturation state ($\Omega_{Arag}$; summer only: June-August) were at or below the laboratory-derived sensitivity level for Atlantic sea scallop (left panel) and longfin squid (right panel) for the time periods 2007-2022 (dark cyan), 2023 only (magenta) and 2024 only (cyan). Gray circles indicate locations where bottom $\Omega_{Arag}$ values were above the species specific sensitivity values..",
 macrobenthosshifts,NA,NA,Eastward (left) and northward (right) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf
 mass-biomass,Spring (left) and fall (right) surveyed biomass from the state of Massachusetts inshore survey. The shaded area around each annual mean represents 2 standard deviations from the mean.,NA,
 montlychl,NA,Monthly median chlorophyll a concentration in the MAB (black) with significant increase in January (orange line) and decrease in September (purple line).,
@@ -82,3 +82,4 @@ zooplankton-season,"Abundance (no $m^-2$) of *C. finmarchicus C3-C6 estimated fr
 comm-landings,NA,"Total commercial landings in the Mid-Atlantic Bight (black) and MAFMC-managed U.S seafood landings (red) by feeding guild, with significant declines (purple) in total planktivore landings.",
 commercial-div-species-div,NA,Species revenue diversity in the Mid Atlantic.,
 recdat-div-catch,NA,Diversity of recreational catch in the Mid Atlantic.,
+wind-proposed-dev,NA,NA,Total area proposed for wind develpment on the northeast shelf through 2030.
