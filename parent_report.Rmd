@@ -12,10 +12,25 @@ params:
   region: "MidAtlantic"
   fig_caption: "utils/fig-captions.csv"
   cache: FALSE
+  id_child_docs: FALSE
 ---
 
 
 ```{r setup, include=FALSE}
+# figure out which chunks are taking the most time
+all_times <- list()  # store the time for each chunk
+knitr::knit_hooks$set(time_it = local({
+  now <- NULL
+  function(before, options) {
+    if (before) {
+      now <<- Sys.time()
+    } else {
+      res <- difftime(Sys.time(), now)
+      all_times[[options$label]] <<- res
+    }
+  }
+}))
+
 # Default Rmd options
 knitr::opts_chunk$set(
   echo = FALSE,
@@ -25,7 +40,8 @@ knitr::opts_chunk$set(
   fig.width = 4,
   fig.asp = 0.45,
   fig.align = "center",
-  cache = params$cache
+  cache = params$cache,
+  time_it = TRUE
 ) # allows for inserting R code into captions
 
 # Plotting and data libraries
@@ -349,7 +365,7 @@ All reported potential offshore wind projected development timelines and data ar
 As of January 2025, 30 offshore [wind development](https://noaa-edab.github.io/catalog/wind_dev_speed.html) projects are proposed for construction over the next decade in the Northeast (timelines and project data for 2025 are based on the Maryland Offshore Wind Final Environmental Impact Statement, Appendix D). Offshore wind areas are anticipated to cover more than 2.3 million acres by 2030 in the Greater Atlantic region (Fig. \ref{fig:wind-proposed-dev}). An additional 800,000 lease acres are proposed for development beyond 2030 and 17 million acres are identified by BOEM as designated planning areas (Fig. \ref{fig:wind-dev-cumul}).
 
 ```{r}
-## TODO: this is a workaroune because this caption wasn't coming through in the chunk header
+## TODO: this is a workaround because this caption wasn't coming through in the chunk header
 txt <- return_caption(chunk_name = "wind-proposed-dev")
 ```
 

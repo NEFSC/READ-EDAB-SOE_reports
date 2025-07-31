@@ -1,5 +1,5 @@
 # mid report -- pdf
-
+now <- Sys.time()
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
   output_file = "midatlantic.pdf",
@@ -8,7 +8,8 @@ rmarkdown::render(
     fig_caption = here::here("utils/figure_captions_summary.csv"),
     ## TODO: caching saves as parent file name, could cause problems with regions
     ## TODO: caching does not speed up report generation??
-    cache = TRUE
+    cache = TRUE,
+    id_child_docs = TRUE
   ),
   # intermediates_dir = here::here("output"),
   # knit_root_dir = here::here("output"),
@@ -26,6 +27,7 @@ rmarkdown::render(
   # bookdown::word_document2(toc = FALSE)
 )
 # )
+difftime(Sys.time(), now)
 
 ## mid report -- html
 

@@ -1,6 +1,5 @@
 
 ```{r shared-text}
-## TODO: why does \r get removed when using these texts?
 
 implications_text <- "Declining commercial (total and seafood) landings and recreational harvest can be driven by many interacting factors, including combinations of ecosystem and stock production, management actions, market conditions, and environmental change. While we cannot evaluate all possible drivers at present, here we evaluate the extent to which stock status, management, and system biomass trends may play a role."
 

@@ -1,3 +1,8 @@
+
+```{r child-header, eval = params$id_child_docs}
+paste("Beginning", knitr::current_input())
+```
+
 ### Indicators: Landings; commercial and recreational
 
 This year, we present updated indicators for total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html), (includes seafood, bait, and industrial landings), U.S. seafood landings, and Council-managed U.S. seafood landings. Total commercial landings within the Mid-Atlantic have declined over the long term, and both total U.S. and Mid-Atlantic managed seafood landings are near their all time low (Fig. \ref{fig:total-landings}).
@@ -93,3 +98,7 @@ Other environmental changes require monitoring as they may become important driv
 - Stocks are shifting their distributions, moving towards the northeast and into deeper waters throughout the Northeast US Large Marine Ecosystem (see [Climate Risks section](#climate-and-ecosystem-change)).
 - Some ecosystem composition and production changes have been observed (see [Stability section](#stability)). 
 - Some fishing communities are affected by socioeconomic vulnerabilities (see [Community Social and Climate Vulnerability section](#community-social-and-climate-vulnerability)).  
+
+```{r child-footer, eval = params$id_child_docs}
+paste("Ending", knitr::current_input())
+```

@@ -1,3 +1,6 @@
+```{r, eval = params$id_child_docs}
+<<child-header>>
+```
 
 ### Indicators: fishery fleet and catch diversity, ecological component diversity 
 While there are many potential metrics of stability, we use diversity indices to evaluate overall stability in fisheries and ecosystems. In general, diversity that remains constant over time suggests a similar capacity to respond to change over time. A significant change in diversity over time does not necessarily indicate a problem or an improvement, but does indicate a need for further investigation. We examine diversity in commercial fleet and species catch, recreational species catch (with fleet effort diversity discussed above), zooplankton, adult fishes, and fish traits (e.g. size and fecundity).
@@ -54,3 +57,7 @@ Production at the base of the food web is variable, but stable over time. Stable
 There was evidence for long term change in finfish trait distributions in the mid-Atlantic Bight, with spring and fall communities showing shifts in different directions. This suggests instability in seasonal dominance of fish with faster or slower life histories.
 
 In the MAB, existing diversity indicators suggest some instability in the fisheries and ecosystem components examined. In addition, declining recreational fleet diversity suggests a potential loss in the range of recreational fishing opportunities. Increasing zooplankton diversity (due to increases in abundance of several taxa and stable or declining dominance of an important copepod species) suggests a shift in the zooplankton community that warrants continued monitoring to determine if managed species are affected. The species revenue diversity in commercial landings also warrants continued attention given its relatively low index value indicating average reliance on a small number of species for revenue.
+
+```{r, eval = params$id_child_docs}
+<<child-footer>>
+```

@@ -1,3 +1,7 @@
+```{r, eval = params$id_child_docs}
+<<child-header>>
+```
+
 ### Indicators: Fishing Engagement and Community Social Vulnerability
 
 The [engagement](https://noaa-edab.github.io/catalog/engagement.html) indices demonstrate the importance of commercial and recreational fishing to a given community relative to other coastal communities in a region. Social vulnerability indicators measure social factors that shape a community’s ability to adapt to change.  For this report, we focus on top communities with the highest engagement scores, the top communities with the highest population relative engagement scores, and on three socio-demographic indicators within the CSVI toolset (poverty, personal disruption, population composition). 
@@ -6,11 +10,8 @@ In 2022, Cape May, NJ; Reedville, VA; and Montauk, NY were the most engaged comm
  
  Manteo, Vandemere, and Hobuken, NC are no longer listed as top ten recreational communities, replaced by Cape May and Barnegat Light, NJ; Orient, NY; Topsail Beach, Avon and Rodanthe, NC (Fig.\ref{fig:recreational-engagement-1}). 
 
- 
-```{r commercial-engagement, results='hide'}
-```
-
 ```{r commercial-engagement-1, fig.cap= return_caption(chunk_name = "commercial-engagement"), fig.width = 7, fig.asp = 0.85, results='hide'}
+<<commercial-engagement>>
 a + ggplot2::theme(plot.title=element_text(vjust = 0))
 ```
 
@@ -33,10 +34,8 @@ t |>
 
 Several communities ranked in the top communities for both commercial and recreational indices; Montauk, NY, Cape May, NJ, Barnegat Light, NJ, Point Pleasant Beach, NJ, Ocean City, MD, and Wachapreague, VA (Fig. \ref{fig:recreational-engagement-1}), meaning these communities may be impacted simultaneously (to a greater degree than others) by commercial and recreational regulatory changes. Of those included in the top-ranked recreational communities, both Bivalve, MD and Morehead City, NC had medium or higher ranks for two of three socio-demographic indicators examined here (Table \ref{tab:recvultab}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
 
-```{r recreational-engagement, results='hide'}
-```
-
 ```{r recreational-engagement-1, fig.cap= return_caption(chunk_name = "recreational-engagement"), fig.width = 7, fig.asp = 0.85, results='hide'}
+<<recreational-engagement>>
 a + ggplot2::theme(plot.title=element_text(vjust = 0))
 ```
 
@@ -67,3 +66,7 @@ The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catal
 A range of socioeconomic and climate vulnerability concerns are found throughout Mid-Atlantic fishing communities. These indicators provide a snapshot of the presence of socio-demographic concerns in most highly engaged commercial and recreational fishing communities in the Mid-Atlantic. These communities may be especially vulnerable to changes in fishing patterns due to regulations and/or ecosystem changes. Several of these top fishing communities, both commercial and recreational fishing communities, demonstrated medium to high socio-demographic vulnerability, indicating that they may be at a disadvantage responding to change.
 
 There is evidence that a majority of Mid-Atlantic communities have high to very high total climate vulnerability based on revenue. Coastal fishing communities are greatly affected by climate change, both because of their physical location and because of their frequent social, cultural, and economic dependence on fishing. These impacts are expected to become more pressing as climatic changes become more extensive. Changes in [ocean temperature](https://noaa-edab.github.io/catalog/bottom_temp_insitu.html) and [acidification](https://noaa-edab.github.io/catalog/ocean_acidification.html) affecting marine life have the potential to directly impact fisheries and fishery dependent livelihoods.  
+
+```{r, eval = params$id_child_docs}
+<<child-footer>>
+```

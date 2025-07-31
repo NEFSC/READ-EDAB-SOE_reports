@@ -1,3 +1,7 @@
+```{r, eval = params$id_child_docs}
+<<child-header>>
+```
+
 ### Indicators: revenue (a proxy for profits)  
 Total [commercial revenue](https://noaa-edab.github.io/catalog/comdat.html) and MAFMC managed species revenue within the Mid-Atlantic Bight have declined over the past 20-30 years. In 2023, total revenue was at an all-time low, and revenue from MAFMC managed species was near an all-time low (Fig. \ref{fig:comm-revenue}). 
 
@@ -24,4 +28,8 @@ Although the Mid-Atlantic region shows declining revenue since 2016, inflation-a
 
 -  Surfclams, ocean quahogs, and scallops are sensitive to warming ocean temperatures and ocean acidification, as reflected in the high climate vulnerability of total landings from from Mid-Atlantic ports. 
 -  Multiple stressors including [warming](https://noaa-edab.github.io/catalog/bottom_temp_insitu.html) and [ocean acidification](https://noaa-edab.github.io/catalog/ocean_acidification) are interacting in Mid-Atlantic shellfish habitats.
-  
+
+```{r, eval = params$id_child_docs}
+<<child-footer>>
+```
+

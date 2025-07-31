@@ -1,3 +1,7 @@
+```{r, eval = params$id_child_docs}
+<<child-header>>
+```
+
 #### Indicators: Fish productivity and condition shifts
 Indicators of [fish productivity](https://noaa-edab.github.io/catalog/productivity_anomaly.html) are derived from observations (surveys) or models (stock assessments). Fish productivity has been declining in the Mid-Atlantic since the early 2000s, as described by the small-fish-per-large-fish anomaly indicator (derived from NEFSC bottom trawl survey) (Fig. \ref{fig:productivity-anomaly}). This decline in fish productivity is also shown by a similar analysis based on stock assessment model outputs (recruitment per spawning stock biomass anomaly).  
 
@@ -60,3 +64,6 @@ The abundance and distribution of marine mammal, HMS, and shark predators can af
 
 Indicators for shark populations, combined with information on gray seals (see [Protected Species Implications section, above](#protected-species)), suggests predator populations range from stable ([sharks](https://noaa-edab.github.io/catalog/hms_cpue.html)) to increasing ([gray seals](https://noaa-edab.github.io/catalog/seal_pups.html))  in the MAB. [Stock status](https://noaa-edab.github.io/catalog/hms_stock_status.html) is mixed for Atlantic Highly Migratory Species (HMS) stocks (including sharks, swordfish, billfish, and tunas) occurring throughout the Northeast U.S. shelf. While there are several HMS species considered to be overfished or that have unknown stock status, the population status for some managed Atlantic sharks and tunas is at or above the biomass target, suggesting the potential for robust (or rebuilt) predator populations among these managed species. Stable predator populations suggest stable predation pressure on managed species, but increasing predator populations may reflect increasing predation pressure.
 
+```{r, eval = params$id_child_docs}
+<<child-footer>>
+```
