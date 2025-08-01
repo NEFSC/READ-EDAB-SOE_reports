@@ -18,18 +18,18 @@ params:
 
 ```{r setup, include=FALSE}
 # figure out which chunks are taking the most time
-all_times <- list()  # store the time for each chunk
-knitr::knit_hooks$set(time_it = local({
-  now <- NULL
-  function(before, options) {
-    if (before) {
-      now <<- Sys.time()
-    } else {
-      res <- difftime(Sys.time(), now)
-      all_times[[options$label]] <<- res
-    }
-  }
-}))
+# all_times <- list()  # store the time for each chunk
+# knitr::knit_hooks$set(time_it = local({
+#   now <- NULL
+#   function(before, options) {
+#     if (before) {
+#       now <<- Sys.time()
+#     } else {
+#       res <- difftime(Sys.time(), now)
+#       all_times[[options$label]] <<- res
+#     }
+#   }
+# }))
 
 # Default Rmd options
 knitr::opts_chunk$set(
@@ -40,8 +40,8 @@ knitr::opts_chunk$set(
   fig.width = 4,
   fig.asp = 0.45,
   fig.align = "center",
-  cache = params$cache,
-  time_it = TRUE
+  cache = params$cache#,
+  # time_it = TRUE
 ) # allows for inserting R code into captions
 
 # Plotting and data libraries
@@ -101,7 +101,9 @@ caption_key <- read.csv(params$fig_caption) |>
 ## TODO: only this figure is stored in a subfolder of child_docs, preventing pdf from compiling. ???
 # https://stackoverflow.com/questions/28912868/how-to-insert-image-from-url-in-markdown
 ## this needs to be in the parent report
-magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
+# mab_oa_plot <- magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
+
+mab_oa_image <- here::here("images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
 ```
 
 \setcounter{page}{4}

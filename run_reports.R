@@ -3,6 +3,8 @@ now <- Sys.time()
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
   output_file = "midatlantic.pdf",
+  clean = TRUE,
+  envir = new.env(),
   params = list(
     region = "MidAtlantic",
     fig_caption = here::here("utils/figure_captions_summary.csv"),

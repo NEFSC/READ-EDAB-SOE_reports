@@ -5,6 +5,7 @@
 Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) from trips in the current offshore wind lease areas, including the newly designated lease areas in the Central Atlantic, have varied annually from 2008-2023, with less than \$1 million in maximum annual revenue overlapping with these areas for most fisheries with the exception of the surfclam, monkfish, and longfin squid fisheries. Some fisheries see periodic spikes in revenue overlap with wind energy lease areas, including the surfclam (\$6.5 million), longfin squid (\$4.8 million), monkfish (\$2.5 million), and summer flounder (\$1.3 million) fisheries (Fig. \ref{fig:wea-spp-rev}). 
 
 ```{r wea-spp-rev, fig.cap=return_caption(chunk_name = "wea-spp-rev"),  fig.width=5, fig.asp=.4}
+wea_spp_rev_plot
 ```
 
 Of MAFMC managed fisheries, the surfclam fishery would be the most affected by offshore wind development, with a maximum of 15% of annual regional fishery revenue occurring within existing wind lease areas during 2008-2023 (see Table \ref{tab:wea-landings-rev-1}). It should be noted that 2023 surfclam landings/revenue within lease areas may be artificially low due to potential misreporting issues. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.  
@@ -12,11 +13,8 @@ Of MAFMC managed fisheries, the surfclam fishery would be the most affected by o
 `r wind_indicator_paragraph`
 
 ```{r wea-landings-rev, ft.arraystretch = 1}
-```
-
-```{r wea-landings-rev-1, ft.arraystretch = 1}
 ## TODO: this and previous chunk should be turned into a function
-flextable::flextable(dt) %>%
+flextable::flextable(wea_landings_rev_table) %>%
   flextable::set_caption("Mid-Atlantic managed species Landings and Revenue from Wind Energy Areas. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species.") %>%
   flextable::width(width = c(2,2,2))
 ```
@@ -26,6 +24,7 @@ flextable::flextable(dt) %>%
 `r socio_intro`
 
 ```{r wea-port-rev, fig.cap=return_caption(chunk_name = "wea-port-rev"),  fig.width=6.5, fig.asp=.82, fig.align='left', cache = TRUE}
+wea_port_rev_plot
 ```
 
 For example, Atlantic City, NJ was in the top three potential revenue loss (historical minimum of 3% and maximum of 24%, respectively) from potential wind development areas based on 2008-2023 total port fisheries revenue. BOEM reports that cumulative offshore wind development (if all proposed projects are developed) could have moderate impacts on low-income members of communities with socio-demographic concerns who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation and increased vessel traffic, as well as existing vulnerabilities of low-income workers to economic impacts.

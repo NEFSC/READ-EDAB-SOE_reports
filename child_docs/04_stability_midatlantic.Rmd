@@ -9,16 +9,19 @@ While there are many potential metrics of stability, we use diversity indices to
 Several [diversity](https://noaa-edab.github.io/catalog/commercial_div.html) estimates are used to evaluate stability for fleets landing federally managed species, and species landed by commercial vessels with Mid-Atlantic permits. Commercial fishery fleet count has declined while fleet revenue diversity has been stable over time in the MAB, with no trend identified, but current values are above the long-term average (Fig. \ref{fig:comm-div-fleet}). 
 
 ```{r comm-div-fleet, fig.width = 6.5, fig.asp = 0.3, fig.cap=return_caption(chunk_name = "comm-div-fleet")}
+comm_div_fleet_plot
 ```
 
 This indicates different commercial fleet composition but similar diversity in species targeting opportunities over time, for those fleets continuing to fish (Fig. \ref{fig:commercial-div-species-div}). Of note is that the current lack of vessel data available for surf clam and ocean quahog prior to 2003 precludes the assessment of longer term dynamics with these indicators.
 
 ```{r commercial-div-species-div,  fig.cap = return_caption(chunk_name = "commercial-div-species-div")}
+commercial_div_species_div_plot
 ```
 
 As noted [above](#recreational-opportunities), [recreational fleet effort diversity](https://noaa-edab.github.io/catalog/recdat.html) is declining (Fig. \ref{fig:rec-div}), suggesting a shift in recreational fishing opportunities. However, recreational species catch diversity has no long term trend so is considered stable, and has been at or above the long term average since 2016 (Fig. \ref{fig:recdat-div-catch}). 
 
 ```{r recdat-div-catch, fig.cap =return_caption(chunk_name = "recdat-div-catch")}
+recdat_div_catch_plot
 ```
 
 #### Ecological Stability
@@ -35,15 +38,18 @@ ecodata::plot_annual_chl_pp(report = params$region, varName = "pp", plottype = "
 [Zooplankton diversity](https://noaa-edab.github.io/catalog/zoo_diversity.html) is increasing in the MAB (Fig. \ref{fig:zoo-diversity}), while [adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html), the expected number of species in a standard number of individuals sampled from the NEFSC bottom trawl survey, appears stable over time, with current values within one standard deviation from most historic estimates (Fig. \ref{fig:exp-n}). 
 
 ```{r zoo-diversity, fig.cap = return_caption(chunk_name = "zoo-diversity"), fig.asp=.47}
+zoo_diversity_plot
 ```
 
 
 ```{r exp-n, fig.cap = return_caption(chunk_name = "exp-n"), fig.width=5, fig.asp=.4}
+exp_n_plot
 ```
 
 [Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, maximum body size, or fecundity, can synthesize change across complex, diverse communities. Monitoring changes in functional trait distributions for the fish community can provide a means of assessing ecosystem-scale resilience. There is evidence of long term change in trait distributions in the MAB (Fig. \ref{fig:traits}). The spring finfish community in the MAB is showing long-term shifts towards slower life history strategies with higher length and maturity and lower fecundity. In contrast, the fall MAB finfish community has shifted towards decreased length at maturity, smaller offspring size, and lower trophic level indicative of faster life histories. 
 
 ```{r traits, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits")}
+traits_plot
 ```
 
 
