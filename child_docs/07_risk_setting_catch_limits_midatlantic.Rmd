@@ -6,13 +6,20 @@
 Indicators of [fish productivity](https://noaa-edab.github.io/catalog/productivity_anomaly.html) are derived from observations (surveys) or models (stock assessments). Fish productivity has been declining in the Mid-Atlantic since the early 2000s, as described by the small-fish-per-large-fish anomaly indicator (derived from NEFSC bottom trawl survey) (Fig. \ref{fig:productivity-anomaly}). This decline in fish productivity is also shown by a similar analysis based on stock assessment model outputs (recruitment per spawning stock biomass anomaly).  
 
 ```{r productivity-anomaly, fig.cap = return_caption(chunk_name = "productivity-anomaly"), fig.width=6.5, fig.asp=0.6}
-productivity_anomaly_plot
+productivity_anomaly_plot + recruit_anomaly_plot
 ```
 
 The health of individual fish (i.e. fish condition, measured as weight for a given length) can contribute to population productivity through improved growth, reproduction and survival. [Fish condition](https://noaa-edab.github.io/catalog/condition.html) in the MAB was generally good prior to 2000, poor from 2001-2010 (concurrent with declines in productivity, Fig. \ref{fig:productivity-anomaly}), and a mix of good and poor since 2011. In 2024, condition continued to be mixed, with general improvement since a relatively low condition year in 2021 (Fig. \ref{fig:mab-cf}). Preliminary analyses show that changes in temperature, zooplankton, fishing pressure, and population size influence the condition of different fish species.
 
 ```{r mab-cf, fig.cap = return_caption(chunk_name = "mab-cf"), fig.width=6.5, fig.asp=.7}
-mab_cf_plot
+# 4. MAB Condition Factor Plot
+## TODO: move aesthetics into ecodata function
+ecodata::plot_condition(report = params$region) +
+  theme(legend.text = element_text(size = 10),
+        legend.title = element_text(size = 11),
+        axis.text.x = element_text(size = 12),
+        axis.text.y = element_text(size = 10),
+        plot.title = element_text(size = 12))
 ```
 
 #### Drivers:
@@ -36,7 +43,7 @@ foragebio_plot
 [Benthic invertebrates](https://noaa-edab.github.io/catalog/benthos_index.html) are extremely important forage for some managed species (black sea bass, yellowtail and winter flounders, Atlantic cod, and haddock, and many skate species). Macrobenthos indices show long term declines in spring (Fig. \ref{fig:benthos}). In contrast, megabenthos indices show long-term increases in spring in the MAB.
 
 ```{r benthos, fig.cap=return_caption(chunk_name = "benthos"), fig.width=6.5, fig.asp=.4}
-benthos_plot
+megabenthos_plot + macrobenthos_plot
 ```
 
 ##### Biological Drivers: Lower trophic levels
@@ -46,7 +53,7 @@ benthos_plot
 [Zooplankton](https://noaa-edab.github.io/catalog/zoo_abundance_anom.html) communities in the Mid-Atlantic have high variability without trend for large copepods (Fig. \ref{fig:zoopanom}), long term and recent decreasing trends for smaller bodied copepods, and increasing trends for krill (Euphausiids). Small copepods are less energy-rich than Euphausiids (krill) or the larger-bodied copepod *Calanus finmarchicus*. A changing mix of zooplankton prey can impact forage fish energy content and abundance, as well as the prey field of filter feeding whales. 
 
 ```{r zoopanom, fig.cap=return_caption(chunk_name = "zoopanom"), fig.width=6.5, fig.asp=.4}
-zoopanom_plot
+large_copepod_plot + small_copepod_plot + euphausiid_plot
 ```
 
 ##### Environmental Drivers

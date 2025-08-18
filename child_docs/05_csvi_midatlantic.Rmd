@@ -6,50 +6,30 @@
 
 The [engagement](https://noaa-edab.github.io/catalog/engagement.html) indices demonstrate the importance of commercial and recreational fishing to a given community relative to other coastal communities in a region. Social vulnerability indicators measure social factors that shape a community’s ability to adapt to change.  For this report, we focus on top communities with the highest engagement scores, the top communities with the highest population relative engagement scores, and on three socio-demographic indicators within the CSVI toolset (poverty, personal disruption, population composition). 
 
-In 2022, Cape May, NJ; Reedville, VA; and Montauk, NY were the most engaged commercial fishing communities. Barnegat Light, NJ is much more engaged in commercial fishing relative to its population size when compared to other communities in the Mid-Atlantic  (Fig.\ref{fig:commercial-engagement-1}). Cape May, NJ also ranked medium on the population composition index (calculated based on proportions of non-white, non-English speaking, and younger populations) and Atlantic City, NJ ranked high for all socio-demographic indicators suggesting that this important commercial fishing community may be more vulnerable to change in the future (Table \ref{tab:comvultab}). 
+In 2022, Cape May, NJ; Reedville, VA; and Montauk, NY were the most engaged commercial fishing communities. Barnegat Light, NJ is much more engaged in commercial fishing relative to its population size when compared to other communities in the Mid-Atlantic  (Fig.\ref{fig:commercial-engagement}). Cape May, NJ also ranked medium on the population composition index (calculated based on proportions of non-white, non-English speaking, and younger populations) and Atlantic City, NJ ranked high for all socio-demographic indicators suggesting that this important commercial fishing community may be more vulnerable to change in the future (Table \ref{tab:comvultab}). 
  
  Manteo, Vandemere, and Hobuken, NC are no longer listed as top ten recreational communities, replaced by Cape May and Barnegat Light, NJ; Orient, NY; Topsail Beach, Avon and Rodanthe, NC (Fig.\ref{fig:recreational-engagement-1}). 
 
-```{r commercial-engagement, fig.cap= return_caption(chunk_name = "commercial-engagement"), fig.width = 7, fig.asp = 0.85, results='hide'}
+```{r commercial-engagement, fig.cap= return_caption(chunk_name = "commercial-engagement"), fig.width = 6.5, fig.asp = 0.85, results='hide'}
 commercial_engagement_plot +
   ggplot2::theme(plot.title=element_text(vjust = 0))
 ```
 
 
 ```{r comvultab}
-## TODO: this can probably be moved to child_plots.Rmd
-## TODO: move flextable aesthetics into ecodata function
-tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for", region2, "communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.")
-
-t <- ecodata::plot_engagement(varName = "Commercial", plottype = "Social")
-t |>
-  flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
-                               pop_composition_rank = "Population Composition",
-                               poverty_rank = "Poverty") |>
-  flextable::colformat_num(na_str = "-") |>
-  flextable::set_caption(tbl_caption) |>
-  flextable::autofit() 
+comm_vul_table
 ```
 
 Several communities ranked in the top communities for both commercial and recreational indices; Montauk, NY, Cape May, NJ, Barnegat Light, NJ, Point Pleasant Beach, NJ, Ocean City, MD, and Wachapreague, VA (Fig. \ref{fig:recreational-engagement-1}), meaning these communities may be impacted simultaneously (to a greater degree than others) by commercial and recreational regulatory changes. Of those included in the top-ranked recreational communities, both Bivalve, MD and Morehead City, NC had medium or higher ranks for two of three socio-demographic indicators examined here (Table \ref{tab:recvultab}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
 
-```{r recreational-engagement, fig.cap= return_caption(chunk_name = "recreational-engagement"), fig.width = 7, fig.asp = 0.85, results='hide'}
+```{r recreational-engagement, fig.cap= return_caption(chunk_name = "recreational-engagement"), fig.width = 6.5, fig.asp = 0.85, results='hide'}
 recreational_engagement_plot +
   ggplot2::theme(plot.title=element_text(vjust = 0))
 ```
 
 
 ```{r recvultab}
-## TODO: this can probably be moved to child_plots.Rmd
-## TODO: move flextable aesthetics into ecodata function
-t <- ecodata::plot_engagement(varName = "Recreational", plottype = "Social")
-t |>
-  flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
-                               pop_composition_rank = "Population Composition",
-                               poverty_rank = "Poverty") |>
-  flextable::colformat_num(na_str = "-") |>
-  flextable::set_caption(tbl_caption) |>
-  flextable::autofit() 
+rec_vul_table
 ```
 
 

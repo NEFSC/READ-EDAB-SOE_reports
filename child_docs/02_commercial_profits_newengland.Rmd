@@ -1,0 +1,60 @@
+```{r, eval = params$id_child_docs}
+<<child-header>>
+```
+
+### Indicators: revenue (a proxy for profits)  
+
+Total [commercial revenues](https://noaa-edab.github.io/catalog/comdat.html) from all species is below  the long-term mean for both the GB and GOM regions in 2023 (Fig. \ref{fig:comm-revenue}). In addition, revenue from NEFMC managed species shows a long-term decline in the GOM. GB continues to exhibit a cyclical nature with regards to revenue, largely driven by rotational management of Atlantic sea 
+
+```{r comm-revenue, fig.width = 6.5, fig.cap = return_caption(chunk_name = "comm-revenue")}
+comm_revenue_plot
+```
+Revenue earned by harvesting resources is a function of both the quantity landed of each species and the prices paid for landings. Beyond monitoring yearly changes in revenue, it is even more valuable to determine what drives these changes: harvest levels, the mix of species landed, price changes, or a combination of these. The [Bennet Indicator](https://noaa-edab.github.io/catalog/bennet.html) decomposes revenue change into two parts, one driven by changing quantities (volumes), and a second driven by changing prices. All changes are in relation to a base year (1982). 
+ 
+
+In the GB region, revenues have been consistently lower than the 1982 baseline throughout the time series. The changes in total revenue in GB was primarily driven by volumes prior to 2010, and then by prices (Fig.\ref{fig:bennet}). In the GOM, revenues have been above the 1982 baseline in all but four years, largely due to changing prices in most years. Breaking down the revenue by guild (Fig. \ref{fig:bennet-all}), or GB, both the volume and price trend have been largely driven by benthos (scallops, quahogs and surfclams). In the GOM region, increased prices for benthivores (lobster) drove the year-over-year increases in overall prices. Benthivores also had a large influence on the overall volume indicator in the GOM.
+
+```{r bennet, fig.cap = return_caption(chunk_name = "bennet"), fig.width = 6.5, fig.asp = 0.4}
+## TODO: move these plot aesthetics to ecodata
+gb <- ecodata::plot_bennet(report = params$region, varName = "total", EPU = "GB") +
+  ggplot2::ggtitle("GB revenue components") +
+  ggplot2::theme(legend.position = "bottom",
+                      legend.title = ggplot2::element_blank())+
+  ggplot2::ylab("Million USD (2023)")
+gom <- ecodata::plot_bennet(report = params$region, varName = "total", EPU = "GOM") +
+  ggplot2::ggtitle("GOM revenue components") +
+  ggplot2::theme(legend.position = "bottom",
+                      legend.title = ggplot2::element_blank())+
+                      ggplot2::ylab("Million USD (2023)")
+
+gb + 
+  gom + 
+  plot_layout(guides = 'collect') & theme(legend.position = 'bottom')
+
+```
+
+```{r bennet-all, fig.cap = return_caption(chunk_name = "bennet-all"), fig.width = 6.5, fig.asp = 0.65}
+
+gb <- ecodata::plot_bennet(report = params$region, varName = "guild", EPU = "GB")+
+  ggplot2::ylab("Million USD (2023)")
+gom <- ecodata::plot_bennet(report = params$region, varName = "guild", EPU = "GOM")+
+  ggplot2::ylab("Million USD (2023)")
+
+gb / 
+  gom + 
+  plot_layout(guides = 'collect') & 
+  theme(legend.position = 'bottom')
+```
+For New England, [total climate vulnerability](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) of revenue was moderate in 2022 with no long-term trend (Fig. \ref{fig:comm-clim-rev}). This suggests that while New England commercial fishing is moderately reliant on climate-sensitive species, this proportion has not significantly changed since 2000. 
+
+```{r, comm-clim-rev, fig.cap = return_caption(chunk_name = "climatevul-rev"), fig.width=6.5, fig.asp=0.5}
+climatevul_rev_plot
+```
+
+### Implications 
+
+The continued dependence on lobster in the GOM and sea scallops on GB is affected by multiple drivers including resource availability and market conditions. As both species are sensitive to ocean warming and acidification, it is important to monitor these and other climate drivers.
+
+```{r, eval = params$id_child_docs}
+<<child-footer>>
+```

@@ -1,0 +1,19 @@
+```{r, eval = params$id_child_docs}
+<<child-header>>
+```
+
+The Middle Atlantic Bight [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html) is a summer to early fall feature that creates seasonally suitable habitat for many species, including some managed by the NEFMC. Since the mid-2000s, the Cold Pool has persisted for a shorter portion of the year (Fig. \ref{fig:cold-pool-time}). In 2024, however, all Cold Pool indices were near the long-term average and likely related to the influx of northern waters into the system (see 2024 highlights section). A change in the timing of the autumn breakdown of the Cold Pool may impact the recruitment of species that rely on it for seasonal cues and habitat. Southern New England-Mid Atlantic yellowtail flounder recruitment and settlement are related to the strength of the MAB Cold Pool (a factor of extent and persistence). The correlation of pre-recruit settlers to the Cold Pool is thought to represent a bottleneck in yellowtail flounder life history, whereby a local and temporary increase in bottom temperature can negatively impact the survival of settlers. Including the effect of Cold Pool variations on yellowtail recruitment reduced retrospective patterns and improved predictive skill in a stock assessment model. This is especially important given the long-term decline in the duration of the Cold Pool. 
+
+```{r cold-pool-time, fig.cap=return_caption(chunk_name = "cold-pool-time"), fig.width = 6.5, fig.asp=.3, results='hide'}
+cold_pool_time_plot
+```
+
+The seasonal timing of [phytoplankton](https://noaa-edab.github.io/catalog/chl_pp.html) blooms shows a tendency towards an increased fall bloom over time in the GOM and GB, with chlorophyll significantly increasing October and November (GB) and December (GOM) (Fig. \ref{fig:chl-month}). January concentrations are trending higher since the late 1990s, but they are still below the mean spring and fall bloom values.
+
+```{r chl-month, fig.cap=return_caption(chunk_name = "chl-month"), fig.width =6.5, fig.height = 8, results='hide'}
+montlychl_plot
+```
+
+```{r, eval = params$id_child_docs}
+<<child-footer>>
+```

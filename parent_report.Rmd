@@ -94,6 +94,8 @@ caption_key <- read.csv(params$fig_caption) |>
   )) |>
   dplyr::mutate(caption = dplyr::case_when(is.na(caption) ~ fig_cap_both,
                                            TRUE ~ caption))
+
+## TODO: pass maximum figure width as a parameter/ top-level variable
 ```
 
 ```{r mab-oa, include = FALSE}
@@ -251,16 +253,18 @@ b <- ecodata::plot_species_dist(varName = "depth", n = 10) + ggplot2::coord_cart
 a + b
 ```  
 
-
 ```{r protectedspp-dist-shifts, fig.cap= return_caption(chunk_name = "protectedspp-dist-shifts"), fig.width=6.5, fig.asp=0.8}
 ecodata::plot_cetacean_dist() + 
   ggplot2::ggtitle("Whale and Dolphin Distribution Shifts")
 ```
 
-
 #### Drivers: 
 
 Mobile populations shift distributions to maintain suitable temperature and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is related, in part, to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has been more variable over time.  [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring. 
+
+```{r}
+## TODO: insert calanus COG plot for NE only
+```
 
 ```{r forageshifts, fig.cap=return_caption(chunk_name = "forageshifts"), fig.width = 6.5, fig.asp = .3}
 ## TODO: move these aesthetic updates into ecodata function
@@ -379,6 +383,10 @@ Just over 3,200 foundations and more than 12,000 miles of inter-array and offsho
 
 ```{r wind-dev-cumul, fig.cap = return_caption(chunk_name = "wind-dev-cumul"), out.width='90%'}
 magick::image_read_pdf("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/UpdatedWindFigure49(MAFMC)andFig50(NEFMC)-AngelaSilva_2025.pdf") 
+```
+
+```{r, cache = FALSE}
+knitr::knit_exit()
 ```
 
 ```{r, child = here::here(paste0("child_docs/08_offshore_wind_", stringr::str_to_lower(params$region), ".Rmd"))}

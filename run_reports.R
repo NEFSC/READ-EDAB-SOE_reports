@@ -51,7 +51,12 @@ rmarkdown::render(
 rmarkdown::render(
   here::here("parent_report.Rmd"),
   output_file = here::here("newengland.pdf"),
-  params = list(region = "NewEngland"),
+  params = list(
+    region = "NewEngland",
+    fig_caption = here::here("utils/figure_captions_summary.csv"),
+    cache = TRUE,
+    id_child_docs = TRUE
+  ),
   # intermediates_dir = here::here("output"),
   # knit_root_dir = here::here("output"),
   # output_dir = here::here("output"),

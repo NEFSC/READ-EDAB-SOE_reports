@@ -8,9 +8,9 @@ As noted above, the Middle Atlantic [Cold Pool](https://noaa-edab.github.io/cata
 cold_pool_time_plot
 ```
 
-The seasonal timing of Mid-Atlantic [phytoplankton](https://noaa-edab.github.io/catalog/chl_pp.html) blooms shows high interannual variability during the fall bloom period (October-December, Fig. \ref{fig:montlychl}).  The significant increase in January chlorophyll suggests that the fall bloom period is continuing into the winter, with more chlorophyll now than in the late 1990s. The significant decrease of chlorophyll in September could be related to warmer temperatures persisting into early fall and increased nutrient limitation.
+The seasonal timing of Mid-Atlantic [phytoplankton](https://noaa-edab.github.io/catalog/chl_pp.html) blooms shows high interannual variability during the fall bloom period (October-December, Fig. \ref{fig:chl-month}).  The significant increase in January chlorophyll suggests that the fall bloom period is continuing into the winter, with more chlorophyll now than in the late 1990s. The significant decrease of chlorophyll in September could be related to warmer temperatures persisting into early fall and increased nutrient limitation.
 
-```{r montlychl, fig.width=6.5, fig.height=4, fig.cap=return_caption(chunk_name = "montlychl")}
+```{r chl-month, fig.width=6.5, fig.height=4, fig.cap=return_caption(chunk_name = "chl-month")}
 montlychl_plot
 ```
 
