@@ -1,31 +1,12 @@
 # setup ----
 
+## variables ----
+
 region <- "MidAtlantic"
 
-out_dir <- here::here("images")
+out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
   dir.create(out_dir)
-}
-
-## TODO: name so that figures that are the same in both reports save in a separate directory
-create_filename <- function(indicator, reg = region, dir = out_dir) {
-  new_out_dir <- paste(out_dir, reg, sep = "/")
-  if (!dir.exists(new_out_dir)) {
-    dir.create(new_out_dir)
-  }
-
-  fname <- paste0(
-    new_out_dir,
-    "/",
-    indicator,
-    "_",
-    reg,
-    "_",
-    Sys.Date(),
-    ".png"
-  )
-  message(fname)
-  return(fname)
 }
 
 region2 <- dplyr::case_when(
@@ -37,6 +18,48 @@ full_region <- dplyr::case_when(
   region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
   region == "NewEngland" ~ "New England"
 )
+
+## functions ----
+
+# A function to create a standardized filename
+create_filename <- function(
+  indicator,
+  reg = region,
+  dir = out_dir,
+  extension = ".png"
+) {
+  file.path(
+    dir,
+    paste0(
+      indicator,
+      "_",
+      reg,
+      "_",
+      Sys.Date(),
+      extension
+    )
+  )
+}
+
+# A flexible function to generate and save a plot
+## TODO: rewrite to create plots with this function instead
+save_plot <- function(plot_expression, indicator, ...) {
+  # Execute the code to create the plot
+  p <- eval(plot_expression)
+
+  # Check if the plot object is valid before saving
+  if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
+    fname <- create_filename(indicator)
+    ggplot2::ggsave(
+      filename = fname,
+      plot = p,
+      ...
+    )
+    message("Plot saved to: ", fname)
+  } else {
+    stop("Plot object is not a valid ggplot or ggarrange object.")
+  }
+}
 
 # Performance relative to fishery management objectives ----
 
@@ -52,6 +75,19 @@ ecodata::plot_comdat(
 )
 ggplot2::ggsave(
   create_filename("total_landings"),
+  width = 6.5,
+  height = 4
+)
+
+save_plot(
+  plot_expression = {
+    ecodata::plot_comdat(
+      report = region,
+      varName = "landings",
+      n = 10
+    )
+  },
+  indicator = "total_landings",
   width = 6.5,
   height = 4
 )
