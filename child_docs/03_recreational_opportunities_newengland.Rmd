@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-header>>
 ```
 
@@ -18,6 +18,6 @@ rec_div_plot +
 
 The absence of a long term trend in recreational angler trips and fleet effort diversity suggests relative stability in the overall number of recreational opportunities in the region.
 
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>
 ```

@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-header>>
 ```
 
@@ -68,7 +68,7 @@ therm_hab_persist_plot
 
 `r oa_paragraph`
 
-```{r mab-oa-1, eval = TRUE, out.width = '100%', fig.cap = return_caption(chunk_name = "mab-oa")}
+```{r mab-oa, eval = TRUE, out.width = '100%', fig.cap = return_caption(chunk_name = "mab-oa")}
 knitr::include_graphics(mab_oa_image)
 ```
 
@@ -79,6 +79,6 @@ The abundance and distribution of marine mammal, HMS, and shark predators can af
 
 Indicators for shark populations, combined with information on gray seals (see [Protected Species Implications section, above](#protected-species)), suggests predator populations range from stable ([sharks](https://noaa-edab.github.io/catalog/hms_cpue.html)) to increasing ([gray seals](https://noaa-edab.github.io/catalog/seal_pups.html))  in the MAB. [Stock status](https://noaa-edab.github.io/catalog/hms_stock_status.html) is mixed for Atlantic Highly Migratory Species (HMS) stocks (including sharks, swordfish, billfish, and tunas) occurring throughout the Northeast U.S. shelf. While there are several HMS species considered to be overfished or that have unknown stock status, the population status for some managed Atlantic sharks and tunas is at or above the biomass target, suggesting the potential for robust (or rebuilt) predator populations among these managed species. Stable predator populations suggest stable predation pressure on managed species, but increasing predator populations may reflect increasing predation pressure.
 
-```{r, eval = params$id_child_docs}
-<<child-footer>>
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-header>>
 ```

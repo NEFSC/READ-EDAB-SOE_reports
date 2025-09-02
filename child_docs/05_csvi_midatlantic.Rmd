@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-header>>
 ```
 
@@ -8,7 +8,7 @@ The [engagement](https://noaa-edab.github.io/catalog/engagement.html) indices de
 
 In 2022, Cape May, NJ; Reedville, VA; and Montauk, NY were the most engaged commercial fishing communities. Barnegat Light, NJ is much more engaged in commercial fishing relative to its population size when compared to other communities in the Mid-Atlantic  (Fig.\ref{fig:commercial-engagement}). Cape May, NJ also ranked medium on the population composition index (calculated based on proportions of non-white, non-English speaking, and younger populations) and Atlantic City, NJ ranked high for all socio-demographic indicators suggesting that this important commercial fishing community may be more vulnerable to change in the future (Table \ref{tab:comvultab}). 
  
- Manteo, Vandemere, and Hobuken, NC are no longer listed as top ten recreational communities, replaced by Cape May and Barnegat Light, NJ; Orient, NY; Topsail Beach, Avon and Rodanthe, NC (Fig.\ref{fig:recreational-engagement-1}). 
+ Manteo, Vandemere, and Hobuken, NC are no longer listed as top ten recreational communities, replaced by Cape May and Barnegat Light, NJ; Orient, NY; Topsail Beach, Avon and Rodanthe, NC (Fig.\ref{fig:recreational-engagement}). 
 
 ```{r commercial-engagement, fig.cap= return_caption(chunk_name = "commercial-engagement"), fig.width = 6.5, fig.asp = 0.85, results='hide'}
 commercial_engagement_plot +
@@ -20,7 +20,7 @@ commercial_engagement_plot +
 comm_vul_table
 ```
 
-Several communities ranked in the top communities for both commercial and recreational indices; Montauk, NY, Cape May, NJ, Barnegat Light, NJ, Point Pleasant Beach, NJ, Ocean City, MD, and Wachapreague, VA (Fig. \ref{fig:recreational-engagement-1}), meaning these communities may be impacted simultaneously (to a greater degree than others) by commercial and recreational regulatory changes. Of those included in the top-ranked recreational communities, both Bivalve, MD and Morehead City, NC had medium or higher ranks for two of three socio-demographic indicators examined here (Table \ref{tab:recvultab}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
+Several communities ranked in the top communities for both commercial and recreational indices; Montauk, NY, Cape May, NJ, Barnegat Light, NJ, Point Pleasant Beach, NJ, Ocean City, MD, and Wachapreague, VA (Fig. \ref{fig:recreational-engagement}), meaning these communities may be impacted simultaneously (to a greater degree than others) by commercial and recreational regulatory changes. Of those included in the top-ranked recreational communities, both Bivalve, MD and Morehead City, NC had medium or higher ranks for two of three socio-demographic indicators examined here (Table \ref{tab:recvultab}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
 
 ```{r recreational-engagement, fig.cap= return_caption(chunk_name = "recreational-engagement"), fig.width = 6.5, fig.asp = 0.85, results='hide'}
 recreational_engagement_plot +
@@ -47,6 +47,6 @@ A range of socioeconomic and climate vulnerability concerns are found throughout
 
 There is evidence that a majority of Mid-Atlantic communities have high to very high total climate vulnerability based on revenue. Coastal fishing communities are greatly affected by climate change, both because of their physical location and because of their frequent social, cultural, and economic dependence on fishing. These impacts are expected to become more pressing as climatic changes become more extensive. Changes in [ocean temperature](https://noaa-edab.github.io/catalog/bottom_temp_insitu.html) and [acidification](https://noaa-edab.github.io/catalog/ocean_acidification.html) affecting marine life have the potential to directly impact fisheries and fishery dependent livelihoods.  
 
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>
 ```

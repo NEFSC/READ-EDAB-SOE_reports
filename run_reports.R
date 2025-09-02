@@ -1,16 +1,13 @@
-# mid report -- pdf
+## mid report (pdf) ----
 now <- Sys.time()
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
   output_file = "midatlantic.pdf",
-  clean = TRUE,
-  envir = new.env(),
   params = list(
     region = "MidAtlantic",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
     ## TODO: caching saves as parent file name, could cause problems with regions
-    ## TODO: caching does not speed up report generation??
-    cache = TRUE,
+    cache = FALSE,
     id_child_docs = TRUE
   ),
   # intermediates_dir = here::here("output"),
@@ -31,7 +28,7 @@ rmarkdown::render(
 # )
 difftime(Sys.time(), now)
 
-## mid report -- html
+## mid report (html) ----
 
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
@@ -46,8 +43,8 @@ rmarkdown::render(
   output_format = bookdown::html_document2()
 )
 
-## NE report
-
+## NE report (pdf) ----
+now <- Sys.time()
 rmarkdown::render(
   here::here("parent_report.Rmd"),
   output_file = here::here("newengland.pdf"),
@@ -68,4 +65,30 @@ rmarkdown::render(
     toc = FALSE,
     number_sections = FALSE
   )
+)
+difftime(Sys.time(), now)
+
+## NE report (docx) ----
+### don't render to word like this, convert the pdf
+
+rmarkdown::render(
+  here::here("parent_report.Rmd"),
+  output_file = here::here("newengland.docx"),
+  params = list(
+    region = "NewEngland",
+    fig_caption = here::here("utils/figure_captions_summary.csv"),
+    cache = TRUE,
+    id_child_docs = TRUE
+  ),
+  # intermediates_dir = here::here("output"),
+  # knit_root_dir = here::here("output"),
+  # output_dir = here::here("output"),
+  # output_format = bookdown::word_document2(
+  #   # includes = rmarkdown::includes(
+  #   #   in_header = here::here("utils/header1_newengland.tex")
+  #   # ),
+  #   # keep_tex = TRUE,
+  #   # toc = FALSE,
+  #   # number_sections = FALSE
+  # )
 )

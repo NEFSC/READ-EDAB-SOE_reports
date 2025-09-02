@@ -1,0 +1,100 @@
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-header>>
+```
+
+```{r wea-spp-rev, fig.cap=return_caption(chunk_name = "wea-spp-rev"),  fig.width=6, fig.asp=.6}
+wea_spp_rev_plot
+```
+
+```{r wea-landings-rev, ft.arraystretch = 1}
+flextable::flextable(wea_landings_rev_table) %>%
+  flextable::set_caption("New England managed species Landings and Revenue from Wind Energy Areas. Skates includes barndoor, winter, clearnose, smooth, little, and general skates reported in logbooks. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species..") %>%
+  flextable::width(width = c(2,2,2))
+```
+
+Social vulnerabilities of communities are priority concerns with offshore wind development and fisheries impacts in the Northeast, and the impacts of offshore wind development are expected to differentially [impact specific coastal communities](https://noaa-edab.github.io/catalog/wind_port.html). Additionally, impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean. 
+
+```{r wea-port-rev, fig.cap=return_caption(chunk_name = "wea-port-rev"),  fig.width=6.5, fig.asp=.6, fig.align='left'}
+wea_port_rev_plot
+```
+
+For example, Little Compton, RI had a minimum of 17% and maximum of 32% overlap of wind energy revenue to the total port revenue between 2008-2023 (Fig. \ref{fig:wea-port-rev}). BOEM reports that cumulative offshore wind development (if all proposed projects are developed) could have moderate impacts on low-income members of vulnerable communities who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation, and increased vessel traffic as well as existing vulnerabilities of low-income workers to economic impacts.
+
+Top fishing communities with high [socio-demographic concerns](https://noaa-edab.github.io/catalog/engagement.html) such as New Bedford, MA and New London, CT should be considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of underserved communities. These two ports are also undergoing significant changes to support offshore wind development port infrastructure needs. Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
+
+Some ports in the Mid-Atlantic land New England-managed species from wind areas as well. For the maximum percent value reported in each Mid-Atlantic port, the majority (at least 50% based on both value and pounds) of those landings were New England managed species within wind areas for nine communities (Fig. \ref{fig:wind-rev-MAB-NEFMC}).
+
+
+```{r wind-rev-MAB-NEFMC, fig.cap="Percent of Mid-Atlantic port revenue with majority NEFMC landings from Wind Energy Areas (WEA) in descending order from most to least port fisheries revenue from WEA.", fig.width=6.5, fig.asp=.4, fig.align='left'}
+## TODO: this should be turned into a function
+fix <- ecodata::wind_port |>
+   dplyr::filter(EPU %in% "MAB") |>
+   dplyr::mutate(City = paste0(City, ",", State)) |>
+   dplyr::filter(City %in% c("BARNEGAT LIGHT, NJ",
+                             "BRIELLE, NJ",
+                          "CAPE MAY, NJ",
+                          "HAMPTON, VA",
+                          "LONG BEACH (TOWN OF), NJ",
+                          "NEWPORT NEWS, VA",
+                          "POINT LOOKOUT, NY",
+                          "POINT PLEASANT, NJ",
+                          "WILDWOOD, NJ"))
+
+ fix <- tidyr::pivot_wider(fix,names_from = Var, values_from = Value) |>
+   dplyr::mutate(ordering = MaxVal,
+                 #City = paste0(City, ",", State),
+                 perc_dif =  c(perc_MAX - perc_MIN),
+                 TOT_MAX = c(100 - perc_dif - perc_MIN))
+ fix <- tidyr::pivot_longer(fix,cols = c(perc_MIN,  perc_dif, TOT_MAX), names_to="Var", values_to = "Value") |>
+   dplyr::arrange(ordering) |>
+   dplyr::mutate(City = factor(City, levels = unique(City))) |>
+   dplyr::filter(!Var %in% c("EJ","Gentrification","MaxVal")) |>
+   dplyr::mutate(Var = dplyr::recode(Var,"perc_MIN"= "WEA Revenue" ,
+                              "perc_dif" ="WEA Revenue Range",
+                              "TOT_MAX" = "Non-WEA Revenue"),
+                 Var = factor(Var, levels = c("Non-WEA Revenue",
+                                              "WEA Revenue Range",
+                                              "WEA Revenue")))
+
+ # add EJ port symbols
+ df.symbol <- ecodata::wind_port |>
+   dplyr::filter(EPU %in% "MAB",
+                 !Var %in% c("MaxVal", "TOT_MAX",
+                             "perc_MIN", "perc_MAX")) |>
+   tidyr::pivot_wider( names_from = Var, values_from = Value) |>
+   dplyr::mutate(City = paste0(City,",",State)) |>
+   dplyr::filter(City %in% c("BELMAR, NJ",
+                          "CAPE MAY, NJ",
+                          "HAMPTON, VA",
+                          "ISLIP, NY",
+                          "NEWPORT NEWS, VA",
+                          "POINT LOOKOUT, NY",
+                          "WARETOWN, NJ",
+                          "WILDWOOD, NJ")) |>
+   dplyr::select(City, EJ, Gentrification) |>
+   tidyr::pivot_longer(cols = c(EJ, Gentrification), names_to = "Variable") |>
+   dplyr::filter(!value == "NA") |>
+   dplyr::mutate(symbol = dplyr::recode(Variable, EJ = -7, Gentrification = -3),
+                 Variable = dplyr::recode(Variable,"EJ"= "Mid-High to High Social-Demographics Concerns" ,
+                                   "Gentrification" ="Mid-High to High Gentrification Concerns"))
+
+p <- fix |>
+  ggplot2::ggplot()+
+  ggplot2::geom_bar(ggplot2::aes(x = Value,y = City, fill=Var),stat="identity")+
+  ggplot2::scale_fill_brewer()+
+  ggplot2::theme(legend.position = "bottom",
+                 legend.title = ggplot2::element_blank(),
+                 legend.box="vertical", legend.margin=ggplot2::margin())+
+  ggplot2::geom_point(data = df.symbol, ggplot2::aes(x = symbol,y = City, shape = Variable)) +
+  ggplot2::scale_shape_manual(values = c(17, 16)) +
+  #ggplot2::ggtitle(paste0(report,": Port Revenue from Wind Energy Area"))+
+  ggplot2::xlab(expression("Port Revenue (%)"))+
+  ggplot2::ylab(ggplot2::element_blank())+
+  ecodata::theme_ts()
+
+p
+```
+
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-footer>>
+```

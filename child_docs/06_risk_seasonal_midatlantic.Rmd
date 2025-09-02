@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-header>>
 ```
 
@@ -14,6 +14,6 @@ The seasonal timing of Mid-Atlantic [phytoplankton](https://noaa-edab.github.io/
 montlychl_plot
 ```
 
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>
 ```

@@ -1,6 +1,6 @@
 
-```{r child-header, eval = params$id_child_docs}
-paste("Beginning", knitr::current_input())
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-header>>
 ```
 
 ### Indicators: Landings; commercial and recreational
@@ -20,7 +20,7 @@ Commercial landings by guild include all species and all uses, and are reported 
 comm_landings_plot
 ```
 
-[Total Community Climate Change Risk](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) is a measure of to what degree a region’s landings (or revenue) is dependent on sensitivity and exposure factors that relate to species’ risk to temperature or ocean acidification changes as the result of future climate change. For New England, the total climate vulnerability of landings (Fig. \ref{fig:comm-clim-landings}) was moderate in 2022 with no long-term trend suggesting a moderate reliance on climate-sensitive species. This proportion has not significantly changed since 2000.
+[Total Community Climate Change Risk](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) is a measure of to what degree a region’s landings (or revenue) is dependent on sensitivity and exposure factors that relate to species’ risk to temperature or ocean acidification changes as the result of future climate change. For New England, the total climate vulnerability of landings (Fig. \ref{fig:climatevul-land}) was moderate in 2022 with no long-term trend suggesting a moderate reliance on climate-sensitive species. This proportion has not significantly changed since 2000.
 
 ```{r, climatevul-land, fig.cap = return_caption(chunk_name = "climatevul-land"), fig.width=6.5, fig.asp=0.5}
 climatevul_land_plot
@@ -96,6 +96,6 @@ Other environmental changes require monitoring as they may become important driv
   
 \newpage
 
-```{r child-footer, eval = params$id_child_docs}
-paste("Ending", knitr::current_input())
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-footer>>
 ```

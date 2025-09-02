@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-header>>
 ```
 
@@ -8,7 +8,7 @@ The [engagement indices](https://noaa-edab.github.io/catalog/engagement.html) de
 
 For this report, we focus on top communities with the highest engagement scores, the top communities with the highest population relative engagement scores, and on three socio-demographic indicators within the CSVI toolset (poverty, personal disruption, population composition). 
 
-In 2022, New Bedford, MA stands out as having a particularly high engagement in commercial fishing, while Frenchboro, ME is much more engaged in commercial fishing relative to its population size (Fig. \ref{fig:commercial-engagement}). Of particular concern among top communities are New Bedford and Boston, MA as they both have medium or higher scores for all three socio-demographic indicators, while Port Clyde-Tenants Harbor, ME ranked medium for two of the three indicator (Table \ref{tab:comm-vuln}.
+In 2022, New Bedford, MA stands out as having a particularly high engagement in commercial fishing, while Frenchboro, ME is much more engaged in commercial fishing relative to its population size (Fig. \ref{fig:commercial-engagement}). Of particular concern among top communities are New Bedford and Boston, MA as they both have medium or higher scores for all three socio-demographic indicators, while Port Clyde-Tenants Harbor, ME ranked medium for two of the three indicator (Table \ref{tab:comm-vuln}).
 
 ```{r commercial-engagement, fig.cap= return_caption(chunk_name = "commercial-engagement"), fig.width = 7, fig.asp = 0.5, results='hide'}
 commercial_engagement_plot
@@ -43,6 +43,6 @@ commvulex_plot
 ### Implications
 These indicators provide a snapshot of the presence of socio-demographic concerns in the most highly engaged commercial and recreational fishing communities in New England. These communities may be especially vulnerable to changes in fishing patterns due to regulations and/or ecosystem changes. Several of  these top fishing communities, both commercial and recreational fishing communities, demonstrated medium to high socio-demographic vulnerability, indicating that they may be at a disadvantage responding to change.
 
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>
 ```

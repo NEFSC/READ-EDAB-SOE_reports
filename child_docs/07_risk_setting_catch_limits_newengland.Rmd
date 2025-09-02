@@ -1,3 +1,7 @@
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-header>>
+```
+
 #### Indicators: Fish productivity and condition shifts
 
 Indicators of [fish productivity](https://noaa-edab.github.io/catalog/productivity_anomaly.html) are derived from observations (surveys) or models (stock assessments). With the exception of two years (2006 and 2013), fish productivity has been below the long-term average in the Gulf of Maine since the early 2000s, as described by the small-fish-per-large-fish anomaly indicator (derived from NEFSC bottom trawl survey)(Fig. \ref{fig:productivity-anomaly}). This decline in fish productivity is also shown by a similar analysis based on stock assessment model outputs (recruitment per spawning stock biomass anomaly). Other signs of changing productivity in New England are the declines in [common tern chicks](https://noaa-edab.github.io/catalog/seabird_ne.html) per nest (Fig. \ref{fig:seabird-ne-productivity}) and continued low returns of hatchery [Atlantic salmon](https://noaa-edab.github.io/catalog/gom_salmon.html)(Fig. \ref{fig:salmon}) despite short-term increases in adult salmon numbers.
@@ -62,9 +66,9 @@ foragebio_plot
 
 ##### Biological Drivers: Lower trophic levels
 
-Phytoplankton are the foundation of the marine food web and are the primary food source for zooplankton and filter feeders such as shellfish. Multiple environmental and oceanographic drivers affect the abundance, composition, spatial distribution, and productivity of phytoplankton. While changes in phytoplankton productivity could affect fish productivity (including forage), there is no clear long-term trend in New England total primary production (Fig. \ref{fig:primaray-production}).
+Phytoplankton are the foundation of the marine food web and are the primary food source for zooplankton and filter feeders such as shellfish. Multiple environmental and oceanographic drivers affect the abundance, composition, spatial distribution, and productivity of phytoplankton. While changes in phytoplankton productivity could affect fish productivity (including forage), there is no clear long-term trend in New England total primary production (Fig. \ref{fig:totpp}).
 
-[zooplankton communities](https://noaa-edab.github.io/catalog/zoo_abundance_anom.html)  in New England have been changing in composition. There has been an increase in GOM small bodied copepods, a recent decline in large bodied copepods in GB, and long-term increases in euphausids in GB and GOM (Fig. \ref{fig:zoopanom}). A changing mix of zooplankton prey can impact forage fish energy content and abundance, as well as the prey field of filter feeding whales.
+[Zooplankton communities](https://noaa-edab.github.io/catalog/zoo_abundance_anom.html)  in New England have been changing in composition. There has been an increase in GOM small bodied copepods, a recent decline in large bodied copepods in GB, and long-term increases in euphausids in GB and GOM (Fig. \ref{fig:zoopanom}). A changing mix of zooplankton prey can impact forage fish energy content and abundance, as well as the prey field of filter feeding whales.
 
 Since 2010, the abundance of the lipid-rich older stages of  [*Calanus finmarchicus*](https://noaa-edab.github.io/catalog/wbts_mesozooplankton.html) in the GOM has declined. Observations from a fixed time series station in Wilkinson Basin  indicate that *Calanus* [seasonal abundance](https://noaa-edab.github.io/catalog/calanus_variation.html) in late summer-winter between 2020-2022 has declined to 20-40% of its population level in 2005-2008 but has rebounded to 60-70% in 2024 due to the presence of colder water(Fig. \ref{fig:zooplankton-season}). However, spring abundances are still the same as 15-20 years ago. The seasonal differences in abundance change reflect differences in influence of primary seasonal drivers:
 
@@ -84,21 +88,22 @@ Since 2010, the abundance of the lipid-rich older stages of  [*Calanus finmarchi
 ```{r zooplankton-season, fig.cap=return_caption(chunk_name = "zooplankton-season")}
 # magick::image_read("https://github.com/NOAA-EDAB/ecodata/blob/dev/data-raw/workshop/images/RUNGE_Fig1_SeasonalandmultiannualabundanceofCalanusfinmarchicus-JeffreyRunge_2025.png?raw=true")|>
 #   magick::image_crop("2000x2000+0+1900")
-knitr::include_graphics(here::here("images/Calanusfinmarchicus-JeffreyRunge_2025.png"))
+knitr::include_graphics(cfin_image)
 ```
 
 ##### Environmental Drivers
 
-Fish production can also be directly related to the prevailing environmental conditions by altering metabolic (growth) and reproductive processes. Many species possess thermal tolerances and can experience stressful or lethal conditions if temperatures exceed certain levels. Extreme temperature at both the [surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) (Fig. \ref{fig:longterm-sst}) and [bottom](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html) can exceed [thermal tolerance](https://noaa-edab.github.io/catalog/thermal_habitat_gridded.html) limits for some fish. For example, 2012 had among the warmest surface and bottom temperatures (GB) in New England. A large proportion of the Georges Bank and Mid-Atlantic regions had bottom temperatures above the 15℃ thermal tolerance for most groundfish, with some days in the Mid-Atlantic exceeding the 24℃ potential mortality limit (Fig. \ref{fig:therm-hab-persist-2024}). 
+Fish production can also be directly related to the prevailing environmental conditions by altering metabolic (growth) and reproductive processes. Many species possess thermal tolerances and can experience stressful or lethal conditions if temperatures exceed certain levels. Extreme temperature at both the [surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) (Fig. \ref{fig:long-term-sst}) and [bottom](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html) can exceed [thermal tolerance](https://noaa-edab.github.io/catalog/thermal_habitat_gridded.html) limits for some fish. For example, 2012 had among the warmest surface and bottom temperatures (GB) in New England. A large proportion of the Georges Bank and Mid-Atlantic regions had bottom temperatures above the 15℃ thermal tolerance for most groundfish, with some days in the Mid-Atlantic exceeding the 24℃ potential mortality limit (Fig. \ref{fig:therm-hab-persist-2024}). 
 
 In 2024, only one [surface marine heatwave](https://noaa-edab.github.io/catalog/heatwave_year.html) occurred throughout the entire U.S. Northeast Shelf due to the cooler ocean conditions observed in the region.  This surface marine heatwave occurred in the Gulf of Maine starting on May 29th, peaking on June 7th, and lasting 12 days.  This marine heatwave was not within the top 10 on record in terms of intesity.
 ```{r therm-hab-persist-2024, fig.cap=return_caption(chunk_name = "therm-hab-persist-2024"), fig.width=6.5, fig.asp=0.5}
 therm_hab_persist_plot +
   ggplot2::theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))
 ```
-[Ocean acidification](https://noaa-edab.github.io/catalog/ocean_acidification.html) (OA) risks vary among species and include reduced survival, growth, reproduction, and productivity, where high OA risk indicates potential negative effects to species. OA risk can also be heightened during colder conditions due to increased CO2 absorption by the water or by transport of high CO2 water masses (see [highlights section](#highlights)). Higher OA risk conditions were observed for Atlantic sea scallop and longfin squid in Long Island Sound and the nearshore and mid shelf regions of the New Jersey shelf during summers of 2016, 2018, 2019, 2023, and 2024 (Fig. \ref{fig:mab-oa-1} ). The OA indicator observed on the Mid-Atlantic coastal shelf during summer 2024 was the most extreme recorded when compared to all of the years sampled (since 2007). 
 
-```{r mab-oa-1, eval = TRUE, out.width = '100%', fig.cap = return_caption(chunk_name = "mab-oa")}
+`r oa_paragraph`
+
+```{r mab-oa, eval = TRUE, out.width = '100%', fig.cap = return_caption(chunk_name = "mab-oa")}
 knitr::include_graphics(mab_oa_image)
 ```
 
@@ -113,3 +118,7 @@ The abundance and distribution of predators can affect both the productivity and
 #### Future Considerations
 
 The processes that control fish productivity and mortality are dynamic, complex, and the result of the interactions between multiple system drivers. There is a real risk that short-term predictions in assessments and rebuilding plans that assume unchanging underlying conditions will not be as effective, given the observed ecological and environmental process changes documented throughout the report. Assumptions for species’ growth, reproduction, and natural mortality should continue to be evaluated for individual species. With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management
+
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-header>>
+```

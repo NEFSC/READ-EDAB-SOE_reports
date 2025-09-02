@@ -1,6 +1,6 @@
 
-```{r child-header, eval = params$id_child_docs}
-paste("Beginning", knitr::current_input())
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-header>>
 ```
 
 ### Indicators: Landings; commercial and recreational
@@ -104,6 +104,6 @@ Other environmental changes require monitoring as they may become important driv
 - Some ecosystem composition and production changes have been observed (see [Stability section](#stability)). 
 - Some fishing communities are affected by socioeconomic vulnerabilities (see [Community Social and Climate Vulnerability section](#community-social-and-climate-vulnerability)).  
 
-```{r child-footer, eval = params$id_child_docs}
-paste("Ending", knitr::current_input())
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-footer>>
 ```

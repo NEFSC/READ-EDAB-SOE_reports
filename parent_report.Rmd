@@ -1,6 +1,6 @@
 ---
 title: 
-csl: utils/plos.csl
+# csl: utils/plos.csl
 fontsize: 10pt
 link-citations: yes
 geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
@@ -72,6 +72,13 @@ return_caption <- function(key = caption_key,
   return(caption)
 }
 
+
+return_filepath <- function(key = caption_key,
+                           chunk_name) {
+  filepath <- key$filepath[which(key$chunk_name == chunk_name)]
+  return(filepath)
+}
+
 epus <- dplyr::case_when(
   params$region == "MidAtlantic" ~ "Mid-Atlantic Bight, MAB",
   params$region == "NewEngland" ~ "Gulf of Maine (GOM) and Georges Bank (GB)"
@@ -91,21 +98,26 @@ caption_key <- read.csv(params$fig_caption) |>
   dplyr::mutate(caption = dplyr::case_when(
     params$region == "MidAtlantic" ~ fig_cap_ma,
     params$region == "NewEngland" ~ fig_cap_ne
+  ),
+  filepath = dplyr::case_when(
+    params$region == "MidAtlantic" ~ fig_path_ma,
+    params$region == "NewEngland" ~ fig_path_ne
   )) |>
   dplyr::mutate(caption = dplyr::case_when(is.na(caption) ~ fig_cap_both,
-                                           TRUE ~ caption))
+                                           TRUE ~ caption),
+                filepath = dplyr::case_when(is.na(filepath) ~ fig_path_both,
+                                           TRUE ~ filepath))
 
 ## TODO: pass maximum figure width as a parameter/ top-level variable
 ```
 
-```{r mab-oa, include = FALSE}
-# this figure is in both reports, despite chunk name
-## TODO: only this figure is stored in a subfolder of child_docs, preventing pdf from compiling. ???
-# https://stackoverflow.com/questions/28912868/how-to-insert-image-from-url-in-markdown
-## this needs to be in the parent report
-# mab_oa_plot <- magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
+```{r child-header, eval = params$id_child_docs, include = FALSE}
+cat('#', knitr::current_input())
+```
 
-mab_oa_image <- here::here("images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
+```{r child-footer, eval = params$id_child_docs, include = TRUE, results = "asis"}
+# paste("Ending", knitr::current_input())
+cat('# parent_report.Rmd')
 ```
 
 \setcounter{page}{4}
@@ -382,16 +394,13 @@ ecodata::plot_wind_dev_speed()
 Just over 3,200 foundations and more than 12,000 miles of inter-array and offshore export cables are proposed to date (Fig. \ref{fig:wind-dev-cumul}). Based on current timelines, the areas affected would be spread out such that it is unlikely that any one region would experience full development at one time. Construction of three projects in Southern New England (Vineyard Wind, South Fork Wind Farm, and Revolution Wind) and two more in the Mid-Atlantic/New York Bight (Coastal Virginia Offshore Wind and Empire Wind 1) during 2024 affected fisheries managed by the Mid-Atlantic Fishery Management Council. It is likely that construction will begin on other projects in Southern New England and possibly the New York Bight during 2025 that will further affect regional fisheries.
 
 ```{r wind-dev-cumul, fig.cap = return_caption(chunk_name = "wind-dev-cumul"), out.width='90%'}
-magick::image_read_pdf("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/UpdatedWindFigure49(MAFMC)andFig50(NEFMC)-AngelaSilva_2025.pdf") 
-```
+# magick::image_read_pdf("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/UpdatedWindFigure49(MAFMC)andFig50(NEFMC)-AngelaSilva_2025.pdf") 
 
-```{r, cache = FALSE}
-knitr::knit_exit()
+knitr::include_graphics(wind_cumul_image)
 ```
 
 ```{r, child = here::here(paste0("child_docs/08_offshore_wind_", stringr::str_to_lower(params$region), ".Rmd"))}
 ```
-
 
 ### Implications
 Current plans for buildout of offshore wind in a patchwork of areas spreads the impacts differentially throughout the region (Fig. \ref{fig:wind-dev-cumul}).  `r wind_impact` in lease areas could be forgone or reduced and associated effort displaced if all sites are developed. Displaced fishing effort can alter historic fishing area, timing, and method patterns, which can in turn change habitat, species (managed and protected), and fleet interactions. Several factors, including fishery regulations, fishery availability, and user conflicts affect where, when, and how fishing effort may be displaced, along with impacts to and responses of affected fish species.  
@@ -399,7 +408,7 @@ Current plans for buildout of offshore wind in a patchwork of areas spreads the 
 Planned development [overlaps NARW](https://noaa-edab.github.io/catalog/persistent_hotspots.html) mother and calf migration corridors and a significant foraging habitat that is used throughout the year (Fig. \ref{fig:whales-wind}). Turbine presence and extraction of energy from the system could alter local oceanography and may affect right whale prey availability. For example, persistent foraging hotspots of right whales and seabirds overlap on Nantucket Shoals, where unique hydrography aggregates enhanced prey densities. Wind leases (OCS-A 0521 and OCS-A 0522) currently intersect these hotspots on the southwestern corner of Nantucket Shoals and a prominent tidal front associated with invertebrate prey swarms important to seabirds and possibly right whales. Proposed wind development areas also bring increased vessel strike risk from construction and operation vessels. In addition, there are a number of potential impacts to whales from pile driving and operational noise such as displacement, increased levels of communication masking, and elevated stress hormones.  
 
 ```{r whales-wind, out.width="55%", fig.cap=return_caption(chunk_name = "whales-wind")}
-magick::image_read("https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/NARW_hotspots_final_2024.jpg")
+magick::image_read(whales_wind_image)
 ```
 
 Scientific data collection surveys for ocean and ecosystem conditions, fish, and protected species will be altered, potentially increasing uncertainty for stock assessments and associated management decision making.
@@ -418,7 +427,7 @@ This section intends to provide a record of [noteworthy observations reported in
 Late 2023 and early 2024 observations indicate movement of cooler and fresher water into the Northwest Atlantic, although there are seasonal and local exceptions to this pattern. Anomalously cold (Fig. \ref{fig:slopesea}) and low salinity conditions were recorded throughout the Northeast Shelf and were widespread across the Slope Sea for much of the year. These cooler and fresher conditions are linked to the southward movement of the eastern portion of the [Gulf Stream](https://noaa-edab.github.io/catalog/gsi.html) and possibly an increased influx of Labrador Slope and Scotian Shelf water into the system. 
 
 ```{r slopesea, out.width="65%", fig.cap="February 2024 sea surface temperature difference compared to the February 2000-2020 long-term mean from the NOAA Advanced Clear-Sky Processor for Ocean (ACSPO) Super-collated SST."}
-magick::image_read("https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Feb2024-SST-ANOM_KHyde_2025.png") |>
+magick::image_read(slopesea_image) |>
   magick::image_resize("1650x2500")
 ```
 
@@ -437,14 +446,14 @@ In the summer, Chesapeake Bay recorded warm temperatures and low bottom water di
 During the summer months there were multiple prolonged upwelling events that brought cold water to the surface off the New Jersey coast. There was also an atypical phytoplankton bloom south of Long Island in late June to early July 2024, possibly linked to an upwelling event (Fig. \ref{fig:cocobloom}). The bloom was dominated by coccolithophores, which have an exoskeleton made up of calcium carbonate plates that can turn the water an opaque turquoise color. Large blooms of coccolithophores are unusual in this region, but they are not considered harmful and are grazed by zooplankton. Additionally, there were observations of multiple whale species aggregating near the Hudson Canyon between May and August.
 
 ```{r cocobloom, out.width="55%", fig.cap="An OLCI Sentinel 3A true color image with enhanced contrast captured on July 2, 2024. Coccolithophores shed their coccolith plates during the later stages of the bloom cycle, which results in the milky turquoise water color (Image credit: NOAA STAR, OCView and Ocean Color Science Team)."}
-magick::image_read("https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/20240702_Long_Island_algae_bloom-cropped_KimHyde-2025.png") |>
+magick::image_read(cocobloom_image) |>
   magick::image_resize("800x1800")
 ```
 
 Summer bottom [ocean acidification (OA)](https://noaa-edab.github.io/catalog/ocean_acidification.html) risk in the Mid-Atlantic was the highest recorded since sampling began in 2007. High OA risk is measured as low aragonite saturation state($\Omega$). Similarly, the winter/early spring [Gulf of Maine surface OA risk](https://noaa-edab.github.io/catalog/gom_acidification.html)  was significantly above the climatological average and near the sensitivity levels for cod ($\Omega$<1.19) and lobster ($\Omega$<1.09) (Fig.\ref{fig:GOMoa}). These observations were likely driven by the greater volume of fresher, less-buffered Labrador Slope water entering the Gulf of Maine and Mid-Atlantic, as well as cooler conditions. The 2023 and 2024 high summer OA risk has increased the extent of potentially unfavorable habitat for Atlantic sea scallops ($\Omega$<1.1) and longfin squid ($\Omega$<0.96). Additionally, for the first time, high OA risk conditions were observed outside of summer (fall for both species and spring for Atlantic sea scallops).
 
 ```{r GOMoa, out.width="60%", fig.cap="Weekly average surface aragonite saturation state measured at the long-term buoy location in the Gulf of Maine at 43.02 N and 70.54 W"}
-magick::image_read_pdf("https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf") |>
+magick::image_read_pdf(GOMoa_image) |>
   magick::image_crop("1650x1100+400+1650")
 ```
 

@@ -1,4 +1,25 @@
 
+```{r plt-setup}
+out_dir <- here::here("plots")
+if(!dir.exists(out_dir)) dir.create(out_dir)
+```
+
+
+```{r plot-files}
+## file paths for plots that are read in from png
+
+mab_oa_image <- here::here("images/SOE-2025-OA-figure_final_GraceSaba_2025.png")
+wind_cumul_image <- here::here("images/UpdatedWind_AngelaSilva_2025.png")
+whales_wind_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/NARW_hotspots_final_2024.jpg"
+slopesea_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Feb2024-SST-ANOM_KHyde_2025.png"
+cocobloom_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/20240702_Long_Island_algae_bloom-cropped_KimHyde-2025.png"
+GOMoa_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf"
+
+# ne only
+cfin_image <- here::here("images/Calanusfinmarchicus-JeffreyRunge_2025.png")
+
+```
+
 <!-- # Performance relative to fishery management objectives -->
 
 <!-- ## Commercial & recreational landings -->
@@ -7,6 +28,7 @@
 ```{r landings-indicators}
 # 1. Total Landings Plot
 total_landings_plot <- ecodata::plot_comdat(report = params$region, varName = "landings", n = 10)
+ggsave(paste0("out_dir/total_landings_", params$region, "_", Sys.Date(), ".png"), total_landings_plot, width = 6.5, height = 4)
 
 # 2. Commercial Landings Plot
 comm_landings_plot <- ecodata::plot_comdat(report = params$region, plottype = "guild", n=10)

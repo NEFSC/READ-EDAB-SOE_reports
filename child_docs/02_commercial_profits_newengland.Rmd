@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-header>>
 ```
 
@@ -35,15 +35,23 @@ gb +
 
 ```{r bennet-all, fig.cap = return_caption(chunk_name = "bennet-all"), fig.width = 6.5, fig.asp = 0.65}
 
-gb <- ecodata::plot_bennet(report = params$region, varName = "guild", EPU = "GB")+
+# gb <- ecodata::plot_bennet(report = params$region, varName = "guild", EPU = "GB")+
+#   ggplot2::ylab("Million USD (2023)")
+# gom <- ecodata::plot_bennet(report = params$region, varName = "guild", EPU = "GOM")+
+#   ggplot2::ylab("Million USD (2023)")
+
+gb <- ecodata::plot_bennet(report = "NewEngland", varName = "guild", EPU = "GB")+
   ggplot2::ylab("Million USD (2023)")
-gom <- ecodata::plot_bennet(report = params$region, varName = "guild", EPU = "GOM")+
+gom <- ecodata::plot_bennet(report = "NewEngland", varName = "guild", EPU = "GOM")+
   ggplot2::ylab("Million USD (2023)")
 
-gb / 
+plt <- gb / 
   gom + 
   plot_layout(guides = 'collect') & 
   theme(legend.position = 'bottom')
+plt
+
+ggplot2::ggsave(filename = here::here("test_bennet.png"))
 ```
 For New England, [total climate vulnerability](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) of revenue was moderate in 2022 with no long-term trend (Fig. \ref{fig:comm-clim-rev}). This suggests that while New England commercial fishing is moderately reliant on climate-sensitive species, this proportion has not significantly changed since 2000. 
 
@@ -55,6 +63,6 @@ climatevul_rev_plot
 
 The continued dependence on lobster in the GOM and sea scallops on GB is affected by multiple drivers including resource availability and market conditions. As both species are sensitive to ocean warming and acidification, it is important to monitor these and other climate drivers.
 
-```{r, eval = params$id_child_docs}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>
 ```
