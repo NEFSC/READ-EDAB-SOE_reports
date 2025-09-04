@@ -1,5 +1,8 @@
 # setup ----
 
+## TODO: identify if any of these plots are exactly the same in both reports
+## if so, save in a "both_regions" folder (will have to modify the save function)
+
 ## variables ----
 
 region <- "MidAtlantic"
