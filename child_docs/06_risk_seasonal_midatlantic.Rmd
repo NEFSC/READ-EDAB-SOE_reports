@@ -1,0 +1,19 @@
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-header>>
+```
+
+As noted above, the Middle Atlantic [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html) is a summer to early fall feature that creates seasonally suitable habitat for some species. Cold pool persistence, a measure of how long this feature is present in a given year, has been declining, so this habitat is available for a shorter portion of the year (Fig. \ref{fig:cold-pool-time}). All cold pool indices were near the long-term average in 2024 and likely related to the influx of northern waters into the system (see [2024 Highlights section](#highlights)). A change in the timing of the autumn breakdown of the cold pool may impact the recruitment of species that depend on it for habitat, such as juvenile yellowtail flounder.  
+
+```{r cold-pool-time, fig.cap=return_caption(chunk_name = "cold-pool-time"), fig.width = 4, fig.asp=.52, results='hide'}
+cold_pool_time_plot
+```
+
+The seasonal timing of Mid-Atlantic [phytoplankton](https://noaa-edab.github.io/catalog/chl_pp.html) blooms shows high interannual variability during the fall bloom period (October-December, Fig. \ref{fig:chl-month}).  The significant increase in January chlorophyll suggests that the fall bloom period is continuing into the winter, with more chlorophyll now than in the late 1990s. The significant decrease of chlorophyll in September could be related to warmer temperatures persisting into early fall and increased nutrient limitation.
+
+```{r chl-month, fig.width=6.5, fig.height=4, fig.cap=return_caption(chunk_name = "chl-month")}
+montlychl_plot
+```
+
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-footer>>
+```

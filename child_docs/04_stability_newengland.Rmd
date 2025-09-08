@@ -1,0 +1,61 @@
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-header>>
+```
+
+### Indicators: fishery fleet and catch diversity, ecological component diversity, total primary production
+
+While there are many potential metrics of stability, we use diversity indices to evaluate overall stability in fisheries and ecosystems. In general, diversity that remains constant over time suggests a similar capacity to respond to change over time. A significant change in diversity over time does not necessarily indicate a problem or an improvement, but does indicate a need for further investigation. We examine diversity in commercial fleet and species catch, and recreational species catch (with fleet effort diversity discussed above), zooplankton, and adult fishes.
+
+#### Fishery Stability
+
+[Diversity](https://noaa-edab.github.io/catalog/commercial_div.html) estimates have been developed for species landed by commercial vessels with New England permits and fleets landing managed species. Although the effective number of species being landed in the commercial fleet rebounded slightly from the historical low of 2021, the diversity in catch is still well below the series average (Fig.  \ref{fig:permit-div}). Commercial fishery fleet count is also below the time series average.
+
+```{r permit-div, fig.cap = return_caption(chunk_name = "commercial-div-species-div"),fig.width = 6.5,fig.asp = 0.3}
+commercial_div_species_div_plot +
+  ggplot2::ylab('Effective Shannon Index')
+```
+
+As noted above, [recreational fleet effort diversity](https://noaa-edab.github.io/catalog/recdat.html) is stable. However, recreational species catch diversity has been above the time series average since 2008 with a long-term positive trend (Fig.  \ref{fig:recdat-div-catch}).
+```{r recdat-div-catch,  fig.cap = return_caption(chunk_name = "recdat-div-catch"),fig.width = 6.5,fig.asp = 0.3}
+recdat_div_catch_plot
+```
+
+#### Ecological Stability
+
+Ecological diversity indices show mixed trends. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html) (TPP)  is a measure of the total amount of carbon (i.e. energy) produced by phytoplankton per year. 2023 saw record high TPP in the GOM due to a highly unusual phytoplankton bloom, but it is currently unknown how much of that primary production was incorporated into the upper trophic levels. Preliminary 2024 values were near the long-term average (Fig. \ref{fig:totpp}). 
+
+```{r totpp, fig.cap =return_caption(chunk_name = "totpp"),fig.width = 7.5,fig.asp = 0.3}
+a = ecodata::plot_annual_chl_pp(report = params$region, varName = "pp", plottype = "total",EPU = "GB", n = 27)+
+  ggplot2::ggtitle('Georges Bank total PP')
+b = ecodata::plot_annual_chl_pp(report = params$region, varName = "pp", plottype = "total",EPU = "GOM",n = 27)+
+  ggplot2::ggtitle('Gulf of Maine total PP')
+
+a+b
+```
+[Zooplankton diversity](https://noaa-edab.github.io/catalog/zoo_diversity.html) is increasing on GB, while no trend is evident in the GOM (Fig. \ref{fig:zoo-diversity}). However, it is worth noting that the 2021 index for the GOM is the highest observed. [Adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html) shows an increasing trend in the GOM and no trend on GB (Fig. \ref{fig:exp-n}).
+```{r zoo-diversity, fig.cap = return_caption(chunk_name = "zoo-diversity"), fig.width = 6.5, fig.asp = 0.3}
+zoo_diversity_plot
+```
+
+```{r exp-n, fig.cap = return_caption(chunk_name = "exp-n"),fig.width = 6.5,fig.asp = 0.3}
+exp_n_plot
+```
+
+[Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, asymptotic body size, or fecundity, can synthesize change across complex, diverse communities. Monitoring changes in functional trait distributions can provide a means of assessing ecosystem-scale resilience. There is evidence of long term change in trait distributions in the GOM with an increase in [pace of life](https://noaa-edab.github.io/catalog/finfish_traits.html) . Both fall and spring finfish communities are showing declines in fecundity in GB and GOM  (Fig. \ref{fig:traits}).
+
+```{r traits, fig.cap = return_caption(chunk_name = "traits"),fig.width = 6.5,fig.asp = 0.3}
+ecodata::plot_finfish_traits(report = params$region,varName = 'fecundity', n=10)+
+  ggplot2::ylab('Fecundity (number of \noffspring per mature female)')
+```
+
+### Implications
+
+Fleet diversity indices can be used to evaluate stability objectives as well as risks to fishery resilience and to maintain equity in access to fishery resources. The relatively low diversity estimates for the commercial fishery are likely driven by the continued reliance on a few species, such as sea scallops and lobster. This trend could diminish the capacity to respond to future fishing opportunities. Meanwhile, the increase in recreational species catch diversity is due to recent increases in Atlantic States Fisheries Management Council (ASFMC) and MAFMC managed species within the region, offsetting decreased limits on more traditional regional species.
+
+Ecological diversity indices can provide insight into ecosystem structure. Changes in ecological diversity over time may indicate altered ecosystem structure with implications for fishery productivity and management. Increasing zooplankton diversity in GB is attributed to an overall increase in zooplankton abundance and the declining dominance of the calanoid copepod *Centropages typicus*. Stable adult fish diversity on GB suggests the same overall number and evenness over time, but does not rule out species substitutions (e.g., warm-water species replacing cold-water ones). Increasing adult diversity in the GOM suggests an increase in warm-water species and should be closely monitored.
+
+As a whole, the examined diversity indicators suggest changes in commercial and recreational fisheries, likely driven by changes in the mix of species landed. However, there seems to be overall stability in ecosystem components. Increasing diversity in the recreational catch, GB zooplankton, and GOM adult fish accompanied by lows in commercial fleet diversity metrics, suggests warning signs of a potential regime shift or ecosystem restructuring and warrants continued monitoring to determine if managed species are affected.
+
+```{r, eval = params$id_child_docs, results = "asis"}
+<<child-footer>>
+```
