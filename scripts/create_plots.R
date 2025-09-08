@@ -5,7 +5,7 @@
 
 ## variables ----
 
-region <- "MidAtlantic"
+region <- "NewEngland"
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -81,7 +81,7 @@ save_plot(
       plt
     } else {
       plt +
-        ylab(expression("Landings (10"^3 * " metric tons)"))
+        ggplot2::ylab(expression("Landings (10"^3 * " metric tons)"))
     }
   },
   indicator = "total_landings",
@@ -224,7 +224,7 @@ if (region == "NewEngland") {
         EPU = "GB",
         n = 10
       ) +
-        ggplot2::theme(panel.spacing = unit(0, 'lines'))
+        ggplot2::theme(panel.spacing = grid::unit(0, 'lines'))
     },
     indicator = "aggregate_biomass_gb",
     width = 6.5,
@@ -885,7 +885,7 @@ if (region == "NewEngland") {
   save_plot(
     plot_expression = {
       ecodata::plot_gom_salmon(n = 10) +
-        ylab('returning proportion')
+        ggplot2::ylab('returning proportion')
     },
     indicator = "salmon",
     width = 6.5,
@@ -1014,7 +1014,7 @@ save_plot(
     if (region == "MidAtlantic") {
       plt
     } else {
-      plt + ggplot2::theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))
+      plt + ggplot2::theme(plot.margin = grid::unit(c(0, 0, 0, 0), "cm"))
     }
   },
   indicator = "therm_hab_persist",
