@@ -11,7 +11,7 @@ For this report, we focus on top communities with the highest engagement scores,
 In 2022, New Bedford, MA stands out as having a particularly high engagement in commercial fishing, while Frenchboro, ME is much more engaged in commercial fishing relative to its population size (Fig. \ref{fig:commercial-engagement}). Of particular concern among top communities are New Bedford and Boston, MA as they both have medium or higher scores for all three socio-demographic indicators, while Port Clyde-Tenants Harbor, ME ranked medium for two of the three indicator (Table \ref{tab:comm-vuln}).
 
 ```{r commercial-engagement, fig.cap= return_caption(chunk_name = "commercial-engagement"), fig.width = 7, fig.asp = 0.5, results='hide'}
-commercial_engagement_plot
+return_plot("commercial-engagement")
 ```
 
 ```{r comm-vuln}
@@ -23,7 +23,7 @@ Narragansett/Point Judith, RI; Newington, NH; and Gloucester, MA ranked as top c
 
 \newpage
 ```{r recreational-engagement, fig.cap= return_caption(chunk_name = "recreational-engagement"), fig.width = 6.5, fig.asp = 0.7, results='hide'}
-recreational_engagement_plot
+return_plot("recreational-engagement")
 ```
 \newpage
 
@@ -37,7 +37,7 @@ rec_vul_table|>
 The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) are calculated by multiplying the percent contribution of species to the total value landed in a community by their respective Total Vulnerability scores (based on NOAA’s Climate Vulnerability Assessment) for different sensitivity and exposure factors and then summing the resulting values by year. As a community (or region) shifts towards climate vulnerable species, its risk score increases. While there is not a long-term trend in total climate vulnerability across New England communities as a whole, the proportion of communities with moderate vulnerability is decreasing and shifting more towards high or very high vulnerability scores (Fig. \ref{fig:commvulex}). This suggests that some communities are shifting towards being more dependent on climate-vulnerable species, particularly shellfish.
 
 ```{r commvulex, fig.width = 6.5, fig.asp=.5, fig.cap=return_caption(chunk_name = "commvulex")}
-commvulex_plot
+return_plot("commvulex")
 ```
 
 ### Implications

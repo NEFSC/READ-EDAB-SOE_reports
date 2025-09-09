@@ -10,30 +10,15 @@ productivity_anomaly_plot / recruit_anomaly_plot
 ```
 
 ```{r seabird-ne-productivity, fig.cap = return_caption(chunk_name = "seabird-ne-productivity"),  fig.width=6.5, fig.asp=.3}
-ecodata::plot_seabird_ne(varName = "productivity", n=10) + 
-  ## TODO: update these xlim
-  ggplot2::coord_cartesian(xlim=c(1992,2023))
+return_plot("seabird-ne-productivity")
 ```
 
 ```{r salmon, fig.cap = return_caption(chunk_name = "salmon"),fig.width = 6.5,fig.asp = 0.3}
-ecodata::plot_gom_salmon(n=10)+
-  ylab('returning proportion')
+return_plot("salmon")
 ```
 The health of individual fish (i.e., fish condition) can contribute to population productivity through improved growth, reproduction, and survival. [Fish condition](https://noaa-edab.github.io/catalog/condition.html) in the Gulf of Maine and Georges Bank regions were generally good prior to 2000, poor from 2001-2010 (concurrent with declines in fish productivity, Fig. \ref{fig:productivity-anomaly}), and a mix of good and poor since 2011. In 2024, fish condition was poor for most species on both Georges Bank and in the Gulf of Maine (Fig. \ref{fig:ne-cf}).Preliminary analyses show that changes in temperature, zooplankton, fishing pressure, and population size influence the condition of different fish species.
 ```{r ne-cf, fig.cap = return_caption(chunk_name = "salmon"), fig.width=6.5, fig.asp=1.2}
-
-gb <- ecodata::plot_condition(report = params$region, EPU = "GB")
-
-gom <- ecodata::plot_condition(report = params$region, EPU = "GOM")
-
-gb / gom + 
-  plot_layout(guides = 'collect')  & 
-  theme(legend.position = 'bottom',
-        legend.text = element_text(size = 10),
-        legend.title = element_text(size = 11),
-        axis.text.x = element_text(size = 12),
-        axis.text.y = element_text(size = 12),
-        plot.title = element_text(size = 12))
+return_plot("ne-cf")
 ```
 
 #### Drivers 
@@ -47,21 +32,18 @@ The amount of forage fish available in the ecosystem combined with the energy co
 The [energy content](https://noaa-edab.github.io/catalog/energy_density.html) of juvenile and adult forage fish as prey is related to forage fish growth and reproductive cycles, as well as environmental conditions. The energy content of Atlantic herring was estimated to be highest of any forage species in the 1980s and 1990s, based on very small numbers of fish. Most observations from the NEFSC trawl surveys are below the previous estimates (Fig. \ref{fig:energy-density}). However, a recent study that included samples from additional sources indicated herring energy density peaked in summer, with some values closer to the historic estimates. Silver hake, longfin squid (Loligo in figure), and shortfin squid (Illex in figure) remain lower than previous estimates.
 
 ```{r energy-density, fig.cap=return_caption(chunk_name = "energy-density"),  fig.width = 6.5, fig.asp = 0.5}
-energy_density_plot
+return_plot("energy-density")
 ```
 Changes in the overall abundance of forage fish can influence managed species productivity as it relates to changes in food availability. New England [fall forage biomass](https://noaa-edab.github.io/catalog/forage_index.html) is stable with long-term increases in the spring GOM (Fig. \ref{fig:foragebio}). Forage biomass was highest during fall in the 1980s.
 
 ```{r foragebio, fig.cap = return_caption(chunk_name = "foragebio"), fig.width = 6.5, fig.asp=.3}
-foragebio_plot
+return_plot("foragebio")
 ```
 
 [Benthic invertebrates](https://noaa-edab.github.io/catalog/benthos_index.html) are extremely important forage for some managed species (e.g. flatfish, juvenile cod and haddock) Macrobenthos indices show long term declines in spring. In contrast, megabenthos indices show long-term increases during the fall in both GB and GOM (Fig. \ref{fig:benthos}).
 
 ```{r benthos, fig.cap=return_caption(chunk_name = "benthos"), fig.width=6.5, fig.asp=.9}
-(megabenthos_plot +  
-    ggplot2::theme(legend.position = "bottom")) /
-  (macrobenthos_plot +  
-     ggplot2::theme(legend.position = "none"))
+return_plot("benthos")
 ```
 
 ##### Biological Drivers: Lower trophic levels
@@ -78,17 +60,11 @@ Since 2010, the abundance of the lipid-rich older stages of  [*Calanus finmarchi
 
 
 ```{r zoopanom, fig.cap=return_caption(chunk_name = "zoopanom"), fig.width=6.5,fig.asp = 1}
-(large_copepod_plot +  
-    ggplot2::theme(legend.position = "none")) /
-  (small_copepod_plot + 
-     ggplot2::theme(legend.position = "none")) /
-  euphausiid_plot
+return_plot("zoopanom")
 ```
 
 ```{r zooplankton-season, fig.cap=return_caption(chunk_name = "zooplankton-season")}
-# magick::image_read("https://github.com/NOAA-EDAB/ecodata/blob/dev/data-raw/workshop/images/RUNGE_Fig1_SeasonalandmultiannualabundanceofCalanusfinmarchicus-JeffreyRunge_2025.png?raw=true")|>
-#   magick::image_crop("2000x2000+0+1900")
-knitr::include_graphics(cfin_image)
+return_plot("zooplankton-season")
 ```
 
 ##### Environmental Drivers
@@ -97,14 +73,13 @@ Fish production can also be directly related to the prevailing environmental con
 
 In 2024, only one [surface marine heatwave](https://noaa-edab.github.io/catalog/heatwave_year.html) occurred throughout the entire U.S. Northeast Shelf due to the cooler ocean conditions observed in the region.  This surface marine heatwave occurred in the Gulf of Maine starting on May 29th, peaking on June 7th, and lasting 12 days.  This marine heatwave was not within the top 10 on record in terms of intesity.
 ```{r therm-hab-persist-2024, fig.cap=return_caption(chunk_name = "therm-hab-persist-2024"), fig.width=6.5, fig.asp=0.5}
-therm_hab_persist_plot +
-  ggplot2::theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))
+return_plot("therm-hab-persist-2024")
 ```
 
 `r oa_paragraph`
 
 ```{r mab-oa, eval = TRUE, out.width = '100%', fig.cap = return_caption(chunk_name = "mab-oa")}
-knitr::include_graphics(mab_oa_image)
+return_plot("mab-oa")
 ```
 
 Biological and oceanographic processes can affect the amount of oxygen present in the water column. During low oxygen (hypoxic) events, species' growth is negatively affected and very low oxygen can result in mortality. The duration and extent of hypoxic events is being monitored, but long-term shelf-wide observations are not yet available. However, [hypoxic events](https://noaa-edab.github.io/catalog/observation_synthesis_2023.html) were detected off the coast of New Jersey in 2023 and were potentially responsible for fish, lobster, and crab [mortalities](https://sebsnjaesnews.rutgers.edu/2023/12/rutgers-scientists-observe-unusual-ocean-conditions-possibly-linked-to-mortality-in-marine-life-off-new-jersey/). No hypoxic events were observed on the NE shelf in 2024.

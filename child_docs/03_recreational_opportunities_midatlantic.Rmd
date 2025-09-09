@@ -6,11 +6,11 @@
 [Recreational effort](https://noaa-edab.github.io/catalog/recdat.html) (angler trips) in 2023 continues to be above the long-term average (Fig. \ref{fig:rec-op}). in the MAB. However, recreational fleet diversity (i.e., effort by shoreside, private boat, and for-hire anglers) has declined over the long term (Fig. \ref{fig:rec-div}). 
 
 ```{r rec-op, fig.cap = return_caption(chunk_name = "rec-op")}
-rec_op_plot
+return_plot("rec-op")
 ```
 
 ```{r rec-div, fig.cap = return_caption(chunk_name = "rec-div")}
-rec_div_plot
+return_plot("rec-div")
 ```
 
 ### Implications

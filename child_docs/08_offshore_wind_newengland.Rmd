@@ -3,7 +3,7 @@
 ```
 
 ```{r wea-spp-rev, fig.cap=return_caption(chunk_name = "wea-spp-rev"),  fig.width=6, fig.asp=.6}
-wea_spp_rev_plot
+return_plot("wea-spp-rev")
 ```
 
 ```{r wea-landings-rev, ft.arraystretch = 1}
@@ -15,7 +15,7 @@ flextable::flextable(wea_landings_rev_table) %>%
 Social vulnerabilities of communities are priority concerns with offshore wind development and fisheries impacts in the Northeast, and the impacts of offshore wind development are expected to differentially [impact specific coastal communities](https://noaa-edab.github.io/catalog/wind_port.html). Additionally, impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean. 
 
 ```{r wea-port-rev, fig.cap=return_caption(chunk_name = "wea-port-rev"),  fig.width=6.5, fig.asp=.6, fig.align='left'}
-wea_port_rev_plot
+return_plot("wea-port-rev")
 ```
 
 For example, Little Compton, RI had a minimum of 17% and maximum of 32% overlap of wind energy revenue to the total port revenue between 2008-2023 (Fig. \ref{fig:wea-port-rev}). BOEM reports that cumulative offshore wind development (if all proposed projects are developed) could have moderate impacts on low-income members of vulnerable communities who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation, and increased vessel traffic as well as existing vulnerabilities of low-income workers to economic impacts.
@@ -25,7 +25,7 @@ Top fishing communities with high [socio-demographic concerns](https://noaa-edab
 Some ports in the Mid-Atlantic land New England-managed species from wind areas as well. For the maximum percent value reported in each Mid-Atlantic port, the majority (at least 50% based on both value and pounds) of those landings were New England managed species within wind areas for nine communities (Fig. \ref{fig:wind-rev-MAB-NEFMC}).
 
 
-```{r wind-rev-MAB-NEFMC, fig.cap="Percent of Mid-Atlantic port revenue with majority NEFMC landings from Wind Energy Areas (WEA) in descending order from most to least port fisheries revenue from WEA.", fig.width=6.5, fig.asp=.4, fig.align='left'}
+```{r wind-rev, fig.cap=return_caption(chunk_name = "wind-rev"), fig.width=6.5, fig.asp=.4, fig.align='left'}
 ## TODO: this should be turned into a function
 fix <- ecodata::wind_port |>
    dplyr::filter(EPU %in% "MAB") |>

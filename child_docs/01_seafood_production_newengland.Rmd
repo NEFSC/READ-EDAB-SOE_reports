@@ -8,8 +8,7 @@
 This year, we present updated indicators for total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html), U.S. seafood landings (includes seafood, bait, and industrial landings), and Council-managed U.S. seafood landings through 2023. There are long-term declines in all New England landings time series except for total commercial landings on GB (Fig. \ref{fig:total-landings}). There exist long-term declines in commercial seafood landings and NEFMC managed seafood landings for both the GOM and GB, but over the last decade there is no trend in managed seafood landings in the GOM. 
  
 ```{r, total-landings, fig.width = 6.5, fig.asp = 0.4, fig.cap = return_caption(chunk_name = "total-landings")}
-total_landings_plot +
-  ylab(expression("Landings (10"^3*" metric tons)"))
+return_plot("total-landings")
 ```
 
 Commercial landings by guild include all species and all uses, and are reported as total for the guild and the NEFMC managed species within the  [guild](https://noaa-edab.github.io/catalog/aggregate_biomass.html). As reported in previous years, downward trends persist for a number of guilds in both regions. Current high total landings for benthivores (GOM) are attributable to American lobster, and a significant long term increase in benthos landings (GB) is attributable to clams and scallops (Fig. \ref{fig:comm-landings}).Current landings of planktivores are still below the long term mean.  
@@ -17,23 +16,23 @@ Commercial landings by guild include all species and all uses, and are reported 
 [Aquaculture production](https://noaa-edab.github.io/catalog/aquaculture.html) is not yet included in total seafood landings. 
 
 ```{r, comm-landings, fig.cap = return_caption(chunk_name = "comm-landings"), fig.width=6.5, fig.asp=1}
-comm_landings_plot
+return_plot("comm-landings")
 ```
 
 [Total Community Climate Change Risk](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) is a measure of to what degree a region’s landings (or revenue) is dependent on sensitivity and exposure factors that relate to species’ risk to temperature or ocean acidification changes as the result of future climate change. For New England, the total climate vulnerability of landings (Fig. \ref{fig:climatevul-land}) was moderate in 2022 with no long-term trend suggesting a moderate reliance on climate-sensitive species. This proportion has not significantly changed since 2000.
 
 ```{r, climatevul-land, fig.cap = return_caption(chunk_name = "climatevul-land"), fig.width=6.5, fig.asp=0.5}
-climatevul_land_plot
+return_plot("climatevul-land")
 ```
 
 Overall, [recreational harvest](https://noaa-edab.github.io/catalog/recdat.html) (retained fish presumed to be eaten) has declined in New England (Fig. \ref{fig:rec-landings}). However, recent harvest has remained above the historical low level in 2020. Recreational [shark landings](https://noaa-edab.github.io/catalog/rec_hms.html) of pelagic and prohibited sharks have declined since 2018 (Fig  \ref{fig:rec-hms}), which is likely influenced by regulatory changes implemented in 2018 intended to rebuild shortfin mako stocks and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT).
 
 ```{r rec-landings, fig.cap = return_caption(chunk_name = "rec-landings"),fig.width = 6.5,fig.asp = 0.4}
-rec_landings_plot
+return_plot("rec-landings")
 ```
 
 ```{r rec-hms, fig.cap = return_caption(chunk_name = "rec-hms"), fig.width=6.5,fig.asp = 0.4, results='hide', error=FALSE}
-rec_hms_and_lps_plots
+return_plot("rec-hms")
 ```
 
 ### Implications
@@ -46,8 +45,7 @@ Single species [management objectives](https://noaa-edab.github.io/catalog/stock
 
 
 ```{r stock-status, fig.cap = return_caption(chunk_name = "stock-status"), fig.width = 6, fig.asp = 0.8, cache = FALSE}
-stock_status_plot$p +
-  ggplot2::theme(legend.position = 'bottom')
+return_plot("stock-status")
 ```
 
 ```{r stock-status-table, ft.arraystretch = 1}
@@ -69,12 +67,11 @@ flextable::flextable() |>
 [Aggregate biomass](https://noaa-edab.github.io/catalog/aggregate_biomass.html) trends derived from scientific resource surveys have been stable to increasing in both regions (Fig. \ref{fig:nefsc-biomass-gb} & Fig. \ref{fig:nefsc-biomass-gom}).The benthivores group spiked during the last decade, due to a large haddock recruitment, but appears to be returning to average levels. Planktivore biomass on GB continues to rise with the highest fall biomass observed since 1968. There are mixed trends in piscivores on GB, and increasing trends for planktivores across both regions and seasons  and benthos on GB in both seasons. The New Hampshire/Maine state survey time series is too short to estimate trends, while the Massachusetts state survey shows the increasing trend in planktivores in the fall but a decrease in piscivores in the spring and benthos in both seasons (Fig. \ref{fig:mass-biomass}). While managed species comprise varying proportions of aggregate biomass, trends in landings are not mirroring shifts in the overall trophic structure of survey-sampled fish and invertebrates. Therefore, major shifts in feeding guilds or ecosystem trophic structure are unlikely to be driving the decline in landings.
 
 ```{r nefsc-biomass-gb, fig.cap = return_caption(chunk_name = "nefsc-biomass-gb"), fig.width=6.5, fig.asp = 1, results='hide'}
-ecodata::plot_aggregate_biomass(report = params$region, EPU = "GB", n=10)+
-  theme(panel.spacing = unit(0,'lines'))
+return_plot("nefsc-biomass-gb")
 ```
 
 ```{r nefsc-biomass-gom, fig.cap = return_caption(chunk_name = "nefsc-biomass-gom"),  fig.width=6.5, fig.asp = 1, results = 'hide'}
-ecodata::plot_aggregate_biomass(report = params$region, EPU = "GOM", n=10)
+return_plot("nefsc-biomass-gom")
 ```
 
 #### Effect on Seafood Production
@@ -84,7 +81,7 @@ With the poor or unknown stock status of many managed species, the decline in co
 The decline in recreational seafood harvest stems from multiple drivers. Some of the decline, such as for recreational shark landings, continues to be driven by tightening regulations. However, changes in demographics and preferences for recreational activities likely play a role in non-HMS (Highly Migratory Species) declines in recreational harvest, with current harvests well below the time series average.
 
 ```{r mass-biomass, fig.cap = return_caption(chunk_name = "mass-biomass"), fig.width=6.5, fig.asp = 0.75, results = 'hide'}
-ecodata::plot_mass_inshore_survey(report = params$region, n=10)
+return_plot("mass-biomass")
 ```
 
 Other environmental changes require monitoring as they may become important drivers of future landings:

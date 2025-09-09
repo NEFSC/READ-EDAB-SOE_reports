@@ -6,12 +6,11 @@
 
 [Recreational effort](https://noaa-edab.github.io/catalog/recdat.html) (angler trips) increased during 1982-2010, but has since declined to the long-term average (Fig. \ref{fig:rec-op}). Recreational fleets are defined as private vessels, shore-based fishing, or party-charter vessels. Recreational fleet diversity, or the relative importance of each fleet type, has remained relatively stable over the latter half of the time series (Fig.  \ref{fig:rec-div}).
 ```{r rec-op, fig.cap = return_caption(chunk_name = "rec-op"),fig.width = 6.5,fig.asp = 0.3}
-rec_op_plot
+return_plot("rec-op")
 ```
 
 ```{r rec-div, fig.cap = return_caption(chunk_name = "rec-div"),fig.width = 6.5,fig.asp = 0.3}
-rec_div_plot +
-  ggplot2::ylab('Effective Shannon Index')
+return_plot("rec-div")
 ```
 
 ### Implications

@@ -10,7 +10,7 @@ urlcolor: blue
 always_allow_html: true
 params:
   region: "MidAtlantic"
-  fig_caption: "utils/fig-captions.csv"
+  fig_caption: "utils/figure_captions_summary.csv"
   cache: FALSE
   id_child_docs: FALSE
 ---
@@ -79,6 +79,20 @@ return_filepath <- function(key = caption_key,
   return(filepath)
 }
 
+return_plot <- function(name, cap_key = caption_key) {
+  file <- return_filepath(key = cap_key, chunk_name = name) |>
+    here::here() 
+  
+  if(file.exists(file) & file.info(file)$isdir == FALSE) {
+    file |>
+  knitr::include_graphics(dpi = 300)
+  } else {
+    stop(paste0("Cannot find file specified: ", file))
+  }
+  
+  
+}
+
 epus <- dplyr::case_when(
   params$region == "MidAtlantic" ~ "Mid-Atlantic Bight, MAB",
   params$region == "NewEngland" ~ "Gulf of Maine (GOM) and Georges Bank (GB)"
@@ -96,17 +110,18 @@ region2 <- dplyr::case_when(
 
 caption_key <- read.csv(params$fig_caption) |>
   dplyr::mutate(caption = dplyr::case_when(
-    params$region == "MidAtlantic" ~ fig_cap_ma,
-    params$region == "NewEngland" ~ fig_cap_ne
+    params$region == "MidAtlantic" ~ .data$fig_cap_ma,
+    params$region == "NewEngland" ~ .data$fig_cap_ne
   ),
   filepath = dplyr::case_when(
-    params$region == "MidAtlantic" ~ fig_path_ma,
-    params$region == "NewEngland" ~ fig_path_ne
+    params$region == "MidAtlantic" ~ .data$fig_path_ma,
+    params$region == "NewEngland" ~ .data$fig_path_ne
   )) |>
-  dplyr::mutate(caption = dplyr::case_when(is.na(caption) ~ fig_cap_both,
+  dplyr::mutate(caption = dplyr::case_when(is.na(caption) ~ .data$fig_cap_both,
                                            TRUE ~ caption),
-                filepath = dplyr::case_when(is.na(filepath) ~ fig_path_both,
-                                           TRUE ~ filepath))
+                filepath = dplyr::case_when(is.na(filepath) ~ .data$fig_path_both,
+                                           TRUE ~ filepath) |>
+                  stringr::str_replace_all("\\\\", "/")) 
 
 ## TODO: pass maximum figure width as a parameter/ top-level variable
 ```
@@ -143,7 +158,7 @@ if (params$region == "MidAtlantic") {
 cat(res, sep = "\n\n")
 ```
 
-```{r, child = here::here("child_docs/child_plots.Rmd"), include = FALSE}
+```{r, child = here::here("child_docs/child_plots.Rmd"), include = FALSE, eval = FALSE}
 ```
 
 ```{r, child = here::here("child_docs/shared_text.Rmd"), include = FALSE}
@@ -200,27 +215,25 @@ Fishery management objectives for protected species generally focus on reducing 
 Average indices for both [harbor porpoise](https://noaa-edab.github.io/catalog/harborporpoise.html) (Fig. \ref{fig:harborporpoise}) and [gray seal](https://noaa-edab.github.io/catalog/grayseal.html) bycatch (Fig. \ref{fig:grayseal}) are below current PBR thresholds, meeting management objectives, although uncertainty in the gray seal bycatch estimate has increased recently, and gray seal bycatch is among the highest for marine mammals in the U.S.
 
 ```{r harborporpoise, fig.cap=return_caption(chunk_name = "harborporpoise"), fig.width=5, fig.asp=0.47}
-ecodata::plot_harborporpoise()
+return_plot("harborporpoise")
 ```
 
 The annual estimate for gray seal bycatch, most of which occurs in New England, has declined since 2019, in part driven by declining gillnet landings. In addition, estimates since 2019 have greater uncertainty stemming from low observer coverage in some times and areas since 2019. The rolling mean confidence interval remains just below the PBR threshold. 
 
 ```{r grayseal, fig.cap=return_caption(chunk_name = "grayseal"), fig.width=5, fig.asp=0.47}
-ecodata::plot_grayseal()
+return_plot("grayseal")
 ```
 
 The [North Atlantic right whale population](https://noaa-edab.github.io/catalog/narw.html) was on a recovery trajectory until 2010, but has since declined (Fig. \ref{fig:narw-abundance}). The sharp decline observed from 2015-2020 appears to have slowed, although the right whale population continues to experience annual mortalities above recovery thresholds. Reduced survival rates of adult females lead to diverging abundance trends between sexes. It is estimated that there are fewer than 70 adult females remaining in the population.
 
 ```{r narw-abundance, fig.cap = return_caption(chunk_name = "narw-abundance")}
-ecodata::plot_narw(varName = "adult", n=10) + 
-  ggplot2::ggtitle("North Atlantic right whale abundance")
+return_plot("narw-abundance")
 ```
 
 North Atlantic right whale [calf counts](https://noaa-edab.github.io/catalog/narw.html) have generally declined after 2009 to the point of having zero new calves observed in 2018 (Fig. \ref{fig:NARW-calf-abundance}). However, since 2020, calf births have been closer to the long-term average.
 
 ```{r NARW-calf-abundance, fig.cap = return_caption(chunk_name = "NARW-calf-abundance")}
-ecodata::plot_narw(varName = "calf", n=10) + 
-  ggplot2::ggtitle("North Atlantic right whale calf abundance")
+return_plot("NARW-calf-abundance")
 ```
 
 This year, the Unusual Mortality Event (UME) for North Atlantic right whales continued. From 2017 through 2 January 2025, the total UME right whale mortalities includes 41 dead stranded whales, 19 in the US and 22 in Canada. When alive but seriously injured whales (39) and sublethal injuries or ill whales (71) are taken into account, 151 individual whales are included in the UME. Recent research suggests that many mortalities go unobserved and the true number of mortalities are about three times the count of the observed mortalities. The primary cause of death is “human interaction” from entanglements or vessel strikes.
@@ -232,8 +245,7 @@ A UME continued from previous years for humpback whales (2016-present) and Atlan
 Bycatch management measures have been implemented to maintain bycatch below PBR thresholds. The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort. The increasing trend in gray seal bycatch may be related to an increase in the gray seal population ([U.S. pup counts](https://noaa-edab.github.io/catalog/seal_pups.html)), supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
 
 ```{r seals, fig.cap = return_caption(chunk_name = "seals"),fig.width = 6.5, fig.asp = 0.4, eval = params$region == "NewEngland"}
-ecodata::plot_seal_pups(report = params$region)+
-  theme(legend.position = 'bottom')
+return_plot("seals")
 ```
 
 Strong evidence exists to suggest that interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. Further, right whale distribution has changed since 2010. [Recent research](https://noaa-edab.github.io/catalog/narw.html) suggests that recent climate driven changes in ocean circulation have resulted in right whale distribution changes driven by increased warm water influx through the Northeast Channel, which has reduced the primary right whale prey (the copepod *Calanus finmarchicus*) in the central and eastern portions of the Gulf of Maine. Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat. This area is also a primary right whale winter foraging habitat. Additional information can be found in the [offshore wind risks section](#other-ocean-uses-offshore-wind).
@@ -258,63 +270,47 @@ As noted in the [Seafood Production Implications section above](#implications), 
 [Habitat model-based species richness](https://noaa-edab.github.io/catalog/habitat_diversity.html) suggests shifts of both cooler and warmer water species to the northeast. Similar patterns have been found for [marine mammals](https://noaa-edab.github.io/catalog/cetacean_dist.html), with multiple species shifting northeast between 2010 and 2017 in most seasons (Fig. \ref{fig:protectedspp-dist-shifts}).
   
 ```{r species-dist, fig.cap = return_caption(chunk_name = "species-dist"), fig.width = 6.5, fig.asp=0.27}
-# TODO: these xlims are outdated?
-a <- ecodata::plot_species_dist(varName = "along", n = 10) + ggplot2::coord_cartesian(xlim = c(1969, 2021))
-b <- ecodata::plot_species_dist(varName = "depth", n = 10) + ggplot2::coord_cartesian(xlim = c(1969, 2021))
-
-a + b
+return_plot("species-dist")
 ```  
 
 ```{r protectedspp-dist-shifts, fig.cap= return_caption(chunk_name = "protectedspp-dist-shifts"), fig.width=6.5, fig.asp=0.8}
-ecodata::plot_cetacean_dist() + 
-  ggplot2::ggtitle("Whale and Dolphin Distribution Shifts")
+return_plot("protectedspp-dist-shifts")
 ```
 
 #### Drivers: 
 
 Mobile populations shift distributions to maintain suitable temperature and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is related, in part, to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has been more variable over time.  [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring. 
 
-```{r}
-## TODO: insert calanus COG plot for NE only
+```{r calfin-cog, fig.cap = return_caption(chunk_name = "calfin-cog"), fig.width = 7.5, fig.asp = .3, eval = params$region == 'NewEngland'}
+return_plot("calfin-cog")
 ```
 
 ```{r forageshifts, fig.cap=return_caption(chunk_name = "forageshifts"), fig.width = 6.5, fig.asp = .3}
-## TODO: move these aesthetic updates into ecodata function
-ecodata::plot_forage_index(varName = "cog", n = 10) +
-  ggplot2::coord_cartesian(xlim = c(1982, 2023)) +
-  ggplot2::ggtitle("Northeast U.S. Forage Fish Distribution") +
-  ggplot2::ylab("Center of Gravity, km")
+return_plot("forageshifts")
 ```
 
 In contrast, [macrobenthos](https://noaa-edab.github.io/catalog/benthos_index.html) center of gravity has shifted westward (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. [Large copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4) have a similar pattern to macrobenthos, trending westward in fall.
 
 ```{r macrobenthosshifts, fig.cap=return_caption(chunk_name = "macrobenthosshifts"), fig.width = 6.5,fig.asp = .3}
-## TODO: move these aesthetic updates into ecodata function
-ecodata::plot_benthos_index(plottype = "cog", varName = "Macrobenthos", n = 10) +
-  ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
-  ggplot2::ggtitle("Northeast U.S. Macrobenthos Distribution") +
-  ggplot2::ylab("Center of Gravity, km")
+return_plot("macrobenthosshifts")
 ```
 
 Ocean temperatures influence the distribution, seasonal timing, and productivity of managed species (see sections below). The Northeast US shelf, including the Mid-Atlantic, has experienced a continued warming trend for both the [long term annual sea surface](https://noaa-edab.github.io/catalog/long_term_sst.html) (Fig. \ref{fig:long-term-sst}) and [seasonal  surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) and [bottom temperature](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html). However, 2024 surface and bottom temperatures were near normal to cooler than normal conditions in all seasons in the MAB (see also the [2024 Highlights section](#highlights)).
 
 ```{r long-term-sst, fig.cap=return_caption(chunk_name = "long-term-sst")}
-ecodata::plot_long_term_sst(n = 10)
+return_plot("long-term-sst")
 ```
 
 Species suitable habitat can expand or contract when changes in temperature and major oceanographic conditions alter distinct water mass habitats.The variability of the Gulf Stream is a major driver of the predominant oceanographic conditions of the Northeast U.S. continental shelf. As the [Gulf Stream](https://noaa-edab.github.io/catalog/gsi.html) has become less stable and shifted northward in the last decade (Fig. \ref{fig:GSI}), warmer ocean temperatures have been observed on the northeast shelf and a higher proportion of [Warm Slope Water](https://noaa-edab.github.io/catalog/slopewater.html) has been present in the Northeast Channel. Since 2008, the Gulf Stream has moved closer to the Grand Banks, reducing the supply of cold, fresh, and oxygen-rich Labrador Current waters to the Northwest Atlantic Shelf. In 2024, however, the [eastern portion of the Gulf Stream was further south](https://noaa-edab.github.io/catalog/gsi.html), which could affect the composition of the source water entering the Gulf of Maine through the Northeast Channel (see [2024 Highlights](#highlights)).
 
 ```{r GSI, fig.cap = return_caption(chunk_name = "GSI")}
-ecodata::plot_gsi(varName = "westgsi", n = 10)
+return_plot("GSI")
 ```
 
 Changes in ocean temperature and circulation alter habitat features such as the Middle Atlantic Bight [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html), a band of relatively cold near-bottom water from spring to fall over the  northern MAB. The cold pool represents essential fish spawning and nursery habitat, and affects fish distribution and behavior. The cold pool has been getting warmer and its areal extent has been shrinking over time (Fig. \ref{fig:cold-pool-size}). In 2024, however, the cold pool index and extent were near the long-term average, likely due to the influx of Labrador Slope and Scotian Shelf waters into the system.
 
 ```{r cold-pool-size, fig.cap=return_caption(chunk_name = "cold-pool-size"), fig.width = 6.5, fig.asp = 0.3, results='hide'}
-a <- ecodata::plot_cold_pool(varName = "cold_pool", n = 10)
-b <- ecodata::plot_cold_pool(varName = "extent", n = 10)
-
-a + b
+return_plot("cold-pool-size")
 ```
 
 #### Future Considerations 
@@ -334,8 +330,7 @@ The effectiveness of seasonal management actions (fishing seasons or area openin
 [Spawning timing](https://noaa-edab.github.io/catalog/spawn_timing.html) is shifting earlier for multiple stocks, including haddock and yellowtail flounder. Spawning of both haddock stocks occurred earlier in the year, as indicated by more resting (post-spawning) stage fish in the 2010s as compared to earlier in the time series (Fig. \ref{fig:spawntiming}). The northern (Cape Cod/GOM) yellowtail flounder stock shows earlier active spawning in recent years with a decline in pre-spawning resting females.The recent increase in resting females in the southern (SNE) stock also indicates a shift to earlier spawning (i.e. more post-spawn fish). Yellowtail flounder spawning is related to bottom temperature, week of year, and decade sampled for each of the three stocks.
 
 ```{r spawntiming, fig.cap=return_caption(chunk_name = "spawntiming"), fig.width = 6.5, fig.asp=.5}
-ecodata::plot_spawn_timing(n=10) + 
-  ggplot2::ggtitle("Spring Resting Maturity Stage")
+return_plot("spawntiming")
 ```
 
 [Migration timing](https://noaa-edab.github.io/catalog/timing_shifts.html) of some tuna and large whale migrations has changed. An analysis of recreational fishing data between 2019 and 2022 identified multiple shifts in important HMS species. For example, Bigeye tuna were caught 50 days earlier; small and large bluefin tuna were caught 38 and 80 days earlier respectively in Massachusetts; and blue marlin in New York were caught 27 days earlier. In Cape Cod Bay, peak spring habitat use by right and humpback whales has shifted 18-19 days later over time.
@@ -349,13 +344,7 @@ The drivers of timing shifts in managed stocks are generally coupled to shifts i
 Along with the overall warming trends in `r region`, ocean summer conditions have been lasting longer (Fig. \ref{fig:transition}) due to the later [transition](https://noaa-edab.github.io/catalog/trans_dates.html) from warm summer conditions to cooler fall temperatures. These transition dates relate how daily temperatures compare to the seasonal norm. Changes in the timing of seasonal environmental cycles can alter biological processes (migrations, spawning, etc.) that are triggered by seasonal events.  
 
 ```{r transition, fig.cap=return_caption(chunk_name = "transition")}
-## TODO: move aesthetics into ecodata function
-ecodata::plot_trans_dates(report = params$region, varName = "length", n=10) + 
-  ggplot2::ggtitle(paste("Time between spring and fall transition in", region)) + 
-  theme(
-  strip.background = element_blank(),
-  strip.text.x = element_blank()
-)
+return_plot("transition")
 ```
 
 ```{r, child = here::here(paste0("child_docs/06_risk_seasonal_", stringr::str_to_lower(params$region), ".Rmd"))}
@@ -387,16 +376,14 @@ As of January 2025, 30 offshore [wind development](https://noaa-edab.github.io/c
 txt <- return_caption(chunk_name = "wind-proposed-dev")
 ```
 
-```{r wind-proposed-dev, fig.cap=txt, fig.width=5}
-ecodata::plot_wind_dev_speed()
+```{r wind-proposed-dev, fig.cap = return_caption(chunk_name = "wind-proposed-dev"), fig.cap=txt, fig.width=5}
+return_plot("wind-proposed-dev")
 ```
 
 Just over 3,200 foundations and more than 12,000 miles of inter-array and offshore export cables are proposed to date (Fig. \ref{fig:wind-dev-cumul}). Based on current timelines, the areas affected would be spread out such that it is unlikely that any one region would experience full development at one time. Construction of three projects in Southern New England (Vineyard Wind, South Fork Wind Farm, and Revolution Wind) and two more in the Mid-Atlantic/New York Bight (Coastal Virginia Offshore Wind and Empire Wind 1) during 2024 affected fisheries managed by the Mid-Atlantic Fishery Management Council. It is likely that construction will begin on other projects in Southern New England and possibly the New York Bight during 2025 that will further affect regional fisheries.
 
 ```{r wind-dev-cumul, fig.cap = return_caption(chunk_name = "wind-dev-cumul"), out.width='90%'}
-# magick::image_read_pdf("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/UpdatedWindFigure49(MAFMC)andFig50(NEFMC)-AngelaSilva_2025.pdf") 
-
-knitr::include_graphics(wind_cumul_image)
+return_plot("wind-dev-cumul")
 ```
 
 ```{r, child = here::here(paste0("child_docs/08_offshore_wind_", stringr::str_to_lower(params$region), ".Rmd"))}
@@ -408,7 +395,7 @@ Current plans for buildout of offshore wind in a patchwork of areas spreads the 
 Planned development [overlaps NARW](https://noaa-edab.github.io/catalog/persistent_hotspots.html) mother and calf migration corridors and a significant foraging habitat that is used throughout the year (Fig. \ref{fig:whales-wind}). Turbine presence and extraction of energy from the system could alter local oceanography and may affect right whale prey availability. For example, persistent foraging hotspots of right whales and seabirds overlap on Nantucket Shoals, where unique hydrography aggregates enhanced prey densities. Wind leases (OCS-A 0521 and OCS-A 0522) currently intersect these hotspots on the southwestern corner of Nantucket Shoals and a prominent tidal front associated with invertebrate prey swarms important to seabirds and possibly right whales. Proposed wind development areas also bring increased vessel strike risk from construction and operation vessels. In addition, there are a number of potential impacts to whales from pile driving and operational noise such as displacement, increased levels of communication masking, and elevated stress hormones.  
 
 ```{r whales-wind, out.width="55%", fig.cap=return_caption(chunk_name = "whales-wind")}
-magick::image_read(whales_wind_image)
+return_plot("whales-wind")
 ```
 
 Scientific data collection surveys for ocean and ecosystem conditions, fish, and protected species will be altered, potentially increasing uncertainty for stock assessments and associated management decision making.
@@ -427,14 +414,13 @@ This section intends to provide a record of [noteworthy observations reported in
 Late 2023 and early 2024 observations indicate movement of cooler and fresher water into the Northwest Atlantic, although there are seasonal and local exceptions to this pattern. Anomalously cold (Fig. \ref{fig:slopesea}) and low salinity conditions were recorded throughout the Northeast Shelf and were widespread across the Slope Sea for much of the year. These cooler and fresher conditions are linked to the southward movement of the eastern portion of the [Gulf Stream](https://noaa-edab.github.io/catalog/gsi.html) and possibly an increased influx of Labrador Slope and Scotian Shelf water into the system. 
 
 ```{r slopesea, out.width="65%", fig.cap="February 2024 sea surface temperature difference compared to the February 2000-2020 long-term mean from the NOAA Advanced Clear-Sky Processor for Ocean (ACSPO) Super-collated SST."}
-magick::image_read(slopesea_image) |>
-  magick::image_resize("1650x2500")
+return_plot("slopesea")
 ```
 
 In 2023, Labrador Slope water accounted for more than 50% of the [source water](https://noaa-edab.github.io/catalog/slopewater.html) entering the Gulf of Maine through the Northeast Channel (Fig. \ref{fig:slopewater}); data are still being processed for 2024. Colder, fresher water detected deep in the Jordan Basin for the [first half of 2024](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html) suggests an increased influx of Labrador Slope and Scotian Shelf water, which resulted in colder and fresher conditions throughout the Northwest Atlantic and contributed to the increased size and colder temperatures of the  Mid-Atlantic [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html). 
 
-```{r slopewater, fig.asp=.5, fig.cap="The proportion of Warm Slope Water (WSW) and Labrador Slope Water (LSW) enter the Gulf of Maine through the Northeast Channel. The orange and teal dashed lines represent the long-term proportion averages for the WSW and LSW respectively."}
-ecodata::plot_slopewater(report = "NewEngland")
+```{r slopewater, fig.asp=.5, fig.cap=return_caption(chunk_name = "slopewater")}
+return_plot("slopewater")
 ```
 
 #### Northeast Shelf and Local Phenomena
@@ -445,16 +431,14 @@ In the summer, Chesapeake Bay recorded warm temperatures and low bottom water di
 
 During the summer months there were multiple prolonged upwelling events that brought cold water to the surface off the New Jersey coast. There was also an atypical phytoplankton bloom south of Long Island in late June to early July 2024, possibly linked to an upwelling event (Fig. \ref{fig:cocobloom}). The bloom was dominated by coccolithophores, which have an exoskeleton made up of calcium carbonate plates that can turn the water an opaque turquoise color. Large blooms of coccolithophores are unusual in this region, but they are not considered harmful and are grazed by zooplankton. Additionally, there were observations of multiple whale species aggregating near the Hudson Canyon between May and August.
 
-```{r cocobloom, out.width="55%", fig.cap="An OLCI Sentinel 3A true color image with enhanced contrast captured on July 2, 2024. Coccolithophores shed their coccolith plates during the later stages of the bloom cycle, which results in the milky turquoise water color (Image credit: NOAA STAR, OCView and Ocean Color Science Team)."}
-magick::image_read(cocobloom_image) |>
-  magick::image_resize("800x1800")
+```{r cocobloom, out.width="55%", fig.cap=return_caption(chunk_name = "cocobloom")}
+return_plot("cocobloom")
 ```
 
 Summer bottom [ocean acidification (OA)](https://noaa-edab.github.io/catalog/ocean_acidification.html) risk in the Mid-Atlantic was the highest recorded since sampling began in 2007. High OA risk is measured as low aragonite saturation state($\Omega$). Similarly, the winter/early spring [Gulf of Maine surface OA risk](https://noaa-edab.github.io/catalog/gom_acidification.html)  was significantly above the climatological average and near the sensitivity levels for cod ($\Omega$<1.19) and lobster ($\Omega$<1.09) (Fig.\ref{fig:GOMoa}). These observations were likely driven by the greater volume of fresher, less-buffered Labrador Slope water entering the Gulf of Maine and Mid-Atlantic, as well as cooler conditions. The 2023 and 2024 high summer OA risk has increased the extent of potentially unfavorable habitat for Atlantic sea scallops ($\Omega$<1.1) and longfin squid ($\Omega$<0.96). Additionally, for the first time, high OA risk conditions were observed outside of summer (fall for both species and spring for Atlantic sea scallops).
 
-```{r GOMoa, out.width="60%", fig.cap="Weekly average surface aragonite saturation state measured at the long-term buoy location in the Gulf of Maine at 43.02 N and 70.54 W"}
-magick::image_read_pdf(GOMoa_image) |>
-  magick::image_crop("1650x1100+400+1650")
+```{r GOMoa, out.width="60%", fig.cap=return_caption(chunk_name = "GOMoa")}
+return_plot("GOMoa")
 ```
 
 In contrast to the  documented die-off of scallops in the Mid-Atlantic Elephant Trunk region between the 2022 and 2023 surveys, in 2024 there was strong scallop recruitment in the southeastern portion of the Nantucket Lightship Area.
@@ -469,7 +453,7 @@ In contrast to the  documented die-off of scallops in the Mid-Atlantic Elephant 
 
 The figure format is illustrated in Fig \ref{fig:docformat}a. Trend lines are shown when slope is significantly different from 0 at the p < 0.05 level. An orange line signifies an overall positive trend, and purple signifies a negative trend. To minimize bias introduced by small sample size, no trend is fit for < 30 year time series. Dashed lines represent mean values of time series unless the indicator is an anomaly, in which case the dashed line is equal to 0. Shaded regions indicate the past ten years. If there are no new data for 2022, the shaded region will still cover this time period. The spatial scale of indicators is either coastwide, Mid-Atlantic states (New York, New Jersey, Delaware, Maryland, Virginia, North Carolina), or at the Mid-Atlantic Bight (MAB) Ecosystem Production Unit (EPU, Fig. \ref{fig:docformat}b) level.
 
-```{r docformat, fig.cap = "Document orientation. a. Key to figures. b.The Northeast Large Marine Ecosystem.",  fig.width = 6.5, fig.height = 2.5}
+```{r docformat, fig.cap = return_caption(chunk_name = "docformat"),  fig.width = 6.5, fig.height = 2.5}
 ecodata::plot_demo(n = 10)
 ```
 

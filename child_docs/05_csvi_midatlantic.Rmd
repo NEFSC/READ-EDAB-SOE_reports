@@ -11,8 +11,7 @@ In 2022, Cape May, NJ; Reedville, VA; and Montauk, NY were the most engaged comm
  Manteo, Vandemere, and Hobuken, NC are no longer listed as top ten recreational communities, replaced by Cape May and Barnegat Light, NJ; Orient, NY; Topsail Beach, Avon and Rodanthe, NC (Fig.\ref{fig:recreational-engagement}). 
 
 ```{r commercial-engagement, fig.cap= return_caption(chunk_name = "commercial-engagement"), fig.width = 6.5, fig.asp = 0.85, results='hide'}
-commercial_engagement_plot +
-  ggplot2::theme(plot.title=element_text(vjust = 0))
+return_plot("commercial-engagement")
 ```
 
 
@@ -23,8 +22,7 @@ comm_vul_table
 Several communities ranked in the top communities for both commercial and recreational indices; Montauk, NY, Cape May, NJ, Barnegat Light, NJ, Point Pleasant Beach, NJ, Ocean City, MD, and Wachapreague, VA (Fig. \ref{fig:recreational-engagement}), meaning these communities may be impacted simultaneously (to a greater degree than others) by commercial and recreational regulatory changes. Of those included in the top-ranked recreational communities, both Bivalve, MD and Morehead City, NC had medium or higher ranks for two of three socio-demographic indicators examined here (Table \ref{tab:recvultab}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
 
 ```{r recreational-engagement, fig.cap= return_caption(chunk_name = "recreational-engagement"), fig.width = 6.5, fig.asp = 0.85, results='hide'}
-recreational_engagement_plot +
-  ggplot2::theme(plot.title=element_text(vjust = 0))
+return_plot("recreational-engagement")
 ```
 
 
@@ -38,7 +36,7 @@ rec_vul_table
 The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) are calculated by multiplying the percent contribution of species to the total value landed in a community by their respective Total Vulnerability scores (based on NOAA’s Climate Vulnerability Assessment) for different sensitivity and exposure factors and then summing the resulting values by year. As a community (or region) shifts towards climate vulnerable species, its risk score increases. While there is not a long-term trend in total climate vulnerability across Mid Atlantic communities as a whole, a majority of communities rank either high or very high risk (Fig. \ref{fig:commvulex}). This suggests that a majority of Mid-Atlantic communities depend on climate vulnerable species to generate commercial fishery revenue.
 
 ```{r commvulex, fig.width = 6.5, fig.asp=.5, fig.cap=return_caption(chunk_name = "commvulex")}
-commvulex_plot
+return_plot("commvulex")
 ```
 
 
