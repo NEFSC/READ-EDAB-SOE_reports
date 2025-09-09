@@ -5,7 +5,7 @@
 
 ## variables ----
 
-region <- "NewEngland"
+region <- "MidAtlantic"
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -99,8 +99,8 @@ save_plot(
     )
   },
   indicator = "commercial_landings",
-  width = 6.5,
-  height = 4
+  width = 6,
+  height = 6
 )
 
 # climate vulnerability landings
@@ -211,7 +211,7 @@ if (region == "MidAtlantic") {
     },
     indicator = "aggregate_biomass_mab",
     width = 6.5,
-    height = 4
+    height = 6
   )
 }
 
@@ -228,7 +228,7 @@ if (region == "NewEngland") {
     },
     indicator = "aggregate_biomass_gb",
     width = 6.5,
-    height = 4
+    height = 6
   )
   # gulf of maine
   save_plot(
@@ -241,7 +241,7 @@ if (region == "NewEngland") {
     },
     indicator = "aggregate_biomass_gom",
     width = 6.5,
-    height = 4
+    height = 6
   )
 }
 
@@ -334,7 +334,8 @@ save_plot(
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-      ecodata::plot_bennet(report = region)
+      ecodata::plot_bennet(report = region) +
+        ggplot2::theme(axis.text.x = ggplot2::element_text(angle =45, hjust = 1))
     } else {
       gb <- ecodata::plot_bennet(
         report = "NewEngland",
@@ -425,17 +426,19 @@ save_plot(
       report = region,
       varName = "Fleet count",
       n = 100
-    )
+    ) +
+      ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     b <- ecodata::plot_commercial_div(
       report = region,
       varName = "Fleet diversity in revenue",
       n = 100
-    )
+    ) +
+      ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     ggpubr::ggarrange(a, b, ncol = 2)
   },
   indicator = "comm_div_fleet",
   width = 6.5,
-  height = 4
+  height = 3
 )
 
 # 2. Commercial Diversity Species Diversity Plot
@@ -527,7 +530,8 @@ save_plot(
 # 5. Expected N Plot
 save_plot(
   plot_expression = {
-    ecodata::plot_exp_n(report = region, varName = "fall", n = 10)
+    ecodata::plot_exp_n(report = region, varName = "fall", n = 10) +
+      ggplot2::scale_x_continuous(breaks = seq(1968, 2018, by = 10), expand = c(0.01, 0.01))
   },
   indicator = "exp_n",
   width = 6.5,
@@ -808,11 +812,13 @@ save_plot(
       report = region,
       plottype = "monthly",
       n = 100
-    )
+    ) +
+      ggplot2::facet_wrap(EPU~Month~., ncol = 3)
+                          #, scales = "free_y")
   },
   indicator = "monthly_chl",
   width = 6.5,
-  height = 4
+  height = 8
 )
 
 ### Risks to setting catch limits ----
@@ -902,7 +908,7 @@ save_plot(
           legend.text = ggplot2::element_text(size = 10),
           legend.title = ggplot2::element_text(size = 11),
           axis.text.x = ggplot2::element_text(size = 12),
-          axis.text.y = ggplot2::element_text(size = 10),
+          axis.text.y = ggplot2::element_text(size = 8),
           plot.title = ggplot2::element_text(size = 12)
         )
     } else {
