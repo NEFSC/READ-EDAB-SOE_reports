@@ -5,7 +5,7 @@
 
 ## variables ----
 
-region <- "MidAtlantic"
+region <- "NewEngland"
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -186,7 +186,7 @@ save_plot(
     )
   },
   indicator = "abcacl_stacked",
-  width = 6.5,
+  width = 7,
   height = 4
 )
 
@@ -570,7 +570,8 @@ save_plot(
       commercial_engagement_plot +
         ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
     } else {
-      commercial_engagement_plot
+      commercial_engagement_plot +
+        ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
     }
   },
   indicator = "commercial_engagement",
@@ -589,7 +590,8 @@ save_plot(
       recreational_engagement_plot +
         ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
     } else {
-      recreational_engagement_plot
+      recreational_engagement_plot +
+        ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
     }
   },
   indicator = "recreational_engagement",
@@ -814,14 +816,14 @@ save_plot(
       n = 100
     ) +
       ggplot2::geom_point(size = 0.5) +
-      ggplot2::facet_wrap(EPU~Month~., ncol = 12) +
-      ggplot2::theme(text = ggplot2::element_text(size = 18)) 
-    # ggplot2::facet_wrap(EPU~Month~., ncol = 3
-                          #, scales = "free_y")
+     # ggplot2::facet_wrap(EPU~Month~., ncol = 12) +
+     # ggplot2::theme(text = ggplot2::element_text(size = 18)) 
+     ggplot2::facet_wrap(EPU~Month~., ncol = 6
+                          , scales = "free_y")
   },
   indicator = "monthly_chl",
-  width = 12,
-  height = 4
+  width = 8.5,
+  height = 10
 )
 
 ### Risks to setting catch limits ----
@@ -876,7 +878,7 @@ save_plot(
   },
   indicator = "productivity_anomaly",
   width = 8.5,
-  height = 5.5
+  height = 11
 )
 
 # seabird productivity -- NE only
@@ -898,7 +900,7 @@ if (region == "NewEngland") {
   save_plot(
     plot_expression = {
       ecodata::plot_gom_salmon(n = 10) +
-        ggplot2::ylab('returning proportion')
+        ggplot2::ylab('Returning proportion')
     },
     indicator = "salmon",
     width = 6.5,
@@ -985,7 +987,7 @@ save_plot(
   },
   indicator = "benthos",
   width = 6.5,
-  height = 4
+  height = 5
 )
 
 # 8. Zooplankton Anomaly Plot
@@ -1016,8 +1018,8 @@ save_plot(
     )
   },
   indicator = "zooplankton_anomaly",
-  width = 6.5,
-  height = 4
+  width = 6.0,
+  height = 8
 )
 
 # 9. Thermal Habitat Persistence Plot
@@ -1068,7 +1070,7 @@ save_plot(
     ggplot2::theme(axis.text.y = ggplot2::element_text(size = 6))
   },
   indicator = "wea_port_rev",
-  width = 6,
+  width = 7.5,
   height = 4
 )
 
@@ -1080,6 +1082,6 @@ save_plot(
     ecodata::plot_slopewater(report = "NewEngland")
   },
   indicator = "slopewater",
-  width = 6.5,
+  width = 6,
   height = 4
 )
