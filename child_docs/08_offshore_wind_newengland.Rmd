@@ -2,6 +2,10 @@
 <<child-header>>
 ```
 
+```{r, eval = params$draft}
+<<ne-draft>>
+```
+
 ```{r wea-spp-rev, fig.cap=return_caption(chunk_name = "wea-spp-rev"),  fig.width=6, fig.asp=.6}
 return_plot("wea-spp-rev")
 ```

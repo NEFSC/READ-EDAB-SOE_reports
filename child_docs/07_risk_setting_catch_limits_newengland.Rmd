@@ -2,6 +2,10 @@
 <<child-header>>
 ```
 
+```{r, eval = params$draft}
+<<ne-draft>>
+```
+
 #### Indicators: Fish productivity and condition shifts
 
 Indicators of [fish productivity](https://noaa-edab.github.io/catalog/productivity_anomaly.html) are derived from observations (surveys) or models (stock assessments). With the exception of two years (2006 and 2013), fish productivity has been below the long-term average in the Gulf of Maine since the early 2000s, as described by the small-fish-per-large-fish anomaly indicator (derived from NEFSC bottom trawl survey)(Fig. \ref{fig:productivity-anomaly}). This decline in fish productivity is also shown by a similar analysis based on stock assessment model outputs (recruitment per spawning stock biomass anomaly). Other signs of changing productivity in New England are the declines in [common tern chicks](https://noaa-edab.github.io/catalog/seabird_ne.html) per nest (Fig. \ref{fig:seabird-ne-productivity}) and continued low returns of hatchery [Atlantic salmon](https://noaa-edab.github.io/catalog/gom_salmon.html)(Fig. \ref{fig:salmon}) despite short-term increases in adult salmon numbers.

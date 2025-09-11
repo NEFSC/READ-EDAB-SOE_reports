@@ -13,24 +13,11 @@ params:
   fig_caption: "utils/figure_captions_summary.csv"
   cache: FALSE
   id_child_docs: FALSE
+  draft: FALSE
 ---
 
 
 ```{r setup, include=FALSE}
-# figure out which chunks are taking the most time
-# all_times <- list()  # store the time for each chunk
-# knitr::knit_hooks$set(time_it = local({
-#   now <- NULL
-#   function(before, options) {
-#     if (before) {
-#       now <<- Sys.time()
-#     } else {
-#       res <- difftime(Sys.time(), now)
-#       all_times[[options$label]] <<- res
-#     }
-#   }
-# }))
-
 # Default Rmd options
 knitr::opts_chunk$set(
   echo = FALSE,
@@ -40,9 +27,8 @@ knitr::opts_chunk$set(
   fig.width = 4,
   fig.asp = 0.45,
   fig.align = "center",
-  cache = params$cache#,
-  # time_it = TRUE
-) # allows for inserting R code into captions
+  cache = params$cache
+) 
 
 # Plotting and data libraries
 library(tidyverse)
@@ -67,20 +53,33 @@ FitFlextableToPage <- function(ft, pgwidth = 6) {
 }
 
 return_caption <- function(key = caption_key,
-                           chunk_name) {
-  caption <- key$caption[which(key$chunk_name == chunk_name)]
+                           chunk_name,
+                           region) {
+  col <- dplyr::case_when(region == "MidAtlantic" ~ "fig_cap_ma",
+                          region == "NewEngland" ~ "fig_cap_ne",
+                          region == "BothReports" ~ "fig_cap_both")
+  # caption <- key$caption[which(key$chunk_name == chunk_name)]
+  caption <- key |>
+    dplyr::filter(.data$chunkName == chunk_name) |>
+    dplyr::pull(col)
   return(caption)
 }
 
 
 return_filepath <- function(key = caption_key,
-                           chunk_name) {
-  filepath <- key$filepath[which(key$chunk_name == chunk_name)]
+                           chunk_name,
+                           region) {
+  col <- dplyr::case_when(region == "MidAtlantic" ~ "fig_path_ma",
+                          region == "NewEngland" ~ "fig_path_ne",
+                          region == "BothReports" ~ "fig_path_both")
+  filepath <- key |>
+    dplyr::filter(.data$chunkName == chunk_name) |>
+    dplyr::pull(col)
   return(filepath)
 }
 
-return_plot <- function(name, cap_key = caption_key) {
-  file <- return_filepath(key = cap_key, chunk_name = name) |>
+return_plot <- function(name, cap_key = caption_key, ...) {
+  file <- return_filepath(key = cap_key, chunk_name = name, ...) |>
     here::here() 
   
   if(file.exists(file) & file.info(file)$isdir == FALSE) {
@@ -92,7 +91,13 @@ return_plot <- function(name, cap_key = caption_key) {
   
   
 }
+```
 
+
+```{r conditional-values}
+## TODO: figure out how to have these conditional values dynamically assigned 
+## when knitting the combined draft report for both regions
+## thought I could reassign params$region and rerun this chunk, but that isn't possible
 epus <- dplyr::case_when(
   params$region == "MidAtlantic" ~ "Mid-Atlantic Bight, MAB",
   params$region == "NewEngland" ~ "Gulf of Maine (GOM) and Georges Bank (GB)"
@@ -122,12 +127,14 @@ caption_key <- read.csv(params$fig_caption) |>
                 filepath = dplyr::case_when(is.na(filepath) ~ .data$fig_path_both,
                                            TRUE ~ filepath) |>
                   stringr::str_replace_all("\\\\", "/")) 
+## TODO: the single filepath and caption colums can be deprecated (removed)
 
 ## TODO: pass maximum figure width as a parameter/ top-level variable
 ```
 
 ```{r child-header, eval = params$id_child_docs, include = FALSE}
 cat('#', knitr::current_input())
+
 ```
 
 ```{r child-footer, eval = params$id_child_docs, include = TRUE, results = "asis"}
@@ -181,13 +188,42 @@ In this section, we examine indicators related to broad, ecosystem-level fishery
 
 ## Seafood Production 
 
-```{r, child = here::here(paste0("child_docs/01_seafood_production_", stringr::str_to_lower(params$region), ".Rmd"))}
+```{r}
+child_file <- here::here(paste0("child_docs/01_seafood_production_", stringr::str_to_lower(params$region), ".Rmd"))
+base_child <- "01_seafood_production_"
+```
+
+```{r, child = child_file}
+```
+
+```{r repeat-child, eval = params$draft, results = "asis"}
+children <- list.files(here::here("child_docs"), 
+                          pattern = base_child,
+                       full.names = TRUE)
+other_child <- children[-which(children == child_file)]
+
+options(knitr.duplicate.label = "allow")
+res <- knitr::knit_child(input = other_child,
+                         quiet = TRUE)
+cat(res, sep = "\n\n")
 ```
 
 ## Commercial Profits
 
-```{r, child = here::here(paste0("child_docs/02_commercial_profits_", stringr::str_to_lower(params$region), ".Rmd"))}
+```{r}
+child_file <- here::here(paste0("child_docs/02_commercial_profits_", stringr::str_to_lower(params$region), ".Rmd"))
+base_child <- "02_commercial_profits_"
 ```
+
+```{r, child = child_file}
+```
+
+```{r, eval = params$draft, results = "asis"}
+<<repeat-child>>
+```
+
+
+`r knitr::knit_exit()`
 
 ## Recreational Opportunities
 

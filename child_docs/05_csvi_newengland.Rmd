@@ -2,6 +2,10 @@
 <<child-header>>
 ```
 
+```{r, eval = params$draft}
+<<ne-draft>>
+```
+
 ### Indicators: Fishing Engagement and Community Social Vulnerability
 
 The [engagement indices](https://noaa-edab.github.io/catalog/engagement.html) demonstrate the importance of commercial and recreational fishing to a given community relative to other coastal communities in a region. Social vulnerability indicators measure social factors that shape a community’s ability to adapt to change.  
