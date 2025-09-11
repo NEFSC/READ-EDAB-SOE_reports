@@ -5,7 +5,7 @@
 
 ## variables ----
 
-region <- "NewEngland"
+region <- "MidAtlantic"
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -807,35 +807,18 @@ save_plot(
 )
 
 # 2. Monthly Chlorophyll Plot
+
 save_plot(
   plot_expression = {
-    ecodata::plot_chl_pp(
-      report = region,
-      plottype = "monthly",
-      n = 10
-    ) +
-      ggplot2::geom_point(size = 0.5) +
-     # ggplot2::facet_wrap(EPU~Month~., ncol = 12) +
-     # ggplot2::theme(text = ggplot2::element_text(size = 18)) 
-     ggplot2::facet_wrap(~Month~., ncol = 6
-                          , scales = "free_y")
+ecodata::plot_chl_pp(
+  report = region,
+  plottype = "monthly", n = 10
+) + ggplot2::facet_grid(rows = ggplot2::vars(EPU), cols = ggplot2::vars(Month))
   },
-  indicator = "monthly_chl",
-  width = 8.5,
-  height = 10
+indicator = "monthly_chl",
+width = 11,
+height = 4
 )
-
-#save_plot(
-#  plot_expression = {
-#ecodata::plot_chl_pp(
-#  report = "NewEngland",
-#  plottype = "monthly", n = 10
-#) + ggplot2::facet_wrap(~Month, nrow = 1)
-#  },
-#indicator = "monthly_chl",
-#width = 8.5,
-#height = 10
-#)
 
 ### Risks to setting catch limits ----
 # productivity + recruitment anomalies
@@ -863,8 +846,8 @@ save_plot(
         legend.title = ggplot2::element_blank(),
         legend.text = ggplot2::element_text(size = 8),
         plot.title = ggplot2::element_text(size = 11),
-        axis.text.y = ggplot2::element_text(size = 8),
-        axis.title.y = ggplot2::element_text(vjust = 0)
+        axis.text = ggplot2::element_text(size = 11),
+        axis.title.y = ggplot2::element_text(vjust = 0, size = 12)
       )
     # TODO: move aesthetics into ecodata function
     recruit_anomaly_plot <- ecodata::plot_productivity_anomaly(
@@ -877,8 +860,8 @@ save_plot(
         legend.title = ggplot2::element_blank(),
         legend.text = ggplot2::element_text(size = 8),
         plot.title = ggplot2::element_text(size = 11),
-        axis.text.y = ggplot2::element_text(size = 8),
-        axis.title.y = ggplot2::element_text(vjust = 0)
+        axis.text = ggplot2::element_text(size = 11),
+        axis.title.y = ggplot2::element_text(vjust = 0, size = 12)
       )
     # combined anomaly plot
     ggpubr::ggarrange(
