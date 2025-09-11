@@ -228,7 +228,7 @@ if (region == "NewEngland") {
     },
     indicator = "aggregate_biomass_gb",
     width = 6.5,
-    height = 6
+    height = 8
   )
   # gulf of maine
   save_plot(
@@ -241,7 +241,7 @@ if (region == "NewEngland") {
     },
     indicator = "aggregate_biomass_gom",
     width = 6.5,
-    height = 6
+    height = 8
   )
 }
 
@@ -319,10 +319,9 @@ save_plot(
 
       # this is using the patchwork library and might break
       # rewrite with ggarrange
-      gb +
-        gom +
-        plot_layout(guides = 'collect') &
-        theme(legend.position = 'bottom')
+        patchwork::plot_layout(guides = 'collect') &
+        ggplot2::theme(legend.position = 'bottom')
+        ggpubr::ggarrange(gb, gom, ncol = 2)
     }
   },
   indicator = "bennet",
@@ -352,15 +351,15 @@ save_plot(
 
       # this is using the patchwork library and might break
       # rewrite with ggarrange
-      gb /
-        gom +
-        plot_layout(guides = 'collect') &
-        theme(legend.position = 'bottom')
+        patchwork::plot_layout(guides = 'collect') +
+          ggplot2::theme(legend.position = 'bottom')
+        ggpubr::ggarrange(gb, gom, ncol = 1)
+        
     }
   },
   indicator = "bennet_all",
-  width = 6.5,
-  height = 4
+  width = 9,
+  height = 6.5
 )
 
 # 4. Climate Vulnerability Revenue Plot
@@ -501,7 +500,7 @@ save_plot(
       ) +
         ggplot2::ggtitle('Gulf of Maine total PP')
       # rewrite with ggarrange
-      a + b
+      ggpubr::ggarrange(a, b, ncol = 2)
     }
   },
   indicator = "totpp",
@@ -813,18 +812,30 @@ save_plot(
     ecodata::plot_chl_pp(
       report = region,
       plottype = "monthly",
-      n = 100
+      n = 10
     ) +
       ggplot2::geom_point(size = 0.5) +
      # ggplot2::facet_wrap(EPU~Month~., ncol = 12) +
      # ggplot2::theme(text = ggplot2::element_text(size = 18)) 
-     ggplot2::facet_wrap(EPU~Month~., ncol = 6
+     ggplot2::facet_wrap(~Month~., ncol = 6
                           , scales = "free_y")
   },
   indicator = "monthly_chl",
   width = 8.5,
   height = 10
 )
+
+#save_plot(
+#  plot_expression = {
+#ecodata::plot_chl_pp(
+#  report = "NewEngland",
+#  plottype = "monthly", n = 10
+#) + ggplot2::facet_wrap(~Month, nrow = 1)
+#  },
+#indicator = "monthly_chl",
+#width = 8.5,
+#height = 10
+#)
 
 ### Risks to setting catch limits ----
 # productivity + recruitment anomalies
@@ -926,22 +937,21 @@ save_plot(
       gom <- ecodata::plot_condition(report = region, EPU = "GOM")
 
       # change to ggarrange
-      gb /
-        gom +
-        plot_layout(guides = 'collect') &
-        theme(
+      ggpubr::ggarrange(gb, gom, ncol = 1) +
+        patchwork::plot_layout(guides = 'collect') &
+        ggplot2::theme(
           legend.position = 'bottom',
-          legend.text = element_text(size = 10),
-          legend.title = element_text(size = 11),
-          axis.text.x = element_text(size = 12),
-          axis.text.y = element_text(size = 12),
-          plot.title = element_text(size = 12)
+          legend.text = ggplot2::element_text(size = 10),
+          legend.title = ggplot2::element_text(size = 11),
+          axis.text.x = ggplot2::element_text(size = 12),
+          axis.text.y = ggplot2::element_text(size = 12),
+          plot.title = ggplot2::element_text(size = 12)
         )
     }
   },
   indicator = "condition",
   width = 6.5,
-  height = 4
+  height = 9
 )
 
 # 5. Energy Density Plot
