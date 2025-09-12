@@ -4,7 +4,7 @@
 
 ## variables ----
 
-region <- "MidAtlantic" #change to NewEngland to run for NE
+region <- "NewEngland" #change to NewEngland to run for NE
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -691,33 +691,6 @@ save_plot(
   height = 11
 )
 
-# seabird productivity -- NE only
-if (region == "NewEngland") {
-  save_plot(
-    plot_expression = {
-      ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
-        ## TODO: update these xlim
-        ggplot2::coord_cartesian(xlim = c(1992, 2023))
-    },
-    indicator = "seabird_productivity",
-    width = 6.5,
-    height = 4
-  )
-}
-
-# salmon -- NE only
-if (region == "NewEngland") {
-  save_plot(
-    plot_expression = {
-      ecodata::plot_gom_salmon(n = 10) +
-        ggplot2::ylab('Returning proportion')
-    },
-    indicator = "salmon",
-    width = 6.5,
-    height = 4
-  )
-}
-
 # condition factor
 save_plot(
   plot_expression = {
@@ -1081,7 +1054,7 @@ save_plot(
 # for NE only ----
 ######### KEEP THESE???? 
 
-# calfin center of gravity
+# calfin center of gravity -- NE only
 region <- "NewEngland"
 out_dir <- here::here("images", region)
 
@@ -1100,7 +1073,7 @@ save_plot(
   height = 4
 )
 
-# mass inshore survey
+# mass inshore survey -- NE only
 save_plot(
   plot_expression = {
     ecodata::plot_mass_inshore_survey(report = region, n = 10)
@@ -1110,16 +1083,30 @@ save_plot(
   height = 6
 )
 
-# wind rev
-save_plot(
-  plot_expression = {
-    ecodata::plot_wind_revenue(
-      report = region,
-      varName = "value",
-      plottype = "nofacets"
-    )
-  },
-  indicator = "wea_spp_rev",
-  width = 6.5,
-  height = 4
-)
+# seabird productivity -- NE only
+if (region == "NewEngland") {
+  save_plot(
+    plot_expression = {
+      ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
+        ## TODO: update these xlim
+        ggplot2::coord_cartesian(xlim = c(1992, 2023))
+    },
+    indicator = "seabird_productivity",
+    width = 6.5,
+    height = 4
+  )
+}
+
+# salmon -- NE only
+if (region == "NewEngland") {
+  save_plot(
+    plot_expression = {
+      ecodata::plot_gom_salmon(n = 10) +
+        ggplot2::ylab('Returning proportion')
+    },
+    indicator = "salmon",
+    width = 6.5,
+    height = 4
+  )
+}
+
