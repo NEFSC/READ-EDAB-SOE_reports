@@ -1,5 +1,5 @@
-
 ####### SAME PLOTS FOR BOTH REPORTS #######
+
 # setup ----
 
 region <- "BothReports"
