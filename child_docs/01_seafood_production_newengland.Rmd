@@ -36,7 +36,7 @@ Overall, [recreational harvest](https://noaa-edab.github.io/catalog/recdat.html)
 return_plot("rec-landings", region = "NewEngland")
 ```
 
-```{r rec-hms, fig.cap = return_caption(chunk_name = "rec-hms", region = "NewEngland"), fig.width=6.5,fig.asp = 0.4, results='hide', error=FALSE}
+```{r rec-hms, fig.cap = return_caption(chunk_name = "rec-hms", region = "NewEngland"), fig.width=6.5,fig.asp = 0.4, error=FALSE}
 return_plot("rec-hms", region = "NewEngland")
 ```
 
@@ -73,11 +73,11 @@ flextable::flextable() |>
 
 [Aggregate biomass](https://noaa-edab.github.io/catalog/aggregate_biomass.html) trends derived from scientific resource surveys have been stable to increasing in both regions (Fig. \ref{fig:nefsc-biomass-gb} & Fig. \ref{fig:nefsc-biomass-gom}).The benthivores group spiked during the last decade, due to a large haddock recruitment, but appears to be returning to average levels. Planktivore biomass on GB continues to rise with the highest fall biomass observed since 1968. There are mixed trends in piscivores on GB, and increasing trends for planktivores across both regions and seasons  and benthos on GB in both seasons. The New Hampshire/Maine state survey time series is too short to estimate trends, while the Massachusetts state survey shows the increasing trend in planktivores in the fall but a decrease in piscivores in the spring and benthos in both seasons (Fig. \ref{fig:mass-biomass}). While managed species comprise varying proportions of aggregate biomass, trends in landings are not mirroring shifts in the overall trophic structure of survey-sampled fish and invertebrates. Therefore, major shifts in feeding guilds or ecosystem trophic structure are unlikely to be driving the decline in landings.
 
-```{r nefsc-biomass-gb, fig.cap = return_caption(chunk_name = "nefsc-biomass-gb", region = "NewEngland"), fig.width=6.5, fig.asp = 1, results='hide'}
+```{r nefsc-biomass-gb, fig.cap = return_caption(chunk_name = "nefsc-biomass-gb", region = "NewEngland"), fig.width=6.5, fig.asp = 1,}
 return_plot("nefsc-biomass-gb", region = "NewEngland")
 ```
 
-```{r nefsc-biomass-gom, fig.cap = return_caption(chunk_name = "nefsc-biomass-gom", region = "NewEngland"),  fig.width=6.5, fig.asp = 1, results = 'hide'}
+```{r nefsc-biomass-gom, fig.cap = return_caption(chunk_name = "nefsc-biomass-gom", region = "NewEngland"),  fig.width=6.5, fig.asp = 1}
 return_plot("nefsc-biomass-gom", region = "NewEngland")
 ```
 
@@ -87,7 +87,7 @@ With the poor or unknown stock status of many managed species, the decline in co
 
 The decline in recreational seafood harvest stems from multiple drivers. Some of the decline, such as for recreational shark landings, continues to be driven by tightening regulations. However, changes in demographics and preferences for recreational activities likely play a role in non-HMS (Highly Migratory Species) declines in recreational harvest, with current harvests well below the time series average.
 
-```{r mass-biomass, fig.cap = return_caption(chunk_name = "mass-biomass", region = "NewEngland"), fig.width=6.5, fig.asp = 0.75, results = 'hide'}
+```{r mass-biomass, fig.cap = return_caption(chunk_name = "mass-biomass", region = "NewEngland"), fig.width=6.5, fig.asp = 0.75}
 return_plot("mass-biomass", region = "NewEngland")
 ```
 
