@@ -6,18 +6,28 @@
 <<ne-draft>>
 ```
 
-```{r wea-spp-rev, fig.cap=return_caption(chunk_name = "wea-spp-rev", region = "NewEngland"),  fig.width=6, fig.asp=.6}
+Offshore floating wind is expected to be developed in the GOM. The Bureau of Ocean Energy Management (BOEM) leased four areas within the GOM for commercial development on October 29, 2024 (Fig. \ref{fig:wind-dev-cumul}). BOEM also approved  the state of Maine’s application to lease 9,700 acres (15 square miles) for the first floating offshore wind research site in federal waters of the GOM, which could have up to 12 turbines. 
+
+NEFSC has partnered with the Responsible Ocean Development Alliance (RODA) and the University of Rhode Island to conduct an Integrated Ecosystem Assessment (IEA) of the interactions between offshore wind, fisheries, and the environment in the GOM. The IEA report will be similar to the State of the Ecosystem, but fully dedicated to impacts of offshore wind. Data from the IEA will be suitable for inclusion in the environmental impact statements for any projects in the GOM.
+
+Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) from trips in the current offshore wind lease areas represents 2-15% of the total annual revenue for fisheries managed by the NEFMC from 2008-2023 (Table \ref{tab:wea-landings-rev-ne}).Fishing revenue affected by offshore wind lease areas varies over time, but has largely declined over time. Maximum annual revenue for the fisheries with the most overlap with wind lease areas peaked at over \$52 million for the sea scallop fishery, \$2.5 million for monkfish, \$1.1 million for haddock, \$943,000 for pollock, \$840,000 for cod, just under \$700,000 for skates and redfish, \$662,000 for silver hake, and nearly \$600,000 for Atlantic herring (Fig. \ref{fig:wea-spp-rev-ne}). The scallop fishery is mainly affected by lease areas in the Mid-Atlantic, as the Northern Area scallop fishery is outside of the GOM lease areas. However, substantial groundfish landings/revenues overlap with the GOM lease areas, as noted above. Individual groundfish species are more affected than others, with up to 15% of historical annual revenues overlapping with existing lease areas for species such as yellowtail flounder (15%), pollock (11%) and 9% for redfish and white hake (Table \ref{tab:wea-landings-rev-ne}). Future fishery resource overlap with wind leases, especially scallops, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.
+
+`r wind_indicator_paragraph`
+
+```{r wea-spp-rev-ne, fig.cap=return_caption(chunk_name = "wea-spp-rev", region = "NewEngland"),  fig.width=6, fig.asp=.6}
 return_plot("wea-spp-rev", region = "NewEngland")
 ```
 
-```{r wea-landings-rev, ft.arraystretch = 1}
+```{r wea-landings-rev-ne, ft.arraystretch = 1}
 create_wea_landings_rev_table(council = "NEFMC") |>
   flextable::flextable() %>%
   flextable::set_caption("New England managed species Landings and Revenue from Wind Energy Areas. Skates includes barndoor, winter, clearnose, smooth, little, and general skates reported in logbooks. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species..") %>%
   flextable::width(width = c(2,2,2))
 ```
 
-Social vulnerabilities of communities are priority concerns with offshore wind development and fisheries impacts in the Northeast, and the impacts of offshore wind development are expected to differentially [impact specific coastal communities](https://noaa-edab.github.io/catalog/wind_port.html). Additionally, impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean. 
+`r wind_interactions`
+
+`r socio_intro`
 
 ```{r wea-port-rev, fig.cap=return_caption(chunk_name = "wea-port-rev", region = "NewEngland"),  fig.width=6.5, fig.asp=.6, fig.align='left'}
 return_plot("wea-port-rev", region = "NewEngland")
@@ -27,10 +37,10 @@ For example, Little Compton, RI had a minimum of 17% and maximum of 32% overlap 
 
 Top fishing communities with high [socio-demographic concerns](https://noaa-edab.github.io/catalog/engagement.html) such as New Bedford, MA and New London, CT should be considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of underserved communities. These two ports are also undergoing significant changes to support offshore wind development port infrastructure needs. Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
 
-Some ports in the Mid-Atlantic land New England-managed species from wind areas as well. For the maximum percent value reported in each Mid-Atlantic port, the majority (at least 50% based on both value and pounds) of those landings were New England managed species within wind areas for nine communities (Fig. \ref{fig:wind-rev}).
+Some ports in the Mid-Atlantic land New England-managed species from wind areas as well. For the maximum percent value reported in each Mid-Atlantic port, the majority (at least 50% based on both value and pounds) of those landings were New England managed species within wind areas for nine communities (Fig. \ref{fig:wind-rev-ne}).
 
 
-```{r wind-rev, fig.cap=return_caption(chunk_name = "wind-rev", region = "NewEngland"), fig.width=6.5, fig.asp=.4, fig.align='left'}
+```{r wind-rev-ne, fig.cap=return_caption(chunk_name = "wind-rev", region = "NewEngland"), fig.width=6.5, fig.asp=.4, fig.align='left'}
 ## TODO: this should be turned into a function
 fix <- ecodata::wind_port |>
    dplyr::filter(EPU %in% "MAB") |>

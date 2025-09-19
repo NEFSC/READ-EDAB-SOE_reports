@@ -98,7 +98,7 @@ Other environmental changes require monitoring as they may become important driv
   - Ecosystem composition and production changes have been observed (see [Stability section](#stability)).
   - Some fishing communities are affected by social  vulnerabilities (see [Social Vulnerability section](#social-vulnerability)).
   
-\newpage
+<!-- \newpage -->
 
 ```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>

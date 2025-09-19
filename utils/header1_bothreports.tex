@@ -11,11 +11,11 @@
 \hypersetup{
   pdftitle = {title},
   pdflang = en-US}
-
+ 
 % left-align all figure captions 
 \usepackage{caption}
 \captionsetup{justification=raggedright,singlelinecheck=false}
-
+  
 % Set up the headers and footers
 \usepackage{graphicx}
 \usepackage{fancyhdr}
@@ -50,12 +50,12 @@
 \cfoot{\thepage}
 
 \fancyheadinit{%
-   \ifthenelse{\value{page}=5}%
+   \ifthenelse{\value{page}=4}%
       {\fancyhead[R]{\includegraphics[width=40pt]{images/NOAA_logo.png} \\ \textsf{\emph{March 24, 2025}}}
-       \fancyhead[L]{\textsf{\LARGE State of the Ecosystem 2025: New England}}
+       \fancyhead[L]{\textsf{\LARGE State of the Ecosystem 2026: DRAFT REPORT for New England and the Mid-Atlantic}}
       }%
       {\fancyhead[R]{}
-       \fancyhead[L]{\textsf{\emph{State of the Ecosystem 2025: New England}}}
+       \fancyhead[L]{\textsf{\emph{State of the Ecosystem 2026: DRAFT REPORT for New England and the Mid-Atlantic}}}
       }
 }
 

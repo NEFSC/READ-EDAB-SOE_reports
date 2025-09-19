@@ -94,23 +94,20 @@ return_plot <- function(name, cap_key = caption_key, ...) {
 
 
 ```{r conditional-values}
-## TODO: figure out how to have these conditional values dynamically assigned 
-## when knitting the combined draft report for both regions
-## thought I could reassign params$region and rerun this chunk, but that isn't possible
 epus <- dplyr::case_when(
-  params$draft ~ "[Mid-Atlantic Bight, MAB] or [Gulf of Maine (GOM) and Georges Bank (GB)]",
+  params$draft ~ "[Mid-Atlantic Bight, MAB] *or* [Gulf of Maine (GOM) and Georges Bank (GB)]",
   params$region == "MidAtlantic" ~ "Mid-Atlantic Bight, MAB",
   params$region == "NewEngland" ~ "Gulf of Maine (GOM) and Georges Bank (GB)"
 )
 
 region <- dplyr::case_when(
-  params$draft ~ "[the Mid-Atlantic Bight] or [New England]",
+  params$draft ~ "[the Mid-Atlantic Bight] *or* [New England]",
   params$region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
   params$region == "NewEngland" ~ "New England"
 )
 
 region2 <- dplyr::case_when(
-  params$draft ~ "[Mid-Atlantic] or [New England]",
+  params$draft ~ "[Mid-Atlantic] *or* [New England]",
   params$region == "MidAtlantic" ~ "Mid-Atlantic",
   params$region == "NewEngland" ~ "New England"
 )
@@ -133,6 +130,10 @@ cat('# parent_report.Rmd')
 \setcounter{page}{4}
 \thispagestyle{fancy}
 
+```{r, eval = params$draft, results = "asis"}
+cat("This is a draft report that presents all content from both New England and the Mid Atlantic. Several sections are shared between regions, and sections that differ for each region are marked with H1 headers. Some text is shown in square brackets to indicate that that text will differ in the New England and Mid Atlatnic reports (e.g., [Mid Atlantic text] *or* [New England text]). Most figures are shown only once when they are exactly the same in each region's report, but in a few cases the figures are repeated and the figure numbers referenced in the text may refer the reader to the 'wrong' region. All of these editing quirks will be resolved in the final report.")
+```
+
 # Introduction
 
 ## About This Report
@@ -144,7 +145,7 @@ ne_text <- "This report is for the New England Fishery Management Council (NEFMC
 
 if (params$draft) {
     res <- knitr::knit_child(
-    text = paste("[", mid_text, "] or [", ne_text, "]"),
+    text = paste("[", mid_text, "] *or* [", ne_text, "]"),
     quiet = TRUE
   )
 }   else if (params$region == "MidAtlantic") {
@@ -160,9 +161,6 @@ if (params$draft) {
 }
 
 cat(res, sep = "\n\n")
-```
-
-```{r, child = here::here("child_docs/child_plots.Rmd"), include = FALSE, eval = FALSE}
 ```
 
 ```{r, child = here::here("child_docs/child_tables.Rmd"), include = FALSE}
@@ -305,7 +303,7 @@ A UME continued from previous years for humpback whales (2016-present) and Atlan
 Bycatch management measures have been implemented to maintain bycatch below PBR thresholds. The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort. The increasing trend in gray seal bycatch may be related to an increase in the gray seal population ([U.S. pup counts](https://noaa-edab.github.io/catalog/seal_pups.html)), supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
 
 ```{r seals, fig.cap = return_caption(chunk_name = "seals", region = "BothReports"),fig.width = 6.5, fig.asp = 0.4, eval = params$region == "NewEngland"}
-return_plot("seals")
+return_plot("seals", region = "BothReports")
 ```
 
 Strong evidence exists to suggest that interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. Further, right whale distribution has changed since 2010. [Recent research](https://noaa-edab.github.io/catalog/narw.html) suggests that recent climate driven changes in ocean circulation have resulted in right whale distribution changes driven by increased warm water influx through the Northeast Channel, which has reduced the primary right whale prey (the copepod *Calanus finmarchicus*) in the central and eastern portions of the Gulf of Maine. Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat. This area is also a primary right whale winter foraging habitat. Additional information can be found in the [offshore wind risks section](#other-ocean-uses-offshore-wind).
@@ -494,7 +492,7 @@ Planned development [overlaps NARW](https://noaa-edab.github.io/catalog/persiste
 return_plot("whales-wind", region = "BothReports")
 ```
 
-Scientific data collection surveys for ocean and ecosystem conditions, fish, and protected species will be altered, potentially increasing uncertainty for stock assessments and associated management decision making.
+Scientific data collection surveys for ocean and ecosystem conditions, fish, and protected species will be altered, potentially increasing uncertainty for stock assessments and associated management decision making. Increased vessel transit between stations may decrease data collections that are already limited by annual days-at-sea day allocations. As of 2024, the total survey area overlap ranges from 1-70% for all Greater Atlantic federal surveys. Individual survey strata have significant interaction with wind energy development, including the sea scallop survey (up to 96% of individual strata) and the bottom trawl survey (BTS, up to 60% strata overlap). Additionally, up to 50% of the southern New England North Atlantic right whale survey’s area overlaps with proposed project areas and a region-wide survey mitigation program is underway.
 
 The increase of offshore wind development can have both positive (e.g., employment opportunities) and negative (e.g., space-use conflicts) effects. Continued increase in coastal development and gentrification pressure has resulted in loss of fishing infrastructure space within ports. Understanding these existing pressures can allow for avoiding and mitigating negative impacts to our shore support industry and communities dependent on fishing. Some of the communities with the highest fisheries revenue overlap with offshore wind development areas that are also vulnerable to gentrification pressure are `r gentrification_ports`.
 

@@ -27,7 +27,7 @@ create_wea_landings_rev_table(council = "MAFMC") |>
 
 `r socio_intro`
 
-```{r wea-port-rev, fig.cap=return_caption(chunk_name = "wea-port-rev", region = "MidAtlantic"),  fig.width=6.5, fig.asp=.82, fig.align='left', cache = TRUE}
+```{r wea-port-rev, fig.cap=return_caption(chunk_name = "wea-port-rev", region = "MidAtlantic"),  fig.width=6.5, fig.asp=.82, fig.align='left'}
 return_plot("wea-port-rev", region = "MidAtlantic")
 ```
 
