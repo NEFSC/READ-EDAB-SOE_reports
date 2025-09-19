@@ -23,11 +23,13 @@ Increased vessel transit between stations may decrease data collections that are
 
 socio_intro <- "The socio-demographic conditions, and resultant vulnerabilities, of some communities may further exacerbate the impacts of offshore wind development in the Northeast such that the impacts of offshore wind development are expected to differentially [impact specific coastal communities](https://noaa-edab.github.io/catalog/wind_port.html) (Fig. \\ref{fig:wea-port-rev}). Additionally, impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean."
 
-wind_impact <- dplyr::case_when(params$region == "MidAtlantic" ~ "Up to 15% of maximum annual fisheries revenue for major Mid-Atlantic commercial species",
+wind_impact <- dplyr::case_when(params$draft ~ "[Up to 15% of maximum annual fisheries revenue for major Mid-Atlantic commercial species] *or* [Up to 12% of total average revenue for major New England commercial species]",
+                                params$region == "MidAtlantic" ~ "Up to 15% of maximum annual fisheries revenue for major Mid-Atlantic commercial species",
                                 params$region == "NewEngland" ~ "Up to 12% of total average revenue for major New England commercial species"
                                 )
 
-gentrification_ports <-  dplyr::case_when(params$region == "MidAtlantic" ~ "Beaufort, NC, and Cape May, Barnegat Light, and Long Beach, NJ",
+gentrification_ports <-  dplyr::case_when(params$draft ~ "[Beaufort, NC, and Cape May, Barnegat Light, and Long Beach, NJ] *or* [Point Judith and Newport, RI; and Boston and New Bedford, MA]",
+                                          params$region == "MidAtlantic" ~ "Beaufort, NC, and Cape May, Barnegat Light, and Long Beach, NJ",
                                 params$region == "NewEngland" ~ "Point Judith and Newport, RI; and Boston and New Bedford, MA"
                                 )
 ```

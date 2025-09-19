@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.15)  18 AUG 2025 18:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.8)  19 SEP 2025 14:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,7 +480,27 @@ Package zref Info: New property list: pdfcomment on input line 2735.
 Package zref Info: New property: PCPDFOBJID on input line 2736.
 ) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
-) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+(c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen193
+\captionmargin=\dimen194
+\caption@leftmargin=\dimen195
+\caption@rightmargin=\dimen196
+\caption@width=\dimen197
+\caption@indent=\dimen198
+\caption@parindent=\dimen199
+\caption@hangindent=\dimen256
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count333
+\c@continuedfloat=\count334
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+(c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@headwidth=\skip75
 \f@nch@offset@elh=\skip76
@@ -499,33 +519,12 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \@temptokenb=\toks32
 ) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count333
+\c@float@type=\count335
 \float@exts=\toks33
 \float@box=\box67
 \@float@everytoks=\toks34
 \@floatcapt=\box68
-) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-(c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen193
-\captionmargin=\dimen194
-\caption@leftmargin=\dimen195
-\caption@rightmargin=\dimen196
-\caption@width=\dimen197
-\caption@indent=\dimen198
-\caption@parindent=\dimen199
-\caption@hangindent=\dimen256
-Package caption Info: Standard document class detected.
-)
-\c@caption@flags=\count334
-\c@continuedfloat=\count335
-Package caption Info: float package is loaded.
-Package caption Info: hyperref package is loaded.
-Package caption Info: longtable package is loaded.
-(c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
-Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
-)) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/sectsty/sectsty.sty
+) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/sectsty/sectsty.sty
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading styles
 
 LaTeX Warning: Command \underbar  has changed.
@@ -634,7 +633,7 @@ Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 \BKM@id=\count350
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 161.
+Package hyperref Info: Option `colorlinks' set `true' on input line 164.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count351
@@ -645,34 +644,43 @@ LaTeX Warning: Label `tab:stock-status-table' multiply defined.
 
 LaTeX Warning: Label `tab:comm-vuln' multiply defined.
 
+
+LaTeX Warning: Label `tab:rec-vuln' multiply defined.
+
+
+LaTeX Warning: Label `tab:wea-landings-rev-ne' multiply defined.
+
+
+LaTeX Warning: Label `tab:species-groupings' multiply defined.
+
 )
 \openout1 = `newengland.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Info: Redefining \microtypecontext on input line 166.
-Package microtype Info: Applying patch `item' on input line 166.
-Package microtype Info: Applying patch `toc' on input line 166.
-Package microtype Info: Applying patch `eqnum' on input line 166.
-Package microtype Info: Applying patch `footnote' on input line 166.
-Package microtype Info: Applying patch `verbatim' on input line 166.
-LaTeX Info: Redefining \microtypesetup on input line 166.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Info: Redefining \microtypecontext on input line 169.
+Package microtype Info: Applying patch `item' on input line 169.
+Package microtype Info: Applying patch `toc' on input line 169.
+Package microtype Info: Applying patch `eqnum' on input line 169.
+Package microtype Info: Applying patch `footnote' on input line 169.
+Package microtype Info: Applying patch `verbatim' on input line 169.
+LaTeX Info: Redefining \microtypesetup on input line 169.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -725,7 +733,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package soulpos Info: Loading soulutf8 on input line 166.
+Package soulpos Info: Loading soulutf8 on input line 169.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/soul/soulutf8.sty
 Package: soulutf8 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
 
@@ -758,8 +766,9 @@ Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
 \SOUL@uldp=\dimen276
 \SOUL@ulht=\dimen277
 ))
-Package hyperref Info: Link coloring ON on input line 166.
+Package hyperref Info: Link coloring ON on input line 169.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 171.
@@ -770,84 +779,65 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-LaTeX Warning: Hyper reference `highlights' on page 4 undefined on input line 177.
-
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 181.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 186.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 181.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 186.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 181.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 186.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 181.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 186.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 181.
+(Font)              <10> on input line 186.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 181.
+(Font)              <7> on input line 186.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 181.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 181.
+(Font)              <5> on input line 186.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 186.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 181.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 186.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 181.
+(Font)              <8> on input line 186.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 181.
-
-LaTeX Warning: Reference `fig:docformat' on page 4 undefined on input line 181.
-
-
-LaTeX Warning: Reference `tab:species-groupings' on page 4 undefined on input line 181.
-
-
-LaTeX Warning: Reference `fig:docformat' on page 4 undefined on input line 181.
-
+(Font)              <6> on input line 186.
 
 
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 293.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 298.
 [4{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
 \openout3 = `newengland.upa'.
 
 ]
-Package marginnote Info: Using workaround for absolute page number on input line 293.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 379.
-(c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/total-landings-1.pdf, id=49, 469.755pt x 187.70125pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/total-landings-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/total-landings-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/total-landings-1.pdf  used on input line 389.
-(pdftex.def)             Requested size: 469.75386pt x 187.70079pt.
-
-LaTeX Warning: Reference `fig:comm-landings' on page 5 undefined on input line 396.
+Package marginnote Info: Using workaround for absolute page number on input line 298.
+<images/NewEngland/total_landings_NewEngland_2025-09-16.png, id=56, 469.755pt x 289.08pt>
+File: images/NewEngland/total_landings_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/total_landings_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/total_landings_NewEngland_2025-09-16.png  used on input line 392.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-
-<images/NOAA_logo.png, id=51, 240.9pt x 240.9pt>
+<images/NOAA_logo.png, id=57, 240.9pt x 240.9pt>
 File: images/NOAA_logo.png Graphic file (type png)
 <use images/NOAA_logo.png>
-Package pdftex.def Info: images/NOAA_logo.png  used on input line 397.
+Package pdftex.def Info: images/NOAA_logo.png  used on input line 398.
 (pdftex.def)             Requested size: 40.0pt x 39.99673pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -856,506 +846,573 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-15.59677pt}.
 
-[5 <./images/NOAA_logo.png> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/total-landings-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-landings-1.pdf, id=71, 469.755pt x 469.755pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-landings-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-landings-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-landings-1.pdf  used on input line 402.
-(pdftex.def)             Requested size: 469.75386pt x 469.75386pt.
-
-LaTeX Warning: Reference `fig:comm-clim-landings' on page 6 undefined on input line 408.
-
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/climatevul-land-1.pdf, id=73, 469.755pt x 234.8775pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/climatevul-land-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/climatevul-land-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/climatevul-land-1.pdf  used on input line 412.
-(pdftex.def)             Requested size: 469.75386pt x 234.87692pt.
+[5 <./images/NOAA_logo.png>]
+<images/NewEngland/commercial_landings_NewEngland_2025-09-16.png, id=72, 433.62pt x 433.62pt>
+File: images/NewEngland/commercial_landings_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/commercial_landings_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/commercial_landings_NewEngland_2025-09-16.png  used on input line 405.
+(pdftex.def)             Requested size: 500.484pt x 500.51175pt.
 
 
-[6 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-landings-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-landings-1.pdf, id=91, 469.755pt x 187.70125pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-landings-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-landings-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-landings-1.pdf  used on input line 423.
-(pdftex.def)             Requested size: 469.75386pt x 187.70079pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-hms-1.pdf, id=92, 469.755pt x 187.70125pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-hms-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-hms-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-hms-1.pdf  used on input line 432.
-(pdftex.def)             Requested size: 469.75386pt x 187.70079pt.
+[6 <./images/NewEngland/total_landings_NewEngland_2025-09-16.png>]
+<images/NewEngland/climatevul_land_NewEngland_2025-09-16.png, id=80, 469.755pt x 289.08pt>
+File: images/NewEngland/climatevul_land_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/climatevul_land_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/climatevul_land_NewEngland_2025-09-16.png  used on input line 416.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-[7 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/climatevul-land-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-landings-1.pdf
+[7 <./images/NewEngland/commercial_landings_NewEngland_2025-09-16.png>]
+<images/NewEngland/rec_landings_NewEngland_2025-09-16.png, id=90, 469.755pt x 289.08pt>
+File: images/NewEngland/rec_landings_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/rec_landings_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/rec_landings_NewEngland_2025-09-16.png  used on input line 427.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-landings-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/stock-status-1.pdf, id=118, 433.62pt x 346.29375pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/stock-status-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/stock-status-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/stock-status-1.pdf  used on input line 449.
-(pdftex.def)             Requested size: 433.61894pt x 346.2929pt.
+
+[8 <./images/NewEngland/climatevul_land_NewEngland_2025-09-16.png>]
+<images/NewEngland/rec_hms_NewEngland_2025-09-16.png, id=97, 469.755pt x 289.08pt>
+File: images/NewEngland/rec_hms_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/rec_hms_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/rec_hms_NewEngland_2025-09-16.png  used on input line 436.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[9 <./images/NewEngland/rec_landings_NewEngland_2025-09-16.png>]
+<images/NewEngland/stock_status_NewEngland_2025-09-16.png, id=105, 469.755pt x 289.08pt>
+File: images/NewEngland/stock_status_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/stock_status_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/stock_status_NewEngland_2025-09-16.png  used on input line 453.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 453.
+(Font)              <9> on input line 457.
 
 
-[8 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-hms-1.pdf>] [9{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/stock-status-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/nefsc-biomass-gb-1.pdf, id=160, 469.755pt x 469.755pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/nefsc-biomass-gb-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/nefsc-biomass-gb-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/nefsc-biomass-gb-1.pdf  used on input line 630.
-(pdftex.def)             Requested size: 469.75386pt x 469.75386pt.
+[10 <./images/NewEngland/rec_hms_NewEngland_2025-09-16.png>] [11{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./images/NewEngland/stock_status_NewEngland_2025-09-16.png>]
+<images/NewEngland/aggregate_biomass_gb_NewEngland_2025-09-16.png, id=126, 469.755pt x 578.16pt>
+File: images/NewEngland/aggregate_biomass_gb_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/aggregate_biomass_gb_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/aggregate_biomass_gb_NewEngland_2025-09-16.png  used on input line 634.
+(pdftex.def)             Requested size: 500.484pt x 615.97849pt.
 
 
-[10]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/nefsc-biomass-gom-1.pdf, id=170, 469.755pt x 469.755pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/nefsc-biomass-gom-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/nefsc-biomass-gom-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/nefsc-biomass-gom-1.pdf  used on input line 639.
-(pdftex.def)             Requested size: 469.75386pt x 469.75386pt.
+[12]
+<images/NewEngland/aggregate_biomass_gom_NewEngland_2025-09-16.png, id=135, 469.755pt x 578.16pt>
+File: images/NewEngland/aggregate_biomass_gom_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/aggregate_biomass_gom_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/aggregate_biomass_gom_NewEngland_2025-09-16.png  used on input line 643.
+(pdftex.def)             Requested size: 500.484pt x 615.97849pt.
 
 
-[11 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/nefsc-biomass-gb-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/mass-biomass-1.pdf, id=189, 469.755pt x 352.31625pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/mass-biomass-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/mass-biomass-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/mass-biomass-1.pdf  used on input line 654.
-(pdftex.def)             Requested size: 469.75386pt x 352.31538pt.
+[13 <./images/NewEngland/aggregate_biomass_gb_NewEngland_2025-09-16.png>]
+
+[14 <./images/NewEngland/aggregate_biomass_gom_NewEngland_2025-09-16.png>]
+<images/NewEngland/mass_inshore_NewEngland_2025-09-16.png, id=146, 433.62pt x 433.62pt>
+File: images/NewEngland/mass_inshore_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/mass_inshore_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/mass_inshore_NewEngland_2025-09-16.png  used on input line 658.
+(pdftex.def)             Requested size: 500.484pt x 500.51175pt.
 
 
-[12 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/nefsc-biomass-gom-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 666.
+[15 <./images/NewEngland/mass_inshore_NewEngland_2025-09-16.png>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 670.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-LaTeX Warning: Hyper reference `highlights' on page 13 undefined on input line 666.
+LaTeX Warning: Hyper reference `climate-risks' on page 16 undefined on input line 672.
 
 
-LaTeX Warning: Hyper reference `climate-risks' on page 13 undefined on input line 668.
+LaTeX Warning: Hyper reference `social-vulnerability' on page 16 undefined on input line 676.
+
+<images/NewEngland/comm_revenue_NewEngland_2025-09-16.png, id=160, 469.755pt x 289.08pt>
+File: images/NewEngland/comm_revenue_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/comm_revenue_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/comm_revenue_NewEngland_2025-09-16.png  used on input line 691.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-LaTeX Warning: Hyper reference `social-vulnerability' on page 13 undefined on input line 672.
+[16{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./images/NewEngland/comm_revenue_NewEngland_2025-09-16.png>]
+<images/NewEngland/bennet_NewEngland_2025-09-16.png, id=179, 469.755pt x 289.08pt>
+File: images/NewEngland/bennet_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/bennet_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/bennet_NewEngland_2025-09-16.png  used on input line 704.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+<images/NewEngland/bennet_all_NewEngland_2025-09-16.png, id=180, 650.43pt x 469.755pt>
+File: images/NewEngland/bennet_all_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/bennet_all_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/bennet_all_NewEngland_2025-09-16.png  used on input line 713.
+(pdftex.def)             Requested size: 500.484pt x 361.46877pt.
 
 
-
-[13{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/mass-biomass-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-revenue-1.pdf, id=237, 469.755pt x 210.7875pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-revenue-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-revenue-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-revenue-1.pdf  used on input line 693.
-(pdftex.def)             Requested size: 469.75386pt x 210.78699pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-1.pdf, id=241, 469.755pt x 187.70125pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-1.pdf  used on input line 706.
-(pdftex.def)             Requested size: 469.75386pt x 187.70079pt.
+[17 <./images/NewEngland/bennet_NewEngland_2025-09-16.png>]
+<images/NewEngland/climatevul_rev_NewEngland_2025-09-16.png, id=190, 469.755pt x 289.08pt>
+File: images/NewEngland/climatevul_rev_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/climatevul_rev_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/climatevul_rev_NewEngland_2025-09-16.png  used on input line 724.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-[14 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-revenue-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-all-1.pdf, id=259, 469.755pt x 305.14pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-all-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-all-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-all-1.pdf  used on input line 715.
-(pdftex.def)             Requested size: 469.75386pt x 305.13924pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-clim-rev-1.pdf, id=262, 469.755pt x 234.8775pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-clim-rev-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-clim-rev-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-clim-rev-1.pdf  used on input line 726.
-(pdftex.def)             Requested size: 469.75386pt x 234.87692pt.
+[18 <./images/NewEngland/bennet_all_NewEngland_2025-09-16.png>]
+<images/NewEngland/rec_op_NewEngland_2025-09-16.png, id=200, 469.755pt x 289.08pt>
+File: images/NewEngland/rec_op_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/rec_op_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/rec_op_NewEngland_2025-09-16.png  used on input line 747.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-[15 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-all-1.pdf
-
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/bennet-all-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-op-1.pdf, id=286, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-op-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-op-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-op-1.pdf  used on input line 753.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
+[19 <./images/NewEngland/climatevul_rev_NewEngland_2025-09-16.png>]
+<images/NewEngland/rec_div_NewEngland_2025-09-16.png, id=212, 469.755pt x 289.08pt>
+File: images/NewEngland/rec_div_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/rec_div_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/rec_div_NewEngland_2025-09-16.png  used on input line 756.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-[16 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/comm-clim-rev-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-div-1.pdf, id=306, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-div-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-div-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-div-1.pdf  used on input line 762.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/permit-div-1.pdf, id=309, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/permit-div-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/permit-div-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/permit-div-1.pdf  used on input line 793.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
+[20 <./images/NewEngland/rec_op_NewEngland_2025-09-16.png>]
+<images/NewEngland/commercial_div_species_div_NewEngland_2025-09-16.png, id=219, 469.755pt x 289.08pt>
+File: images/NewEngland/commercial_div_species_div_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/commercial_div_species_div_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/commercial_div_species_div_NewEngland_2025-09-16.png  used on input line 783.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-[17 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-op-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-div-1.pdf
-
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/rec-div-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recdat-div-catch-1.pdf, id=335, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recdat-div-catch-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recdat-div-catch-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recdat-div-catch-1.pdf  used on input line 804.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/totpp-1.pdf, id=338, 542.025pt x 162.6075pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/totpp-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/totpp-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/totpp-1.pdf  used on input line 817.
-(pdftex.def)             Requested size: 542.02367pt x 162.6071pt.
-
-Overfull \hbox (41.53967pt too wide) in paragraph at lines 817--818
- [][] 
- []
+[21 <./images/NewEngland/rec_div_NewEngland_2025-09-16.png>]
+<images/NewEngland/recdat_div_catch_NewEngland_2025-09-16.png, id=232, 469.755pt x 289.08pt>
+File: images/NewEngland/recdat_div_catch_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/recdat_div_catch_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/recdat_div_catch_NewEngland_2025-09-16.png  used on input line 794.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-
-[18 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/permit-div-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recdat-div-catch-1.pdf
-
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recdat-div-catch-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `fig:zoo-diversity' on page 19 undefined on input line 824.
-
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoo-diversity-1.pdf, id=364, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoo-diversity-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoo-diversity-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoo-diversity-1.pdf  used on input line 828.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/exp-n-1.pdf, id=365, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/exp-n-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/exp-n-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/exp-n-1.pdf  used on input line 836.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
+[22 <./images/NewEngland/commercial_div_species_div_NewEngland_2025-09-16.png>]
+<images/NewEngland/totpp_NewEngland_2025-09-16.png, id=241, 469.755pt x 289.08pt>
+File: images/NewEngland/totpp_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/totpp_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/totpp_NewEngland_2025-09-16.png  used on input line 807.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-[19 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/totpp-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoo-diversity-1.pdf
-
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoo-diversity-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/exp-n-1.pdf
-
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/exp-n-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/traits-1.pdf, id=397, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/traits-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/traits-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/traits-1.pdf  used on input line 847.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
+[23 <./images/NewEngland/recdat_div_catch_NewEngland_2025-09-16.png>]
+<images/NewEngland/zoo_diversity_NewEngland_2025-09-16.png, id=252, 469.755pt x 289.08pt>
+File: images/NewEngland/zoo_diversity_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/zoo_diversity_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/zoo_diversity_NewEngland_2025-09-16.png  used on input line 818.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-[20 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/traits-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/commercial-engagement-1.pdf, id=417, 505.89pt x 252.945pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/commercial-engagement-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/commercial-engagement-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/commercial-engagement-1.pdf  used on input line 882.
-(pdftex.def)             Requested size: 505.88875pt x 252.94438pt.
-
-Overfull \hbox (5.40475pt too wide) in paragraph at lines 882--883
- [][] 
- []
+[24 <./images/NewEngland/totpp_NewEngland_2025-09-16.png>]
+<images/NewEngland/exp_n_NewEngland_2025-09-16.png, id=260, 469.755pt x 289.08pt>
+File: images/NewEngland/exp_n_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/exp_n_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/exp_n_NewEngland_2025-09-16.png  used on input line 827.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-Overfull \hbox (17.06995pt too wide) in alignment at lines 901--909
+[25 <./images/NewEngland/zoo_diversity_NewEngland_2025-09-16.png>]
+<images/NewEngland/traits_NewEngland_2025-09-16.png, id=268, 469.755pt x 289.08pt>
+File: images/NewEngland/traits_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/traits_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/traits_NewEngland_2025-09-16.png  used on input line 838.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[26 <./images/NewEngland/exp_n_NewEngland_2025-09-16.png>]
+
+[27 <./images/NewEngland/traits_NewEngland_2025-09-16.png>]
+<images/NewEngland/commercial_engagement_NewEngland_2025-09-16.png, id=283, 469.755pt x 289.08pt>
+File: images/NewEngland/commercial_engagement_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/commercial_engagement_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/commercial_engagement_NewEngland_2025-09-16.png  used on input line 873.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[28]
+Overfull \hbox (17.06995pt too wide) in alignment at lines 892--900
  [] [] [] [] 
  []
 
 
-Overfull \hbox (17.06995pt too wide) in alignment at lines 909--915
+Overfull \hbox (17.06995pt too wide) in alignment at lines 900--906
  [] [] [] [] 
  []
 
 
-Overfull \hbox (17.06995pt too wide) in alignment at lines 915--1039
+Overfull \hbox (17.06995pt too wide) in alignment at lines 906--1030
  [] [] [] [] 
  []
 
-[21 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/commercial-engagement-1.pdf>]
-
-[22]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recreational-engagement-1.pdf, id=449, 469.755pt x 328.22626pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recreational-engagement-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recreational-engagement-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recreational-engagement-1.pdf  used on input line 1056.
-(pdftex.def)             Requested size: 469.75386pt x 328.22545pt.
-
-
-[23 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/recreational-engagement-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/commvulex-1.pdf, id=470, 469.755pt x 234.8775pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/commvulex-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/commvulex-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/commvulex-1.pdf  used on input line 1244.
-(pdftex.def)             Requested size: 469.75386pt x 234.87692pt.
-
-
-[24]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/harborporpoise-1.pdf, id=481, 361.35pt x 169.63374pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/harborporpoise-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/harborporpoise-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/harborporpoise-1.pdf  used on input line 1269.
-(pdftex.def)             Requested size: 361.34912pt x 169.63332pt.
-
-
-[25 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/commvulex-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/grayseal-1.pdf, id=499, 361.35pt x 169.63374pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/grayseal-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/grayseal-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/grayseal-1.pdf  used on input line 1280.
-(pdftex.def)             Requested size: 361.34912pt x 169.63332pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/narw-abundance-1.pdf, id=502, 289.08pt x 129.48375pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/narw-abundance-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/narw-abundance-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/narw-abundance-1.pdf  used on input line 1291.
-(pdftex.def)             Requested size: 289.07928pt x 129.48341pt.
-
-
-[26 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/harborporpoise-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/grayseal-1.pdf
-
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/grayseal-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/NARW-calf-abundance-1.pdf, id=525, 289.08pt x 129.48375pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/NARW-calf-abundance-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/NARW-calf-abundance-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/NARW-calf-abundance-1.pdf  used on input line 1302.
-(pdftex.def)             Requested size: 289.07928pt x 129.48341pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/seals-1.pdf, id=527, 469.755pt x 187.70125pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/seals-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/seals-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/seals-1.pdf  used on input line 1319.
-(pdftex.def)             Requested size: 469.75386pt x 187.70079pt.
-
-
-[27 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/narw-abundance-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/NARW-calf-abundance-1.pdf
-
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/NARW-calf-abundance-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-
-[28 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/seals-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/species-dist-1.pdf, id=576, 469.755pt x 126.4725pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/species-dist-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/species-dist-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/species-dist-1.pdf  used on input line 1350.
-(pdftex.def)             Requested size: 469.75386pt x 126.47218pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/protectedspp-dist-shifts-1.pdf, id=577, 469.755pt x 375.4025pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/protectedspp-dist-shifts-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/protectedspp-dist-shifts-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/protectedspp-dist-shifts-1.pdf  used on input line 1359.
-(pdftex.def)             Requested size: 469.75386pt x 375.40158pt.
-
-
-[29 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/species-dist-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/protectedspp-dist-shifts-1.pdf
-
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/protectedspp-dist-shifts-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/forageshifts-1.pdf, id=607, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/forageshifts-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/forageshifts-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/forageshifts-1.pdf  used on input line 1372.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/macrobenthosshifts-1.pdf, id=611, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/macrobenthosshifts-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/macrobenthosshifts-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/macrobenthosshifts-1.pdf  used on input line 1383.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
-
-LaTeX Warning: Hyper reference `highlights' on page 30 undefined on input line 1390.
-
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/long-term-sst-1.pdf, id=616, 289.08pt x 129.48375pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/long-term-sst-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/long-term-sst-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/long-term-sst-1.pdf  used on input line 1394.
-(pdftex.def)             Requested size: 289.07928pt x 129.48341pt.
-
-
-[30 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/forageshifts-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/macrobenthosshifts-1.pdf
-
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/macrobenthosshifts-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-
-LaTeX Warning: Hyper reference `highlights' on page 31 undefined on input line 1401.
-
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/GSI-1.pdf, id=646, 289.08pt x 129.48375pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/GSI-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/GSI-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/GSI-1.pdf  used on input line 1405.
-(pdftex.def)             Requested size: 289.07928pt x 129.48341pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-size-1.pdf, id=649, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-size-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-size-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-size-1.pdf  used on input line 1416.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
-
-
-[31 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/long-term-sst-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/GSI-1.pdf
+[29 <./images/NewEngland/commercial_engagement_NewEngland_2025-09-16.png>]
+
+[30]
+<images/NewEngland/recreational_engagement_NewEngland_2025-09-16.png, id=308, 469.755pt x 289.08pt>
+File: images/NewEngland/recreational_engagement_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/recreational_engagement_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/recreational_engagement_NewEngland_2025-09-16.png  used on input line 1047.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+[31 <./images/NewEngland/recreational_engagement_NewEngland_2025-09-16.png>]
+<images/NewEngland/commvulex_NewEngland_2025-09-16.png, id=315, 469.755pt x 289.08pt>
+File: images/NewEngland/commvulex_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/commvulex_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/commvulex_NewEngland_2025-09-16.png  used on input line 1234.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[32]
+<images/BothReports/harborporpoise_BothReports_2025-09-16.png, id=326, 469.755pt x 289.08pt>
+File: images/BothReports/harborporpoise_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/harborporpoise_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/harborporpoise_BothReports_2025-09-16.png  used on input line 1257.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[33 <./images/NewEngland/commvulex_NewEngland_2025-09-16.png>]
+<images/BothReports/grayseal_BothReports_2025-09-16.png, id=337, 469.755pt x 289.08pt>
+File: images/BothReports/grayseal_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/grayseal_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/grayseal_BothReports_2025-09-16.png  used on input line 1268.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[34 <./images/BothReports/harborporpoise_BothReports_2025-09-16.png>]
+<images/BothReports/narw_abundance_BothReports_2025-09-16.png, id=345, 469.755pt x 289.08pt>
+File: images/BothReports/narw_abundance_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/narw_abundance_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/narw_abundance_BothReports_2025-09-16.png  used on input line 1279.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[35 <./images/BothReports/grayseal_BothReports_2025-09-16.png>]
+<images/BothReports/narw_calves_BothReports_2025-09-16.png, id=353, 469.755pt x 289.08pt>
+File: images/BothReports/narw_calves_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/narw_calves_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/narw_calves_BothReports_2025-09-16.png  used on input line 1290.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[36 <./images/BothReports/narw_abundance_BothReports_2025-09-16.png>]
+<images/BothReports/seal_pups_BothReports_2025-09-16.png, id=360, 469.755pt x 289.08pt>
+File: images/BothReports/seal_pups_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/seal_pups_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/seal_pups_BothReports_2025-09-16.png  used on input line 1307.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[37 <./images/BothReports/narw_calves_BothReports_2025-09-16.png>]
+
+[38 <./images/BothReports/seal_pups_BothReports_2025-09-16.png>]
+<images/BothReports/species_dist_BothReports_2025-09-16.png, id=381, 469.755pt x 289.08pt>
+File: images/BothReports/species_dist_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/species_dist_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/species_dist_BothReports_2025-09-16.png  used on input line 1338.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+<images/BothReports/cetacean_dist_BothReports_2025-09-16.png, id=382, 469.755pt x 289.08pt>
+File: images/BothReports/cetacean_dist_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/cetacean_dist_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/cetacean_dist_BothReports_2025-09-16.png  used on input line 1347.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[39 <./images/BothReports/species_dist_BothReports_2025-09-16.png>]
+<images/NewEngland/calfin_cog_NewEngland_2025-09-16.png, id=394, 469.755pt x 289.08pt>
+File: images/NewEngland/calfin_cog_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/calfin_cog_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/calfin_cog_NewEngland_2025-09-16.png  used on input line 1360.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[40 <./images/BothReports/cetacean_dist_BothReports_2025-09-16.png>]
+<images/BothReports/forage_dist_BothReports_2025-09-16.png, id=403, 469.755pt x 289.08pt>
+File: images/BothReports/forage_dist_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/forage_dist_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/forage_dist_BothReports_2025-09-16.png  used on input line 1369.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[41 <./images/NewEngland/calfin_cog_NewEngland_2025-09-16.png>]
+<images/BothReports/macrobenthos_dist_BothReports_2025-09-16.png, id=412, 469.755pt x 289.08pt>
+File: images/BothReports/macrobenthos_dist_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/macrobenthos_dist_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/macrobenthos_dist_BothReports_2025-09-16.png  used on input line 1380.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[42 <./images/BothReports/forage_dist_BothReports_2025-09-16.png>]
+<images/BothReports/long_term_sst_BothReports_2025-09-16.png, id=425, 469.755pt x 289.08pt>
+File: images/BothReports/long_term_sst_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/long_term_sst_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/long_term_sst_BothReports_2025-09-16.png  used on input line 1391.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/GSI-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
 
-LaTeX Warning: Hyper reference `highlights' on page 32 undefined on input line 1425.
+[43 <./images/BothReports/macrobenthos_dist_BothReports_2025-09-16.png>]
+<images/BothReports/west_gsi_BothReports_2025-09-16.png, id=436, 469.755pt x 289.08pt>
+File: images/BothReports/west_gsi_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/west_gsi_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/west_gsi_BothReports_2025-09-16.png  used on input line 1402.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/spawntiming-1.pdf, id=675, 469.755pt x 234.8775pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/spawntiming-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/spawntiming-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/spawntiming-1.pdf  used on input line 1441.
-(pdftex.def)             Requested size: 469.75386pt x 234.87692pt.
-
-
-[32 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-size-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/transition-1.pdf, id=704, 289.08pt x 129.48375pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/transition-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/transition-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/transition-1.pdf  used on input line 1460.
-(pdftex.def)             Requested size: 289.07928pt x 129.48341pt.
 
+[44 <./images/BothReports/long_term_sst_BothReports_2025-09-16.png>]
+<images/BothReports/cold_pool_BothReports_2025-09-16.png, id=444, 469.755pt x 289.08pt>
+File: images/BothReports/cold_pool_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/cold_pool_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/cold_pool_BothReports_2025-09-16.png  used on input line 1413.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
-[33 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/spawntiming-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-time-1.pdf, id=721, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-time-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-time-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-time-1.pdf  used on input line 1475.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/chl-month-1.pdf, id=724, 469.755pt x 210.7875pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/chl-month-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/chl-month-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/chl-month-1.pdf  used on input line 1486.
-(pdftex.def)             Requested size: 469.75386pt x 210.78699pt.
 
+[45 <./images/BothReports/west_gsi_BothReports_2025-09-16.png>]
 
-[34 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/transition-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-time-1.pdf
+[46 <./images/BothReports/cold_pool_BothReports_2025-09-16.png>]
+<images/BothReports/spawn_timing_BothReports_2025-09-16.png, id=465, 469.755pt x 289.08pt>
+File: images/BothReports/spawn_timing_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/spawn_timing_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/spawn_timing_BothReports_2025-09-16.png  used on input line 1438.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/cold-pool-time-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/productivity-anomaly-1.pdf, id=753, 469.755pt x 469.755pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/productivity-anomaly-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/productivity-anomaly-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/productivity-anomaly-1.pdf  used on input line 1511.
-(pdftex.def)             Requested size: 469.75386pt x 469.75386pt.
 
+[47 <./images/BothReports/spawn_timing_BothReports_2025-09-16.png>]
+<images/NewEngland/transition_date_NewEngland_2025-09-16.png, id=477, 469.755pt x 289.08pt>
+File: images/NewEngland/transition_date_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/transition_date_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/transition_date_NewEngland_2025-09-16.png  used on input line 1457.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+File: images/NewEngland/transition_date_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/transition_date_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/transition_date_NewEngland_2025-09-16.png  used on input line 1466.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
-[35 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/chl-month-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/seabird-ne-productivity-1.pdf, id=778, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/seabird-ne-productivity-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/seabird-ne-productivity-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/seabird-ne-productivity-1.pdf  used on input line 1520.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
 
+[48 <./images/NewEngland/transition_date_NewEngland_2025-09-16.png>]
+<images/BothReports/cold_pool_time_BothReports_2025-09-16.png, id=484, 469.755pt x 289.08pt>
+File: images/BothReports/cold_pool_time_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/cold_pool_time_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/cold_pool_time_BothReports_2025-09-16.png  used on input line 1479.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
-[36 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/productivity-anomaly-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/salmon-1.pdf, id=791, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/salmon-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/salmon-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/salmon-1.pdf  used on input line 1529.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/ne-cf-1.pdf, id=795, 469.755pt x 563.10374pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/ne-cf-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/ne-cf-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/ne-cf-1.pdf  used on input line 1540.
-(pdftex.def)             Requested size: 469.75386pt x 563.10237pt.
 
+[49]
+<images/NewEngland/monthly_chl_NewEngland_2025-09-16.png, id=494, 794.97pt x 289.08pt>
+File: images/NewEngland/monthly_chl_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/monthly_chl_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/monthly_chl_NewEngland_2025-09-16.png  used on input line 1490.
+(pdftex.def)             Requested size: 500.484pt x 181.99785pt.
 
-[37 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/seabird-ne-productivity-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/salmon-1.pdf
 
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/salmon-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
+[50 <./images/BothReports/cold_pool_time_BothReports_2025-09-16.png> <./images/NewEngland/monthly_chl_NewEngland_2025-09-16.png>]
+<images/NewEngland/productivity_anomaly_NewEngland_2025-09-16.png, id=506, 614.295pt x 794.97pt>
+File: images/NewEngland/productivity_anomaly_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/productivity_anomaly_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/productivity_anomaly_NewEngland_2025-09-16.png  used on input line 1515.
+(pdftex.def)             Requested size: 500.484pt x 647.69469pt.
 
-[38 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/ne-cf-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/energy-density-1.pdf, id=832, 469.755pt x 234.8775pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/energy-density-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/energy-density-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/energy-density-1.pdf  used on input line 1559.
-(pdftex.def)             Requested size: 469.75386pt x 234.87692pt.
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/foragebio-1.pdf, id=835, 469.755pt x 140.525pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/foragebio-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/foragebio-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/foragebio-1.pdf  used on input line 1570.
-(pdftex.def)             Requested size: 469.75386pt x 140.52464pt.
 
+[51]
+Overfull \vbox (48.98846pt too high) has occurred while \output is active []
 
-[39 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/energy-density-1.pdf> <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/foragebio-1.pdf
 
-pdfTeX warning: pdflatex.exe (file c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/foragebio-1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/benthos-1.pdf, id=860, 469.755pt x 422.57875pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/benthos-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/benthos-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/benthos-1.pdf  used on input line 1581.
-(pdftex.def)             Requested size: 469.75386pt x 422.57771pt.
 
-LaTeX Warning: Reference `fig:primaray-production' on page 40 undefined on input line 1590.
+[52 <./images/NewEngland/productivity_anomaly_NewEngland_2025-09-16.png>]
+<images/NewEngland/seabird_productivity_NewEngland_2025-09-16.png, id=525, 469.755pt x 289.08pt>
+File: images/NewEngland/seabird_productivity_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/seabird_productivity_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/seabird_productivity_NewEngland_2025-09-16.png  used on input line 1524.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+<images/NewEngland/salmon_NewEngland_2025-09-16.png, id=526, 469.755pt x 289.08pt>
+File: images/NewEngland/salmon_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/salmon_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/salmon_NewEngland_2025-09-16.png  used on input line 1533.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
 
-LaTeX Warning: Reference `fig:zoopanom' on page 40 undefined on input line 1592.
+[53 <./images/NewEngland/seabird_productivity_NewEngland_2025-09-16.png>]
+<images/NewEngland/condition_NewEngland_2025-09-16.png, id=534, 469.755pt x 650.43pt>
+File: images/NewEngland/condition_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/condition_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/condition_NewEngland_2025-09-16.png  used on input line 1544.
+(pdftex.def)             Requested size: 500.484pt x 692.9758pt.
 
 
+[54 <./images/NewEngland/salmon_NewEngland_2025-09-16.png>]
+Overfull \vbox (72.26958pt too high) has occurred while \output is active []
 
-[40 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/benthos-1.pdf>]
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoopanom-1.pdf, id=880, 469.755pt x 469.755pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoopanom-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoopanom-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoopanom-1.pdf  used on input line 1609.
-(pdftex.def)             Requested size: 469.75386pt x 469.75386pt.
-<images/Calanusfinmarchicus-JeffreyRunge_2025.png, id=881, 385.002pt x 219.0pt>
-File: images/Calanusfinmarchicus-JeffreyRunge_2025.png Graphic file (type png)
-<use images/Calanusfinmarchicus-JeffreyRunge_2025.png>
-Package pdftex.def Info: images/Calanusfinmarchicus-JeffreyRunge_2025.png  used on input line 1617.
-(pdftex.def)             Requested size: 385.00105pt x 218.99947pt.
 
 
-[41 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/zoopanom-1.pdf>]
+[55 <./images/NewEngland/condition_NewEngland_2025-09-16.png>]
+<images/BothReports/energy_density_BothReports_2025-09-16.png, id=548, 469.755pt x 289.08pt>
+File: images/BothReports/energy_density_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/energy_density_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/energy_density_BothReports_2025-09-16.png  used on input line 1563.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+<images/NewEngland/foragebio_NewEngland_2025-09-16.png, id=551, 469.755pt x 289.08pt>
+File: images/NewEngland/foragebio_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/foragebio_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/foragebio_NewEngland_2025-09-16.png  used on input line 1574.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
-LaTeX Warning: Reference `fig:longterm-sst' on page 42 undefined on input line 1626.
 
+[56 <./images/BothReports/energy_density_BothReports_2025-09-16.png>]
+<images/NewEngland/benthos_NewEngland_2025-09-16.png, id=562, 469.755pt x 361.35pt>
+File: images/NewEngland/benthos_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/benthos_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/benthos_NewEngland_2025-09-16.png  used on input line 1585.
+(pdftex.def)             Requested size: 500.484pt x 384.98656pt.
 
-LaTeX Warning: Reference `fig:therm-hab-persist-2024' on page 42 undefined on input line 1626.
 
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/therm-hab-persist-2024-1.pdf, id=903, 722.7pt x 361.35pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/therm-hab-persist-2024-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/therm-hab-persist-2024-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/therm-hab-persist-2024-1.pdf  used on input line 1632.
-(pdftex.def)             Requested size: 722.69823pt x 361.34912pt.
+[57 <./images/NewEngland/foragebio_NewEngland_2025-09-16.png>]
 
-Overfull \hbox (222.21423pt too wide) in paragraph at lines 1632--1633
- [][] 
- []
+[58 <./images/NewEngland/benthos_NewEngland_2025-09-16.png>]
+<images/NewEngland/zooplankton_anomaly_NewEngland_2025-09-16.png, id=585, 433.62pt x 578.16pt>
+File: images/NewEngland/zooplankton_anomaly_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/zooplankton_anomaly_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/zooplankton_anomaly_NewEngland_2025-09-16.png  used on input line 1613.
+(pdftex.def)             Requested size: 500.484pt x 667.349pt.
 
 
+[59]
+Overfull \vbox (46.64278pt too high) has occurred while \output is active []
 
-[42{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./images/Calanusfinmarchicus-JeffreyRunge_2025.png>]
 
-LaTeX Warning: Hyper reference `highlights' on page 43 undefined on input line 1638.
 
+[60 <./images/NewEngland/zooplankton_anomaly_NewEngland_2025-09-16.png>]
+<images/NewEngland/Calanusfinmarchicus-JeffreyRunge_2025.png, id=597, 385.002pt x 219.0pt>
+File: images/NewEngland/Calanusfinmarchicus-JeffreyRunge_2025.png Graphic file (type png)
+<use images/NewEngland/Calanusfinmarchicus-JeffreyRunge_2025.png>
+Package pdftex.def Info: images/NewEngland/Calanusfinmarchicus-JeffreyRunge_2025.png  used on input line 1622.
+(pdftex.def)             Requested size: 500.484pt x 284.68994pt.
+<images/BothReports/therm_hab_persist_BothReports_2025-09-16.png, id=604, 469.755pt x 289.08pt>
+File: images/BothReports/therm_hab_persist_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/therm_hab_persist_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/therm_hab_persist_BothReports_2025-09-16.png  used on input line 1637.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
-LaTeX Warning: Reference `fig:mab-oa-1' on page 43 undefined on input line 1638.
 
-<images/SOE-2025-OA-figure_final_GraceSaba_2025.png, id=913, 2975.115pt x 1136.245pt>
-File: images/SOE-2025-OA-figure_final_GraceSaba_2025.png Graphic file (type png)
-<use images/SOE-2025-OA-figure_final_GraceSaba_2025.png>
-Package pdftex.def Info: images/SOE-2025-OA-figure_final_GraceSaba_2025.png  used on input line 1642.
+[61{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./images/NewEngland/Calanusfinmarchicus-JeffreyRunge_2025.png>]
+<images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png, id=617, 2975.115pt x 1136.245pt>
+File: images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png Graphic file (type png)
+<use images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png>
+Package pdftex.def Info: images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png  used on input line 1648.
 (pdftex.def)             Requested size: 500.484pt x 191.13058pt.
 
 
-[43 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/therm-hab-persist-2024-1.pdf>]
+[62 <./images/BothReports/therm_hab_persist_BothReports_2025-09-16.png>]
 
-[44 <./images/SOE-2025-OA-figure_final_GraceSaba_2025.png>]
+[63 <./images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png>]
+<images/BothReports/wind_dev_speed_BothReports_2025-09-16.png, id=645, 469.755pt x 289.08pt>
+File: images/BothReports/wind_dev_speed_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/wind_dev_speed_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/wind_dev_speed_BothReports_2025-09-16.png  used on input line 1683.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 
-LaTeX Warning: Reference `fig:wind-dev-cumul' on page 45 undefined on input line 1670.
 
-<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/wind-proposed-dev-1.pdf, id=955, 361.35pt x 162.6075pt>
-File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/wind-proposed-dev-1.pdf Graphic file (type pdf)
-<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/wind-proposed-dev-1.pdf>
-Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/wind-proposed-dev-1.pdf  used on input line 1674.
-(pdftex.def)             Requested size: 361.34912pt x 162.6071pt.
-
-LaTeX Warning: Reference `fig:wind-dev-cumul' on page 45 undefined on input line 1681.
-
-<newengland_files/figure-latex/wind-dev-cumul-1.png, id=956, 633.8079pt x 817.6146pt>
-File: newengland_files/figure-latex/wind-dev-cumul-1.png Graphic file (type png)
-<use newengland_files/figure-latex/wind-dev-cumul-1.png>
-Package pdftex.def Info: newengland_files/figure-latex/wind-dev-cumul-1.png  used on input line 1685.
+[64 <./images/BothReports/wind_dev_speed_BothReports_2025-09-16.png>]
+<images/BothReports/UpdatedWind_AngelaSilva_2025.png, id=658, 633.8079pt x 817.6146pt>
+File: images/BothReports/UpdatedWind_AngelaSilva_2025.png Graphic file (type png)
+<use images/BothReports/UpdatedWind_AngelaSilva_2025.png>
+Package pdftex.def Info: images/BothReports/UpdatedWind_AngelaSilva_2025.png  used on input line 1694.
 (pdftex.def)             Requested size: 450.43253pt x 581.07184pt.
 
 
-[45 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/wind-proposed-dev-1.pdf>]
+[65]
 
-[46 <./newengland_files/figure-latex/wind-dev-cumul-1.png>] (./newengland.aux * soulpos - computing points - it may take a few seconds *
+[66 <./images/BothReports/UpdatedWind_AngelaSilva_2025.png>]
+<images/NewEngland/wind_revenue_NewEngland_2025-09-16.png, id=673, 469.755pt x 289.08pt>
+File: images/NewEngland/wind_revenue_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/wind_revenue_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/wind_revenue_NewEngland_2025-09-16.png  used on input line 1713.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+
+
+[67] [68 <./images/NewEngland/wind_revenue_NewEngland_2025-09-16.png>]
+<images/NewEngland/wea_port_rev_NewEngland_2025-09-16.png, id=689, 542.025pt x 289.08pt>
+File: images/NewEngland/wea_port_rev_NewEngland_2025-09-16.png Graphic file (type png)
+<use images/NewEngland/wea_port_rev_NewEngland_2025-09-16.png>
+Package pdftex.def Info: images/NewEngland/wea_port_rev_NewEngland_2025-09-16.png  used on input line 1936.
+(pdftex.def)             Requested size: 500.484pt x 266.93605pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1936--1937
+
+ []
+
+
+
+[69]
+<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/wind-rev-ne-1.pdf, id=698, 469.755pt x 187.70125pt>
+File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/wind-rev-ne-1.pdf Graphic file (type pdf)
+<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/wind-rev-ne-1.pdf>
+Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/wind-rev-ne-1.pdf  used on input line 1949.
+(pdftex.def)             Requested size: 500.484pt x 199.97913pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1949--1950
+
+ []
+
+
+
+[70 <./images/NewEngland/wea_port_rev_NewEngland_2025-09-16.png>]
+<images/BothReports/NARW_hotspots_final_2024.jpg, id=708, 614.295pt x 794.97pt>
+File: images/BothReports/NARW_hotspots_final_2024.jpg Graphic file (type jpg)
+<use images/BothReports/NARW_hotspots_final_2024.jpg>
+Package pdftex.def Info: images/BothReports/NARW_hotspots_final_2024.jpg  used on input line 1964.
+(pdftex.def)             Requested size: 275.26772pt x 356.22905pt.
+
+
+[71 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/wind-rev-ne-1.pdf>]
+
+[72 <./images/BothReports/NARW_hotspots_final_2024.jpg>]
+<images/BothReports/Feb2024-SST-ANOM_KHyde_2025.png, id=731, 510.708pt x 500.22885pt>
+File: images/BothReports/Feb2024-SST-ANOM_KHyde_2025.png Graphic file (type png)
+<use images/BothReports/Feb2024-SST-ANOM_KHyde_2025.png>
+Package pdftex.def Info: images/BothReports/Feb2024-SST-ANOM_KHyde_2025.png  used on input line 1989.
+(pdftex.def)             Requested size: 325.31154pt x 318.6417pt.
+<images/BothReports/slopewater_BothReports_2025-09-16.png, id=736, 433.62pt x 289.08pt>
+File: images/BothReports/slopewater_BothReports_2025-09-16.png Graphic file (type png)
+<use images/BothReports/slopewater_BothReports_2025-09-16.png>
+Package pdftex.def Info: images/BothReports/slopewater_BothReports_2025-09-16.png  used on input line 2000.
+(pdftex.def)             Requested size: 500.484pt x 333.67448pt.
+
+
+[73 <./images/BothReports/Feb2024-SST-ANOM_KHyde_2025.png>]
+
+[74 <./images/BothReports/slopewater_BothReports_2025-09-16.png>]
+<images/BothReports/20240702_Long_Island_algae_bloom-cropped_KimHyde-2025.png, id=751, 3191.925pt x 2288.55pt>
+File: images/BothReports/20240702_Long_Island_algae_bloom-cropped_KimHyde-2025.png Graphic file (type png)
+<use images/BothReports/20240702_Long_Island_algae_bloom-cropped_KimHyde-2025.png>
+Package pdftex.def Info: images/BothReports/20240702_Long_Island_algae_bloom-cropped_KimHyde-2025.png  used on input line 2017.
+(pdftex.def)             Requested size: 275.26772pt x 197.33527pt.
+<images/BothReports/GOMoa_image.png, id=755, 397.485pt x 264.99pt>
+File: images/BothReports/GOMoa_image.png Graphic file (type png)
+<use images/BothReports/GOMoa_image.png>
+Package pdftex.def Info: images/BothReports/GOMoa_image.png  used on input line 2028.
+(pdftex.def)             Requested size: 300.29344pt x 200.20168pt.
+
+
+[75 <./images/BothReports/20240702_Long_Island_algae_bloom-cropped_KimHyde-2025.png> <./images/BothReports/GOMoa_image.png>]
+<C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/docformat-1.pdf, id=767, 469.755pt x 210.7875pt>
+File: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/docformat-1.pdf Graphic file (type pdf)
+<use C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/docformat-1.pdf>
+Package pdftex.def Info: C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/docformat-1.pdf  used on input line 2049.
+(pdftex.def)             Requested size: 500.484pt x 224.57549pt.
+
+
+[76]
+Overfull \hbox (25.40596pt too wide) in alignment at lines 2070--2078
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (25.40596pt too wide) in alignment at lines 2078--2084
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (25.40596pt too wide) in alignment at lines 2084--2118
+ [] [] [] [] [] 
+ []
+
+[77 <c:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/newengland_files/figure-latex/docformat-1.pdf>]
+
+[78] (./newengland.aux * soulpos - computing points - it may take a few seconds *
 \openout3 = `newengland.upb'.
 
 (./newengland.upa))
@@ -1371,18 +1428,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22296 strings out of 469720
- 446820 string characters out of 5477477
- 880901 words of memory out of 5000000
- 49947 multiletter control sequences out of 15000+600000
- 723110 words of font info for 214 fonts, out of 8000000 for 9000
+ 22601 strings out of 469720
+ 437351 string characters out of 5477478
+ 882564 words of memory out of 5000000
+ 50168 multiletter control sequences out of 15000+600000
+ 728251 words of font info for 224 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 77i,15n,117p,1419b,713s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on newengland.pdf (43 pages, 9087572 bytes).
+ 77i,15n,117p,2756b,629s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb>
+Output written on newengland.pdf (75 pages, 26511201 bytes).
 PDF statistics:
- 1180 PDF objects out of 1200 (max. 8388607)
- 915 compressed objects within 10 object streams
- 159 named destinations out of 1000 (max. 500000)
- 55807 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1090 PDF objects out of 1200 (max. 8388607)
+ 880 compressed objects within 9 object streams
+ 227 named destinations out of 1000 (max. 500000)
+ 60121 words of extra memory for PDF output out of 61914 (max. 10000000)
 
