@@ -210,7 +210,7 @@ if (region == "MidAtlantic") {
   save_plot(
     plot_expression = {
       ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10) +
-        ggplot2::facet_wrap(.~Var)
+        ggplot2::facet_wrap(ggplot2::vars(Var))
     },
     indicator = "aggregate_biomass_mab",
     width = 6.5,
@@ -283,7 +283,8 @@ save_plot(
       ecodata::plot_bennet(
         report = region,
         varName = "total"
-      )
+      ) +
+        ggplot2::theme(text = ggplot2::element_text(size = 14))
     } else {
       gb <- ecodata::plot_bennet(
         report = region,
@@ -295,7 +296,9 @@ save_plot(
           legend.position = "bottom",
           legend.title = ggplot2::element_blank()
         ) +
-        ggplot2::ylab("Million USD (2023)")
+        ggplot2::ylab("Million USD (2023)") +
+        ggplot2::theme(text = ggplot2::element_text(size = 12)) +
+        ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1, vjust = 1))
       gom <- ecodata::plot_bennet(
         report = region,
         varName = "total",
@@ -306,18 +309,20 @@ save_plot(
           legend.position = "bottom",
           legend.title = ggplot2::element_blank()
         ) +
-        ggplot2::ylab("Million USD (2023)")
+        ggplot2::ylab("Million USD (2023)") +
+        ggplot2::theme(text = ggplot2::element_text(size = 12)) +
+        ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1, vjust = 1))
 
       # this is using the patchwork library and might break
       # rewrite with ggarrange
         patchwork::plot_layout(guides = 'collect') &
-        ggplot2::theme(legend.position = 'bottom')
+        ggplot2::theme(legend.position = 'bottom') 
         ggpubr::ggarrange(gb, gom, ncol = 2)
     }
   },
   indicator = "bennet",
-  width = 6.5,
-  height = 4
+  width = ifelse(region == "NewEngland", 7, 6),
+  height = 4,
 )
 
 # bennet all
@@ -805,7 +810,7 @@ save_plot(
   },
   indicator = "zooplankton_anomaly",
   width = ifelse(region == "NewEngland", 6, 7),
-  height = ifelse(region == "NewEgland", 8, 6)
+  height = ifelse(region == "NewEngland", 8, 6)
 )
 
 # 9. Thermal Habitat Persistence Plot
