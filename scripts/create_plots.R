@@ -961,7 +961,8 @@ save_plot(
     ecodata::plot_forage_index(varName = "cog", n = 10) +
       ggplot2::coord_cartesian(xlim = c(1982, 2023)) +
       ggplot2::ggtitle("Northeast U.S. Forage Fish Distribution") +
-      ggplot2::ylab("Center of Gravity, km")
+      ggplot2::ylab("Center of Gravity, km") + ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season))
   },
   indicator = "forage_dist",
   width = 6.5,
@@ -978,7 +979,9 @@ save_plot(
     ) +
       ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
       ggplot2::ggtitle("Northeast U.S. Macrobenthos Distribution") +
-      ggplot2::ylab("Center of Gravity, km")
+      ggplot2::ylab("Center of Gravity, km") +
+      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season))
   },
   indicator = "macrobenthos_dist",
   width = 6.5,
