@@ -208,7 +208,8 @@ save_plot(
 if (region == "MidAtlantic") {
   save_plot(
     plot_expression = {
-      ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)
+      ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10) +
+        ggplot2::facet_wrap(.~Var)
     },
     indicator = "aggregate_biomass_mab",
     width = 6.5,
@@ -225,11 +226,11 @@ if (region == "NewEngland") {
         EPU = "GB",
         n = 10
       ) +
-        ggplot2::theme(panel.spacing = grid::unit(0, 'lines'))
+        ggplot2::theme(panel.spacing = grid::unit(0, 'lines')) 
     },
     indicator = "aggregate_biomass_gb",
     width = 6.5,
-    height = 8
+    height = 7
   )
   # gulf of maine
   save_plot(
@@ -242,7 +243,7 @@ if (region == "NewEngland") {
     },
     indicator = "aggregate_biomass_gom",
     width = 6.5,
-    height = 8
+    height = 7
   )
 }
 
