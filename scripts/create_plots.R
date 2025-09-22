@@ -4,7 +4,7 @@
 
 ## variables ----
 
-region <- "NewEngland" #change to NewEngland to run for NE
+region <- "MidAtlantic" #change to NewEngland to run for NE
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -145,14 +145,15 @@ save_plot(
       report = region,
       n = 100
     ) +
-      ggplot2::ggtitle(paste(region2, "Rec. Pelagic Shark Landings"))
+      ggplot2::ggtitle(paste(region2, "Rec. Pelagic Shark Landings")) +
+      ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
     ggpubr::ggarrange(
       rec_hms_plot,
       rec_lps_sharks_plot,
       ncol = 2,
       common.legend = TRUE,
       legend = "bottom"
-    )
+    ) 
   },
   indicator = "rec_hms",
   width = 6.5,
@@ -630,7 +631,8 @@ save_plot(
 ecodata::plot_chl_pp(
   report = region,
   plottype = "monthly", n = 10
-) + ggplot2::facet_grid(rows = ggplot2::vars(EPU), cols = ggplot2::vars(Month))
+) + ggplot2::facet_grid(rows = ggplot2::vars(EPU), cols = ggplot2::vars(Month)) +
+      ggplot2::theme(text = ggplot2::element_text(size = 16))
   },
 indicator = "monthly_chl",
 width = 11,
@@ -688,8 +690,8 @@ save_plot(
     )
   },
   indicator = "productivity_anomaly",
-  width = 8.5,
-  height = 11
+  width = ifelse(region == "NewEngland", 7, 8.5),
+  height = ifelse(region == "NewEngland", 9, 11)
 )
 
 # condition factor
@@ -761,12 +763,12 @@ save_plot(
       varName = "Macrobenthos",
       n = 10
     ) +
-      ggplot2::theme(legend.position = "right")
+      ggplot2::theme(legend.position = "bottom")
     ggpubr::ggarrange(
       megabenthos_plot,
       macrobenthos_plot,
-      ncol = ifelse(region == "MidAtlantic", 2, 1)
-    )
+      ncol = ifelse(region == "MidAtlantic", 2, 1) 
+    ) 
   },
   indicator = "benthos",
   width = 6.5,
@@ -790,7 +792,8 @@ save_plot(
       report = region,
       varName = "Euph",
       n = 10
-    )
+    ) +
+      ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white")) 
     ggpubr::ggarrange(
       large_copepod_plot,
       small_copepod_plot,
@@ -798,11 +801,11 @@ save_plot(
       ncol = ifelse(region == "MidAtlantic", 3, 1),
       common.legend = TRUE,
       legend = "bottom"
-    )
+    ) 
   },
   indicator = "zooplankton_anomaly",
-  width = 6.0,
-  height = 8
+  width = ifelse(region == "NewEngland", 6, 7),
+  height = ifelse(region == "NewEgland", 8, 6)
 )
 
 # 9. Thermal Habitat Persistence Plot
