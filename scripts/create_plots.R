@@ -87,7 +87,7 @@ save_plot(
   },
   indicator = "total_landings",
   width = 6.5,
-  height = 4
+  height = ifelse(region == "NewEngland", 2.5, 4),
 )
 
 # commercial landings
@@ -97,11 +97,13 @@ save_plot(
       report = region,
       plottype = "guild",
       n = 10
-    )
+    ) +
+      ggplot2::geom_point(size = 0.05) +
+      ggplot2::geom_line(size = 0.05)
   },
   indicator = "commercial_landings",
-  width = 6,
-  height = 6
+  width = 6.5,
+  height = 7
 )
 
 # climate vulnerability landings
@@ -140,24 +142,24 @@ save_plot(
         limits = c("LargeCoastal", "Prohibited", "SmallCoastal"),
         labels = c("Large Coastal", "Prohibited", "Small Coastal")
       ) +
-      ggplot2::ggtitle(paste(region2, "Recreational Shark Landings"))
+      ggplot2::ggtitle(paste(region2, "Marine Recreational Information Program (MRIP) Rec. Shark Landings"))
     rec_lps_sharks_plot <- ecodata::plot_lps_sharks(
       report = region,
       n = 100
     ) +
-      ggplot2::ggtitle(paste(region2, "Rec. Pelagic Shark Landings")) +
+      ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
       ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
     ggpubr::ggarrange(
-      rec_hms_plot,
       rec_lps_sharks_plot,
-      ncol = 2,
+      rec_hms_plot,
+      ncol = 1,
       common.legend = TRUE,
       legend = "bottom"
     ) 
   },
   indicator = "rec_hms",
   width = 6.5,
-  height = 4
+  height = 8
 )
 
 ### Implications ----
