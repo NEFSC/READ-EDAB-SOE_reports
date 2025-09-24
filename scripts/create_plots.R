@@ -4,7 +4,7 @@
 
 ## variables ----
 
-region <- "MidAtlantic" #change to NewEngland to run for NE
+region <- "NewEngland" #change to NewEngland to run for NE
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -113,11 +113,13 @@ save_plot(
       report = region,
       plottype = "regionland",
       n = 100
-    )
+    ) +
+      ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
+      ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "climatevul_land",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # rec landings
@@ -131,7 +133,7 @@ save_plot(
   },
   indicator = "rec_landings",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # rec hms and sharks
@@ -367,7 +369,7 @@ save_plot(
       report = region,
       plottype = "regionrev",
       n = 100
-    )
+    ) 
   },
   indicator = "climatevul_rev",
   width = 6.5,
