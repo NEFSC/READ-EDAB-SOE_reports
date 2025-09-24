@@ -4,7 +4,7 @@
 
 ## variables ----
 
-region <- "NewEngland" #change to NewEngland to run for NE
+region <- "MidAtlantic" #change to NewEngland to run for NE
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -172,7 +172,8 @@ save_plot(
     stock_status_plot <- ecodata::plot_stock_status(report = region)
     if (region == "MidAtlantic") {
       stock_status_plot$p +
-        ggplot2::coord_cartesian(xlim = c(0, 2), ylim = c(0, 2))
+        ggplot2::coord_cartesian(xlim = c(0, 2), ylim = c(0, 2)) +
+        ggplot2::theme(legend.position = 'bottom')
     } else {
       stock_status_plot$p +
         ggplot2::theme(legend.position = 'bottom')
@@ -206,19 +207,18 @@ save_plot(
   },
   indicator = "abcacl_catch",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # Aggregate biomass
 if (region == "MidAtlantic") {
   save_plot(
     plot_expression = {
-      ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10) +
-        ggplot2::facet_wrap(ggplot2::vars(Var))
+      ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10) 
     },
     indicator = "aggregate_biomass_mab",
     width = 6.5,
-    height = 6
+    height = 7
   )
 }
 
@@ -716,9 +716,11 @@ save_plot(
           plot.title = ggplot2::element_text(size = 12)
         )
     } else {
-      gb <- ecodata::plot_condition(report = region, EPU = "GB")
+      gb <- ecodata::plot_condition(report = region, EPU = "GB") +
+        ggplot2::theme(legend.position = 'none')
 
-      gom <- ecodata::plot_condition(report = region, EPU = "GOM")
+      gom <- ecodata::plot_condition(report = region, EPU = "GOM") +
+        ggplot2::theme(legend.position = 'bottom')
 
       # change to ggarrange
       ggpubr::ggarrange(gb, gom, ncol = 1) +
