@@ -634,7 +634,8 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       n = 100
-    )
+    ) +
+      ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "commvulex",
   width = 6.5,
@@ -940,7 +941,7 @@ save_plot(
   },
   indicator = "narw_abundance",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # narw calves
@@ -951,7 +952,7 @@ save_plot(
   },
   indicator = "narw_calves",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # seals
@@ -973,11 +974,11 @@ save_plot(
       ggplot2::coord_cartesian(xlim = c(1969, 2021))
     b <- ecodata::plot_species_dist(varName = "depth", n = 10) +
       ggplot2::coord_cartesian(xlim = c(1969, 2021))
-    ggpubr::ggarrange(a, b, ncol = 2)
+    ggpubr::ggarrange(a, b, nrow = 2)
   },
   indicator = "species_dist",
   width = 6.5,
-  height = 4
+  height = 5
 )
 
 # whale and dolphin dist shifts
@@ -1031,7 +1032,7 @@ save_plot(
   },
   indicator = "long_term_sst",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # gsi
@@ -1041,7 +1042,7 @@ save_plot(
   },
   indicator = "west_gsi",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # cold pool size
@@ -1049,11 +1050,11 @@ save_plot(
   plot_expression = {
     a <- ecodata::plot_cold_pool(varName = "cold_pool", n = 10)
     b <- ecodata::plot_cold_pool(varName = "extent", n = 10)
-    ggpubr::ggarrange(a, b, ncol = 2)
+    ggpubr::ggarrange(a, b, nrow = 2)
   },
   indicator = "cold_pool",
   width = 6.5,
-  height = 4
+  height = 5
 )
 
 # cold pool timing
@@ -1063,7 +1064,7 @@ save_plot(
   },
   indicator = "cold_pool_time",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # spawn timing
