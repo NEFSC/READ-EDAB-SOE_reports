@@ -43,13 +43,19 @@ create_filename <- function(
 }
 
 # A flexible function to generate and save a plot
-save_plot <- function(plot_expression, indicator, ...) {
+save_plot <- function(
+  plot_expression,
+  indicator,
+  region = reg,
+  out_dir = dir,
+  ...
+) {
   # Execute the code to create the plot
   p <- eval(plot_expression)
 
   # Check if the plot object is valid before saving
   if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
-    fname <- create_filename(indicator)
+    fname <- create_filename(indicator, reg = region, dir = out_dir)
     ggplot2::ggsave(
       filename = fname,
       plot = p,
