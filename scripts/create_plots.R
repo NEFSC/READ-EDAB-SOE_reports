@@ -351,21 +351,18 @@ save_plot(
         ggplot2::ylab("Million USD (2023)") +
         ggplot2::theme(
           legend.position = "none",
-          legend.title = ggplot2::element_blank())
+          legend.title = ggplot2::element_blank()) +
+        ggplot2::theme(strip.text.y = ggplot2::element_blank())
       gom <- ecodata::plot_bennet(
         report = "NewEngland",
         varName = "guild",
         EPU = "GOM"
       ) +
         ggplot2::ylab("Million USD (2023)") +
-        ggplot2::theme(legend.position = 'bottom')
-
-      # this is using the patchwork library and might break
-      # rewrite with ggarrange
-        patchwork::plot_layout(guides = 'collect') +
-          ggplot2::theme(legend.position = 'bottom')
-        ggpubr::ggarrange(gb, gom, nrow = 2)
-        
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::theme(strip.text.y = ggplot2::element_blank())
+      
+      ggpubr::ggarrange(gb, gom, nrow = 2, common.legend = TRUE, legend = "bottom")  
     }
   },
   indicator = "bennet_all",
@@ -533,42 +530,60 @@ save_plot(
         ggplot2::theme(plot.title = ggplot2::element_text(vjust = -5)) +
         ggplot2::ylab("Shannon Index")
     } else {
-      zoo_diversity_plot
+      zoo_diversity_plot +
+        ggplot2::ggtitle("Zooplankton Diversity") +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
     }
   },
   indicator = "zoo_diversity",
   width = 6.5,
-  height = 4
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 # 5. Expected N Plot
 save_plot(
   plot_expression = {
-    ecodata::plot_exp_n(report = region, varName = "fall", n = 10) +
-      ggplot2::scale_x_continuous(breaks = seq(1968, 2018, by = 10), expand = c(0.01, 0.01))
+    exp_n_plot <- ecodata::plot_exp_n(report = region, varName = "fall", n = 10)
+    if (region == "MidAtlantic") {
+      exp_n_plot +
+      ggplot2::scale_x_continuous(breaks = seq(1968, 2018, by = 10), expand = c(0.01, 0.01)) +
+      ggplot2::ylab("Number of species / 1000 Individuals") +
+      ggplot2::theme(axis.title.y = ggplot2::element_text(size = 8),
+                     legend.position = 'bottom') 
+    } else {
+      exp_n_plot +
+      ggplot2::scale_x_continuous(breaks = seq(1968, 2018, by = 10), expand = c(0.01, 0.01)) +
+        ggplot2::ylab("Number of species / 1000 Individuals") +
+        ggplot2::theme(axis.title.y = ggplot2::element_text(size = 8),
+                       legend.position = 'bottom') +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
   },
   indicator = "exp_n",
   width = 6.5,
-  height = 4
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 # finfish traits
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-      ecodata::plot_finfish_traits(report = region, varName = "length_maturity")
+      ecodata::plot_finfish_traits(report = region, varName = "length_maturity") +
+        ggplot2::theme(legend.position = 'bottom')
     } else {
       ecodata::plot_finfish_traits(
         report = region,
         varName = 'fecundity',
         n = 10
       ) +
-        ggplot2::ylab('Fecundity (number of \noffspring per mature female)')
+        ggplot2::ylab('Fecundity (number of \noffspring per mature female)') +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
     }
   },
   indicator = "traits",
   width = 6.5,
-  height = 4
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 ## Community social and climate vulnerability ----
