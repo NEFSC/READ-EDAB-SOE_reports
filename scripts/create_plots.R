@@ -4,7 +4,7 @@
 
 ## variables ----
 
-region <- "MidAtlantic" #change to NewEngland to run for NE
+region <- "NewEngland" #change to NewEngland to run for NE
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -79,15 +79,18 @@ save_plot(
       n = 10
     )
     if (region == "MidAtlantic") {
-      plt
+      plt +
+        ggplot2::theme(strip.text.x = ggplot2::element_blank())
     } else {
       plt +
-        ggplot2::ylab(expression("Landings (10"^3 * " metric tons)"))
+        ggplot2::ylab(expression("Landings (10"^3 * " metric tons)")) +
+        ggplot2::facet_wrap(~EPU,
+                            nrow = 2)
     }
   },
   indicator = "total_landings",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 2.5, 4),
+  height = ifelse(region == "NewEngland", 5, 4),
 )
 
 # commercial landings
@@ -271,12 +274,14 @@ save_plot(
           legend.title = ggplot2::element_blank()
         )
     } else {
-      comm_revenue_plot
+      comm_revenue_plot + 
+        ggplot2::facet_wrap(~EPU,
+                            nrow = 2)
     }
   },
   indicator = "comm_revenue",
   width = 6.5,
-  height = 4
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 # bennet
@@ -288,7 +293,9 @@ save_plot(
         report = region,
         varName = "total"
       ) +
-        ggplot2::theme(text = ggplot2::element_text(size = 14))
+        ggplot2::theme(text = ggplot2::element_text(size = 14)) +
+        ggplot2::theme(
+          legend.position = "bottom")
     } else {
       gb <- ecodata::plot_bennet(
         report = region,
@@ -297,12 +304,11 @@ save_plot(
       ) +
         ggplot2::ggtitle("GB revenue components") +
         ggplot2::theme(
-          legend.position = "bottom",
+          legend.position = "none",
           legend.title = ggplot2::element_blank()
         ) +
         ggplot2::ylab("Million USD (2023)") +
-        ggplot2::theme(text = ggplot2::element_text(size = 12)) +
-        ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1, vjust = 1))
+        ggplot2::theme(text = ggplot2::element_text(size = 12)) 
       gom <- ecodata::plot_bennet(
         report = region,
         varName = "total",
@@ -314,19 +320,18 @@ save_plot(
           legend.title = ggplot2::element_blank()
         ) +
         ggplot2::ylab("Million USD (2023)") +
-        ggplot2::theme(text = ggplot2::element_text(size = 12)) +
-        ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1, vjust = 1))
+        ggplot2::theme(text = ggplot2::element_text(size = 12)) 
 
       # this is using the patchwork library and might break
       # rewrite with ggarrange
         patchwork::plot_layout(guides = 'collect') &
         ggplot2::theme(legend.position = 'bottom') 
-        ggpubr::ggarrange(gb, gom, ncol = 2)
+        ggpubr::ggarrange(gb, gom, nrow = 2)
     }
   },
   indicator = "bennet",
-  width = ifelse(region == "NewEngland", 7, 6),
-  height = 4,
+  width = 6.5,
+  height = ifelse(region == "NewEngland", 8, 4)
 )
 
 # bennet all
@@ -334,32 +339,38 @@ save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
       ecodata::plot_bennet(report = region) +
-        ggplot2::theme(axis.text.x = ggplot2::element_text(angle =45, hjust = 1))
+        ggplot2::theme(legend.position = "bottom") +
+        ggplot2::facet_wrap(~Var,
+                            nrow = 2)
     } else {
       gb <- ecodata::plot_bennet(
         report = "NewEngland",
         varName = "guild",
         EPU = "GB"
       ) +
-        ggplot2::ylab("Million USD (2023)")
+        ggplot2::ylab("Million USD (2023)") +
+        ggplot2::theme(
+          legend.position = "none",
+          legend.title = ggplot2::element_blank())
       gom <- ecodata::plot_bennet(
         report = "NewEngland",
         varName = "guild",
         EPU = "GOM"
       ) +
-        ggplot2::ylab("Million USD (2023)")
+        ggplot2::ylab("Million USD (2023)") +
+        ggplot2::theme(legend.position = 'bottom')
 
       # this is using the patchwork library and might break
       # rewrite with ggarrange
         patchwork::plot_layout(guides = 'collect') +
           ggplot2::theme(legend.position = 'bottom')
-        ggpubr::ggarrange(gb, gom, ncol = 1)
+        ggpubr::ggarrange(gb, gom, nrow = 2)
         
     }
   },
   indicator = "bennet_all",
-  width = 9,
-  height = 6.5
+  width = 6.5,
+  height = 5
 )
 
 # 4. Climate Vulnerability Revenue Plot
@@ -369,11 +380,13 @@ save_plot(
       report = region,
       plottype = "regionrev",
       n = 100
-    ) 
+    ) +
+      ggplot2::theme(legend.position = "bottom") +
+      ggplot2::ylab("Total Climate Vulnerability \n (Regional Revenue)") 
   },
   indicator = "climatevul_rev",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 ## Recreational opportunities ----
@@ -391,7 +404,7 @@ save_plot(
   },
   indicator = "rec_op",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # 2. Recreational Diversity Plot
@@ -411,7 +424,7 @@ save_plot(
   },
   indicator = "rec_div",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 ## Stability ----
@@ -433,11 +446,11 @@ save_plot(
       n = 100
     ) +
       ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
-    ggpubr::ggarrange(a, b, ncol = 2)
+    ggpubr::ggarrange(a, b, nrow = 2)
   },
   indicator = "comm_div_fleet",
   width = 6.5,
-  height = 3
+  height = 5
 )
 
 # 2. Commercial Diversity Species Diversity Plot
@@ -456,7 +469,7 @@ save_plot(
   },
   indicator = "commercial_div_species_div",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # 3. Recreational Diversity Catch Plot
@@ -466,7 +479,7 @@ save_plot(
   },
   indicator = "recdat_div_catch",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # total primary production
@@ -490,6 +503,7 @@ save_plot(
         EPU = "GB",
         n = 27
       ) +
+        ggplot2::theme(axis.title.x = ggplot2::element_blank()) +
         ggplot2::ggtitle('Georges Bank total PP')
       b <- ecodata::plot_annual_chl_pp(
         report = region,
@@ -498,14 +512,15 @@ save_plot(
         EPU = "GOM",
         n = 27
       ) +
+        ggplot2::theme(axis.title.x = ggplot2::element_blank()) + 
         ggplot2::ggtitle('Gulf of Maine total PP')
       # rewrite with ggarrange
-      ggpubr::ggarrange(a, b, ncol = 2)
+      ggpubr::ggarrange(a, b, nrow = 2)
     }
   },
   indicator = "totpp",
   width = 6.5,
-  height = 4
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 # 4. Zooplankton Diversity Plot
@@ -1094,7 +1109,9 @@ save_plot(
 # mass inshore survey -- NE only
 save_plot(
   plot_expression = {
-    ecodata::plot_mass_inshore_survey(report = region, n = 10)
+    ecodata::plot_mass_inshore_survey(report = region, n = 10) +
+      ggplot2::geom_point()+
+      ggplot2::geom_line()
   },
   indicator = "mass_inshore",
   width = 6,
