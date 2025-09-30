@@ -756,34 +756,34 @@ save_plot(
       ecodata::plot_condition(report = region) +
         ggplot2::theme(
           legend.text = ggplot2::element_text(size = 10),
-          legend.title = ggplot2::element_text(size = 11),
+          legend.title = ggplot2::element_text(size = 10),
           axis.text.x = ggplot2::element_text(size = 12),
           axis.text.y = ggplot2::element_text(size = 8),
-          plot.title = ggplot2::element_text(size = 12)
-        )
+          plot.title = ggplot2::element_text(size = 12),
+          legend.position = "bottom",
+        ) +
+       ggplot2::guides(fill= ggplot2::guide_legend(nrow=2,byrow=TRUE))
     } else {
-      gb <- ecodata::plot_condition(report = region, EPU = "GB") +
-        ggplot2::theme(legend.position = 'none')
+      gb <- ecodata::plot_condition(report = region, EPU = "GB") 
 
-      gom <- ecodata::plot_condition(report = region, EPU = "GOM") +
-        ggplot2::theme(legend.position = 'bottom')
+      gom <- ecodata::plot_condition(report = region, EPU = "GOM") 
 
       # change to ggarrange
-      ggpubr::ggarrange(gb, gom, ncol = 1) +
+      ggpubr::ggarrange(gb, gom, ncol = 1, common.legend = TRUE, legend = "bottom") +
         patchwork::plot_layout(guides = 'collect') &
         ggplot2::theme(
-          legend.position = 'bottom',
           legend.text = ggplot2::element_text(size = 10),
           legend.title = ggplot2::element_text(size = 11),
           axis.text.x = ggplot2::element_text(size = 12),
           axis.text.y = ggplot2::element_text(size = 12),
-          plot.title = ggplot2::element_text(size = 12)
+          plot.title = ggplot2::element_text(size = 12),
         )
     }
   },
   indicator = "condition",
   width = 6.5,
-  height = 9
+  height = 7
+ # height = ifelse(region == "NewEngland", 7, 6)
 )
 
 # 5. Energy Density Plot
@@ -849,30 +849,45 @@ save_plot(
       report = region,
       varName = "Lgcopeall",
       n = 10
-    )
+    ) +
+      ggplot2::ylab("Relative Biomass") +
+      ggplot2::labs(title = "Large Copepods") +
+      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) 
     small_copepod_plot <- ecodata::plot_zooplankton_index(
       report = region,
       varName = "Smallcopeall",
       n = 10
-    )
+    ) +
+      ggplot2::ylab("Relative Biomass") +
+      ggplot2::labs(title = "Small Copepods") +
+      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) 
     euphausiid_plot <- ecodata::plot_zooplankton_index(
       report = region,
       varName = "Euph",
       n = 10
     ) +
-      ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white")) 
+      ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white")) +
+      ggplot2::ylab("Relative Biomass") +
+      ggplot2::labs(title = "Euphasiids") +
+      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) 
     ggpubr::ggarrange(
       large_copepod_plot,
       small_copepod_plot,
       euphausiid_plot,
-      ncol = ifelse(region == "MidAtlantic", 3, 1),
+      nrow = 3,
       common.legend = TRUE,
       legend = "bottom"
     ) 
   },
   indicator = "zooplankton_anomaly",
-  width = ifelse(region == "NewEngland", 6, 7),
-  height = ifelse(region == "NewEngland", 8, 6)
+  width = 6.5,
+  height = 7.5
 )
 
 # 9. Thermal Habitat Persistence Plot
