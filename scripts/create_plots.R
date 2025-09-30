@@ -647,6 +647,7 @@ save_plot(
 # transition date
 save_plot(
   plot_expression = {
+    if (region == "MidAtlantic") {
     # TODO: move aesthetics into ecodata function
     ecodata::plot_trans_dates(report = region, varName = "length", n = 10) +
       ggplot2::ggtitle(paste(
@@ -657,10 +658,21 @@ save_plot(
         strip.background = ggplot2::element_blank(),
         strip.text.x = ggplot2::element_blank()
       )
+    } else {
+      ecodata::plot_trans_dates(report = region, varName = "length", n = 10) +
+        ggplot2::ggtitle(paste(
+          "Time between spring and fall transition in",
+          full_region
+        )) +
+        ggplot2::theme(
+          strip.background = ggplot2::element_blank(),
+          strip.text.x = ggplot2::element_blank()) +
+      ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
   },
   indicator = "transition_date",
   width = 6.5,
-  height = 4
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 
@@ -672,11 +684,11 @@ ecodata::plot_chl_pp(
   report = region,
   plottype = "monthly", n = 10
 ) + ggplot2::facet_grid(rows = ggplot2::vars(EPU), cols = ggplot2::vars(Month)) +
-      ggplot2::theme(text = ggplot2::element_text(size = 16))
+      ggplot2::theme(text = ggplot2::element_text(size = 16)) 
   },
 indicator = "monthly_chl",
-width = 11,
-height = 4
+width = 6.5,
+height = ifelse(region == "NewEngland", 7, 4)
 )
 
 ### Risks to setting catch limits ----
@@ -706,7 +718,7 @@ save_plot(
         legend.text = ggplot2::element_text(size = 8),
         plot.title = ggplot2::element_text(size = 11),
         axis.text = ggplot2::element_text(size = 11),
-        axis.title.y = ggplot2::element_text(vjust = 0, size = 12)
+        axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
       )
     # TODO: move aesthetics into ecodata function
     recruit_anomaly_plot <- ecodata::plot_productivity_anomaly(
@@ -720,18 +732,18 @@ save_plot(
         legend.text = ggplot2::element_text(size = 8),
         plot.title = ggplot2::element_text(size = 11),
         axis.text = ggplot2::element_text(size = 11),
-        axis.title.y = ggplot2::element_text(vjust = 0, size = 12)
+        axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
       )
     # combined anomaly plot
     ggpubr::ggarrange(
-      productivity_anomaly_plot,
       recruit_anomaly_plot,
-      ncol = ifelse(region == "MidAtlantic", 2, 1)
+      productivity_anomaly_plot,
+      ncol = ifelse(region == "MidAtlantic", 1, 1)
     )
   },
   indicator = "productivity_anomaly",
-  width = ifelse(region == "NewEngland", 7, 8.5),
-  height = ifelse(region == "NewEngland", 9, 11)
+  width = 6.5,
+  height = 8
 )
 
 # condition factor
@@ -774,7 +786,8 @@ save_plot(
 # 5. Energy Density Plot
 save_plot(
   plot_expression = {
-    ecodata::plot_energy_density(report = region)
+    ecodata::plot_energy_density(report = region) +
+      ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "energy_density",
   width = 6.5,
@@ -985,10 +998,12 @@ save_plot(
 save_plot(
   plot_expression = {
     ecodata::plot_cetacean_dist() +
-      ggplot2::ggtitle("Whale and Dolphin Distribution Shifts")
+      ggplot2::ggtitle("Whale and Dolphin Distribution Shifts") +
+      ggplot2::facet_wrap(~season, nrow = 1) +
+      ggplot2::theme(legend.position = "bottom") 
   },
   indicator = "cetacean_dist",
-  width = 6.5,
+  width = 7.5,
   height = 4
 )
 
@@ -999,11 +1014,13 @@ save_plot(
       ggplot2::coord_cartesian(xlim = c(1982, 2023)) +
       ggplot2::ggtitle("Northeast U.S. Forage Fish Distribution") +
       ggplot2::ylab("Center of Gravity, km") + ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season))
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      ggplot2::facet_wrap(~Var, nrow = 2) +
+    ggplot2::theme(legend.position = "bottom") 
   },
   indicator = "forage_dist",
   width = 6.5,
-  height = 4
+  height = 5
 )
 
 # macrobenthos shifts
@@ -1018,11 +1035,12 @@ save_plot(
       ggplot2::ggtitle("Northeast U.S. Macrobenthos Distribution") +
       ggplot2::ylab("Center of Gravity, km") +
       ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season))
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "macrobenthos_dist",
   width = 6.5,
-  height = 4
+  height = 5
 )
 
 # longterm sst
