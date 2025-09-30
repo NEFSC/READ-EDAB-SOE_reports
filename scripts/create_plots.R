@@ -684,7 +684,10 @@ ecodata::plot_chl_pp(
   report = region,
   plottype = "monthly", n = 10
 ) + ggplot2::facet_grid(rows = ggplot2::vars(EPU), cols = ggplot2::vars(Month)) +
-      ggplot2::theme(text = ggplot2::element_text(size = 16)) 
+      ggplot2::theme(text = ggplot2::element_text(size = 16)) +
+       ggplot2::geom_point(color = "white") + ggplot2::geom_line() +
+       ggplot2::scale_x_discrete(breaks = scales::pretty_breaks(n = 1)) + 
+      ggplot2::theme(axis.text.x = ggplot2::element_text(size = 8), panel.border = ggplot2::element_rect(color = "gray80"))
   },
 indicator = "monthly_chl",
 width = 6.5,
@@ -797,11 +800,16 @@ save_plot(
 # 6. Forage Index Plot
 save_plot(
   plot_expression = {
-    ecodata::plot_forage_index(report = region, n = 10)
+    plt <- ecodata::plot_forage_index(report = region, n = 10)
+    if (region == "MidAtlantic") {
+      plt
+    } else {
+      plt + ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
   },
   indicator = "foragebio",
   width = 6.5,
-  height = 4
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 # 7. Benthos Plot
@@ -812,22 +820,26 @@ save_plot(
       varName = "Megabenthos",
       n = 10
     ) +
-      ggplot2::theme(legend.position = "none")
+      ggplot2::theme(legend.position = "none") +
+      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) 
     macrobenthos_plot <- ecodata::plot_benthos_index(
       report = region,
       varName = "Macrobenthos",
       n = 10
     ) +
-      ggplot2::theme(legend.position = "bottom")
+      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) 
     ggpubr::ggarrange(
       megabenthos_plot,
       macrobenthos_plot,
-      ncol = ifelse(region == "MidAtlantic", 2, 1) 
+      common.legend = TRUE, legend = "bottom",
+      nrow = 2
     ) 
   },
   indicator = "benthos",
   width = 6.5,
-  height = 5
+  height = 8
 )
 
 # 8. Zooplankton Anomaly Plot
@@ -1016,7 +1028,8 @@ save_plot(
       ggplot2::ylab("Center of Gravity, km") + ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
       ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
       ggplot2::facet_wrap(~Var, nrow = 2) +
-    ggplot2::theme(legend.position = "bottom") 
+    ggplot2::theme(legend.position = "bottom") +
+      ggplot2::facet_grid(cols = ggplot2::vars(Season), rows = ggplot2::vars(Direction), scales = "free_y")
   },
   indicator = "forage_dist",
   width = 6.5,
@@ -1036,7 +1049,8 @@ save_plot(
       ggplot2::ylab("Center of Gravity, km") +
       ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
       ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      ggplot2::theme(legend.position = 'bottom')
+      ggplot2::theme(legend.position = 'bottom') +
+      ggplot2::facet_grid(cols = ggplot2::vars(Season), rows = ggplot2::vars(Direction), scales = "free_y")
   },
   indicator = "macrobenthos_dist",
   width = 6.5,
