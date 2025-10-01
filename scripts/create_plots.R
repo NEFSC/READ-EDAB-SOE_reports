@@ -187,19 +187,47 @@ save_plot(
   height = 4
 )
 
-# 2. ABC/ACL Stacked Plot
+# 2. ABC/ACL Stacked Plot OLD VERSION DO NOT USE
+#save_plot(
+ # plot_expression = {
+  #  ecodata::plot_abc_acl(
+   #   report = region,
+    #  plottype = "Stacked"
+#    )
+ # },
+  #indicator = "abcacl_stacked",
+  #width = 7,
+  #height = 4
+#)
+
+# 2. ABC/ACL Stacked Plot NEW 
+# uses the function plot_abc_acl in 'scripts' folder, not current ecodata function
+
+#FOR MAB
 save_plot(
   plot_expression = {
-    ecodata::plot_abc_acl(
-      report = region,
+    plot_abc_acl(
+      report = "MidAtlantic",
       plottype = "Stacked"
     )
   },
-  indicator = "abcacl_stacked",
-  width = 7,
-  height = 4
+  indicator = "abcacl_stacked_new",
+  width = 6.5,
+  height = 7
 )
 
+#FOR NE
+save_plot(
+  plot_expression = {
+    plot_abc_acl(
+      report = "NewEngland",
+      plottype = "Stacked"
+    )
+  },
+  indicator = "abcacl_stacked_new",
+  width = 6.5,
+  height = 7
+)
 # 3. ABC/ACL Catch Plot
 save_plot(
   plot_expression = {
