@@ -893,7 +893,8 @@ save_plot(
 # 9. Thermal Habitat Persistence Plot
 save_plot(
   plot_expression = {
-    plt <- ecodata::plot_thermal_habitat_gridded(region)
+    plt <- ecodata::plot_thermal_habitat_gridded(region) +
+      ggplot2::geom_tile(ggplot2::aes(x=Longitude,y = Latitude, color = Value, width = 0.0025, height = 0.0025)) 
     if (region == "MidAtlantic") {
       plt
     } else {
@@ -1191,7 +1192,7 @@ if (region == "NewEngland") {
     },
     indicator = "seabird_productivity",
     width = 6.5,
-    height = 4
+    height = 2.5
   )
 }
 
@@ -1200,11 +1201,12 @@ if (region == "NewEngland") {
   save_plot(
     plot_expression = {
       ecodata::plot_gom_salmon(n = 10) +
-        ggplot2::ylab('Returning proportion')
+        ggplot2::ylab('Returning proportion') +
+        ggplot2::facet_wrap(~Var, nrow = 2, scales = "free_y") 
     },
     indicator = "salmon",
     width = 6.5,
-    height = 4
+    height = 5
   )
 }
 
