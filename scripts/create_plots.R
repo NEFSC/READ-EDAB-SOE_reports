@@ -915,7 +915,8 @@ save_plot(
       report = region,
       varName = "value",
       plottype = "nofacets"
-    )
+    ) +
+      ggplot2::theme(legend.position = "bottom")
   },
   indicator = "wind_revenue",
   width = 6.5,
@@ -1130,7 +1131,8 @@ save_plot(
 # development speed
 save_plot(
   plot_expression = {
-    ecodata::plot_wind_dev_speed()
+    ecodata::plot_wind_dev_speed() +
+      ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "wind_dev_speed",
   width = 6.5,
