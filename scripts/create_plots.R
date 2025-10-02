@@ -4,7 +4,8 @@
 
 ## variables ----
 
-region <- "NewEngland" #change to NewEngland to run for NE
+region <- "MidAtlantic" #or
+region <- "NewEngland"
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -15,6 +16,7 @@ region2 <- dplyr::case_when(
   region == "MidAtlantic" ~ "Mid-Atlantic",
   region == "NewEngland" ~ "New England"
 )
+
 
 full_region <- dplyr::case_when(
   region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
@@ -952,14 +954,37 @@ save_plot(
 )
 
 # 3. Wind Port Revenue Plot
+#save_plot(
+ # plot_expression = {
+  #  ecodata::plot_wind_port(report = region) +
+   # ggplot2::theme(axis.text.y = ggplot2::element_text(size = 6))
+#  },
+ # indicator = "wea_port_rev",
+  #width = 7.5,
+#  height = 4
+#)
+
+### NEW PLOT FUNCTION
+### THE FILE 'all_data' is in '//nefscdata/SOE_ESP_Data/ej_indicator/2026_SOE/output'
+### NOT ON GITHUB AS IT CONTAINS CONFIDENTAL DATA
+
 save_plot(
   plot_expression = {
-    ecodata::plot_wind_port(report = region) +
-    ggplot2::theme(axis.text.y = ggplot2::element_text(size = 6))
+    if (region == "MidAtlantic") {
+      plot_wind_port(report=region,
+                     data = all_data) + 
+        ggplot2::ggtitle("Mid Atlantic Port Revenue from Wind Lease Areas") +
+        ggplot2::facet_wrap(~PORT_STATE, ncol = 2, scales = "free_y")
+    }
+    else {plot_wind_port(report="NewEngland",
+                         data = all_data) + 
+        ggplot2::ggtitle("New England Port Revenue from Wind Lease Areas") +
+        ggplot2::facet_wrap(~PORT_STATE, ncol = 2, scales = "free_y")
+    } 
   },
   indicator = "wea_port_rev",
-  width = 7.5,
-  height = 4
+  width = 6.5,
+  height = 7
 )
 
 ####### SAME PLOTS FOR BOTH REPORTS ######
