@@ -83,15 +83,17 @@ save_plot(
       varName = "landings",
       n = 10
     )
-#    if (region == "MidAtlantic") {
- #     plt +
+    if (region == "MidAtlantic") {
+     plt 
+   #   +
   #      ggplot2::theme(strip.text.x = ggplot2::element_blank())
-   # } else {
-    #  plt +
+   } else {
+     plt 
+     # +
      #   ggplot2::ylab(expression("Landings (10"^3 * " metric tons)")) +
       #  ggplot2::facet_wrap(~EPU,
        #                     nrow = 2)
-  #  }
+   }
   },
   indicator = "total_landings",
   width = 6.5,
@@ -120,7 +122,7 @@ save_plot(
 # FUNCTION ADJUSTED IN ECODATA
 save_plot(
   plot_expression = {
-    plot_community_climate_vulnerability(
+    ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionland",
       n = 100
@@ -183,18 +185,20 @@ save_plot(
 ### Implications ----
 
 # 1. Stock Status Plot
-# NEED SOME WAY TO SAVE AS $p OBJECT FROM ecodata FUNCTION, OTHERWISE, FUNCTION WORKS 
+# output of ecodata::plot_Stock_status is a list with plot in $p. 
+# Need a better way to write this here other than the if/else, but function returns correct plot.
 save_plot(
   plot_expression = {
-    plot_stock_status(report = region)
-   # if (region == "MidAtlantic") {
-    #  stock_status_plot$p +
-     #   ggplot2::coord_cartesian(xlim = c(0, 2), ylim = c(0, 2)) +
-      #  ggplot2::theme(legend.position = 'bottom')
-#    } else {
- #     stock_status_plot$p +
-  #      ggplot2::theme(legend.position = 'bottom')
-   # }
+    stock_status_plot <- ecodata::plot_stock_status(report = region)
+    if (region == "MidAtlantic") {
+      stock_status_plot$p
+  #    +
+   #     ggplot2::coord_cartesian(xlim = c(0, 2), ylim = c(0, 2)) 
+    } else {
+      stock_status_plot$p 
+   #   +
+    #    ggplot2::theme(legend.position = 'bottom')
+    }
   },
   indicator = "stock_status",
   width = 6.5,
@@ -310,7 +314,7 @@ if (region == "NewEngland") {
 # FUNCTION ADJUSTED IN ECODATA, CHECK FOR MAB
 save_plot(
   plot_expression = {
-    comm_revenue_plot <- plot_comdat(
+    comm_revenue_plot <- ecodata::plot_comdat(
       report = region,
       varName = "revenue",
       n = 10
@@ -333,11 +337,11 @@ save_plot(
 )
 
 # bennet
-# FUNCTION PARTIALLY ADJUSTED IN ECODATA. FOR NE, GB FIXES AREN'T REFLECTED IN PLOT. NEED TO SEPARATE GB AND GOM IN ECODATA CODE.
+# FUNCTION ADJUSTED IN ECODATA
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-      plot_bennet(
+      ecodata::plot_bennet(
         report = region,
         varName = "total"
       ) 
@@ -346,7 +350,7 @@ save_plot(
        # ggplot2::theme(
         #  legend.position = "bottom")
     } else {
-      gb <- plot_bennet(
+      gb <- ecodata::plot_bennet(
         report = region,
         varName = "total",
         EPU = "GB"
@@ -359,7 +363,7 @@ save_plot(
         # +
       #  ggplot2::ylab("Million USD (2023)") +
        # ggplot2::theme(text = ggplot2::element_text(size = 12)) 
-      gom <- plot_bennet(
+      gom <- ecodata::plot_bennet(
         report = region,
         varName = "total",
         EPU = "GOM"
@@ -379,7 +383,7 @@ save_plot(
   indicator = "bennet",
   width = 6.5,
   height = ifelse(region == "NewEngland", 8, 4)
-)
+  ) 
 
 # bennet all
 # FUNCTION ADJUSTED IN ECODATA
@@ -425,7 +429,7 @@ save_plot(
 # FUNCTION ADJUSTED IN ECODATA 
 save_plot(
   plot_expression = {
-    plot_community_climate_vulnerability(
+    ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionrev",
       n = 100
@@ -470,8 +474,9 @@ save_plot(
     if (region == "MidAtlantic") {
       plt
     } else {
-      plt +
-        ggplot2::ylab('Effective Shannon Index')
+      plt 
+ #     +
+  #      ggplot2::ylab('Effective Shannon Index')
     }
   },
   indicator = "rec_div",
