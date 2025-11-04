@@ -638,11 +638,11 @@ save_plot(
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-      plot_finfish_traits(report = region, varName = "length_maturity") 
+      ecodata::plot_finfish_traits(report = region, varName = "length_maturity") 
 #      +
  #       ggplot2::theme(legend.position = 'bottom')
     } else {
-      plot_finfish_traits(
+      ecodata::plot_finfish_traits(
         report = region,
         varName = 'fecundity',
         n = 10
@@ -687,7 +687,7 @@ save_plot(
 # FUNCTION ADJUSTED IN ECODATA
 save_plot(
   plot_expression = {
-    recreational_engagement_plot <- ecodata::plot_engagement(
+    recreational_engagement_plot <- plot_engagement(
       report = region,
       varName = "Recreational"
     )
@@ -724,7 +724,7 @@ save_plot(
 
 ### Risks to managing seasonally ----
 
-# transition date
+# transition dates
 # FUNCTION ADJUSTED IN ECODATA
 save_plot(
   plot_expression = {
@@ -785,7 +785,6 @@ height = ifelse(region == "NewEngland", 7, 4)
 # FUNCTION ADJUSTED IN ECODATA
 save_plot(
   plot_expression = {
-    # TODO: move aesthetics into ecodata function
     productivity_anomaly_plot <- ecodata::plot_productivity_anomaly(
       report = region,
       EPU = dplyr::case_when(
@@ -811,7 +810,6 @@ save_plot(
 #        axis.text = ggplot2::element_text(size = 11),
  #       axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
   #    )
-    # TODO: move aesthetics into ecodata function
     recruit_anomaly_plot <- ecodata::plot_productivity_anomaly(
       report = region,
       varName = "assessment"
