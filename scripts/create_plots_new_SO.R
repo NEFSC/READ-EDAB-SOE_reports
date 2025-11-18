@@ -583,11 +583,11 @@ save_plot(
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-      ecodata::plot_condition(report = region) 
+      plot_condition(report = region) 
     } else {
-      gb <- ecodata::plot_condition(report = region, EPU = "GB") 
+      gb <- plot_condition(report = region, EPU = "GB") 
 
-      gom <- ecodata::plot_condition(report = region, EPU = "GOM") 
+      gom <- plot_condition(report = region, EPU = "GOM") 
 
       ggpubr::ggarrange(gb, gom, ncol = 1, common.legend = TRUE, legend = "bottom") +
         patchwork::plot_layout(guides = 'collect') 
@@ -595,7 +595,7 @@ save_plot(
   },
   indicator = "condition",
   width = 6.5,
-  height = 7
+  height = 6.5
 )
 
 # 5. Energy Density Plot
