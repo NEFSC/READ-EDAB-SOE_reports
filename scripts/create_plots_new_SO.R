@@ -183,7 +183,7 @@ save_plot(
       plottype = "Stacked"
     )
   },
-  indicator = "abcacl_stacked_new",
+  indicator = "abcacl_stacked",
   width = 6.5,
   height = 7
 )
@@ -679,7 +679,7 @@ save_plot(
 # 9. Thermal Habitat Persistence Plot
 save_plot(
   plot_expression = {
-    ecodata::plot_thermal_habitat_gridded(region) 
+    plot_thermal_habitat_gridded(region) 
   },
   indicator = "therm_hab_persist",
   width = 6.5,
