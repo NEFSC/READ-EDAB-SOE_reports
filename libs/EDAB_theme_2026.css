@@ -1,0 +1,388 @@
+/* Let's load some fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+/* Generic stuff */
+
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+/* Increase specificity for body font */
+.reveal body { 
+  font-family: 'Open Sans' 
+  }
+
+/* MAX SPECIFICITY: Targeting paragraphs and list items inside columns */
+
+.reveal p,
+.reveal li,
+.reveal .column p,
+.reveal .column li {
+    /* Use a very small font size temporarily to CONFIRM the rule is applying.
+       If this works, you'll see a dramatic change. */
+    font-size: 22px !important; 
+    line-height: 1.3em !important;
+}
+
+/* Ensure the base slide content size is also set */
+.reveal .slide-content, .reveal .remark-slide-content {
+    font-size: 14px !important;
+}
+
+.grViz {
+  margin-left:auto; margin-right:auto; display:block;
+}
+
+/* Pretty sure this is all me messing with the title slide */
+
+/* INCREASED SPECIFICITY: Targeting elements inside the main reveal container */
+.reveal div.remark-slide-container h1,
+.reveal h1 { /* Added .reveal h1 for generic H1s */
+	font-family: 'Titillium Web', sans-serif;
+	color: #522D80 !important; /* Added !important as a safety measure for color */
+	letter-spacing: -1px;
+    font-size: 45px;
+}
+
+.reveal .inverse h1 {
+    line-height: 0.5em;
+}
+
+/* INCREASED SPECIFICITY: Targeting the title slide */
+.reveal .title-slide h1 {
+  line-height: 0.95em;
+	margin-top: -100px;
+}
+
+/* INCREASED SPECIFICITY: Targeting H2 */
+.reveal div.remark-slide-container h2,
+.reveal h2 { /* Added .reveal h2 for generic H2s */
+	font-family: 'Open Sans', sans-serif;
+	color: #522D80 !important; /* Added !important as a safety measure for color */
+	letter-spacing: -1px;
+	font-size: 24px;
+}
+
+/* INCREASED SPECIFICITY: Targeting H3 */
+.reveal div.remark-slide-container h3,
+.reveal h3 { /* Added .reveal h3 for generic H3s */
+	font-family: 'Open Sans', sans-serif;
+	color: #000 !important; /* Added !important as a safety measure for color */
+	letter-spacing: -1px;
+	font-size: 20px;
+	padding-top: 50px;
+}
+
+/* INCREASED SPECIFICITY: Targeting the title slide background/border */
+.reveal .title-slide {
+	background-color: #fff !important;
+  background-image: url('libs/SOEtitleslide.png') !important;
+  background-size: 60%;
+  background-position: left top;
+	border-bottom: 0px solid  #522D80;
+	box-shadow:  0 55px 0 #fff;
+}
+
+/* Custom Alignment for Title Slide */
+.reveal .right-align-title, 
+.reveal .right-align-title h1,
+.reveal .right-align-title h2,
+.reveal .right-align-title .subtitle,
+.reveal .right-align-title .author {
+  /* Set text alignment for the entire content block */
+  text-align: right !important;
+}
+
+/* Optional: Adjust width if the text block isn't full width */
+.reveal .right-align-title {
+  width: 100%; /* Ensure the container takes full width before aligning */
+}
+
+.reveal .title-slide .remark-slide-number {
+  display: none;
+}
+
+/* Hmm. How about the slide number. */
+
+/* INCREASED SPECIFICITY: Targeting slide number */
+.reveal .remark-slide-number {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #522D80 !important;
+}
+
+/* Okay, now let's add a simple bottom border */ 
+
+/* INCREASED SPECIFICITY: Targeting the slide container */
+.reveal div.remark-slide, 
+.reveal .slide { /* Quarto slides often have a .slide class */
+  border-bottom: 3px solid  #522D80;
+  box-shadow:  0 5px 0 #F66733;
+
+}
+
+/* Let's play with .inverse and a new class, .fullscale, a little more */
+
+.reveal .inverse {
+    color: #fafafa;
+    text-shadow: 0 0 0px #333;
+}
+
+.reveal .inverse a{
+      color: #FFFF99; 
+     }
+
+.reveal div.remark-slide-container .fullscale {
+    color: #d6d6d6;
+    text-shadow: 0 0 20px #333;
+}
+
+.reveal div.remark-slide-container .fullscale h1 {
+	color: #fff !important;
+}
+
+.reveal div.remark-slide-container .fullscale p {
+	color: #000 !important;
+}
+
+/* INCREASED SPECIFICITY: Targeting slide content */
+.reveal .remark-slide-content,
+.reveal .slide-content { /* Quarto's main slide content area */
+	font-size: 14px;
+	text-shadow: 0 0 0px #333;
+
+}
+
+/* column widths
+*/
+/* INCREASED SPECIFICITY: Targeting column classes */
+.reveal .left-column {
+  color: #000;
+  width: 30%;
+  float: left;
+}
+
+.reveal .right-column {
+  width: 47%;
+  float: right;
+  border: 0px ;
+  padding: 25px solid green;
+  margin: 25px;
+}
+
+.reveal .table {
+  font-size: 80%;
+}
+
+/* increase footnote text size for 508 compliance */
+
+.reveal .footnote {
+  position: absolute;
+  bottom: 1em;
+  padding-right: 4em;
+  font-size: 60%;
+}
+
+/* INCREASED SPECIFICITY: Targeting pull-left/pull-right column classes */
+.reveal .pull-left {
+  float: left;
+  width: 47%;
+}
+.reveal .pull-right {
+  float: right;
+  width: 47%;
+}
+
+/* Various left and right split columns*/
+
+/* INCREASED SPECIFICITY: Targeting custom split columns */
+.reveal .pull-left-70 { float: left; width: 66.5%; }
+.reveal .pull-right-30 { float: right; width: 28.5%; }
+.reveal .pull-right-30 ~ * { clear: both; }
+
+/* ... (apply .reveal to all remaining .pull-left/right-* classes) ... */
+.reveal .pull-left-60 { float: left; width: 57%; }
+.reveal .pull-right-40 { float: right; width: 38%; }
+.reveal .pull-right-40 ~ * { clear: both; }
+
+.reveal .pull-left-50 { float: left; width: 47.5%; }
+.reveal .pull-right-50 { float: right; width: 47.5%; }
+.reveal .pull-right-50 ~ * { clear: both; }
+
+.reveal .pull-left-40 { float: left; width: 38%; }
+.reveal .pull-right-60 { float: right; width: 57%; }
+.reveal .pull-right-60 ~ * { clear: both; }
+
+.reveal .pull-left-30 { float: left; width: 28.5%; }
+.reveal .pull-right-70 { float: right; width: 66.5%; }
+.reveal .pull-right-70 ~ * { clear: both; }
+
+
+/* INCREASED SPECIFICITY: Targeting image and contributor classes */
+.reveal .image-cap{
+  font-size: 60%;
+}
+
+.reveal .contrib{
+  font-size: 60%;
+}
+
+/* INCREASED SPECIFICITY: Targeting inline code */
+.reveal .remark-inline-code{
+  background: #e7e8e2; /* darker */
+  border-radius: 3px;
+  padding: 0px;
+}
+
+.reveal .box-highlight{
+  border: thick double #32a1ce;
+  margin: 6rem;
+  padding: 1rem;
+}
+
+/*change link color for 508 compliance*/
+.reveal a, .reveal a > code {
+  color: #c20a0a !important; /* Added !important for link colors */
+  text-decoration: none;
+}
+
+/*alter risk assessment table formatting*/
+.reveal .risktable {
+    border-collapse: collapse;
+}
+.reveal .risktable th {
+    padding: 2px;
+}
+.reveal .risktable td {
+    padding: 1px;
+}
+.reveal .risktable tbody tr:nth-of-type(even) {
+  background-color:transparent;
+}
+
+/*text colors*/
+.reveal .bluetext { color: blue; }
+.reveal .greentext { color: green; }
+
+/* New CSS for Two-Column Text and Image Slide */
+
+/* 1. Define the Container (High Specificity) */
+.reveal .soe-60-40-slide {
+    display: flex !important;      /* Use Flexbox for robust layout */
+    width: 100% !important;        /* Ensure container spans full width */
+    height: 85% !important;       /* Ensure container spans full height of content area */
+    align-items: stretch !important; /* Align content to the top */
+    margin-top: 0 !important;
+    /* --- BORDER DEBUGGING: ADDED THIS LINE --- */
+    /*border: 3px solid red !important;
+    /* ------------------------------------------ */
+}
+
+.reveal section {
+    position: relative;
+    /* This targets the whole slide canvas */
+    /*border: 3px solid blue !important; 
+}
+
+/* **NEW FIX: Remove default padding from the main slide content wrapper** */
+.reveal .slide-content {
+    padding: 0 !important;
+}
+
+/* **HEADER ADJUSTMENT:** Ensure H2 elements don't push content too far down */
+.reveal h2 {
+    /* If your h2 and h3 are taking up too much space, adjust their margins */
+    margin-top: 0.2em !important; 
+    margin-bottom: 0.2em !important;
+}
+
+/* 2. Define the Text Column (Fixing Width) */
+.reveal .soe-40-column {
+    flex: 0 0 45% !important;      /* Fix width at 45% (use flex-basis) */
+    max-width: 45% !important;     /* Max width also 45% */
+    /* height: 100% !important;       /* Ensure container spans full height of content area */
+    min-height: 100%;
+    padding-right: 20px !important; 
+    box-sizing: border-box !important; /* Crucial for correct width calculation */
+    text-align: left !important;
+}
+
+/* 3. Define the Image Column (Fixing Width & Display) */
+.reveal .soe-60-column {
+    flex: 0 0 55% !important;      /* Fix width at 55% to take up remaining space */
+    max-width: 55% !important;     /* Max width also 55% */
+    /*height: 100% !important;       /* Ensure container spans full height of content area */
+    min-height: 100%
+    padding-left: 20px !important;
+    text-align: center !important;
+    box-sizing: border-box !important; /* Crucial for correct width calculation */
+    
+    /* Ensure the column itself is visible and allows image content */
+    display: block !important; 
+    
+    /* --- BORDER DEBUGGING: ADDED THIS LINE --- */
+    /*border: 3px solid blue !important;
+    /* ------------------------------------------ */
+}
+
+/* 4. Ensure Images within the column are responsive and visible */
+.reveal .soe-40-column img {
+    /* Set max dimensions so the image scales to fit the column */
+    max-width: 95% !important;
+    max-height: 95% !important;
+    display: block !important;
+    margin: 0 auto !important; /* Center the image within its column */
+    
+}
+
+/* Targeting the native column class in combination with your custom class */
+.reveal .soe-60-40-slide .column.soe-40-column {
+    flex: 0 0 45% !important; 
+    max-width: 45% !important;
+    /* ... include padding and box-sizing here ... */
+}
+.reveal .soe-60-40-slide .column.soe-60-column {
+    flex: 0 0 55% !important; 
+    max-width: 55% !important;
+    /* ... include padding and box-sizing here ... */
+}
+
+
+/* New CSS for Two-Column 50-50 Slide */
+
+/* 1. Define the Container (High Specificity) */
+.reveal .soe-50-50-slide {
+    display: flex !important;      /* Use Flexbox for robust layout */
+    width: 100% !important;        /* Ensure container spans full width */
+    height: 100% !important;       /* Ensure container spans full height of content area */
+    align-items: stretch !important; /* Align content to the top */
+    margin-top: 0 !important;
+}
+
+/* 2. Define the Column (Fixing Width) */
+.reveal .soe-50-column {
+    flex: 0 0 50% !important;      /* Fix width at 45% (use flex-basis) */
+    max-width: 50% !important;     /* Max width also 45% */
+    padding-right: 20px !important; 
+    box-sizing: border-box !important; /* Crucial for correct width calculation */
+}
+
+
+/* 4. Ensure Images within the column are responsive and visible */
+.reveal .soe-50-column img {
+    /* Set max dimensions so the image scales to fit the column */
+    max-width: 95% !important;
+    max-height: 95% !important;
+    display: block !important;
+    margin: 0 auto !important; /* Center the image within its column */
+}
+
+/* Targeting the native column class in combination with your custom class */
+.reveal .soe-50-50-slide .column.soe-50-column {
+    flex: 0 0 50% !important; 
+    max-width: 50% !important;
+    /* ... include padding and box-sizing here ... */
+}
+
+

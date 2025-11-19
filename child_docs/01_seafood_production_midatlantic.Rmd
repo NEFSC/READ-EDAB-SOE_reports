@@ -12,7 +12,7 @@
 
 This year, we present updated indicators for total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html), (includes seafood, bait, and industrial landings), U.S. seafood landings, and Council-managed U.S. seafood landings. Total commercial landings within the Mid-Atlantic have declined over the long term, and both total U.S. and Mid-Atlantic managed seafood landings are near their all time low (Fig. \ref{fig:total-landings}).
 
-```{r, total-landings, fig.asp=.7, fig.cap = return_caption(chunk_name = "total-landings", region = "MidAtlantic")}
+```{r, total-landings, fig.asp=.7, fig.cap = return_caption(chunk_name = "total-landings", region = "MidAtlantic"), fig.alt = "This is sample alt text"}
 return_plot("total-landings", region = "MidAtlantic")
 ```
 
@@ -92,7 +92,7 @@ return_plot("abcacl-catch", region = "MidAtlantic")
 #### System Biomass
 Although [aggregate biomass](https://noaa-edab.github.io/catalog/aggregate_biomass.html) trends derived from scientific resource surveys are mostly stable in the MAB, spring piscivores, fall benthivores, and fall benthos show long-term increases (Fig. \ref{fig:nefsc-biomass-mab}). While managed species make up varying proportions of aggregate biomass, trends in landings are not mirroring shifts in the overall trophic structure of survey-sampled fish and invertebrates. Therefore, major shifts in feeding guilds or ecosystem trophic structure are unlikely to be driving the decline in landings. 
 
-```{r nefsc-biomass-mab, fig.cap =  return_caption(chunk_name = "nefsc-biomass-mab", region = "MidAtlantic"), fig.width=6.5, fig.asp = 0.75, results='hide'}
+```{r nefsc-biomass-mab, fig.cap =  return_caption(chunk_name = "nefsc-biomass-mab", region = "MidAtlantic"), fig.width=6.5, fig.asp = 0.75}
 return_plot("nefsc-biomass-mab", region = "MidAtlantic")
 ```
 
