@@ -1043,16 +1043,27 @@ save_plot(
 ### THE FILE 'all_data' is in '//nefscdata/SOE_ESP_Data/ej_indicator/2026_SOE/output'
 ### THE NEW PLOTTING FUNCTION 'PLOT_WIND_PORT' IS IN PLOT-UPDATES BRANCH OF ECODATA.
       ### R/plot_wind_port.R
-### NOT ON GITHUB AS IT CONTAINS CONFIDENTAL DATA
 
 save_plot(
   plot_expression = {
-      plot_wind_port(report=region,
-                     data = all_data) 
+    plot_wind_port(report=region,
+                   data = all_data) 
   },
   indicator = "wea_port_rev",
   width = 6.5,
   height = 7
+)
+
+## Mid plot -- NE ports landing majority Mid species
+save_plot(
+  plot_expression = {
+    plot_wind_port(port_list = c("DAVISVILLE/NORTH KINGSTOWN, RI",
+                                 "POINT JUDITH, RI",
+                                 "HYANNIS, MA"))
+  },
+  indicator = "wea_port_rev_majority_mafmc",
+  width = 6.5,
+  height = 2.5
 )
 
 ####### SAME PLOTS FOR BOTH REPORTS ######
