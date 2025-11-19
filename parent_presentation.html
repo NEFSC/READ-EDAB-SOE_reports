@@ -144,11 +144,15 @@ Abigail Tyrell, lead editor, NEFSC
 </div>
 
 </section>
+<section class="slide level2">
+
+<!-- a second-level header starts a new slide -->
+</section>
 <section id="state-of-the-ecosystem-soe-reporting" class="slide level2">
 <h2>State of the Ecosystem (SOE) reporting</h2>
 <h3 id="improving-ecosystem-information-and-synthesis-for-fishery-managers">Improving ecosystem information and synthesis for fishery managers</h3>
 <div class="soe-60-40-slide">
-<div class="soe-60-column">
+<div class="full-slide-center-left">
 <ul>
 <li><p>Ecosystem indicators linked to management objectives <a name="cite-depiper_operationalizing_2017" href=""></a>(<a href="https://academic.oup.com/icesjms/article/74/8/2076/3094701">DePiper et al., 2017</a>)</p>
 <ul>
@@ -173,6 +177,7 @@ Abigail Tyrell, lead editor, NEFSC
 <p><em>The IEA Loop<sup>1</sup></em></p>
 </div>
 </div>
+<!-- This is the start of the next slide -->
 <aside><ol class="aside-footnotes"><li id="fn1"><p>https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach</p></li></ol></aside></section>
 <section id="state-of-the-ecosystem-maintain-2024-structure-for-2025" class="slide level2">
 <h2>State of the Ecosystem: Maintain 2024 structure for 2025</h2>
@@ -468,12 +473,17 @@ Abigail Tyrell, lead editor, NEFSC
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1600,
 
         height: 700,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 5.0e-2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 1,
 
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',

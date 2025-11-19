@@ -22,6 +22,11 @@ format:
     # --- Mapped from xaringan::moon_reader ---
     # Sets the slide aspect ratio
     aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
+    width: 1600
+    #height: 900
+    margin: 0.05
+    min-scale: 0.2
+    max-scale: 1.0
     
     # CSS files for styling
     css:                         # Equivalent to css: [...]
@@ -135,7 +140,7 @@ myBib <- ReadBib(here::here("utils/MidSOE.bib"), check = FALSE)
 ### Improving ecosystem information and synthesis for fishery managers
 :::: {.soe-60-40-slide}
 
-::: {.soe-60-column}
+::: {.full-slide-center-left}
 - Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
     + Contextual information
     + Report evolving since 2016
