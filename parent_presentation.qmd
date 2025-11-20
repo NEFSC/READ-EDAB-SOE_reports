@@ -1,0 +1,233 @@
+---
+title: 'State of the Ecosystem <br /> `r dplyr::case_when(
+  params$draft ~ "[Mid-Atlantic] *or* [New England]",
+  params$region == "MidAtlantic" ~ "Mid-Atlantic",
+  params$region == "NewEngland" ~ "New England")` 2025'
+subtitle: "`r params$council` <br /> `r params$date`"
+author: "`r params$author`"
+editor: source
+params:
+  region: "MidAtlantic"
+  council: "MAFMC"
+  fig_caption: "utils/figure_captions_summary.csv"
+  cache: FALSE
+  id_child_docs: FALSE
+  draft: FALSE
+  date: "8 April 2025"
+  author: "Abigail Tyrell, lead editor, NEFSC"
+format:
+  # This uses the built-in Quarto revealjs format
+  revealjs:
+    theme: ""
+    # --- Mapped from xaringan::moon_reader ---
+    # Sets the slide aspect ratio
+    aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
+    width: 1600
+    #height: 900
+    margin: 0.05
+    min-scale: 0.2
+    max-scale: 1.0
+    
+    # CSS files for styling
+    css:                         # Equivalent to css: [...]
+      - libs/EDAB_theme_2026.css
+      - libs/cols.css
+      
+    # Syntax highlighting style
+    highlight-style: github      # Equivalent to highlightStyle: githubp (Using Quarto's built-in 'github')
+    
+    # Allows highlighting specific lines in code blocks
+    code-line-numbers: true      # Equivalent to highlightLines: true
+    
+    # Custom JavaScript files (macros) are included in the header
+    include-in-header:
+      - text: |
+          <!-- <link href="libs/EDAB_theme_2026.css" rel="stylesheet" /> -->
+          <script src="libs/macros.js"></script>
+          <script src="libs/cols_macro.js"></script>
+          
+    # --- Mapped from revealjs::revealjs_presentation ---
+    # Controls if resources are embedded or linked
+    embed-resources: false       # Equivalent to self_contained: false
+    
+    # Other revealjs options
+    # The 'notes' and 'search' plugins are standard and usually included by default
+    
+    # --- Customization for Quarto/revealjs (similar to titleSlideClass) ---
+    # This requires a slight change but is the Quarto way to customize the title slide.
+    # The specific classes like "right" and "middle" are often handled by 
+    # custom CSS applied via the `css` option above.
+    
+    # New section for title slide
+    title-slide-attributes:
+      # Use the path relative to the .qmd file (project root)
+      data-background-image: libs/SOEtitleslide.png
+      data-background-size: 60%
+      data-background-position: left top
+      data-background-class: right-align-title
+    
+    # --- Other important Quarto options ---
+    # This prevents the render process from counting step-by-step reveals as separate slides
+    incremental: false           # Equivalent to countIncrementalSlides: false
+---
+
+```{r conditional-values}
+epus <- dplyr::case_when(
+  params$draft ~ "[Mid-Atlantic Bight, MAB] *or* [Gulf of Maine (GOM) and Georges Bank (GB)]",
+  params$region == "MidAtlantic" ~ "Mid-Atlantic Bight, MAB",
+  params$region == "NewEngland" ~ "Gulf of Maine (GOM) and Georges Bank (GB)"
+)
+
+region <- dplyr::case_when(
+  params$draft ~ "[the Mid-Atlantic Bight] *or* [New England]",
+  params$region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
+  params$region == "NewEngland" ~ "New England"
+)
+
+region2 <- dplyr::case_when(
+  params$draft ~ "[Mid-Atlantic] *or* [New England]",
+  params$region == "MidAtlantic" ~ "Mid-Atlantic",
+  params$region == "NewEngland" ~ "New England"
+)
+
+caption_key <- read.csv(params$fig_caption) 
+```
+
+```{r setup, include=FALSE}
+
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = F,
+                      fig.retina = 3,
+                      #fig.width = 4,
+                      #fig.height = 2,
+                      fig.asp = 0.45,
+                      warning = F,
+                      message = F,
+                      out.width = "80%")
+#Plotting and data libraries
+library(tidyverse)
+library(tidyr)
+library(here)
+library(kableExtra)
+library(ecodata)
+library(readxl); library(data.table)
+library(DT)
+library(widgetframe)
+library(patchwork)
+
+# if figure output defaults to docs/imaages/ replace with this before moving to 
+# presentations/docs in both the html output (search and replace)
+# and folder name
+# 20220316_MAFMCSSC_Gaichas_files/figure-html/
+
+source(here::here("utils/functions.R"))
+
+```
+
+```{r, load_refs, include=FALSE, cache=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "authoryear",
+           longnamesfirst = FALSE,
+           max.names = 1,
+           style = "markdown")
+myBib <- ReadBib(here::here("utils/MidSOE.bib"), check = FALSE)
+```
+
+<!-- a second-level header starts a new slide -->
+## State of the Ecosystem (SOE) reporting
+### Improving ecosystem information and synthesis for fishery managers
+:::: {.soe-60-40-slide}
+
+::: {.full-slide-center-left}
+- Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
+    + Contextual information
+    + Report evolving since 2016
+    + Fishery-relevant subset of full Ecosystem Status Reports
+
+- Open science emphasis `r Cite(myBib, "bastille_improving_2020")`
+
+- Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, "muffley_there_2020")`
+:::
+
+::: {.soe-40-column}
+```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks"}
+knitr::include_graphics(here::here("images/iea-loop.png"))
+```
+*The IEA Loop[^1]*
+
+[^1]: https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach
+:::
+
+::::
+
+<!-- This is the start of the next slide -->
+## State of the Ecosystem: Maintain 2024 structure for 2025
+### 2025 Report Structure
+
+:::: {.soe-60-40-slide}
+
+::: {.soe-60-column}
+
+1. Graphical summary
+    + Page 1 report card re: objectives &rarr;
+    + Page 2 risk summary bullets
+    + Page 3 2024 snapshot
+1. Performance relative to management objectives
+1. Risks to meeting management objectives
+    + Climate and Ecosystem risks
+    + Offshore wind development
+1. 2024 Highlights
+
+:::
+
+::: {.soe-40-column}
+
+::: {layout-nrow=2}
+
+```{r, fig.alt = "State of the Ecosystem page 1 summary table", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-performance.png")
+```
+
+```{r, fig.alt = "State of the Ecosystem page 2 risk bullets", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png")
+```
+
+```{r, fig.alt = "State of the Ecosystem page 3 highlights", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-highlights.png")
+```
+
+:::
+
+:::
+
+::::
+
+## Mid Atlantic Landings drivers: Stock status? TAC? &emsp; Risk elements: Fstatus, Bstatus, MgtControl 
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+Indicator: Stock status
+
+```{r stock-status}
+return_plot("stock-status", region = "MidAtlantic")
+```
+:::
+
+::: {.soe-50-column}
+Indicators: Total ABC or ACL, and Realized catch relative to management target
+
+```{r}
+return_plot("abcacl-stacked", region = "MidAtlantic")
+return_plot("abcacl-catch", region = "MidAtlantic")
+```
+
+Few managed species have binding limits; Management less likely playing a role
+
+:::
+
+::: {.notes}
+We can add speaker notes here
+:::

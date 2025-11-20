@@ -48,13 +48,19 @@ create_filename <- function(
 }
 
 # A flexible function to generate and save a plot
-save_plot <- function(plot_expression, indicator, ...) {
+save_plot <- function(
+  plot_expression,
+  indicator,
+  region = reg,
+  out_dir = dir,
+  ...
+) {
   # Execute the code to create the plot
   p <- eval(plot_expression)
 
   # Check if the plot object is valid before saving
   if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
-    fname <- create_filename(indicator)
+    fname <- create_filename(indicator, reg = region, dir = out_dir)
     ggplot2::ggsave(
       filename = fname,
       plot = p,
@@ -66,7 +72,7 @@ save_plot <- function(plot_expression, indicator, ...) {
   }
 }
 
-####### PLOTS THAT DIFFER FOR MAB/NE#######
+####### PLOTS THAT DIFFER FOR MAB/NE####### ----
 
 # Performance relative to fishery management objectives ----
 
@@ -1076,6 +1082,27 @@ if (!dir.exists(out_dir)) {
   dir.create(out_dir)
 }
 
+# 9. Thermal Habitat Persistence Plot
+save_plot(
+  plot_expression = {
+    plt <- ecodata::plot_thermal_habitat_gridded(region)
+  },
+  indicator = "therm_hab_persist",
+  width = 6.5,
+  height = 4
+)
+
+# 5. Energy Density Plot
+save_plot(
+  plot_expression = {
+    # plot is the same even though it takes a region parameter
+    ecodata::plot_energy_density(report = "NewEngland")
+  },
+  indicator = "energy_density",
+  width = 6.5,
+  height = 4
+)
+
 # GOM ocean acidification
 GOMoa_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf"
 
@@ -1301,7 +1328,6 @@ save_plot(
 )
 
 # for NE only ----
-######### KEEP THESE???? 
 
 region <- "NewEngland"
 out_dir <- here::here("images", region)
@@ -1369,4 +1395,3 @@ if (region == "NewEngland") {
     height = 5
   )
 }
-

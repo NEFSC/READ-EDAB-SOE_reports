@@ -27,8 +27,8 @@ return_plot("mab-cf", region = "MidAtlantic")
 
 `r forage_quality`
 
-```{r energy-density, fig.cap=return_caption(chunk_name = "energy-density", region = "BothReports"),  fig.width = 6.5, fig.asp = 0.5}
-return_plot("energy-density", region = "BothReports")
+```{r energy-density, fig.cap=return_caption(chunk_name = "energy-density", region = "MidAtlantic"),  fig.width = 6.5, fig.asp = 0.5}
+return_plot("energy-density", region = "MidAtlantic")
 ```
 
 Changes in the overall abundance of forage fish can influence managed species productivity as it relates to changes in food availability. A spatially-explicit [forage index](https://noaa-edab.github.io/catalog/forage_index.html) for the Mid-Atlantic shows a long term declining trend in fall, with higher forage biomass in fall than spring (Fig. \ref{fig:foragebio}). Forage biomass was highest during fall in the early-1980s.   
@@ -59,8 +59,8 @@ Fish production can also be directly related to the prevailing environmental con
 
 In 2024, there were no [marine heatwaves](https://noaa-edab.github.io/catalog/heatwave.html) in the MAB. Only one marine heatwave occurred throughout the entire U.S. Northeast Shelf due to the cooler ocean conditions observed in the region.  This surface marine heatwave occurred in the [Gulf of Maine](https://noaa-edab.github.io/catalog/heatwave_year.html#newengland-22) starting on May 29th, peaking on June 7th, and lasting 12 days.
 
-```{r therm-hab-persist-2024, fig.cap = return_caption(chunk_name = "therm-hab-persist-2024", region = "BothReports"), fig.width=6.5, fig.asp=.5}
-return_plot("therm-hab-persist-2024", region = "BothReports")
+```{r therm-hab-persist-2024, fig.cap = return_caption(chunk_name = "therm-hab-persist-2024", region = "MidAtlantic"), fig.width=6.5, fig.asp=.5}
+return_plot("therm-hab-persist-2024", region = "MidAtlantic")
 ```
 
 `r oa_paragraph`
