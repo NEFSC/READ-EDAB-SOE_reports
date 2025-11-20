@@ -14,37 +14,37 @@ While there are many potential metrics of stability, we use diversity indices to
 
 [Diversity](https://noaa-edab.github.io/catalog/commercial_div.html) estimates have been developed for species landed by commercial vessels with New England permits and fleets landing managed species. Although the effective number of species being landed in the commercial fleet rebounded slightly from the historical low of 2021, the diversity in catch is still well below the series average (Fig.  \ref{fig:permit-div}). Commercial fishery fleet count is also below the time series average.
 
-```{r permit-div, fig.cap = return_caption(chunk_name = "commercial-div-species-div"),fig.width = 6.5,fig.asp = 0.3}
-return_plot("commercial-div-species-div")
+```{r permit-div, fig.cap = return_caption(chunk_name = "commercial-div-species-div", region = "NewEngland"),fig.width = 6.5,fig.asp = 0.3}
+return_plot("commercial-div-species-div", region = "NewEngland")
 ```
 
-As noted above, [recreational fleet effort diversity](https://noaa-edab.github.io/catalog/recdat.html) is stable. However, recreational species catch diversity has been above the time series average since 2008 with a long-term positive trend (Fig.  \ref{fig:recdat-div-catch}).
-```{r recdat-div-catch,  fig.cap = return_caption(chunk_name = "recdat-div-catch"),fig.width = 6.5,fig.asp = 0.3}
-return_plot("recdat-div-catch")
+As noted above, [recreational fleet effort diversity](https://noaa-edab.github.io/catalog/recdat.html) is stable. However, recreational species catch diversity has been above the time series average since 2008 with a long-term positive trend (Fig.  \ref{fig:recdat-div-catch-ne}).
+```{r recdat-div-catch-ne,  fig.cap = return_caption(chunk_name = "recdat-div-catch", region = "NewEngland"),fig.width = 6.5,fig.asp = 0.3}
+return_plot("recdat-div-catch", region = "NewEngland")
 ```
 
 #### Ecological Stability
 
-Ecological diversity indices show mixed trends. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html) (TPP)  is a measure of the total amount of carbon (i.e. energy) produced by phytoplankton per year. 2023 saw record high TPP in the GOM due to a highly unusual phytoplankton bloom, but it is currently unknown how much of that primary production was incorporated into the upper trophic levels. Preliminary 2024 values were near the long-term average (Fig. \ref{fig:totpp}). 
+Ecological diversity indices show mixed trends. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html) (TPP)  is a measure of the total amount of carbon (i.e. energy) produced by phytoplankton per year. 2023 saw record high TPP in the GOM due to a highly unusual phytoplankton bloom, but it is currently unknown how much of that primary production was incorporated into the upper trophic levels. Preliminary 2024 values were near the long-term average (Fig. \ref{fig:totpp-ne}). 
 
-```{r totpp, fig.cap =return_caption(chunk_name = "totpp"),fig.width = 7.5,fig.asp = 0.3}
-return_plot("totpp")
+```{r totpp-ne, fig.cap =return_caption(chunk_name = "totpp", region = "NewEngland"),fig.width = 7.5,fig.asp = 0.3}
+return_plot("totpp", region = "NewEngland")
 ```
 
-[Zooplankton diversity](https://noaa-edab.github.io/catalog/zoo_diversity.html) is increasing on GB, while no trend is evident in the GOM (Fig. \ref{fig:zoo-diversity}). However, it is worth noting that the 2021 index for the GOM is the highest observed. [Adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html) shows an increasing trend in the GOM and no trend on GB (Fig. \ref{fig:exp-n}).
+[Zooplankton diversity](https://noaa-edab.github.io/catalog/zoo_diversity.html) is increasing on GB, while no trend is evident in the GOM (Fig. \ref{fig:zoo-diversity-ne}). However, it is worth noting that the 2021 index for the GOM is the highest observed. [Adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html) shows an increasing trend in the GOM and no trend on GB (Fig. \ref{fig:exp-n-ne}).
 
-```{r zoo-diversity, fig.cap = return_caption(chunk_name = "zoo-diversity"), fig.width = 6.5, fig.asp = 0.3}
-return_plot("zoo-diversity")
+```{r zoo-diversity-ne, fig.cap = return_caption(chunk_name = "zoo-diversity", region = "NewEngland"), fig.width = 6.5, fig.asp = 0.3}
+return_plot("zoo-diversity", region = "NewEngland")
 ```
 
-```{r exp-n, fig.cap = return_caption(chunk_name = "exp-n"),fig.width = 6.5,fig.asp = 0.3}
-return_plot("exp-n")
+```{r exp-n-ne, fig.cap = return_caption(chunk_name = "exp-n", region = "NewEngland"),fig.width = 6.5,fig.asp = 0.3}
+return_plot("exp-n", region = "NewEngland")
 ```
 
-[Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, asymptotic body size, or fecundity, can synthesize change across complex, diverse communities. Monitoring changes in functional trait distributions can provide a means of assessing ecosystem-scale resilience. There is evidence of long term change in trait distributions in the GOM with an increase in [pace of life](https://noaa-edab.github.io/catalog/finfish_traits.html) . Both fall and spring finfish communities are showing declines in fecundity in GB and GOM  (Fig. \ref{fig:traits}).
+[Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, asymptotic body size, or fecundity, can synthesize change across complex, diverse communities. Monitoring changes in functional trait distributions can provide a means of assessing ecosystem-scale resilience. There is evidence of long term change in trait distributions in the GOM with an increase in [pace of life](https://noaa-edab.github.io/catalog/finfish_traits.html) . Both fall and spring finfish communities are showing declines in fecundity in GB and GOM  (Fig. \ref{fig:traits-ne}).
 
-```{r traits, fig.cap = return_caption(chunk_name = "traits"),fig.width = 6.5,fig.asp = 0.3}
-return_plot("traits")
+```{r traits-ne, fig.cap = return_caption(chunk_name = "traits", region = "NewEngland"),fig.width = 6.5,fig.asp = 0.3}
+return_plot("traits", region = "NewEngland")
 ```
 
 ### Implications
