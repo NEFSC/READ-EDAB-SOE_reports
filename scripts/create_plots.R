@@ -19,7 +19,6 @@ region2 <- dplyr::case_when(
   region == "NewEngland" ~ "New England"
 )
 
-
 full_region <- dplyr::case_when(
   region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
   region == "NewEngland" ~ "New England"
@@ -29,10 +28,10 @@ full_region <- dplyr::case_when(
 
 # A function to create a standardized filename
 create_filename <- function(
-  indicator,
-  reg = region,
-  dir = out_dir,
-  extension = ".png"
+    indicator,
+    reg = region,
+    dir = out_dir,
+    extension = ".png"
 ) {
   file.path(
     dir,
@@ -48,19 +47,13 @@ create_filename <- function(
 }
 
 # A flexible function to generate and save a plot
-save_plot <- function(
-  plot_expression,
-  indicator,
-  region = reg,
-  out_dir = dir,
-  ...
-) {
+save_plot <- function(plot_expression, indicator, ...) {
   # Execute the code to create the plot
   p <- eval(plot_expression)
-
+  
   # Check if the plot object is valid before saving
   if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
-    fname <- create_filename(indicator, reg = region, dir = out_dir)
+    fname <- create_filename(indicator)
     ggplot2::ggsave(
       filename = fname,
       plot = p,
@@ -161,20 +154,19 @@ save_plot(
 # FUNCTIONS (REC_HMS AND LPS_SHARKS) ADJUSTED IN ECODATA
 save_plot(
   plot_expression = {
-    rec_hms_plot <- ecodata::plot_rec_hms(report = region, n = 100)
-    #+
-     # ggplot2::scale_color_discrete(
-      #  limits = c("LargeCoastal", "Prohibited", "SmallCoastal"),
-       # labels = c("Large Coastal", "Prohibited", "Small Coastal")
-    #  ) +
-     # ggplot2::ggtitle(paste(region2, "Marine Recreational Information Program (MRIP) Rec. Shark Landings"))
+    rec_hms_plot <- ecodata::plot_rec_hms(report = region, n = 100) +
+      ggplot2::scale_color_discrete(
+        limits = c("LargeCoastal", "Prohibited", "SmallCoastal"),
+        labels = c("Large Coastal", "Prohibited", "Small Coastal")
+      ) +
+      ggplot2::ggtitle(paste(region2, "Marine Recreational Information Program (MRIP) Rec. Shark Landings")) +
+      ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     rec_lps_sharks_plot <- ecodata::plot_lps_sharks(
       report = region,
       n = 100
-    ) 
-    #+
-     # ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
-      #ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
+    )  +
+      ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
+      ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
     ggpubr::ggarrange(
       rec_lps_sharks_plot,
       rec_hms_plot,
@@ -274,7 +266,8 @@ save_plot(
 if (region == "MidAtlantic") {
   save_plot(
     plot_expression = {
-      ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10) 
+      ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10) +
+        ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     },
     indicator = "aggregate_biomass_mab",
     width = 6.5,
@@ -291,7 +284,8 @@ if (region == "NewEngland") {
         EPU = "GB",
         n = 10
       ) +
-        ggplot2::theme(panel.spacing = grid::unit(0, 'lines')) 
+        ggplot2::theme(panel.spacing = grid::unit(0, 'lines')) +
+        ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     },
     indicator = "aggregate_biomass_gb",
     width = 6.5,
@@ -304,7 +298,8 @@ if (region == "NewEngland") {
         report = region,
         EPU = "GOM",
         n = 10
-      )
+      ) +
+        ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     },
     indicator = "aggregate_biomass_gom",
     width = 6.5,
@@ -396,32 +391,32 @@ save_plot(
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-      ecodata::plot_bennet(report = region) 
- #     +
-  #      ggplot2::theme(legend.position = "bottom") +
-   #     ggplot2::facet_wrap(~Var,
-    #                        nrow = 2)
+      ecodata::plot_bennet(report = region)  +
+        ggplot2::theme(legend.position = "bottom") +
+        ggplot2::facet_wrap(~Var,
+                            nrow = 2) +
+        ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     } else {
       gb <- ecodata::plot_bennet(
         report = "NewEngland",
         varName = "guild",
         EPU = "GB"
-      ) 
-#      +
- #       ggplot2::ylab("Million USD (2023)") +
-  #      ggplot2::theme(
-   #       legend.position = "none",
-    #      legend.title = ggplot2::element_blank()) +
-     #   ggplot2::theme(strip.text.y = ggplot2::element_blank())
+      )       +
+        ggplot2::ylab("Million USD (2023)") +
+        ggplot2::theme(
+          legend.position = "none",
+          legend.title = ggplot2::element_blank()) +
+        ggplot2::theme(strip.text.y = ggplot2::element_blank()) +
+        ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
       gom <- ecodata::plot_bennet(
         report = "NewEngland",
         varName = "guild",
         EPU = "GOM"
-      ) 
- #     +
-  #      ggplot2::ylab("Million USD (2023)") +
-   #     ggplot2::theme(legend.position = 'bottom') +
-    #    ggplot2::theme(strip.text.y = ggplot2::element_blank())
+      )  +
+        ggplot2::ylab("Million USD (2023)") +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::theme(strip.text.y = ggplot2::element_blank()) +
+        ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
       
       ggpubr::ggarrange(gb, gom, nrow = 2, common.legend = TRUE, legend = "bottom")  
     }
@@ -797,43 +792,41 @@ save_plot(
         region == "NewEngland" ~ "GOM",
         region == "MidAtlantic" ~ "MAB"
       )
-    ) 
-#    +
- #     ggplot2::guides(
-  #      fill = ggplot2::guide_legend(
-   #       ncol = dplyr::case_when(
-    #        region == "NewEngland" ~ 3,
-     #       region == "MidAtlantic" ~ 2,
-      #      TRUE ~ 2
-#          )
- #       )
-  #    ) +
-   #   ggplot2::theme(
-    #    legend.position = "bottom",
-     #   legend.title = ggplot2::element_blank(),
-      #  legend.text = ggplot2::element_text(size = 8),
-       # plot.title = ggplot2::element_text(size = 11),
-#        axis.text = ggplot2::element_text(size = 11),
- #       axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
-  #    )
+    ) +
+      ggplot2::guides(
+        fill = ggplot2::guide_legend(
+          ncol = dplyr::case_when(
+            region == "NewEngland" ~ 3,
+            region == "MidAtlantic" ~ 2,
+            TRUE ~ 2
+          )
+        )
+      ) +
+      ggplot2::theme(
+        legend.position = "bottom",
+        legend.title = ggplot2::element_blank(),
+        legend.text = ggplot2::element_text(size = 8),
+        plot.title = ggplot2::element_text(size = 11),
+       axis.text = ggplot2::element_text(size = 11),
+        axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
+      )
     recruit_anomaly_plot <- ecodata::plot_productivity_anomaly(
       report = region,
       varName = "assessment"
-    ) 
-#    +
- #     ggplot2::guides(fill = ggplot2::guide_legend(ncol = 2)) +
-  #    ggplot2::theme(
-   #     legend.position = "bottom",
-    #    legend.title = ggplot2::element_blank(),
-     #   legend.text = ggplot2::element_text(size = 8),
-      #  plot.title = ggplot2::element_text(size = 11),
-       # axis.text = ggplot2::element_text(size = 11),
-  #      axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
-   #   )
+    )  +
+      ggplot2::guides(fill = ggplot2::guide_legend(ncol = 2)) +
+      ggplot2::theme(
+        legend.position = "bottom",
+        legend.title = ggplot2::element_blank(),
+        legend.text = ggplot2::element_text(size = 8),
+        plot.title = ggplot2::element_text(size = 11),
+        axis.text = ggplot2::element_text(size = 11),
+        axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
+     )
     # combined anomaly plot
     ggpubr::ggarrange(
-      recruit_anomaly_plot,
       productivity_anomaly_plot,
+      recruit_anomaly_plot,
       ncol = ifelse(region == "MidAtlantic", 1, 1)
     )
   },
@@ -952,36 +945,36 @@ save_plot(
       report = region,
       varName = "Lgcopeall",
       n = 10
-    ) 
-#    +
- #     ggplot2::ylab("Relative Biomass") +
-  #    ggplot2::labs(title = "Large Copepods") +
-   #   ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
-    #  ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
-     # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) 
+    ) +
+     ggplot2::ylab("Relative Biomass") +
+      ggplot2::labs(title = "Large Copepods") +
+      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     small_copepod_plot <- ecodata::plot_zooplankton_index(
       report = region,
       varName = "Smallcopeall",
       n = 10
-    ) 
-#    +
- #     ggplot2::ylab("Relative Biomass") +
-  #    ggplot2::labs(title = "Small Copepods") +
-   #   ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
-    #  ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
-     # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) 
+    ) +
+      ggplot2::ylab("Relative Biomass") +
+      ggplot2::labs(title = "Small Copepods") +
+      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     euphausiid_plot <- ecodata::plot_zooplankton_index(
       report = region,
       varName = "Euph",
       n = 10
-    ) 
-#    +
- #     ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white")) +
-  #    ggplot2::ylab("Relative Biomass") +
-   #   ggplot2::labs(title = "Euphasiids") +
-    #  ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
-     # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
-      #ggplot2::geom_line(ggplot2::aes(color = .data$Season)) 
+    )  +
+      ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white")) +
+      ggplot2::ylab("Relative Biomass") +
+      ggplot2::labs(title = "Euphasiids") +
+      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     ggpubr::ggarrange(
       large_copepod_plot,
       small_copepod_plot,
@@ -1386,9 +1379,9 @@ if (region == "NewEngland") {
   save_plot(
     plot_expression = {
       ecodata::plot_gom_salmon(n = 10)
-      #+
-       # ggplot2::ylab('Returning proportion') +
-        #ggplot2::facet_wrap(~Var, nrow = 2, scales = "free_y") 
+      +
+        ggplot2::ylab('Returning proportion') +
+        ggplot2::facet_wrap(~Var, nrow = 2, scales = "free_y") 
     },
     indicator = "salmon",
     width = 6.5,

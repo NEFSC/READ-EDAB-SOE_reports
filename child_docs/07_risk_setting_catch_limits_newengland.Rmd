@@ -34,8 +34,8 @@ return_plot("ne-cf", region = "NewEngland")
 
 `r forage_quality`
 
-```{r energy-density, fig.cap=return_caption(chunk_name = "energy-density", region = "NewEngland"),  fig.width = 6.5, fig.asp = 0.5}
-return_plot("energy-density", region = "NewEngland")
+```{r energy-density, fig.cap=return_caption(chunk_name = "energy-density", region = "BothReports"),  fig.width = 6.5, fig.asp = 0.5}
+return_plot("energy-density", region = "BothReports")
 ```
 Changes in the overall abundance of forage fish can influence managed species productivity as it relates to changes in food availability. New England [fall forage biomass](https://noaa-edab.github.io/catalog/forage_index.html) is stable with long-term increases in the spring GOM (Fig. \ref{fig:foragebio-ne}). Forage biomass was highest during fall in the 1980s.
 
@@ -75,8 +75,8 @@ return_plot("zooplankton-season", region = "NewEngland")
 Fish production can also be directly related to the prevailing environmental conditions by altering metabolic (growth) and reproductive processes. Many species possess thermal tolerances and can experience stressful or lethal conditions if temperatures exceed certain levels. Extreme temperature at both the [surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) (Fig. \ref{fig:long-term-sst}) and [bottom](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html) can exceed [thermal tolerance](https://noaa-edab.github.io/catalog/thermal_habitat_gridded.html) limits for some fish. For example, 2012 had among the warmest surface and bottom temperatures (GB) in New England. A large proportion of the Georges Bank and Mid-Atlantic regions had bottom temperatures above the 15℃ thermal tolerance for most groundfish, with some days in the Mid-Atlantic exceeding the 24℃ potential mortality limit (Fig. \ref{fig:therm-hab-persist-2024-ne}). 
 
 In 2024, only one [surface marine heatwave](https://noaa-edab.github.io/catalog/heatwave_year.html) occurred throughout the entire U.S. Northeast Shelf due to the cooler ocean conditions observed in the region.  This surface marine heatwave occurred in the Gulf of Maine starting on May 29th, peaking on June 7th, and lasting 12 days.  This marine heatwave was not within the top 10 on record in terms of intesity.
-```{r therm-hab-persist-2024-ne, fig.cap=return_caption(chunk_name = "therm-hab-persist-2024", region = "NewEngland"), fig.width=6.5, fig.asp=0.5}
-return_plot("therm-hab-persist-2024", region = "NewEngland")
+```{r therm-hab-persist-2024-ne, fig.cap=return_caption(chunk_name = "therm-hab-persist-2024", region = "BothReports"), fig.width=6.5, fig.asp=0.5}
+return_plot("therm-hab-persist-2024", region = "BothReports")
 ```
 
 `r oa_paragraph`
