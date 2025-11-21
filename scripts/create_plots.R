@@ -66,6 +66,7 @@ save_plot <- function(
     ggplot2::ggsave(
       filename = fname,
       plot = p,
+      bg = "white",
       ...
     )
     message("Plot saved to: ", fname)
