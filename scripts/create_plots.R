@@ -25,7 +25,7 @@ full_region <- dplyr::case_when(
 # A function to create a standardized filename
 create_filename <- function(
   indicator,
-  reg = region,
+  file_region,
   dir = out_dir,
   extension = ".png"
 ) {
@@ -34,7 +34,7 @@ create_filename <- function(
     paste0(
       indicator,
       "_",
-      reg,
+      file_region,
       "_",
       Sys.Date(),
       extension
@@ -46,8 +46,8 @@ create_filename <- function(
 save_plot <- function(
   plot_expression,
   indicator,
-  region = reg,
-  out_dir = dir,
+  report = region,
+  save_dir = out_dir,
   ...
 ) {
   # Execute the code to create the plot
@@ -55,7 +55,14 @@ save_plot <- function(
 
   # Check if the plot object is valid before saving
   if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
-    fname <- create_filename(indicator, reg = region, dir = out_dir)
+    message(report)
+    message(indicator)
+    message(out_dir)
+    fname <- create_filename(
+      indicator = indicator,
+      file_region = report,
+      dir = save_dir
+    )
     ggplot2::ggsave(
       filename = fname,
       plot = p,
