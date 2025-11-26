@@ -271,59 +271,29 @@
 .reveal .soe-60-40-slide {
     display: flex !important;      /* Use Flexbox for robust layout */
     width: 100% !important;        /* Ensure container spans full width */
-    height: 85% !important;       /* Ensure container spans full height of content area */
-    align-items: stretch !important; /* Align content to the top */
+    height: 100% !important;       /* Ensure container spans full height of content area */
+    align-items: flex-start !important; /* Align content to the top */
     margin-top: 0 !important;
-    /* --- BORDER DEBUGGING: ADDED THIS LINE --- */
-    /*border: 3px solid red !important;
-    /* ------------------------------------------ */
-}
-
-.reveal section {
-    position: relative;
-    /* This targets the whole slide canvas */
-    /*border: 3px solid blue !important; 
-}
-
-/* **NEW FIX: Remove default padding from the main slide content wrapper** */
-.reveal .slide-content {
-    padding: 0 !important;
-}
-
-/* **HEADER ADJUSTMENT:** Ensure H2 elements don't push content too far down */
-.reveal h2 {
-    /* If your h2 and h3 are taking up too much space, adjust their margins */
-    margin-top: 0.2em !important; 
-    margin-bottom: 0.2em !important;
 }
 
 /* 2. Define the Text Column (Fixing Width) */
 .reveal .soe-40-column {
     flex: 0 0 45% !important;      /* Fix width at 45% (use flex-basis) */
     max-width: 45% !important;     /* Max width also 45% */
-    /* height: 100% !important;       /* Ensure container spans full height of content area */
-    min-height: 100%;
     padding-right: 20px !important; 
     box-sizing: border-box !important; /* Crucial for correct width calculation */
-    text-align: left !important;
 }
 
 /* 3. Define the Image Column (Fixing Width & Display) */
 .reveal .soe-60-column {
     flex: 0 0 55% !important;      /* Fix width at 55% to take up remaining space */
     max-width: 55% !important;     /* Max width also 55% */
-    /*height: 100% !important;       /* Ensure container spans full height of content area */
-    min-height: 100%
     padding-left: 20px !important;
     text-align: center !important;
     box-sizing: border-box !important; /* Crucial for correct width calculation */
     
     /* Ensure the column itself is visible and allows image content */
     display: block !important; 
-    
-    /* --- BORDER DEBUGGING: ADDED THIS LINE --- */
-    /*border: 3px solid blue !important;
-    /* ------------------------------------------ */
 }
 
 /* 4. Ensure Images within the column are responsive and visible */
@@ -333,7 +303,6 @@
     max-height: 95% !important;
     display: block !important;
     margin: 0 auto !important; /* Center the image within its column */
-    
 }
 
 /* Targeting the native column class in combination with your custom class */
@@ -356,7 +325,7 @@
     display: flex !important;      /* Use Flexbox for robust layout */
     width: 100% !important;        /* Ensure container spans full width */
     height: 100% !important;       /* Ensure container spans full height of content area */
-    align-items: stretch !important; /* Align content to the top */
+    align-items: flex-start !important; /* Align content to the top */
     margin-top: 0 !important;
 }
 
@@ -384,5 +353,4 @@
     max-width: 50% !important;
     /* ... include padding and box-sizing here ... */
 }
-
 

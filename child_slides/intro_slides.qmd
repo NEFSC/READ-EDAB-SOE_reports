@@ -1,0 +1,67 @@
+## State of the Ecosystem (SOE) reporting
+### Improving ecosystem information and synthesis for fishery managers
+:::: {.soe-60-40-slide}
+
+::: {.soe-60-column}
+- Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
+    + Contextual information
+    + Report evolving since 2016
+    + Fishery-relevant subset of full Ecosystem Status Reports
+
+- Open science emphasis `r Cite(myBib, "bastille_improving_2020")`
+
+- Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, "muffley_there_2020")`
+:::
+
+::: {.soe-40-column}
+```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks"}
+knitr::include_graphics(here::here("images/iea-loop.png"))
+```
+*The IEA Loop[^1]*
+
+[^1]: https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach
+:::
+
+::::
+
+<!-- This is the start of the next slide -->
+## State of the Ecosystem: Maintain 2024 structure for 2025
+### 2025 Report Structure
+
+:::: {.soe-60-40-slide}
+
+::: {.soe-60-column}
+
+1. Graphical summary
+    + Page 1 report card re: objectives &rarr;
+    + Page 2 risk summary bullets
+    + Page 3 2024 snapshot
+1. Performance relative to management objectives
+1. Risks to meeting management objectives
+    + Climate and Ecosystem risks
+    + Offshore wind development
+1. 2024 Highlights
+
+:::
+
+::: {.soe-40-column}
+
+::: {layout-nrow=1}
+
+```{r, fig.alt = "State of the Ecosystem page 1 summary table", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-performance.png")
+```
+
+```{r, fig.alt = "State of the Ecosystem page 2 risk bullets", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png")
+```
+
+```{r, fig.alt = "State of the Ecosystem page 3 highlights", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-highlights.png")
+```
+
+:::
+
+:::
+
+::::
