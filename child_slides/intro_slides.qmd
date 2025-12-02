@@ -65,3 +65,148 @@ knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/d
 :::
 
 ::::
+
+## Updated Objectives and Risks tables aligning with indicators
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r management-objectives}
+## TODO: tihs table should be pulled from the same place as table in pdf
+mng_obj <- data.frame("Objective Categories" = c("Seafood Production",
+                                                 "Commercial Profits","Recreational Opportunities",
+                                                 "Stability","Social & Cultural",
+                                                 "Protected Species",
+                                                 "Management","Biomass", "Environment"
+                                                 #,"Productivity",
+                                                 #"Trophic structure","Habitat"
+                                                 ),
+"Indicators reported" = c("Landings; commercial total and by feeding guild; recreational harvest",
+                               "Revenue decomposed to price and volume",
+                               "Angler trips; recreational fleet diversity",
+                               "Diversity indices (fishery and ecosystem)",
+                               "Community fishing engagement and social vulnerability status",
+                               "Bycatch; population (adult and juvenile) numbers; mortalities",
+                               "Stock status; catch compared with catch limits",
+                               "Biomass or abundance by feeding guild from surveys",
+                               "Climate and ecosystem risk indicators listed in Table 2"
+                               #"Condition and recruitment of managed species, primary productivity",
+                               #"Relative biomass of feeding guilds, zooplankton",
+                               #"Estuarine and offshore habitat conditions"
+                          ))
+
+mng_obj$service <- c(rep("Objectives: Provisioning and Cultural Services", 6), 
+                     rep("Potential Drivers: Supporting and Regulating Services", 3))
+
+mng_obj <- as.tibble(mng_obj)
+
+flextable::as_grouped_data(mng_obj, groups = "service") %>% 
+  flextable::as_flextable(hide_grouplabel=TRUE) %>% 
+  flextable::align(i = ~ !is.na(service), align = "left") %>% 
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
+  flextable::set_header_labels(Objective.Categories = "Objective categories",
+                               Indicators.reported = "Indicators reported") %>%
+  flextable::set_caption("Ecosystem-scale fishery management objectives in the Mid-Atlantic Bight") %>%
+  flextable::autofit() 
+```
+:::
+
+::: {.soe-50-column}
+```{r}
+
+FitFlextableToPage <- function(ft, pgwidth = 6){
+
+  ft_out <- ft %>% flextable::autofit()
+
+  ft_out <- flextable::width(ft_out, width = dim(ft_out)$widths*pgwidth /(flextable::flextable_dim(ft_out)$widths))
+  return(ft_out)
+}
+
+mng_obj <- data.frame("Risks" = c("Risks to Managing Spatially",
+                                  "Risks to Managing Seasonally",
+                                  "Risks to Setting Catch Limits",
+                                  "Offshore Wind Risks"),
+                      "Observation Indicators" = c("Managed species (fish and cetacean) distribution shifts",
+                                                   "Managed species spawning and migration timing changes", 
+                                                   "Managed species body condition and recruitment changes",
+                                                   "Fishery revenue and landings from wind lease areas by species and port"),
+                      "Potential Driver Indicators" = c("Benthic and pelagic forage distribution; ocean temperature, changes in currents and cold pool",
+                                                        "Habitat timing: Length of ocean summer, cold pool seasonal persistence",
+                                                        "Benthic and pelagic forage quality & abundance: ocean temperature & acidification ",
+                                                        "Wind development speed; Protected species presence and  hotspots"
+                      ))
+
+mng_obj$service <- c(rep("Climate and Ecosystem Risks", 3), 
+                     rep("Other Ocean Uses Risks", 1))
+
+tab <- flextable::as_grouped_data(mng_obj, groups = "service") %>% 
+  flextable::as_flextable(hide_grouplabel=TRUE) %>% 
+  flextable::align(i = ~ !is.na(service), align = "left") %>% 
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
+  flextable::set_header_labels(Risks = "Risk categories",
+                               Observation.Indicators = "Observation indicators reported",
+                               Potential.Driver.Indicators = "Potential driver indicators reported") %>%
+  flextable::set_caption("Risks to meeting fishery management objectives in the Mid-Atlantic Bight") #%>%
+  #flextable::autofit() 
+  
+FitFlextableToPage(tab)
+```
+:::
+
+::::
+
+## Ecosystem synthesis themes
+
+Characterizing ecosystem change for fishery management
+
+* Societal, biological, physical and chemical factors comprise the **multiple system drivers** that influence marine ecosystems through a variety of different pathways. 
+* Changes in the multiple drivers can lead to **regime shifts** — large, abrupt and persistent changes in the structure and function of an ecosystem.  
+* Regime shifts and changes in how the multiple system drivers interact can result in **ecosystem reorganization** as species and humans respond and adapt to the new environment.
+
+::: {layout-nrow=1}
+
+```{r, fig.alt = "", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//SystemDrivers_v5.jpg")
+```
+
+```{r, fig.alt = "", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//RegimeShift_V5.jpg")
+```
+:::
+
+## State of the Ecosystem report scale and figures
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r, fig.alt = "NEFSC survey strata used to calculate Ecosystem Production Unit biomass", out.width = "80%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//EPU_Designations_Map.jpg")
+```
+
+A [glossary of terms](https://noaa-edab.github.io/tech-doc/glossary.html) (2021 Memo 5), detailed [technical methods documentation](https://NOAA-EDAB.github.io/tech-doc) and [indicator data](https://github.com/NOAA-EDAB/ecodata) are available online.  
+:::
+
+::: {.soe-50-column}
+
+Key to figures
+
+```{r , fig.width=5.5}
+a <- ecodata::plot_species_dist(varName = "along", n=10) + ggplot2::coord_cartesian(expand = FALSE)
+b <- ecodata::plot_species_dist(varName = "depth", n=10) + ggplot2::coord_cartesian(expand = FALSE) 
+
+ggpubr::ggarrange(a, b, ncol = 2)
+```  
+
+Trends assessed only for 30+ years: [more information](https://noaa-edab.github.io/tech-doc/trend-analysis.html)
+
+<p style="color:#FF8C00;">Orange line = significant increase</p>
+<p style="color:#9932CC;">Purple line = significant decrease</p>
+<p>No color line = not significant or < 30 years</p>
+<p style="background-color:#D3D3D3;">Grey background = last 10 years</p>
+
+:::
+
+::::
+

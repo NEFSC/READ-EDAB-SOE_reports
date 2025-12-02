@@ -7,13 +7,13 @@ subtitle: "`r params$council` <br /> `r params$date`"
 author: "`r params$author`"
 editor: source
 params:
-  region: "MidAtlantic"
+  region: "Both"
   council: "MAFMC"
   fig_caption: "utils/figure_captions_summary.csv"
   cache: FALSE
   id_child_docs: FALSE
   draft: FALSE
-  date: "8 April 2025"
+  date: "`r Sys.Date()`"
   author: "Abigail Tyrell, lead editor, NEFSC"
 format:
   # This uses the built-in Quarto revealjs format
@@ -135,39 +135,40 @@ BibOptions(check.entries = FALSE,
 myBib <- ReadBib(here::here("utils/MidSOE.bib"), check = FALSE)
 ```
 
-```{r, child = here::here("child_slides/intro_slides.qmd")}
+```{r icons}
+# read in icons so they can be easily reused
+no_trend <- "![no trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//no trend.png){.center}"
+
+decreasing <- "![decreasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//decrease.png){.center}"
+
+increasing <- "![increasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//increase.png){.center}"
+
+below_average <- "![below average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//below long term ave.png){.center} "
+
+above_average <- "![above average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//above long term ave.png){.center}"
+
+near_average <- "![near average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//near-long-term-average.png){.center}"
+
+mixed_trend <- "![mixed trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//Mixed trends.png){.center}"
+
+meeting_objectives <- "![meeting objectives icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//checked.png){.center}"
 ```
 
-```{r}
-base_child <- "summary_highlights_requests_"
-child_file <- here::here(paste0("child_slides/", base_child, stringr::str_to_lower(params$region), ".qmd"))
+{{< include child_slides/intro_slides.qmd >}}
+
+{{< include child_slides/request_memo.qmd >}}
+
+```{r, child = here::here("child_slides/highlights_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
-```{r, child = child_file}
+```{r, child = here::here("child_slides/highlights_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
-## 2025 Performance relative to management objectives
-Insert graphics here
+{{< include child_slides/shared_summary_highlights.qmd >}}
 
-```{r}
-base_child <- "performance_"
-child_file <- here::here(paste0("child_slides/", base_child, stringr::str_to_lower(params$region), ".qmd"))
-```
+{{< include child_slides/performance_header.qmd >}}
 
-```{r, child = child_file}
-```
+{{< include child_slides/seafood_production_midatlantic.qmd >}}
 
-## Objectives: Coastwide Protected species *Maintain bycatch below thresholds* ![:img mixed trend icon, 2%](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//Mixed trends.png) ![:img meeting objectives icon, 2%](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//checked.png)
-
-Have to fix the graphics
-
-## 2025 Risks to meeting fishery management objectives
-Insert graphics
-
-Read in coastwide risk slides, same for both regions
-
-Read in region specific risk slides 
-
-Read in highlights, contributors, references from shared doc
-
+{{< include child_slides/commercial_profits_midatlantic.qmd >}}
 

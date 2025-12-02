@@ -1,0 +1,27 @@
+## Objective: Mid Atlantic Commercial Profits ![no trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//no trend.png){.center}  ![below average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/below long term ave.png){.center} &emsp; Risk element: <span style="background-color:orange;">CommRev</span>, unchanged
+
+::: { .soe-50-50-slide}
+
+::: {}
+Indicator: Commercial Revenue; profit indicators under SSC review
+
+```{r}
+return_plot("comm-revenue", region = "MidAtlantic")
+```
+
+```{r, fig.alt="Mid-Atlantic region total climate vulnerability of commercial revenue (sum of Mid-Atlantic port revenue weighted by species climate vulnerability from Hare et al. 2016)."}
+return_plot("climatevul-rev", region = "MidAtlantic")
+```
+
+:::
+
+::: {}
+Indicator: Bennet--price and volume indices
+```{r bennet,  fig.width=6.2, fig.asp=.4}
+return_plot("bennet", region = "MidAtlantic")
+return_plot("bennet-all", region = "MidAtlantic")
+```
+
+:::
+
+::::

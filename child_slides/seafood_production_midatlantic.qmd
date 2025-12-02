@@ -1,0 +1,89 @@
+## Objective: Mid Atlantic Seafood production ![decreasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//decrease.png){.center} ![below average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/below long term ave.png){.center} &emsp; Risk elements: <span style="background-color:orange;">ComFood</span> and <span style="background-color:orange;">RecFood</span>, unchanged
+
+:::: {.soe-50-50-slide}
+
+::: {}
+Indicators: Commercial landings, climate risk
+
+```{r}
+return_plot("total-landings", region = "MidAtlantic")
+```
+
+```{r climatevul-land, fig.alt="Mid-Atlantic region total climate vulnerability of commercial landings (sum of Mid-Atlantic port landings weighted by species climate vulnerability from Hare et al. 2016)."}
+return_plot("climatevul-land", region = "MidAtlantic")
+```
+:::
+
+::: {}
+Indicators: Recreational harvest
+```{r}
+return_plot("rec-landings", region = "MidAtlantic")
+return_plot("rec-hms", region = "MidAtlantic")
+```
+
+Multiple potential drivers: ecosystem and stock production, management, market conditions, and environmental change.
+
+:::
+
+::::
+
+## Mid Atlantic Landings drivers: Stock status? TAC? &emsp; Risk elements: Fstatus, Bstatus, MgtControl 
+:::: {.soe-50-50-slide}
+
+::: {}
+Indicator: Stock status
+
+```{r stock-status}
+return_plot("stock-status", region = "MidAtlantic")
+```
+:::
+
+::: {}
+Indicators: Total ABC or ACL, and Realized catch relative to management target
+
+```{r}
+return_plot("abcacl-stacked", region = "MidAtlantic")
+return_plot("abcacl-catch", region = "MidAtlantic")
+```
+
+Few managed species have binding limits; Management less likely playing a role
+
+:::
+
+::::
+
+## Implications: Mid Atlantic Seafood Production Drivers
+
+::::{.soe-50-50-slide}
+
+::: {}
+
+Biomass does not appear to drive landings trends
+
+```{r}
+return_plot("nefsc-biomass-mab", region = "MidAtlantic")
+```
+Key: 
+
+- Black = NEFSC survey
+- <p style="color:#FF6A6A;">Red = NEAMAP survey</p>
+
+:::
+
+::: {}
+* Declining aggregate planktivores, benthos?
+
+```{r}
+return_plot("comm-landings", region = "MidAtlantic")
+```
+
+* Recreational drivers differ: shark fishery management, possibly survey methodology
+
+Monitor: 
+* climate risks including warming, ocean acidification, and shifting distributions  
+* ecosystem composition and production changes  
+* fishing engagement  
+
+:::
+
+::::

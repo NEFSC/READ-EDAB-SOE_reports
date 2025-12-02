@@ -354,3 +354,8 @@
     /* ... include padding and box-sizing here ... */
 }
 
+.center{
+  margin: 0!important;
+  height: 30px;
+}
+
