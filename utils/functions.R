@@ -22,12 +22,25 @@ return_caption <- function(key = caption_key, chunk_name, region) {
 }
 
 
-return_filepath <- function(key = caption_key, chunk_name, region) {
-  col <- dplyr::case_when(
-    region == "MidAtlantic" ~ "fig_path_ma",
-    region == "NewEngland" ~ "fig_path_ne",
-    region == "BothReports" ~ "fig_path_both"
-  )
+return_filepath <- function(
+  key = caption_key,
+  chunk_name,
+  region,
+  mode = "pdf"
+) {
+  if (mode == "pdf") {
+    col <- dplyr::case_when(
+      region == "MidAtlantic" ~ "fig_path_ma",
+      region == "NewEngland" ~ "fig_path_ne",
+      region == "BothReports" ~ "fig_path_both"
+    )
+  } else if (mode == "slide") {
+    col <- dplyr::case_when(
+      region == "MidAtlantic" ~ "slide_fig_path_ma",
+      region == "NewEngland" ~ "slide_fig_path_ne",
+      region == "BothReports" ~ "slide_fig_path_both"
+    )
+  }
   filepath <- key |>
     dplyr::filter(.data$chunkName == chunk_name) |>
     dplyr::pull(col)

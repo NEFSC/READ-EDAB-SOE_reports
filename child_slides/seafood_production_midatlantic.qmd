@@ -1,8 +1,8 @@
-## Objective: Mid Atlantic Seafood production ![decreasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//decrease.png){.center} ![below average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/below long term ave.png){.center} &emsp; Risk elements: <span style="background-color:orange;">ComFood</span> and <span style="background-color:orange;">RecFood</span>, unchanged
+## Objective: Mid Atlantic Seafood production `r I(decreasing)` `r I(below_average)` &emsp; Risk elements: <span style="background-color:orange;">ComFood</span> and <span style="background-color:orange;">RecFood</span>, unchanged
 
 :::: {.soe-50-50-slide}
 
-::: {}
+::: {.soe-50-column}
 Indicators: Commercial landings, climate risk
 
 ```{r}
@@ -14,10 +14,14 @@ return_plot("climatevul-land", region = "MidAtlantic")
 ```
 :::
 
-::: {}
+::: {.soe-50-column}
 Indicators: Recreational harvest
+
 ```{r}
 return_plot("rec-landings", region = "MidAtlantic")
+```
+
+```{r}
 return_plot("rec-hms", region = "MidAtlantic")
 ```
 

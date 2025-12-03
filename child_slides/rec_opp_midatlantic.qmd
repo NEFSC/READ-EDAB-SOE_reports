@@ -1,0 +1,31 @@
+## Objective: Mid Atlantic Recreational opportunities `r I(increasing)` `r I(above_average)`; `r I(decreasing)` `r I(below_average)` Risk elements: <span style="background-color:yellow;">RecValue</span>, <span style="background-color:red;">RecDiv</span>
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+Indicators: Recreational effort and fleet diversity  
+
+```{r}
+return_plot("rec-op", region = "MidAtlantic")
+```
+
+```{r }
+return_plot("rec-div", region = "MidAtlantic")
+```
+
+:::
+
+::: {}
+Implications
+
+* Adding 2023 data, recreational effort (angler trips) retains the long term increase.  
+
+* The increasing long term trend changed the risk category for the RecValue element back to low-moderate (previously ranked low risk).
+
+* *New risk element*: Decline in recreational fleet diversity suggests a potentially reduced range of opportunities. 
+
+* Driven by party/charter contraction and a shift toward shore based angling.
+
+:::
+
+::::

@@ -25,9 +25,9 @@ Protected species:
 *  Recover endangered populations (NARW) `r I(decreasing)` `r I(below_average)`  
 :::
 
-::: {}
+::: {.soe-50-column}
 
-```{r, fig.alt = "", out.width = "100%"}
+```{r, fig.alt = "", out.height = "80%"}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-performance.png")
 ```
 
@@ -35,10 +35,10 @@ knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/d
 
 ::::
 
-## State of the Ecosystem Summary 2025: 
+## State of the Ecosystem Summary 2025: { background-image="https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png" background-position="right" background-size="auto 100%"}
 :::: {.soe-50-50-slide}
 
-::: {.soe-50-column}
+::: {}
 **Risks to meeting fishery management objectives**  
 
 Climate: risks to managing spatially, managing seasonally, and catch specification
@@ -60,8 +60,8 @@ Other ocean uses: offshore wind development
 :::
 
 ::: {.soe-50-column}
-```{r, fig.alt = "", out.width = "100%"}
-knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png")
+```{r, fig.alt = "", out.height = "80%"}
+# knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png")
 ```
 :::
 

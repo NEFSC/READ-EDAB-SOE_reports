@@ -2,7 +2,7 @@
 ### Improving ecosystem information and synthesis for fishery managers
 :::: {.soe-60-40-slide}
 
-::: {.soe-60-column}
+::: {}
 - Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
     + Contextual information
     + Report evolving since 2016
@@ -14,7 +14,7 @@
 :::
 
 ::: {.soe-40-column}
-```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks"}
+```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks", out.width = "80%"}
 knitr::include_graphics(here::here("images/iea-loop.png"))
 ```
 *The IEA Loop[^1]*
@@ -24,7 +24,6 @@ knitr::include_graphics(here::here("images/iea-loop.png"))
 
 ::::
 
-<!-- This is the start of the next slide -->
 ## State of the Ecosystem: Maintain 2024 structure for 2025
 ### 2025 Report Structure
 

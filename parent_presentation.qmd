@@ -1,24 +1,26 @@
 ---
 title: 'State of the Ecosystem <br /> `r dplyr::case_when(
-  params$draft ~ "[Mid-Atlantic] *or* [New England]",
   params$region == "MidAtlantic" ~ "Mid-Atlantic",
-  params$region == "NewEngland" ~ "New England")` 2025'
+  params$region == "NewEngland" ~ "New England",
+  TRUE ~  "[Mid-Atlantic] *or* [New England]")` 2025'
 subtitle: "`r params$council` <br /> `r params$date`"
 author: "`r params$author`"
 editor: source
 params:
-  region: "Both"
+  region: "MidAtlantic"
   council: "MAFMC"
   fig_caption: "utils/figure_captions_summary.csv"
   cache: FALSE
   id_child_docs: FALSE
   draft: FALSE
-  date: "`r Sys.Date()`"
+  date: !expr Sys.Date()
   author: "Abigail Tyrell, lead editor, NEFSC"
 format:
   # This uses the built-in Quarto revealjs format
   revealjs:
     theme: ""
+    slide-number: true
+    # auto-stretch: false
     # --- Mapped from xaringan::moon_reader ---
     # Sets the slide aspect ratio
     aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
@@ -71,88 +73,7 @@ format:
     incremental: false           # Equivalent to countIncrementalSlides: false
 ---
 
-```{r conditional-values, include = FALSE}
-epus <- dplyr::case_when(
-  params$draft ~ "[Mid-Atlantic Bight, MAB] *or* [Gulf of Maine (GOM) and Georges Bank (GB)]",
-  params$region == "MidAtlantic" ~ "Mid-Atlantic Bight, MAB",
-  params$region == "NewEngland" ~ "Gulf of Maine (GOM) and Georges Bank (GB)"
-)
-
-region <- dplyr::case_when(
-  params$draft ~ "[the Mid-Atlantic Bight] *or* [New England]",
-  params$region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
-  params$region == "NewEngland" ~ "New England"
-)
-
-region2 <- dplyr::case_when(
-  params$draft ~ "[Mid-Atlantic] *or* [New England]",
-  params$region == "MidAtlantic" ~ "Mid-Atlantic",
-  params$region == "NewEngland" ~ "New England"
-)
-
-caption_key <- read.csv(params$fig_caption) 
-```
-
-```{r setup, include=FALSE}
-
-options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(echo = F,
-                      fig.retina = 3,
-                      #fig.width = 4,
-                      #fig.height = 2,
-                      fig.asp = 0.45,
-                      warning = F,
-                      message = F,
-                      out.width = "80%")
-#Plotting and data libraries
-library(tidyverse)
-library(tidyr)
-library(here)
-library(kableExtra)
-library(ecodata)
-library(readxl); library(data.table)
-library(DT)
-library(widgetframe)
-library(patchwork)
-
-# if figure output defaults to docs/imaages/ replace with this before moving to 
-# presentations/docs in both the html output (search and replace)
-# and folder name
-# 20220316_MAFMCSSC_Gaichas_files/figure-html/
-
-source(here::here("utils/functions.R"))
-
-```
-
-```{r, load_refs, include=FALSE, cache=FALSE}
-library(RefManageR)
-BibOptions(check.entries = FALSE,
-           bib.style = "authoryear",
-           cite.style = "authoryear",
-           longnamesfirst = FALSE,
-           max.names = 1,
-           style = "markdown")
-myBib <- ReadBib(here::here("utils/MidSOE.bib"), check = FALSE)
-```
-
-```{r icons}
-# read in icons so they can be easily reused
-no_trend <- "![no trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//no trend.png){.center}"
-
-decreasing <- "![decreasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//decrease.png){.center}"
-
-increasing <- "![increasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//increase.png){.center}"
-
-below_average <- "![below average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//below long term ave.png){.center} "
-
-above_average <- "![above average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//above long term ave.png){.center}"
-
-near_average <- "![near average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//near-long-term-average.png){.center}"
-
-mixed_trend <- "![mixed trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//Mixed trends.png){.center}"
-
-meeting_objectives <- "![meeting objectives icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//checked.png){.center}"
-```
+{{< include child_slides/setup.qmd >}}
 
 {{< include child_slides/intro_slides.qmd >}}
 
@@ -168,7 +89,12 @@ meeting_objectives <- "![meeting objectives icon](https://github.com/NOAA-EDAB/p
 
 {{< include child_slides/performance_header.qmd >}}
 
-{{< include child_slides/seafood_production_midatlantic.qmd >}}
+```{r, child = here::here("child_slides/seafood_production_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
 
-{{< include child_slides/commercial_profits_midatlantic.qmd >}}
+```{r, child = here::here("child_slides/commercial_profits_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+```{r, child = here::here("child_slides/rec_opp_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
 

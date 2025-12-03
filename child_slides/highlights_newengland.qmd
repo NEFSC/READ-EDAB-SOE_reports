@@ -25,11 +25,13 @@ Protected species:
 *  Recover endangered populations `r I(mixed_trend)`, NARW `r I(below_average)` Gray seal `r I(above_average)` 
 :::
 
-::: {}
+::: {.soe-50-column}
 
-```{r, fig.alt = ""}
+```{r, fig.alt = "", out.width="80%"}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-NE-02282025-508-performance-GB.png")
 ```
+
+<!-- ![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-NE-02282025-508-performance-GB.png){width="6in"} -->
 
 :::
 
@@ -62,9 +64,9 @@ Protected species:
 *  Recover endangered populations `r I(mixed_trend)`, NARW `r I(below_average)` Gray seal `r I(above_average)` Salmon `r I(below_average)`
 :::
 
-::: {}
+::: {.soe-50-column}
 
-```{r, fig.alt = ""}
+```{r, fig.alt = "", out.height = "80%"}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-NE-02282025-508-performance-GOM.png")
 ```
 
@@ -75,7 +77,7 @@ knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/d
 ## State of the Ecosystem Summary 2025: 
 :::: {.soe-50-50-slide}
 
-::: {.soe-50-column}
+::: {}
 **Risks to meeting fishery management objectives**  
 
 Climate: risks to managing spatially, managing seasonally, and catch specification
@@ -97,7 +99,7 @@ Other ocean uses: offshore wind development
 :::
 
 ::: {.soe-50-column}
-```{r, fig.alt = "", out.width = "100%"}
+```{r, fig.alt = "", out.height = "80%"}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-NE-02282025-508-risks.png")
 ```
 :::
