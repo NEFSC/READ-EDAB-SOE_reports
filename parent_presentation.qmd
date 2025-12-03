@@ -10,9 +10,6 @@ params:
   region: "MidAtlantic"
   council: "MAFMC"
   fig_caption: "utils/figure_captions_summary.csv"
-  cache: FALSE
-  id_child_docs: FALSE
-  draft: FALSE
   date: !expr Sys.Date()
   author: "Abigail Tyrell, lead editor, NEFSC"
 format:
