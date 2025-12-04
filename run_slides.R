@@ -7,9 +7,9 @@ quarto::quarto_render(
     region = "MidAtlantic",
     council = "MAFMC",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
-    date = Sys.Date(),
+    date = Sys.Date() |> format("%B %d, %Y"),
     author = "Abigail Tyrell, lead editor, NEFSC"
   ),
-  output_format = "html"
+  output_format = "all"
 )
 difftime(Sys.time(), now)

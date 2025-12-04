@@ -1,0 +1,183 @@
+# 2025 Risks to meeting fishery management objectives
+
+::: {.center-images}
+
+![Climate icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//3_CLIMATE.png){width=25% fig-align="center"} ![Wind icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//24.WIND.png){width=25% fig-align="center"}
+
+:::
+
+::: {.center-images}
+
+![Hydrography icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//1_HYDROGRAPHY.png){width=15%} &nbsp; &nbsp; &nbsp; ![Phytoplankon icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//9_PHYTOPLANKTON.png){width=15%} &nbsp; &nbsp; &nbsp; ![Forage fish icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//13_FORAGEFISH.png){width=15%} &nbsp; &nbsp; &nbsp; ![Apex predators icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//17.APEXPREDATORS.png){width=15%}  &nbsp; &nbsp; &nbsp; ![Other human uses icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//8_OTHERHUMANUSES.png){width=15%} 
+
+:::
+
+## Revised Risks: Climate and Ecosystem Change 
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r risktabagain}
+mng_obj <- data.frame("Risks" = c("Risks to Managing Spatially",
+                                  "Risks to Managing Seasonally",
+                                  "Risks to Setting Catch Limits",
+                                  "Offshore Wind Risks"),
+                      "Observation Indicators" = c("Managed species (fish and cetacean) distribution shifts",
+                                                   "Managed species spawning and migration timing changes", 
+                                                   "Managed species body condition and recruitment changes",
+                                                   "Fishery revenue and landings from wind lease areas by species and port"),
+                      "Potential Driver Indicators" = c("Benthic and pelagic forage distribution; ocean temperature, changes in currents and cold pool",
+                                                        "Habitat timing: Length of ocean summer, cold pool seasonal persistence",
+                                                        "Benthic and pelagic forage quality & abundance: ocean temperature & acidification ",
+                                                        "Wind development speed; Protected species presence and  hotspots"
+                      ))
+
+mng_obj$service <- c(rep("Climate and Ecosystem Risks", 3), 
+                     rep("Other Ocean Uses Risks", 1))
+
+tab <- flextable::as_grouped_data(mng_obj, groups = "service") %>% 
+  flextable::as_flextable(hide_grouplabel=TRUE) %>% 
+  flextable::align(i = ~ !is.na(service), align = "left") %>% 
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
+  flextable::set_header_labels(Risks = "Risk categories",
+                               Observation.Indicators = "Observation indicators reported",
+                               Potential.Driver.Indicators = "Potential driver indicators reported") %>%
+  flextable::set_caption("Risks to meeting fishery management objectives in the Mid-Atlantic Bight") #%>%
+  #flextable::autofit() 
+  
+FitFlextableToPage(tab)
+```
+
+:::
+
+::: {.soe-50-column}
+
+### Risks to Managing Spatially
+Potential Impacts: Spatial misallocation of quotas within and across jurisdictions, leading to unmet quotas and/or increased discards. Specification of gear management areas may not utilize quotas and minimize bycatch.
+
+### Risks to Managing Seasonally
+Potential Impacts: Spawning closures are less effective if peak spawning occurs outside the seasonal closure. Seasonal openings of exemption areas may be inconsistent with species presence. Seasonal quota allocations may be misaligned with availability.
+
+### Risks to Setting Catch Limits
+Potential Impacts: Changes in environmental conditions can affect stock reference points and short-term stock projections. When productivity changes are not accounted for, they can lead to misspecified quotas and rebuilding plans.
+
+:::
+
+::::
+
+## Risks to Managing Spatially: Coastwide
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Indicators: Fish distribution shifts
+
+```{r}
+return_plot("species-dist", region = "BothReports")
+```  
+
+:::
+
+::: {.soe-50-column}
+
+Cetacean distribution shifts 
+
+```{r}
+return_plot("protectedspp-dist-shifts", region = "BothReports")
+```
+
+:::
+
+::::
+
+## Risks to Managing Spatially: Coastwide
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: Forage shifts, pelagic and benthic
+
+```{r forageshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity."}
+return_plot("forageshifts", region = "BothReports")
+```
+
+```{r macrobenthosshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf"}
+return_plot("macrobenthosshifts", region = "BothReports")
+```
+
+New Spatial Shift Indicators: [Benthos](https://noaa-edab.github.io/catalog/benthos_index.html), [Zooplankton](https://noaa-edab.github.io/catalog/zooplankton_index.html)
+
+:::
+
+::: {.soe-50-column}
+
+Drivers: changing ocean habitat  
+
+```{r long-term-sst, fig.alt="Northeast US annual sea surface temperature (SST, black), with increasing trend (orange)."}
+return_plot("long-term-sst", region = "BothReports")
+```
+
+```{r GSI, fig.alt = "Index representing changes in the location of the Gulf Stream north wall (black). Positive values represent a more northerly Gulf Stream position, NO LONGER HAS increasing trend."}
+return_plot("GSI", region = "BothReports")
+```
+
+Cold pool temperature and spatial extent
+
+```{r cold-pool-size, fig.alt="Seasonal cold pool mean temperature (left) and spatial extent index (right), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple)."}
+return_plot("cold-pool-size", region = "BothReports")
+```
+
+:::
+
+::::
+
+## Risks to Managing Spatially: Coastwide
+
+**Future considerations**
+
+Distribution shifts caused by changes in thermal habitat and ocean circulation are likely to continue as long as long-term trends persist. Episodic and short-term events (see [2024 Highlights](#2024-highlights)) may increase variability in the trends, however species distributions are unlikely to reverse to historical ranges in the short term. Increased mechanistic understanding of distribution drivers is needed to better understand future distribution shifts: species with high mobility or short lifespans react differently from immobile or long lived species. 
+
+Long-term oceanographic projections forecast a [temporary pause in warming](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL110946) over the next decade due to internal variability in circulation and a southward shift of the Gulf Stream. Near-term forecasts are being evaluated to determine how well they are able to predict episodic and anomalous events that are outside of the long-term patterns.
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+Adapting management to changing stock distributions and dynamic ocean processes will require continued monitoring of populations in space and evaluating management measures against a range of possible future spatial distributions. Processes like the [East Coast Climate Scenario Planning](https://www.mafmc.org/climate-change-scenario-planning), and subsequent formation of the [East Coast Climate Coordination Group](https://www.mafmc.org/e3cg), can help coordinate management.
+
+:::
+
+::: {.soe-50-column}
+
+![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/EastCoastClimateScenarios.png){width=400px}
+:::
+
+::::
+
+## Risks to Managing Seasonally: Coastwide
+
+Indicators: spawning timing, migration change
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r spawntiming, fig.alt="Percent resting stage (non-spawning) mature female fish (black) with significant increases (orange) and decreases (purple) from two haddock and three yellowtail flounder stocks: CC = Cape Cod Gulf of Maine, GOM = Gulf of Maine, GB = Georges Bank, SNE = Southern New England."}
+return_plot("spawntiming", region = "BothReports")
+```
+
+:::
+
+::: {.soe-50-column}
+
+*  Recreational tuna fisheries [50 days earlier](https://noaa-edab.github.io/catalog/timing_shifts.html#key-results-and-visualizations-59) in the year in 2019 compared to 2002. 
+
+*  In Cape Cod Bay, peak spring habitat use by right and humpback whales has shifted 18-19 days later over time.
+
+*  Baseline information on [large whale seasonal presence](https://noaa-edab.github.io/catalog/cetacean_acoustic.html) has been collected.
+
+:::
+
+::::

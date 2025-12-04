@@ -41,6 +41,9 @@ return_filepath <- function(
       region == "BothReports" ~ "slide_fig_path_both"
     )
   }
+
+  # message(col)
+
   filepath <- key |>
     dplyr::filter(.data$chunkName == chunk_name) |>
     dplyr::pull(col)

@@ -2,7 +2,7 @@
 
 ::: { .soe-50-50-slide}
 
-::: {}
+::: {.soe-50-column}
 Indicator: Commercial Revenue; profit indicators under SSC review
 
 ```{r}
@@ -15,10 +15,10 @@ return_plot("climatevul-rev", region = "MidAtlantic")
 
 :::
 
-::: {}
+::: {.soe-50-column}
 Indicator: Bennet--price and volume indices
 
-```{r bennet,  fig.width=6.2, fig.asp=.4}
+```{r bennet}
 return_plot("bennet", region = "MidAtlantic", mode = "slide")
 return_plot("bennet-all", region = "MidAtlantic", mode = "slide")
 ```

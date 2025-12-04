@@ -10,7 +10,7 @@ params:
   region: "MidAtlantic"
   council: "MAFMC"
   fig_caption: "utils/figure_captions_summary.csv"
-  date: !expr Sys.Date()
+  date: !expr Sys.Date() |> format("%B %d, %Y")
   author: "Abigail Tyrell, lead editor, NEFSC"
 format:
   # This uses the built-in Quarto revealjs format
@@ -95,3 +95,15 @@ format:
 ```{r, child = here::here("child_slides/rec_opp_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
+```{r, child = here::here("child_slides/fishery_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+```{r, child = here::here("child_slides/ecosystem_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+```{r, child = here::here("child_slides/social_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+{{< include child_slides/protected_species.qmd >}}
+
+{{< include child_slides/risks_spatial_seasonal.qmd >}}
