@@ -1,6 +1,6 @@
 ## State of the Ecosystem (SOE) reporting
 ### Improving ecosystem information and synthesis for fishery managers
-:::: {.soe-60-40-slide}
+:::: {.soe-50-50-slide}
 
 ::: {}
 - Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
@@ -13,8 +13,8 @@
 - Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, "muffley_there_2020")`
 :::
 
-::: {.soe-40-column}
-```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks", out.width = "80%"}
+::: {.soe-50-column}
+```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks", out.width = "70%"}
 knitr::include_graphics(here::here("images/iea-loop.png"))
 ```
 *The IEA Loop[^1]*
@@ -27,9 +27,9 @@ knitr::include_graphics(here::here("images/iea-loop.png"))
 ## State of the Ecosystem: Maintain 2024 structure for 2025
 ### 2025 Report Structure
 
-:::: {.soe-60-40-slide}
+:::: {.soe-50-50-slide}
 
-::: {.soe-60-column}
+::: {.soe-50-column}
 
 1. Graphical summary
     + Page 1 report card re: objectives &rarr;
@@ -43,7 +43,7 @@ knitr::include_graphics(here::here("images/iea-loop.png"))
 
 :::
 
-::: {.soe-40-column}
+::: {.soe-50-column}
 
 ::: {layout-nrow=1}
 

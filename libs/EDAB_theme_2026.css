@@ -171,59 +171,6 @@
 .reveal .bluetext { color: blue; }
 .reveal .greentext { color: green; }
 
-/* New CSS for Two-Column Text and Image Slide */
-
-/* 1. Define the Container (High Specificity) */
-.reveal .soe-60-40-slide {
-    display: flex !important;      /* Use Flexbox for robust layout */
-    width: 100% !important;        /* Ensure container spans full width */
-    height: 100% !important;       /* Ensure container spans full height of content area */
-    align-items: flex-start !important; /* Align content to the top */
-    margin-top: 0 !important;
-}
-
-/* 2. Define the Text Column (Fixing Width) */
-.reveal .soe-40-column {
-    flex: 0 0 45% !important;      /* Fix width at 45% (use flex-basis) */
-    max-width: 45% !important;     /* Max width also 45% */
-    padding-right: 20px !important; 
-    box-sizing: border-box !important; /* Crucial for correct width calculation */
-}
-
-/* 3. Define the Image Column (Fixing Width & Display) */
-.reveal .soe-60-column {
-    flex: 0 0 55% !important;      /* Fix width at 55% to take up remaining space */
-    max-width: 55% !important;     /* Max width also 55% */
-    padding-left: 20px !important;
-    text-align: center !important;
-    box-sizing: border-box !important; /* Crucial for correct width calculation */
-    
-    /* Ensure the column itself is visible and allows image content */
-    display: block !important; 
-}
-
-/* 4. Ensure Images within the column are responsive and visible */
-.reveal .soe-40-column img {
-    /* Set max dimensions so the image scales to fit the column */
-    max-width: 95% !important;
-    max-height: 95% !important;
-    display: block !important;
-    margin: 0 auto !important; /* Center the image within its column */
-}
-
-/* Targeting the native column class in combination with your custom class */
-.reveal .soe-60-40-slide .column.soe-40-column {
-    flex: 0 0 45% !important; 
-    max-width: 45% !important;
-    /* ... include padding and box-sizing here ... */
-}
-.reveal .soe-60-40-slide .column.soe-60-column {
-    flex: 0 0 55% !important; 
-    max-width: 55% !important;
-    /* ... include padding and box-sizing here ... */
-}
-
-
 /* New CSS for Two-Column 50-50 Slide */
 
 /* 1. Define the Container (High Specificity) */
@@ -253,15 +200,73 @@
     margin: 0 auto !important; /* Center the image within its column */
 }
 
-/* Targeting the native column class in combination with your custom class */
-.reveal .soe-50-50-slide .column.soe-50-column {
-    flex: 0 0 50% !important; 
-    max-width: 50% !important;
-    /* ... include padding and box-sizing here ... */
+/* 2. Define the Column for images that take up the whole column */
+.reveal .soe-50-img {
+    flex: 0 0 55% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    box-sizing: border-box !important;
+    
+    /* NEW: Use flexbox inside the column to center the image */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* Vertical center */
+    align-items: center !important;     /* Horizontal center */
+}
+
+/* Rule to constrain figure, paragraph, or div wrappers */
+/* 1. Constrain ALL nested wrappers (the most critical step) */
+.reveal .soe-50-img .cell,
+.reveal .soe-50-img .cell-output-display,
+.reveal .soe-50-img figure,
+.reveal .soe-50-img p,
+.reveal .soe-50-img div {
+    /* Ensures every layer inside the column respects the 100% boundary */
+    max-width: 100% !important; 
+    
+    /* Remove any default margins/padding that might cause overflow */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 2. Target the Image */
+.reveal .soe-50-img img {
+  
+    width: auto !important; 
+    max-height: 85vh !important;
+    
+    /* Ensure the image is centered within its now-constrained wrappers */
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* 3. Constrain the outer column wrapper */
+.reveal .soe-50-img {
+    /* Your existing column rules remain necessary */
+    flex: 0 0 55% !important;
+    max-width: 55% !important;
+    /* ... other column rules ... */
+}
+
+/* Rule to vertically center content ONLY on slides with the custom class -- this doesn't work */
+.reveal .center-table-slide {
+    /* Use grid display on the slide section for full control */
+    display: grid !important; 
+    
+    /* Center the child content horizontally and vertically */
+    place-items: center !important; 
+    
+    /* Ensure the grid spans the full content area */
+    height: 100% !important;
+}
+
+/* Optional: Constrain the table itself to prevent overflow */
+.reveal .center-table-slide .table-wrapper {
+    max-width: 90% !important;
 }
 
 /* Additional center class for inline icons */
-.center{
+img.inline-icon {
   margin: 0!important;
   height: 30px;
 }
@@ -274,4 +279,17 @@
   margin: 0 5px;
 }
 
-
+/* Ensure all images are displayed as blocks and centered horizontally */
+.reveal img {
+    /* Image must be a block element to accept margin centering */
+    display: block !important; 
+    
+    /* Auto margins center a block element horizontally */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    /* Set a max width and height for safety (optional but recommended) */
+    max-width: 90% !important;
+    max-height: 85vh !important; 
+    height: auto !important;
+}

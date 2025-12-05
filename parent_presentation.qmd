@@ -7,7 +7,7 @@ subtitle: "`r params$council` <br /> `r params$date`"
 author: "`r params$author`"
 editor: source
 params:
-  region: "MidAtlantic"
+  region: "Both"
   council: "MAFMC"
   fig_caption: "utils/figure_captions_summary.csv"
   date: !expr Sys.Date() |> format("%B %d, %Y")
@@ -107,3 +107,16 @@ format:
 {{< include child_slides/protected_species.qmd >}}
 
 {{< include child_slides/risks_spatial_seasonal.qmd >}}
+
+```{r, child = here::here("child_slides/risks_seasonal_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+{{< include child_slides/risks_catch.qmd >}}
+
+```{r, child = here::here("child_slides/risks_wind_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+{{< include child_slides/risks_wind.qmd >}}
+
+
+{{< include child_slides/highlights_conclusions.qmd >}}

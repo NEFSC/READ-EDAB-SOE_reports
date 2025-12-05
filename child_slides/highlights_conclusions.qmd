@@ -1,0 +1,117 @@
+## 2024 Highlights: Methods
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Observations solicited from:
+
+*  SOE contributors
+*  NEFSC colleagues
+*  Academic colleagues
+*  Management partners
+*  Fishing industry
+
+We welcome your observations! <northeast.ecosystem.highlights@noaa.gov>
+
+
+Observations included if:
+
+*  Record high or low observations
+*  Different from recent conditions
+*  Reported by multiple sources
+*  Affecting fishery operations
+*  Newsworthy
+
+*Not exhaustive list; Full impacts remain to be seen*
+
+Reprinted from [Cape Cod Commercial Fisherman's Alliance](https://capecodfishermen.org/) February 2025 Newsletter &rarr;
+
+:::
+
+::: {.soe-50-img}
+
+![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/CCCFA-Feb2025-highlight.png)
+
+:::
+
+::::
+
+## 2024 Highlights: generally cooler, fresher Northeast Shelf
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-img}
+
+```{r slopesea, fig.alt="February 2024 sea surface temperature difference compared to the February 2000-2020 long-term mean from the NOAA Advanced Clear-Sky Processor for Ocean (ACSPO) Super-collated SST."}
+return_plot("slopesea", region = "BothReports")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Globally, 2024 warmest year on record (above previous record 2023)
+
+BUT, nearly all NE shelf seasonal surface and bottom temperatures back to longer term average
+
+2023-2024 data suggest more Labrador slope water into the GOM `r Cite(myBib, "record_early_2024")`
+
+```{r slopewater, fig.alt="The proportion of Warm Slope Water (WSW) and Labrador Slope Water (LSW) enter the Gulf of Maine through the Northeast Channel. The orange and teal dashed lines represent the long-term proportion averages for the WSW and LSW, respectively."}
+return_plot("slopewater", region = "BothReports")
+```
+
+Linked to well-developed 2024 Mid Atlantic Cold Pool
+
+:::
+
+::::
+
+## 2024 Highlights
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r mab-oa2, fig.alt = "Locations where bottom aragonite saturation state ($\\Omega_{Arag}$; summer only: June-August) were at or below the laboratory-derived sensitivity level for Atlantic sea scallop (left panel) and longfin squid (right panel) for the time periods 2007-2022 (dark cyan), 2023 only (magenta) and 2024 only (cyan). Gray circles indicate locations where bottom $\\Omega_{Arag}$ values were above the species specific sensitivity values."}
+
+
+#knitr::include_graphics("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/Saba_Fig_SOE_MAFMC-GraceSaba.jpg")
+
+magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SeasonalBottomAragoniteLongfin-GraceSaba_2025.png")
+
+#magick::image_read("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/Saba_Fig_SOE_MAFMC - Grace Saba.jpg")
+
+```
+
+Extreme observation of ocean acidification risk off NJ
+
+Multiple summer upwelling events off NJ
+
+:::
+
+::: {.soe-50-column}
+
+Unusual timing, location, abundance:
+
+*  Fishery observations
+    *  Delayed migration of longfin squid, black sea bass, haddock
+    *  Unusual locations for pollock, bluefin tuna, Atlantic mackerel, longfin squid, bluefish, and bonito
+    *  Local abundance of Atlantic mackerel
+    *  Record catches of red drum in Chesapeake Bay
+
+*  Good scallop recruitment in Nantucket lightship
+
+*  Arctic copepods in GOM
+
+*  Cocolithophore bloom off NY
+
+*  Large whale aggregations
+
+```{r cocobloom, fig.alt="An OLCI Sentinel 3A true color image with enhanced contrast captured on July 2, 2024. Coccolithophores shed their coccolith plates during the later stages of the bloom cycle, which results in the milky turquoise water color (Image credit: NOAA STAR, OCView and Ocean Color Science Team)."}
+return_plot("cocobloom", region = "BothReports")
+```
+
+:::
+
+::::

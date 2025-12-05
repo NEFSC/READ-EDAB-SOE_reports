@@ -25,7 +25,7 @@ Protected species:
 *  Recover endangered populations (NARW) `r I(decreasing)` `r I(below_average)`  
 :::
 
-::: {.soe-50-column}
+::: {.soe-50-img}
 
 ```{r, fig.alt = "", out.height = "80%"}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-performance.png")
@@ -35,7 +35,7 @@ knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/d
 
 ::::
 
-## State of the Ecosystem Summary 2025: { background-image="https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png" background-position="right" background-size="auto 100%"}
+## State of the Ecosystem Summary 2025: 
 :::: {.soe-50-50-slide}
 
 ::: {}
@@ -59,9 +59,9 @@ Other ocean uses: offshore wind development
 
 :::
 
-::: {.soe-50-column}
+::: {.soe-50-img}
 ```{r, fig.alt = "", out.height = "80%"}
-# knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png")
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png")
 ```
 :::
 

@@ -25,7 +25,7 @@ Protected species:
 *  Recover endangered populations `r I(mixed_trend)`, NARW `r I(below_average)` Gray seal `r I(above_average)` 
 :::
 
-::: {.soe-50-column}
+::: {.soe-50-img}
 
 ```{r, fig.alt = "", out.width="80%"}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-NE-02282025-508-performance-GB.png")
@@ -64,7 +64,7 @@ Protected species:
 *  Recover endangered populations `r I(mixed_trend)`, NARW `r I(below_average)` Gray seal `r I(above_average)` Salmon `r I(below_average)`
 :::
 
-::: {.soe-50-column}
+::: {.soe-50-img}
 
 ```{r, fig.alt = "", out.height = "80%"}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-NE-02282025-508-performance-GOM.png")
@@ -75,6 +75,7 @@ knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/d
 ::::
 
 ## State of the Ecosystem Summary 2025: 
+
 :::: {.soe-50-50-slide}
 
 ::: {}
@@ -98,10 +99,12 @@ Other ocean uses: offshore wind development
 
 :::
 
-::: {.soe-50-column}
-```{r, fig.alt = "", out.height = "80%"}
+::: {.soe-50-img}
+
+```{r, fig.alt = ""}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-NE-02282025-508-risks.png")
 ```
+
 :::
 
 ::::

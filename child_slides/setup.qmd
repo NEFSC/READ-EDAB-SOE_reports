@@ -66,19 +66,19 @@ myBib <- ReadBib(here::here("utils/MidSOE.bib"), check = FALSE)
 
 ```{r icons}
 # read in icons so they can be easily reused
-no_trend <- "![no trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//no trend.png){.center}"
+no_trend <- "![no trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//no trend.png){.inline-icon}"
 
-decreasing <- "![decreasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//decrease.png){.center}"
+decreasing <- "![decreasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//decrease.png){.inline-icon}"
 
-increasing <- "![increasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//increase.png){.center}"
+increasing <- "![increasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//increase.png){.inline-icon}"
 
-below_average <- "![below average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//below long term ave.png){.center} "
+below_average <- "![below average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//below long term ave.png){.inline-icon} "
 
-above_average <- "![above average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//above long term ave.png){.center}"
+above_average <- "![above average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//above long term ave.png){.inline-icon}"
 
-near_average <- "![near average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//near-long-term-average.png){.center}"
+near_average <- "![near average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//near-long-term-average.png){.inline-icon}"
 
-mixed_trend <- "![mixed trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//Mixed trends.png){.center}"
+mixed_trend <- "![mixed trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//Mixed trends.png){.inline-icon}"
 
-meeting_objectives <- "![meeting objectives icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//checked.png){.center}"
+meeting_objectives <- "![meeting objectives icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//checked.png){.inline-icon}"
 ```

@@ -23,9 +23,9 @@ We welcome your observations! <northeast.ecosystem.highlights@noaa.gov>
 
 :::
 
-::: {.soe-50-column}
+::: {.soe-50-img}
 
-```{r, fig.alt = "", out.width = "100%"}
+```{r, fig.alt = ""}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-highlights.png")
 ```
 :::
