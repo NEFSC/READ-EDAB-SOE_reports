@@ -163,16 +163,25 @@ Characterizing ecosystem change for fishery management
 * Changes in the multiple drivers can lead to **regime shifts** — large, abrupt and persistent changes in the structure and function of an ecosystem.  
 * Regime shifts and changes in how the multiple system drivers interact can result in **ecosystem reorganization** as species and humans respond and adapt to the new environment.
 
-::: {layout-nrow=1}
+:::: {.soe-50-50-slide}
 
-```{r, fig.alt = "", out.width = "100%"}
+::: {.soe-50-column}
+
+```{r, fig.alt = ""}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//SystemDrivers_v5.jpg")
 ```
 
-```{r, fig.alt = "", out.width = "100%"}
+:::
+
+::: {.soe-50-column}
+
+```{r, fig.alt = ""}
 knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//RegimeShift_V5.jpg")
 ```
+
 :::
+
+::::
 
 ## State of the Ecosystem report scale and figures
 

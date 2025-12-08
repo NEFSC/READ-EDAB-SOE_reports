@@ -49,9 +49,9 @@ The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catal
 
 :::
 
-::: {.soe-50-column}
+::: {.soe-50-img}
 
-![CCCVR map total vulnerability](https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/NE_Total_Vulnerability_092624-TarsilaSeara_2025.jpg){width=80%}
+![CCCVR map total vulnerability](https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/NE_Total_Vulnerability_092624-TarsilaSeara_2025.jpg)
 
 :::
 

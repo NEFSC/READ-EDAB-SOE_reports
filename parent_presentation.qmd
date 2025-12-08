@@ -120,3 +120,8 @@ format:
 
 
 {{< include child_slides/highlights_conclusions.qmd >}}
+
+```{r, child = here::here("child_slides/takehome_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+{{< include child_slides/closing_slides.qmd >}}

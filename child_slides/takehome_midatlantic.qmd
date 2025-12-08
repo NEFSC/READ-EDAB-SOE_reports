@@ -1,0 +1,35 @@
+## Take Home
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+**Mostly meeting individual stock objectives.**
+
+```{r}
+return_plot("stock-status", region = "MidAtlantic")
+```
+
+Species distributions, timing, and productivity have changed. Ocean conditions highly variable year to year.
+
+:::
+
+::: {.soe-50-column}
+
+**Ecosystem level management objectives worrying?**
+
+Declining <span style="background-color:orange;">seafood production</span> 
+
+Historically low <span style="background-color:orange;">revenue</span> 
+
+Declining range of <span style="background-color:red;">recreational opportunities</span> 
+
+Most community level revenue has high climate vulnerability
+
+```{r}
+return_plot("commvulex", region = "MidAtlantic")
+```
+
+:::
+
+::::

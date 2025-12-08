@@ -147,10 +147,16 @@
   padding: 1rem;
 }
 
-/*change link color for 508 compliance -- this isn't working */
-.reveal a, .reveal a > code {
-  color: #c20a0a !important; /* Added !important for link colors */
-  text-decoration: none;
+/*change link color for 508 compliance */
+/* CSS to change all link colors to #c20a0a */
+
+.reveal a {
+    color: #c20a0a !important;
+}
+
+/* Optional: Change the color when the link is hovered over */
+.reveal a:hover {
+    color: #9e0808 !important; /* A slightly darker red for visual feedback */
 }
 
 /*alter risk assessment table formatting*/
@@ -317,11 +323,14 @@ img.inline-icon {
     padding: 0 !important;
 }
 
-/* Rule to set uniform horizontal padding on all slides */
-.reveal .slide-content {
-    /* Sets padding for: top, right, bottom, left */
-    /* Using 1em for top/bottom and 3em for left/right is a common starting point */
-    padding: 0px 300px 0px 30px !important; 
+/* Custom CSS to increase font size on slides with the class 'small-text-slide' */
 
+/* Target the main text wrapper for paragraphs and lists */
+.reveal .small-text-slide p, 
+.reveal .small-text-slide li,
+.reveal .small-text-slide ul,
+.reveal .small-text-slide ol {
+    /* Set the font size relative to the slide's default font size (1.3em = 130%) */
+    font-size: 18px !important; 
 }
 

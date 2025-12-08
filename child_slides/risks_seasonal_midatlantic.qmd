@@ -118,18 +118,25 @@ return_plot("benthos", region = "MidAtlantic")
 
 ## Risks to Setting Catch Limits: Mid Atlantic Drivers
 
-Drivers: Low trophic levels
+:::: {.soe-50-50-slide}
 
-::: {.center}
+::: {.soe-50-column}
+
+Drivers: Low trophic levels
 
 ```{r totppagain, fig.alt="Total areal annual primary production for the MAB. The dashed line represents the long-term (1998-2024) annual mean.", fig.pos = "center"}
 return_plot("totpp", region = "MidAtlantic")
 ```
 
+:::
+
+::: {.soe-50-column}
 
 ```{r zoopanom, fig.alt="Changes in zooplankton abundance in the MAB for large (top left) and small (top right) copepods, Cnidarians (bottom left), and Euphausiids (bottom right), with significant increases (orange) in small copeods and Cnidarians."}
 return_plot("zoopanom", region = "MidAtlantic")
 ```
 
 :::
+
+::::
 
