@@ -1,0 +1,25 @@
+## Risks: Offshore Wind Development: Implications
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r}
+return_plot("wind-proposed-dev", region = "BothReports")
+```
+
+Implications:
+
+*  Current plans for buildout of offshore wind in a patchwork of areas spreads the impacts differentially throughout the region. 
+
+*  Lease areas overlap with North Atlantic right whale habitat. Development may alter local oceanography and prey availability, increase vessel strike risk, and result in pile driving noise impacts.
+
+:::
+
+::: {.soe-50-img}
+
+![](https://github.com/NOAA-EDAB/ecodata/raw/master/data-raw/workshop/images/SOE_2023_right_whales_hatteras_frame_v3_2024.jpg)
+
+:::
+
+::::

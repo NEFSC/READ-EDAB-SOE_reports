@@ -1,0 +1,30 @@
+## Objective: Mid Atlantic Fishery Stability: Not Stable &emsp; Risk elements: <span style="background-color:orange;">FleetDiv</span> and <span style="background-color:lightgreen;">FishRes1</span>
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+*Fishery*  Indicators: Commercial fleet count, fleet diversity   
+
+```{r}
+return_plot("comm-div-fleet", region = "MidAtlantic")
+```
+
+:::
+
+::: {.soe-50-column}
+
+*Fishery*  Indicators: commercial species revenue diversity, recreational species catch diversity
+
+```{r}
+return_plot("commercial-div-species-div", region = "MidAtlantic")
+```
+
+
+```{r}
+return_plot("recdat-div-catch", region = "MidAtlantic")
+```
+
+:::
+
+::::

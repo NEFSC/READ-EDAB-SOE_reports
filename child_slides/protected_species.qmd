@@ -1,0 +1,67 @@
+## Objectives: Coastwide Protected species *Maintain bycatch below thresholds* `r I(mixed_trend)`  `r I(meeting_objectives)` 
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Indicators: Harbor porpoise and gray seal bycatch
+
+```{r}
+return_plot("harborporpoise", region = "BothReports")
+```
+
+```{r,  fig.height=3}
+return_plot("grayseal", region = "BothReports")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Implications: 
+
+* Currently meeting objectives, but uncertainty in gray seal estimates
+
+* Risk element: TechInteract, evaluated by species and sector:  14 <span style="background-color:lightgreen;">low</span>, 7 <span style="background-color:yellow;">low-mod</span>, 2 <span style="background-color:orange;">mod-high</span> risk
+
+* The downward trend in harbor porpoise bycatch can also be due to a decrease in harbor porpoise abundance in US waters, reducing their overlap with fisheries, and a decrease in gillnet effort. 
+
+* Gray seal among the highest bycatch of any U.S. marine mammal. The increasing trend in gray seal bycatch may be related to an increase in the gray seal population (U.S. pup counts).
+
+:::
+
+::::
+
+## Objectives: Coastwide Protected species *Recover endangered populations* `r I(decreasing)` `r I(below_average)`
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Indicators: North Atlantic right whale population, calf counts
+
+```{r}
+return_plot("narw-abundance", region = "BothReports")
+```
+
+```{r}
+return_plot("NARW-calf-abundance", region = "BothReports")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Implications:  
+
+* Signs the adult population stabilized 2020-2023
+
+* Population drivers for North Atlantic Right Whales (NARW) include combined fishery interactions/ship strikes, distribution shifts, and copepod availability. 
+
+* Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat.
+
+* Unusual mortality events continue for 3 large whale species.
+
+:::
+
+::::

@@ -1,24 +1,23 @@
 ---
 title: 'State of the Ecosystem <br /> `r dplyr::case_when(
-  params$draft ~ "[Mid-Atlantic] *or* [New England]",
   params$region == "MidAtlantic" ~ "Mid-Atlantic",
-  params$region == "NewEngland" ~ "New England")` 2025'
+  params$region == "NewEngland" ~ "New England",
+  TRUE ~  "[Mid-Atlantic] *or* [New England]")` 2025'
 subtitle: "`r params$council` <br /> `r params$date`"
 author: "`r params$author`"
 editor: source
 params:
-  region: "MidAtlantic"
+  region: "Both"
   council: "MAFMC"
   fig_caption: "utils/figure_captions_summary.csv"
-  cache: FALSE
-  id_child_docs: FALSE
-  draft: FALSE
-  date: "8 April 2025"
+  date: !expr Sys.Date() |> format("%B %d, %Y")
   author: "Abigail Tyrell, lead editor, NEFSC"
 format:
   # This uses the built-in Quarto revealjs format
   revealjs:
     theme: ""
+    slide-number: true
+    # auto-stretch: false
     # --- Mapped from xaringan::moon_reader ---
     # Sets the slide aspect ratio
     aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
@@ -71,163 +70,53 @@ format:
     incremental: false           # Equivalent to countIncrementalSlides: false
 ---
 
-```{r conditional-values}
-epus <- dplyr::case_when(
-  params$draft ~ "[Mid-Atlantic Bight, MAB] *or* [Gulf of Maine (GOM) and Georges Bank (GB)]",
-  params$region == "MidAtlantic" ~ "Mid-Atlantic Bight, MAB",
-  params$region == "NewEngland" ~ "Gulf of Maine (GOM) and Georges Bank (GB)"
-)
+{{< include child_slides/setup.qmd >}}
 
-region <- dplyr::case_when(
-  params$draft ~ "[the Mid-Atlantic Bight] *or* [New England]",
-  params$region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
-  params$region == "NewEngland" ~ "New England"
-)
+{{< include child_slides/intro_slides.qmd >}}
 
-region2 <- dplyr::case_when(
-  params$draft ~ "[Mid-Atlantic] *or* [New England]",
-  params$region == "MidAtlantic" ~ "Mid-Atlantic",
-  params$region == "NewEngland" ~ "New England"
-)
+{{< include child_slides/request_memo.qmd >}}
 
-caption_key <- read.csv(params$fig_caption) 
+```{r, child = here::here("child_slides/highlights_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
-```{r setup, include=FALSE}
-
-options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(echo = F,
-                      fig.retina = 3,
-                      #fig.width = 4,
-                      #fig.height = 2,
-                      fig.asp = 0.45,
-                      warning = F,
-                      message = F,
-                      out.width = "80%")
-#Plotting and data libraries
-library(tidyverse)
-library(tidyr)
-library(here)
-library(kableExtra)
-library(ecodata)
-library(readxl); library(data.table)
-library(DT)
-library(widgetframe)
-library(patchwork)
-
-# if figure output defaults to docs/imaages/ replace with this before moving to 
-# presentations/docs in both the html output (search and replace)
-# and folder name
-# 20220316_MAFMCSSC_Gaichas_files/figure-html/
-
-source(here::here("utils/functions.R"))
-
+```{r, child = here::here("child_slides/highlights_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
-```{r, load_refs, include=FALSE, cache=FALSE}
-library(RefManageR)
-BibOptions(check.entries = FALSE,
-           bib.style = "authoryear",
-           cite.style = "authoryear",
-           longnamesfirst = FALSE,
-           max.names = 1,
-           style = "markdown")
-myBib <- ReadBib(here::here("utils/MidSOE.bib"), check = FALSE)
+{{< include child_slides/shared_summary_highlights.qmd >}}
+
+{{< include child_slides/performance_header.qmd >}}
+
+```{r, child = here::here("child_slides/seafood_production_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
-<!-- a second-level header starts a new slide -->
-## State of the Ecosystem (SOE) reporting
-### Improving ecosystem information and synthesis for fishery managers
-:::: {.soe-60-40-slide}
-
-::: {.full-slide-center-left}
-- Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
-    + Contextual information
-    + Report evolving since 2016
-    + Fishery-relevant subset of full Ecosystem Status Reports
-
-- Open science emphasis `r Cite(myBib, "bastille_improving_2020")`
-
-- Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, "muffley_there_2020")`
-:::
-
-::: {.soe-40-column}
-```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks"}
-knitr::include_graphics(here::here("images/iea-loop.png"))
-```
-*The IEA Loop[^1]*
-
-[^1]: https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach
-:::
-
-::::
-
-<!-- This is the start of the next slide -->
-## State of the Ecosystem: Maintain 2024 structure for 2025
-### 2025 Report Structure
-
-:::: {.soe-60-40-slide}
-
-::: {.soe-60-column}
-
-1. Graphical summary
-    + Page 1 report card re: objectives &rarr;
-    + Page 2 risk summary bullets
-    + Page 3 2024 snapshot
-1. Performance relative to management objectives
-1. Risks to meeting management objectives
-    + Climate and Ecosystem risks
-    + Offshore wind development
-1. 2024 Highlights
-
-:::
-
-::: {.soe-40-column}
-
-::: {layout-nrow=2}
-
-```{r, fig.alt = "State of the Ecosystem page 1 summary table", out.width = "100%"}
-knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-performance.png")
+```{r, child = here::here("child_slides/commercial_profits_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
-```{r, fig.alt = "State of the Ecosystem page 2 risk bullets", out.width = "100%"}
-knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png")
+```{r, child = here::here("child_slides/rec_opp_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
-```{r, fig.alt = "State of the Ecosystem page 3 highlights", out.width = "100%"}
-knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-highlights.png")
+```{r, child = here::here("child_slides/fishery_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
-:::
-
-:::
-
-::::
-
-## Mid Atlantic Landings drivers: Stock status? TAC? &emsp; Risk elements: Fstatus, Bstatus, MgtControl 
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-Indicator: Stock status
-
-```{r stock-status}
-return_plot("stock-status", region = "MidAtlantic")
-```
-:::
-
-::: {.soe-50-column}
-Indicators: Total ABC or ACL, and Realized catch relative to management target
-
-```{r}
-return_plot("abcacl-stacked", region = "MidAtlantic")
-return_plot("abcacl-catch", region = "MidAtlantic")
+```{r, child = here::here("child_slides/ecosystem_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
-Few managed species have binding limits; Management less likely playing a role
+```{r, child = here::here("child_slides/social_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
 
-:::
+{{< include child_slides/protected_species.qmd >}}
 
-::: {.notes}
-We can add speaker notes here
-:::
+{{< include child_slides/risks_spatial_seasonal.qmd >}}
+
+```{r, child = here::here("child_slides/risks_seasonal_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+{{< include child_slides/risks_catch.qmd >}}
+
+```{r, child = here::here("child_slides/risks_wind_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+{{< include child_slides/risks_wind.qmd >}}
+
+
+{{< include child_slides/highlights_conclusions.qmd >}}
