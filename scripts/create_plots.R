@@ -2,7 +2,7 @@
 
 ## variables ----
 
- region <- "NewEngland" #change to NewEngland to run for NE
+# region <- "NewEngland" #change to NewEngland to run for NE
 region <- "MidAtlantic" #change to NewEngland to run for NE
 
 out_dir <- here::here("images", region)
