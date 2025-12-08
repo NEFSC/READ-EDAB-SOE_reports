@@ -61,6 +61,16 @@ return_plot <- function(
   if (file.exists(file) & file.info(file)$isdir == FALSE) {
     file |>
       knitr::include_graphics(dpi = 300)
+  } else if (!file.exists(file)) {
+    # key could include the file name without the date or png extension
+    new_file <- list.files(
+      path = here::here("images"),
+      pattern = basename(file),
+      full.names = TRUE,
+      recursive = TRUE
+    )[1] # pick the first file if there are multiple
+    new_file |>
+      knitr::include_graphics(dpi = 300)
   } else {
     stop(paste0("Cannot find file specified: ", file))
   }

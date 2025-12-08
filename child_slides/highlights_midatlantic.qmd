@@ -23,6 +23,7 @@ Protected species:
 *  Maintain bycatch below thresholds (harbor porpoise, gray seals) `r I(mixed_trend)` `r I(meeting_objectives)`
 
 *  Recover endangered populations (NARW) `r I(decreasing)` `r I(below_average)`  
+
 :::
 
 ::: {.soe-50-img}

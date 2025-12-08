@@ -197,7 +197,7 @@
     max-width: 95% !important;
     max-height: 95% !important;
     display: block !important;
-    margin: 0 auto !important; /* Center the image within its column */
+    margin: auto auto !important; /* Center the image within its column */
 }
 
 /* 2. Define the Column for images that take up the whole column */
@@ -279,17 +279,49 @@ img.inline-icon {
   margin: 0 5px;
 }
 
-/* Ensure all images are displayed as blocks and centered horizontally */
-.reveal img {
-    /* Image must be a block element to accept margin centering */
-    display: block !important; 
+
+/* 1. Force the custom wrapper (.inline-icon) to be an inline element */
+.reveal section .inline-icon {
+    /* Use inline-flex for robust vertical alignment and to stay inline */
+    display: inline-flex !important; 
     
-    /* Auto margins center a block element horizontally */
-    margin-left: auto !important;
-    margin-right: auto !important;
+    /* Ensure no margins or padding push it to a new line */
+    margin: 0 !important;
+    padding: 0 !important;
     
-    /* Set a max width and height for safety (optional but recommended) */
-    max-width: 90% !important;
-    max-height: 85vh !important; 
-    height: auto !important;
+    /* Center the icon vertically relative to the text line */
+    align-items: center !important; 
 }
+
+/* 2. Target the image and ensure it has no block properties */
+.reveal section .inline-icon img {
+    /* Explicitly use the inline value */
+    display: inline !important; 
+    
+    /* Remove any margins/padding that might cause implicit line breaks */
+    margin: 0 !important; 
+    padding: 0 !important;
+
+    /* Keep sizing constraints */
+    max-width: 1.5em !important; 
+    max-height: 1.5em !important; 
+    width: auto !important; 
+    height: auto !important; 
+}
+
+/* 3. Aggressive Overrides (Targeting potential parent wrappers) */
+/* If the image is wrapped in a <p> tag, we ensure the image doesn't act as a block inside it. */
+.reveal p img {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Rule to set uniform horizontal padding on all slides */
+.reveal .slide-content {
+    /* Sets padding for: top, right, bottom, left */
+    /* Using 1em for top/bottom and 3em for left/right is a common starting point */
+    padding: 0px 300px 0px 30px !important; 
+
+}
+

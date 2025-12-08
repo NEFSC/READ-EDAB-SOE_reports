@@ -120,6 +120,8 @@ return_plot("benthos", region = "MidAtlantic")
 
 Drivers: Low trophic levels
 
+::: {.center}
+
 ```{r totppagain, fig.alt="Total areal annual primary production for the MAB. The dashed line represents the long-term (1998-2024) annual mean.", fig.pos = "center"}
 return_plot("totpp", region = "MidAtlantic")
 ```
@@ -129,4 +131,5 @@ return_plot("totpp", region = "MidAtlantic")
 return_plot("zoopanom", region = "MidAtlantic")
 ```
 
+:::
 
