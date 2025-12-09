@@ -1,0 +1,110 @@
+## Risks to Managing Seasonally: New England
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: thermal transition, habitat persistence, bloom timing
+
+```{r transition}
+return_plot("transition", region = "NewEngland")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Future considerations 
+
+*  Management actions that rely on effective alignment of fisheries availability and biological processes should continue to evaluate whether prior assumptions on seasonal timings still hold.
+
+*  New indicators should be developed to monitor timing shifts for stocks.
+
+:::
+
+::::
+
+Bloom timing
+
+```{r montlychl}
+return_plot("chl-month", region = "NewEngland")
+```
+
+## Risks to Setting Catch Limits: New England
+
+Indicator: Fish productivity
+
+```{r productivity-anomaly}
+return_plot("productivity-anomaly", region = "NewEngland")
+```
+
+## Risks to Setting Catch Limits: New England
+
+Indicator: Condition
+
+```{r}
+return_plot("ne-cf", region = "NewEngland")
+```
+
+## Risks to Setting Catch Limits: New England Drivers
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: Forage Quality and Abundance
+
+```{r foragebio}
+return_plot("foragebio", region = "NewEngland")
+```
+
+:::
+
+::: {.soe-50-column}
+
+New indicators: benthos abundance
+
+```{r benthos}
+return_plot("benthos", region = "NewEngland")
+```
+
+:::
+
+::::
+
+## Risks to Setting Catch Limits: New England Drivers
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: Low trophic levels
+
+```{r totppagain}
+return_plot("totpp", region = "NewEngland")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r zoopanom}
+return_plot("zoopanom", region = "NewEngland")
+```
+
+:::
+
+::::
+
+## Risks to Setting Catch Limits: Coastwide
+
+Drivers: Environmental   
+
+*2024 Thermal habitat area by depth*
+
+```{r}
+b <- ecodata::plot_thermal_habitat_area(report = "NewEngland", EPU="GB") + ggplot2::theme(legend.position = "none")
+c <- ecodata::plot_thermal_habitat_area(report = "NewEngland", EPU="GOM") + ggplot2::theme(legend.position = "bottom")
+
+ggpubr::ggarrange(b, c, nrow = 1)
+```

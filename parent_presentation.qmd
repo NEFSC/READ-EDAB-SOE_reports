@@ -18,11 +18,10 @@ format:
     theme: ""
     slide-number: true
     # auto-stretch: false
-    # --- Mapped from xaringan::moon_reader ---
     # Sets the slide aspect ratio
-    aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
+    # aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
     width: 1600
-    #height: 900
+    height: 900
     margin: 0.05
     min-scale: 0.2
     max-scale: 1.0
@@ -48,16 +47,7 @@ format:
     # --- Mapped from revealjs::revealjs_presentation ---
     # Controls if resources are embedded or linked
     embed-resources: false       # Equivalent to self_contained: false
-    
-    # Other revealjs options
-    # The 'notes' and 'search' plugins are standard and usually included by default
-    
-    # --- Customization for Quarto/revealjs (similar to titleSlideClass) ---
-    # This requires a slight change but is the Quarto way to customize the title slide.
-    # The specific classes like "right" and "middle" are often handled by 
-    # custom CSS applied via the `css` option above.
-    
-    # New section for title slide
+
     title-slide-attributes:
       # Use the path relative to the .qmd file (project root)
       data-background-image: libs/SOEtitleslide.png
@@ -89,26 +79,52 @@ format:
 ```{r, child = here::here("child_slides/seafood_production_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
+```{r, child = here::here("child_slides/seafood_production_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```
+
 ```{r, child = here::here("child_slides/commercial_profits_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+```{r, child = here::here("child_slides/commercial_profits_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
 ```{r, child = here::here("child_slides/rec_opp_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
+```{r, child = here::here("child_slides/rec_opp_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```
+
 ```{r, child = here::here("child_slides/fishery_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+```{r, child = here::here("child_slides/fishery_stability_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
 ```{r, child = here::here("child_slides/ecosystem_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
+```{r, child = here::here("child_slides/ecosystem_stability_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```
+
 ```{r, child = here::here("child_slides/social_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+```{r, child = here::here("child_slides/social_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
 {{< include child_slides/protected_species.qmd >}}
 
 {{< include child_slides/risks_spatial_seasonal.qmd >}}
 
+```{r, child = here::here("child_slides/risks_spatial_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```
+
+{{< include child_slides/risks_spatial_seasonal2.qmd >}}
+
 ```{r, child = here::here("child_slides/risks_seasonal_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+```{r, child = here::here("child_slides/risks_seasonal_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
 {{< include child_slides/risks_catch.qmd >}}
@@ -116,8 +132,10 @@ format:
 ```{r, child = here::here("child_slides/risks_wind_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
-{{< include child_slides/risks_wind.qmd >}}
+```{r, child = here::here("child_slides/risks_wind_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```
 
+{{< include child_slides/risks_wind.qmd >}}
 
 {{< include child_slides/highlights_conclusions.qmd >}}
 

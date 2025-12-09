@@ -331,6 +331,6 @@ img.inline-icon {
 .reveal .small-text-slide ul,
 .reveal .small-text-slide ol {
     /* Set the font size relative to the slide's default font size (1.3em = 130%) */
-    font-size: 18px !important; 
+    font-size: 20px !important; 
 }
 

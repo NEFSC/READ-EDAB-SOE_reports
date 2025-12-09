@@ -1,0 +1,100 @@
+## New England Community Social and Climate Vulnerability
+
+Indicators: Commercial fifishery engagement, social vulnerability, revenue climate vulnerability
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r commercial-engagement}
+return_plot("commercial-engagement", region = "NewEngland")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r comvultab}
+a <- ecodata::plot_engagement(report = 'NewEngland',varName = 'Commercial')
+
+a$data |>
+  dplyr::ungroup() |>
+  dplyr::slice_max(order_by = Eng,n =10) |>
+  flextable::flextable() |>
+  flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
+                               pop_composition_rank = "Population Composition",
+                               poverty_rank = "Poverty") |>
+  flextable::colformat_num(na_str = "-",big.mark = '') |>
+  #flextable::set_caption("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for Mid-Atlantic communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.") |>
+  flextable::fontsize(size = 8, part = "all") |>
+  flextable::autofit() 
+  
+```
+
+:::
+
+::::
+
+Implications: Highlighted communities may be vulnerable to changes in fishing patterns due to regulations and/or climate change. When also experiencing social vulnerabilities, they may have lower ability to successfully respond to change.
+
+## New England Community Social and Climate Vulnerability 
+
+Indicators: Commercial fishery revenue climate vulnerability
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r commvulex}
+return_plot("commvulex", region = "NewEngland")
+```
+
+The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) are calculated by multiplying the percent contribution of species to the total value landed in a community by their respective Total Vulnerability scores (based on NOAA’s Climate Vulnerability Assessment) for different sensitivity and exposure factors and then summing the resulting values by year.
+
+**New England communities shifting towads High/Very High climate vulnerability. Consolidating Species**
+
+:::
+
+::: {.soe-50-img}
+
+![CCCVR map total vulnerability](https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/NE_Total_Vulnerability_092624-TarsilaSeara_2025.jpg)
+
+:::
+
+::::
+
+## New England Community Social and Climate Vulnerability
+
+Indicators: Recreational fishery engagement, social vulnerability
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r recreational-engagement}
+return_plot("recreational-engagement", region = "NewEngland")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r recvultab}
+a <- ecodata::plot_engagement(varName = "Recreational",report = 'NewEngland')
+
+a$data |>
+  dplyr::ungroup() |>
+  dplyr::slice_max(order_by = Eng,n =10) |>
+  flextable::flextable() |>
+  flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
+                               pop_composition_rank = "Population Composition",
+                               poverty_rank = "Poverty") |>
+  flextable::colformat_num(na_str = "-",big.mark = '') |>
+  #flextable::set_caption("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for Mid-Atlantic communities most engaged in recreational fishing, 2022. Blank spaces indicate no data available.") |>
+  flextable::fontsize(size = 8, part = "all") |>
+  flextable::autofit() 
+```
+
+:::
+
+::::

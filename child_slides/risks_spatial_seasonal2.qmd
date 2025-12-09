@@ -1,0 +1,51 @@
+## Risks to Managing Spatially: Coastwide
+
+**Future considerations**
+
+Distribution shifts caused by changes in thermal habitat and ocean circulation are likely to continue as long as long-term trends persist. Episodic and short-term events (see [2024 Highlights](#2024-highlights)) may increase variability in the trends, however species distributions are unlikely to reverse to historical ranges in the short term. Increased mechanistic understanding of distribution drivers is needed to better understand future distribution shifts: species with high mobility or short lifespans react differently from immobile or long lived species. 
+
+Long-term oceanographic projections forecast a [temporary pause in warming](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL110946) over the next decade due to internal variability in circulation and a southward shift of the Gulf Stream. Near-term forecasts are being evaluated to determine how well they are able to predict episodic and anomalous events that are outside of the long-term patterns.
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+Adapting management to changing stock distributions and dynamic ocean processes will require continued monitoring of populations in space and evaluating management measures against a range of possible future spatial distributions. Processes like the [East Coast Climate Scenario Planning](https://www.mafmc.org/climate-change-scenario-planning), and subsequent formation of the [East Coast Climate Coordination Group](https://www.mafmc.org/e3cg), can help coordinate management.
+
+:::
+
+::: {.soe-50-column}
+
+![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/EastCoastClimateScenarios.png){width=400px}
+:::
+
+::::
+
+## Risks to Managing Seasonally: Coastwide
+
+Indicators: spawning timing, migration change
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r spawntiming, fig.alt="Percent resting stage (non-spawning) mature female fish (black) with significant increases (orange) and decreases (purple) from two haddock and three yellowtail flounder stocks: CC = Cape Cod Gulf of Maine, GOM = Gulf of Maine, GB = Georges Bank, SNE = Southern New England."}
+return_plot("spawntiming", region = "BothReports")
+```
+
+:::
+
+::: {.soe-50-column}
+
+*  Recreational tuna fisheries [50 days earlier](https://noaa-edab.github.io/catalog/timing_shifts.html#key-results-and-visualizations-59) in the year in 2019 compared to 2002. 
+
+*  In Cape Cod Bay, peak spring habitat use by right and humpback whales has shifted 18-19 days later over time.
+
+*  Baseline information on [large whale seasonal presence](https://noaa-edab.github.io/catalog/cetacean_acoustic.html) has been collected.
+
+```{r, eval = params$region != "MidAtlantic"}
+return_plot("cold-pool-time", region = "BothReports")
+```
+
+:::
+
+::::

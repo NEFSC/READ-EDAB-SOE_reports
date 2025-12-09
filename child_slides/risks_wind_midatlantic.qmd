@@ -13,60 +13,7 @@ return_plot("wea-spp-rev", region = "MidAtlantic")
 Council request: New England ports relying on Mid-Atlantic managed species
 
 ```{r wind-rev-NE-MAFMC}
-#fig.cap="Percent of New England port revenue with majority MAFMC landings from Wind Energy Areas (WEA) in descending order from most to least port revenue from WEA. EJ = Environmental Justice.",
-
-df.symbol <- ecodata::wind_port %>% filter(EPU == "NE", 
-                                           !Var %in% c("MaxVal", "TOT_MAX", 
-                                                     "perc_MIN", "perc_MAX")) %>% 
-   tidyr::pivot_wider( names_from = Var, values_from = Value) %>%
-  dplyr::mutate(City = paste0(City,",", State)) %>% 
-  dplyr::filter(City %in% c("POINT JUDITH, RI",
-                            "DAVISVILLE/NORTH KINGSTOWN, RI",
-                            "HYANNIS, MA",
-                            "MENEMSHA, MA")) %>%
-  dplyr::select(City, EJ, Gentrification) %>% 
-  pivot_longer(cols = c(EJ, Gentrification), names_to = "Variable") %>% 
-  filter(!value == "NA") %>% 
-  dplyr::mutate(symbol = recode(Variable, EJ = -7, Gentrification = -3), 
-                Variable = recode(Variable,"EJ"= "Mid-High to High Social-Demographic Concerns" , 
-                                  "Gentrification" ="Mid-High to High Gentrificaiton Concerns"))
-
-# Percentage plot
-
-df.all.perc<- ecodata::wind_port %>% filter(EPU == "NE") %>%
-  tidyr::pivot_wider( names_from = Var, values_from = Value) %>%
-  dplyr::mutate(ordering = MaxVal,
-                   City = paste0(City, ",", State),
-                   perc_dif =  c(perc_MAX - perc_MIN),
-                   TOT_MAX = c(100 - perc_dif - perc_MIN)) %>% 
-  tidyr::pivot_longer(cols = c(perc_MIN,  perc_dif, TOT_MAX), names_to="Var", values_to = "Value") %>% 
-  dplyr::arrange(desc(ordering)) %>%
-  dplyr::filter(City %in% c("POINT JUDITH, RI",
-                            "DAVISVILLE/NORTH KINGSTOWN, RI",
-                            "HYANNIS, MA",
-                            "MENEMSHA, MA")) %>%
-  dplyr::mutate(City = factor(City, levels = unique(City))) %>% 
-  dplyr::filter(!Var %in% c("MaxVal", "EJ", "Gentrification")) %>% 
-  dplyr::mutate(Var = recode(Var,"perc_MIN"= "WEA Revenue" , 
-                             "perc_dif" ="WEA Revenue Range", 
-                             "TOT_MAX" = "Non-WEA Revenue"), 
-                Var = factor(Var, levels = c("Non-WEA Revenue", 
-                                             "WEA Revenue Range", 
-                                             "WEA Revenue")))
-p2<-ggplot2::ggplot()+
-  ggplot2::geom_bar(data = df.all.perc, aes(fill = Var, y = reorder(City, ordering), x = Value), stat="identity" )+
-  ggplot2::scale_fill_brewer()+
-  ggplot2::theme(legend.position = "bottom", 
-                 legend.title = element_blank(), 
-                 legend.box="vertical", legend.margin=margin())+
-  ggplot2::geom_point(data = df.symbol, aes(x = symbol,y = City, shape = Variable)) +
-  ggplot2::scale_shape_manual(values = c(17, 16)) +
-  ggplot2::ggtitle("Port Revenue from WEA, majority MAFMC species")+
-  ggplot2::xlab(expression("Port Revenue (%)"))+
-  ggplot2::ylab(element_blank())+
-  ecodata::theme_ts()
-
-p2
+return_plot("wind-rev", region = "MidAtlantic")
 ```
 
 :::

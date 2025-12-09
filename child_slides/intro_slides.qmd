@@ -71,6 +71,8 @@ knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/d
 
 ::: {.soe-50-column}
 
+<br><br>
+
 ```{r management-objectives}
 ## TODO: tihs table should be pulled from the same place as table in pdf
 mng_obj <- data.frame("Objective Categories" = c("Seafood Production",
@@ -112,6 +114,9 @@ flextable::as_grouped_data(mng_obj, groups = "service") %>%
 :::
 
 ::: {.soe-50-column}
+
+<br><br>
+
 ```{r}
 
 FitFlextableToPage <- function(ft, pgwidth = 6){
@@ -207,7 +212,9 @@ b <- ecodata::plot_species_dist(varName = "depth", n=10) + ggplot2::coord_cartes
 ggpubr::ggarrange(a, b, ncol = 2)
 ```  
 
-Trends assessed only for 30+ years: [more information](https://noaa-edab.github.io/tech-doc/trend-analysis.html)
+Long-term trends assessed only for 30+ years: [more information](https://noaa-edab.github.io/tech-doc/trend-analysis.html)
+
+Short-term trends assessed for last 10 years of data OR a full time series <30 years
 
 <p style="color:#FF8C00;">Orange line = significant increase</p>
 <p style="color:#9932CC;">Purple line = significant decrease</p>

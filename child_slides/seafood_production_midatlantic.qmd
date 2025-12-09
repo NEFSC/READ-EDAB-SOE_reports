@@ -84,8 +84,11 @@ return_plot("comm-landings", region = "MidAtlantic")
 * Recreational drivers differ: shark fishery management, possibly survey methodology
 
 Monitor: 
+
 * climate risks including warming, ocean acidification, and shifting distributions  
+
 * ecosystem composition and production changes  
+
 * fishing engagement  
 
 :::
