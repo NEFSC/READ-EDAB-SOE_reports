@@ -1,0 +1,21 @@
+---
+format: html
+---
+
+# State of the Ecosystem Documents
+
+## 2026 report -- **drafting in progress**
+
+These documents are in progress and subject to change. Please check back later for the final published versions.
+
+### Report documents
+
+- [Mid Atlantic](midatlantic.pdf)
+- [New England](newengland.pdf)
+- [Combined report](bothregions.pdf) (to assist with editing only, will not be published as a final report)
+
+### Presentation slides
+
+- [Mid Atlantic](midatlantic.html)
+- [New England](newengland.html)
+- [Combined report](parent_presentation.html) (to assist with editing only, will not be presented as a final report)
