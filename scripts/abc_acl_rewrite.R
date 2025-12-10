@@ -173,7 +173,7 @@ plot_abc_acl <- function(
         stat = "identity",
         position = "stack"
       ) +
-      ggplot2::facet_wrap(~Fishery, ncol = 4, strip.position = "right") +
+      ggplot2::facet_wrap(~Fishery, ncol = 3, strip.position = "right") +
       ggplot2::scale_x_continuous(breaks = scales::pretty_breaks(n = 3)) +
       ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(n = 3)) +
       ggplot2::ggtitle("ABC or ACL for Managed Species") +

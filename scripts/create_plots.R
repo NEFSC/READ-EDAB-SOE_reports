@@ -107,7 +107,6 @@ save_plot(
 )
 
 # commercial landings
-# FUNCTION ADJUSTED IN ECODATA
 save_plot(
   plot_expression = {
     ecodata::plot_comdat(
@@ -124,7 +123,6 @@ save_plot(
 )
 
 # climate vulnerability landings
-# FUNCTION ADJUSTED IN ECODATA
 save_plot(
   plot_expression = {
     ecodata::plot_community_climate_vulnerability(
@@ -138,6 +136,20 @@ save_plot(
   indicator = "climatevul_land",
   width = 6.5,
   height = 2.5
+)
+
+# rec landings
+save_plot(
+  plot_expression = {
+    ecodata::plot_recdat(
+      report = region,
+      varName = "landings",
+      n = 10
+    )
+  },
+  indicator = "rec_landings",
+  width = 6.5,
+  height = 4
 )
 
 # rec hms and sharks

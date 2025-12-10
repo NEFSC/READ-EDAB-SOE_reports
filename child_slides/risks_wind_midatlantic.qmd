@@ -7,7 +7,7 @@
 Indicators: fishery and community specific revenue in lease areas
 
 ```{r}
-return_plot("wea-spp-rev", region = "MidAtlantic")
+return_plot("wea-spp-rev", region = "MidAtlantic", mode = "slide")
 ```
 
 Council request: New England ports relying on Mid-Atlantic managed species
@@ -74,7 +74,7 @@ p2
 ::: {.soe-50-column}
 
 ```{r}
-return_plot("wea-port-rev", region = "MidAtlantic")
+return_plot("wea-port-rev", region = "MidAtlantic", mode = "slide")
 ```
 
 :::
