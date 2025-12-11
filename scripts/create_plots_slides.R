@@ -120,7 +120,7 @@ save_plot(
   },
   indicator = "commercial_landings",
   width = 6.5,
-  height = 7
+  height = 6
 )
 
 # climate vulnerability landings
@@ -150,7 +150,7 @@ save_plot(
   },
   indicator = "rec_landings",
   width = 6.5,
-  height = 4
+  height = 2
 )
 
 # rec hms and sharks
@@ -179,7 +179,7 @@ save_plot(
   },
   indicator = "rec_hms",
   width = 6.5,
-  height = 8
+  height = 5
 )
 
 ### Implications ----
@@ -209,11 +209,11 @@ save_plot(
     plot_abc_acl(
       report = region,
       plottype = "Stacked"
-    )
+    ) 
   },
-  indicator = "abcacl_stacked_new",
+  indicator = "abcacl_stacked",
   width = 6.5,
-  height = 7
+  height = 6
 )
 
 
@@ -228,7 +228,7 @@ save_plot(
   },
   indicator = "abcacl_catch",
   width = 6.5,
-  height = 2.5
+  height = 2
 )
 
 # Aggregate biomass
@@ -345,7 +345,7 @@ save_plot(
   },
   indicator = "bennet",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 8, 4)
+  height = ifelse(region == "NewEngland", 8, 3)
 ) 
 
 # bennet all
@@ -1087,7 +1087,7 @@ save_plot(
   },
   indicator = "forage_dist",
   width = 6.5,
-  height = 5
+  height = 3.5
 )
 
 # macrobenthos shifts
@@ -1108,7 +1108,7 @@ save_plot(
   },
   indicator = "macrobenthos_dist",
   width = 6.5,
-  height = 5
+  height = 3.5
 )
 
 # longterm sst
@@ -1118,7 +1118,7 @@ save_plot(
   },
   indicator = "long_term_sst",
   width = 6.5,
-  height = 2.5
+  height = 2
 )
 
 # gsi
@@ -1128,7 +1128,7 @@ save_plot(
   },
   indicator = "west_gsi",
   width = 6.5,
-  height = 2.5
+  height = 2
 )
 
 # cold pool size
@@ -1140,7 +1140,7 @@ save_plot(
   },
   indicator = "cold_pool",
   width = 6.5,
-  height = 5
+  height = 4
 )
 
 # cold pool timing

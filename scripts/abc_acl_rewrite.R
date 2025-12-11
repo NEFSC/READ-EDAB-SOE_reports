@@ -246,26 +246,3 @@ plot_abc_acl <- function(
 attr(plot_abc_acl, "report") <- c("MidAtlantic", "NewEngland")
 attr(plot_abc_acl, "plottype") <- c("Stacked", "Catch")
 
-save_plot(
-  plot_expression = {
-    plot_abc_acl(
-      report = "MidAtlantic",
-      plottype = "Stacked"
-    )
-  },
-  indicator = "abcacl_stacked_new",
-  width = 6.5,
-  height = 7
-)
-
-save_plot(
-  plot_expression = {
-    plot_abc_acl(
-      report = "NewEngland",
-      plottype = "Stacked"
-    )
-  },
-  indicator = "abcacl_stacked_new",
-  width = 10,
-  height = 10
-)
