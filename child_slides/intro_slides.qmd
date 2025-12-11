@@ -205,12 +205,16 @@ A [glossary of terms](https://noaa-edab.github.io/tech-doc/glossary.html) (2021 
 
 Key to figures
 
-```{r , fig.width=5.5}
+```{r , eval = FALSE}
 a <- ecodata::plot_species_dist(varName = "along", n=10) + ggplot2::coord_cartesian(expand = FALSE)
 b <- ecodata::plot_species_dist(varName = "depth", n=10) + ggplot2::coord_cartesian(expand = FALSE) 
 
 ggpubr::ggarrange(a, b, ncol = 2)
 ```  
+
+```{r}
+knitr::include_graphics(here::here("images/plot_key.png"))
+```
 
 Long-term trends assessed only for 30+ years: [more information](https://noaa-edab.github.io/tech-doc/trend-analysis.html)
 
