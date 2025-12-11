@@ -40,6 +40,8 @@ return_plot("commvulex", region = "MidAtlantic")
 
 ::: {.soe-50-column}
 
+<br>
+
 ```{r management-objectives-review}
 mng_obj <- data.frame("Objective Categories" = c("Seafood Production",
                                                  "Commercial Profits","Recreational Opportunities",
@@ -73,7 +75,9 @@ flextable::as_grouped_data(mng_obj, groups = "service") %>%
   flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
   flextable::set_header_labels(Objective.Categories = "Objective categories",
                                Indicators.reported = "Indicators reported") %>%
-  flextable::set_caption("Ecosystem-scale fishery management objectives") %>%
+  flextable::set_caption("Ecosystem-scale fishery management objectives") |>
+flextable::fontsize(size = 16,
+part = "all") %>%
   flextable::autofit() 
 ```
 

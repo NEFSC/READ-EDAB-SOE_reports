@@ -82,7 +82,7 @@ Vincent Saba<br>
 Sarah Salois<br>
 Chris Schillaci (GARFO)<br>
 Amy Schueller (SEFSC)<br>
-Teresa Schwemmer (URI)
+Teresa Schwemmer (URI)<br>
 Tarsila Seara<br>
 Dave Secor (CBL)<br>
 Emily Slesinger<br>
@@ -138,7 +138,7 @@ PrintBibliography(myBib)
 
 * [SOE Reports on the web](https://www.fisheries.noaa.gov/new-england-mid-atlantic/ecosystems/state-ecosystem-reports-northeast-us-shelf)
 
-* Slides available at https://nefsc.read-edab-soe_reports.github.io
+* Slides available at <https://nefsc.github.io/READ-EDAB-SOE_reports/>
 
 ```{r}
 soe_contact_info <- dplyr::case_when(params$region == "NewEngland" ~ "<joseph.caracappa@noaa.gov>",
