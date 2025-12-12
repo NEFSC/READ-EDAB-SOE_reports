@@ -202,18 +202,17 @@ save_plot(
 
 
 # 2. ABC/ACL Stacked Plot NEW 
-# uses the function plot_abc_acl in 'scripts' folder, not current ecodata function
 
 save_plot(
   plot_expression = {
-    plot_abc_acl(
+    ecodata::plot_abc_acl(
       report = region,
       plottype = "Stacked"
     )
   },
-  indicator = "abcacl_stacked_new",
+  indicator = "abcacl_stacked",
   width = 6.5,
-  height = 7
+  height = 4.5
 )
 
 

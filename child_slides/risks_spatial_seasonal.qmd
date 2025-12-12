@@ -153,7 +153,7 @@ Adapting management to changing stock distributions and dynamic ocean processes 
 
 ::: {.soe-50-column}
 
-![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/EastCoastClimateScenarios.png){width=400px}
+![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/EastCoastClimateScenarios.png){width=600px}
 :::
 
 ::::

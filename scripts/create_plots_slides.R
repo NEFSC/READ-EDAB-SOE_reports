@@ -190,7 +190,8 @@ save_plot(
     stock_status_plot <- ecodata::plot_stock_status(report = region)
     if (region == "MidAtlantic") {
       stock_status_plot$p +
-        ggplot2::coord_cartesian(xlim = c(0, 2), ylim = c(0, 2)) 
+        ggplot2::coord_cartesian(xlim = c(0, 2), ylim = c(0, 2)) +
+        ggplot2::theme(legend.position = 'bottom')
     } else {
       stock_status_plot$p  +
         ggplot2::theme(legend.position = 'bottom')
@@ -198,22 +199,21 @@ save_plot(
   },
   indicator = "stock_status",
   width = 6.5,
-  height = 4
+  height = 6
 )
 
 
-# 2. ABC/ACL Stacked Plot NEW 
-# uses the function plot_abc_acl in 'scripts' folder, not current ecodata function
+# 2. ABC/ACL Stacked Plot  
 save_plot(
   plot_expression = {
-    plot_abc_acl(
+    ecodata::plot_abc_acl(
       report = region,
       plottype = "Stacked"
     ) 
   },
   indicator = "abcacl_stacked",
   width = 6.5,
-  height = 6
+  height = 5
 )
 
 
@@ -228,7 +228,7 @@ save_plot(
   },
   indicator = "abcacl_catch",
   width = 6.5,
-  height = 2
+  height = 2.5
 )
 
 # Aggregate biomass
