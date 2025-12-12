@@ -51,15 +51,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -150,9 +152,6 @@
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{wrapfig}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -392,7 +391,7 @@ This year, we present updated indicators for total \href{https://noaa-edab.githu
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,alt={This is sample alt text}]{images/MidAtlantic/total_landings_MidAtlantic_2025-11-03} 
+{\centering \includegraphics[width=1\linewidth,alt={This is sample alt text}]{images/MidAtlantic/slide_total_landings_MidAtlantic_2025-12-10} 
 
 }
 
@@ -455,7 +454,7 @@ Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{mana
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/stock_status_MidAtlantic_2025-11-03} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_stock_status_MidAtlantic_2025-12-12} 
 
 }
 
@@ -544,7 +543,7 @@ Stock status affects catch limits established by the Council, which in turn may 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/abcacl_stacked_MidAtlantic_2025-10-30} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/abcacl_stacked_MidAtlantic_2025-12-12} 
 
 }
 
@@ -1129,7 +1128,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/totpp_MidAtlantic_2025-11-04} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_totpp_MidAtlantic_2025-12-10} 
 
 }
 
@@ -1140,7 +1139,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/zoo_diversity_MidAtlantic_2025-11-24} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_zoo_diversity_MidAtlantic_2025-12-10} 
 
 }
 
@@ -1160,7 +1159,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/traits_MidAtlantic_2025-11-04} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_traits_MidAtlantic_2025-12-10} 
 
 }
 
@@ -2090,7 +2089,7 @@ As noted in the \hyperref[implications]{Seafood Production Implications section 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/species_dist_BothReports_2025-10-29} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_species_dist_BothReports_2025-12-10} 
 
 }
 
@@ -2145,7 +2144,7 @@ Species suitable habitat can expand or contract when changes in temperature and 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/west_gsi_BothReports_2025-09-29} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_west_gsi_BothReports_2025-12-10} 
 
 }
 
@@ -2181,7 +2180,7 @@ The effectiveness of seasonal management actions (fishing seasons or area openin
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/spawn_timing_BothReports_2025-10-29} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_spawn_timing_BothReports_2025-12-10} 
 
 }
 
@@ -2200,7 +2199,7 @@ Along with the overall warming trends in {[}the Mid-Atlantic Bight{]} \emph{or} 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/transition_date_MidAtlantic_2025-11-04} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_transition_date_MidAtlantic_2025-12-10} 
 
 }
 
@@ -2344,7 +2343,7 @@ Changes in the overall abundance of forage fish can influence managed species pr
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/zooplankton_anomaly_MidAtlantic_2025-11-24} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_zooplankton_anomaly_MidAtlantic_2025-12-10} 
 
 }
 
@@ -2359,7 +2358,7 @@ In 2024, there were no \href{https://noaa-edab.github.io/catalog/heatwave.html}{
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/therm_hab_persist_BothReports_2025-11-19} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_therm_hab_persist_BothReports_2025-12-10} 
 
 }
 
@@ -2510,7 +2509,7 @@ In 2024, only one \href{https://noaa-edab.github.io/catalog/heatwave_year.html}{
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/therm_hab_persist_BothReports_2025-11-19} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_therm_hab_persist_BothReports_2025-12-10} 
 
 }
 
@@ -2556,7 +2555,7 @@ As of January 2025, 30 offshore \href{https://noaa-edab.github.io/catalog/wind_d
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/wind_dev_speed_BothReports_2025-10-29} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_wind_dev_speed_BothReports_2025-12-10} 
 
 }
 
@@ -2580,7 +2579,7 @@ Based on federal vessel logbook data, \href{https://noaa-edab.github.io/catalog/
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/wind_revenue_MidAtlantic_2025-11-04} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_wind_revenue_MidAtlantic_2025-12-10} 
 
 }
 
@@ -2735,7 +2734,7 @@ The socio-demographic conditions, and resultant vulnerabilities, of some communi
 
 \begin{figure}
 
-\includegraphics[width=1\linewidth]{images/MidAtlantic/wea_port_rev_MidAtlantic_2025-11-19} \hfill{}
+\includegraphics[width=1\linewidth]{images/MidAtlantic/slide_wea_port_rev_MidAtlantic_2025-12-10} \hfill{}
 
 \caption{Percent of Mid-Atlantic port revenue from Wind Energy Areas (WEA) from all leases (active + non-active; green), non-active leases (blue), and active leases (orange).}\label{fig:wea-port-rev}
 \end{figure}
@@ -2746,7 +2745,7 @@ Some ports in New England land Mid-Atlantic managed species from wind areas as w
 
 \begin{figure}
 
-\includegraphics[width=1\linewidth]{images/MidAtlantic/wind_rev_MidAtlantic_2025-11-19} \hfill{}
+\includegraphics[width=1\linewidth]{images/MidAtlantic/slide_wind_rev_MidAtlantic_2025-12-10} \hfill{}
 
 \caption{Percent of New England port revenue with majority MAFMC landings from Wind Energy Areas (WEA) from all leases (active + non-active; green), non-active leases (blue), and active leases (orange). }\label{fig:wind-rev}
 \end{figure}
@@ -3054,7 +3053,7 @@ In 2023, Labrador Slope water accounted for more than 50\% of the \href{https://
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/slopewater_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_slopewater_BothReports_2025-12-10} 
 
 }
 
