@@ -32,6 +32,7 @@ knitr::opts_chunk$set(echo = F,
                       message = F
                       # out.width = "80%"
                       )
+options(knitr.duplicate.label = "allow")
 #Plotting and data libraries
 library(tidyverse)
 library(tidyr)

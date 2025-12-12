@@ -1,0 +1,100 @@
+## Take Home
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+**Mostly meeting individual stock objectives.**
+
+```{r}
+return_plot("stock-status", region = "MidAtlantic")
+```
+
+Species distributions, timing, and productivity have changed. Ocean conditions highly variable year to year.
+
+:::
+
+::: {.soe-50-column}
+
+**Ecosystem level management objectives worrying?**
+
+Declining <span style="background-color:orange;">seafood production</span> 
+
+Historically low <span style="background-color:orange;">revenue</span> 
+
+Declining range of <span style="background-color:red;">recreational opportunities</span> 
+
+Most community level revenue has high climate vulnerability
+
+```{r}
+return_plot("commvulex", region = "MidAtlantic")
+```
+
+:::
+
+::::
+
+## Discussion
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+<br>
+
+```{r management-objectives-review}
+mng_obj <- data.frame("Objective Categories" = c("Seafood Production",
+                                                 "Commercial Profits","Recreational Opportunities",
+                                                 "Stability","Social & Cultural",
+                                                 "Protected Species",
+                                                 "Management","Biomass", "Environment"
+                                                 #,"Productivity",
+                                                 #"Trophic structure","Habitat"
+                                                 ),
+"Indicators reported" = c("Landings; commercial total and by feeding guild; recreational harvest",
+                               "Revenue decomposed to price and volume",
+                               "Angler trips; recreational fleet diversity",
+                               "Diversity indices (fishery and ecosystem)",
+                               "Community fishing engagement and social vulnerability status",
+                               "Bycatch; population (adult and juvenile) numbers; mortalities",
+                               "Stock status; catch compared with catch limits",
+                               "Biomass or abundance by feeding guild from surveys",
+                               "Climate and ecosystem risk indicators listed in Table 2"
+                          ))
+
+
+
+mng_obj$service <- c(rep("Objectives: Provisioning and Cultural Services", 6), 
+                     rep("Potential Drivers: Supporting and Regulating Services", 3))
+
+mng_obj <- as.tibble(mng_obj)
+
+flextable::as_grouped_data(mng_obj, groups = "service") %>% 
+  flextable::as_flextable(hide_grouplabel=TRUE) %>% 
+  flextable::align(i = ~ !is.na(service), align = "left") %>% 
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
+  flextable::set_header_labels(Objective.Categories = "Objective categories",
+                               Indicators.reported = "Indicators reported") %>%
+  flextable::set_caption("Ecosystem-scale fishery management objectives") |>
+flextable::fontsize(size = 16,
+part = "all") %>%
+  flextable::autofit() 
+```
+
+:::
+
+::: {.soe-50-column}
+
+**Review objectives: maximum benefit to the Nation in first 3 categories**
+
+*  Is the list complete? 
+
+*  Does the Council have reference points, desired states, or other performance metrics we should address for each objective?
+
+Stability objective: are current indicators addressing Council needs?
+
+Forecasts: what decisions or contexts would ocean forecasts be most useful for?
+
+:::
+
+::::

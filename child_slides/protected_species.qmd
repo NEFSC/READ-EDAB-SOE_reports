@@ -22,7 +22,9 @@ Implications:
 
 * Currently meeting objectives, but uncertainty in gray seal estimates
 
-* Risk element: TechInteract, evaluated by species and sector:  14 <span style="background-color:lightgreen;">low</span>, 7 <span style="background-color:yellow;">low-mod</span>, 2 <span style="background-color:orange;">mod-high</span> risk
+```{r, eval = params$region != "NewEngland", results = "asis"}
+cat('* Risk element: TechInteract, evaluated by species and sector:  14 <span style="background-color:lightgreen;">low</span>, 7 <span style="background-color:yellow;">low-mod</span>, 2 <span style="background-color:orange;">mod-high</span> risk')
+```
 
 * The downward trend in harbor porpoise bycatch can also be due to a decrease in harbor porpoise abundance in US waters, reducing their overlap with fisheries, and a decrease in gillnet effort. 
 

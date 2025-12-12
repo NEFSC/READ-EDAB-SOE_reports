@@ -1,29 +1,3 @@
-## Risks to Managing Seasonally: Coastwide
-
-Indicators: spawning timing, migration change
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-```{r spawntiming, fig.alt="Percent resting stage (non-spawning) mature female fish (black) with significant increases (orange) and decreases (purple) from two haddock and three yellowtail flounder stocks: CC = Cape Cod Gulf of Maine, GOM = Gulf of Maine, GB = Georges Bank, SNE = Southern New England."}
-return_plot("spawntiming", region = "BothReports", mode = "slide")
-```
-
-:::
-
-::: {.soe-50-column}
-
-*  Recreational tuna fisheries [50 days earlier](https://noaa-edab.github.io/catalog/timing_shifts.html#key-results-and-visualizations-59) in the year in 2019 compared to 2002. 
-
-*  In Cape Cod Bay, peak spring habitat use by right and humpback whales has shifted 18-19 days later over time.
-
-*  Baseline information on [large whale seasonal presence](https://noaa-edab.github.io/catalog/cetacean_acoustic.html) has been collected.
-
-:::
-
-::::
-
 ## Risks to Managing Seasonally: Mid-Atlantic
 
 :::: {.soe-50-50-slide}
@@ -123,7 +97,6 @@ return_plot("benthos", region = "MidAtlantic", mode = "slide")
 ::: {.soe-50-column}
 
 Drivers: Low trophic levels
-
 
 ```{r totppagain, fig.alt="Total areal annual primary production for the MAB. The dashed line represents the long-term (1998-2024) annual mean.", fig.pos = "center"}
 return_plot("totpp", region = "MidAtlantic", mode = "slide")

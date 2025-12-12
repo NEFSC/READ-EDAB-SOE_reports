@@ -1,0 +1,31 @@
+## Objective: New England Commercial Profits `r I(mixed_trend)`  `r I(below_average)` 
+
+::: { .soe-50-50-slide}
+
+::: {.soe-50-column}
+Indicator: Commercial Revenue; profit indicators under SSC review
+
+```{r}
+return_plot("comm-revenue", region = "NewEngland")
+```
+
+```{r}
+return_plot("climatevul-rev", region = "NewEngland")
+```
+
+Both regions dependent on single climate-vulnerable species
+
+:::
+
+::: {.soe-50-column}
+Indicator: Bennet--price and volume indices
+
+```{r}
+return_plot("bennet-all", region = "MidAtlantic")
+```
+
+GOM high revenue despite low volume
+
+:::
+
+::::
