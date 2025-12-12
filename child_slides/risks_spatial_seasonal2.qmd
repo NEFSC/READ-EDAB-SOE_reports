@@ -30,7 +30,7 @@ Indicators: spawning timing, migration change
 ::: {.soe-50-column}
 
 ```{r spawntiming, fig.alt="Percent resting stage (non-spawning) mature female fish (black) with significant increases (orange) and decreases (purple) from two haddock and three yellowtail flounder stocks: CC = Cape Cod Gulf of Maine, GOM = Gulf of Maine, GB = Georges Bank, SNE = Southern New England."}
-return_plot("spawntiming", region = "BothReports")
+return_plot("spawntiming", region = "BothReports", mode = "slide")
 ```
 
 :::

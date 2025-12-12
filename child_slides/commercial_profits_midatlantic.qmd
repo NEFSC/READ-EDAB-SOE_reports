@@ -6,7 +6,7 @@
 Indicator: Commercial Revenue; profit indicators under SSC review
 
 ```{r}
-return_plot("comm-revenue", region = "MidAtlantic")
+return_plot("comm-revenue", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r, fig.alt="Mid-Atlantic region total climate vulnerability of commercial revenue (sum of Mid-Atlantic port revenue weighted by species climate vulnerability from Hare et al. 2016)."}

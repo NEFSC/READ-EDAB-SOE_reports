@@ -45,10 +45,10 @@ tab <- flextable::as_grouped_data(mng_obj, groups = "service") %>%
   flextable::set_header_labels(Risks = "Risk categories",
                                Observation.Indicators = "Observation indicators reported",
                                Potential.Driver.Indicators = "Potential driver indicators reported") %>%
-  flextable::set_caption("Risks to meeting fishery management objectives in the Mid-Atlantic Bight") |>
+
+  flextable::set_caption("Risks to meeting fishery management objectives in the Mid-Atlantic Bight")  |>
 flextable::fontsize(size = 16,
 part = "all")
-  #%>%
   #flextable::autofit() 
 ```
 
@@ -108,11 +108,11 @@ return_plot("protectedspp-dist-shifts", region = "BothReports")
 Drivers: Forage shifts, pelagic and benthic
 
 ```{r forageshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity."}
-return_plot("forageshifts", region = "BothReports")
+return_plot("forageshifts", region = "BothReports", mode = "slide")
 ```
 
 ```{r macrobenthosshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf"}
-return_plot("macrobenthosshifts", region = "BothReports")
+return_plot("macrobenthosshifts", region = "BothReports", mode = "slide")
 ```
 
 New Spatial Shift Indicators: [Benthos](https://noaa-edab.github.io/catalog/benthos_index.html), [Zooplankton](https://noaa-edab.github.io/catalog/zooplankton_index.html)
@@ -124,17 +124,17 @@ New Spatial Shift Indicators: [Benthos](https://noaa-edab.github.io/catalog/bent
 Drivers: changing ocean habitat  
 
 ```{r long-term-sst, fig.alt="Northeast US annual sea surface temperature (SST, black), with increasing trend (orange)."}
-return_plot("long-term-sst", region = "BothReports")
+return_plot("long-term-sst", region = "BothReports", mode = "slide")
 ```
 
 ```{r GSI, fig.alt = "Index representing changes in the location of the Gulf Stream north wall (black). Positive values represent a more northerly Gulf Stream position, NO LONGER HAS increasing trend."}
-return_plot("GSI", region = "BothReports")
+return_plot("GSI", region = "BothReports", mode = "slide")
 ```
 
 Cold pool temperature and spatial extent
 
 ```{r cold-pool-size, fig.alt="Seasonal cold pool mean temperature (left) and spatial extent index (right), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple)."}
-return_plot("cold-pool-size", region = "BothReports")
+return_plot("cold-pool-size", region = "BothReports", mode = "slide")
 ```
 
 :::

@@ -7,7 +7,7 @@
 Indicators: Commercial fishery engagement, social vulnerability, revenue climate vulnerability
 
 ```{r commercial-engagement}
-return_plot("commercial-engagement", region = "MidAtlantic")
+return_plot("commercial-engagement", region = "MidAtlantic", mode = "slide")
 ```
 
 :::
@@ -42,7 +42,7 @@ Indicators: Commercial fishery revenue climate vulnerability
 ::: {.soe-50-column}
 
 ```{r commvulex}
-return_plot("commvulex", region = "MidAtlantic")
+return_plot("commvulex", region = "MidAtlantic", mode = "slide")
 ```
 
 The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) are calculated by multiplying the percent contribution of species to the total value landed in a community by their respective Total Vulnerability scores (based on NOAA’s Climate Vulnerability Assessment) for different sensitivity and exposure factors and then summing the resulting values by year.
@@ -66,7 +66,7 @@ Indicators: Recreational fishery engagement, social vulnerability
 ::: {.soe-50-column}
 
 ```{r recreational-engagement, fig.alt= "Recreational engagement and population relative engagement with labels for the top recreationally engaged fishing communities in the Mid-Atlantic."}
-return_plot("recreational-engagement", region = "MidAtlantic")
+return_plot("recreational-engagement", region = "MidAtlantic", mode = "slide")
 ```
 
 :::

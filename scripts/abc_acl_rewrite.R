@@ -173,7 +173,7 @@ plot_abc_acl <- function(
         stat = "identity",
         position = "stack"
       ) +
-      ggplot2::facet_wrap(~Fishery, ncol = 4, strip.position = "right") +
+      ggplot2::facet_wrap(~Fishery, ncol = 3, strip.position = "right") +
       ggplot2::scale_x_continuous(breaks = scales::pretty_breaks(n = 3)) +
       ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(n = 3)) +
       ggplot2::ggtitle("ABC or ACL for Managed Species") +
@@ -246,26 +246,3 @@ plot_abc_acl <- function(
 attr(plot_abc_acl, "report") <- c("MidAtlantic", "NewEngland")
 attr(plot_abc_acl, "plottype") <- c("Stacked", "Catch")
 
-save_plot(
-  plot_expression = {
-    plot_abc_acl(
-      report = "MidAtlantic",
-      plottype = "Stacked"
-    )
-  },
-  indicator = "abcacl_stacked_new",
-  width = 6.5,
-  height = 7
-)
-
-save_plot(
-  plot_expression = {
-    plot_abc_acl(
-      report = "NewEngland",
-      plottype = "Stacked"
-    )
-  },
-  indicator = "abcacl_stacked_new",
-  width = 10,
-  height = 10
-)
