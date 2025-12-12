@@ -73,15 +73,8 @@ Linked to well-developed 2024 Mid Atlantic Cold Pool
 
 ::: {.soe-50-column}
 
-```{r mab-oa2, fig.alt = "Locations where bottom aragonite saturation state ($\\Omega_{Arag}$; summer only: June-August) were at or below the laboratory-derived sensitivity level for Atlantic sea scallop (left panel) and longfin squid (right panel) for the time periods 2007-2022 (dark cyan), 2023 only (magenta) and 2024 only (cyan). Gray circles indicate locations where bottom $\\Omega_{Arag}$ values were above the species specific sensitivity values."}
-
-
-#knitr::include_graphics("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/Saba_Fig_SOE_MAFMC-GraceSaba.jpg")
-
+```{r mab-oa2, fig.alt = "Locations where bottom aragonite saturation state ($\\Omega_{Arag}$; summer only: June-August) were at or below the laboratory-derived sensitivity level for Atlantic sea scallop (left panel) and longfin squid (right panel) for the time periods 2007-2022 (dark cyan), 2023 only (magenta) and 2024 only (cyan). Gray circles indicate locations where bottom $\\Omega_{Arag}$ values were above the species specific sensitivity values.", out.width = "100%"}
 magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SeasonalBottomAragoniteLongfin-GraceSaba_2025.png")
-
-#magick::image_read("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/Saba_Fig_SOE_MAFMC - Grace Saba.jpg")
-
 ```
 
 Extreme observation of ocean acidification risk off NJ
@@ -108,7 +101,7 @@ Unusual timing, location, abundance:
 
 *  Large whale aggregations
 
-```{r cocobloom, fig.alt="An OLCI Sentinel 3A true color image with enhanced contrast captured on July 2, 2024. Coccolithophores shed their coccolith plates during the later stages of the bloom cycle, which results in the milky turquoise water color (Image credit: NOAA STAR, OCView and Ocean Color Science Team)."}
+```{r cocobloom, fig.alt="An OLCI Sentinel 3A true color image with enhanced contrast captured on July 2, 2024. Coccolithophores shed their coccolith plates during the later stages of the bloom cycle, which results in the milky turquoise water color (Image credit: NOAA STAR, OCView and Ocean Color Science Team).", out.width="50%"}
 return_plot("cocobloom", region = "BothReports")
 ```
 
