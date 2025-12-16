@@ -6,11 +6,11 @@
 Indicator: Commercial Revenue; profit indicators under SSC review
 
 ```{r}
-return_plot("comm-revenue", region = "NewEngland")
+return_plot("comm-revenue", region = "NewEngland", mode = "slide")
 ```
 
 ```{r}
-return_plot("climatevul-rev", region = "NewEngland")
+return_plot("climatevul-rev", region = "NewEngland", mode = "slide")
 ```
 
 Both regions dependent on single climate-vulnerable species
@@ -21,7 +21,7 @@ Both regions dependent on single climate-vulnerable species
 Indicator: Bennet--price and volume indices
 
 ```{r}
-return_plot("bennet-all", region = "MidAtlantic")
+return_plot("bennet-all", region = "MidAtlantic", mode = "slide")
 ```
 
 GOM high revenue despite low volume

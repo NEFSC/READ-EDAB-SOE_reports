@@ -2,7 +2,7 @@
 
 ## variables ----
 
-# region <- "NewEngland" #change to NewEngland to run for NE
+ region <- "NewEngland" #change to NewEngland to run for NE
 region <- "MidAtlantic" #change to NewEngland to run for NE
 
 out_dir <- here::here("images", region)
@@ -201,7 +201,7 @@ save_plot(
 )
 
 
-# 2. ABC/ACL Stacked Plot NEW 
+# 2. ABC/ACL Stacked Plot  
 
 save_plot(
   plot_expression = {
@@ -331,7 +331,7 @@ save_plot(
         varName = "total",
         EPU = "GOM"
       ) +
-         ggplot2::ggtitle("GOM revenue components") 
+         ggplot2::ggtitle("GOM revenue components") +
             ggplot2::theme(
              legend.position = "bottom",
             legend.title = ggplot2::element_blank()

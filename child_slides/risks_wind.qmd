@@ -5,7 +5,7 @@
 ::: {.soe-50-column}
 
 ```{r}
-return_plot("wind-proposed-dev", region = "BothReports")
+return_plot("wind-proposed-dev", region = "BothReports", mode = "slide")
 ```
 
 Implications:

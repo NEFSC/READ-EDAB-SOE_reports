@@ -7,7 +7,7 @@
 Benthos center of gravity from fish stomachs
 
 ```{r}
-return_plot("macrobenthosshifts", region = "BothReports")
+return_plot("macrobenthosshifts", region = "BothReports", mode = "slide")
 ```
 
 ```{r}

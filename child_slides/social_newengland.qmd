@@ -7,7 +7,7 @@ Indicators: Commercial fifishery engagement, social vulnerability, revenue clima
 ::: {.soe-50-column}
 
 ```{r commercial-engagement}
-return_plot("commercial-engagement", region = "NewEngland")
+return_plot("commercial-engagement", region = "NewEngland", mode = "slide")
 ```
 
 :::
@@ -46,7 +46,7 @@ Indicators: Commercial fishery revenue climate vulnerability
 ::: {.soe-50-column}
 
 ```{r commvulex}
-return_plot("commvulex", region = "NewEngland")
+return_plot("commvulex", region = "NewEngland", mode = "slide")
 ```
 
 The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) are calculated by multiplying the percent contribution of species to the total value landed in a community by their respective Total Vulnerability scores (based on NOAA’s Climate Vulnerability Assessment) for different sensitivity and exposure factors and then summing the resulting values by year.
@@ -72,7 +72,7 @@ Indicators: Recreational fishery engagement, social vulnerability
 ::: {.soe-50-column}
 
 ```{r recreational-engagement}
-return_plot("recreational-engagement", region = "NewEngland")
+return_plot("recreational-engagement", region = "NewEngland", mode = "slide")
 ```
 
 :::

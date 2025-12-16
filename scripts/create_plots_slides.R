@@ -2,7 +2,7 @@
 
 ## variables ----
 
-# region <- "NewEngland" #change to NewEngland to run for NE
+ region <- "NewEngland" #change to NewEngland to run for NE
 region <- "MidAtlantic" #change to NewEngland to run for NE
 
 out_dir <- here::here("images", region)
@@ -332,7 +332,7 @@ save_plot(
         varName = "total",
         EPU = "GOM"
       ) +
-        ggplot2::ggtitle("GOM revenue components") 
+        ggplot2::ggtitle("GOM revenue components") +
       ggplot2::theme(
         legend.position = "bottom",
         legend.title = ggplot2::element_blank()
@@ -340,7 +340,7 @@ save_plot(
         ggplot2::ylab("Million USD (2023)") +
         ggplot2::theme(text = ggplot2::element_text(size = 12)) 
       
-      ggpubr::ggarrange(gb, gom, nrow = 2)
+      ggpubr::ggarrange(gb, gom, nrow = 2) 
     }
   },
   indicator = "bennet",
@@ -1225,7 +1225,7 @@ save_plot(
 if (region == "NewEngland") {
   save_plot(
     plot_expression = {
-      plot_seabird_ne(varName = "productivity", n = 10) +
+      ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
         ggplot2::coord_cartesian(xlim = c(1992, 2023))
     },
     indicator = "seabird_productivity",

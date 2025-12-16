@@ -44,7 +44,7 @@ return_plot("spawntiming", region = "BothReports", mode = "slide")
 *  Baseline information on [large whale seasonal presence](https://noaa-edab.github.io/catalog/cetacean_acoustic.html) has been collected.
 
 ```{r, eval = params$region != "MidAtlantic"}
-return_plot("cold-pool-time", region = "BothReports")
+return_plot("cold-pool-time", region = "BothReports", mode = "slide")
 ```
 
 :::

@@ -7,11 +7,11 @@
 Indicators: Recreational effort and fleet diversity  
 
 ```{r}
-return_plot("rec-op", region = "NewEngland")
+return_plot("rec-op", region = "NewEngland", mode = "slide")
 ```
 
 ```{r }
-return_plot("rec-div", region = "NewEngland")
+return_plot("rec-div", region = "NewEngland", mode = "slide")
 ```
 
 :::
