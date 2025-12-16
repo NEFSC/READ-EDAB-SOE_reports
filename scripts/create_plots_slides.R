@@ -294,13 +294,13 @@ save_plot(
     if (region == "MidAtlantic") {
       comm_revenue_plot +
         ggplot2::theme(
-          legend.position = "right",
+          legend.position = "bottom",
           legend.title = ggplot2::element_blank()
         )
     } else {
       comm_revenue_plot + 
         ggplot2::facet_wrap(~EPU,
-                            nrow = 2)
+                            nrow = 2) 
     }
   },
   indicator = "comm_revenue",
@@ -570,7 +570,7 @@ save_plot(
   },
   indicator = "exp_n",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 4, 4.5)
+  height = ifelse(region == "NewEngland", 3, 4)
 )
 
 
@@ -594,7 +594,7 @@ save_plot(
   },
   indicator = "traits",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 4, 4.5)
+  height = ifelse(region == "NewEngland", 3, 4)
 )
 
 ## Community social and climate vulnerability ----
