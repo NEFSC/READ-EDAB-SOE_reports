@@ -942,7 +942,7 @@ save_plot(
                                  "POINT LOOKOUT, NY",
                                  "BRIELLE, NJ"))
   },
-  indicator = "wind-rev",
+  indicator = "wind_rev",
   width = 6.5,
   height = 4
 )
