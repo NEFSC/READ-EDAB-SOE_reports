@@ -82,7 +82,7 @@ Potential Impacts: Changes in environmental conditions can affect stock referenc
 Indicators: Fish distribution shifts
 
 ```{r}
-return_plot("species-dist", region = "BothReports")
+return_plot("species-dist", region = "BothReports", mode = "slide")
 ```  
 
 :::
@@ -92,7 +92,7 @@ return_plot("species-dist", region = "BothReports")
 Cetacean distribution shifts 
 
 ```{r}
-return_plot("protectedspp-dist-shifts", region = "BothReports")
+return_plot("protectedspp-dist-shifts", region = "BothReports", mode = "slide")
 ```
 
 :::

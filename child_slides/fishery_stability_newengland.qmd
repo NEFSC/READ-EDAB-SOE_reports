@@ -7,7 +7,7 @@
 *Fishery*  Indicators: Commercial fleet count, fleet diversity
 
 ```{r}
-return_plot("comm-div-fleet", region = "NewEngland")
+return_plot("comm-div-fleet", region = "NewEngland", mode = "slide")
 ```
 
 Fishery Implications:
@@ -21,12 +21,12 @@ Fishery Implications:
 *Fishery*  Indicators: commercial species revenue diversity, recreational species catch diversity
 
 ```{r}
-return_plot("commercial-div-species-div", region = "NewEngland")
+return_plot("commercial-div-species-div", region = "NewEngland", mode = "slide")
 ```
 
 
 ```{r}
-return_plot("recdat-div-catch", region = "NewEngland")
+return_plot("recdat-div-catch", region = "NewEngland", mode = "slide")
 ```
 
 * Recreational diversity increase due to increase in ASFMC and MAFMC managed species

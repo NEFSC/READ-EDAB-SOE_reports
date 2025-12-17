@@ -7,11 +7,11 @@
 *Ecological* Indicators: zooplankton diversity (*not updated*) and total primary production
 
 ```{r}
-return_plot("zoo-diversity", region = "NewEngland")
+return_plot("zoo-diversity", region = "NewEngland", mode = "slide")
 ```
 
 ```{r}
-return_plot("totpp", region = "NewEngland")
+return_plot("totpp", region = "NewEngland", mode = "slide")
 ```
 
 Ecological Implications:  
@@ -25,11 +25,11 @@ Ecological Implications:
 *Ecological* Indicators: fish richness and traits
 
 ```{r}
-return_plot("exp-n", region = "NewEngland")
+return_plot("exp-n", region = "NewEngland", mode = "slide")
 ```
 
 ```{r}
-return_plot("traits", region = "NewEngland")
+return_plot("traits", region = "NewEngland", mode = "slide")
 ```
 
 * Declines in species fecundity & other life history traits suggests changing ecology

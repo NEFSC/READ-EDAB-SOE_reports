@@ -7,7 +7,7 @@
 Drivers: thermal transition, habitat persistence, bloom timing
 
 ```{r transition}
-return_plot("transition", region = "NewEngland")
+return_plot("transition", region = "NewEngland", mode = "slide")
 ```
 
 :::
@@ -27,7 +27,7 @@ Future considerations
 Bloom timing
 
 ```{r montlychl}
-return_plot("chl-month", region = "NewEngland")
+return_plot("chl-month", region = "NewEngland", mode = "slide")
 ```
 
 ## Risks to Setting Catch Limits: New England
@@ -35,7 +35,7 @@ return_plot("chl-month", region = "NewEngland")
 Indicator: Fish productivity
 
 ```{r productivity-anomaly}
-return_plot("productivity-anomaly", region = "NewEngland")
+return_plot("productivity-anomaly", region = "NewEngland", mode = "slide")
 ```
 
 ## Risks to Setting Catch Limits: New England
@@ -43,7 +43,7 @@ return_plot("productivity-anomaly", region = "NewEngland")
 Indicator: Condition
 
 ```{r}
-return_plot("ne-cf", region = "NewEngland")
+return_plot("ne-cf", region = "NewEngland", mode = "slide")
 ```
 
 ## Risks to Setting Catch Limits: New England Drivers
@@ -55,7 +55,7 @@ return_plot("ne-cf", region = "NewEngland")
 Drivers: Forage Quality and Abundance
 
 ```{r foragebio}
-return_plot("foragebio", region = "NewEngland")
+return_plot("foragebio", region = "NewEngland", mode = "slide")
 ```
 
 :::
@@ -65,7 +65,7 @@ return_plot("foragebio", region = "NewEngland")
 New indicators: benthos abundance
 
 ```{r benthos}
-return_plot("benthos", region = "NewEngland")
+return_plot("benthos", region = "NewEngland", mode = "slide")
 ```
 
 :::
@@ -81,7 +81,7 @@ return_plot("benthos", region = "NewEngland")
 Drivers: Low trophic levels
 
 ```{r totppagain}
-return_plot("totpp", region = "NewEngland")
+return_plot("totpp", region = "NewEngland", mode = "slide")
 ```
 
 :::
@@ -89,7 +89,7 @@ return_plot("totpp", region = "NewEngland")
 ::: {.soe-50-column}
 
 ```{r zoopanom}
-return_plot("zoopanom", region = "NewEngland")
+return_plot("zoopanom", region = "NewEngland", mode = "slide")
 ```
 
 :::

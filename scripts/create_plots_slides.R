@@ -2,8 +2,9 @@
 
 ## variables ----
 
-# region <- "NewEngland" #change to NewEngland to run for NE
+ region <- "NewEngland" #change to NewEngland to run for NE
 region <- "MidAtlantic" #change to NewEngland to run for NE
+
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -14,6 +15,7 @@ region2 <- dplyr::case_when(
   region == "MidAtlantic" ~ "Mid-Atlantic",
   region == "NewEngland" ~ "New England"
 )
+
 
 full_region <- dplyr::case_when(
   region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
@@ -252,11 +254,12 @@ if (region == "NewEngland") {
         EPU = "GB",
         n = 10
       ) +
-        ggplot2::theme(panel.spacing = grid::unit(0, 'lines')) 
+        ggplot2::theme(panel.spacing = grid::unit(0, 'lines')) +
+        ggplot2::geom_text(size = 10)
     },
     indicator = "aggregate_biomass_gb",
     width = 6.5,
-    height = 7
+    height = ifelse(region == "NewEngland", 9, 7)
   )
   # gulf of maine
   save_plot(
@@ -265,11 +268,12 @@ if (region == "NewEngland") {
         report = region,
         EPU = "GOM",
         n = 10
-      ) 
+      ) +
+        ggplot2::geom_text(size = 10)
     },
     indicator = "aggregate_biomass_gom",
     width = 6.5,
-    height = 7
+    height = ifelse(region == "NewEngland", 9, 7)
   )
 }
 
@@ -290,18 +294,18 @@ save_plot(
     if (region == "MidAtlantic") {
       comm_revenue_plot +
         ggplot2::theme(
-          legend.position = "right",
+          legend.position = "bottom",
           legend.title = ggplot2::element_blank()
         )
     } else {
       comm_revenue_plot + 
         ggplot2::facet_wrap(~EPU,
-                            nrow = 2)
+                            nrow = 2) 
     }
   },
   indicator = "comm_revenue",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 2.5)
+  height = ifelse(region == "NewEngland", 5, 4.5)
 )
 
 # bennet
@@ -332,7 +336,7 @@ save_plot(
         varName = "total",
         EPU = "GOM"
       ) +
-        ggplot2::ggtitle("GOM revenue components") 
+        ggplot2::ggtitle("GOM revenue components") +
       ggplot2::theme(
         legend.position = "bottom",
         legend.title = ggplot2::element_blank()
@@ -340,7 +344,7 @@ save_plot(
         ggplot2::ylab("Million USD (2023)") +
         ggplot2::theme(text = ggplot2::element_text(size = 12)) 
       
-      ggpubr::ggarrange(gb, gom, nrow = 2)
+      ggpubr::ggarrange(gb, gom, nrow = 2) 
     }
   },
   indicator = "bennet",
@@ -392,7 +396,7 @@ save_plot(
   },
   indicator = "climatevul_rev",
   width = 6.5,
-  height = 2.5
+  height = 4.5
 )
 
 ## Recreational opportunities ----
@@ -522,7 +526,7 @@ save_plot(
   },
   indicator = "totpp",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 2.5)
+  height = ifelse(region == "NewEngland", 4, 2.5)
 )
 
 # 4. Zooplankton Diversity Plot
@@ -542,7 +546,7 @@ save_plot(
   },
   indicator = "zoo_diversity",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 2.5)
+  height = ifelse(region == "NewEngland", 4, 2.5)
 )
 
 # 5. Expected N Plot
@@ -566,7 +570,7 @@ save_plot(
   },
   indicator = "exp_n",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 2.5)
+  height = ifelse(region == "NewEngland", 4, 4)
 )
 
 
@@ -583,13 +587,14 @@ save_plot(
         n = 10
       )   +
         ggplot2::ylab('Fecundity (number of \noffspring per mature female)') +
+        ggplot2::scale_y_continuous(labels = scales::label_scientific((digits = 1))) +
         ggplot2::theme(legend.position = 'bottom') +
-        ggplot2::facet_wrap(~EPU, nrow = 2)
+        ggplot2::facet_wrap(~EPU, nrow = 2) 
     }
   },
   indicator = "traits",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 2.5)
+  height = ifelse(region == "NewEngland", 4, 4)
 )
 
 ## Community social and climate vulnerability ----
@@ -942,7 +947,7 @@ save_plot(
                                  "POINT LOOKOUT, NY",
                                  "BRIELLE, NJ"))
   },
-  indicator = "wind-rev",
+  indicator = "wind_rev",
   width = 6.5,
   height = 4
 )
@@ -1052,11 +1057,11 @@ save_plot(
      ggplot2::coord_cartesian(xlim = c(1969, 2021))
     b <- ecodata::plot_species_dist(varName = "depth", n = 10) +
      ggplot2::coord_cartesian(xlim = c(1969, 2021))
-    ggpubr::ggarrange(a, b, nrow = 2)
+    ggpubr::ggarrange(a, b, nrow = 1)
   },
   indicator = "species_dist",
   width = 6.5,
-  height = 5
+  height = 4
 )
 
 # whale and dolphin dist shifts
@@ -1225,7 +1230,7 @@ save_plot(
 if (region == "NewEngland") {
   save_plot(
     plot_expression = {
-      plot_seabird_ne(varName = "productivity", n = 10) +
+      ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
         ggplot2::coord_cartesian(xlim = c(1992, 2023))
     },
     indicator = "seabird_productivity",

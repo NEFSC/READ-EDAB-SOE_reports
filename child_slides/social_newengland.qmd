@@ -7,7 +7,7 @@ Indicators: Commercial fifishery engagement, social vulnerability, revenue clima
 ::: {.soe-50-column}
 
 ```{r commercial-engagement}
-return_plot("commercial-engagement", region = "NewEngland")
+return_plot("commercial-engagement", region = "NewEngland", mode = "slide")
 ```
 
 :::
@@ -26,7 +26,7 @@ a$data |>
                                poverty_rank = "Poverty") |>
   flextable::colformat_num(na_str = "-",big.mark = '') |>
   #flextable::set_caption("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for Mid-Atlantic communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.") |>
-  flextable::fontsize(size = 8, part = "all") |>
+  flextable::fontsize(size = 12, part = "all") |>
   flextable::autofit() 
   
 ```
@@ -46,7 +46,7 @@ Indicators: Commercial fishery revenue climate vulnerability
 ::: {.soe-50-column}
 
 ```{r commvulex}
-return_plot("commvulex", region = "NewEngland")
+return_plot("commvulex", region = "NewEngland", mode = "slide")
 ```
 
 The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) are calculated by multiplying the percent contribution of species to the total value landed in a community by their respective Total Vulnerability scores (based on NOAA’s Climate Vulnerability Assessment) for different sensitivity and exposure factors and then summing the resulting values by year.
@@ -72,7 +72,7 @@ Indicators: Recreational fishery engagement, social vulnerability
 ::: {.soe-50-column}
 
 ```{r recreational-engagement}
-return_plot("recreational-engagement", region = "NewEngland")
+return_plot("recreational-engagement", region = "NewEngland", mode = "slide")
 ```
 
 :::
@@ -91,7 +91,7 @@ a$data |>
                                poverty_rank = "Poverty") |>
   flextable::colformat_num(na_str = "-",big.mark = '') |>
   #flextable::set_caption("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for Mid-Atlantic communities most engaged in recreational fishing, 2022. Blank spaces indicate no data available.") |>
-  flextable::fontsize(size = 8, part = "all") |>
+  flextable::fontsize(size = 12, part = "all") |>
   flextable::autofit() 
 ```
 
