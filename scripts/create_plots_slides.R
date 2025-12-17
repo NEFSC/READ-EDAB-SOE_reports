@@ -570,7 +570,7 @@ save_plot(
   },
   indicator = "exp_n",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 3, 4)
+  height = ifelse(region == "NewEngland", 4, 4)
 )
 
 
@@ -594,7 +594,7 @@ save_plot(
   },
   indicator = "traits",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 3, 4)
+  height = ifelse(region == "NewEngland", 4, 4)
 )
 
 ## Community social and climate vulnerability ----

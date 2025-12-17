@@ -26,7 +26,7 @@ a$data |>
                                poverty_rank = "Poverty") |>
   flextable::colformat_num(na_str = "-",big.mark = '') |>
   #flextable::set_caption("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for Mid-Atlantic communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.") |>
-  flextable::fontsize(size = 8, part = "all") |>
+  flextable::fontsize(size = 12, part = "all") |>
   flextable::autofit() 
   
 ```
@@ -91,7 +91,7 @@ a$data |>
                                poverty_rank = "Poverty") |>
   flextable::colformat_num(na_str = "-",big.mark = '') |>
   #flextable::set_caption("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for Mid-Atlantic communities most engaged in recreational fishing, 2022. Blank spaces indicate no data available.") |>
-  flextable::fontsize(size = 8, part = "all") |>
+  flextable::fontsize(size = 12, part = "all") |>
   flextable::autofit() 
 ```
 
