@@ -5,7 +5,6 @@
  region <- "NewEngland" #change to NewEngland to run for NE
 region <- "MidAtlantic" #change to NewEngland to run for NE
 
-
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
   dir.create(out_dir)
@@ -602,11 +601,11 @@ save_plot(
 # 1. Commercial Engagement Plot
 save_plot(
   plot_expression = {
-    commercial_engagement_plot <- ecodata::plot_engagement(
+    commercial_engagement_plot <- plot_engagement(
       report = region,
       varName = "Commercial"
     ) +
-      ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
+      ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0)) 
   },
   indicator = "commercial_engagement",
   width = 6.5,
@@ -616,7 +615,7 @@ save_plot(
 # 2. Recreational Engagement Plot
 save_plot(
   plot_expression = {
-    recreational_engagement_plot <- ecodata::plot_engagement(
+    recreational_engagement_plot <- plot_engagement(
       report = region,
       varName = "Recreational"
     ) +
@@ -1054,9 +1053,9 @@ save_plot(
 save_plot(
   plot_expression = {
     a <- ecodata::plot_species_dist(varName = "along", n = 10) +
-     ggplot2::coord_cartesian(xlim = c(1969, 2021))
+     ggplot2::coord_cartesian(xlim = c(1969, 2024))
     b <- ecodata::plot_species_dist(varName = "depth", n = 10) +
-     ggplot2::coord_cartesian(xlim = c(1969, 2021))
+     ggplot2::coord_cartesian(xlim = c(1969, 2024))
     ggpubr::ggarrange(a, b, nrow = 1)
   },
   indicator = "species_dist",
@@ -1069,12 +1068,12 @@ save_plot(
   plot_expression = {
     ecodata::plot_cetacean_dist() +
       ggplot2::ggtitle("Whale and Dolphin Distribution Shifts") +
-      ggplot2::facet_wrap(~season, nrow = 1) +
+      ggplot2::facet_wrap(~season, nrow = 2) +
       ggplot2::theme(legend.position = "bottom") 
   },
   indicator = "cetacean_dist",
   width = 7.5,
-  height = 4
+  height = 6.5
 )
 
 # forage shifts
@@ -1162,11 +1161,13 @@ save_plot(
 save_plot(
   plot_expression = {
     ecodata::plot_spawn_timing(n = 10) +
-     ggplot2::ggtitle("Spring Resting Maturity Stage")
+     ggplot2::ggtitle("Spring Resting Maturity Stage") +
+      ggplot2::facet_wrap(Species~Stock,
+                          nrow = 3)
   },
   indicator = "spawn_timing",
   width = 6.5,
-  height = 4
+  height = 6
 )
 
 
