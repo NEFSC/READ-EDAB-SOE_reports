@@ -103,7 +103,7 @@ save_plot(
   },
   indicator = "total_landings",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 4),
+  height = ifelse(region == "NewEngland", 5, 3),
 )
 
 # commercial landings
@@ -178,7 +178,7 @@ save_plot(
   },
   indicator = "rec_hms",
   width = 6.5,
-  height = 8
+  height = 6
 )
 
 ### Implications ----
@@ -344,7 +344,7 @@ save_plot(
   },
   indicator = "bennet",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 8, 4)
+  height = ifelse(region == "NewEngland", 6, 3)
 ) 
 
 # bennet all
@@ -361,14 +361,18 @@ save_plot(
         varName = "guild",
         EPU = "GB"
       ) +
-        ggplot2::ylab("Million USD (2023)")
+        ggplot2::ylab("Million USD (2023)") +
+        ggplot2::theme(
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
       gom <- ecodata::plot_bennet(
         report = "NewEngland",
         varName = "guild",
         EPU = "GOM"
       ) +
-        ggplot2::ylab("Million USD (2023)") 
-      ggpubr::ggarrange(gb, gom, ncol = 1,
+        ggplot2::ylab("Million USD (2023)") +
+        ggplot2::theme(
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
+      ggpubr::ggarrange(gb, gom, ncol = 2,
                         common.legend = TRUE,
                         legend = "bottom") 
     }
@@ -565,7 +569,7 @@ save_plot(
   },
   indicator = "exp_n",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 2.5)
+  height = ifelse(region == "NewEngland", 5, 3.5)
 )
 
 
@@ -588,7 +592,7 @@ save_plot(
   },
   indicator = "traits",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 2.5)
+  height = ifelse(region == "NewEngland", 5, 3.5)
 )
 
 ## Community social and climate vulnerability ----
@@ -596,7 +600,7 @@ save_plot(
 # 1. Commercial Engagement Plot
 save_plot(
   plot_expression = {
-    commercial_engagement_plot <- ecodata::plot_engagement(
+    commercial_engagement_plot <- plot_engagement(
       report = region,
       varName = "Commercial"
     ) +
@@ -665,7 +669,7 @@ save_plot(
   },
   indicator = "transition_date",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 2.5)
+  height = ifelse(region == "NewEngland", 4, 2.5)
 )
 
 
@@ -708,9 +712,7 @@ save_plot(
         )
       ) +
       ggplot2::theme(
-        legend.position = "bottom",
-        legend.title = ggplot2::element_blank(),
-        legend.text = ggplot2::element_text(size = 8),
+        legend.position = "none",
         plot.title = ggplot2::element_text(size = 11),
         axis.text = ggplot2::element_text(size = 11),
         axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
@@ -721,9 +723,7 @@ save_plot(
     )  +
       ggplot2::guides(fill = ggplot2::guide_legend(ncol = 2)) +
       ggplot2::theme(
-        legend.position = "bottom",
-        legend.title = ggplot2::element_blank(),
-        legend.text = ggplot2::element_text(size = 8),
+        legend.position = "none",
         plot.title = ggplot2::element_text(size = 11),
         axis.text = ggplot2::element_text(size = 11),
         axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
@@ -732,12 +732,14 @@ save_plot(
     ggpubr::ggarrange(
       productivity_anomaly_plot,
       recruit_anomaly_plot,
-      ncol = ifelse(region == "MidAtlantic", 1, 1)
+      ncol = ifelse(region == "MidAtlantic", 1, 1),
+      common.legend = TRUE,
+      legend = "bottom"
     )
   },
   indicator = "productivity_anomaly",
   width = 6.5,
-  height = 8
+  height = 7
 )
 
 # condition factor
@@ -771,8 +773,8 @@ save_plot(
   },
   indicator = "condition",
   width = 6.5,
-  height = 7
-  # height = ifelse(region == "NewEngland", 7, 6)
+ #  height = 7
+  height = ifelse(region == "NewEngland", 10, 6)
 )
 
 # 5. Energy Density Plot
@@ -828,7 +830,7 @@ save_plot(
   },
   indicator = "benthos",
   width = 6.5,
-  height = 8
+  height = 6
 )
 
 # 8. Zooplankton Anomaly Plot
@@ -996,7 +998,7 @@ save_plot(
   },
   indicator = "harborporpoise",
   width = 6.5,
-  height = 4
+  height = 3
 )
 
 # gray seal
@@ -1006,7 +1008,7 @@ save_plot(
   },
   indicator = "grayseal",
   width = 6.5,
-  height = 4
+  height = 3
 )
 
 # narw-abundance
