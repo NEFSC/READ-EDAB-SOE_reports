@@ -188,14 +188,11 @@ save_plot(
 # 1. Stock Status Plot
 save_plot(
   plot_expression = {
-    stock_status_plot <- ecodata::plot_stock_status(report = region)
+    stock_status_plot <- plot_stock_status(report = region)
     if (region == "MidAtlantic") {
-      stock_status_plot$p +
-        ggplot2::coord_cartesian(xlim = c(0, 2), ylim = c(0, 2)) +
-        ggplot2::theme(legend.position = 'bottom')
+      stock_status_plot$p 
     } else {
-      stock_status_plot$p  +
-        ggplot2::theme(legend.position = 'bottom')
+      stock_status_plot$p 
     }
   },
   indicator = "stock_status",

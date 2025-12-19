@@ -179,6 +179,11 @@ ggplot2::ggsave(
   height = 5
 )
 plot_stock_status()
+ggplot2::ggsave(
+  here::here("images/mab_stock_status_test3.png"),
+  width = 6.5,
+  height = 5
+)
 
 # not used -- trajectories ----
 
