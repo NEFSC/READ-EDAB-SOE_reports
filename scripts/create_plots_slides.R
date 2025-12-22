@@ -234,7 +234,7 @@ save_plot(
 if (region == "MidAtlantic") {
   save_plot(
     plot_expression = {
-      plot_aggregate_biomass(report = region, EPU = "MAB", n = 10) 
+      ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10) 
     },
     indicator = "aggregate_biomass_mab",
     width = 6.5,
@@ -246,7 +246,7 @@ if (region == "NewEngland") {
   # georges bank
   save_plot(
     plot_expression = {
-      plot_aggregate_biomass(
+      ecodata::plot_aggregate_biomass(
         report = region,
         EPU = "GB",
         n = 10
@@ -260,7 +260,7 @@ if (region == "NewEngland") {
   # gulf of maine
   save_plot(
     plot_expression = {
-      ecodata::plot_aggregate_biomass(
+     ecodata::plot_aggregate_biomass(
         report = region,
         EPU = "GOM",
         n = 10
