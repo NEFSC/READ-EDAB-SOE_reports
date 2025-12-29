@@ -1167,7 +1167,7 @@ save_plot(
 # development speed
 save_plot(
   plot_expression = {
-    plot_wind_dev_speed() 
+    ecodata::plot_wind_dev_speed() 
      + ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "wind_dev_speed",
