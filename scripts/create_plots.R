@@ -231,8 +231,8 @@ save_plot(
 # Aggregate biomass
 if (region == "MidAtlantic") {
   save_plot(
-    plot_expression = {
-      ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)
+    ecodata::plot_expression = {
+      plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)
     },
     indicator = "aggregate_biomass_mab",
     width = 6.5,
@@ -1211,7 +1211,7 @@ save_plot(
 
 save_plot(
   plot_expression = {
-    ecodata::plot_mass_inshore_survey(report = region, n = 10) +
+    plot_mass_inshore_survey(report = region, n = 10) +
      ggplot2::geom_point()+
      ggplot2::geom_line()
   },
