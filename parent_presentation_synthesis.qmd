@@ -1,0 +1,69 @@
+---
+title: 'State of the Ecosystem <br /> January Synthesis Meeting'
+subtitle: "EDAB/NEFSC <br /> 13-15 January 2025"
+editor: source
+params:
+  region: "Both"
+  council: "MAFMC"
+  fig_caption: "utils/figure_captions_summary.csv"
+format:
+  # This uses the built-in Quarto revealjs format
+  revealjs:
+    theme: ""
+    slide-number: true
+    # auto-stretch: false
+    # Sets the slide aspect ratio
+    # aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
+    width: 1600
+    height: 900
+    margin: 0.05
+    min-scale: 0.2
+    max-scale: 1.0
+    
+    # CSS files for styling
+    css:                         # Equivalent to css: [...]
+      - libs/EDAB_theme_2026.css
+      - libs/cols.css
+      
+    # Syntax highlighting style
+    highlight-style: github      # Equivalent to highlightStyle: githubp (Using Quarto's built-in 'github')
+    
+    # Allows highlighting specific lines in code blocks
+    code-line-numbers: true      # Equivalent to highlightLines: true
+    
+    # Custom JavaScript files (macros) are included in the header
+    include-in-header:
+      - text: |
+          <!-- <link href="libs/EDAB_theme_2026.css" rel="stylesheet" /> -->
+          <script src="libs/macros.js"></script>
+          <script src="libs/cols_macro.js"></script>
+          
+    # --- Mapped from revealjs::revealjs_presentation ---
+    # Controls if resources are embedded or linked
+    embed-resources: false       # Equivalent to self_contained: false
+
+    title-slide-attributes:
+      # Use the path relative to the .qmd file (project root)
+      data-background-image: libs/SOEtitleslide.png
+      data-background-size: 60%
+      data-background-position: left top
+      data-background-class: right-align-title
+    
+    # --- Other important Quarto options ---
+    # This prevents the render process from counting step-by-step reveals as separate slides
+    incremental: false           # Equivalent to countIncrementalSlides: false
+---
+
+{{< include child_slides/setup.qmd >}}
+
+{{< include child_slides/synthesis_meeting_intro.qmd >}}
+
+{{< include child_slides/highlights_midatlantic.qmd >}}
+
+{{< include child_slides/highlights_newengland.qmd >}}
+
+{{< include child_slides/shared_summary_highlights.qmd >}}
+
+## Council Requests from 2025 and Prioritization
+
+{{< include child_slides/request_memo.qmd >}}
