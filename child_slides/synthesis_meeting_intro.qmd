@@ -1,0 +1,319 @@
+## State of the Ecosystem (SOE) reporting
+### Improving ecosystem information and synthesis for fishery managers
+
+:::: {.soe-50-50-slide}
+
+::: {}
+
+- Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
+    + Contextual information
+    + Report evolving since 2016
+    + Fishery-relevant subset of full Ecosystem Status Reports
+
+- Open science emphasis `r Cite(myBib, "bastille_improving_2020")`
+
+- Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, "muffley_there_2020")`
+
+:::
+
+::: {.soe-50-column}
+
+```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks", out.width = "70%"}
+knitr::include_graphics(here::here("images/iea-loop.png"))
+```
+*The IEA Loop[^1]*
+
+[^1]: https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach
+
+:::
+
+::::
+
+## Ecosystem reporting at different levels of organization
+
+::: {layout-nrow=1}
+
+### Ecosystem Level &rarr; SOE
+
+```{r, fig.alt = "NE shelf map", out.width = "80%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/MAFMC_NE_SHELF_MAP.png")
+```
+
+### Stock Level &rarr; ESP
+
+```{r, fig.alt = "herring cons mod", out.width = "100%", fig.cap = paste('Ecosystem and Socioeconomic Profiles (ESPs)', RefManageR::Cite(myBib, c("shotwell_introducing_2023", "shotwell_synthesizing_2022", "haltuch_oceanographic_2020", "tolimieri_oceanographic_2018", "dorn_risk_2020"))) }
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/AherringConceptualMod.png")
+```
+
+:::
+
+## Using ecosystem information at the stock level: Ecosystem Socioeconomic Profiles (ESPs)
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r, fig.alt = "GOA pcod ESP conceptual model", out.width = "80%"}
+knitr::include_graphics("https://media.fisheries.noaa.gov/styles/media_750_x500/s3/2022-03/Working_Conceptual_Model_EBS%20Pcod.png")
+```
+
+```{r, fig.alt = "Bluefish ESP conceptual model", out.width = "80%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/bluefishconceptualmodel.png")
+```
+
+Images courtesy [ASFC](https://www.fisheries.noaa.gov/alaska/2021-alaska-fisheries-science-center-year-review) and Emily Liljestrand, NEFSC
+
+:::
+
+::: {.soe-50-column}
+
+::: {layout-nrow=1}
+
+```{r, fig.alt = "bottom temp in BSB assessment", out.width = "1000%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/Ecov_1_North_BT.png")
+```
+
+```{r, fig.alt = "GOA cod risk assessment", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/GOApcodESPrisk.png")
+```
+
+:::
+
+```{r, fig.alt = "ESP decisions", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/ESPdecisionsupporttable2.png")
+```
+
+:::
+
+::::
+
+## State of the Ecosystem: Maintain 2024 structure for 2025
+### 2025 Report Structure
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+1. Graphical summary
+    + Page 1 report card re: objectives &rarr;
+    + Page 2 risk summary bullets
+    + Page 3 2024 snapshot
+1. Performance relative to management objectives
+1. Risks to meeting management objectives
+    + Climate and Ecosystem risks
+    + Offshore wind development
+1. 2024 Highlights
+
+::: {layout-nrow=1}
+
+```{r, fig.alt = "State of the Ecosystem page 1 summary table", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-performance.png")
+```
+
+```{r, fig.alt = "State of the Ecosystem page 2 risk bullets", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png")
+```
+
+```{r, fig.alt = "State of the Ecosystem page 3 highlights", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-highlights.png")
+```
+
+:::
+
+:::
+
+::: {.soe-50-column}
+
+```{r management-objectives}
+mng_obj <- data.frame("Objective Categories" = c("Seafood Production",
+                                                 "Profits","Recreation",
+                                                 "Stability","Social & Cultural",
+                                                 "Protected Species",
+                                                 "Biomass","Productivity",
+                                                 "Trophic structure","Habitat"),
+"Indicators reported" = c("Landings; commercial total and by feeding guild; recreational harvest",
+                               "Revenue decomposed to price and volume",
+                               "Angler trips; recreational fleet diversity",
+                               "Diversity indices (fishery and ecosystem)",
+                               "Community engagement/reliance and environmental justice status",
+                               "Bycatch; population (adult and juvenile) numbers, mortalities",
+                               "Biomass or abundance by feeding guild from surveys",
+                               "Condition and recruitment of managed species, primary productivity",
+                               "Relative biomass of feeding guilds, zooplankton",
+                               "Estuarine and offshore habitat conditions"))
+
+
+# knitr::kable(mng_obj, linesep = "",
+#      col.names = c("Objective Categories","Indicators reported"),
+#       caption = "Ecosystem-scale fishery management objectives",
+#       #align = 'c',
+#       booktabs = T) %>%
+#   kable_styling(font_size = 14) %>%
+#  # kable_styling(latex_options = "hold_position", "scale_down") %>%
+#  # column_spec(c(2), width = c("25em")) %>%
+#   row_spec(0, bold = TRUE) %>%
+#  # group_rows("Provisioning/Cultural", 1,4) %>%
+#  # group_rows("Supporting/Regulating", 5,9)
+#   pack_rows("Provisioning and Cultural Services", 1,6) %>%
+#   pack_rows("Supporting and Regulating Services", 7,10)
+
+mng_obj$service <- c(rep("Provisioning and Cultural Services", 6), 
+                     rep("Supporting and Regulating Services", 4))
+
+mng_obj <- as.tibble(mng_obj)
+
+flextable::as_grouped_data(mng_obj, groups = "service") %>% 
+  flextable::as_flextable(hide_grouplabel=TRUE) %>% 
+  flextable::align(i = ~ !is.na(service), align = "left") %>% 
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
+  flextable::set_header_labels(Objective.Categories = "Objective categories",
+                               Indicators.reported = "Indicators reported") %>%
+
+  flextable::set_caption("Ecosystem-scale fishery management objectives") |>
+  flextable::fontsize(size = 16,
+                      part = "all") %>%
+  flextable::autofit() 
+
+
+```
+
+:::
+
+::::
+
+
+## Ecosystem synthesis themes
+
+Characterizing ecosystem change for fishery management
+
+* Societal, biological, physical and chemical factors comprise the **multiple system drivers** that influence marine ecosystems through a variety of different pathways. 
+* Changes in the multiple drivers can lead to **regime shifts** — large, abrupt and persistent changes in the structure and function of an ecosystem.  
+* Regime shifts and changes in how the multiple system drivers interact can result in **ecosystem reorganization** as species and humans respond and adapt to the new environment.
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r, fig.alt = ""}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//SystemDrivers_v5.jpg")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r, fig.alt = ""}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//RegimeShift_V5.jpg")
+```
+
+:::
+
+::::
+
+## Report structure 2021-2024, maintain in 2025: towards improved synthesis 
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+* Performance relative to management objectives
+    - *What* does the indicator say--up, down, stable?
+    - *Why* do we think it is changing: integrates synthesis themes
+        - Multiple drivers
+        - Regime shifts
+        - Ecosystem reorganization
+* Objectives
+    - Seafood production
+    - Profits
+    - Recreational opportunities
+    - Stability
+    - Social and cultural
+    - Protected species
+
+:::
+
+::: {.soe-50-column}
+
+* Risks to meeting fishery management objectives
+    - Same *What* and *Why* as Performance Section
+    - New structure for Climate section
+        - Fishery risk indicator
+        - Climate and ecosystem drivers of fishery risk
+        - Future considerations
+* Risk categories
+    + *Climate and Ecosystem Change*
+        + *Risk to spatial management*
+        + *Risk to seasonal management*
+        + *Risk to quota setting/rebuilding*
+    + Other ocean uses
+        + Offshore wind development
+
+:::
+
+::::
+
+
+## State of the Ecosystem report scale and figures
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r, fig.alt = "NEFSC survey strata used to calculate Ecosystem Production Unit biomass", out.width = "80%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//EPU_Designations_Map.jpg")
+```
+
+A [glossary of terms](https://noaa-edab.github.io/tech-doc/glossary.html) (2021 Memo 5), detailed [technical methods documentation](https://NOAA-EDAB.github.io/tech-doc) and [indicator data](https://github.com/NOAA-EDAB/ecodata) are available online.  
+:::
+
+::: {.soe-50-column}
+
+Key to figures
+
+```{r , eval = FALSE}
+a <- ecodata::plot_species_dist(varName = "along", n=10) + ggplot2::coord_cartesian(expand = FALSE)
+b <- ecodata::plot_species_dist(varName = "depth", n=10) + ggplot2::coord_cartesian(expand = FALSE) 
+
+ggpubr::ggarrange(a, b, ncol = 2)
+```  
+
+```{r}
+knitr::include_graphics(here::here("images/plot_key.png"))
+```
+
+Long-term trends assessed only for 30+ years: [more information](https://noaa-edab.github.io/tech-doc/trend-analysis.html)
+
+Short-term trends assessed for last 10 years of data OR a full time series <30 years
+
+<p style="color:#FF8C00;">Orange line = significant increase</p>
+<p style="color:#9932CC;">Purple line = significant decrease</p>
+<p>No color line = not significant or < 30 years</p>
+<p style="background-color:#D3D3D3;">Grey background = last 10 years</p>
+
+:::
+
+::::
+
+## 2026 Report Timeline
+
+**All participants:**
+
+This meeting, Jan 13-15
+
+Group edit, Jan 20-27
+
+**Lead editors:**
+
+Internal review, Jan 28-Feb 6
+
+Document public: Mar 6
+
+SSC presentations: March
+
+Council presentations: April
+
+NOAA IR: May
+
+## Review of 2025 Summary results
+
+These are the basis of 2026--discuss what to change
