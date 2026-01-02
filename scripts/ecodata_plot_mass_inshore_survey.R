@@ -190,11 +190,8 @@ plot_mass_inshore_survey(report = "NewEngland")
 
 attr(plot_mass_inshore_survey, "report") <- c("MidAtlantic", "NewEngland")
 
-# testing as single plot
-
-fix |>
-  dplyr::filter(Var == "Benthos Spring") |>
-  plot_custom_lims(new_max = 20)
+######################
+# testing with ggarrange
 
 plot_custom_lims <- function(data, new_max) {
   p <- data |>
@@ -210,8 +207,8 @@ plot_custom_lims <- function(data, new_max) {
       alpha = 0.5,
       fill = "gray"
     ) +
-    ggplot2::ggtitle("Massachusetts inshore BTS") +
-    ggplot2::ylab(expression("Biomass (kg tow"^-1 * ")")) +
+    #  ggplot2::ggtitle("Massachusetts inshore BTS") +
+    ggplot2::ylab(ggplot2::element_blank()) +
     ggplot2::xlab(ggplot2::element_blank()) +
     ggplot2::scale_y_continuous(
       limits = c(0, new_max),
@@ -223,6 +220,55 @@ plot_custom_lims <- function(data, new_max) {
     ecodata::theme_ts() +
     ecodata::theme_facet() +
     ecodata::theme_title()
+}
+
+p1 <- fix |>
+  dplyr::filter(Var == "Piscivore Spring") |>
+  plot_custom_lims(new_max = 150) +
+  ggplot2::ggtitle("Piscivore Spring")
+
+p2 <- fix |>
+  dplyr::filter(Var == "Piscivore Fall") |>
+  plot_custom_lims(new_max = 300) +
+  ggplot2::ggtitle("Piscivore Fall")
+
+p3 <- fix |>
+  dplyr::filter(Var == "Benthivore Spring") |>
+  plot_custom_lims(new_max = 250) +
+  ggplot2::ggtitle("Benthivore Spring")
+
+p4 <- fix |>
+  dplyr::filter(Var == "Benthivore Fall") |>
+  plot_custom_lims(new_max = 150) +
+  ggplot2::ggtitle("Benthivore Fall")
+
+p5 <- fix |>
+  dplyr::filter(Var == "Planktivore Spring") |>
+  plot_custom_lims(new_max = 20) +
+  ggplot2::ggtitle("Planktivore Spring")
+
+p6 <- fix |>
+  dplyr::filter(Var == "Planktivore Fall") |>
+  plot_custom_lims(new_max = 20) +
+  ggplot2::ggtitle("Planktivore Fall")
+
+p7 <- fix |>
+  dplyr::filter(Var == "Benthos Spring") |>
+  plot_custom_lims(new_max = 20) +
+  ggplot2::ggtitle("Benthos Spring")
+
+p8 <- fix |>
+  dplyr::filter(Var == "Benthos Fall") |>
+  plot_custom_lims(new_max = 15) +
+  ggplot2::ggtitle("Benthos Fall")
+
+p <- ggpubr::ggarrange(p1, p2, p3, p4, p5, p6, p7, p8, ncol = 2, nrow = 4) 
+
+p <- ggpubr::annotate_figure(
+  p,
+  top = ggpubr::text_grob("Massachusetts inshore BTS", size = 12),
+  left = ggpubr::text_grob("Biomass (kg tow ^-1)", rot = 90, size = 16)
+)
 
   return(p)
-}
+
