@@ -1217,7 +1217,7 @@ save_plot(
 
 save_plot(
   plot_expression = {
-    ecodata::plot_mass_inshore_survey(report = region, n = 10) +
+    plot_mass_inshore_survey(report = region, n = 10) +
       ggplot2::geom_point()+
       ggplot2::geom_line()
   },
