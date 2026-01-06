@@ -352,7 +352,8 @@ save_plot(
       ecodata::plot_bennet(report = region) +
         ggplot2::theme(
           axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
-            legend.position = "bottom") 
+            legend.position = "bottom") +
+        ggplot2::facet_wrap(~Var, nrow = 2)
     } else {
       gb <- ecodata::plot_bennet(
         report = "NewEngland",
@@ -370,13 +371,13 @@ save_plot(
         ggplot2::ylab("Million USD (2023)") +
         ggplot2::theme(
           axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
-      ggpubr::ggarrange(gb, gom, ncol = 1,
+      ggpubr::ggarrange(gb, gom, ncol = 2,
                         common.legend = TRUE,
                         legend = "bottom") 
     }
   },
   indicator = "bennet_all",
-  width = 9,
+  height = ifelse(region == "NewEngland", 9, 6.5),
   height = 6.5
 )
 

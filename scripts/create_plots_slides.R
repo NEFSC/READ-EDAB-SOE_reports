@@ -207,8 +207,7 @@ save_plot(
     ecodata::plot_abc_acl(
       report = region,
       plottype = "Stacked"
-    ) +
-      ggplot2::scale_fill_brewer(palette = "Set3")
+    ) 
   },
   indicator = "abcacl_stacked",
   width = 6.5,
@@ -354,8 +353,9 @@ save_plot(
       ecodata::plot_bennet(report = region) +
         ggplot2::theme(
           axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
-          legend.position = bottom
-        )
+          legend.position = "bottom"
+        ) +
+        ggplot2::facet_wrap(~Var, nrow = 2)
     } else {
       gb <- ecodata::plot_bennet(
         report = "NewEngland",
@@ -392,7 +392,7 @@ save_plot(
   },
   indicator = "climatevul_rev",
   width = 6.5,
-  height = 4.5
+  height = 2.5
 )
 
 ## Recreational opportunities ----
@@ -1049,7 +1049,6 @@ save_plot(
 )
 
 # species dist
-
 save_plot(
   plot_expression = {
     a <- ecodata::plot_species_dist(varName = "along", n = 10) +
@@ -1215,7 +1214,6 @@ save_plot(
 )
 
 # mass inshore survey -- NE only
-
 save_plot(
   plot_expression = {
     plot_mass_inshore_survey(report = region, n = 10) +
