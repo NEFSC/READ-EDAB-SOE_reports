@@ -86,7 +86,6 @@ Council presentations: April
 
 NOAA IR: May
 
-
 # Review of Management Applications (Tuesday, 9:45-10:15)
 
 # Review of 2025 Summary results (Tuesday, 10:15-10:30)
@@ -139,6 +138,8 @@ These are the basis of 2026--discuss what to change
 
 # Wrap up (Tuesday, 4:30-4:45)
 
+{{< include child_slides/closing_slides.qmd >}}
+
 # Day 2: Wednesday, 14 January 2025
 
 # Risks to meeting fisheries management objectives (Wednesday, 9:15-11:45 with break at 10:45)
@@ -184,3 +185,5 @@ These are the basis of 2026--discuss what to change
 # Develop summary page 3 -- highlights (Wednesday, 3:15-4:30)
 
 # Wrap up (Wednesday, 4:30-4:45)
+
+{{< include child_slides/closing_slides.qmd >}}
