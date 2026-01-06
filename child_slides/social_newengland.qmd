@@ -6,7 +6,7 @@ Indicators: Commercial fifishery engagement, social vulnerability, revenue clima
 
 ::: {.soe-50-column}
 
-```{r commercial-engagement}
+```{r}
 return_plot("commercial-engagement", region = "NewEngland", mode = "slide")
 ```
 
@@ -14,7 +14,7 @@ return_plot("commercial-engagement", region = "NewEngland", mode = "slide")
 
 ::: {.soe-50-column}
 
-```{r comvultab}
+```{r}
 a <- ecodata::plot_engagement(report = 'NewEngland',varName = 'Commercial')
 
 a$data |>
@@ -45,7 +45,7 @@ Indicators: Commercial fishery revenue climate vulnerability
 
 ::: {.soe-50-column}
 
-```{r commvulex}
+```{r}
 return_plot("commvulex", region = "NewEngland", mode = "slide")
 ```
 
@@ -71,7 +71,7 @@ Indicators: Recreational fishery engagement, social vulnerability
 
 ::: {.soe-50-column}
 
-```{r recreational-engagement}
+```{r}
 return_plot("recreational-engagement", region = "NewEngland", mode = "slide")
 ```
 
@@ -79,7 +79,7 @@ return_plot("recreational-engagement", region = "NewEngland", mode = "slide")
 
 ::: {.soe-50-column}
 
-```{r recvultab}
+```{r}
 a <- ecodata::plot_engagement(varName = "Recreational",report = 'NewEngland')
 
 a$data |>
