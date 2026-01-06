@@ -21,7 +21,7 @@ rmarkdown::render(
     number_sections = FALSE
   )
 )
-difftime(Sys.time(), now) 
+difftime(Sys.time(), now)
 
 
 ## mid report (pdf) ----

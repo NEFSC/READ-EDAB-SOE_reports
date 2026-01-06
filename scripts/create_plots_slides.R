@@ -1229,8 +1229,7 @@ save_plot(
 if (region == "NewEngland") {
   save_plot(
     plot_expression = {
-      ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
-        ggplot2::coord_cartesian(xlim = c(1992, 2023))
+      ecodata::plot_seabird_ne(varName = "productivity", n = 10)
     },
     indicator = "seabird_productivity",
     width = 6.5,
