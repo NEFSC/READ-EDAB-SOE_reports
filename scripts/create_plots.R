@@ -149,7 +149,7 @@ save_plot(
   },
   indicator = "rec_landings",
   width = 6.5,
-  height = 4
+  height = 2.5
 )
 
 # rec hms and sharks
@@ -287,7 +287,7 @@ save_plot(
         if (region == "MidAtlantic") {
          comm_revenue_plot +
           ggplot2::theme(
-           legend.position = "right",
+           legend.position = "bottom",
           legend.title = ggplot2::element_blank()
        )
         } else {
@@ -351,8 +351,8 @@ save_plot(
     if (region == "MidAtlantic") {
       ecodata::plot_bennet(report = region) +
         ggplot2::theme(
-          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)
-        )
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
+            legend.position = "bottom") 
     } else {
       gb <- ecodata::plot_bennet(
         report = "NewEngland",
@@ -370,7 +370,7 @@ save_plot(
         ggplot2::ylab("Million USD (2023)") +
         ggplot2::theme(
           axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
-      ggpubr::ggarrange(gb, gom, ncol = 2,
+      ggpubr::ggarrange(gb, gom, ncol = 1,
                         common.legend = TRUE,
                         legend = "bottom") 
     }
@@ -538,12 +538,12 @@ save_plot(
     } else {
       zoo_diversity_plot +
              ggplot2::ggtitle("Zooplankton Diversity") +
-            ggplot2::facet_wrap(~EPU, nrow = 2)
+            ggplot2::facet_wrap(~EPU, nrow = 1, scales = "free_y")
     }
   },
   indicator = "zoo_diversity",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 2.5)
+  height = ifelse(region == "NewEngland", 4, 2.5)
 )
 
 # 5. Expected N Plot
@@ -886,7 +886,6 @@ save_plot(
 # Other ocean uses: offshore wind ----
 
 # 1. Wind Species Revenue Plot
-# FUNCTION ADJUSTED IN ECODATA
 save_plot(
   plot_expression = {
     ecodata::plot_wind_revenue(
@@ -1012,8 +1011,8 @@ save_plot(
 # narw-abundance
 save_plot(
   plot_expression = {
-    ecodata::plot_narw(varName = "adult", n = 10)
-     + ggplot2::ggtitle("North Atlantic right whale abundance")
+    ecodata::plot_narw(varName = "adult", n = 10) + 
+      ggplot2::ggtitle("North Atlantic right whale abundance")
   },
   indicator = "narw_abundance",
   width = 6.5,
@@ -1023,8 +1022,8 @@ save_plot(
 # narw calves
 save_plot(
   plot_expression = {
-    ecodata::plot_narw(varName = "calf", n = 10) 
-     + ggplot2::ggtitle("North Atlantic right whale calf abundance")
+    ecodata::plot_narw(varName = "calf", n = 10) +
+     ggplot2::ggtitle("North Atlantic right whale calf abundance")
   },
   indicator = "narw_calves",
   width = 6.5,
@@ -1035,8 +1034,8 @@ save_plot(
 save_plot(
   plot_expression = {
     # for both reports, even though function calls NE
-    ecodata::plot_seal_pups(report = "NewEngland")
-      + ggplot2::theme(legend.position = 'bottom')
+    ecodata::plot_seal_pups(report = "NewEngland") +
+       ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "seal_pups",
   width = 6.5,
@@ -1044,13 +1043,12 @@ save_plot(
 )
 
 # species dist
-
 save_plot(
   plot_expression = {
-    a <- ecodata::plot_species_dist(varName = "along", n = 10) 
-     + ggplot2::coord_cartesian(xlim = c(1969, 2021))
-    b <- ecodata::plot_species_dist(varName = "depth", n = 10) 
-     + ggplot2::coord_cartesian(xlim = c(1969, 2021))
+    a <- ecodata::plot_species_dist(varName = "along", n = 10) +
+      ggplot2::coord_cartesian(xlim = c(1969, 2021))
+    b <- ecodata::plot_species_dist(varName = "depth", n = 10) +
+      ggplot2::coord_cartesian(xlim = c(1969, 2021))
     ggpubr::ggarrange(a, b, nrow = 2)
   },
   indicator = "species_dist",
@@ -1155,8 +1153,8 @@ save_plot(
 # spawn timing
 save_plot(
   plot_expression = {
-    ecodata::plot_spawn_timing(n = 10)
-    +  ggplot2::ggtitle("Spring Resting Maturity Stage")
+    ecodata::plot_spawn_timing(n = 10) +
+    ggplot2::ggtitle("Spring Resting Maturity Stage")
   },
   indicator = "spawn_timing",
   width = 6.5,
@@ -1167,8 +1165,8 @@ save_plot(
 # development speed
 save_plot(
   plot_expression = {
-    ecodata::plot_wind_dev_speed() 
-     + ggplot2::theme(legend.position = 'bottom')
+    ecodata::plot_wind_dev_speed() +
+      ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "wind_dev_speed",
   width = 6.5,
@@ -1224,7 +1222,7 @@ save_plot(
 if (region == "NewEngland") {
   save_plot(
     plot_expression = {
-      plot_seabird_ne(varName = "productivity", n = 10) +
+      ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
        ggplot2::coord_cartesian(xlim = c(1992, 2023))
     },
     indicator = "seabird_productivity",

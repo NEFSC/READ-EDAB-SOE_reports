@@ -353,7 +353,8 @@ save_plot(
     if (region == "MidAtlantic") {
       ecodata::plot_bennet(report = region) +
         ggplot2::theme(
-          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
+          legend.position = bottom
         )
     } else {
       gb <- ecodata::plot_bennet(
