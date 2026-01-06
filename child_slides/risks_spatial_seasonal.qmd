@@ -1,16 +1,3 @@
-# 2025 Risks to meeting fishery management objectives
-
-::: {.center-images}
-
-![Climate icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//3_CLIMATE.png){width=25% fig-align="center"} ![Wind icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//24.WIND.png){width=25% fig-align="center"}
-
-:::
-
-::: {.center-images}
-
-![Hydrography icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//1_HYDROGRAPHY.png){width=15%} &nbsp; &nbsp; &nbsp; ![Phytoplankon icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//9_PHYTOPLANKTON.png){width=15%} &nbsp; &nbsp; &nbsp; ![Forage fish icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//13_FORAGEFISH.png){width=15%} &nbsp; &nbsp; &nbsp; ![Apex predators icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//17.APEXPREDATORS.png){width=15%}  &nbsp; &nbsp; &nbsp; ![Other human uses icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//8_OTHERHUMANUSES.png){width=15%} 
-
-:::
 
 ## Revised Risks: Climate and Ecosystem Change 
 
