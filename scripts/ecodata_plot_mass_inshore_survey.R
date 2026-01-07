@@ -60,26 +60,10 @@ plot_mass_inshore_survey <- function(
 
   # Determine the order of your facets
   facet_order <- levels(fix$Var)
-
-  # Create a list of scales in that EXACT order
-  my_scales <- lapply(facet_order, function(v) {
-    # Define limits based on the name
-    lim <- switch(
-      v,
-      "Piscivore Spring" = c(0, 150),
-      "Piscivore Fall" = c(0, 300),
-      "Benthivore Spring" = c(0, 250),
-      "Benthivore Fall" = c(0, 150),
-      "Planktivore Spring" = c(0, 20),
-      "Planktivore Fall" = c(0, 20),
-      "Benthos Spring" = c(0, 20),
-      "Benthos Fall" = c(0, 15),
-      c(0, 100) # Default
-    )
-    return(ggplot2::scale_y_continuous(limits = lim, oob = scales::oob_keep))
-  })
-  
+ 
+# function to plot custom y lims as scalar multiplier of 1.2x the max value for guild 
   plot_custom_lims <- function(data) {
+    dplyr::group_by(Var) +
     new_max <- max((data$Index) * 1.2, na.rm = TRUE)
     p <- data |>
       ggplot2::ggplot(ggplot2::aes(x = Time, y = Index)) + 
@@ -111,53 +95,33 @@ plot_mass_inshore_survey <- function(
       ) +
       ggplot2::coord_cartesian(clip = "on") +
       ecodata::geom_gls() +
-      ecodata::geom_lm(n = 10) +
+      ecodata::geom_lm(n = n) +
       ecodata::theme_ts() +
       ecodata::theme_facet() +
       ecodata::theme_title()
   }
   
   p1 <-  fix |>
-    dplyr::filter(Var == "Piscivore Spring") |>
+    dplyr::filter(Var == "Piscivore") |>
     plot_custom_lims() +
-    ggplot2::ggtitle("Piscivore Spring")
+    ggplot2::ggtitle("Piscivores")
   
   p2 <- fix |>
-    dplyr::filter(Var == "Piscivore Fall") |>
+    dplyr::filter(Var == "Benthivore") |>
     plot_custom_lims() +
-    ggplot2::ggtitle("Piscivore Fall")
+    ggplot2::ggtitle("Benthivores")
   
   p3 <- fix |>
-    dplyr::filter(Var == "Benthivore Spring") |>
+    dplyr::filter(Var == "Planktivore") |>
     plot_custom_lims() +
-    ggplot2::ggtitle("Benthivore Spring")
+    ggplot2::ggtitle("Planktivores")
   
   p4 <- fix |>
-    dplyr::filter(Var == "Benthivore Fall") |>
+    dplyr::filter(Var == "Benthos") |>
     plot_custom_lims() +
-    ggplot2::ggtitle("Benthivore Fall")
+    ggplot2::ggtitle("Benthos")
   
-  p5 <- fix |>
-    dplyr::filter(Var == "Planktivore Spring") |>
-    plot_custom_lims() +
-    ggplot2::ggtitle("Planktivore Spring")
-  
-  p6 <- fix |>
-    dplyr::filter(Var == "Planktivore Fall") |>
-    plot_custom_lims() +
-    ggplot2::ggtitle("Planktivore Fall")
-  
-  p7 <- fix |>
-    dplyr::filter(Var == "Benthos Spring") |>
-    plot_custom_lims() +
-    ggplot2::ggtitle("Benthos Spring")
-  
-  p8 <- fix |>
-    dplyr::filter(Var == "Benthos Fall") |>
-    plot_custom_lims() +
-    ggplot2::ggtitle("Benthos Fall")
-  
-p <- ggpubr::ggarrange(p1, p2, p3, p4, p5, p6, p7, p8, ncol = 2, nrow = 4) 
+p <- ggpubr::ggarrange(p1, p2, p3, p4,, ncol = 1, nrow = 4) 
   
 p <- ggpubr::annotate_figure(
    p,
