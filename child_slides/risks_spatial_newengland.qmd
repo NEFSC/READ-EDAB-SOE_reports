@@ -11,7 +11,7 @@ return_plot("macrobenthosshifts", region = "BothReports", mode = "slide")
 ```
 
 ```{r}
-# megabenthos shifts will go here
+return_plot("megabenthosshifts", region = "BothReports", mode = "slide")
 ```
 
 :::
@@ -21,11 +21,11 @@ return_plot("macrobenthosshifts", region = "BothReports", mode = "slide")
 Copepods center of gravity from ECOMON
 
 ```{r}
-# small copepod shifts will go here
+return_plot("smallcopeall-cog", region = "BothReports", mode = "slide")
 ```
 
 ```{r}
-# large copepod shifts will go here
+return_plot("lgcopeall-cog", region = "BothReports", mode = "slide")
 ```
 
 :::
