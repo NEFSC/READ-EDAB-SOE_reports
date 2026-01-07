@@ -63,10 +63,9 @@ plot_mass_inshore_survey <- function(
  
 # function to plot custom y lims as scalar multiplier of 1.2x the max value for guild 
   plot_custom_lims <- function(data) {
-    dplyr::group_by(Var) +
     new_max <- max((data$Index) * 1.2, na.rm = TRUE)
-    p <- data |>
-      ggplot2::ggplot(ggplot2::aes(x = Time, y = Index)) + 
+    p <- data |> 
+      ggplot2::ggplot(ggplot2::aes(x = Time, y = Index)) +
       ggplot2::annotate(
         "rect",
         fill = setup$shade.fill,
@@ -87,6 +86,7 @@ plot_mass_inshore_survey <- function(
         alpha = 0.5,
         fill = "gray"
       ) +
+      #  ggplot2::ggtitle("Massachusetts inshore BTS") +
       ggplot2::ylab(ggplot2::element_blank()) +
       ggplot2::xlab(ggplot2::element_blank()) +
       ggplot2::scale_y_continuous(
@@ -94,34 +94,31 @@ plot_mass_inshore_survey <- function(
         oob = scales::oob_keep
       ) +
       ggplot2::coord_cartesian(clip = "on") +
+      ggplot2::facet_wrap(~Var, ncol = 2) +
       ecodata::geom_gls() +
-      ecodata::geom_lm(n = n) +
+      ecodata::geom_lm(n = 10) +
       ecodata::theme_ts() +
       ecodata::theme_facet() +
-      ecodata::theme_title()
+      ecodata::theme_title() 
   }
   
   p1 <-  fix |>
-    dplyr::filter(Var == "Piscivore") |>
-    plot_custom_lims() +
-    ggplot2::ggtitle("Piscivores")
+    dplyr::filter(Var == "Piscivore Spring" | Var == "Piscivore Fall") |>
+    plot_custom_lims() 
   
   p2 <- fix |>
-    dplyr::filter(Var == "Benthivore") |>
-    plot_custom_lims() +
-    ggplot2::ggtitle("Benthivores")
+    dplyr::filter(Var == "Benthivore Spring" | Var == "Benthivore Fall") |>
+    plot_custom_lims()
   
   p3 <- fix |>
-    dplyr::filter(Var == "Planktivore") |>
-    plot_custom_lims() +
-    ggplot2::ggtitle("Planktivores")
+    dplyr::filter(Var == "Planktivore Spring" | Var == "Planktivore Fall") |>
+    plot_custom_lims() 
   
   p4 <- fix |>
-    dplyr::filter(Var == "Benthos") |>
-    plot_custom_lims() +
-    ggplot2::ggtitle("Benthos")
+    dplyr::filter(Var == "Benthos Spring" | Var == "Benthos Fall") |>
+    plot_custom_lims() 
   
-p <- ggpubr::ggarrange(p1, p2, p3, p4,, ncol = 1, nrow = 4) 
+p <- ggpubr::ggarrange(p1, p2, p3, p4, ncol = 1, nrow = 4) 
   
 p <- ggpubr::annotate_figure(
    p,

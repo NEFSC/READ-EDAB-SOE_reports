@@ -124,6 +124,24 @@ plot_aggregate_biomass <- function(
       dplyr::filter(stringr::str_detect(Var, "Benthos"))
   }
 
+  # calculate max y values for each guild
+  piscivore <- agg_bio |>
+    dplyr::filter(Var == "Piscivore Spring" | Var == "Piscivore Fall") 
+  piscivore_new_max <- max((piscivore$Mean) * 1.2, na.rm = TRUE) 
+  
+  benthivore <- agg_bio |>
+   dplyr::filter(Var == "Benthivore Spring" | Var == "Benthivore Fall") 
+  benthivore_new_max <- max((neamap.2$Value) * 1.2, na.rm = TRUE)
+  
+  planktivore <- agg_bio |>
+   dplyr::filter(Var == "Planktivore Spring" | Var == "Planktivore Fall") 
+  planktivore_new_max <- max((neamap.3$Value) * 1.2, na.rm = TRUE)
+  
+  benthos <- agg_bio |>
+    dplyr::filter(Var == "Benthos Spring" | Var == "Benthos Fall") 
+  benthos_new_max <- max((benthos$Mean) * 1.2, na.rm = TRUE)
+  
+  
   # code for generating plot object p
   # ensure that setup list objects are called as setup$...
   # e.g. fill = setup$shade.fill, alpha = setup$shade.alpha,
@@ -134,7 +152,6 @@ plot_aggregate_biomass <- function(
   p1 <- agg_bio |>
     dplyr::filter(stringr::str_detect(Var, "Piscivore")) |>
     ggplot2::ggplot() +
-
     #Highlight last ten years
     ggplot2::annotate(
       "rect",
@@ -163,7 +180,7 @@ plot_aggregate_biomass <- function(
     #              color = Var),
     #            alpha = trend.alpha, size = trend.size) +
     #ecodata::geom_lm(aes(x = Time, y = Mean))+
-
+    
     #Add time series
     ggplot2::geom_ribbon(
       ggplot2::aes(x = Time, ymin = pmax(lower, 0), ymax = upper),
@@ -187,19 +204,24 @@ plot_aggregate_biomass <- function(
       alpha = setup$hline.alpha,
       linetype = setup$hline.lty
     ) +
-    ggplot2::facet_wrap(Var ~ ., ncol = 2, scales = "free_y") +
+    ggplot2::facet_wrap(Var ~ ., ncol = 2) +
     #Axis and theme
     ggplot2::scale_x_continuous(
       breaks = seq(1970, 2020, by = 10),
       expand = c(0.01, 0.01)
     ) +
-    #ylim(0, 1200)+
+    ggplot2::scale_y_continuous(
+      limits = c(0, piscivore_new_max),
+      oob = scales::oob_keep
+    ) +
+    ggplot2::coord_cartesian(clip = "on") +
     ggplot2::ylab(ggplot2::element_blank()) +
     ecodata::theme_facet() +
     ggplot2::theme(
       strip.text = ggplot2::element_text(hjust = 0, size = 12),
       axis.title.x = ggplot2::element_blank(),
-      axis.text = ggplot2::element_text(size = 12)
+      axis.text = ggplot2::element_text(size = 12),
+      axis.text.x = ggplot2::element_text(angle = 25)
     )
 
   if (report == "MidAtlantic") {
@@ -282,19 +304,24 @@ plot_aggregate_biomass <- function(
       alpha = setup$hline.alpha,
       linetype = setup$hline.lty
     ) +
-    ggplot2::facet_wrap(Var ~ ., ncol = 2, scales = "free_y") +
+    ggplot2::facet_wrap(Var ~ ., ncol = 2) +
     #Axis and theme
     ggplot2::scale_x_continuous(
       breaks = seq(1970, 2020, by = 10),
       expand = c(0.01, 0.01)
     ) +
-    #ylim(0, 1200)+
+    ggplot2::scale_y_continuous(
+      limits = c(0, benthivore_new_max),
+      oob = scales::oob_keep
+    ) +
+    ggplot2::coord_cartesian(clip = "on") +
     ggplot2::ylab(ggplot2::element_blank()) +
     ecodata::theme_facet() +
     ggplot2::theme(
       strip.text = ggplot2::element_text(hjust = 0, size = 12),
       axis.title.x = ggplot2::element_blank(),
-      axis.text = ggplot2::element_text(size = 12)
+      axis.text = ggplot2::element_text(size = 12),
+      axis.text.x = ggplot2::element_text(angle = 25)
     )
 
   if (report == "MidAtlantic") {
@@ -317,7 +344,11 @@ plot_aggregate_biomass <- function(
         size = setup$pcex - 0.5,
         color = "#ca0020",
         na.rm = T
-      )
+      ) +
+      ggplot2::scale_y_continuous(
+        limits = c(0, benthivore_neamap_new_max),
+        oob = scales::oob_keep
+      ) 
   }
 
   ### Planktivore
@@ -381,19 +412,24 @@ plot_aggregate_biomass <- function(
       alpha = setup$hline.alpha,
       linetype = setup$hline.lty
     ) +
-    ggplot2::facet_wrap(Var ~ ., ncol = 2, scales = "free_y") +
+    ggplot2::facet_wrap(Var ~ ., ncol = 2) +
     #Axis and theme
     ggplot2::scale_x_continuous(
       breaks = seq(1970, 2020, by = 10),
       expand = c(0.01, 0.01)
     ) +
-    #ylim(0, 1200)+
+    ggplot2::scale_y_continuous(
+      limits = c(0, planktivore_new_max),
+      oob = scales::oob_keep
+    ) +
+    ggplot2::coord_cartesian(clip = "on") +
     ggplot2::ylab(ggplot2::element_blank()) +
     ecodata::theme_facet() +
     ggplot2::theme(
       strip.text = ggplot2::element_text(hjust = 0, size = 12),
       axis.title.x = ggplot2::element_blank(),
-      axis.text = ggplot2::element_text(size = 12)
+      axis.text = ggplot2::element_text(size = 12),
+      axis.text.x = ggplot2::element_text(angle = 25)
     )
 
   if (report == "MidAtlantic") {
@@ -416,7 +452,11 @@ plot_aggregate_biomass <- function(
         size = setup$pcex - 0.5,
         color = "#ca0020",
         na.rm = T
-      )
+      ) +
+      ggplot2::scale_y_continuous(
+        limits = c(0, planktivore_new_max),
+        oob = scales::oob_keep
+      ) 
   }
 
   ### Benthos
@@ -478,19 +518,24 @@ plot_aggregate_biomass <- function(
       alpha = setup$hline.alpha,
       linetype = setup$hline.lty
     ) +
-    ggplot2::facet_wrap(Var ~ ., ncol = 2, scales = "free_y") +
+    ggplot2::facet_wrap(Var ~ ., ncol = 2) +
     #Axis and theme
     ggplot2::scale_x_continuous(
       breaks = seq(1970, 2020, by = 10),
       expand = c(0.01, 0.01)
     ) +
-    #ylim(0, 1200)+
+    ggplot2::scale_y_continuous(
+      limits = c(0, benthos_new_max),
+      oob = scales::oob_keep
+    ) +
+    ggplot2::coord_cartesian(clip = "on") +
     ggplot2::ylab(ggplot2::element_blank()) +
     ecodata::theme_facet() +
     ggplot2::theme(
       strip.text = ggplot2::element_text(hjust = 0, size = 12),
       axis.title.x = ggplot2::element_blank(),
-      axis.text = ggplot2::element_text(size = 12)
+      axis.text = ggplot2::element_text(size = 12),
+      axis.text.x = ggplot2::element_text(angle = 25)
     )
 
   if (report == "MidAtlantic") {
