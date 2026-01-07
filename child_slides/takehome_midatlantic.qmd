@@ -7,7 +7,7 @@
 **Mostly meeting individual stock objectives.**
 
 ```{r}
-return_plot("stock-status", region = "MidAtlantic")
+return_plot("stock-status", region = "MidAtlantic", mode = "slide")
 ```
 
 Species distributions, timing, and productivity have changed. Ocean conditions highly variable year to year.
@@ -27,7 +27,7 @@ Declining range of <span style="background-color:red;">recreational opportunitie
 Most community level revenue has high climate vulnerability
 
 ```{r}
-return_plot("commvulex", region = "MidAtlantic")
+return_plot("commvulex", region = "MidAtlantic", mode = "slide")
 ```
 
 :::
