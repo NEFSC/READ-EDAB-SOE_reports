@@ -66,13 +66,13 @@ format:
 
 {{< include child_slides/request_memo.qmd >}}
 
-```{r, child = here::here("child_slides/highlights_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/highlights_midatlantic_2025.qmd"), eval = params$region != "NewEngland"}
 ```
 
-```{r, child = here::here("child_slides/highlights_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/highlights_newengland_2025.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
-{{< include child_slides/shared_summary_highlights.qmd >}}
+{{< include child_slides/shared_summary_highlights_2025.qmd >}}
 
 {{< include child_slides/performance_header.qmd >}}
 
@@ -114,6 +114,8 @@ format:
 
 {{< include child_slides/protected_species.qmd >}}
 
+{{< include child_slides/risks_header.qmd >}}
+
 {{< include child_slides/risks_spatial_seasonal.qmd >}}
 
 ```{r, child = here::here("child_slides/risks_spatial_newengland.qmd"), eval = params$region != "MidAtlantic"}
@@ -125,6 +127,12 @@ format:
 ```
 
 ```{r, child = here::here("child_slides/risks_seasonal_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```
+
+```{r, child = here::here("child_slides/risks_catch_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```
+
+```{r, child = here::here("child_slides/risks_catch_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
 {{< include child_slides/risks_catch.qmd >}}

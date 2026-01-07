@@ -54,16 +54,136 @@ format:
     incremental: false           # Equivalent to countIncrementalSlides: false
 ---
 
+# Day 1: Tuesday, 13 January 2025
+
+# Overview of SOE structure (Tuesday, 9:20-9:45)
+
 {{< include child_slides/setup.qmd >}}
 
 {{< include child_slides/synthesis_meeting_intro.qmd >}}
 
-{{< include child_slides/highlights_midatlantic.qmd >}}
-
-{{< include child_slides/highlights_newengland.qmd >}}
-
-{{< include child_slides/shared_summary_highlights.qmd >}}
-
 ## Council Requests from 2025 and Prioritization
 
 {{< include child_slides/request_memo.qmd >}}
+
+## 2026 Report Timeline
+
+**All participants:**
+
+This meeting, Jan 13-15
+
+Group edit, Jan 20-27
+
+**Lead editors:**
+
+Internal review, Jan 28-Feb 6
+
+Document public: Mar 6
+
+SSC presentations: March
+
+Council presentations: April
+
+NOAA IR: May
+
+# Review of Management Applications (Tuesday, 9:45-10:15)
+
+# Review of 2025 Summary results (Tuesday, 10:15-10:30)
+
+These are the basis of 2026--discuss what to change
+
+{{< include child_slides/highlights_midatlantic_2025.qmd >}}
+
+{{< include child_slides/highlights_newengland_2025.qmd >}}
+
+{{< include child_slides/shared_summary_highlights_2025.qmd >}}
+
+# Break! 10:30-10:45
+
+# Overview of new and revised indicators (Tuesday, 10:45-12)
+
+# Lunch! 12-1:30
+
+# Performance Relative to Management Objectives (Tuesday, 1:30-3:30)
+
+{{< include child_slides/seafood_production_midatlantic.qmd >}}
+
+{{< include child_slides/seafood_production_newengland.qmd >}}
+
+{{< include child_slides/commercial_profits_midatlantic.qmd >}}
+
+{{< include child_slides/commercial_profits_newengland.qmd >}}
+
+{{< include child_slides/rec_opp_midatlantic.qmd >}}
+
+{{< include child_slides/rec_opp_newengland.qmd >}}
+
+{{< include child_slides/fishery_stability_midatlantic.qmd >}}
+
+{{< include child_slides/fishery_stability_newengland.qmd >}}
+
+{{< include child_slides/ecosystem_stability_midatlantic.qmd >}}
+
+{{< include child_slides/ecosystem_stability_newengland.qmd >}}
+
+{{< include child_slides/social_midatlantic.qmd >}}
+
+{{< include child_slides/social_newengland.qmd >}}
+
+{{< include child_slides/protected_species.qmd >}}
+
+# Break! 3:30-3:45
+
+# Develop summary page 1 -- summary tables (Tuesday, 3:45-4:30)
+
+# Wrap up (Tuesday, 4:30-4:45)
+
+{{< include child_slides/closing_slides.qmd >}}
+
+# Day 2: Wednesday, 14 January 2025
+
+# Risks to meeting fisheries management objectives (Wednesday, 9:15-11:45 with break at 10:45)
+
+{{< include child_slides/risks_spatial_seasonal.qmd >}}
+
+{{< include child_slides/risks_spatial_newengland.qmd >}}
+
+{{< include child_slides/risks_spatial_seasonal2.qmd >}}
+
+{{< include child_slides/risks_seasonal_midatlantic.qmd >}}
+
+{{< include child_slides/risks_seasonal_newengland.qmd >}}
+
+{{< include child_slides/risks_wind_midatlantic.qmd >}}
+
+{{< include child_slides/risks_wind_newengland.qmd >}}
+
+{{< include child_slides/risks_wind.qmd >}}
+
+# Break! 10:45-11:00
+
+# Risk to setting catch limits (Wednesday, 11:00-11:45)
+
+{{< include child_slides/risks_catch_midatlantic.qmd >}}
+
+{{< include child_slides/risks_catch_newengland.qmd >}}
+
+{{< include child_slides/risks_catch.qmd >}}
+
+# Discussion of Forecast Summary Page (Wednesday, 11:45-12:15)
+
+# Review of Management Applications -- East Coast Coordination Group (Wednesday, 12:15-12:30)
+
+# Lunch! 12:30-1:30
+
+# Develop summary page 2 -- risk summary bullets (Wednesday, 1:30-2:15)
+
+# Develop summary page 2 -- forecast infographic summary bullets (Wednesday, 2:15-3:00)
+
+# Break! 3:00-3:15
+
+# Develop summary page 3 -- highlights (Wednesday, 3:15-4:30)
+
+# Wrap up (Wednesday, 4:30-4:45)
+
+{{< include child_slides/closing_slides.qmd >}}

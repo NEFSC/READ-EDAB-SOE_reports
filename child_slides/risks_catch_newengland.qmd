@@ -1,0 +1,79 @@
+
+## Risks to Setting Catch Limits: New England
+
+Indicator: Fish productivity
+
+```{r productivity-anomaly}
+return_plot("productivity-anomaly", region = "NewEngland", mode = "slide")
+```
+
+## Risks to Setting Catch Limits: New England
+
+Indicator: Condition
+
+```{r}
+return_plot("ne-cf", region = "NewEngland", mode = "slide")
+```
+
+## Risks to Setting Catch Limits: New England Drivers
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: Forage Quality and Abundance
+
+```{r foragebio}
+return_plot("foragebio", region = "NewEngland", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+New indicators: benthos abundance
+
+```{r benthos}
+return_plot("benthos", region = "NewEngland", mode = "slide")
+```
+
+:::
+
+::::
+
+## Risks to Setting Catch Limits: New England Drivers
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: Low trophic levels
+
+```{r totppagain}
+return_plot("totpp", region = "NewEngland", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r zoopanom}
+return_plot("zoopanom", region = "NewEngland", mode = "slide")
+```
+
+:::
+
+::::
+
+## Risks to Setting Catch Limits: Coastwide
+
+Drivers: Environmental   
+
+*2024 Thermal habitat area by depth*
+
+```{r}
+b <- ecodata::plot_thermal_habitat_area(report = "NewEngland", EPU="GB") + ggplot2::theme(legend.position = "none")
+c <- ecodata::plot_thermal_habitat_area(report = "NewEngland", EPU="GOM") + ggplot2::theme(legend.position = "none")
+
+ggpubr::ggarrange(b, c, nrow = 1, common.legend = TRUE,legend = "bottom")
+```
