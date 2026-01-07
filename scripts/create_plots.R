@@ -1,3 +1,6 @@
+# reinstall ecodata
+remotes::install_github("NOAA-EDAB/ecodata", ref = "d6058eb")
+
 # setup ----
 
 ## variables ----
