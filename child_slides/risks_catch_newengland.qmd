@@ -73,7 +73,7 @@ Drivers: Environmental
 
 ```{r}
 b <- ecodata::plot_thermal_habitat_area(report = "NewEngland", EPU="GB") + ggplot2::theme(legend.position = "none")
-c <- ecodata::plot_thermal_habitat_area(report = "NewEngland", EPU="GOM") + ggplot2::theme(legend.position = "bottom")
+c <- ecodata::plot_thermal_habitat_area(report = "NewEngland", EPU="GOM") + ggplot2::theme(legend.position = "none")
 
-ggpubr::ggarrange(b, c, nrow = 1)
+ggpubr::ggarrange(b, c, nrow = 1, common.legend = TRUE,legend = "bottom")
 ```
