@@ -1016,7 +1016,8 @@ save_plot(
 save_plot(
   plot_expression = {
     ecodata::plot_narw(varName = "adult", n = 10) + 
-      ggplot2::ggtitle("North Atlantic right whale abundance")
+      ggplot2::ggtitle("North Atlantic right whale abundance") +
+      ggplot2::scale_x_continuous(limits = c(1990, 2025))
   },
   indicator = "narw_abundance",
   width = 6.5,

@@ -126,19 +126,21 @@ plot_aggregate_biomass <- function(
 
   # calculate max y values for each guild
   piscivore <- agg_bio |>
-    dplyr::filter(Var == "Piscivore Spring" | Var == "Piscivore Fall") 
-  piscivore_new_max <- max((piscivore$Mean) * 1.2, na.rm = TRUE) 
+    dplyr::filter(Var == "Piscivore Spring" | Var == "Piscivore Fall")
+  piscivore_new_max <- max((piscivore$Mean) * 1.2, na.rm = TRUE)
   
   benthivore <- agg_bio |>
-   dplyr::filter(Var == "Benthivore Spring" | Var == "Benthivore Fall") 
-  benthivore_new_max <- max((neamap.2$Value) * 1.2, na.rm = TRUE)
+    dplyr::filter(Var == "Benthivore Spring" | Var == "Benthivore Fall")
+  benthivore_new_max <- max((benthivore$Mean) * 1.2, na.rm = TRUE)
+  benthivore_neamap_new_max <- max((neamap.2$Value) * 1.2, na.rm = TRUE)
   
   planktivore <- agg_bio |>
-   dplyr::filter(Var == "Planktivore Spring" | Var == "Planktivore Fall") 
-  planktivore_new_max <- max((neamap.3$Value) * 1.2, na.rm = TRUE)
+    dplyr::filter(Var == "Planktivore Spring" | Var == "Planktivore Fall")
+  planktivore_new_max <- max((planktivore$Mean) * 1.2, na.rm = TRUE)
+  planktivore_neamap_new_max <- max((neamap.3$Value) * 1.2, na.rm = TRUE)
   
   benthos <- agg_bio |>
-    dplyr::filter(Var == "Benthos Spring" | Var == "Benthos Fall") 
+    dplyr::filter(Var == "Benthos Spring" | Var == "Benthos Fall")
   benthos_new_max <- max((benthos$Mean) * 1.2, na.rm = TRUE)
   
   
@@ -454,7 +456,7 @@ plot_aggregate_biomass <- function(
         na.rm = T
       ) +
       ggplot2::scale_y_continuous(
-        limits = c(0, planktivore_new_max),
+        limits = c(0, planktivore_neamap_new_max),
         oob = scales::oob_keep
       ) 
   }
