@@ -1,5 +1,5 @@
 # reinstall ecodata
-remotes::install_github("NOAA-EDAB/ecodata", ref = "d6058eb")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "5729ebc")
 
 # setup ----
 
@@ -191,7 +191,7 @@ save_plot(
 # 1. Stock Status Plot
 save_plot(
   plot_expression = {
-    stock_status_plot <- plot_stock_status(report = region)
+    stock_status_plot <- ecodata::plot_stock_status(report = region)
     if (region == "MidAtlantic") {
       stock_status_plot$p 
     } else {
@@ -601,7 +601,7 @@ save_plot(
 # 1. Commercial Engagement Plot
 save_plot(
   plot_expression = {
-    commercial_engagement_plot <- plot_engagement(
+    commercial_engagement_plot <- ecodata::plot_engagement(
       report = region,
       varName = "Commercial"
     ) +
@@ -615,7 +615,7 @@ save_plot(
 # 2. Recreational Engagement Plot
 save_plot(
   plot_expression = {
-    recreational_engagement_plot <- plot_engagement(
+    recreational_engagement_plot <- ecodata::plot_engagement(
       report = region,
       varName = "Recreational"
     ) +
