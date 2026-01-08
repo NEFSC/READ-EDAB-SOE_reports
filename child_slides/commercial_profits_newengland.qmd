@@ -21,7 +21,7 @@ Both regions dependent on single climate-vulnerable species
 Indicator: Bennet--price and volume indices
 
 ```{r}
-return_plot("bennet-all", region = "MidAtlantic", mode = "slide")
+return_plot("bennet", region = "NewEngland", mode = "slide")
 ```
 
 GOM high revenue despite low volume
