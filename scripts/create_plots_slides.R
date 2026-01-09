@@ -980,7 +980,7 @@ save_plot(
 save_plot(
   plot_expression = {
     # plot is the same even though it takes a region parameter
-    ecodata::plot_energy_density(report = "NewEngland") +
+    plot_energy_density(report = "NewEngland") +
       ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "energy_density",
