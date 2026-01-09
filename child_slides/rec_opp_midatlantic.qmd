@@ -6,11 +6,11 @@
 Indicators: Recreational effort and fleet diversity  
 
 ```{r}
-return_plot("rec-op", region = "MidAtlantic")
+return_plot("rec-op", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r }
-return_plot("rec-div", region = "MidAtlantic")
+return_plot("rec-div", region = "MidAtlantic", mode = "slide")
 ```
 
 :::

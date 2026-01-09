@@ -80,7 +80,39 @@ plot_abc_acl <- function(
       ) |>
       dplyr::filter(Var == "ABC") |>
       dplyr::group_by(Fishery, Time) |>
-      dplyr::summarise(Value = sum(Value), .groups = "drop")
+      dplyr::summarise(Value = sum(Value), .groups = "drop") |>
+      subset(!is.na(Value)) |>
+      dplyr::mutate(Fishery = dplyr::recode(Fishery,
+                                            "Acadian redfish - Gulf of Maine / Georges Bank" = "Acadian redfish",
+                                            "American plaice - Gulf of Maine / Georges Bank" = "American plaice",
+                                            "Atlantic cod - Georges Bank" = "Atlantic cod GB",
+                                            "Atlantic cod - Gulf of Maine" = "Atlantic cod GOM",
+                                            "Atlantic halibut - Northwestern Atlantic Coast" = "Atlantic halibut",
+                                            "Atlantic wolffish - Gulf of Maine / Georges Bank" = "Atlantic wolffish",
+                                            "Goosefish - Gulf of Maine / Northern Georges Bank" = "Goosefish GOM/N.GB",
+                                            "Goosefish - Southern Georges Bank / Mid-Atlantic" = "Goosefish S.GB/MAB",
+                                            "Haddock - Georges Bank" = "Haddock GB",
+                                            "Haddock - Gulf of Maine" = "Haddock GOM",
+                                            "Ocean pout - Northwestern Atlantic Coast" = "Ocean pout",
+                                            "Offshore hake - Northwestern Atlantic Coast" = "Offshore hake",
+                                            "Offshore hake - Northwestern Atlantic Coast | Asmt & Status" = "Offshore hake",
+                                            "Pollock - Gulf of Maine / Georges Bank" = "Pollock",
+                                            "Red hake - Gulf of Maine / Northern Georges Bank" = "Red hake GOM/N.GB",
+                                            "Red hake - Southern Georges Bank / Mid-Atlantic" = "Red hake S.GB/MAB",
+                                            "Silver hake - Gulf of Maine / Northern Georges Bank" = "Silver hake GOM/N.GB",
+                                            "Silver hake - Southern Georges Bank / Mid-Atlantic" = "Silver hake S.GB/MAB",
+                                            "Silver hake - Southern Georges Bank / Mid-Atlantic | Asmt & Status" = "Silver hake S.GB/MAB",
+                                            "White hake - Gulf of Maine / Georges Bank" = "White hake",
+                                            "Windowpane - Gulf of Maine / Georges Bank" = "Windowpane GOM/GB",
+                                            "Windowpane - Southern New England / Mid-Atlantic" = "Windowpane SNE/MAB",
+                                            "Winter flounder - Georges Bank" = "Winter flounder GB",
+                                            "Winter flounder - Gulf of Maine" = "Winter flounder GOM",
+                                            "Winter flounder - Southern New England / Mid-Atlantic" = "Winter flounder SNE/MAB",
+                                            "Witch flounder - Northwestern Atlantic Coast" = "Witch flounder",
+                                            "Yellowtail flounder - Cape Cod / Gulf of Maine" = "Yellowtail flounder CC/GOM",
+                                            "Yellowtail flounder - Georges Bank" = "Yellowtail flounder GB",
+                                            "Yellowtail flounder - Southern New England / Mid-Atlantic" = "Yellowtail flounder SNE/MAB"
+      ))
 
     CatchABC <- ecodata::abc_acl |>
       unique() |>
@@ -214,14 +246,3 @@ plot_abc_acl <- function(
 attr(plot_abc_acl, "report") <- c("MidAtlantic", "NewEngland")
 attr(plot_abc_acl, "plottype") <- c("Stacked", "Catch")
 
-save_plot(
-  plot_expression = {
-    plot_abc_acl(
-      report = "MidAtlantic",
-      plottype = "Stacked"
-    )
-  },
-  indicator = "abcacl_stacked_new",
-  width = 6.5,
-  height = 6.5
-)

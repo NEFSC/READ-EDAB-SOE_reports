@@ -7,9 +7,40 @@ quarto::quarto_render(
     region = "MidAtlantic",
     council = "MAFMC",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
-    date = Sys.Date(),
+    date = Sys.Date() |> format("%B %d, %Y"),
     author = "Abigail Tyrell, lead editor, NEFSC"
   ),
-  output_format = "html"
+  output_format = "all"
+)
+difftime(Sys.time(), now)
+
+## ne slides ----
+now <- Sys.time()
+quarto::quarto_render(
+  input = here::here("parent_presentation.qmd"),
+  output_file = "newengland.html",
+  execute_params = list(
+    region = "NewEngland",
+    council = "NEFMC",
+    fig_caption = here::here("utils/figure_captions_summary.csv"),
+    date = Sys.Date() |> format("%B %d, %Y"),
+    author = "Joe Caracappa, lead editor, NEFSC"
+  ),
+  output_format = "all"
+)
+difftime(Sys.time(), now)
+
+## all slides ----
+now <- Sys.time()
+quarto::quarto_render(
+  input = here::here("parent_presentation.qmd"),
+  execute_params = list(
+    region = "Both",
+    council = "NEFMC, MAFMC",
+    fig_caption = here::here("utils/figure_captions_summary.csv"),
+    date = Sys.Date() |> format("%B %d, %Y"),
+    author = "NEFSC"
+  ),
+  output_format = "all"
 )
 difftime(Sys.time(), now)

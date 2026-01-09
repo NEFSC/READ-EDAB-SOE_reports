@@ -1,4 +1,4 @@
-## 2025 Performance relative to management objectives
+# 2025 Performance relative to management objectives
 
 
 ![Fishing icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//5_FISHING.png){width=15%} &nbsp; &nbsp; &nbsp; ![Fishing industry icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//6_INDUSTRY.png){width=15%} &nbsp; &nbsp; &nbsp; ![Multiple drivers icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//18.MULTIPLE_SYSTEM_DRIVERS.png){width=25%} &nbsp; &nbsp; &nbsp; ![Spiritual cultural icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//22.SPIRITUAL_CULTURAL.png){width=15%} &nbsp; &nbsp; &nbsp; ![Protected species icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//16.PROTECTEDSPECIES.png){width=15%}

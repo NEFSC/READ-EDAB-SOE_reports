@@ -1,0 +1,31 @@
+## Risks to Managing Seasonally: New England
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: thermal transition, habitat persistence, bloom timing
+
+```{r transition}
+return_plot("transition", region = "NewEngland", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Future considerations 
+
+*  Management actions that rely on effective alignment of fisheries availability and biological processes should continue to evaluate whether prior assumptions on seasonal timings still hold.
+
+*  New indicators should be developed to monitor timing shifts for stocks.
+
+:::
+
+::::
+
+Bloom timing
+
+```{r montlychl}
+return_plot("chl-month", region = "NewEngland", mode = "slide")
+```

@@ -6,7 +6,7 @@
 Indicators: Commercial landings, climate risk
 
 ```{r}
-return_plot("total-landings", region = "MidAtlantic")
+return_plot("total-landings", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r climatevul-land, fig.alt="Mid-Atlantic region total climate vulnerability of commercial landings (sum of Mid-Atlantic port landings weighted by species climate vulnerability from Hare et al. 2016)."}
@@ -18,11 +18,11 @@ return_plot("climatevul-land", region = "MidAtlantic")
 Indicators: Recreational harvest
 
 ```{r}
-return_plot("rec-landings", region = "MidAtlantic")
+return_plot("rec-landings", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r}
-return_plot("rec-hms", region = "MidAtlantic")
+return_plot("rec-hms", region = "MidAtlantic", mode = "slide")
 ```
 
 Multiple potential drivers: ecosystem and stock production, management, market conditions, and environmental change.
@@ -38,7 +38,7 @@ Multiple potential drivers: ecosystem and stock production, management, market c
 Indicator: Stock status
 
 ```{r stock-status}
-return_plot("stock-status", region = "MidAtlantic")
+return_plot("stock-status", region = "MidAtlantic", mode = "slide")
 ```
 :::
 
@@ -46,8 +46,8 @@ return_plot("stock-status", region = "MidAtlantic")
 Indicators: Total ABC or ACL, and Realized catch relative to management target
 
 ```{r}
-return_plot("abcacl-stacked", region = "MidAtlantic")
-return_plot("abcacl-catch", region = "MidAtlantic")
+return_plot("abcacl-stacked", region = "MidAtlantic", mode = "slide")
+return_plot("abcacl-catch", region = "MidAtlantic", mode = "slide")
 ```
 
 Few managed species have binding limits; Management less likely playing a role
@@ -65,7 +65,7 @@ Few managed species have binding limits; Management less likely playing a role
 Biomass does not appear to drive landings trends
 
 ```{r}
-return_plot("nefsc-biomass-mab", region = "MidAtlantic")
+return_plot("nefsc-biomass-mab", region = "MidAtlantic", mode = "slide")
 ```
 Key: 
 
@@ -78,14 +78,17 @@ Key:
 * Declining aggregate planktivores, benthos?
 
 ```{r}
-return_plot("comm-landings", region = "MidAtlantic")
+return_plot("comm-landings", region = "MidAtlantic", mode = "slide")
 ```
 
 * Recreational drivers differ: shark fishery management, possibly survey methodology
 
 Monitor: 
+
 * climate risks including warming, ocean acidification, and shifting distributions  
+
 * ecosystem composition and production changes  
+
 * fishing engagement  
 
 :::

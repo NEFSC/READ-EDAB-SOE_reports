@@ -1,0 +1,39 @@
+## Objective: New England Ecological Stability `r I(mixed_trend)` `r I(above_average)`
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+*Ecological* Indicators: zooplankton diversity (*not updated*) and total primary production
+
+```{r}
+return_plot("zoo-diversity", region = "NewEngland", mode = "slide")
+```
+
+```{r}
+return_plot("totpp", region = "NewEngland", mode = "slide")
+```
+
+Ecological Implications:  
+
+* Adult diversity in GOM suggests increase in warm-water species
+
+:::
+
+::: {.soe-50-column}
+
+*Ecological* Indicators: fish richness and traits
+
+```{r}
+return_plot("exp-n", region = "NewEngland", mode = "slide")
+```
+
+```{r}
+return_plot("traits", region = "NewEngland", mode = "slide")
+```
+
+* Declines in species fecundity & other life history traits suggests changing ecology
+
+:::
+
+::::

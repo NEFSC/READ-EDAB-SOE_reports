@@ -1,0 +1,129 @@
+
+## Revised Risks: Climate and Ecosystem Change 
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+<br> <br>
+
+```{r risktabagain}
+mng_obj <- data.frame("Risks" = c("Risks to Managing Spatially",
+                                  "Risks to Managing Seasonally",
+                                  "Risks to Setting Catch Limits",
+                                  "Offshore Wind Risks"),
+                      "Observation Indicators" = c("Managed species (fish and cetacean) distribution shifts",
+                                                   "Managed species spawning and migration timing changes", 
+                                                   "Managed species body condition and recruitment changes",
+                                                   "Fishery revenue and landings from wind lease areas by species and port"),
+                      "Potential Driver Indicators" = c("Benthic and pelagic forage distribution; ocean temperature, changes in currents and cold pool",
+                                                        "Habitat timing: Length of ocean summer, cold pool seasonal persistence",
+                                                        "Benthic and pelagic forage quality & abundance: ocean temperature & acidification ",
+                                                        "Wind development speed; Protected species presence and  hotspots"
+                      ))
+
+mng_obj$service <- c(rep("Climate and Ecosystem Risks", 3), 
+                     rep("Other Ocean Uses Risks", 1))
+
+tab <- flextable::as_grouped_data(mng_obj, groups = "service") %>% 
+  flextable::as_flextable(hide_grouplabel=TRUE) %>% 
+  flextable::align(i = ~ !is.na(service), align = "left") %>% 
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
+  flextable::set_header_labels(Risks = "Risk categories",
+                               Observation.Indicators = "Observation indicators reported",
+                               Potential.Driver.Indicators = "Potential driver indicators reported") %>%
+
+  flextable::set_caption("Risks to meeting fishery management objectives in the Mid-Atlantic Bight")  |>
+flextable::fontsize(size = 16,
+part = "all")
+  #flextable::autofit() 
+```
+
+```{r}
+FitFlextableToPage(tab)
+```
+
+:::
+
+::: {.soe-50-column}
+
+### Risks to Managing Spatially
+Potential Impacts: Spatial misallocation of quotas within and across jurisdictions, leading to unmet quotas and/or increased discards. Specification of gear management areas may not utilize quotas and minimize bycatch.
+
+### Risks to Managing Seasonally
+Potential Impacts: Spawning closures are less effective if peak spawning occurs outside the seasonal closure. Seasonal openings of exemption areas may be inconsistent with species presence. Seasonal quota allocations may be misaligned with availability.
+
+### Risks to Setting Catch Limits
+Potential Impacts: Changes in environmental conditions can affect stock reference points and short-term stock projections. When productivity changes are not accounted for, they can lead to misspecified quotas and rebuilding plans.
+
+:::
+
+::::
+
+## Risks to Managing Spatially: Coastwide
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Indicators: Fish distribution shifts
+
+```{r}
+return_plot("species-dist", region = "BothReports", mode = "slide")
+```  
+
+:::
+
+::: {.soe-50-column}
+
+Cetacean distribution shifts 
+
+```{r}
+return_plot("protectedspp-dist-shifts", region = "BothReports", mode = "slide")
+```
+
+:::
+
+::::
+
+## Risks to Managing Spatially: Coastwide
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: Forage shifts, pelagic and benthic
+
+```{r forageshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity."}
+return_plot("forageshifts", region = "BothReports", mode = "slide")
+```
+
+```{r macrobenthosshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf"}
+return_plot("macrobenthosshifts", region = "BothReports", mode = "slide")
+```
+
+New Spatial Shift Indicators: [Benthos](https://noaa-edab.github.io/catalog/benthos_index.html), [Zooplankton](https://noaa-edab.github.io/catalog/zooplankton_index.html)
+
+:::
+
+::: {.soe-50-column}
+
+Drivers: changing ocean habitat  
+
+```{r long-term-sst, fig.alt="Northeast US annual sea surface temperature (SST, black), with increasing trend (orange)."}
+return_plot("long-term-sst", region = "BothReports", mode = "slide")
+```
+
+```{r GSI, fig.alt = "Index representing changes in the location of the Gulf Stream north wall (black). Positive values represent a more northerly Gulf Stream position, NO LONGER HAS increasing trend."}
+return_plot("GSI", region = "BothReports", mode = "slide")
+```
+
+Cold pool temperature and spatial extent
+
+```{r cold-pool-size, fig.alt="Seasonal cold pool mean temperature (left) and spatial extent index (right), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple)."}
+return_plot("cold-pool-size", region = "BothReports", mode = "slide")
+```
+
+:::
+
+::::

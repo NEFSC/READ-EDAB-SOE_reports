@@ -1,0 +1,37 @@
+## Risks to Managing Seasonally: Mid-Atlantic
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: thermal transition, habitat persistence, bloom timing
+
+```{r, fig.alt="Ocean summer length: the annual total number of days between the spring thermal transition date and the fall thermal transition date (black), with an increasing trend (orange)."}
+return_plot("transition", region = "MidAtlantic", mode = "slide")
+```
+
+Cold pool seasonal persistence
+
+```{r, fig.alt="Cold pool persistence index based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles)."}
+return_plot("cold-pool-time", region = "BothReports", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Bloom timing
+
+```{r, fig.alt="Monthly median chlorophyll a concentration in the MAB (black) with significant increase in January (orange line) and decrease in September (purple line)."}
+return_plot("chl-month", region = "MidAtlantic", mode = "slide")
+```
+
+Future considerations 
+
+*  Management actions that rely on effective alignment of fisheries availability and biological processes should continue to evaluate whether prior assumptions on seasonal timings still hold.
+
+*  New indicators should be developed to monitor timing shifts for stocks.
+
+:::
+
+::::

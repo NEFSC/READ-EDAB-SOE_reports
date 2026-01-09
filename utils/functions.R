@@ -1,9 +1,11 @@
 FitFlextableToPage <- function(ft, pgwidth = 6) {
-  ft_out <- ft %>% autofit()
+  ft_out <- ft %>% flextable::autofit()
 
-  ft_out <- width(
+  ft_out <- flextable::width(
     ft_out,
-    width = dim(ft_out)$widths * pgwidth / (flextable_dim(ft_out)$widths)
+    width = dim(ft_out)$widths *
+      pgwidth /
+      (flextable::flextable_dim(ft_out)$widths)
   )
   return(ft_out)
 }
@@ -41,6 +43,9 @@ return_filepath <- function(
       region == "BothReports" ~ "slide_fig_path_both"
     )
   }
+
+  # message(col)
+
   filepath <- key |>
     dplyr::filter(.data$chunkName == chunk_name) |>
     dplyr::pull(col)
@@ -57,6 +62,16 @@ return_plot <- function(
 
   if (file.exists(file) & file.info(file)$isdir == FALSE) {
     file |>
+      knitr::include_graphics(dpi = 300)
+  } else if (!file.exists(file)) {
+    # key could include the file name without the date or png extension
+    new_file <- list.files(
+      path = here::here("images"),
+      pattern = basename(file),
+      full.names = TRUE,
+      recursive = TRUE
+    )[1] # pick the first file if there are multiple
+    new_file |>
       knitr::include_graphics(dpi = 300)
   } else {
     stop(paste0("Cannot find file specified: ", file))
