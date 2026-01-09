@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "5729ebc")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "08513b1")
 
 # setup ----
 
@@ -131,7 +131,7 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionland",
-      n = 100
+      n = 21
     ) +
       ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
       ggplot2::theme(legend.position = 'bottom')
@@ -158,7 +158,7 @@ save_plot(
 # rec hms and sharks
 save_plot(
   plot_expression = {
-    rec_hms_plot <- ecodata::plot_rec_hms(report = region, n = 100) +
+    rec_hms_plot <- ecodata::plot_rec_hms(report = region, n = 10) +
       ggplot2::scale_color_discrete(
         limits = c("LargeCoastal", "Prohibited", "SmallCoastal"),
         labels = c("Large Coastal", "Prohibited", "Small Coastal")
@@ -167,7 +167,7 @@ save_plot(
       ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     rec_lps_sharks_plot <- ecodata::plot_lps_sharks(
       report = region,
-      n = 100
+      n = 10
     )  +
       ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
       ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
@@ -203,7 +203,6 @@ save_plot(
 
 
 # 2. ABC/ACL Stacked Plot  
-
 save_plot(
   plot_expression = {
     ecodata::plot_abc_acl(
@@ -215,7 +214,6 @@ save_plot(
   width = 6.5,
   height = 4.5
 )
-
 
 
 # 3. ABC/ACL Catch Plot
@@ -373,14 +371,15 @@ save_plot(
       ) +
         ggplot2::ylab("Million USD (2023)") +
         ggplot2::theme(
-          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
-      ggpubr::ggarrange(gb, gom, ncol = 2,
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
+          legend.position = "bottom")
+      ggpubr::ggarrange(gb, gom, ncol = 1,
                         common.legend = TRUE,
                         legend = "bottom") 
     }
   },
   indicator = "bennet_all",
-  height = ifelse(region == "NewEngland", 9, 6.5),
+  width = ifelse(region == "NewEngland", 9, 6.5),
   height = 6.5
 )
 
@@ -390,7 +389,7 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionrev",
-      n = 100
+      n = 21
     ) +
          ggplot2::theme(legend.position = "bottom") +
         ggplot2::ylab("Total Climate Vulnerability \n (Regional Revenue)") 
@@ -448,13 +447,13 @@ save_plot(
     a <- ecodata::plot_commercial_div(
       report = region,
       varName = "Fleet count",
-      n = 100
+      n = 22
     ) +
          ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     b <- ecodata::plot_commercial_div(
       report = region,
       varName = "Fleet diversity in revenue",
-      n = 100
+      n = 22
     ) +
          ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     ggpubr::ggarrange(a, b, nrow = 2)
@@ -470,7 +469,7 @@ save_plot(
     plt <- ecodata::plot_commercial_div(
       report = region,
       varName = "Permit revenue species diversity",
-      n = 100
+      n = 22
     )
        if (region == "MidAtlantic") {
         plt
@@ -501,7 +500,8 @@ save_plot(
         report = region,
         varName = "pp",
         plottype = "total",
-        EPU = "MAB"
+        EPU = "MAB",
+        n = 27
       )  +
              ggplot2::coord_cartesian(ylim = c(2e+07, 4e+07), xlim = c(1998, 2023)) +
             ggplot2::ggtitle("MAB Primary Production") +
@@ -579,7 +579,7 @@ save_plot(
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-      ecodata::plot_finfish_traits(report = region, varName = "length_maturity")  +
+      ecodata::plot_finfish_traits(report = region, varName = "length_maturity", n = 10)  +
              ggplot2::theme(legend.position = 'bottom')
     } else {
       ecodata::plot_finfish_traits(
@@ -632,7 +632,7 @@ save_plot(
   plot_expression = {
     ecodata::plot_community_climate_vulnerability(
       report = region,
-      n = 100
+      n = 21
     ) +
         ggplot2::theme(legend.position = 'bottom')
   },
@@ -782,7 +782,7 @@ save_plot(
 # 5. Energy Density Plot
 save_plot(
   plot_expression = {
-    ecodata::plot_energy_density(report = region) +
+    plot_energy_density(report = region) +
          ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "energy_density",
@@ -895,7 +895,8 @@ save_plot(
     ecodata::plot_wind_revenue(
       report = region,
       varName = "value",
-      plottype = "nofacets"
+      plottype = "nofacets",
+      n = 16
     )    +
          ggplot2::theme(legend.position = "bottom")
   },
@@ -974,7 +975,7 @@ save_plot(
 save_plot(
   plot_expression = {
     # plot is the same even though it takes a region parameter
-    ecodata::plot_energy_density(report = "NewEngland")
+    plot_energy_density(report = "NewEngland")
   },
   indicator = "energy_density",
   width = 6.5,
@@ -1017,7 +1018,7 @@ save_plot(
   plot_expression = {
     ecodata::plot_narw(varName = "adult", n = 10) + 
       ggplot2::ggtitle("North Atlantic right whale abundance") +
-      ggplot2::scale_x_continuous(limits = c(1990, 2025))
+      ggplot2::scale_x_continuous(limits = c(1980, 2025))
   },
   indicator = "narw_abundance",
   width = 6.5,
@@ -1182,7 +1183,7 @@ save_plot(
 save_plot(
   plot_expression = {
     # for both reports, even though function calls NE
-    ecodata::plot_slopewater(report = "NewEngland")
+    ecodata::plot_slopewater(report = "NewEngland", n = 10)
   },
   indicator = "slopewater",
   width = 6,
@@ -1213,7 +1214,7 @@ save_plot(
 # mass inshore survey -- NE only
 save_plot(
   plot_expression = {
-    plot_mass_inshore_survey(report = region, n = 10) +
+    ecodata::plot_mass_inshore_survey(report = region, n = 10) +
      ggplot2::geom_point()+
      ggplot2::geom_line()
   },
