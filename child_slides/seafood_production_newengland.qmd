@@ -49,10 +49,12 @@ Indicators: Survey biomass
 ::: {layout-ncol=2}
 
 ```{r}
+#| fig-cap: "Gulf of Maine"
 return_plot("nefsc-biomass-gom", region = "NewEngland", mode = "slide")
 ```
 
 ```{r}
+#| fig-cap: "Georges Bank"
 return_plot("nefsc-biomass-gb", region = "NewEngland", mode = "slide")
 ```
 

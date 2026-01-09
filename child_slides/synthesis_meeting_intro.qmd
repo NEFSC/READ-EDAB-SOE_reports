@@ -79,9 +79,10 @@ knitr::include_graphics(here::here("images/bsb_report_card_Page_2.png"))
     + Page 2 risk summary bullets
     + Page 3 2025 snapshot
 1. Performance relative to management objectives
+    - *What* does the indicator say--up, down, stable?
+    - *Why* do we think it is changing: explore drivers
 1. Risks to meeting management objectives
-    + Climate and Ecosystem risks
-    + Offshore wind development
+    - Same *What* and *Why* as Performance Section
 1. 2025 Highlights
 
 ::: {layout-nrow=1}
@@ -137,8 +138,8 @@ risks <- tibble::tibble("Objective Categories" = c(
 ),
 "Indicators reported" = c(
   "Fish and cetacean distribution shifts",
-  "Spawning and migration timing changes",
-  "Fish condition and recruitment changes",
+  "Spawning and migration timing",
+  "Fish condition and recruitment",
   "Fishery revenue and landings from wind lease areas by species and port"
 ),
 service = "Risks to Meeting Objectives"
@@ -164,13 +165,13 @@ flextable::as_grouped_data(mng_obj, groups = "service") |>
 ::::
 
 
-## Ecosystem synthesis themes
+## Ecosystem synthesis framework
 
-Characterizing ecosystem change for fishery management
+Characterizing ecosystem change for fishery management -- how do we synthesize multiple indicators to explain ecosystem dynamics?
 
 * Societal, biological, physical and chemical factors comprise the **multiple system drivers** that influence marine ecosystems through a variety of different pathways. 
-* Changes in the multiple drivers can lead to **regime shifts** — large, abrupt and persistent changes in the structure and function of an ecosystem.  
-* Regime shifts and changes in how the multiple system drivers interact can result in **ecosystem reorganization** as species and humans respond and adapt to the new environment.
+* Changes in the multiple drivers can lead to **regime shifts** — large, abrupt and persistent changes in the structure and function of an ecosystem. While we don't yet incorporate statistical tests for regime shifts, we qualitatively assess whether multiple indicators suggest a regime shift may have occurred.
+* Regime shifts and changes in how the multiple system drivers interact can result in **ecosystem reorganization** as species and humans respond and adapt to the new environment. We qualitatively consider whether ecosystem reorganization has occured by assessing changes in species distributions, community composition, food web structure, and fishery dynamics.
 
 :::: {.soe-50-50-slide}
 
@@ -191,49 +192,6 @@ knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/d
 :::
 
 ::::
-
-## Report structure 2021-2024, maintain in 2025: towards improved synthesis 
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-* Performance relative to management objectives
-    - *What* does the indicator say--up, down, stable?
-    - *Why* do we think it is changing: integrates synthesis themes
-        - Multiple drivers
-        - Regime shifts
-        - Ecosystem reorganization
-* Objectives
-    - Seafood production
-    - Profits
-    - Recreational opportunities
-    - Stability
-    - Social and cultural
-    - Protected species
-
-:::
-
-::: {.soe-50-column}
-
-* Risks to meeting fishery management objectives
-    - Same *What* and *Why* as Performance Section
-    - New structure for Climate section
-        - Fishery risk indicator
-        - Climate and ecosystem drivers of fishery risk
-        - Future considerations
-* Risk categories
-    + *Climate and Ecosystem Change*
-        + *Risk to spatial management*
-        + *Risk to seasonal management*
-        + *Risk to quota setting/rebuilding*
-    + Other ocean uses
-        + Offshore wind development
-
-:::
-
-::::
-
 
 ## State of the Ecosystem report scale and figures
 

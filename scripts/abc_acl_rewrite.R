@@ -16,7 +16,8 @@
 plot_abc_acl <- function(
   shadedRegion = NULL,
   report = "MidAtlantic",
-  plottype = "Stacked"
+  plottype = "Stacked",
+  n = 0
 ) {
   # generate plot setup list (same for all plot functions)
   setup <- ecodata::plot_setup(shadedRegion = shadedRegion, report = report)
@@ -82,37 +83,40 @@ plot_abc_acl <- function(
       dplyr::group_by(Fishery, Time) |>
       dplyr::summarise(Value = sum(Value), .groups = "drop") |>
       subset(!is.na(Value)) |>
-      dplyr::mutate(Fishery = dplyr::recode(Fishery,
-                                            "Acadian redfish - Gulf of Maine / Georges Bank" = "Acadian redfish",
-                                            "American plaice - Gulf of Maine / Georges Bank" = "American plaice",
-                                            "Atlantic cod - Georges Bank" = "Atlantic cod GB",
-                                            "Atlantic cod - Gulf of Maine" = "Atlantic cod GOM",
-                                            "Atlantic halibut - Northwestern Atlantic Coast" = "Atlantic halibut",
-                                            "Atlantic wolffish - Gulf of Maine / Georges Bank" = "Atlantic wolffish",
-                                            "Goosefish - Gulf of Maine / Northern Georges Bank" = "Goosefish GOM/N.GB",
-                                            "Goosefish - Southern Georges Bank / Mid-Atlantic" = "Goosefish S.GB/MAB",
-                                            "Haddock - Georges Bank" = "Haddock GB",
-                                            "Haddock - Gulf of Maine" = "Haddock GOM",
-                                            "Ocean pout - Northwestern Atlantic Coast" = "Ocean pout",
-                                            "Offshore hake - Northwestern Atlantic Coast" = "Offshore hake",
-                                            "Offshore hake - Northwestern Atlantic Coast | Asmt & Status" = "Offshore hake",
-                                            "Pollock - Gulf of Maine / Georges Bank" = "Pollock",
-                                            "Red hake - Gulf of Maine / Northern Georges Bank" = "Red hake GOM/N.GB",
-                                            "Red hake - Southern Georges Bank / Mid-Atlantic" = "Red hake S.GB/MAB",
-                                            "Silver hake - Gulf of Maine / Northern Georges Bank" = "Silver hake GOM/N.GB",
-                                            "Silver hake - Southern Georges Bank / Mid-Atlantic" = "Silver hake S.GB/MAB",
-                                            "Silver hake - Southern Georges Bank / Mid-Atlantic | Asmt & Status" = "Silver hake S.GB/MAB",
-                                            "White hake - Gulf of Maine / Georges Bank" = "White hake",
-                                            "Windowpane - Gulf of Maine / Georges Bank" = "Windowpane GOM/GB",
-                                            "Windowpane - Southern New England / Mid-Atlantic" = "Windowpane SNE/MAB",
-                                            "Winter flounder - Georges Bank" = "Winter flounder GB",
-                                            "Winter flounder - Gulf of Maine" = "Winter flounder GOM",
-                                            "Winter flounder - Southern New England / Mid-Atlantic" = "Winter flounder SNE/MAB",
-                                            "Witch flounder - Northwestern Atlantic Coast" = "Witch flounder",
-                                            "Yellowtail flounder - Cape Cod / Gulf of Maine" = "Yellowtail flounder CC/GOM",
-                                            "Yellowtail flounder - Georges Bank" = "Yellowtail flounder GB",
-                                            "Yellowtail flounder - Southern New England / Mid-Atlantic" = "Yellowtail flounder SNE/MAB"
-      ))
+      dplyr::mutate(
+        Fishery = dplyr::recode(
+          Fishery,
+          "Acadian redfish - Gulf of Maine / Georges Bank" = "Acadian redfish",
+          "American plaice - Gulf of Maine / Georges Bank" = "American plaice",
+          "Atlantic cod - Georges Bank" = "Atlantic cod GB",
+          "Atlantic cod - Gulf of Maine" = "Atlantic cod GOM",
+          "Atlantic halibut - Northwestern Atlantic Coast" = "Atlantic halibut",
+          "Atlantic wolffish - Gulf of Maine / Georges Bank" = "Atlantic wolffish",
+          "Goosefish - Gulf of Maine / Northern Georges Bank" = "Goosefish GOM/N.GB",
+          "Goosefish - Southern Georges Bank / Mid-Atlantic" = "Goosefish S.GB/MAB",
+          "Haddock - Georges Bank" = "Haddock GB",
+          "Haddock - Gulf of Maine" = "Haddock GOM",
+          "Ocean pout - Northwestern Atlantic Coast" = "Ocean pout",
+          "Offshore hake - Northwestern Atlantic Coast" = "Offshore hake",
+          "Offshore hake - Northwestern Atlantic Coast | Asmt & Status" = "Offshore hake",
+          "Pollock - Gulf of Maine / Georges Bank" = "Pollock",
+          "Red hake - Gulf of Maine / Northern Georges Bank" = "Red hake GOM/N.GB",
+          "Red hake - Southern Georges Bank / Mid-Atlantic" = "Red hake S.GB/MAB",
+          "Silver hake - Gulf of Maine / Northern Georges Bank" = "Silver hake GOM/N.GB",
+          "Silver hake - Southern Georges Bank / Mid-Atlantic" = "Silver hake S.GB/MAB",
+          "Silver hake - Southern Georges Bank / Mid-Atlantic | Asmt & Status" = "Silver hake S.GB/MAB",
+          "White hake - Gulf of Maine / Georges Bank" = "White hake",
+          "Windowpane - Gulf of Maine / Georges Bank" = "Windowpane GOM/GB",
+          "Windowpane - Southern New England / Mid-Atlantic" = "Windowpane SNE/MAB",
+          "Winter flounder - Georges Bank" = "Winter flounder GB",
+          "Winter flounder - Gulf of Maine" = "Winter flounder GOM",
+          "Winter flounder - Southern New England / Mid-Atlantic" = "Winter flounder SNE/MAB",
+          "Witch flounder - Northwestern Atlantic Coast" = "Witch flounder",
+          "Yellowtail flounder - Cape Cod / Gulf of Maine" = "Yellowtail flounder CC/GOM",
+          "Yellowtail flounder - Georges Bank" = "Yellowtail flounder GB",
+          "Yellowtail flounder - Southern New England / Mid-Atlantic" = "Yellowtail flounder SNE/MAB"
+        )
+      )
 
     CatchABC <- ecodata::abc_acl |>
       unique() |>
@@ -196,12 +200,17 @@ plot_abc_acl <- function(
         stat = "identity",
         fill = "lightblue"
       ) +
+      # ggplot2::geom_line() +
       ggplot2::ggtitle("Combined ABC or ACL for Managed Species") +
       ggplot2::ylab("ABC or ACL, metric tons") +
       ggplot2::xlab(ggplot2::element_blank()) +
       ggplot2::scale_x_continuous(breaks = scales::pretty_breaks()) +
-      ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(n = 3)) +
+      ggplot2::scale_y_continuous(
+        breaks = scales::pretty_breaks(n = 3),
+        limits = c(0, NA)
+      ) +
       ecodata::theme_ts() +
+      # ecodata::geom_lm(n = n) +
       ecodata::theme_title()
 
     p <- ggpubr::ggarrange(
@@ -245,4 +254,3 @@ plot_abc_acl <- function(
 
 attr(plot_abc_acl, "report") <- c("MidAtlantic", "NewEngland")
 attr(plot_abc_acl, "plottype") <- c("Stacked", "Catch")
-
