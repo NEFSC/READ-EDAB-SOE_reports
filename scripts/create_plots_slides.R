@@ -601,7 +601,8 @@ save_plot(
     if (region == "MidAtlantic") {
       ecodata::plot_finfish_traits(
         report = region,
-        varName = "trophic_level"
+        varName = "trophic_level",
+        n = 10
       ) +
         ggplot2::theme(legend.position = 'bottom')
     } else {
