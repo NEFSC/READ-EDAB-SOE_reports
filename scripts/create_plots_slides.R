@@ -1,5 +1,5 @@
 # reinstall ecodata
-remotes::install_github("NOAA-EDAB/ecodata", ref = "eb1aa4690c9ae28dc45d0619bd3163e19cceb22c")
+remotes::install_github("NOAA-EDAB/ecodata", ref = "cfdb2244f733f3e3e75fd1c7ae871c03b961d9da")
 
 # setup ----
 
