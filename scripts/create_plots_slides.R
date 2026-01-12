@@ -461,7 +461,7 @@ save_plot(
     b <- ecodata::plot_commercial_div(
       report = region,
       varName = "Fleet diversity in revenue",
-      n = 2
+      n = 22
     ) +
       ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     ggpubr::ggarrange(a, b, nrow = 2)
@@ -676,7 +676,7 @@ save_plot(
   plot_expression = {
     ecodata::plot_community_climate_vulnerability(
       report = region,
-      n = 100
+      n = 21
     ) +
       ggplot2::theme(legend.position = 'bottom')
   },
@@ -1002,7 +1002,8 @@ save_plot(
     ecodata::plot_wind_revenue(
       report = region,
       varName = "value",
-      plottype = "nofacets"
+      plottype = "nofacets",
+      n = 16
     ) +
       ggplot2::theme(legend.position = "bottom")
   },
@@ -1312,7 +1313,7 @@ save_plot(
 save_plot(
   plot_expression = {
     # for both reports, even though function calls NE
-    ecodata::plot_slopewater(report = "NewEngland")
+    ecodata::plot_slopewater(report = "NewEngland", n = 10)
   },
   indicator = "slopewater",
   width = 6,
