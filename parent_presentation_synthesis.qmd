@@ -62,9 +62,7 @@ format:
 
 {{< include child_slides/synthesis_meeting_intro.qmd >}}
 
-## Council Requests from 2025 and Prioritization
-
-<!-- {{< include child_slides/request_memo.qmd >}} -->
+{{< include child_slides/request_memo.qmd >}}
 
 ## 2026 Report Timeline
 
