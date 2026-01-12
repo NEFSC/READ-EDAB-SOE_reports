@@ -55,7 +55,7 @@ return_plot("abcacl-stacked", region = "MidAtlantic", mode = "slide")
 
 ```
 
-Few managed species have binding limits; Management less likely playing a role
+Catch near limits on average
 
 :::
 

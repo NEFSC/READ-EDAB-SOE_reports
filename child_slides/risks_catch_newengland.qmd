@@ -81,7 +81,9 @@ return_plot("traits-k", region = "NewEngland", mode = "slide")
 
 ::: {.soe-50-column}
 
-Add trophic level here
+```{r}
+return_plot("traits-tl", region = "NewEngland", mode = "slide")
+```
 
 :::
 

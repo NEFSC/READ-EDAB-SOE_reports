@@ -50,6 +50,10 @@ return_plot("narw-abundance", region = "BothReports")
 return_plot("NARW-calf-abundance", region = "BothReports")
 ```
 
+```{r}
+return_plot("salmon", region = "NewEngland")
+```
+
 :::
 
 ::: {.soe-50-column}

@@ -120,6 +120,10 @@ These are the basis of 2026--discuss what to change
 
 {{< include child_slides/fishery_stability_newengland.qmd >}}
 
+## New indicator: Crew survey
+
+How could crew survey information be integrated into fisheries stability analyses?
+
 {{< include child_slides/ecosystem_stability_midatlantic.qmd >}}
 
 {{< include child_slides/ecosystem_stability_newengland.qmd >}}

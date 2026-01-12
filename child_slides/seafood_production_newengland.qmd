@@ -3,11 +3,14 @@
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
+
 Indicators: Commercial landings, climate risk
 
 ```{r}
 return_plot("total-landings", region = "NewEngland", mode = "slide")
 ```
+
+Multiple drivers: ecosystem and stock production, management actions (stock rebuilding), market conditions (including COVID-19 disruptions), and environmental change
 
 :::
 
@@ -26,7 +29,7 @@ return_plot("rec-hms", region = "NewEngland", mode = "slide")
 
 ::::
 
-Multiple drivers: ecosystem and stock production, management actions (stock rebuilding), market conditions (including COVID-19 disruptions), and environmental change
+
 
 ## New England drivers: Stock status? Survey biomass?
 :::: {.soe-50-50-slide}
