@@ -1,32 +1,55 @@
-## Objective: Mid Atlantic Ecological Stability: Not Stable 
+## Objective: Mid Atlantic Ecological Stability `r I(mixed_trend)` `r I(above_average)`
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
-*Ecological* Indicators: PP and zooplankton
-
-```{r totpp}
-return_plot("totpp", region = "MidAtlantic", mode = "slide")
-```
+*Ecological* Indicators: zooplankton communities and total primary production
 
 ```{r}
-return_plot("zoo-diversity", region = "MidAtlantic", mode = "slide")
+return_plot("zoopanom", region = "MidAtlantic", mode = "slide")
 ```
 
 :::
 
 ::: {.soe-50-column}
 
+```{r}
+return_plot("totpp", region = "MidAtlantic", mode = "slide")
+```
+
+
+```{r}
+return_plot("zoo-comm", region = "MidAtlantic", mode = "slide")
+```
+
+
+:::
+
+::::
+
+## Objective: Mid Atlantic Ecological Stability (Cont.)
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
 *Ecological* Indicators: fish richness and traits
 
-```{r }
+```{r}
+return_plot("traits", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r}
 return_plot("exp-n", region = "MidAtlantic", mode = "slide")
 ```
 
-```{r traits, fig.alt="Fish community functional traits in the Mid Atlantic Bight based on Fall (red) and Spring (blue) survey data. Length at maturity for the full finfish community has increased in spring (orange line), but decreased in fall (purple lines)"}
-return_plot("traits", region = "MidAtlantic", mode = "slide")
-```
+
+* Declines in species trophic level & other life history traits suggests changing ecology
 
 :::
 
