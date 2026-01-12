@@ -100,11 +100,49 @@ format:
 ```{r, child = here::here("child_slides/fishery_stability_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
+## Fishery Stability: Discussion
+- Feedback from social scientists & councils to focus on
+  - Volatility - how much do fishery landings/profits/effort fluctuate year to year?
+  - Adaptive Capacity - how well can fishery participants adapt to change?
+- Do our indicators address this definition?
+- Are there others used elsewhere that are useful?
+
+## Ecosystem Stability: Discussion
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+In 2025 we move from increasing/decreasing stability to stable/not-stable
+
+"Not-stable" doesn't mean:
+
+* we are experiencing a regime shift necessarily
+* we are experiencing negative impacts
+
+"Stable" doesn't mean:
+
+* There are no changes in the system
+* All is well
+  
+:::
+
+::: {.soe-50-column}
+
+"Not Stable" does mean:
+
+* There are large changes in multiple ecosystem components
+* These changes are altering the structure or function of the ecosystem
+
+:::
+
+::::
+
 ```{r, child = here::here("child_slides/ecosystem_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
 ```{r, child = here::here("child_slides/ecosystem_stability_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
+
+
 
 ```{r, child = here::here("child_slides/social_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```

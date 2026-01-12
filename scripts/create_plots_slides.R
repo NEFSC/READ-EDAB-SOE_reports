@@ -192,8 +192,11 @@ save_plot(
     rec_lps_sharks_plot <- ecodata::plot_lps_sharks(
       report = region,
       n = 10
-    )  +
-      ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
+    ) +
+      ggplot2::ggtitle(paste(
+        region2,
+        "Large Pelagics Survey Rec. Shark Landings"
+      )) +
       ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
     ggpubr::ggarrange(
       rec_lps_sharks_plot,
@@ -549,7 +552,7 @@ save_plot(
         plottype = "total",
         EPU = "MAB",
         n = 27
-      )  +
+      ) +
         ggplot2::coord_cartesian(ylim = c(2e+07, 4e+07), xlim = c(1998, 2023)) +
         ggplot2::ggtitle("MAB Primary Production") +
         ggplot2::ylab("Carbon (mt)")
@@ -638,7 +641,11 @@ save_plot(
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-      ecodata::plot_finfish_traits(report = region, varName = "length_maturity", n = 10)  +
+      ecodata::plot_finfish_traits(
+        report = region,
+        varName = "length_maturity",
+        n = 10
+      ) +
         ggplot2::theme(legend.position = 'bottom')
     } else {
       ecodata::plot_finfish_traits(
@@ -657,6 +664,29 @@ save_plot(
   indicator = "traits",
   width = 6.5,
   height = ifelse(region == "NewEngland", 3.5, 4)
+)
+
+# finfish traits -- growth rate
+
+save_plot(
+  plot_expression = {
+    plt <- ecodata::plot_finfish_traits(
+      report = region,
+      varName = "k",
+      n = 10
+    ) +
+      ggplot2::theme(legend.position = 'bottom')
+
+    if (region == "NewEngland") {
+      plt <- plt +
+        ggplot2::facet_wrap(ggplot2::vars(EPU), nrow = 2)
+    }
+
+    plt
+  },
+  indicator = "traits_k",
+  width = 6.5,
+  height = ifelse(region == "NewEngland", 6, 4)
 )
 
 ## Community social and climate vulnerability ----
@@ -725,10 +755,6 @@ save_plot(
           "Time between spring and fall transition in",
           full_region
         )) +
-        ggplot2::theme(
-          strip.background = ggplot2::element_blank(),
-          strip.text.x = ggplot2::element_blank()
-        ) +
         ggplot2::facet_wrap(~EPU, nrow = 2)
     }
   },
@@ -768,30 +794,59 @@ save_plot(
 # productivity + recruitment anomalies
 save_plot(
   plot_expression = {
-    productivity_anomaly_plot <- ecodata::plot_productivity_anomaly(
-      report = region,
-      EPU = dplyr::case_when(
-        region == "NewEngland" ~ "GOM",
-        region == "MidAtlantic" ~ "MAB"
-      )
-    ) +
-      ggplot2::guides(
-        fill = ggplot2::guide_legend(
-          ncol = dplyr::case_when(
-            region == "NewEngland" ~ 3,
-            region == "MidAtlantic" ~ 2,
-            TRUE ~ 2
-          )
-        )
+    if (region == "MidAtlantic") {
+      productivity_anomaly_plot <- ecodata::plot_productivity_anomaly(
+        report = region,
+        EPU = "MAB"
       ) +
-      ggplot2::theme(
-        legend.position = "none",
-        #  legend.title = ggplot2::element_blank(),
-        # legend.text = ggplot2::element_text(size = 8),
-        plot.title = ggplot2::element_text(size = 11),
-        axis.text = ggplot2::element_text(size = 11),
-        axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
-      )
+        ggplot2::guides(
+          fill = ggplot2::guide_legend(
+            ncol = 2
+          )
+        ) +
+        ggplot2::theme(
+          legend.position = "none",
+          plot.title = ggplot2::element_text(size = 11),
+          axis.text = ggplot2::element_text(size = 11),
+          axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
+        )
+    }
+    if (region == "NewEngland") {
+      gom <- ecodata::plot_productivity_anomaly(
+        report = region,
+        EPU = "GOM"
+      ) +
+        ggplot2::guides(
+          fill = ggplot2::guide_legend(
+            ncol = 3
+          )
+        ) +
+        ggplot2::theme(
+          legend.position = "none",
+          plot.title = ggplot2::element_text(size = 11),
+          axis.text = ggplot2::element_text(size = 11),
+          axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
+        )
+
+      gb <- ecodata::plot_productivity_anomaly(
+        report = region,
+        EPU = "GB"
+      ) +
+        ggplot2::guides(
+          fill = ggplot2::guide_legend(
+            ncol = 3
+          )
+        ) +
+        ggplot2::theme(
+          legend.position = "none",
+          plot.title = ggplot2::element_text(size = 11),
+          axis.text = ggplot2::element_text(size = 11),
+          axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
+        )
+
+      productivity_anomaly_plot <- ggpubr::ggarrange(gom, gb)
+    }
+
     recruit_anomaly_plot <- ecodata::plot_productivity_anomaly(
       report = region,
       varName = "assessment"
@@ -982,7 +1037,7 @@ save_plot(
       varName = "value",
       plottype = "nofacets",
       n = 16
-    )    +
+    ) +
       ggplot2::theme(legend.position = "bottom")
   },
   indicator = "wind_revenue",
@@ -1423,7 +1478,7 @@ save_plot(
 save_plot(
   plot_expression = {
     ecodata::plot_mass_inshore_survey(report = region, n = 10) +
-      ggplot2::geom_point()+
+      ggplot2::geom_point() +
       ggplot2::geom_line()
   },
   indicator = "mass_inshore",

@@ -65,6 +65,28 @@ return_plot("zoopanom", region = "NewEngland", mode = "slide")
 
 ::::
 
+## Risks to Setting Catch Limits: New England Drivers
+
+Changes in fish traits
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r}
+return_plot("traits-k", region = "NewEngland", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Add trophic level here
+
+:::
+
+::::
+
 ## Risks to Setting Catch Limits: Coastwide
 
 Drivers: Environmental   

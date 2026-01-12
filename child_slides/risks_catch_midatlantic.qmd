@@ -76,3 +76,25 @@ return_plot("zoopanom", region = "MidAtlantic", mode = "slide")
 :::
 
 ::::
+
+## Risks to Setting Catch Limits: Mid Atlantic Drivers
+
+Changes in fish traits
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r}
+return_plot("traits-k", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Add trophic level here
+
+:::
+
+::::

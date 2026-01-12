@@ -152,6 +152,8 @@ These are the basis of 2026--discuss what to change
 
 {{< include child_slides/risks_seasonal_newengland.qmd >}}
 
+{{< include child_slides/risks_wind_map.qmd >}}
+
 {{< include child_slides/risks_wind_midatlantic.qmd >}}
 
 {{< include child_slides/risks_wind_newengland.qmd >}}
@@ -165,6 +167,8 @@ These are the basis of 2026--discuss what to change
 {{< include child_slides/risks_catch_midatlantic.qmd >}}
 
 {{< include child_slides/risks_catch_newengland.qmd >}}
+
+{{< include child_slides/risks_catch_newzoo.qmd >}}
 
 {{< include child_slides/risks_catch.qmd >}}
 
