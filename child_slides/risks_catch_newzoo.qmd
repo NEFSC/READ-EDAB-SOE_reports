@@ -1,0 +1,26 @@
+## New Indicator: Copepod Energy Prey Fields
+
+- New indicator provided by Greg Ellis & Chris Orphanides: Maps of annual average copepod energy density 
+- How best to incorporate this information into the SOE?
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r}
+knitr::include_graphics("images/BothReports/Ecomon_preyfield_energy_maps_20241205_Ellis_Jan.png")
+knitr::include_graphics("images/BothReports/Ecomon_preyfield_energy_maps_20241205_Ellis_Apr.png")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r}
+knitr::include_graphics("images/BothReports/Ecomon_preyfield_energy_maps_20241205_Ellis_Jan.png")
+knitr::include_graphics("images/BothReports/Ecomon_preyfield_energy_maps_20241205_Ellis_Apr.png")
+```
+
+:::
+
+::::
