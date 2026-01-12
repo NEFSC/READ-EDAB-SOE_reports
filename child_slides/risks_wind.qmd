@@ -4,10 +4,6 @@
 
 ::: {.soe-50-column}
 
-```{r}
-return_plot("wind-proposed-dev", region = "BothReports", mode = "slide")
-```
-
 Implications:
 
 *  Current plans for buildout of offshore wind in a patchwork of areas spreads the impacts differentially throughout the region. 
