@@ -132,15 +132,11 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionland",
-<<<<<<< HEAD
       shadedRegion = c(
         2016,
         max(ecodata::community_climate_vulnerability$Time, na.rm = TRUE)
       ),
-      n = 10
-=======
       n = 21
->>>>>>> 60597b791ffb9d2f5997aec68857fe86d02733cd
     ) +
       ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
       ggplot2::theme(legend.position = 'bottom')
