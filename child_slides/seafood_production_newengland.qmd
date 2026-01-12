@@ -38,7 +38,7 @@ Indicator: Stock status
 return_plot("stock-status", region = "NewEngland", mode = "slide")
 ```
 
-GB Haddock & Plaice now have B/Bmsy >. GOM Haddock now has F/Fmsy < 1. 
+GB Haddock & Plaice now have B/Bmsy >1. GOM Haddock now has F/Fmsy < 1. 
 Stock status and required management actions still likely playing large role in seafood declines.
 
 :::
