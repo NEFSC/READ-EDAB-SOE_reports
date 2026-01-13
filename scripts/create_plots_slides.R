@@ -376,7 +376,7 @@ save_plot(
           legend.position = "none",
           legend.title = ggplot2::element_blank()
         ) +
-        ggplot2::ylab("Million USD (2023)") +
+        # ggplot2::ylab("Million USD (2023)") +
         ggplot2::theme(text = ggplot2::element_text(size = 12))
       gom <- ecodata::plot_bennet(
         report = region,
@@ -388,7 +388,7 @@ save_plot(
           legend.position = "bottom",
           legend.title = ggplot2::element_blank()
         ) +
-        ggplot2::ylab("Million USD (2023)") +
+        # ggplot2::ylab("Million USD (2023)") +
         ggplot2::theme(text = ggplot2::element_text(size = 12))
 
       ggpubr::ggarrange(gb, gom, nrow = 2)
