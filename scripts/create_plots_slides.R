@@ -801,7 +801,7 @@ save_plot(
     ecodata::plot_chl_pp(
       report = region,
       plottype = "monthly",
-      n = 10
+      n = 28
     ) +
       ggplot2::facet_grid(
         rows = ggplot2::vars(EPU),
