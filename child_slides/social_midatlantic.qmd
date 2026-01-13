@@ -1,4 +1,4 @@
-## Mid Atlantic Community Social and Climate Vulnerability &emsp; Risk element: <span style="background-color:orange;">Social</span> 
+## Mid Atlantic Community Social and Climate Vulnerability 
 
 :::: {.soe-50-50-slide}
 
@@ -33,7 +33,7 @@ ecodata::plot_engagement(report = 'MidAtlantic',plottype = "Social")
 
 ::::
 
-## Community Social and Climate Vulnerability &emsp; Risk element: <span style="background-color:orange;">Social</span> 
+## Community Social and Climate Vulnerability 
 
 Indicators: Commercial fishery revenue climate vulnerability
 
@@ -57,7 +57,7 @@ The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catal
 
 ::::
 
-## Community Social and Climate Vulnerability &emsp; Risk element: <span style="background-color:orange;">Social</span> 
+## Community Social and Climate Vulnerability 
 
 Indicators: Recreational fishery engagement, social vulnerability
 

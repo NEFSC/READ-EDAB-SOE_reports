@@ -93,7 +93,9 @@ return_plot("traits-k", region = "MidAtlantic", mode = "slide")
 
 ::: {.soe-50-column}
 
-Add trophic level here
+```{r}
+return_plot("traits-tl", region = "MidAtlantic", mode = "slide")
+```
 
 :::
 

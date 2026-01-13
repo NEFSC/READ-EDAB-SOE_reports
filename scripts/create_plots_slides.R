@@ -1,12 +1,19 @@
 # reinstall ecodata
-remotes::install_github("NOAA-EDAB/ecodata", ref = "cfdb2244f733f3e3e75fd1c7ae871c03b961d9da")
+# devtools::install_github(
+#   "NOAA-EDAB/ecodata",
+#   ref = "cfdb2244f733f3e3e75fd1c7ae871c03b961d9da"
+# )
+
+pak::pak("NOAA-EDAB/ecodata@cfdb224")
+
+# devtools::load_all(here::here("../ecodata"))
 
 # setup ----
 
 ## variables ----
 
 region <- "NewEngland" #change to NewEngland to run for NE
-# region <- "MidAtlantic" #change to NewEngland to run for NE
+region <- "MidAtlantic" #change to NewEngland to run for NE
 
 out_dir <- here::here("images", region)
 if (!dir.exists(out_dir)) {
@@ -28,10 +35,10 @@ full_region <- dplyr::case_when(
 
 # A function to create a standardized filename
 create_filename <- function(
-    indicator,
-    file_region,
-    dir = out_dir,
-    extension = ".png"
+  indicator,
+  file_region,
+  dir = out_dir,
+  extension = ".png"
 ) {
   file.path(
     dir,
@@ -49,15 +56,15 @@ create_filename <- function(
 
 # A flexible function to generate and save a plot
 save_plot <- function(
-    plot_expression,
-    indicator,
-    report = region,
-    save_dir = out_dir,
-    ...
+  plot_expression,
+  indicator,
+  report = region,
+  save_dir = out_dir,
+  ...
 ) {
   # Execute the code to create the plot
   p <- eval(plot_expression)
-  
+
   # Check if the plot object is valid before saving
   if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
     message(report)
@@ -383,7 +390,7 @@ save_plot(
         ) +
         ggplot2::ylab("Million USD (2023)") +
         ggplot2::theme(text = ggplot2::element_text(size = 12))
-      
+
       ggpubr::ggarrange(gb, gom, nrow = 2)
     }
   },
@@ -569,7 +576,7 @@ save_plot(
         n = 27
       ) +
         ggplot2::ggtitle('Gulf of Maine total PP')
-      
+
       ggpubr::ggarrange(a, b, nrow = 2)
     }
   },
@@ -632,8 +639,36 @@ save_plot(
   height = ifelse(region == "NewEngland", 3.5, 4)
 )
 
+# finfish traits -- original for pdfs
+save_plot(
+  plot_expression = {
+    if (region == "MidAtlantic") {
+      ecodata::plot_finfish_traits(
+        report = region,
+        varName = "length_maturity",
+        n = 10
+      ) +
+        ggplot2::theme(legend.position = 'bottom')
+    } else {
+      ecodata::plot_finfish_traits(
+        report = region,
+        varName = 'fecundity',
+        n = 10
+      ) +
+        ggplot2::ylab('Fecundity (number of \noffspring per mature female)') +
+        ggplot2::scale_y_continuous(
+          labels = scales::label_scientific((digits = 1))
+        ) +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
+  },
+  indicator = "traits",
+  width = 6.5,
+  height = ifelse(region == "NewEngland", 3.5, 4)
+)
 
-# finfish traits
+# finfish traits -- trophic level
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
@@ -653,7 +688,7 @@ save_plot(
         ggplot2::facet_wrap(~EPU, nrow = 1)
     }
   },
-  indicator = "traits",
+  indicator = "traits-tl",
   width = 6.5,
   height = ifelse(region == "NewEngland", 3.5, 4)
 )
@@ -667,12 +702,12 @@ save_plot(
       n = 10
     ) +
       ggplot2::theme(legend.position = 'bottom')
-    
+
     if (region == "NewEngland") {
       plt <- plt +
         ggplot2::facet_wrap(ggplot2::vars(EPU), nrow = 2)
     }
-    
+
     plt
   },
   indicator = "traits_k",
@@ -689,10 +724,11 @@ save_plot(
       report = region,
       varName = "Commercial"
     ) +
-      ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
+      ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0)) +
+      ggplot2::xlim(c(NA, 2030))
   },
   indicator = "commercial_engagement",
-  width = 6.5,
+  width = 12,
   height = 4
 )
 
@@ -822,7 +858,7 @@ save_plot(
           axis.text = ggplot2::element_text(size = 11),
           axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
         )
-      
+
       gb <- ecodata::plot_productivity_anomaly(
         report = region,
         EPU = "GB"
@@ -838,10 +874,10 @@ save_plot(
           axis.text = ggplot2::element_text(size = 11),
           axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
         )
-      
+
       productivity_anomaly_plot <- ggpubr::ggarrange(gom, gb)
     }
-    
+
     recruit_anomaly_plot <- ecodata::plot_productivity_anomaly(
       report = region,
       varName = "assessment"
@@ -885,9 +921,9 @@ save_plot(
         ggplot2::guides(fill = ggplot2::guide_legend(nrow = 2, byrow = TRUE))
     } else {
       gb <- ecodata::plot_condition(report = region, EPU = "GB")
-      
+
       gom <- ecodata::plot_condition(report = region, EPU = "GOM")
-      
+
       ggpubr::ggarrange(
         gb,
         gom,
@@ -1507,4 +1543,3 @@ if (region == "NewEngland") {
     height = 4
   )
 }
-

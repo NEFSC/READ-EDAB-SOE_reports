@@ -22,7 +22,7 @@ Implications:
 
 * Currently meeting objectives, but uncertainty in gray seal estimates
 
-```{r, eval = params$region != "NewEngland", results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 cat('* Risk element: TechInteract, evaluated by species and sector:  14 <span style="background-color:lightgreen;">low</span>, 7 <span style="background-color:yellow;">low-mod</span>, 2 <span style="background-color:orange;">mod-high</span> risk')
 ```
 
@@ -50,6 +50,7 @@ return_plot("narw-abundance", region = "BothReports")
 return_plot("NARW-calf-abundance", region = "BothReports")
 ```
 
+
 :::
 
 ::: {.soe-50-column}
@@ -63,6 +64,11 @@ Implications:
 * Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat.
 
 * Unusual mortality events continue for 3 large whale species.
+
+
+```{r}
+return_plot("salmon", region = "NewEngland")
+```
 
 :::
 

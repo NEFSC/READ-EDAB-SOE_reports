@@ -1,4 +1,4 @@
-## Objective: Mid Atlantic Seafood production `r I(decreasing)` `r I(below_average)` &emsp; Risk elements: <span style="background-color:orange;">ComFood</span> and <span style="background-color:orange;">RecFood</span>, unchanged
+## Objective: Mid Atlantic Seafood production `r I(decreasing)` `r I(below_average)` 
 
 :::: {.soe-50-50-slide}
 
@@ -32,7 +32,7 @@ Multiple potential drivers: ecosystem and stock production, management, market c
 
 ::::
 
-## Mid Atlantic Landings drivers: Stock status? TAC? &emsp; Risk elements: Fstatus, Bstatus, MgtControl 
+## Mid Atlantic Landings drivers: Stock status? TAC? 
 
 :::: {.soe-50-50-slide}
 
@@ -55,7 +55,7 @@ return_plot("abcacl-stacked", region = "MidAtlantic", mode = "slide")
 
 ```
 
-Few managed species have binding limits; Management less likely playing a role
+Catch near limits on average
 
 :::
 
