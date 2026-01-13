@@ -145,9 +145,22 @@ risks <- tibble::tibble("Objective Categories" = c(
 service = "Risks to Meeting Objectives"
 )
 
-drivers_risk <- tibble::tibble()
+drivers_risk <- tibble::tibble("Objective Categories" = c(
+  "Habitat and prey quality",
+  "Phenology",
+  "Drivers of productivity",
+  "Other Ocean Uses"
+),
+"Indicators reported" = c(
+  "Benthic and pelagic forage distribution; ocean temperature; changes in currents and cold pool",
+  "Habitat timing: length of ocean summer, cold pool seasonal persistence",
+  "Benthic and pelagic forage quality and abundance; ocean temperature and acidification",
+  "Wind development map; protected species presence and hotspots"
+),
+service = "Drivers of Risks"
+)
 
-mng_obj <- rbind(perf_metrics, drivers, risks)
+mng_obj <- rbind(perf_metrics, drivers, risks, drivers_risk)
 
 flextable::as_grouped_data(mng_obj, groups = "service") |> 
   flextable::as_flextable(hide_grouplabel=TRUE) |>
@@ -157,7 +170,7 @@ flextable::as_grouped_data(mng_obj, groups = "service") |>
                                Indicators.reported = "Indicators reported") |>
   
   flextable::set_caption("Ecosystem-scale fishery management objectives") |>
-  flextable::fontsize(size = 14,
+  flextable::fontsize(size = 12,
                       part = "all") |>
   flextable::autofit() 
 ```

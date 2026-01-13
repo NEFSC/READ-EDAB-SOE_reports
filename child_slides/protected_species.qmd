@@ -22,7 +22,7 @@ Implications:
 
 * Currently meeting objectives, but uncertainty in gray seal estimates
 
-```{r, eval = params$region != "NewEngland", results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 cat('* Risk element: TechInteract, evaluated by species and sector:  14 <span style="background-color:lightgreen;">low</span>, 7 <span style="background-color:yellow;">low-mod</span>, 2 <span style="background-color:orange;">mod-high</span> risk')
 ```
 
