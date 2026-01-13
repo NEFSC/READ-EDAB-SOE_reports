@@ -145,6 +145,8 @@ risks <- tibble::tibble("Objective Categories" = c(
 service = "Risks to Meeting Objectives"
 )
 
+drivers_risk <- tibble::tibble()
+
 mng_obj <- rbind(perf_metrics, drivers, risks)
 
 flextable::as_grouped_data(mng_obj, groups = "service") |> 

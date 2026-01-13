@@ -50,9 +50,6 @@ return_plot("narw-abundance", region = "BothReports")
 return_plot("NARW-calf-abundance", region = "BothReports")
 ```
 
-```{r}
-return_plot("salmon", region = "NewEngland")
-```
 
 :::
 
@@ -67,6 +64,11 @@ Implications:
 * Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat.
 
 * Unusual mortality events continue for 3 large whale species.
+
+
+```{r}
+return_plot("salmon", region = "NewEngland")
+```
 
 :::
 
