@@ -16,7 +16,7 @@ return_plot("mab-oa-squid", region = "BothReports")
 :::
 
 Drivers: Predation  
-*Seals increasing, mix of population status for HMS*
+*Seals increasing, mix of population status for HMS, advection*
 
 ## Risks to Setting Catch Limits
 

@@ -17,8 +17,8 @@ knitr::include_graphics("images/BothReports/Ecomon_preyfield_energy_maps_2024120
 ::: {.soe-50-column}
 
 ```{r}
-knitr::include_graphics("images/BothReports/Ecomon_preyfield_energy_maps_20241205_Ellis_Jan.png")
-knitr::include_graphics("images/BothReports/Ecomon_preyfield_energy_maps_20241205_Ellis_Apr.png")
+knitr::include_graphics("images/BothReports/Ecomon_preyfield_energy_maps_20241205_Ellis_Jul.png")
+knitr::include_graphics("images/BothReports/Ecomon_preyfield_energy_maps_20241205_Ellis_Oct.png")
 ```
 
 :::
