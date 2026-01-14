@@ -12,7 +12,7 @@ knitr::include_graphics(here::here("images/BothReports/OffshoreWindDevelopmentMa
 
 ::: {.soe-50-column}
 
-- Only one commercial-scale wind project (South Fork, NY)
+- Only one operational commercial-scale wind project (South Fork, NY)
 - Most wind lease areas that have had construction activities are in the NY Bight
 - Construction timelines are uncertain
 
