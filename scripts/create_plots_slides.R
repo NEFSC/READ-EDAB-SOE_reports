@@ -1,10 +1,10 @@
 # reinstall ecodata
 # devtools::install_github(
 #   "NOAA-EDAB/ecodata",
-#   ref = "cfdb2244f733f3e3e75fd1c7ae871c03b961d9da"
+#   ref = "c47282a"
 # )
 
-pak::pak("NOAA-EDAB/ecodata@cfdb224")
+pak::pak("NOAA-EDAB/ecodata@c47282a")
 
 # devtools::load_all(here::here("../ecodata"))
 
