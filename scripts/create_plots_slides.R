@@ -108,7 +108,6 @@ save_plot(
         ggplot2::theme(strip.text.x = ggplot2::element_blank())
     } else {
       plt +
-        ggplot2::ylab(expression("Landings (10"^3 * " metric tons)")) +
         ggplot2::facet_wrap(~EPU, nrow = 2)
     }
   },
@@ -124,9 +123,7 @@ save_plot(
       report = region,
       plottype = "guild",
       n = 10
-    ) +
-      ggplot2::geom_point(size = 0.05) +
-      ggplot2::geom_line(size = 0.05)
+    )
   },
   indicator = "commercial_landings",
   width = 6.5,
@@ -145,7 +142,7 @@ save_plot(
       ),
       n = 21
     ) +
-      ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
+      # ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
       ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "climatevul_land",
@@ -175,16 +172,12 @@ save_plot(
         limits = c(
           "LargeCoastal",
           "Prohibited",
-          "SmallCoastal",
-          "Scombridae",
-          "Billfishes"
+          "SmallCoastal"
         ),
         labels = c(
           "Large Coastal",
           "Prohibited",
-          "Small Coastal",
-          "Scombridae",
-          "Billfishes"
+          "Small Coastal"
         )
       ) +
       ggplot2::ggtitle(paste(
@@ -220,11 +213,7 @@ save_plot(
 save_plot(
   plot_expression = {
     stock_status_plot <- ecodata::plot_stock_status(report = region)
-    if (region == "MidAtlantic") {
-      stock_status_plot$p
-    } else {
-      stock_status_plot$p
-    }
+    stock_status_plot$p
   },
   indicator = "stock_status",
   width = 6.5,
@@ -414,14 +403,12 @@ save_plot(
         report = "NewEngland",
         varName = "guild",
         EPU = "GB"
-      ) +
-        ggplot2::ylab("Million USD (2023)")
+      )
       gom <- ecodata::plot_bennet(
         report = "NewEngland",
         varName = "guild",
         EPU = "GOM"
-      ) +
-        ggplot2::ylab("Million USD (2023)")
+      )
       ggpubr::ggarrange(
         gb,
         gom,
@@ -444,8 +431,7 @@ save_plot(
       plottype = "regionrev",
       n = 21
     ) +
-      ggplot2::theme(legend.position = "bottom") +
-      ggplot2::ylab("Total Climate Vulnerability \n (Regional Revenue)")
+      ggplot2::theme(legend.position = "bottom")
   },
   indicator = "climatevul_rev",
   width = 6.5,
@@ -1501,9 +1487,7 @@ save_plot(
 # mass inshore survey -- NE only
 save_plot(
   plot_expression = {
-    ecodata::plot_mass_inshore_survey(report = region, n = 10) +
-      ggplot2::geom_point() +
-      ggplot2::geom_line()
+    ecodata::plot_mass_inshore_survey(report = region, n = 10)
   },
   indicator = "mass_inshore",
   width = 6,
