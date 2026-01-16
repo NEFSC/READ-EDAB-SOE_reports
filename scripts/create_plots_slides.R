@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "c47282a")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "a22a0fe")
 
 # setup ----
 
@@ -131,7 +131,7 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionland",
-      n = 21
+      n = 24
     ) +
       ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
       ggplot2::theme(legend.position = 'bottom')
@@ -393,7 +393,7 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionrev",
-      n = 21
+      n = 24
     ) +
       ggplot2::theme(legend.position = "bottom") +
       ggplot2::ylab("Total Climate Vulnerability \n (Regional Revenue)")
@@ -628,7 +628,7 @@ save_plot(
       ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
   },
   indicator = "commercial_engagement",
-  width = 6.5,
+  width = 11,
   height = 4
 )
 
@@ -651,7 +651,7 @@ save_plot(
   plot_expression = {
     ecodata::plot_community_climate_vulnerability(
       report = region,
-      n = 21
+      n = 24
     ) +
       ggplot2::theme(legend.position = 'bottom')
   },
@@ -1281,15 +1281,15 @@ save_plot(
       n = 10
     ) +
       ggplot2::ggtitle("Northeast U.S. Small Copepod Distribution") +
-      ggplot2::ylab("Center of Gravity, km") +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      ggplot2::theme(legend.position = 'bottom') +
-      ggplot2::facet_grid(
-        cols = ggplot2::vars(Season),
-        rows = ggplot2::vars(Direction),
-        scales = "free_y"
-      )
+      ggplot2::ylab("Center of Gravity, km") 
+  # #    ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
+  # #    ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+  #     ggplot2::theme(legend.position = 'bottom') +
+  #     ggplot2::facet_grid(
+  #       cols = ggplot2::vars(Season),
+  #       rows = ggplot2::vars(Direction),
+  #       scales = "free_y"
+  #     )
   },
   indicator = "smallcopeall_cog",
   width = 6.5,
@@ -1305,15 +1305,15 @@ save_plot(
       n = 10
     ) +
       ggplot2::ggtitle("Northeast U.S. Large Copepod Distribution") +
-      ggplot2::ylab("Center of Gravity, km") +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      ggplot2::theme(legend.position = 'bottom') +
-      ggplot2::facet_grid(
-        cols = ggplot2::vars(Season),
-        rows = ggplot2::vars(Direction),
-        scales = "free_y"
-      )
+      ggplot2::ylab("Center of Gravity, km") 
+      # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::theme(legend.position = 'bottom') +
+      # ggplot2::facet_grid(
+      #   cols = ggplot2::vars(Season),
+      #   rows = ggplot2::vars(Direction),
+      #   scales = "free_y"
+      # )
   },
   indicator = "lgcopeall_cog",
   width = 6.5,

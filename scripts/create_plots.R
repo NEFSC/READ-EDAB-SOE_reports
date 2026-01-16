@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "08513b1")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "a22a0fe")
 
 # setup ----
 
@@ -131,7 +131,7 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionland",
-      n = 21
+      n = 24
     ) +
       ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
       ggplot2::theme(legend.position = 'bottom')
@@ -389,7 +389,7 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionrev",
-      n = 21
+      n = 24
     ) +
          ggplot2::theme(legend.position = "bottom") +
         ggplot2::ylab("Total Climate Vulnerability \n (Regional Revenue)") 
@@ -609,8 +609,8 @@ save_plot(
       ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
   },
   indicator = "commercial_engagement",
-  width = 6.5,
-  height = 4
+  width = 11,
+  height = 5
 )
 
 # 2. Recreational Engagement Plot
@@ -632,7 +632,7 @@ save_plot(
   plot_expression = {
     ecodata::plot_community_climate_vulnerability(
       report = region,
-      n = 21
+      n = 24
     ) +
         ggplot2::theme(legend.position = 'bottom')
   },
