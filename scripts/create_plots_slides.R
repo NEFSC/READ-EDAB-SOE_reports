@@ -853,16 +853,15 @@ save_plot(
       varName = "Megabenthos",
       n = 10
     ) +
-      ggplot2::theme(legend.position = "none") +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season))
+      ggplot2::theme(legend.position = "none") 
+   #   ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
+    #  ggplot2::geom_line(ggplot2::aes(color = .data$Season))
     macrobenthos_plot <- ecodata::plot_benthos_index(
       report = region,
       varName = "Macrobenthos",
-      n = 10
-    ) +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season))
+      n = 10)
+    #  ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
+     # ggplot2::geom_line(ggplot2::aes(color = .data$Season))
     ggpubr::ggarrange(
       megabenthos_plot,
       macrobenthos_plot,
