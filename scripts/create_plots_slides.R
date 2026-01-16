@@ -1127,18 +1127,18 @@ save_plot(
 save_plot(
   plot_expression = {
     ecodata::plot_forage_index(varName = "cog", n = 10) +
-      ggplot2::coord_cartesian(xlim = c(1982, 2023)) +
-      ggplot2::ggtitle("Northeast U.S. Forage Fish Distribution") +
-      ggplot2::ylab("Center of Gravity, km") +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      ggplot2::facet_wrap(~Var, nrow = 2) +
-      ggplot2::theme(legend.position = "bottom") +
-      ggplot2::facet_grid(
-        cols = ggplot2::vars(Season),
-        rows = ggplot2::vars(Direction),
-        scales = "free_y"
-      )
+      ggplot2::coord_cartesian(xlim = c(1982, 2023)) 
+    #   ggplot2::ggtitle("Northeast U.S. Forage Fish Distribution") +
+    #   ggplot2::ylab("Center of Gravity, km") +
+    #  # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
+    # #  ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+    #   ggplot2::facet_wrap(~Var, nrow = 2) +
+    #   ggplot2::theme(legend.position = "bottom") +
+    #   ggplot2::facet_grid(
+    #     cols = ggplot2::vars(Season),
+    #     rows = ggplot2::vars(Direction),
+    #     scales = "free_y"
+    #   )
   },
   indicator = "forage_dist",
   width = 6.5,
