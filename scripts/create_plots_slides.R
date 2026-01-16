@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "08513b1")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "c47282a")
 
 # setup ----
 
@@ -702,20 +702,20 @@ save_plot(
     ecodata::plot_chl_pp(
       report = region,
       plottype = "monthly",
-      n = 10
-    ) +
-      ggplot2::facet_grid(
-        rows = ggplot2::vars(EPU),
-        cols = ggplot2::vars(Month)
-      ) +
-      ggplot2::theme(text = ggplot2::element_text(size = 16)) +
-      ggplot2::geom_point(color = "white") +
-      ggplot2::geom_line() +
-      ggplot2::scale_x_discrete(breaks = scales::pretty_breaks(n = 1)) +
-      ggplot2::theme(
-        axis.text.x = ggplot2::element_text(size = 8),
-        panel.border = ggplot2::element_rect(color = "gray80")
-      )
+      n = 10)
+    # ) +
+    #   ggplot2::facet_grid(
+    #     rows = ggplot2::vars(EPU),
+    #     cols = ggplot2::vars(Month)
+    #   ) +
+    #   ggplot2::theme(text = ggplot2::element_text(size = 16)) +
+    #   ggplot2::geom_point(color = "white") +
+    #   ggplot2::geom_line() +
+    #   ggplot2::scale_x_discrete(breaks = scales::pretty_breaks(n = 1)) +
+    #   ggplot2::theme(
+    #     axis.text.x = ggplot2::element_text(size = 8),
+    #     panel.border = ggplot2::element_rect(color = "gray80")
+    #   )
   },
   indicator = "monthly_chl",
   width = 6.5,
