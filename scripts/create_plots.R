@@ -697,32 +697,61 @@ save_plot(
 # productivity + recruitment anomalies
 save_plot(
   plot_expression = {
-    productivity_anomaly_plot <- ecodata::plot_productivity_anomaly(
-      report = region,
-      EPU = dplyr::case_when(
-        region == "NewEngland" ~ "GOM",
-        region == "MidAtlantic" ~ "MAB"
-      )
-    ) +
-      ggplot2::guides(
-        fill = ggplot2::guide_legend(
-          ncol = dplyr::case_when(
-            region == "NewEngland" ~ 3,
-            region == "MidAtlantic" ~ 2,
-            TRUE ~ 2
-          )
-        )
+    if (region == "MidAtlantic") {
+      productivity_anomaly_plot <- ecodata::plot_productivity_anomaly(
+        report = region,
+        EPU = "MAB"
       ) +
-      ggplot2::theme(
-        legend.position = "none",
-        plot.title = ggplot2::element_text(size = 11),
-        axis.text = ggplot2::element_text(size = 11),
-        axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
-      )
+        ggplot2::guides(
+          fill = ggplot2::guide_legend(
+            ncol = 2
+          )
+        ) +
+        ggplot2::theme(
+          legend.position = "none",
+          plot.title = ggplot2::element_text(size = 11),
+          axis.text = ggplot2::element_text(size = 11),
+          axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
+        )
+    }
+    if (region == "NewEngland") {
+      gom <- ecodata::plot_productivity_anomaly(
+        report = region,
+        EPU = "GOM"
+      ) +
+        ggplot2::guides(
+          fill = ggplot2::guide_legend(
+            ncol = 4
+          )
+        ) +
+        ggplot2::theme(
+          legend.position = "none",
+          plot.title = ggplot2::element_text(size = 11),
+          axis.text = ggplot2::element_text(size = 11),
+          axis.title.y = ggplot2::element_text(vjust = 0, size = 8)
+        )
+      
+      gb <- ecodata::plot_productivity_anomaly(
+        report = region,
+        EPU = "GB"
+      ) +
+        ggplot2::guides(
+          fill = ggplot2::guide_legend(
+            ncol = 4
+          )
+        ) +
+        ggplot2::theme(
+          legend.position = "none",
+          plot.title = ggplot2::element_text(size = 11),
+          axis.text = ggplot2::element_text(size = 11),
+          axis.title.y = ggplot2::element_text(vjust = 0, size = 8)
+        )
+    }
+    
     recruit_anomaly_plot <- ecodata::plot_productivity_anomaly(
       report = region,
       varName = "assessment"
-    )  +
+    ) +
       ggplot2::guides(fill = ggplot2::guide_legend(ncol = 2)) +
       ggplot2::theme(
         legend.position = "none",
@@ -731,17 +760,27 @@ save_plot(
         axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
       )
     # combined anomaly plot
-    ggpubr::ggarrange(
-      productivity_anomaly_plot,
-      recruit_anomaly_plot,
-      ncol = ifelse(region == "MidAtlantic", 1, 1),
-      common.legend = TRUE,
-      legend = "bottom"
-    )
+    if (region == "MidAtlantic") {
+      ggpubr::ggarrange(
+        productivity_anomaly_plot,
+        recruit_anomaly_plot,
+        ncol = 1,
+        common.legend = TRUE,
+        legend = "bottom"
+      )
+    } else if (region == "NewEngland") {
+     ggpubr::ggarrange(
+        gb,
+        gom,
+        recruit_anomaly_plot,
+        ncol = 1,
+        common.legend = TRUE,
+        legend = "bottom") 
+    }
   },
   indicator = "productivity_anomaly",
   width = 6.5,
-  height = 7
+  height = 8.5
 )
 
 # condition factor
