@@ -18,7 +18,6 @@ region2 <- dplyr::case_when(
   region == "NewEngland" ~ "New England"
 )
 
-
 full_region <- dplyr::case_when(
   region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
   region == "NewEngland" ~ "New England"
@@ -884,22 +883,22 @@ save_plot(
       n = 10
     ) +
       ggplot2::ylab("Relative Biomass") +
-      ggplot2::labs(title = "Large Copepods") +
-      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
+      ggplot2::labs(title = "Large Copepods") 
+      # ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     small_copepod_plot <- ecodata::plot_zooplankton_index(
       report = region,
       varName = "Smallcopeall",
       n = 10
     ) +
       ggplot2::ylab("Relative Biomass") +
-      ggplot2::labs(title = "Small Copepods") +
-      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
+      ggplot2::labs(title = "Small Copepods") 
+      # ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     euphausiid_plot <- ecodata::plot_zooplankton_index(
       report = region,
       varName = "Euph",
@@ -909,11 +908,11 @@ save_plot(
         legend.background = ggplot2::element_rect(fill = "white")
       ) +
       ggplot2::ylab("Relative Biomass") +
-      ggplot2::labs(title = "Euphasiids") +
-      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
+      ggplot2::labs(title = "Euphasiids") 
+      # ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     ggpubr::ggarrange(
       large_copepod_plot,
       small_copepod_plot,
