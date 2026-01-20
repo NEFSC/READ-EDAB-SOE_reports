@@ -602,14 +602,14 @@ save_plot(
 # 1. Commercial Engagement Plot
 save_plot(
   plot_expression = {
-    commercial_engagement_plot <- ecodata::plot_engagement(
+    commercial_engagement_plot <- plot_engagement(
       report = region,
       varName = "Commercial"
     ) +
       ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
   },
   indicator = "commercial_engagement",
-  width = 11,
+  width = 7,
   height = 5
 )
 
