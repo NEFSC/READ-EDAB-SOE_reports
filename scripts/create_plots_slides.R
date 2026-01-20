@@ -160,8 +160,8 @@ save_plot(
   plot_expression = {
     rec_hms_plot <- ecodata::plot_rec_hms(report = region, n = 10) +
       ggplot2::scale_color_discrete(
-        limits = c("LargeCoastal", "Prohibited", "SmallCoastal"),
-        labels = c("Large Coastal", "Prohibited", "Small Coastal")
+        limits = c("LargeCoastal", "SmallCoastal", "Prohibited", "Billfishes", "Scombridae"),
+        labels = c("Large Coastal", "Small Coastal", "Prohibited", "Billfishes", "Scombridae")
       ) +
       ggplot2::ggtitle(paste(
         region2,
