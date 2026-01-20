@@ -1,4 +1,4 @@
-```{r csvi}
+```{r csvi, eval = FALSE}
 ## commercial vulnerability table
 ## TODO: move flextable aesthetics into ecodata function
 tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for", region2, "communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.")
@@ -25,6 +25,9 @@ rec_vul_table <- ecodata::plot_engagement(report = params$region, varName = "Rec
 # council <- dplyr::case_when(params$draft ~ c("MAFMC", "NEFMC"),
 #                             params$region == "MidAtlantic" ~ "MAFMC",
 #                             params$region == "NewEngland" ~ "NEFMC")
+```
+
+```{r}
 
 create_wea_landings_rev_table <- function(council){
   tbl <- ecodata::wea_landings_rev |>
