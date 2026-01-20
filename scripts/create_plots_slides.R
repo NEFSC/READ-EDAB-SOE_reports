@@ -621,18 +621,15 @@ save_plot(
 # 1. Commercial Engagement Plot
 save_plot(
   plot_expression = {
-    commercial_engagement_plot <- ecodata::plot_engagement(
+    commercial_engagement_plot <- plot_engagement(
       report = region,
       varName = "Commercial"
     ) +
-      ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0)) +
-     # NE: ggplot2::coord_cartesian(xlim = c(2007, 2030))
-      ggplot2::coord_cartesian(xlim = c(2007, 2030),
-                               ylim = c(0, 0.65))
+      ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0)) 
   },
   indicator = "commercial_engagement",
-  width = ifelse(region == "NewEngland", 9, 8),
-  height = ifelse(region == "NewEngland", 4, 4)
+  width = 7,
+  height = 5
 )
 
 # 2. Recreational Engagement Plot
