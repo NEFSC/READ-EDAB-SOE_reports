@@ -290,6 +290,10 @@ save_plot(
     )
     if (region == "MidAtlantic") {
       comm_revenue_plot +
+        ggplot2::scale_x_continuous(
+          breaks = seq(1980, 2020, by = 5),
+          expand = c(0.01, 0.01)
+        ) +
         ggplot2::theme(
           legend.position = "bottom",
           legend.title = ggplot2::element_blank()
@@ -665,29 +669,9 @@ save_plot(
 # transition dates
 save_plot(
   plot_expression = {
-    if (region == "MidAtlantic") {
-      # TODO: move aesthetics into ecodata function
-      ecodata::plot_trans_dates(report = region, varName = "length", n = 10) +
-        ggplot2::ggtitle(paste(
-          "Time between spring and fall transition in",
-          full_region
-        )) +
-        ggplot2::theme(
-          strip.background = ggplot2::element_blank(),
-          strip.text.x = ggplot2::element_blank()
-        )
-    } else {
-      ecodata::plot_trans_dates(report = region, varName = "length", n = 10) +
-        ggplot2::ggtitle(paste(
-          "Time between spring and fall transition in",
-          full_region
-        )) +
-        ggplot2::theme(
-          strip.background = ggplot2::element_blank(),
-          strip.text.x = ggplot2::element_blank()
-        ) +
-        ggplot2::facet_wrap(~EPU, nrow = 2)
-    }
+      ecodata::plot_trans_dates(report = region, 
+                                varName = "length",
+                                n = 10)
   },
   indicator = "transition_date",
   width = 6.5,
@@ -1139,7 +1123,7 @@ save_plot(
       ggplot2::coord_cartesian(xlim = c(1969, 2024))
     b <- ecodata::plot_species_dist(varName = "depth", n = 10) +
       ggplot2::coord_cartesian(xlim = c(1969, 2024))
-    ggpubr::ggarrange(a, b, nrow = 1)
+    ggpubr::ggarrange(a, b, nrow = 2)
   },
   indicator = "species_dist",
   width = 6.5,
