@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "a22a0fe")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "0e89674")
 
 # setup ----
 
@@ -1251,7 +1251,8 @@ save_plot(
 if (region == "NewEngland") {
   save_plot(
     plot_expression = {
-      ecodata::plot_seabird_ne(varName = "productivity", n = 10) 
+      ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
+        ggplot2::coord_cartesian(xlim = c(1991, 2025))
     },
     indicator = "seabird_productivity",
     width = 6.5,
