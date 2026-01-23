@@ -414,7 +414,7 @@ save_plot(
         limits = c("cost_index", "profit_index", "revenue_index"),
         labels = c("Cost Index", "Profit Index", "Revenue Index")
       ) +
-      ggplot2::theme(legend.position = "bottom")
+      ggplot2::theme(legend.position = "bottom") 
   },
   indicator = "comdat_profit",
   width = 6.5,
@@ -433,7 +433,7 @@ save_plot(
         limits = c("cost_index", "profit_index", "revenue_index"),
         labels = c("Cost Index", "Profit Index", "Revenue Index")
       ) +
-      ggplot2::theme(legend.position = "bottom")
+      ggplot2::theme(legend.position = "bottom") 
   },
   indicator = "comdat_profit_GB",
   width = 6.5,
@@ -452,7 +452,7 @@ save_plot(
         limits = c("cost_index", "profit_index", "revenue_index"),
         labels = c("Cost Index", "Profit Index", "Revenue Index")
       ) +
-      ggplot2::theme(legend.position = "bottom")
+      ggplot2::theme(legend.position = "bottom") 
   },
   indicator = "comdat_profit_GOM",
   width = 6.5,
@@ -573,14 +573,16 @@ save_plot(
         plottype = "total",
         EPU = "GB",
         n = 27
-      ) + ggplot2::ggtitle('Georges Bank total PP')
+      ) + ggplot2::ggtitle('Georges Bank total PP') +
+        ggplot2::ylab("Carbon (mt)")
       b <- ecodata::plot_annual_chl_pp(
         report = region,
         varName = "pp",
         plottype = "total",
         EPU = "GOM",
         n = 27
-      ) + ggplot2::ggtitle('Gulf of Maine total PP')
+      ) + ggplot2::ggtitle('Gulf of Maine total PP') +
+        ggplot2::ylab("Carbon (mt)")
       
       ggpubr::ggarrange(a, b, nrow = 2)
     }

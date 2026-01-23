@@ -578,7 +578,8 @@ save_plot(
         EPU = "GB",
         n = 27
       ) +
-        ggplot2::ggtitle('Georges Bank total PP')
+        ggplot2::ggtitle('Georges Bank total PP') +
+        ggplot2::ylab("Carbon (mt)")
       b <- ecodata::plot_annual_chl_pp(
         report = region,
         varName = "pp",
@@ -586,7 +587,8 @@ save_plot(
         EPU = "GOM",
         n = 27
       ) +
-        ggplot2::ggtitle('Gulf of Maine total PP')
+        ggplot2::ggtitle('Gulf of Maine total PP') +
+        ggplot2::ylab("Carbon (mt)")
 
       ggpubr::ggarrange(a, b, nrow = 2)
     }
@@ -959,8 +961,8 @@ save_plot(
       n = 10
     ) +
       ggplot2::ylab("Relative Biomass") +
-      ggplot2::labs(title = "Large Copepods") 
-      # ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      ggplot2::labs(title = "Large Copepods") +
+      ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))
       # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
       # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
       # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
@@ -970,8 +972,8 @@ save_plot(
       n = 10
     ) +
       ggplot2::ylab("Relative Biomass") +
-      ggplot2::labs(title = "Small Copepods") 
-      # ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      ggplot2::labs(title = "Small Copepods") +
+    ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) 
       # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
       # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
       # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
@@ -984,8 +986,8 @@ save_plot(
         legend.background = ggplot2::element_rect(fill = "white")
       ) +
       ggplot2::ylab("Relative Biomass") +
-      ggplot2::labs(title = "Euphasiids") 
-      # ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
+      ggplot2::labs(title = "Euphasiids") +
+      ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) 
       # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
       # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
       # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
