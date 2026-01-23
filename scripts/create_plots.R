@@ -184,6 +184,21 @@ save_plot(
   height = 6
 )
 
+#NE only - rec_hms from LPS only, no MRIP
+save_plot(
+  plot_expression = {
+    rec_lps_sharks_plot <- ecodata::plot_lps_sharks(
+      report = region,
+      n = 10
+    )  +
+      ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
+      ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
+  },
+  indicator = "rec_hms_lps_only",
+  width = 6.5,
+  height = 4.5
+)
+
 ### Implications ----
 
 # 1. Stock Status Plot
