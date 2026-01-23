@@ -636,6 +636,25 @@ save_plot(
   height = ifelse(region == "NewEngland", 5, 3.5)
 )
 
+#zooplankton community PCA
+save_plot(
+  plot_expression = {
+    if (region == "MidAtlantic") {
+      ecodata::plot_zoo_community(report = region, n = 10)  +
+        ggplot2::theme(legend.position = 'bottom')
+    } else {
+      ecodata::plot_zoo_community(
+        report = region,
+        n = 10
+      )   +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
+  },
+  indicator = "zoo_community",
+  width = 6.5,
+  height = ifelse(region == "NewEngland", 5, 3.5)
+)
+
 
 # finfish traits
 save_plot(
@@ -657,6 +676,18 @@ save_plot(
   indicator = "traits",
   width = 6.5,
   height = ifelse(region == "NewEngland", 5, 3.5)
+)
+
+#finfish traits - trophic level
+save_plot(
+  plot_expression = {
+    ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
+         ggplot2::theme(legend.position = 'bottom') +
+         ggplot2::ylab('Trophic Level')
+  },
+  indicator = "traits_trophic_level",
+  width = 6.5,
+  height = 4.5
 )
 
 ## Community social and climate vulnerability ----
