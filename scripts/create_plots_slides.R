@@ -408,59 +408,49 @@ save_plot(
 )
 
 # Geret's profitability indices (comdat profit)
+# Geret's profitability indices (comdat profit) (EPU = MAB)
 save_plot(
   plot_expression = {
-    ecodata::plot_comdat_profit(
-      report = region,
-      n = 23
-    ) +
-      ggplot2::scale_color_discrete(
-        limits = c("cost_index", "profit_index", "revenue_index"),
-        labels = c("Cost Index", "Profit Index", "Revenue Index")
+    if (region == "MidAtlantic") {
+      ecodata::plot_comdat_profit(
+        report = region,
+        n = 23
       ) +
-      ggplot2::theme(legend.position = "bottom")
+        ggplot2::scale_color_discrete(
+          limits = c("cost_index", "profit_index", "revenue_index"),
+          labels = c("Cost Index", "Profit Index", "Revenue Index")
+        ) +
+        ggplot2::theme(legend.position = "bottom")
+    }
+    
+    else {  
+      gb <- ecodata::plot_comdat_profit(
+        report = region,
+        EPU = "GB",
+        n = 23
+      ) +
+        ggplot2::scale_color_discrete(
+          limits = c("cost_index", "profit_index", "revenue_index"),
+          labels = c("Cost Index", "Profit Index", "Revenue Index")
+        ) +
+        ggplot2::theme(legend.position = "none") 
+      
+      gom <- ecodata::plot_comdat_profit(
+        report = region,
+        EPU = "GOM",
+        n = 23
+      ) +
+        ggplot2::scale_color_discrete(
+          limits = c("cost_index", "profit_index", "revenue_index"),
+          labels = c("Cost Index", "Profit Index", "Revenue Index")
+        ) +
+        ggplot2::theme(legend.position = "bottom")
+      ggpubr::ggarrange(gb, gom, nrow = 2)
+    }
   },
   indicator = "comdat_profit",
   width = 6.5,
-  height = 4.5
-)
-
-#comdat_profit (EPU = GB)
-save_plot(
-  plot_expression = {
-    ecodata::plot_comdat_profit(
-      report = region,
-      EPU = "GB",
-      n = 23
-    ) +
-      ggplot2::scale_color_discrete(
-        limits = c("cost_index", "profit_index", "revenue_index"),
-        labels = c("Cost Index", "Profit Index", "Revenue Index")
-      ) +
-      ggplot2::theme(legend.position = "bottom")
-  },
-  indicator = "comdat_profit_GB",
-  width = 6.5,
-  height = 4.5
-)
-
-#comdat_profit (EPU = GOM)
-save_plot(
-  plot_expression = {
-    ecodata::plot_comdat_profit(
-      report = region,
-      EPU = "GOM",
-      n = 23
-    ) +
-      ggplot2::scale_color_discrete(
-        limits = c("cost_index", "profit_index", "revenue_index"),
-        labels = c("Cost Index", "Profit Index", "Revenue Index")
-      ) +
-      ggplot2::theme(legend.position = "bottom")
-  },
-  indicator = "comdat_profit_GOM",
-  width = 6.5,
-  height = 4.5
+  height = ifelse (region == "NewEngland", 8, 4.5)
 )
 
 ## Recreational opportunities ----
