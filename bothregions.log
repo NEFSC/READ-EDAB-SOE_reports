@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.19)  9 JAN 2026 13:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.19)  12 JAN 2026 10:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1284,12 +1284,12 @@ File: images/MidAtlantic/slide_zooplankton_anomaly_MidAtlantic_2026-01-09.png Gr
 Package pdftex.def Info: images/MidAtlantic/slide_zooplankton_anomaly_MidAtlantic_2026-01-09.png  used on input line 2306.
 (pdftex.def)             Requested size: 469.76819pt x 542.0402pt.
 [73 <./images/MidAtlantic/benthos_MidAtlantic_2026-01-09.png>] [74 <./images/MidAtlantic/slide_zooplankton_anomaly_MidAtlantic_2026-01-09.png>]
-<images/BothReports/slide_therm_hab_persist_BothReports_2026-01-09.png, id=787, 469.755pt x 289.08pt>
+<images/BothReports/slide_therm_hab_persist_BothReports_2026-01-09.png, id=786, 469.755pt x 289.08pt>
 File: images/BothReports/slide_therm_hab_persist_BothReports_2026-01-09.png Graphic file (type png)
 <use images/BothReports/slide_therm_hab_persist_BothReports_2026-01-09.png>
 Package pdftex.def Info: images/BothReports/slide_therm_hab_persist_BothReports_2026-01-09.png  used on input line 2321.
 (pdftex.def)             Requested size: 469.77536pt x 289.09251pt.
-<images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png, id=791, 2975.115pt x 1136.245pt>
+<images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png, id=790, 2975.115pt x 1136.245pt>
 File: images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png Graphic file (type png)
 <use images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png>
 Package pdftex.def Info: images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png  used on input line 2332.
@@ -1312,12 +1312,13 @@ File: images/NewEngland/salmon_NewEngland_2026-01-09.png Graphic file (type png)
 <use images/NewEngland/salmon_NewEngland_2026-01-09.png>
 Package pdftex.def Info: images/NewEngland/salmon_NewEngland_2026-01-09.png  used on input line 2375.
 (pdftex.def)             Requested size: 469.77536pt x 289.09251pt.
-<images/NewEngland/condition_NewEngland_2026-01-09.png, id=842, 469.755pt x 722.7pt>
+[78 <./images/NewEngland/seabird_productivity_NewEngland_2026-01-09.png> <./images/NewEngland/salmon_NewEngland_2026-01-09.png>]
+<images/NewEngland/condition_NewEngland_2026-01-09.png, id=846, 469.755pt x 722.7pt>
 File: images/NewEngland/condition_NewEngland_2026-01-09.png Graphic file (type png)
 <use images/NewEngland/condition_NewEngland_2026-01-09.png>
 Package pdftex.def Info: images/NewEngland/condition_NewEngland_2026-01-09.png  used on input line 2386.
 (pdftex.def)             Requested size: 424.25935pt x 652.70668pt.
-[78 <./images/NewEngland/seabird_productivity_NewEngland_2026-01-09.png> <./images/NewEngland/salmon_NewEngland_2026-01-09.png>] [79]
+[79]
 Overfull \vbox (32.00046pt too high) has occurred while \output is active []
 
 [80 <./images/NewEngland/condition_NewEngland_2026-01-09.png>]
@@ -1473,13 +1474,13 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  23211 strings out of 469458
  465315 string characters out of 5465140
- 904855 words of memory out of 5000000
+ 905218 words of memory out of 5000000
  50915 multiletter control sequences out of 15000+600000
  730237 words of font info for 234 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  77i,15n,117p,2696b,727s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb>
-Output written on bothregions.pdf (103 pages, 30522532 bytes).
+Output written on bothregions.pdf (103 pages, 30522831 bytes).
 PDF statistics:
  1516 PDF objects out of 1728 (max. 8388607)
  1255 compressed objects within 13 object streams

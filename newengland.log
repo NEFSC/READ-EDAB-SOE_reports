@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.19)  9 JAN 2026 13:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.19)  12 JAN 2026 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1122,12 +1122,13 @@ File: images/NewEngland/salmon_NewEngland_2026-01-09.png Graphic file (type png)
 <use images/NewEngland/salmon_NewEngland_2026-01-09.png>
 Package pdftex.def Info: images/NewEngland/salmon_NewEngland_2026-01-09.png  used on input line 1490.
 (pdftex.def)             Requested size: 469.77536pt x 289.09251pt.
-<images/NewEngland/condition_NewEngland_2026-01-09.png, id=496, 469.755pt x 722.7pt>
+[47 <./images/NewEngland/seabird_productivity_NewEngland_2026-01-09.png> <./images/NewEngland/salmon_NewEngland_2026-01-09.png>]
+<images/NewEngland/condition_NewEngland_2026-01-09.png, id=500, 469.755pt x 722.7pt>
 File: images/NewEngland/condition_NewEngland_2026-01-09.png Graphic file (type png)
 <use images/NewEngland/condition_NewEngland_2026-01-09.png>
 Package pdftex.def Info: images/NewEngland/condition_NewEngland_2026-01-09.png  used on input line 1501.
 (pdftex.def)             Requested size: 424.25935pt x 652.70668pt.
-[47 <./images/NewEngland/seabird_productivity_NewEngland_2026-01-09.png> <./images/NewEngland/salmon_NewEngland_2026-01-09.png>] [48]
+[48]
 Overfull \vbox (32.00046pt too high) has occurred while \output is active []
 
 [49 <./images/NewEngland/condition_NewEngland_2026-01-09.png>]
@@ -1269,13 +1270,13 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  22613 strings out of 469458
  438166 string characters out of 5465140
- 891477 words of memory out of 5000000
+ 892834 words of memory out of 5000000
  50443 multiletter control sequences out of 15000+600000
  729325 words of font info for 226 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  77i,15n,117p,2751b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb>
-Output written on newengland.pdf (69 pages, 26097416 bytes).
+Output written on newengland.pdf (69 pages, 26097779 bytes).
 PDF statistics:
  1043 PDF objects out of 1200 (max. 8388607)
  853 compressed objects within 9 object streams

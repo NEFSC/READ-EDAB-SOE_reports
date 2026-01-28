@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "08513b1")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "0e89674")
 
 # setup ----
 
@@ -9,6 +9,7 @@ region <- "NewEngland" #change to NewEngland to run for NE
 region <- "MidAtlantic" #change to NewEngland to run for NE
 
 out_dir <- here::here("images", region)
+
 if (!dir.exists(out_dir)) {
   dir.create(out_dir)
 }
@@ -131,7 +132,7 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionland",
-      n = 21
+      n = 24
     ) +
       ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
       ggplot2::theme(legend.position = 'bottom')
@@ -182,6 +183,21 @@ save_plot(
   indicator = "rec_hms",
   width = 6.5,
   height = 6
+)
+
+#NE only - rec_hms from LPS only, no MRIP
+save_plot(
+  plot_expression = {
+    rec_lps_sharks_plot <- ecodata::plot_lps_sharks(
+      report = region,
+      n = 10
+    )  +
+      ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
+      ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
+  },
+  indicator = "rec_hms_lps_only",
+  width = 6.5,
+  height = 4.5
 )
 
 ### Implications ----
@@ -287,6 +303,10 @@ save_plot(
     )
         if (region == "MidAtlantic") {
          comm_revenue_plot +
+            ggplot2::scale_x_continuous(
+              breaks = seq(1980, 2020, by = 5),
+              expand = c(0.01, 0.01)
+            ) +
           ggplot2::theme(
            legend.position = "bottom",
           legend.title = ggplot2::element_blank()
@@ -389,7 +409,7 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionrev",
-      n = 21
+      n = 24
     ) +
          ggplot2::theme(legend.position = "bottom") +
         ggplot2::ylab("Total Climate Vulnerability \n (Regional Revenue)") 
@@ -398,6 +418,52 @@ save_plot(
   width = 6.5,
   height = 2.5
 )
+
+# Geret's profitability indices (comdat profit) (EPU = MAB)
+save_plot(
+  plot_expression = {
+    if (region == "MidAtlantic") {
+      ecodata::plot_comdat_profit(
+        report = region,
+        n = 23
+      ) +
+        ggplot2::scale_color_discrete(
+          limits = c("cost_index", "profit_index", "revenue_index"),
+          labels = c("Cost Index", "Profit Index", "Revenue Index")
+        ) +
+        ggplot2::theme(legend.position = "bottom")
+    }
+    
+  else {  
+   gb <- ecodata::plot_comdat_profit(
+      report = region,
+      EPU = "GB",
+      n = 23
+    ) +
+      ggplot2::scale_color_discrete(
+        limits = c("cost_index", "profit_index", "revenue_index"),
+        labels = c("Cost Index", "Profit Index", "Revenue Index")
+      ) +
+      ggplot2::theme(legend.position = "none") 
+   
+   gom <- ecodata::plot_comdat_profit(
+     report = region,
+     EPU = "GOM",
+     n = 23
+   ) +
+     ggplot2::scale_color_discrete(
+       limits = c("cost_index", "profit_index", "revenue_index"),
+       labels = c("Cost Index", "Profit Index", "Revenue Index")
+     ) +
+     ggplot2::theme(legend.position = "bottom")
+   ggpubr::ggarrange(gb, gom, nrow = 2)
+  }
+  },
+  indicator = "comdat_profit",
+  width = 6.5,
+  height = ifelse (region == "NewEngland", 8, 4.5)
+)
+
 
 ## Recreational opportunities ----
 
@@ -513,14 +579,16 @@ save_plot(
         plottype = "total",
         EPU = "GB",
         n = 27
-      ) + ggplot2::ggtitle('Georges Bank total PP')
+      ) + ggplot2::ggtitle('Georges Bank total PP') +
+        ggplot2::ylab("Carbon (mt)")
       b <- ecodata::plot_annual_chl_pp(
         report = region,
         varName = "pp",
         plottype = "total",
         EPU = "GOM",
         n = 27
-      ) + ggplot2::ggtitle('Gulf of Maine total PP')
+      ) + ggplot2::ggtitle('Gulf of Maine total PP') +
+        ggplot2::ylab("Carbon (mt)")
       
       ggpubr::ggarrange(a, b, nrow = 2)
     }
@@ -574,6 +642,25 @@ save_plot(
   height = ifelse(region == "NewEngland", 5, 3.5)
 )
 
+#zooplankton community PCA
+save_plot(
+  plot_expression = {
+    if (region == "MidAtlantic") {
+      ecodata::plot_zoo_community(report = region, n = 10)  +
+        ggplot2::theme(legend.position = 'bottom')
+    } else {
+      ecodata::plot_zoo_community(
+        report = region,
+        n = 10
+      )   +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
+  },
+  indicator = "zoo_community",
+  width = 6.5,
+  height = ifelse(region == "NewEngland", 5, 3.5)
+)
+
 
 # finfish traits
 save_plot(
@@ -597,20 +684,32 @@ save_plot(
   height = ifelse(region == "NewEngland", 5, 3.5)
 )
 
+#finfish traits - trophic level
+save_plot(
+  plot_expression = {
+    ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
+         ggplot2::theme(legend.position = 'bottom') +
+         ggplot2::ylab('Trophic Level')
+  },
+  indicator = "traits_trophic_level",
+  width = 6.5,
+  height = 4.5
+)
+
 ## Community social and climate vulnerability ----
 
 # 1. Commercial Engagement Plot
 save_plot(
   plot_expression = {
-    commercial_engagement_plot <- ecodata::plot_engagement(
+    commercial_engagement_plot <- plot_engagement(
       report = region,
       varName = "Commercial"
     ) +
       ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
   },
   indicator = "commercial_engagement",
-  width = 6.5,
-  height = 4
+  width = 7,
+  height = 5
 )
 
 # 2. Recreational Engagement Plot
@@ -632,7 +731,7 @@ save_plot(
   plot_expression = {
     ecodata::plot_community_climate_vulnerability(
       report = region,
-      n = 21
+      n = 24
     ) +
         ggplot2::theme(legend.position = 'bottom')
   },
@@ -646,28 +745,9 @@ save_plot(
 # transition dates
 save_plot(
   plot_expression = {
-    if (region == "MidAtlantic") {
-      # TODO: move aesthetics into ecodata function
-      ecodata::plot_trans_dates(report = region, varName = "length", n = 10) +
-           ggplot2::ggtitle(paste(
-            "Time between spring and fall transition in",
-           full_region
-        ))  +
-           ggplot2::theme(
-            strip.background = ggplot2::element_blank(),
-           strip.text.x = ggplot2::element_blank()
-        )
-    } else {
-      ecodata::plot_trans_dates(report = region, varName = "length", n = 10)  +
-             ggplot2::ggtitle(paste(
-              "Time between spring and fall transition in",
-             full_region
-          ))  +
-            ggplot2::theme(
-             strip.background = ggplot2::element_blank(),
-          strip.text.x = ggplot2::element_blank()) +
-       ggplot2::facet_wrap(~EPU, nrow = 2)
-    }
+      ecodata::plot_trans_dates(report = region, 
+                                varName = "length",
+                                n = 10)
   },
   indicator = "transition_date",
   width = 6.5,
@@ -697,32 +777,61 @@ save_plot(
 # productivity + recruitment anomalies
 save_plot(
   plot_expression = {
-    productivity_anomaly_plot <- ecodata::plot_productivity_anomaly(
-      report = region,
-      EPU = dplyr::case_when(
-        region == "NewEngland" ~ "GOM",
-        region == "MidAtlantic" ~ "MAB"
-      )
-    ) +
-      ggplot2::guides(
-        fill = ggplot2::guide_legend(
-          ncol = dplyr::case_when(
-            region == "NewEngland" ~ 3,
-            region == "MidAtlantic" ~ 2,
-            TRUE ~ 2
-          )
-        )
+    if (region == "MidAtlantic") {
+      productivity_anomaly_plot <- ecodata::plot_productivity_anomaly(
+        report = region,
+        EPU = "MAB"
       ) +
-      ggplot2::theme(
-        legend.position = "none",
-        plot.title = ggplot2::element_text(size = 11),
-        axis.text = ggplot2::element_text(size = 11),
-        axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
-      )
+        ggplot2::guides(
+          fill = ggplot2::guide_legend(
+            ncol = 2
+          )
+        ) +
+        ggplot2::theme(
+          legend.position = "none",
+          plot.title = ggplot2::element_text(size = 11),
+          axis.text = ggplot2::element_text(size = 11),
+          axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
+        )
+    }
+    if (region == "NewEngland") {
+      gom <- ecodata::plot_productivity_anomaly(
+        report = region,
+        EPU = "GOM"
+      ) +
+        ggplot2::guides(
+          fill = ggplot2::guide_legend(
+            ncol = 4
+          )
+        ) +
+        ggplot2::theme(
+          legend.position = "none",
+          plot.title = ggplot2::element_text(size = 11),
+          axis.text = ggplot2::element_text(size = 11),
+          axis.title.y = ggplot2::element_text(vjust = 0, size = 8)
+        )
+      
+      gb <- ecodata::plot_productivity_anomaly(
+        report = region,
+        EPU = "GB"
+      ) +
+        ggplot2::guides(
+          fill = ggplot2::guide_legend(
+            ncol = 4
+          )
+        ) +
+        ggplot2::theme(
+          legend.position = "none",
+          plot.title = ggplot2::element_text(size = 11),
+          axis.text = ggplot2::element_text(size = 11),
+          axis.title.y = ggplot2::element_text(vjust = 0, size = 8)
+        )
+    }
+    
     recruit_anomaly_plot <- ecodata::plot_productivity_anomaly(
       report = region,
       varName = "assessment"
-    )  +
+    ) +
       ggplot2::guides(fill = ggplot2::guide_legend(ncol = 2)) +
       ggplot2::theme(
         legend.position = "none",
@@ -731,17 +840,27 @@ save_plot(
         axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
       )
     # combined anomaly plot
-    ggpubr::ggarrange(
-      productivity_anomaly_plot,
-      recruit_anomaly_plot,
-      ncol = ifelse(region == "MidAtlantic", 1, 1),
-      common.legend = TRUE,
-      legend = "bottom"
-    )
+    if (region == "MidAtlantic") {
+      ggpubr::ggarrange(
+        productivity_anomaly_plot,
+        recruit_anomaly_plot,
+        ncol = 1,
+        common.legend = TRUE,
+        legend = "bottom"
+      )
+    } else if (region == "NewEngland") {
+     ggpubr::ggarrange(
+        gb,
+        gom,
+        recruit_anomaly_plot,
+        ncol = 1,
+        common.legend = TRUE,
+        legend = "bottom") 
+    }
   },
   indicator = "productivity_anomaly",
   width = 6.5,
-  height = 7
+  height = 8.5
 )
 
 # condition factor
@@ -845,10 +964,10 @@ save_plot(
     ) +
       ggplot2::ylab("Relative Biomass") +
       ggplot2::labs(title = "Large Copepods") +
-      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
+      ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) 
+      # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     small_copepod_plot <- ecodata::plot_zooplankton_index(
       report = region,
       varName = "Smallcopeall",
@@ -856,10 +975,10 @@ save_plot(
     ) +
       ggplot2::ylab("Relative Biomass") +
       ggplot2::labs(title = "Small Copepods") +
-      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
+      ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))  
+      # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     euphausiid_plot <- ecodata::plot_zooplankton_index(
       report = region,
       varName = "Euph",
@@ -868,10 +987,10 @@ save_plot(
       ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white")) +
       ggplot2::ylab("Relative Biomass") +
       ggplot2::labs(title = "Euphasiids") +
-      ggplot2::theme(strip.text.x = ggplot2::element_blank()) +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
-      ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
+      ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))  
+      # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
+      # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
+      # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     ggpubr::ggarrange(
       large_copepod_plot,
       small_copepod_plot,
@@ -1055,7 +1174,7 @@ save_plot(
       ggplot2::coord_cartesian(xlim = c(1969, 2021))
     b <- ecodata::plot_species_dist(varName = "depth", n = 10) +
       ggplot2::coord_cartesian(xlim = c(1969, 2021))
-    ggpubr::ggarrange(a, b, nrow = 2)
+    ggpubr::ggarrange(a, b, ncol = 2)
   },
   indicator = "species_dist",
   width = 6.5,
@@ -1227,7 +1346,8 @@ save_plot(
 if (region == "NewEngland") {
   save_plot(
     plot_expression = {
-      ecodata::plot_seabird_ne(varName = "productivity", n = 10) 
+      ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
+        ggplot2::coord_cartesian(xlim = c(1991, 2025))
     },
     indicator = "seabird_productivity",
     width = 6.5,
