@@ -1,4 +1,4 @@
-## Objective: Mid Atlantic Fishery Stability: Not Stable &emsp; Risk elements: <span style="background-color:orange;">FleetDiv</span> and <span style="background-color:lightgreen;">FishRes1</span>
+## Objective: Mid Atlantic Fishery Stability: Not Stable 
 
 :::: {.soe-50-50-slide}
 

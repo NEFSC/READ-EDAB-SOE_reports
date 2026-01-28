@@ -3,13 +3,20 @@
 Drivers: Environmental
 *Potential Ocean Acidification Impacts: Scallops and Longfin squid*
 
-```{r mab-oa, fig.show= 'hold', out.width = '100%', fig.alt = "Locations where bottom aragonite saturation state ($\\Omega_{Arag}$; summer only: June-August) were at or below the laboratory-derived sensitivity level for Atlantic sea scallop (left panel) and longfin squid (right panel) for the time periods 2007-2022 (dark cyan), 2023 only (magenta) and 2024 only (cyan). Gray circles indicate locations where bottom $\\Omega_{Arag}$ values were above the species specific sensitivity values."}
-return_plot("mab-oa", region = "BothReports")
+::: {layout-nrow=1}
+
+```{r}
+return_plot("mab-oa-scallop", region = "BothReports")
 ```
 
+```{r}
+return_plot("mab-oa-squid", region = "BothReports")
+```
+
+:::
 
 Drivers: Predation  
-*Seals increasing, mix of population status for HMS*
+*Seals increasing, mix of population status for HMS, advection*
 
 ## Risks to Setting Catch Limits
 

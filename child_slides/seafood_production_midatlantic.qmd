@@ -1,4 +1,4 @@
-## Objective: Mid Atlantic Seafood production `r I(decreasing)` `r I(below_average)` &emsp; Risk elements: <span style="background-color:orange;">ComFood</span> and <span style="background-color:orange;">RecFood</span>, unchanged
+## Objective: Mid Atlantic Seafood production `r I(decreasing)` `r I(below_average)` 
 
 :::: {.soe-50-50-slide}
 
@@ -10,11 +10,12 @@ return_plot("total-landings", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r climatevul-land, fig.alt="Mid-Atlantic region total climate vulnerability of commercial landings (sum of Mid-Atlantic port landings weighted by species climate vulnerability from Hare et al. 2016)."}
-return_plot("climatevul-land", region = "MidAtlantic")
+return_plot("climatevul-land", region = "MidAtlantic", mode = "slide")
 ```
 :::
 
 ::: {.soe-50-column}
+
 Indicators: Recreational harvest
 
 ```{r}
@@ -31,26 +32,30 @@ Multiple potential drivers: ecosystem and stock production, management, market c
 
 ::::
 
-## Mid Atlantic Landings drivers: Stock status? TAC? &emsp; Risk elements: Fstatus, Bstatus, MgtControl 
+## Mid Atlantic Landings drivers: Stock status? TAC? 
+
 :::: {.soe-50-50-slide}
 
 ::: {}
+
 Indicator: Stock status
 
 ```{r stock-status}
 return_plot("stock-status", region = "MidAtlantic", mode = "slide")
+return_plot("abcacl-catch", region = "MidAtlantic", mode = "slide")
 ```
 :::
 
 ::: {}
+
 Indicators: Total ABC or ACL, and Realized catch relative to management target
 
 ```{r}
 return_plot("abcacl-stacked", region = "MidAtlantic", mode = "slide")
-return_plot("abcacl-catch", region = "MidAtlantic", mode = "slide")
+
 ```
 
-Few managed species have binding limits; Management less likely playing a role
+Catch near limits on average
 
 :::
 
@@ -67,10 +72,6 @@ Biomass does not appear to drive landings trends
 ```{r}
 return_plot("nefsc-biomass-mab", region = "MidAtlantic", mode = "slide")
 ```
-Key: 
-
-- Black = NEFSC survey
-- <p style="color:#FF6A6A;">Red = NEAMAP survey</p>
 
 :::
 

@@ -1,4 +1,4 @@
-## Objective: Mid Atlantic Recreational opportunities `r I(increasing)` `r I(above_average)`; `r I(decreasing)` `r I(below_average)` Risk elements: <span style="background-color:yellow;">RecValue</span>, <span style="background-color:red;">RecDiv</span>
+## Objective: Mid Atlantic Recreational opportunities `r I(increasing)` `r I(above_average)`; `r I(decreasing)` `r I(below_average)`
 
 :::: {.soe-50-50-slide}
 
