@@ -66,7 +66,7 @@ save_plot <- function(
   p <- eval(plot_expression)
 
   # Check if the plot object is valid before saving
-  if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
+  if (inherits(p, "ggaplot") || inherits(p, "ggarrange")) {
     message(report)
     message(indicator)
     message(out_dir)
@@ -217,13 +217,12 @@ save_plot(
 
 
 # 2. ABC/ACL Stacked Plot
-source(here::here("scripts/abc_acl_rewrite.R"))
+#source(here::here("scripts/abc_acl_rewrite.R"))
 save_plot(
   plot_expression = {
-    plot_abc_acl(
+    ecodata::plot_abc_acl(
       report = region,
-      plottype = "Stacked",
-      n = 13
+      plottype = "Stacked"
     )
   },
   indicator = "abcacl_stacked",
