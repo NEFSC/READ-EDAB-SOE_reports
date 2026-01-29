@@ -723,7 +723,6 @@ save_plot(
   height = ifelse(region == "NewEngland", 3.5, 4)
 )
 
-<<<<<<< HEAD
 #finfish traits - trophic level
 save_plot(
   plot_expression = {
@@ -760,7 +759,8 @@ save_plot(
   indicator = "traits_growth_rate",
   width = 6.5,
   height = 4.5
-=======
+)
+
 # finfish traits -- trophic level
 save_plot(
   plot_expression = {
