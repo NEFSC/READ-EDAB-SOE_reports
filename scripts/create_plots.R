@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "0e89674")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "a1d8401")
 
 # setup ----
 
@@ -687,11 +687,37 @@ save_plot(
 #finfish traits - trophic level
 save_plot(
   plot_expression = {
+    if (region == "MidAtlantic") {
     ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
          ggplot2::theme(legend.position = 'bottom') +
          ggplot2::ylab('Trophic Level')
+    } else {
+      ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::ylab('Trophic Level') +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
   },
   indicator = "traits_trophic_level",
+  width = 6.5,
+  height = 4.5
+)
+
+#finfish traits - growth rate
+save_plot(
+  plot_expression = {
+    if (region == "MidAtlantic") {
+    ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
+         ggplot2::theme(legend.position = 'bottom') +
+         ggplot2::ylab('Growth coefficient (k)')
+    } else {
+      ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::ylab('Growth coefficient (k)') +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
+  },
+  indicator = "traits_growth_rate",
   width = 6.5,
   height = 4.5
 )

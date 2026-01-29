@@ -723,6 +723,44 @@ save_plot(
   height = ifelse(region == "NewEngland", 3.5, 4)
 )
 
+#finfish traits - trophic level
+save_plot(
+  plot_expression = {
+    if (region == "MidAtlantic") {
+      ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::ylab('Trophic Level')
+    } else {
+      ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::ylab('Trophic Level') +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
+  },
+  indicator = "traits_trophic_level",
+  width = 6.5,
+  height = 4.5
+)
+
+#finfish traits - growth rate
+save_plot(
+  plot_expression = {
+    if (region == "MidAtlantic") {
+      ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::ylab('Growth coefficient (k)')
+    } else {
+      ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::ylab('Growth coefficient (k)') +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
+  },
+  indicator = "traits_growth_rate",
+  width = 6.5,
+  height = 4.5
+)
+
 # finfish traits -- trophic level
 save_plot(
   plot_expression = {
@@ -768,6 +806,7 @@ save_plot(
   indicator = "traits_k",
   width = 6.5,
   height = ifelse(region == "NewEngland", 6, 4)
+>>>>>>> eb326445d879f900c0502120e5e6715f14007be4
 )
 
 ## Community social and climate vulnerability ----
