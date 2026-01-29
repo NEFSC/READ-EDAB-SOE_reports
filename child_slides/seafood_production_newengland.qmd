@@ -3,11 +3,14 @@
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
+
 Indicators: Commercial landings, climate risk
 
 ```{r}
 return_plot("total-landings", region = "NewEngland", mode = "slide")
 ```
+
+Multiple drivers: ecosystem and stock production, management actions (stock rebuilding), market conditions (including COVID-19 disruptions), and environmental change
 
 :::
 
@@ -26,7 +29,7 @@ return_plot("rec-hms", region = "NewEngland", mode = "slide")
 
 ::::
 
-Multiple drivers: ecosystem and stock production, management actions (stock rebuilding), market conditions (including COVID-19 disruptions), and environmental change
+
 
 ## New England drivers: Stock status? Survey biomass?
 :::: {.soe-50-50-slide}
@@ -38,7 +41,8 @@ Indicator: Stock status
 return_plot("stock-status", region = "NewEngland", mode = "slide")
 ```
 
-One more stock below BMSY from last year (S Silver Hake). No change in stocsk below 1/2 BMSY. Stock status and required management actions still likely playing large role in seafood declines.
+GB Haddock & Plaice now have B/Bmsy >1. GOM Haddock now has F/Fmsy < 1. 
+Stock status and required management actions still likely playing large role in seafood declines.
 
 :::
 
@@ -49,10 +53,12 @@ Indicators: Survey biomass
 ::: {layout-ncol=2}
 
 ```{r}
+#| fig-cap: "Gulf of Maine"
 return_plot("nefsc-biomass-gom", region = "NewEngland", mode = "slide")
 ```
 
 ```{r}
+#| fig-cap: "Georges Bank"
 return_plot("nefsc-biomass-gb", region = "NewEngland", mode = "slide")
 ```
 

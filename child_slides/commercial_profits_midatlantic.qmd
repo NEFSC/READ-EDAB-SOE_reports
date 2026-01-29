@@ -1,4 +1,4 @@
-## Objective: Mid Atlantic Commercial Profits `r I(no_trend)`  `r I(below_average)` &emsp; Risk element: <span style="background-color:orange;">CommRev</span>, unchanged
+## Objective: Mid Atlantic Commercial Profits `r I(no_trend)`  `r I(below_average)` 
 
 ::: { .soe-50-50-slide}
 

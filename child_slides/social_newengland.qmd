@@ -1,6 +1,6 @@
 ## New England Community Social and Climate Vulnerability
 
-Indicators: Commercial fifishery engagement, social vulnerability, revenue climate vulnerability
+Indicators: Commercial fishery engagement, social vulnerability, revenue climate vulnerability
 
 :::: {.soe-50-50-slide}
 
@@ -15,20 +15,7 @@ return_plot("commercial-engagement", region = "NewEngland", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r}
-a <- ecodata::plot_engagement(report = 'NewEngland',varName = 'Commercial')
-
-a$data |>
-  dplyr::ungroup() |>
-  dplyr::slice_max(order_by = Eng,n =10) |>
-  flextable::flextable() |>
-  flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
-                               pop_composition_rank = "Population Composition",
-                               poverty_rank = "Poverty") |>
-  flextable::colformat_num(na_str = "-",big.mark = '') |>
-  #flextable::set_caption("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for Mid-Atlantic communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.") |>
-  flextable::fontsize(size = 12, part = "all") |>
-  flextable::autofit() 
-  
+ecodata::plot_engagement(report = 'NewEngland',varName = 'Commercial',plottype = 'Social')
 ```
 
 :::
@@ -80,19 +67,7 @@ return_plot("recreational-engagement", region = "NewEngland", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r}
-a <- ecodata::plot_engagement(varName = "Recreational",report = 'NewEngland')
-
-a$data |>
-  dplyr::ungroup() |>
-  dplyr::slice_max(order_by = Eng,n =10) |>
-  flextable::flextable() |>
-  flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
-                               pop_composition_rank = "Population Composition",
-                               poverty_rank = "Poverty") |>
-  flextable::colformat_num(na_str = "-",big.mark = '') |>
-  #flextable::set_caption("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for Mid-Atlantic communities most engaged in recreational fishing, 2022. Blank spaces indicate no data available.") |>
-  flextable::fontsize(size = 12, part = "all") |>
-  flextable::autofit() 
+ecodata::plot_engagement(varName = "Recreational",report = 'NewEngland', plottype = 'Social')
 ```
 
 :::
