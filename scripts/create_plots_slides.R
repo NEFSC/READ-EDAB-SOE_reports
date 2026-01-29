@@ -26,6 +26,7 @@ region2 <- dplyr::case_when(
   region == "NewEngland" ~ "New England"
 )
 
+
 full_region <- dplyr::case_when(
   region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
   region == "NewEngland" ~ "New England"
@@ -600,7 +601,7 @@ save_plot(
         EPU = "GB",
         n = 27
       ) +
-        ggplot2::ggtitle('Georges Bank total PP') +
+        ggplot2::ggtitle('Georges Bank total Primary Production') +
         ggplot2::ylab("Carbon (mt)")
       b <- ecodata::plot_annual_chl_pp(
         report = region,
@@ -609,7 +610,7 @@ save_plot(
         EPU = "GOM",
         n = 27
       ) +
-        ggplot2::ggtitle('Gulf of Maine total PP') +
+        ggplot2::ggtitle('Gulf of Maine total Primary Production') +
         ggplot2::ylab("Carbon (mt)")
 
       ggpubr::ggarrange(a, b, nrow = 2)
@@ -1469,8 +1470,7 @@ save_plot(
 # spawn timing
 save_plot(
   plot_expression = {
-    ecodata::plot_spawn_timing(n = 10) +
-      ggplot2::ggtitle("Spring Resting Maturity Stage")
+    ecodata::plot_spawn_timing(n = 10) 
   },
   indicator = "spawn_timing",
   width = 6.5,
