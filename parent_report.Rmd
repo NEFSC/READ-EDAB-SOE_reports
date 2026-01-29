@@ -368,7 +368,7 @@ if(params$draft){
  }
 ```
 
-```{r transition2, fig.cap=return_caption(chunk_name = "transition", region = opp_region)}
+```{r transition2, fig.cap=return_caption(chunk_name = "transition", region = opp_region), eval = params$draft}
 return_plot("transition", region = opp_region)
 ```
 
