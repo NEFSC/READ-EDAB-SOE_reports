@@ -1334,6 +1334,107 @@ save_plot(
   height = 4
 )
 
+# small cope center of gravity
+save_plot(
+  plot_expression = {
+    ecodata::plot_zooplankton_index(
+      varName = 'Smallcopeall',
+      plottype = 'cog',
+      n = 10
+    ) +
+      ggplot2::ggtitle("Northeast U.S. Small Copepod Distribution") +
+      ggplot2::ylab("Center of Gravity, km") 
+  },
+  indicator = "smallcopeall_cog",
+  width = 6.5,
+  height = 4
+)
+
+# large cope center of gravity
+save_plot(
+  plot_expression = {
+    ecodata::plot_zooplankton_index(
+      varName = 'Lgcopeall',
+      plottype = 'cog',
+      n = 10
+    ) +
+      ggplot2::ggtitle("Northeast U.S. Large Copepod Distribution") +
+      ggplot2::ylab("Center of Gravity, km") 
+  },
+  indicator = "lgcopeall_cog",
+  width = 6.5,
+  height = 4
+)
+
+# macrobenthos shifts
+save_plot(
+  plot_expression = {
+    ecodata::plot_benthos_index(
+      plottype = "cog",
+      varName = "Macrobenthos",
+      n = 10
+    ) +
+      ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
+      ggplot2::ggtitle("Northeast U.S. Macrobenthos Distribution") +
+      ggplot2::ylab("Center of Gravity, km") +
+    ggplot2::theme(legend.position = 'bottom') +
+    ggplot2::facet_grid(
+      cols = ggplot2::vars(Season),
+      rows = ggplot2::vars(Direction),
+      scales = "free_y"
+    )
+  },
+  indicator = "macrobenthos_dist",
+  width = 6.5,
+  height = 3.5
+)
+
+# megabenthos shifts
+save_plot(
+  plot_expression = {
+    ecodata::plot_benthos_index(
+      plottype = "cog",
+      varName = "Megabenthos",
+      n = 10
+    ) +
+      # ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
+      ggplot2::ggtitle("Northeast U.S. Megabenthos Distribution") +
+      ggplot2::ylab("Center of Gravity, km") +
+      ggplot2::facet_grid(
+          cols = ggplot2::vars(Season),
+          rows = ggplot2::vars(Direction),
+          scales = "free_y") +
+      ggplot2::theme(legend.position = 'bottom')
+  },
+  indicator = "megabenthos_dist",
+  width = 6.5,
+  height = 3.5
+)
+
+# euphausiid center of gravity
+save_plot(
+  plot_expression = {
+    ecodata::plot_zooplankton_index(
+      report = "MidAtlantic",
+      varName = 'Euph',
+      plottype = 'cog',
+      n = 10
+    ) +
+      ggplot2::ggtitle("Northeast U.S. Euphausiid Distribution") +
+      ggplot2::ylab("Center of Gravity, km") +
+     ggplot2::theme(legend.position = 'bottom') +
+     ggplot2::facet_grid(
+      cols = ggplot2::vars(Season),
+      rows = ggplot2::vars(Direction),
+      scales = "free_y"
+    )
+  },
+  indicator = "euph_cog",
+  width = 6.5,
+  height = 4
+)
+
+
 # for NE only ----
 
 region <- "NewEngland"
