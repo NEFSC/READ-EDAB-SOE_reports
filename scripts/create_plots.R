@@ -1043,7 +1043,12 @@ save_plot(
       plottype = "nofacets",
       n = 16
     )    +
-         ggplot2::theme(legend.position = "bottom")
+         ggplot2::theme(legend.position = "bottom") +
+      if (region == "MidAtlantic") {
+        ggplot2::ggtitle("Mid Atlantic: Fishery Revenue in Active Projects") 
+      } else {
+        ggplot2::ggtitle("New England: Fishery Revenue in Active Projects") 
+      }
   },
   indicator = "wind_revenue",
   width = 6.5,
