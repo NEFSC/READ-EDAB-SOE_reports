@@ -806,7 +806,6 @@ save_plot(
   indicator = "traits_k",
   width = 6.5,
   height = ifelse(region == "NewEngland", 6, 4)
->>>>>>> eb326445d879f900c0502120e5e6715f14007be4
 )
 
 ## Community social and climate vulnerability ----
@@ -875,19 +874,6 @@ save_plot(
       report = region,
       plottype = "monthly",
       n = 30)
-    # ) +
-    #   ggplot2::facet_grid(
-    #     rows = ggplot2::vars(EPU),
-    #     cols = ggplot2::vars(Month)
-    #   ) +
-    #   ggplot2::theme(text = ggplot2::element_text(size = 16)) +
-    #   ggplot2::geom_point(color = "white") +
-    #   ggplot2::geom_line() +
-    #   ggplot2::scale_x_discrete(breaks = scales::pretty_breaks(n = 1)) +
-    #   ggplot2::theme(
-    #     axis.text.x = ggplot2::element_text(size = 8),
-    #     panel.border = ggplot2::element_rect(color = "gray80")
-    #   )
   },
   indicator = "monthly_chl",
   width = 6.5,
@@ -1000,14 +986,10 @@ save_plot(
       n = 10
     ) +
       ggplot2::theme(legend.position = "none") 
-   #   ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-    #  ggplot2::geom_line(ggplot2::aes(color = .data$Season))
     macrobenthos_plot <- ecodata::plot_benthos_index(
       report = region,
       varName = "Macrobenthos",
       n = 10)
-    #  ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-     # ggplot2::geom_line(ggplot2::aes(color = .data$Season))
     ggpubr::ggarrange(
       megabenthos_plot,
       macrobenthos_plot,
@@ -1032,9 +1014,6 @@ save_plot(
       ggplot2::ylab("Relative Biomass") +
       ggplot2::labs(title = "Large Copepods") +
       ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))
-      # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     small_copepod_plot <- ecodata::plot_zooplankton_index(
       report = region,
       varName = "Smallcopeall",
@@ -1043,9 +1022,6 @@ save_plot(
       ggplot2::ylab("Relative Biomass") +
       ggplot2::labs(title = "Small Copepods") +
     ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) 
-      # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     euphausiid_plot <- ecodata::plot_zooplankton_index(
       report = region,
       varName = "Euph",
@@ -1057,9 +1033,6 @@ save_plot(
       ggplot2::ylab("Relative Biomass") +
       ggplot2::labs(title = "Euphasiids") +
       ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) 
-      # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-      # ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-      # ggplot2::theme(plot.background = ggplot2::element_rect(fill = "white"))
     ggpubr::ggarrange(
       large_copepod_plot,
       small_copepod_plot,
@@ -1308,17 +1281,6 @@ save_plot(
   plot_expression = {
     ecodata::plot_forage_index(varName = "cog", n = 10) +
       ggplot2::coord_cartesian(xlim = c(1982, 2023)) 
-    #   ggplot2::ggtitle("Northeast U.S. Forage Fish Distribution") +
-    #   ggplot2::ylab("Center of Gravity, km") +
-    #  # ggplot2::geom_point(ggplot2::aes(color = .data$Season)) +
-    # #  ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-    #   ggplot2::facet_wrap(~Var, nrow = 2) +
-    #   ggplot2::theme(legend.position = "bottom") +
-    #   ggplot2::facet_grid(
-    #     cols = ggplot2::vars(Season),
-    #     rows = ggplot2::vars(Direction),
-    #     scales = "free_y"
-    #   )
   },
   indicator = "forage_dist",
   width = 6.5,
