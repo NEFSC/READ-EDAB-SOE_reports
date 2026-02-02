@@ -16,12 +16,12 @@ Of MAFMC managed fisheries, the surfclam fishery would be the most affected by o
 
 `r wind_indicator_paragraph`
 
-```{r wea-landings-rev, ft.arraystretch = 1}
-create_wea_landings_rev_table(council = "MAFMC") |>
-  flextable::flextable() %>%
-  flextable::set_caption("Mid-Atlantic managed species Landings and Revenue from Wind Energy Areas. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species.") %>%
-  flextable::width(width = c(2,2,2))
-```
+<!-- ```{r wea-landings-rev, ft.arraystretch = 1} -->
+<!-- create_wea_landings_rev_table(council = "MAFMC") |> -->
+<!--   flextable::flextable() %>% -->
+<!--   flextable::set_caption("Mid-Atlantic managed species Landings and Revenue from Wind Energy Areas. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species.") %>% -->
+<!--   flextable::width(width = c(2,2,2)) -->
+<!-- ``` -->
 
 `r wind_interactions`
 

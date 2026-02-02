@@ -74,6 +74,7 @@ create_plots_both <- function(region = "BothReports")
   }
     
   ### THESE NEED TO RUN SEPARATELY, WILL ERROR OUT IN THIS FUNCTION
+  ### ENERGY DENSITY MIGHT BE A STATIC IMAGE NOW?
     # # 9. Thermal Habitat Persistence Plot
     # save_plot(
     #   plot_expression = {
