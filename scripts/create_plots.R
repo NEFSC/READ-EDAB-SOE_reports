@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "a1d8401")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
 
 # setup ----
 
