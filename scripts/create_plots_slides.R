@@ -898,93 +898,29 @@ save_plot(
 # productivity + recruitment anomalies
 save_plot(
   plot_expression = {
-    if (region == "MidAtlantic") {
-      productivity_anomaly_plot <- ecodata::plot_productivity_anomaly(
-        report = region,
-        EPU = "MAB"
-      ) +
-        ggplot2::guides(
-          fill = ggplot2::guide_legend(
-            ncol = 2
-          )
-        ) +
-        ggplot2::theme(
-          legend.position = "none",
-          plot.title = ggplot2::element_text(size = 11),
-          axis.text = ggplot2::element_text(size = 11),
-          axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
-        )
-    }
-    if (region == "NewEngland") {
-      gom <- ecodata::plot_productivity_anomaly(
-        report = region,
-        EPU = "GOM"
-      ) +
-        ggplot2::guides(
-          fill = ggplot2::guide_legend(
-            ncol = 3
-          )
-        ) +
-        ggplot2::theme(
-          legend.position = "none",
-          plot.title = ggplot2::element_text(size = 11),
-          axis.text = ggplot2::element_text(size = 11),
-          axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
-        )
-
-      gb <- ecodata::plot_productivity_anomaly(
-        report = region,
-        EPU = "GB"
-      ) +
-        ggplot2::guides(
-          fill = ggplot2::guide_legend(
-            ncol = 3
-          )
-        ) +
-        ggplot2::theme(
-          legend.position = "none",
-          plot.title = ggplot2::element_text(size = 11),
-          axis.text = ggplot2::element_text(size = 11),
-          axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
-        )
-
-      productivity_anomaly_plot <- ggpubr::ggarrange(gom, gb)
-    }
-
-    recruit_anomaly_plot <- ecodata::plot_productivity_anomaly(
-      report = region,
-      varName = "assessment"
-    ) +
-      ggplot2::guides(fill = ggplot2::guide_legend(ncol = 2)) +
-      ggplot2::theme(
-        legend.position = "none",
-        plot.title = ggplot2::element_text(size = 11),
-        axis.text = ggplot2::element_text(size = 11),
-        axis.title.y = ggplot2::element_text(vjust = 0, size = 10)
-      )
-    # combined anomaly plot
+    anomaly <- plot_productivity_anomaly(report = region, 
+                                         varName = "anomaly", 
+                                         plottype = "council") 
+    assessment <- plot_productivity_anomaly(report = region, 
+                                            varName = "assessment", 
+                                            plottype = "council") 
     if (region == "MidAtlantic") {
       ggpubr::ggarrange(
-        productivity_anomaly_plot,
-        recruit_anomaly_plot,
-        ncol = 1,
-        common.legend = TRUE,
-        legend = "bottom"
-      )
-    } else if (region == "NewEngland") {
+        anomaly,
+        assessment,
+        ncol = 1)
+    } else {
       ggpubr::ggarrange(
-        gb,
-        gom,
-        recruit_anomaly_plot,
+        anomaly,
+        assessment,
         ncol = 1,
         common.legend = TRUE,
-        legend = "bottom"
-      )
+        legend = "bottom") 
     }
   },
   indicator = "productivity_anomaly",
   width = 6.5,
-  height = 8.5
+  height = ifelse(region == "NewEngland", 9.5, 8.5)
 )
 
 # condition factor
