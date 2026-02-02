@@ -3,7 +3,7 @@
 ## TODO: move flextable aesthetics into ecodata function
 tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for", region2, "communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.")
 
-comm_vul_table <- ecodata::plot_engagement(report = params$region, varName = "Commercial", plottype = "Social") |>
+comm_vul_table <- ecodata::plot_engagement(report = params$region, varName = "Commercial") |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
                                pop_composition_rank = "Population Composition",
                                poverty_rank = "Poverty") |>

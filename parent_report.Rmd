@@ -121,8 +121,8 @@ if (params$draft) {
 cat(res, sep = "\n\n")
 ```
 
-```{r, child = here::here("child_docs/child_tables.Rmd"), include = FALSE}
-```
+<!-- ```{r, child = here::here("child_docs/child_tables.Rmd"), include = FALSE} -->
+<!-- ``` -->
 
 ```{r, child = here::here("child_docs/shared_text.Rmd"), include = FALSE}
 ```
@@ -368,9 +368,9 @@ if(params$draft){
  }
 ```
 
-```{r transition2, fig.cap=return_caption(chunk_name = "transition", region = opp_region), eval = params$draft}
-return_plot("transition", region = opp_region)
-```
+<!-- ```{r transition2, fig.cap=return_caption(chunk_name = "transition", region = opp_region), eval = params$draft} -->
+<!-- return_plot("transition", region = opp_region) -->
+<!-- ``` -->
 
 ```{r}
 base_child <- "06_risk_seasonal_"

@@ -19,9 +19,9 @@ return_plot("commercial-engagement", region = "MidAtlantic")
 ```
 
 
-```{r comvultab}
-comm_vul_table
-```
+<!-- ```{r comvultab} -->
+<!-- comm_vul_table -->
+<!-- ``` -->
 
 Several communities ranked in the top communities for both commercial and recreational indices; Montauk, NY, Cape May, NJ, Barnegat Light, NJ, Point Pleasant Beach, NJ, Ocean City, MD, and Wachapreague, VA (Fig. \ref{fig:recreational-engagement}), meaning these communities may be impacted simultaneously (to a greater degree than others) by commercial and recreational regulatory changes. Of those included in the top-ranked recreational communities, both Bivalve, MD and Morehead City, NC had medium or higher ranks for two of three socio-demographic indicators examined here (Table \ref{tab:recvultab}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
 
@@ -30,9 +30,9 @@ return_plot("recreational-engagement", region = "MidAtlantic")
 ```
 
 
-```{r recvultab}
-rec_vul_table
-```
+<!-- ```{r recvultab} -->
+<!-- rec_vul_table -->
+<!-- ``` -->
 
 
 ### Indicators: Community Climate Vulnerability in the Mid-Atlantic
