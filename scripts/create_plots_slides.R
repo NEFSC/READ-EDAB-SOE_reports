@@ -1189,6 +1189,7 @@ save_plot(
 )
 
 ## Mid plot -- NE ports landing majority Mid species
+## currently under MidAtlantic/newengland_mafmc
 save_plot(
   plot_expression = {
     ecodata::plot_wind_port()
@@ -1199,13 +1200,23 @@ save_plot(
 )
 
 ## NE plot - MAB ports landing majority NE species
+## currently under NewEngland/midatlantic_nefmc
 save_plot(
   plot_expression = {
-    ecodata::plot_wind_port()
+    plot_wind_port(port_list = c("CAPE MAY, NJ",
+                                 "NEWPORT NEWS, VA",
+                                 "LONG BEACH (TOWN OF), NJ",
+                                 "POINT PLEASANT, NJ",
+                                 "BARNEGAT LIGHT, NJ",
+                                 "HAMPTON, VA",
+                                 "WILDWOOD, NJ",
+                                 "POINT LOOKOUT, NY",
+                                 "BRIELLE, NJ")) +
+      ggplot2::ggtitle("Port Revenue from Lease Areas, Majority NEFMC Species")
   },
-  indicator = "wind_rev",
+  indicator = "wind-rev",
   width = 6.5,
-  height = 3
+  height = 4
 )
 
 ####### SAME PLOTS FOR BOTH REPORTS ######

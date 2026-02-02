@@ -1072,18 +1072,24 @@ save_plot(
 )
 
 ## Mid plot -- NE ports landing majority Mid species
+## currently under MidAtlantic/newengland_mafmc
 save_plot(
   plot_expression = {
-    plot_wind_port(port_list = c("DAVISVILLE/NORTH KINGSTOWN, RI",
+    plot_wind_port(port_list = c("BARNSTABLE, MA",
+                      "DAVISVILLE/NORTH KINGSTOWN, RI",
+                      "EAST HAVEN, CT",
+                      "NEW LONDON, CT",
                                  "POINT JUDITH, RI",
-                                 "HYANNIS, MA"))
+                      "STONINGTON,CT",
+                                 "TIVERTON,RI"))
   },
   indicator = "wind_rev",
   width = 6.5,
-  height = 2.5
+  height = 4.5
 )
 
 ## NE plot - MAB ports landing majority NE species
+## currently under NewEngland/midatlantic_nefmc
 save_plot(
   plot_expression = {
     plot_wind_port(port_list = c("CAPE MAY, NJ",
@@ -1094,7 +1100,8 @@ save_plot(
                                  "HAMPTON, VA",
                                  "WILDWOOD, NJ",
                                  "POINT LOOKOUT, NY",
-                                 "BRIELLE, NJ"))
+                                 "BRIELLE, NJ")) +
+      ggplot2::ggtitle("Port Revenue from Lease Areas, Majority NEFMC Species")
   },
   indicator = "wind-rev",
   width = 6.5,
