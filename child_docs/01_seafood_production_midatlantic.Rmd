@@ -10,7 +10,7 @@
 
 ### Indicators: Landings; commercial and recreational
 
-This year, we present updated indicators for total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html), (includes seafood, bait, and industrial landings), U.S. seafood landings, and Council-managed U.S. seafood landings. Total commercial landings within the Mid-Atlantic have declined over the long term, and both total U.S. and Mid-Atlantic managed seafood landings are near their all time low (Fig. \ref{fig:total-landings}).
+This year, we present updated indicators for total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html), (includes seafood, bait, and industrial landings), U.S. seafood landings (excludes industrial and bait uses), and Council-managed U.S. seafood landings. Total commercial landings within the Mid-Atlantic have declined over the long term, and both total U.S. and Mid-Atlantic managed seafood landings are at their all time low in 2024 (Fig. \ref{fig:total-landings}).
 
 ```{r, total-landings, fig.asp=.7, fig.cap = return_caption(chunk_name = "total-landings", region = "MidAtlantic"), fig.alt = "This is sample alt text"}
 return_plot("total-landings", region = "MidAtlantic")
@@ -22,25 +22,25 @@ Commercial landings by guild include all species and all uses, and are reported 
 return_plot("comm-landings", region = "MidAtlantic")
 ```
 
-[Community Climate Change Risk indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) have been developed to evaluate port specific landings and revenue risk in terms of commercial species climate vulnerability. The total climate vulnerability is a measure of to what degree a region’s landings (or revenue) is dependent on species sensitive to different climate and environmental change factors including temperature and acidification. For ports combined across Mid-Atlantic states, the total climate vulnerability of landings ranged between moderate and high with a long term increase from 2000-2021 (Fig. \ref{fig:climatevul-land}). 
+[Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) evaluate port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much a region’s landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification. The total risk based on the Total Vulnerability indicator of Mid-Atlantic ports ranged between moderate and high (Fig. \ref{fig:climatevul-land}).
 
 ```{r climatevul-land, fig.width = 6.5, fig.asp = 0.5, fig.cap = return_caption(chunk_name = "climatevul-land",  region = "MidAtlantic")}
 return_plot("climatevul-land", region = "MidAtlantic")
 ```
 
-Although total [recreational harvest](https://noaa-edab.github.io/catalog/recdat.html) (fish presumed to be eaten) has increased from a historic low in 2018, there is a long-term decline in the Mid-Atlantic (Fig. \ref{fig:rec-landings}). 
+Total [recreational harvest](https://noaa-edab.github.io/catalog/recdat.html) assesses the seafood production of the recreational fishery and doesn’t include catch-and-release fishing. In the Mid-Atlantic (Fig. \ref{fig:rec-landings}), recreational harvest shows a long-term decline. Recreational fishing may be shifting to catch-and-release strategies as opposed to catch for harvest.
 
 ```{r, rec-landings, fig.cap = return_caption(chunk_name = "rec-landings", region = "MidAtlantic")}
 return_plot("rec-landings", region = "MidAtlantic")
 ```
 
-[Recreational shark landings](https://noaa-edab.github.io/catalog/rec_hms.html) have generally decreased for most shark groups  through 2023 (Fig \ref{fig:rec-hms}). The recent low in pelagic shark landings is likely influenced by regulatory changes implemented in 2018 intended to rebuild shortfin mako stocks and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT).
+[Recreational shark landings](https://noaa-edab.github.io/catalog/rec_hms.html) have generally decreased for most shark groups through 2024 (Fig \ref{fig:rec-hms}). The recent low in pelagic shark landings is largely driven by regulatory changes implemented in 2018, followed by the closure of the shortfin mako fishery in 2022. These actions were intended to rebuild the North Atlantic shortfin mako stock and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT). 
 
 ```{r rec-hms, fig.cap=return_caption(chunk_name = "rec-hms", region = "MidAtlantic"), fig.width=6.5, fig.asp=.35}
 return_plot("rec-hms", region = "MidAtlantic")
 ```
 
-Aquaculture production is not yet included in total seafood landings. Available [aquaculture production](https://noaa-edab.github.io/catalog/aquaculture.html) of oysters for a subset of Mid-Atlantic states indicates a decline in recent years.
+Not all aquaculture production is included in total seafood landings. In 2022, the Northeast region produced approximately 6,300 metric tons of aquacultured shellfish, with revenue of $133 million (Fisheries of the United States, 2022). 
 
 ### Implications
 
@@ -48,7 +48,8 @@ Aquaculture production is not yet included in total seafood landings. Available 
 
 #### Stock Status and Catch Limits
 
-Single species [management objectives](https://noaa-edab.github.io/catalog/stock_status.html) (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are being met for all but three MAFMC-managed species (Fig. \ref{fig:stock-status}), though the status of six stocks is unknown (Table \ref{tab:unkstocks}). 
+Single species [management objectives](https://noaa-edab.github.io/catalog/stock_status.html) (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are being met for all but two MAFMC-managed species (golden tilefish and Atlantic mackerel) (Fig. \ref{fig:stock-status}), though the status of 5 stocks (northern shortfin squid, goosefish GOM/GB, goosefish southern GB/MAB, blueline tilefish, and chub mackerel) is unknown (Table \ref{tab:unkstocks}). 
+
 
 ```{r stock-status, fig.width = 6.5,  fig.asp = 0.5, fig.cap = return_caption(chunk_name = "stock-status", region = "MidAtlantic")}
 return_plot("stock-status", region = "MidAtlantic")
@@ -77,38 +78,38 @@ flextable::flextable(stocktab) |>
   flextable::autofit()
 ```
 
-Stock status affects catch limits established by the Council, which in turn may affect landings trends. Summed across all MAFMC managed species, total Acceptable Biological Catch or Annual Catch Limits [(ABC or ACL)](https://noaa-edab.github.io/catalog/abc_acl.html) have been relatively stable 2012-2023 (Fig. \ref{fig:abcacl-stacked}). The recent total ABC or ACL is lower relative to 2012-2013, with much of that decrease due to declining Atlantic mackerel ABC. This is true even with the addition of blueline tilefish management contributing an additional ABC to the total post-2017, due to that fishery’s small relative size.
+Stock status affects catch limits established by the Council, which in turn may affect landings trends. Summed across all MAFMC managed species, total Acceptable Biological Catch or Annual Catch Limits [(ABC or ACL)](https://noaa-edab.github.io/catalog/abc_acl.html) have been relatively stable since 2012 (Fig. \ref{fig:abcacl-stacked}).  The recent total ABC or ACL is lower relative to 2012-2013, even with the addition of blueline tilefish management contributing an additional ABC to the total post-2017, due to that fishery’s small relative size.
+
+The percentage of each stock's ABC or ACL that is caught (landings and discards) are generally below the 1/1 ratio (Fig. \ref{fig:abcacl-catch}). Quahog, surfclam, and northern shortfin squid have the largest ABC or ACLs but have low catch ratios, with less than 24% of ABC or ACL caught in 2024. Stock status and associated management constraints are unlikely to be driving decreased landings for these species, and increased landings of quahog, surfclam, and northern shortfin squid could be supported by the ecosystem. All other species except chub mackerel and longfin squid have catch ratios over 80%, indicating that stock status and associated regulations are most likely constraining the landings of some species such as black sea bass, bluefish, and Atlantic mackerel. However, these management actions and regulations are enacted in response to biomass, such that less stringent regulations would not necessarily mean higher landings. 
 
 ```{r abcacl-stacked, fig.cap=return_caption(chunk_name = "abcacl-stacked", region = "MidAtlantic"), fig.width = 6, fig.asp = 0.4, fig.height = 4}
 return_plot("abcacl-stacked", region = "MidAtlantic")
 ```
-
-Nevertheless, the percentage caught (landings and discards) for each stock’s ABC/ACL suggests that these catch limits are not generally constraining as most species are well below the 1/1 ratio (Fig. \ref{fig:abcacl-catch}). Therefore, stock status and associated management constraints are unlikely to be driving decreased landings for the majority of species.
 
 ```{r abcacl-catch, fig.cap = return_caption(chunk_name = "abcacl-catch", region = "MidAtlantic")}
 return_plot("abcacl-catch", region = "MidAtlantic")
 ```
 
 #### System Biomass
-Although [aggregate biomass](https://noaa-edab.github.io/catalog/aggregate_biomass.html) trends derived from scientific resource surveys are mostly stable in the MAB, spring piscivores, fall benthivores, and fall benthos show long-term increases (Fig. \ref{fig:nefsc-biomass-mab}). While managed species make up varying proportions of aggregate biomass, trends in landings are not mirroring shifts in the overall trophic structure of survey-sampled fish and invertebrates. Therefore, major shifts in feeding guilds or ecosystem trophic structure are unlikely to be driving the decline in landings. 
+
+[Aggregate biomass](https://noaa-edab.github.io/catalog/aggregate_biomass.html trends derived from scientific resource surveys are mostly stable in the MAB, with long-term increases in spring piscivores, fall benthivores, and fall benthos (Fig. \ref{fig:nefsc-biomass-mab}). While managed species make up varying proportions of aggregate biomass, trends in landings are not mirroring shifts in the overall trophic structure of survey-sampled fish and invertebrates. Therefore, major shifts in feeding guilds or ecosystem trophic structure are unlikely to be driving the decline in landings; however, future study should investigate whether shifts in the relative abundance of targeted species may be playing a role.
+
+#### Effect on Seafood Production
+Stock status is above the minimum threshold for all but one stock, and aggregate biomass trends appear stable or increasing. For surfclams and ocean quahogs, this indicates that the decline in managed commercial seafood landings is most likely driven by market dynamics affecting landings, as the catch ratios have been relatively low for these species. The decrease in regional availability of scallops has contributed to the decline of benthos landings not managed by the MAFMC, with some of the most productive sea scallop fishing grounds closed through 2023 due to rotational management. The long-term declines in total and planktivore landings is driven in part by Atlantic menhaden fishery dynamics, including a consolidation of processors leading to reduced fishing capacity between the 1990s and mid-2000s. Reduced scallop landings in the MAB have also contributed to the long-term decline in total landings.
+
+The spatial distribution of surfclams and ocean quahogs is changing, resulting in areas with overlapping distributions and increased mixed landings. Given the regulations prohibiting mixed landings, this could become problematic for harvesters. However, the MAFMC submitted an amendment in August 2025 to NOAA Fisheries to allow mixed surfclam and quahog trips; the amendment remains under review by NOAA as of February 2026.
+The decline in recreational seafood harvest is associated with a number of management and social factors. For example, the decline in recreational shark landings can be attributed to management actions intended to reduce fishing mortality on mako sharks. The lower than average landings since 2018 for species other than sharks could be driven by either changes in fishing behavior or a change in NOAA Fisheries’ Marine Recreational Information Program survey methodology in 2018. The decline in recreational seafood harvest may also be linked to decreases in sustenance fishing. Ultimately, recreational harvest has been following a decreasing trend in the past three years relative to a slight increase around 2020. 
+
+Other environmental changes may become important drivers of commercial and recreational landings in the future and will require continuous monitoring. Overall, the majority of landings from Mid-Atlantic ports depend on species with moderate climate vulnerability. The proportion of landings with higher vulnerability has increased over time, but fluctuated in more recent years. Fisheries and communities rely on different combinations of stocks,and individual stocks will respond differently to these drivers. Some key drivers include :
+
+- Climatological conditions are trending into uncharted territory. Globally, 2025 had the warmest ocean temperatures on record (see [2025 Highlights section](#highlights)). However, the 2025 Northwest Atlantic water temperatures were in line with the long-term average.
+- Stocks are shifting their distributions, moving towards the northeast and into deeper waters throughout the Northeast US Large Marine Ecosystem (see [Climate Risks section](#climate-and-ecosystem-change)).
+- Some ecosystem composition and production changes have been observed (see [Stability section](#stability) and Risks to Setting Catch Limits section).
+- Some fishing communities are affected by Social and Community Risks (see [Community Social and Climate Vulnerability section](#community-social-and-climate-vulnerability)).
 
 ```{r nefsc-biomass-mab, fig.cap =  return_caption(chunk_name = "nefsc-biomass-mab", region = "MidAtlantic"), fig.width=6.5, fig.asp = 0.75}
 return_plot("nefsc-biomass-mab", region = "MidAtlantic")
 ```
-
-#### Effect on Seafood Production
-Stock status is above the minimum threshold for all but one stock, and aggregate biomass trends appear stable or increasing, so the decline in managed commercial seafood landings is most likely driven by market dynamics affecting the landings of surfclams and ocean quahogs, as landings have been below quotas for these species. In addition, regional availability of scallops has contributed to the decline of benthos landings not managed by the MAFMC, with some of the most productive grounds closed through 2023 due to rotational management. The long term decline in total planktivore landings, and total landings, is largely driven by Atlantic menhaden fishery dynamics, including a consolidation of processors leading to reduced fishing capacity between the 1990s and mid-2000s.
-
-The distribution of surfclams and ocean quahogs is changing, resulting in areas with overlapping distributions and increased mixed landings. Given the regulations governing mixed landings, this could have become problematic and the Council recently took final action to address this issue.
-
-The decline in recreational seafood harvest stems from other drivers. Some of the decline, such as that for recreational shark landings, is driven by management intended to reduce fishing mortality on mako sharks. However, NOAA Fisheries’ Marine Recreational Information Program survey methodology was updated in 2018, so it is unclear whether the lower than average landings for species other than sharks since 2018 are driven by changes in fishing behavior or the change in the survey methodology. Nevertheless, the recreational harvest appears to be stabilizing at a lower level than historical estimates.
-
-Other environmental changes require monitoring as they may become important drivers of commercial and recreational landings in the future.  Overall, landings from Mid-Atlantic ports depend on species with moderate climate vulnerability, and the proportion of landings with higher vulnerability has increased over time. We note that individual stocks will respond differently to these drivers, and fisheries and communities rely on different combinations of stocks:  
- 
-- Climate is trending into uncharted territory. Globally, 2024 was the warmest year on record (see [2024 Highlights section](#highlights)). 
-- Stocks are shifting their distributions, moving towards the northeast and into deeper waters throughout the Northeast US Large Marine Ecosystem (see [Climate Risks section](#climate-and-ecosystem-change)).
-- Some ecosystem composition and production changes have been observed (see [Stability section](#stability)). 
-- Some fishing communities are affected by socioeconomic vulnerabilities (see [Community Social and Climate Vulnerability section](#community-social-and-climate-vulnerability)).  
 
 ```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>

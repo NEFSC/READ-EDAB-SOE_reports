@@ -97,8 +97,8 @@ cat("This is a draft report that presents all content from both New England and 
 ## About This Report
 
 ```{r, intro, results = "asis"}
-mid_text <- "This report is for the Mid-Atlantic Fishery Management Council (MAFMC). The purpose of this report is to synthesize ecosystem information to allow the MAFMC to better meet fishery management objectives, and to update the MAFMC’s Ecosystem Approach to Fishery Management (EAFM) risk assessment. The major messages of the report are synthesized on pages 1 and 2, with highlights of 2024 ecosystem events on page 3."
-ne_text <- "This report is for the New England Fishery Management Council (NEFMC). The purpose of this report is to synthesize ecosystem information to allow the NEFMC to better meet fishery management objectives. The major messages of the report are synthesized on pages 1-3, with highlights of 2024 ecosystem events on page 4."
+mid_text <- "This report is for the Mid-Atlantic Fishery Management Council (MAFMC). The purpose of this report is to synthesize ecosystem information to allow the MAFMC to better meet fishery management objectives, and to update the MAFMC’s Ecosystem Approach to Fishery Management (EAFM) risk assessment. The major messages of the report are synthesized on pages 1 and 2, with highlights of 2025 ecosystem events on page 3."
+ne_text <- "This report is for the New England Fishery Management Council (NEFMC). The purpose of this report is to synthesize ecosystem information to allow the NEFMC to better meet fishery management objectives. The major messages of the report are synthesized on pages 1-3, with highlights of 2025 ecosystem events on page 4."
   
 
 if (params$draft) {
@@ -127,7 +127,7 @@ cat(res, sep = "\n\n")
 ```{r, child = here::here("child_docs/shared_text.Rmd"), include = FALSE}
 ```
 
-The information in this report is organized into two main sections; [performance measured against ecosystem-level management objectives](#performance-relative-to-fishery-management-objectives) (Table \ref{tab:management-objectives}), and potential [risks to meeting fishery management objectives](#risks-to-meeting-fishery-management-objectives) (Table \ref{tab:management-risks}: [climate change](#climate-and-ecosystem-change) and [other ocean uses](#other-ocean-uses-offshore-wind)). A final section highlights [notable 2024 ecosystem observations](#highlights).
+The information in this report is organized into two main sections; [performance measured against ecosystem-level management objectives](#performance-relative-to-fishery-management-objectives) (Table \ref{tab:management-objectives}), and potential [risks to meeting fishery management objectives](#risks-to-meeting-fishery-management-objectives) (Table \ref{tab:management-risks}: [climate change](#climate-and-ecosystem-change) and [other ocean uses](#other-ocean-uses-offshore-wind)). A final section highlights [notable 2025 ecosystem observations](#highlights).
 
 ## Report structure
 
