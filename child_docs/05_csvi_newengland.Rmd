@@ -18,10 +18,10 @@ In 2022, New Bedford, MA stands out as having a particularly high engagement in 
 return_plot("commercial-engagement", region = "NewEngland")
 ```
 
-<!-- ```{r comm-vuln} -->
-<!-- comm_vul_table |> -->
-<!--   flextable::fit_to_width(7.5) -->
-<!-- ``` -->
+```{r comm-vuln}
+comm_vul_table |>
+  flextable::fit_to_width(7.5)
+```
 
 Narragansett/Point Judith, RI; Newington, NH; and Gloucester, MA ranked as top communities for both commercial and recreational indices (Fig. \ref{fig:recreational-engagement-ne}), suggesting that they may be impacted simultaneously (to a greater degree than others) by commercial and recreational regulatory changes. Of the top-ranked recreational communities, only Provincetown, MA and Falmouth, MA had medium or higher ranks for more than one socio-demographic indicator (Table. \ref{tab:rec-vuln}) examined here (poverty, personal disruption, population composition). This suggests that future changes to recreational fishing conditions may disproportionately impact Provincetown and Falmouth.
 
@@ -31,10 +31,10 @@ return_plot("recreational-engagement", region = "NewEngland")
 ```
 <!-- \newpage -->
 
-<!-- ```{r rec-vuln} -->
-<!-- rec_vul_table|> -->
-<!--   flextable::fit_to_width(7.5) -->
-<!-- ``` -->
+```{r rec-vuln}
+rec_vul_table|>
+  flextable::fit_to_width(7.5)
+```
 
 ### Indicators: Community Climate Vulnerability in the New England
 

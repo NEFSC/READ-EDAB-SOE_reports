@@ -3,7 +3,8 @@
 ## TODO: move flextable aesthetics into ecodata function
 tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for", region2, "communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.")
 
-comm_vul_table <- ecodata::plot_engagement(report = params$region, varName = "Commercial") |>
+comm_vul_table <- ecodata::plot_community_factors(report = params$region, varName = "Social", plottype = "Commercial") |>
+  flextable::flextable() |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
                                pop_composition_rank = "Population Composition",
                                poverty_rank = "Poverty") |>
@@ -14,7 +15,8 @@ comm_vul_table <- ecodata::plot_engagement(report = params$region, varName = "Co
 ## rec vulnerability table
 ## TODO: move flextable aesthetics into ecodata function
 tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for", region2, "communities most engaged in recreational fishing, 2022. Blank spaces indicate no data available.")
-rec_vul_table <- ecodata::plot_engagement(report = params$region, varName = "Recreational", plottype = "Social") |>
+rec_vul_table <- ecodata::plot_community_factors(report = params$region, varName = "Social", plottype = "Recreational") |>
+  flextable::flextable() |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
                                pop_composition_rank = "Population Composition",
                                poverty_rank = "Poverty") |>
