@@ -18,12 +18,12 @@ Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-
 return_plot("wea-spp-rev", region = "NewEngland")
 ```
 
-<!-- ```{r wea-landings-rev-ne, ft.arraystretch = 1} -->
-<!-- create_wea_landings_rev_table(council = "NEFMC") |> -->
-<!--   flextable::flextable() %>% -->
-<!--   flextable::set_caption("New England managed species Landings and Revenue from Wind Energy Areas. Skates includes barndoor, winter, clearnose, smooth, little, and general skates reported in logbooks. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species..") %>% -->
-<!--   flextable::width(width = c(2,2,2)) -->
-<!-- ``` -->
+```{r wea-landings-rev-ne, ft.arraystretch = 1}
+create_wea_landings_rev_table(council = "NEFMC") |>
+  flextable::flextable() %>%
+  flextable::set_caption("New England managed species Landings and Revenue from Wind Energy Areas. Skates includes barndoor, winter, clearnose, smooth, little, and general skates reported in logbooks. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species..") %>%
+  flextable::width(width = c(2,2,2))
+```
 
 `r wind_interactions`
 
