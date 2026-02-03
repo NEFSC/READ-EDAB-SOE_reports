@@ -73,26 +73,28 @@ create_plots_both <- function(region = "BothReports")
     }
   }
     
-    # 9. Thermal Habitat Persistence Plot
-    save_plot(
-      plot_expression = {
-        plt <- ecodata::plot_thermal_habitat_gridded(region)
-      },
-      indicator = "therm_hab_persist",
-      width = 6.5,
-      height = 4
-    )
+  ### THESE NEED TO RUN SEPARATELY, WILL ERROR OUT IN THIS FUNCTION
+  ### ENERGY DENSITY MIGHT BE A STATIC IMAGE NOW?
+    # # 9. Thermal Habitat Persistence Plot
+    # save_plot(
+    #   plot_expression = {
+    #     ecodata::plot_thermal_habitat_gridded(region)
+    #   },
+    #   indicator = "therm_hab_persist",
+    #   width = 6.5,
+    #   height = 4
+    # )
     
-    # 5. Energy Density Plot
-    save_plot(
-      plot_expression = {
-        # plot is the same even though it takes a region parameter
-        ecodata::plot_energy_density(report = "NewEngland")
-      },
-      indicator = "energy_density",
-      width = 6.5,
-      height = 4
-    )
+    # # 5. Energy Density Plot
+    # save_plot(
+    #   plot_expression = {
+    #     # plot is the same even though it takes a region parameter
+    #     ecodata::plot_energy_density(report = "NewEngland")
+    #   },
+    #   indicator = "energy_density",
+    #   width = 6.5,
+    #   height = 4
+    # )
     
     # GOM ocean acidification
     GOMoa_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf"
@@ -394,6 +396,5 @@ create_plots_both <- function(region = "BothReports")
       height = 4
     )
   }
-}
 
 create_plots_both(region = "BothReports")
