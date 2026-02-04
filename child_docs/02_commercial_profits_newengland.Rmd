@@ -28,9 +28,10 @@ return_plot("bennet-all", region = "NewEngland")
 ```
 
 This year, we present new indicators of profitability: indices of cost, revenue, and profit. In this index, costs pertain to trip costs, excluding labor, estimated for all federal trips in the region using methods described in Werner et al. 2020). Here the profit indicator is actually net-revenue--determined as the difference between trip revenue and trip costs. Trips were spatially allocated to compile regional indices. Indices are presented as values relative to those from 2000. the first year in the dataset. 
+
 In the GOM, the profit index closely follows the same trends as the revenue index with the exception of 2010 - 2013 where low costs created a surge in the profit index. In 2023, the GOM profit index dropped to its third lowest point in the time series due to both high costs and below average revenues. For trips in GB, the profit index is similarly low due to high costs, but a stronger cyclical cycle of revenue is present due, in part, to rotational scallop management.
 
-```{r comdat-profit, fig.cap = return_caption(chunk_name = "comdat-profit", region = "NewEngland"),  fig.width = 6.5, fig.asp = 0.35}
+```{r comdat-profit-ne, fig.cap = return_caption(chunk_name = "comdat-profit", region = "NewEngland"),  fig.width = 6.5, fig.asp = 0.35}
 return_plot("comdat-profit", region = "NewEngland")
 ```
 

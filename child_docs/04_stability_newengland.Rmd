@@ -12,7 +12,7 @@ Fisheries in Georges Bank and the Gulf of Maine are dominated by single species.
 
 Results from the Crew Survey suggest many commercial fishing crews in New England are dissatisfied with the predictability of their earnings, the amount of time away from home, and the physical fatigue and personal health impacts from the job. Additionally, the survey results demonstrate evidence of aging or “graying” of the fleet in New England, which combined with a lack of new entrants to the industry suggests that participation in commercial fishing is declining across the region. Combined with the declining fleet count and declining overall landings, this suggests a reduced capacity for New England commercial fisheries to adapt to future change.
 
-The number of recreational trips is below average, although there is no long-term trend, and recreational landings have been declining. Low recreational landings may also be driven by a shift to catch-and-release fishing and stricter shark and large sport fish regulations. Recreational effort diversity is near average with no trend and there has been no shift in angling modes, suggesting steady recreational fishing opportunities. Recreational species catch diversity has increased over time (Fig. \ref{fig:recdat-div-catch}), indicating that anglers are catching a more varied mix of species, likely due to shifting species distributions. 
+The number of recreational trips is below average, although there is no long-term trend, and recreational landings have been declining. Low recreational landings may also be driven by a shift to catch-and-release fishing and stricter shark and large sport fish regulations. Recreational effort diversity is near average with no trend and there has been no shift in angling modes, suggesting steady recreational fishing opportunities. Recreational species catch diversity has increased over time (Fig. \ref{fig:recdat-div-catch-ne}), indicating that anglers are catching a more varied mix of species, likely due to shifting species distributions. 
 
 ```{r permit-div, fig.cap = return_caption(chunk_name = "commercial-div-species-div", region = "NewEngland"),fig.width = 6.5,fig.asp = 0.3}
 return_plot("commercial-div-species-div", region = "NewEngland")
@@ -33,7 +33,7 @@ The Gulf of Maine has also experienced ecosystem change over time. Primary produ
 return_plot("totpp", region = "NewEngland")
 ```
 
-[Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, maximum body size, or fecundity, serve to synthesize change in complex, diverse communities by looking beyond species-specific trends. Furthermore, shifts in functional trait distributions for the fish community can indicate changes in ecosystem-scale resilience. There is evidence for shifts in functional trait distributions in New England (Fig. \ref{fig:traits-k}) (Fig. \ref{fig:traits-tl}). George’s Bank (GB) displayed few long-term trends other than reductions in fecundity in both fall and spring. The Gulf of Maine (GOM) displayed long-term trends consistent with shifts towards faster life history strategies particularly in the spring finfish community, including younger age and shorter length at maturity, lower fecundity, and faster growth rate. Interestly, the spring finfish community in the GOM also displayed increases in trophic level. 
+[Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, maximum body size, or fecundity, serve to synthesize change in complex, diverse communities by looking beyond species-specific trends. Furthermore, shifts in functional trait distributions for the fish community can indicate changes in ecosystem-scale resilience. There is evidence for shifts in functional trait distributions in New England (Fig. \ref{fig:traits-k-ne}) (Fig. \ref{fig:traits-tl-ne}). George’s Bank (GB) displayed few long-term trends other than reductions in fecundity in both fall and spring. The Gulf of Maine (GOM) displayed long-term trends consistent with shifts towards faster life history strategies particularly in the spring finfish community, including younger age and shorter length at maturity, lower fecundity, and faster growth rate. Interestly, the spring finfish community in the GOM also displayed increases in trophic level. 
 
 Increasing [Adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html) (Fig. \ref{fig:exp-n-ne}) and changes in functional traits such as the mean trophic level suggest that fish communities have changed from a historic baseline. Long-term trends in biomass and functional traits would not be expected in a stable system. However, because the biomass of functional groups of fish has remained relatively constant over time, the system appears able to adapt to change. 
 
@@ -42,15 +42,15 @@ Increasing [Adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html
 return_plot("exp-n", region = "NewEngland")
 ```
 
-```{r zoo-comm, fig.cap = return_caption(chunk_name = "zoo-comm", region = "MidAtlantic"), fig.width=5, fig.asp=.4}
+```{r zoo-comm-ne, fig.cap = return_caption(chunk_name = "zoo-comm", region = "MidAtlantic"), fig.width=5, fig.asp=.4}
 return_plot("zoo-comm", region = "MidAtlantic")
 ```
 
-```{r traits-k, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-k", region = "MidAtlantic")}
+```{r traits-k-ne, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-k", region = "MidAtlantic")}
 return_plot("traits-k", region = "MidAtlantic")
 ```
 
-```{r traits-tl, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-tl", region = "MidAtlantic")}
+```{r traits-tl-ne, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-tl", region = "MidAtlantic")}
 return_plot("traits-tl", region = "MidAtlantic")
 ```
 
