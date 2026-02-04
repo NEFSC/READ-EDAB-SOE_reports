@@ -390,14 +390,6 @@ The drivers of timing shifts in managed stocks are generally coupled to shifts i
 
 Along with the overall warming trends in `r region`, ocean summer conditions have been lasting longer (Fig. \ref{fig:transition}) due to the later [transition](https://noaa-edab.github.io/catalog/trans_dates.html) from warm summer conditions to cooler fall temperatures. These transition dates relate how daily temperatures compare to the seasonal norm. Changes in the timing of seasonal environmental cycles can alter biological processes (migrations, spawning, etc.) that are triggered by seasonal events.  
 
-```{r transition, fig.cap=return_caption(chunk_name = "transition", region = "BothReports"), fig.width = 6.5, fig.asp=.5}
-return_plot("transition", region = "MidAtlantic")
-```
-
-```{r transition, fig.cap=return_caption(chunk_name = "transition", region = "BothReports"), fig.width = 6.5, fig.asp=.5}
-return_plot("transition", region = "NewEngland")
-```
-
 <!-- # ```{r transition, fig.cap=return_caption(chunk_name = "transition", region = params$region)} -->
 <!-- # ## TODO: need to modify this to show both plots in draft mode -->
 <!-- # return_plot("transition", region = params$region) -->

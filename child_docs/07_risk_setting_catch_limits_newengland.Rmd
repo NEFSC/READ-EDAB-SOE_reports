@@ -44,8 +44,8 @@ Declining prey energy density creates significant risks for both forage and pred
 Shifts in forage abundance directly influence managed species productivity. While New England fall [forage biomass](https://noaa-edab.github.io/catalog/forage_index.html) remains stable, long-term increases are observed in the spring GOM. Biomass peaked during the 1980s in the fall. Increased spring GOM (Fig. \\ref{fig:energy-density-ne}) forage biomass may improve fish health and reproductive output during spawning seasons when energy reserves are typically low. However, this benefit may be offset by lower prey energy densities, particularly during periods of higher water temperatures when predator metabolic demands increase.
 
 
-```{r energy-density-ne, fig.cap=return_caption(chunk_name = "energy-density", region = "BothReports"),  fig.width = 6.5, fig.asp = 0.5}
-return_plot("energy-density", region = "BothReports")
+```{r energy-density-ne, fig.cap=return_caption(chunk_name = "energy-density", region = "NewEngland"),  fig.width = 6.5, fig.asp = 0.5}
+return_plot("energy-density", region = "NewEngland")
 ```
 
 

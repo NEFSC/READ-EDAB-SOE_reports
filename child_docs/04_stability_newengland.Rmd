@@ -42,16 +42,16 @@ Increasing [Adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html
 return_plot("exp-n", region = "NewEngland")
 ```
 
-```{r zoo-comm-ne, fig.cap = return_caption(chunk_name = "zoo-comm", region = "MidAtlantic"), fig.width=5, fig.asp=.4}
-return_plot("zoo-comm", region = "MidAtlantic")
+```{r zoo-comm-ne, fig.cap = return_caption(chunk_name = "zoo-community", region = "NewEngland"), fig.width=5, fig.asp=.4}
+return_plot("zoo-community", region = "NewEngland")
 ```
 
-```{r traits-k-ne, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-k", region = "MidAtlantic")}
-return_plot("traits-k", region = "MidAtlantic")
+```{r traits-k-ne, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-k", region = "NewEngland")}
+return_plot("traits-k", region = "NewEngland")
 ```
 
-```{r traits-tl-ne, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-tl", region = "MidAtlantic")}
-return_plot("traits-tl", region = "MidAtlantic")
+```{r traits-tl-ne, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-tl", region = "NewEngland")}
+return_plot("traits-tl", region = "NewEngland")
 ```
 
 ### Implications
