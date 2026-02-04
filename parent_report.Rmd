@@ -423,7 +423,8 @@ Species are reliant on environmental processes to dictate the timing of their be
 
 ### Risks to setting catch limits
 
-The efficacy of short-term stock projections and rebuilding plans rely on accurate understanding of processes affecting stock growth, reproduction, and natural mortality. These biological processes are often driven by underlying environmental change. When observed environmental change occurs, there is a risk that established stock-level biological reference points may no longer reflect the current population and short-term projections become more uncertain.
+The efficacy of short-term stock projections and rebuilding plans rely on accurate understanding of processes affecting stock growth, reproduction, and natural mortality. These biological processes are often driven by underlying environmental change. If ignored, environmental change may increase the risk that established stock-level biological reference points no longer reflect the current population and increase projection uncertainty, both of which can contribute to quota misspecification. 
+
 
 ```{r}
 base_child <- "07_risk_setting_catch_limits_"
