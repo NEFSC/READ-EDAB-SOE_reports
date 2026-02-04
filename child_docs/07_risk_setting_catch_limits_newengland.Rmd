@@ -99,9 +99,11 @@ Lower ocean temperatures near long-term averages will affect species differently
 return_plot("therm-hab-persist-2024", region = "BothReports")
 ```
 
-The newly-developed advection index (Fig XX) shows total transport of water onto and off the continental shelf and can be linked to the survival of early life stages of fish and invertebrates. Long-term trends in New England show increased onshelf movement of mid-layer and bottom waters in June, which could increase retention of some species. Further study is needed on the species level to link spawning timing and larval periods to the advection index at the corresponding depth and month.
+The newly-developed advection index (Fig. \ref{fig:advection-index-ne}) shows total transport of water onto and off the continental shelf and can be linked to the survival of early life stages of fish and invertebrates. Long-term trends in New England show increased onshelf movement of mid-layer and bottom waters in June, which could increase retention of some species. Further study is needed on the species level to link spawning timing and larval periods to the advection index at the corresponding depth and month.
 
-<!-- INSERT ADVECTION INDEX FIGURE  -->
+```{r advection-index-ne, fig.cap = return_caption(chunk_name = "advection-index", region = "NewEngland"), fig.width=6.5, fig.asp=.5}
+return_plot("advection-index", region = "NewEngland")
+```
 
 [Ocean acidification](https://noaa-edab.github.io/catalog/ocean_acidification.html) risks vary among species and include reduced survival, growth, reproduction, and productivity,reached record levels in 2024, though were moderated in 2025.  Atlantic sea scallop and longfin squid faced high OA risk in Long Island Sound and the New Jersey shelf during the summers of 2016, 2018, 2019, 2023, and 2024, with 2024 marking the highest risk recorded since 2007. By 2025, risk levels decreased but still exceeded biological sensitivity limits for scallops on the New Jersey outer shelf in spring ([not shown](https://noaa-edab.github.io/catalog/ocean_acidification.html)) and reached sensitivity limits for longfin squid in nearshore New Jersey waters during summer. These risks are heightened by cold-water CO2 absorption and the movement of high-CO2 water masses. While 2025 bottom temperatures remained as cool as 2024, higher salinity indicated a shift in water mass composition that resulted in lower overall OA risk compared to the previous two years.
 

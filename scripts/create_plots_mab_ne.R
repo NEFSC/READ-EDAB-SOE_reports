@@ -979,6 +979,43 @@ create_plots_mab_and_ne <- function(region)
     width = 6.5,
     height = 4
   )
+  
+  # Advection Index
+  save_plot(
+    plot_expression = {
+      ecodata::plot_advection(report = region, n = 10, varName = 6) +
+        ggplot2::theme(legend.position = 'bottom')
+    },
+    indicator = "advection_index",
+    width = 6.5,
+    height = 4.5
+  )
+  
+  
+  # Seasonal OISST Anomaly - MAB ONLY
+  save_plot(
+    plot_expression = {
+      ecodata::plot_seasonal_oisst_anom(report = region, n = 10) 
+    },
+    indicator = "seasonal_oisst_anom",
+    width = 6.5,
+    height = 4.5
+  )
+  
+  # Seasonal Bottom Temp Anomaly - MAB ONLY
+  save_plot(
+    plot_expression = {
+      ecodata::plot_bottom_temp_model_anom(report = region, 
+                                           n =10, 
+                                           varName = "seasonal", 
+                                           EPU = "MAB", 
+                                           plottype = "GLORYS") +
+        ggplot2::theme(legend.position = 'bottom')
+    },
+    indicator = "bottom_temp_anom",
+    width = 6.5,
+    height = 4.5
+  )
 }
 
 create_plots_mab_and_ne(region = "NewEngland")
