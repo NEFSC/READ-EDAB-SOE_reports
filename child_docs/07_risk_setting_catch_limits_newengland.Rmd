@@ -78,10 +78,9 @@ The seasonal differences in *Calanus* are driven by five factors:
 return_plot("zoopanom", region = "NewEngland")
 ```
 
-<!-- REPLACE WITH WBTS ZOOPLANKTON BIOMASS INDEX WBTS-ZOO-->
-<!-- # ```{r zooplankton-season, fig.cap=return_caption(chunk_name = "zooplankton-season", region = "NewEngland")} -->
-<!-- # return_plot("zooplankton-season", region = "NewEngland") -->
-<!-- # ``` -->
+```{r wbts-zoo, fig.cap=return_caption(chunk_name = "wbts-zoo", region = "NewEngland"), fig.width=6.5,fig.asp = 1}
+return_plot("wbts-zoo", region = "NewEngland")
+```
 
 ##### Environmental Drivers
 
