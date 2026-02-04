@@ -27,6 +27,8 @@ return_plot("mab-cf", region = "MidAtlantic")
 
 `r forage_quality`
 
+Forage fish [energy content](https://noaa-edab.github.io/catalog/energy_density.html) fluctuates based on growth, reproduction, environmental conditions, and ecosystem productivity. In the Mid-Atlantic Bight, butterfish are the most abundant high ED forage species (Fig. \\ref{fig:energy-density}), though their fall ED have recently declined toward lower spring averages. Atlantic herring and Atlantic mackerel also serve as high-energy prey, but herring show recently low ED and declining abundance, while mackerel are most abundant in the spring despite having higher ED in the fall. Moderate energy forage species (longfin squid, northern shortfin squid, and silver hake) are of intermediate abundance and show minimal annual and seasonal variation in ED. Other species have high ED but lower abundance decreasing their reliability as a food source.
+
 <!-- MAY NEED TO REPLACE WITH STATIC FIGURE  -->
 ```{r energy-density, fig.cap=return_caption(chunk_name = "energy-density", region = "BothReports"),  fig.width = 6.5, fig.asp = 0.5}
 return_plot("energy-density", region = "BothReports")

@@ -12,9 +12,7 @@ Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-
 return_plot("wea-spp-rev", region = "MidAtlantic")
 ```
 
-Of MAFMC managed fisheries, the surfclam fishery would be the most affected by offshore wind development, with a maximum of 15% of annual regional fishery revenue occurring within existing wind lease areas during 2008-2023 (see Table \ref{tab:wea-landings-rev}). It should be noted that 2023 surfclam landings/revenue within lease areas may be artificially low due to potential misreporting issues. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.  
-
-`r wind_indicator_paragraph`
+Within Active Projects, the MAFMC managed fisheries most affected based on historic landings include longfin squid, monkfish, scup, Atlantic mackerel, and summer flounder, with a maximum of 6% of annual regional fishery revenue for chub mackerel occurring within Active Projects during 2008-2024, 5% for bluefish, 4% for butterfish, and 3% each for monkfish, scup, black sea bass, and longfin squid, respectively (see Table \ref{tab:wea-landings-rev}). Future offshore wind development may increase effects on these and additional species if more projects begin construction. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.
 
 ```{r wea-landings-rev, ft.arraystretch = 1}
 create_wea_landings_rev_table(council = "MAFMC") |>
@@ -31,14 +29,11 @@ create_wea_landings_rev_table(council = "MAFMC") |>
 return_plot("wea-port-rev", region = "MidAtlantic")
 ```
 
-For example, Atlantic City, NJ was in the top three potential revenue loss (historical minimum of 3% and maximum of 24%, respectively) from potential wind development areas based on 2008-2023 total port fisheries revenue. BOEM reports that cumulative offshore wind development (if all proposed projects are developed) could have moderate impacts on low-income members of communities with socio-demographic concerns who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation and increased vessel traffic, as well as existing vulnerabilities of low-income workers to economic impacts.
-
-Some ports in New England land Mid-Atlantic managed species from wind areas as well. For the maximum percent value reported in each New England port, the majority (at least 50% based on both value and pounds) of those landings were Mid-Atlantic managed species within wind areas for Davisville/North Kingston and Point Judith, RI, and Hyannis and Menemsha, MA (Fig. \ref{fig:wind-rev}).
+Based on federal vessel logbook data, Point Lookout, NY (5.5% average, 17% maximum) and Virginia Beach, VA (3% average, 7.5% maximum) have the highest potential revenue loss from the Active Projects based on 2008-2024 total port fisheries revenue. Fewer Mid-Atlantic ports are affected by the Active Projects to date, as most are in the southern New England region, with the exception of CVOW and Empire Wind 1 (Fig. \\ref{fig:wea-port-rev}). Additional fishing revenue may be lost as more areas historically used for fishing are developed for offshore wind energy. In seven New England ports, Mid-Atlantic managed species account for at least 50% of landings from the Active Project areas by value or weight (Fig. \ref{fig:wind-rev}). Furthermore, impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean.
 
 ```{r wind-rev, fig.cap=return_caption(chunk_name = "wind-rev", region = "MidAtlantic"), fig.width=6.5, fig.asp=.35, fig.align='left'}
 return_plot("wind-rev", region = "MidAtlantic")
 ```
-
 
 Top fishing communities with [socio-demographic concerns](https://noaa-edab.github.io/catalog/engagement.html) (i.e., Atlantic City, NJ,  and Hampton Bays, NY) should be considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of underserved communities. These are communities where we need to provide further resources to reach underserved and underrepresented groups and create opportunities for and directly involve these groups in the decision-making process.
 

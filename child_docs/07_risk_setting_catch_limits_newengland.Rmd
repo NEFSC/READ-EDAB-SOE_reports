@@ -7,8 +7,8 @@
 ```
 
 #### Indicators: Fish productivity and condition shifts
+Indicators of [fish productivity](https://noaa-edab.github.io/catalog/productivity_anomaly.html) derived from observations (surveys) or models (stock assessments) show variability over the time series. Since 2020, fish productivity has been below the long-term average productivity (derived from NEFSC bottom trawl survey), and 2025 was below average for all managed species (Fig. \ref{fig:productivity-anomaly-ne}). A similar analysis based on stock assessment model outputs shows a decline in productivity over the time series with relatively high productivity in the 1990’s and relatively low productivity in the 2000’s (recruitment per spawning stock biomass anomaly). Fish productivity can be affected by parental condition, environmental conditions, timing and availability of prey for recruits, as well as retention of recruits within favorable habitat. In years where offshore advection is high in a depth range and month when a fish species spawns, fish productivity and recruitment may be reduced. Other signs of changing productivity in New England are the declines in [common tern chicks](https://noaa-edab.github.io/catalog/seabird_ne.html) per nest (Fig. \ref{fig:seabird-ne-productivity}) and continued low overall [Atlantic salmon](https://noaa-edab.github.io/catalog/gom_salmon.html) abundance (Fig. \ref{fig:salmon}) despite short-term increases in return rates and salmon numbers.
 
-Indicators of [fish productivity](https://noaa-edab.github.io/catalog/productivity_anomaly.html) are derived from observations (surveys) or models (stock assessments). With the exception of two years (2006 and 2013), fish productivity has been below the long-term average in the Gulf of Maine since the early 2000s, as described by the small-fish-per-large-fish anomaly indicator (derived from NEFSC bottom trawl survey)(Fig. \ref{fig:productivity-anomaly-ne}). This decline in fish productivity is also shown by a similar analysis based on stock assessment model outputs (recruitment per spawning stock biomass anomaly). Other signs of changing productivity in New England are the declines in [common tern chicks](https://noaa-edab.github.io/catalog/seabird_ne.html) per nest (Fig. \ref{fig:seabird-ne-productivity}) and continued low returns of hatchery [Atlantic salmon](https://noaa-edab.github.io/catalog/gom_salmon.html)(Fig. \ref{fig:salmon}) despite short-term increases in adult salmon numbers.
 ```{r productivity-anomaly-ne, fig.cap = return_caption(chunk_name = "productivity-anomaly", region = "NewEngland"), fig.width=6.5, fig.asp=1}
 return_plot("productivity-anomaly", region = "NewEngland")
 ```
@@ -21,7 +21,8 @@ return_plot("seabird-ne-productivity", region = "NewEngland")
 return_plot("salmon", region = "NewEngland")
 ```
 
-The health of individual fish (i.e., fish condition) can contribute to population productivity through improved growth, reproduction, and survival. [Fish condition](https://noaa-edab.github.io/catalog/condition.html) in the Gulf of Maine and Georges Bank regions were generally good prior to 2000, poor from 2001-2010 (concurrent with declines in fish productivity, Fig. \ref{fig:productivity-anomaly-ne}), and a mix of good and poor since 2011. In 2024, fish condition was poor for most species on both Georges Bank and in the Gulf of Maine (Fig. \ref{fig:ne-cf}).Preliminary analyses show that changes in temperature, zooplankton, fishing pressure, and population size influence the condition of different fish species.
+The health of individual fish (i.e., fish condition) can contribute to population productivity through improved growth, reproduction, and survival. [Fish condition](https://noaa-edab.github.io/catalog/condition.html) in the Gulf of Maine and Georges Bank regions were generally high to very high prior to 2000, low to very low from 2001-2010 (concurrent with declines in fish productivity, Fig. \ref{fig:productivity-anomaly-ne}), and mixed since 2011. In 2025, fish condition was below or close to average for most species on both Georges Bank and in the Gulf of Maine (Fig. \ref{fig:ne-cf}). Preliminary analyses show that years dominated by small copepods and warmer spring temperatures may improve fish condition for Atlantic mackerel and butterfish. Similar environmental drivers may be important to other species.
+
 ```{r ne-cf, fig.cap = return_caption(chunk_name = "ne-cf", region = "NewEngland"), fig.width=6.5, fig.asp=1.2}
 return_plot("ne-cf", region = "NewEngland")
 ```
@@ -32,18 +33,27 @@ return_plot("ne-cf", region = "NewEngland")
 
 ##### Biological Drivers: Forage quality and abundance
 
-`r forage_quality`
+Management should account for energetic links between prey and predators, as shifts in forage quality and abundance directly alter the health, productivity, and movement of managed and protected species. The total energy available to higher trophic level predators is determined by the mass and energy density (ED) of prey. Protecting this forage base is essential for maintaining overall ecosystem function and continued stock productivity and condition.
 
-```{r energy-density, fig.cap=return_caption(chunk_name = "energy-density", region = "BothReports"),  fig.width = 6.5, fig.asp = 0.5}
+Forage [energy content](https://noaa-edab.github.io/catalog/energy_density.html)  fluctuates based on growth, reproduction, and environmental productivity. High-energy New England species include alewife, Atlantic mackerel, and Atlantic herring. Alewife provide the highest ED in the GOM during the fall. Atlantic mackerel show higher abundance and ED in the GOM than on GB during fall. Atlantic herring offer a consistent year-round energy source, though values vary between spring and fall spawning groups. Butterfish abundance has increased over the last five years in both regions during the fall, providing an additional high-energy prey option.
+
+Moderate-energy species, including longfin squid, shortfin squid, and silver hake, provide a stable but lower ED food supply. Squid abundance is generally lower in the GOM than on GB. Silver hake remain highly abundant in the GOM with stable ED across spring and fall. Northern sand lance offer intermediate energy but are only available in the spring before burying in the seafloor to overwinter.
+
+Declining prey energy density creates significant risks for both forage and predator stocks. In prey species like silver hake, lower energy reserves can reduce spawning success and recruitment. For predators, including managed species such as goosefish and spiny dogfish, lower-quality prey leads to poorer physical health and reduced reproductive output.
+
+Shifts in forage abundance directly influence managed species productivity. While New England fall [forage biomass](https://noaa-edab.github.io/catalog/forage_index.html) remains stable, long-term increases are observed in the spring GOM. Biomass peaked during the 1980s in the fall. Increased spring GOM (Fig. \\ref{fig:energy-density-ne}) forage biomass may improve fish health and reproductive output during spawning seasons when energy reserves are typically low. However, this benefit may be offset by lower prey energy densities, particularly during periods of higher water temperatures when predator metabolic demands increase.
+
+
+```{r energy-density-ne, fig.cap=return_caption(chunk_name = "energy-density", region = "BothReports"),  fig.width = 6.5, fig.asp = 0.5}
 return_plot("energy-density", region = "BothReports")
 ```
-Changes in the overall abundance of forage fish can influence managed species productivity as it relates to changes in food availability. New England [fall forage biomass](https://noaa-edab.github.io/catalog/forage_index.html) is stable with long-term increases in the spring GOM (Fig. \ref{fig:foragebio-ne}). Forage biomass was highest during fall in the 1980s.
+
 
 ```{r foragebio-ne, fig.cap = return_caption(chunk_name = "foragebio", region = "NewEngland"), fig.width = 6.5, fig.asp=.3}
 return_plot("foragebio", region = "NewEngland")
 ```
 
-[Benthic invertebrates](https://noaa-edab.github.io/catalog/benthos_index.html) are extremely important forage for some managed species (e.g. flatfish, juvenile cod and haddock) Macrobenthos indices show long term declines in spring. In contrast, megabenthos indices show long-term increases during the fall in both GB and GOM (Fig. \ref{fig:benthos-ne}).
+[Benthic invertebrates](https://noaa-edab.github.io/catalog/benthos_index.html) are extremely important forage for some managed species (e.g., flatfish, juvenile cod and haddock) Macrobenthos indices show long term declines in spring. In contrast, megabenthos indices show long-term increases during the fall in both GB and GOM (Fig. \ref{fig:benthos-ne}). Fish productivity may be negatively impacted in recent years for fish such as flounders and juvenile fish that target macrobenthos such as small crustaceans and polychaetes in the spring, and positively impacted for fish such as larger skates, hakes and gadids that target megabenthos such as crabs.
 
 ```{r benthos-ne, fig.cap=return_caption(chunk_name = "benthos", region = "NewEngland"), fig.width=6.5, fig.asp=.9}
 return_plot("benthos", region = "NewEngland")
@@ -53,45 +63,59 @@ return_plot("benthos", region = "NewEngland")
 
 Phytoplankton are the foundation of the marine food web and are the primary food source for zooplankton and filter feeders such as shellfish. Multiple environmental and oceanographic drivers affect the abundance, composition, spatial distribution, and productivity of phytoplankton. While changes in phytoplankton productivity could affect fish productivity (including forage), there is no clear long-term trend in New England total primary production (Fig. \ref{fig:totpp-ne}).
 
-[Zooplankton communities](https://noaa-edab.github.io/catalog/zoo_abundance_anom.html)  in New England have been changing in composition. There has been an increase in GOM small bodied copepods, a recent decline in large bodied copepods in GB, and long-term increases in euphausids in GB and GOM (Fig. \ref{fig:zoopanom-ne}). A changing mix of zooplankton prey can impact forage fish energy content and abundance, as well as the prey field of filter feeding whales.
+New England Zooplankton abundance is shifting in ways that could impact fish condition and marine mammal prey availability. In the Gulf of Maine (GOM), increased small-bodied copepods and euphausiids are linked to improved condition in species like Atlantic mackerel, and baleen whales (humpback, sei, and fin) may benefit from long-term increases in prey availability, although euphausiid biomass has been recently high variable (Fig. 83). Conversely, large-bodied copepods in Georges Bank (GB) have declined recently. Zooplankton energy density varies by season and location, with high-energy large copepods peaking from April through  June. Since 2023, zooplankton communities have reverted to compositions similar to pre-1990 and 2000-2011 periods; research is currently underway to determine the drivers and management implications of these shifts.
 
-Since 2010, the abundance of the lipid-rich older stages of  [*Calanus finmarchicus*](https://noaa-edab.github.io/catalog/wbts_mesozooplankton.html) in the GOM has declined. Observations from a fixed time series station in Wilkinson Basin  indicate that *Calanus* [seasonal abundance](https://noaa-edab.github.io/catalog/calanus_variation.html) in late summer-winter between 2020-2022 has declined to 20-40% of its population level in 2005-2008 but has rebounded to 60-70% in 2024 due to the presence of colder water(Fig. \ref{fig:zooplankton-season}). However, spring abundances are still the same as 15-20 years ago. The seasonal differences in abundance change reflect differences in influence of primary seasonal drivers:
+*Calanus finmarchicus* abundance has declined in the GOM following a 2008 shift in oceanographic conditions, which poses a risk to the critically endangered North Atlantic right whale and key energy link in subarctic ecosystems. This lipid-rich copepod can comprise 71% of the total zooplankton biomass. Observations in the Wilkinson Basin indicate that the spring and summer abundance and biomass of Calanus in 2024 was comparable to 2005. However, late-stage abundance has declined 64% in fall and 71% in winter. Consequently, overall mesozooplankton biomass in 2024 was only 27% of 2005 levels (Fig. \ref{fig:zooplankton-season}).  
 
-1. *Calanus* reproductive output is tied to phytoplankton availability in late winter/early spring.
-2. Gulf of Maine source waters drive *Calanus* supply (high *Calanus* in Scotian Shelf/Labrodor shelf water (LSW) and less in warm slope water (WSW))
-3. Predation is likely higher with warmer temperatures
-
+The seasonal differences in *Calanus* are driven by five factors:
+1. Late winter and early spring phytoplankton levels control reproductive output.
+2. Source water origin determines supply, with higher concentrations in Scotian/Labrador shelf water than in warm slope water.
+3. Variable currents dictate how *Calanus* is transported and retained in deep basins.
+4. Invertebrate predator populations fluctuate based on spring *Calanus* abundance.
+5. Higher summer and fall temperatures increase predator metabolic demands and predation pressure.
 
 ```{r zoopanom-ne, fig.cap=return_caption(chunk_name = "zoopanom", region = "NewEngland"), fig.width=6.5,fig.asp = 1}
 return_plot("zoopanom", region = "NewEngland")
 ```
 
-```{r zooplankton-season, fig.cap=return_caption(chunk_name = "zooplankton-season", region = "NewEngland")}
-return_plot("zooplankton-season", region = "NewEngland")
-```
+<!-- REPLACE WITH WBTS ZOOPLANKTON BIOMASS INDEX WBTS-ZOO-->
+<!-- # ```{r zooplankton-season, fig.cap=return_caption(chunk_name = "zooplankton-season", region = "NewEngland")} -->
+<!-- # return_plot("zooplankton-season", region = "NewEngland") -->
+<!-- # ``` -->
 
 ##### Environmental Drivers
 
 Fish production can also be directly related to the prevailing environmental conditions by altering metabolic (growth) and reproductive processes. Many species possess thermal tolerances and can experience stressful or lethal conditions if temperatures exceed certain levels. Extreme temperature at both the [surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) (Fig. \ref{fig:long-term-sst}) and [bottom](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html) can exceed [thermal tolerance](https://noaa-edab.github.io/catalog/thermal_habitat_gridded.html) limits for some fish. For example, 2012 had among the warmest surface and bottom temperatures (GB) in New England. A large proportion of the Georges Bank and Mid-Atlantic regions had bottom temperatures above the 15℃ thermal tolerance for most groundfish, with some days in the Mid-Atlantic exceeding the 24℃ potential mortality limit (Fig. \ref{fig:therm-hab-persist-2024-ne}). 
 
-In 2024, only one [surface marine heatwave](https://noaa-edab.github.io/catalog/heatwave_year.html) occurred throughout the entire U.S. Northeast Shelf due to the cooler ocean conditions observed in the region.  This surface marine heatwave occurred in the Gulf of Maine starting on May 29th, peaking on June 7th, and lasting 12 days.  This marine heatwave was not within the top 10 on record in terms of intesity.
+Cooler ocean temperatures prevented marine heatwaves in the Gulf of Maine and Georges Bank during 2025. Instead, Georges Bank experienced three surface and two bottom marine cold spells, which are extreme cooling events below the 90th percentile. The location, duration, and timing of cold spells can affect the productivity of temperature-sensitive species. The most significant surface event occurred in November, ranking as the 11th strongest on record, while a notable bottom cold spell beginning August 11th reached peak intensity on September 15th and may be ongoing. Another bottom cold spell on the Bank persisted for 71 days starting in early February.
+
+The Gulf of Maine recorded five surface and three bottom marine cold spells in 2025. A major surface event began February 6th and lasted 42 days, with sea surface temperatures averaging 4.50 °C—nearly 1 °C below the 2016-2025 average. Additionally, the seventh strongest surface cold spell on record occurred in April, lasting 37 days. Bottom conditions in the Gulf of Maine were similarly impacted by three cold spells, including the fifth strongest on record. This event began in December 2024 and lasted 83 days, with bottom temperatures averaging 7.5 °C. This represented a cooling of more than 1 °C compared to the 2016-2025 average.
+
+Lower ocean temperatures near long-term averages will affect species differently across the region. While cold-water species like cod may benefit from these conditions, warm-water species such as black sea bass are unlikely to see positive effects. This variability in regional cooling highlights the need for management to account for shifting species distributions and productivity.
+
+<!-- INSERT TEMP THRESHOLD FIGURE -->
+
 ```{r therm-hab-persist-2024-ne, fig.cap=return_caption(chunk_name = "therm-hab-persist-2024", region = "BothReports"), fig.width=6.5, fig.asp=0.5}
 return_plot("therm-hab-persist-2024", region = "BothReports")
 ```
 
-`r oa_paragraph`
+The newly-developed advection index (Fig XX) shows total transport of water onto and off the continental shelf and can be linked to the survival of early life stages of fish and invertebrates. Long-term trends in New England show increased onshelf movement of mid-layer and bottom waters in June, which could increase retention of some species. Further study is needed on the species level to link spawning timing and larval periods to the advection index at the corresponding depth and month.
+
+<!-- INSERT ADVECTION INDEX FIGURE  -->
+
+[Ocean acidification](https://noaa-edab.github.io/catalog/ocean_acidification.html) risks vary among species and include reduced survival, growth, reproduction, and productivity,reached record levels in 2024, though were moderated in 2025.  Atlantic sea scallop and longfin squid faced high OA risk in Long Island Sound and the New Jersey shelf during the summers of 2016, 2018, 2019, 2023, and 2024, with 2024 marking the highest risk recorded since 2007. By 2025, risk levels decreased but still exceeded biological sensitivity limits for scallops on the New Jersey outer shelf in spring ([not shown](https://noaa-edab.github.io/catalog/ocean_acidification.html)) and reached sensitivity limits for longfin squid in nearshore New Jersey waters during summer. These risks are heightened by cold-water CO2 absorption and the movement of high-CO2 water masses. While 2025 bottom temperatures remained as cool as 2024, higher salinity indicated a shift in water mass composition that resulted in lower overall OA risk compared to the previous two years.
 
 ```{r mab-oa, eval = TRUE, out.width = '100%', fig.cap = return_caption(chunk_name = "mab-oa", region = "BothReports")}
 return_plot("mab-oa", region = "BothReports")
 ```
 
-Biological and oceanographic processes can affect the amount of oxygen present in the water column. During low oxygen (hypoxic) events, species' growth is negatively affected and very low oxygen can result in mortality. The duration and extent of hypoxic events is being monitored, but long-term shelf-wide observations are not yet available. However, [hypoxic events](https://noaa-edab.github.io/catalog/observation_synthesis_2023.html) were detected off the coast of New Jersey in 2023 and were potentially responsible for fish, lobster, and crab [mortalities](https://sebsnjaesnews.rutgers.edu/2023/12/rutgers-scientists-observe-unusual-ocean-conditions-possibly-linked-to-mortality-in-marine-life-off-new-jersey/). No hypoxic events were observed on the NE shelf in 2024.
+Biological and oceanographic processes can affect the amount of oxygen present in the water column. During low oxygen (hypoxic) events, species' growth is negatively affected and very low oxygen can result in mortality. In 2025, [aggregated demersal DO observations](https://ondeckdata.com/database/soe_hypoxic_days_2025.html) collected by a variety of programs were examined simultaneously. These programs include glider deployments, fishery-independent surveys, and cooperative ocean observing efforts aboard commercial fishing vessels. Coastal hypoxia was observed in Narragansett Bay in September and October where water temperatures were warm and stagnant. There were no reports of mass mortality events from the fishing industry. The duration and extent of hypoxic events is being monitored, but long-term shelf-wide observations are not yet available. However, [hypoxic events](https://noaa-edab.github.io/catalog/observation_synthesis_2023.html) were detected off the coast of New Jersey in 2023 and were potentially responsible for fish, lobster, and crab [mortalities](https://sebsnjaesnews.rutgers.edu/2023/12/rutgers-scientists-observe-unusual-ocean-conditions-possibly-linked-to-mortality-in-marine-life-off-new-jersey/). No hypoxic events were observed on the NE shelf in 2024.
 
 ##### Drivers: Predation
 
 The abundance and distribution of predators can affect both the productivity and mortality rates on managed stocks. Predators can consume managed species or compete for the same resources resulting in increased natural mortality or declining productivity, respectively. The northeast shift in some [highly migratory species](https://noaa-edab.github.io/catalog/cetacean_dist.html) (Fig. \ref{fig:protectedspp-dist-shifts}) indicates a change in the overlap between predators and prey. Since we also observe distribution shifts in both managed and forage species, the effect of changing predator distributions alone is difficult to quantify.
 
-[Gray seals](https://noaa-edab.github.io/catalog/grayseal.html) are fish predators with increasing populations in New England, however they are broad generalist feeders that do not generally target commercially-sized managed species. [Stock status](https://noaa-edab.github.io/catalog/hms_stock_status.html) is mixed for Atlantic Highly Migratory Species (HMS) stocks (including sharks, swordfish, billfish, and tunas) occurring throughout the Northeast U.S. shelf. While there are several HMS species considered to be overfished or that have unknown stock status, the population status for some managed Atlantic sharks and tunas is at or above the biomass target, suggesting the potential for robust (or rebuilt) predator populations among these managed species. Stable predator populations suggest stable predation pressure on managed species, but increasing predator populations may reflect increasing predation pressure.
+[Gray seals](https://noaa-edab.github.io/catalog/grayseal.html) are fish predators with increasing populations in New England,Recent white shark aggregations have been observed near Cape Cod, however, both gray seals and white sharks are broad generalist feeders that do not generally target commercially-sized managed species.  [Stock status](https://noaa-edab.github.io/catalog/hms_stock_status.html) is mixed for Atlantic Highly Migratory Species (HMS) stocks (including sharks, swordfish, billfish, and tunas) occurring throughout the Northeast U.S. shelf. While there are several HMS species considered to be overfished or that have unknown stock status, the population status for some managed Atlantic sharks and tunas is at or above the biomass target, suggesting the potential for robust (or rebuilt) predator populations among these managed species. Stable predator populations suggest stable predation pressure on managed species, but increasing predator populations may reflect increasing predation pressure.
 
 #### Future Considerations
 
