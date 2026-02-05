@@ -360,8 +360,6 @@ return_plot("cold-pool-size", region = "BothReports")
 
 #### Future Considerations 
 
-
-
 Distribution shifts caused by changes in thermal habitat and ocean circulation are likely to continue as long as long-term trends persist. Episodic and short-term events (see [2024 Highlights](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html) and [2025 Highlights](#highlights))  may increase variability in the trends, however species distributions are unlikely to reverse to historical ranges in the short term. Increased mechanistic understanding of distribution drivers is needed to better understand future distribution shifts: species with high mobility or short lifespans react differently from immobile or long-lived species.
 
 MOM6 decadal oceanographic forecasts suggest a tendency towards near-normal temperatures over the next decade due to decadal variability in regional circulation. 2026 seasonal forecasts show a high probability of below average surface and bottom temperatures in the winter months. Forecast uncertainty is higher during the spring and summer seasons, and above average conditions are predicted for the fall. These forecasts will continue to be evaluated to determine how well they are able to predict episodic and anomalous events that are outside of the long-term patterns.
