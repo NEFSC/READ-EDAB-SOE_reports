@@ -78,7 +78,7 @@ The seasonal differences in *Calanus* are driven by five factors:
 return_plot("zoopanom", region = "NewEngland")
 ```
 
-```{r wbts-zoo, fig.cap=return_caption(chunk_name = "wbts-zoo", region = "NewEngland"), fig.width=6.5,fig.asp = 1}
+```{r wbts-zoo, fig.cap=return_caption(chunk_name = "wbts-zoo", region = "NewEngland"), fig.width=6.5,fig.asp = 0.5}
 return_plot("wbts-zoo", region = "NewEngland")
 ```
 

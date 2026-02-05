@@ -390,18 +390,18 @@ The drivers of timing shifts in managed stocks are generally coupled to shifts i
 
 Along with the overall warming trends in `r region`, ocean summer conditions have been lasting longer (Fig. \ref{fig:transition}) due to the later [transition](https://noaa-edab.github.io/catalog/trans_dates.html) from warm summer conditions to cooler fall temperatures. These transition dates relate how daily temperatures compare to the seasonal norm. Changes in the timing of seasonal environmental cycles can alter biological processes (migrations, spawning, etc.) that are triggered by seasonal events.  
 
-<!-- # ```{r transition, fig.cap=return_caption(chunk_name = "transition", region = params$region)} -->
-<!-- # ## TODO: need to modify this to show both plots in draft mode -->
-<!-- # return_plot("transition", region = params$region) -->
-<!-- #  -->
-<!-- # if(params$draft){ -->
-<!-- #   opp_region <- ifelse(params$region == "MidAtlantic", "NewEngland", "MidAtlantic") -->
-<!-- #  } -->
-<!-- # ``` -->
-<!-- #  -->
-<!-- # ```{r transition2, fig.cap=return_caption(chunk_name = "transition", region = opp_region), eval = params$draft} -->
-<!-- # return_plot("transition", region = opp_region) -->
-<!-- # ``` -->
+```{r transition, fig.cap=return_caption(chunk_name = "transition", region = "MidAtlantic"), fig.width=6.5, fig.asp=0.3}
+ ## TODO: need to modify this to show both plots in draft mode
+return_plot("transition", region = "MidAtlantic")
+
+ # if(params$draft){
+ #   opp_region <- ifelse(params$region == "MidAtlantic", "NewEngland", "MidAtlantic")
+ #   }
+```
+
+```{r transition-ne, fig.cap=return_caption(chunk_name = "transition", region = "NewEngland"), fig.width=6.5, fig.asp=0.3}
+return_plot("transition", region = "NewEngland")
+```
 
 ```{r}
 base_child <- "06_risk_seasonal_"
