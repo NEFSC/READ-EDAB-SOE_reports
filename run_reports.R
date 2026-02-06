@@ -48,7 +48,7 @@ rmarkdown::render(
 )
 difftime(Sys.time(), now)
 
-## NE report (pdf) ----
+## NE report (pdf) ---- 
 now <- Sys.time()
 rmarkdown::render(
   here::here("parent_report.Rmd"),

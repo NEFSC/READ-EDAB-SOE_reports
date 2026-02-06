@@ -132,7 +132,7 @@ save_plot(
     ecodata::plot_community_climate_vulnerability(
       report = region,
       plottype = "regionland",
-      n = 24
+      n = 30
     ) +
       ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
       ggplot2::theme(legend.position = 'bottom')
@@ -962,7 +962,41 @@ save_plot(
   height = 7.5
 )
 
+# Advection Index
+save_plot(
+  plot_expression = {
+    ecodata::plot_advection(report = region, n = 10, varName = 6) +
+      ggplot2::theme(legend.position = 'bottom')
+  },
+  indicator = "advection_index",
+  width = 6.5,
+  height = 4.5
+)
 
+# Seasonal OISST Anomaly - MAB ONLY
+save_plot(
+  plot_expression = {
+    ecodata::plot_seasonal_oisst_anom(report = region, n = 10) 
+  },
+  indicator = "seasonal_oisst_anom",
+  width = 6.5,
+  height = 4.5
+)
+
+# Seasonal Bottom Temp Anomaly - MAB ONLY
+save_plot(
+  plot_expression = {
+    ecodata::plot_bottom_temp_model_anom(report = region, 
+                                      n =10, 
+                                      varName = "seasonal", 
+                                      EPU = "MAB", 
+                                      plottype = "GLORYS") +
+      ggplot2::theme(legend.position = 'bottom')
+  },
+  indicator = "bottom_temp_anom",
+  width = 6.5,
+  height = 4.5
+)
 # Other ocean uses: offshore wind ----
 
 # 1. Wind Species Revenue Plot
@@ -1002,42 +1036,42 @@ save_plot(
   height = 7
 )
 
-## Mid plot -- NE ports landing majority Mid species
-## currently under MidAtlantic/newengland_mafmc
-save_plot(
-  plot_expression = {
-    plot_wind_port(port_list = c("BARNSTABLE, MA",
-                      "DAVISVILLE/NORTH KINGSTOWN, RI",
-                      "EAST HAVEN, CT",
-                      "NEW LONDON, CT",
-                                 "POINT JUDITH, RI",
-                      "STONINGTON,CT",
-                                 "TIVERTON,RI"))
-  },
-  indicator = "wind_rev",
-  width = 6.5,
-  height = 4.5
-)
-
-## NE plot - MAB ports landing majority NE species
-## currently under NewEngland/midatlantic_nefmc
-save_plot(
-  plot_expression = {
-    plot_wind_port(port_list = c("CAPE MAY, NJ",
-                                 "NEWPORT NEWS, VA",
-                                 "LONG BEACH (TOWN OF), NJ",
-                                 "POINT PLEASANT, NJ",
-                                 "BARNEGAT LIGHT, NJ",
-                                 "HAMPTON, VA",
-                                 "WILDWOOD, NJ",
-                                 "POINT LOOKOUT, NY",
-                                 "BRIELLE, NJ")) +
-      ggplot2::ggtitle("Port Revenue from Lease Areas, Majority NEFMC Species")
-  },
-  indicator = "wind-rev",
-  width = 6.5,
-  height = 4
-)
+# ## Mid plot -- NE ports landing majority Mid species
+# ## currently under MidAtlantic/newengland_mafmc
+# save_plot(
+#   plot_expression = {
+#     plot_wind_port(port_list = c("BARNSTABLE, MA",
+#                       "DAVISVILLE/NORTH KINGSTOWN, RI",
+#                       "EAST HAVEN, CT",
+#                       "NEW LONDON, CT",
+#                                  "POINT JUDITH, RI",
+#                       "STONINGTON,CT",
+#                                  "TIVERTON,RI"))
+#   },
+#   indicator = "wind_rev",
+#   width = 6.5,
+#   height = 4.5
+# )
+# 
+# ## NE plot - MAB ports landing majority NE species
+# ## currently under NewEngland/midatlantic_nefmc
+# save_plot(
+#   plot_expression = {
+#     plot_wind_port(port_list = c("CAPE MAY, NJ",
+#                                  "NEWPORT NEWS, VA",
+#                                  "LONG BEACH (TOWN OF), NJ",
+#                                  "POINT PLEASANT, NJ",
+#                                  "BARNEGAT LIGHT, NJ",
+#                                  "HAMPTON, VA",
+#                                  "WILDWOOD, NJ",
+#                                  "POINT LOOKOUT, NY",
+#                                  "BRIELLE, NJ")) +
+#       ggplot2::ggtitle("Port Revenue from Lease Areas, Majority NEFMC Species")
+#   },
+#   indicator = "wind-rev",
+#   width = 6.5,
+#   height = 4
+# )
 
 ####### SAME PLOTS FOR BOTH REPORTS ######
 # setup ----
@@ -1427,6 +1461,18 @@ if (region == "NewEngland") {
                             labeller = ggplot2::as_labeller(c(Total = "Number of Salmon", PSAR = "Percent Return Rate")))
     },
     indicator = "salmon",
+    width = 6.5,
+    height = 4
+  )
+}
+
+# WBTS Zoo - NE only
+if (region == "NewEngland") {
+  save_plot(
+    plot_expression = {
+      ecodata::plot_wbts_zoo(report = region, n = 10)
+    },
+    indicator = "wbts_zoo",
     width = 6.5,
     height = 4
   )

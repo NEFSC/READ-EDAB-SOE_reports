@@ -13,7 +13,7 @@ mng_obj <- data.frame(
     "Landings; commercial total and by feeding guild; recreational harvest",
     "Revenue decomposed to price and volume",
     "Angler trips; recreational fleet diversity",
-    "Diversity indices (fishery and ecosystem)",
+    "Fishery and ecosystem volatility, adaptive capacity, and shifts from baseline",
     "Community fishing engagement and social vulnerability status",
     "Bycatch; population (adult and juvenile) numbers; mortalities",
     "Stock status; catch compared with catch limits",

@@ -6,13 +6,13 @@
 <<ne-draft>>
 ```
 
-### Indicators: fishery fleet and catch diversity, ecological component diversity, total primary production
-
-While there are many potential metrics of stability, we use diversity indices to evaluate overall stability in fisheries and ecosystems. In general, diversity that remains constant over time suggests a similar capacity to respond to change over time. A significant change in diversity over time does not necessarily indicate a problem or an improvement, but does indicate a need for further investigation. We examine diversity in commercial fleet and species catch, and recreational species catch (with fleet effort diversity discussed above), zooplankton, and adult fishes.
-
 #### Fishery Stability
 
-[Diversity](https://noaa-edab.github.io/catalog/commercial_div.html) estimates have been developed for species landed by commercial vessels with New England permits and fleets landing managed species. Although the effective number of species being landed in the commercial fleet rebounded slightly from the historical low of 2021, the diversity in catch is still well below the series average (Fig.  \ref{fig:permit-div}). Commercial fishery fleet count is also below the time series average.
+Fisheries in Georges Bank and the Gulf of Maine are dominated by single species. Total landings are declining in both regions, although overall revenue does not have a long-term trend.  Revenue from Council-managed fisheries in the GOM and GB have declined over time. However, revenue per unit effort remains steady or increasing over time for most gear types, indicating financial viability of current fishing operations. Although the effective number of species being landed in the commercial fleet rebounded slightly from the historical low of 2021, the diversity in catch is still well below the series average (Fig.  \ref{fig:commercial-div-species-div}), indicating increasing reliance on a smaller number of species. Commercial fishery fleet count is also below the time series average due to varying barriers to enter and invest into the fleet. While some opportunity to diversify catch has allowed crew and vessel owners to continue at a sustainable rate, other barriers such as shifting species distribution and population shifts leave commercial crew and vessel owners in vulnerable positions to adapt to these changes. In Georges Bank, cyclic landings and revenue patterns are driven by scallops and decrease the predictability of earnings from year to year. In the Gulf of Maine, landings and revenue are driven by lobster. The increasing importance of lobster over time is mirrored in the decreasing contribution of Council-managed fisheries to Gulf of Maine total landings and revenue.
+
+Results from the Crew Survey suggest many commercial fishing crews in New England are dissatisfied with the predictability of their earnings, the amount of time away from home, and the physical fatigue and personal health impacts from the job. Additionally, the survey results demonstrate evidence of aging or “graying” of the fleet in New England, which combined with a lack of new entrants to the industry suggests that participation in commercial fishing is declining across the region. Combined with the declining fleet count and declining overall landings, this suggests a reduced capacity for New England commercial fisheries to adapt to future change.
+
+The number of recreational trips is below average, although there is no long-term trend, and recreational landings have been declining. Low recreational landings may also be driven by a shift to catch-and-release fishing and stricter shark and large sport fish regulations. Recreational effort diversity is near average with no trend and there has been no shift in angling modes, suggesting steady recreational fishing opportunities. Recreational species catch diversity has increased over time (Fig. \ref{fig:recdat-div-catch-ne}), indicating that anglers are catching a more varied mix of species, likely due to shifting species distributions. 
 
 ```{r permit-div, fig.cap = return_caption(chunk_name = "commercial-div-species-div", region = "NewEngland"),fig.width = 6.5,fig.asp = 0.3}
 return_plot("commercial-div-species-div", region = "NewEngland")
@@ -25,35 +25,40 @@ return_plot("recdat-div-catch", region = "NewEngland")
 
 #### Ecological Stability
 
-Ecological diversity indices show mixed trends. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html) (TPP)  is a measure of the total amount of carbon (i.e. energy) produced by phytoplankton per year. 2023 saw record high TPP in the GOM due to a highly unusual phytoplankton bloom, but it is currently unknown how much of that primary production was incorporated into the upper trophic levels. Preliminary 2024 values were near the long-term average (Fig. \ref{fig:totpp-ne}). 
+Long-term changes in biological production suggest the Georges Bank ecosystem is experiencing a system-wide shift. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html) (TPP) is a measure of the total amount of carbon (i.e., energy) produced by phytoplankton per year and is variable over time. Zooplankton biomass and the biomass of some groups of fish are also increasing. However, the productivity of managed species has declined over time, suggesting that although the system remains productive, this productivity is driven by non-target species. 
+
+The Gulf of Maine has also experienced ecosystem change over time. Primary productivity has remained relatively constant over time, increases in planktivores and euphausiids suggest changing ecosystem dynamics and a possible trophic cascades. The zooplankton community displays distinct regime shifts in composition corresponding to approximately decadal time scales, with the most recent shift in community composition occurring in 2023. These shifts result in unpredictable ecosystem conditions. Productivity of managed species has declined, with current levels below average. 
 
 ```{r totpp-ne, fig.cap =return_caption(chunk_name = "totpp", region = "NewEngland"),fig.width = 7.5,fig.asp = 0.3}
 return_plot("totpp", region = "NewEngland")
 ```
 
-[Zooplankton diversity](https://noaa-edab.github.io/catalog/zoo_diversity.html) is increasing on GB, while no trend is evident in the GOM (Fig. \ref{fig:zoo-diversity-ne}). However, it is worth noting that the 2021 index for the GOM is the highest observed. [Adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html) shows an increasing trend in the GOM and no trend on GB (Fig. \ref{fig:exp-n-ne}).
+[Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, maximum body size, or fecundity, serve to synthesize change in complex, diverse communities by looking beyond species-specific trends. Furthermore, shifts in functional trait distributions for the fish community can indicate changes in ecosystem-scale resilience. There is evidence for shifts in functional trait distributions in New England (Fig. \ref{fig:traits-k-ne}) (Fig. \ref{fig:traits-tl-ne}). George’s Bank (GB) displayed few long-term trends other than reductions in fecundity in both fall and spring. The Gulf of Maine (GOM) displayed long-term trends consistent with shifts towards faster life history strategies particularly in the spring finfish community, including younger age and shorter length at maturity, lower fecundity, and faster growth rate. Interestly, the spring finfish community in the GOM also displayed increases in trophic level. 
 
-```{r zoo-diversity-ne, fig.cap = return_caption(chunk_name = "zoo-diversity", region = "NewEngland"), fig.width = 6.5, fig.asp = 0.3}
-return_plot("zoo-diversity", region = "NewEngland")
-```
+Increasing [Adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html) (Fig. \ref{fig:exp-n-ne}) and changes in functional traits such as the mean trophic level suggest that fish communities have changed from a historic baseline. Long-term trends in biomass and functional traits would not be expected in a stable system. However, because the biomass of functional groups of fish has remained relatively constant over time, the system appears able to adapt to change. 
+
 
 ```{r exp-n-ne, fig.cap = return_caption(chunk_name = "exp-n", region = "NewEngland"),fig.width = 6.5,fig.asp = 0.3}
 return_plot("exp-n", region = "NewEngland")
 ```
 
-[Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, asymptotic body size, or fecundity, can synthesize change across complex, diverse communities. Monitoring changes in functional trait distributions can provide a means of assessing ecosystem-scale resilience. There is evidence of long term change in trait distributions in the GOM with an increase in [pace of life](https://noaa-edab.github.io/catalog/finfish_traits.html) . Both fall and spring finfish communities are showing declines in fecundity in GB and GOM  (Fig. \ref{fig:traits-ne}).
+```{r zoo-comm-ne, fig.cap = return_caption(chunk_name = "zoo-community", region = "NewEngland"), fig.width=5, fig.asp=.4}
+return_plot("zoo-community", region = "NewEngland")
+```
 
-```{r traits-ne, fig.cap = return_caption(chunk_name = "traits", region = "NewEngland"),fig.width = 6.5,fig.asp = 0.3}
-return_plot("traits", region = "NewEngland")
+```{r traits-k-ne, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-k", region = "NewEngland")}
+return_plot("traits-k", region = "NewEngland")
+```
+
+```{r traits-tl-ne, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-tl", region = "NewEngland")}
+return_plot("traits-tl", region = "NewEngland")
 ```
 
 ### Implications
 
-Fleet diversity indices can be used to evaluate stability objectives as well as risks to fishery resilience and to maintain equity in access to fishery resources. The relatively low diversity estimates for the commercial fishery are likely driven by the continued reliance on a few species, such as sea scallops and lobster. This trend could diminish the capacity to respond to future fishing opportunities. Meanwhile, the increase in recreational species catch diversity is due to recent increases in Atlantic States Fisheries Management Council (ASFMC) and MAFMC managed species within the region, offsetting decreased limits on more traditional regional species.
+The long-term changes in GB suggest an increasingly productive ecosystem from the base of the food web to higher trophic levels, but this is occurring simultaneously with low productivity of managed species. Over the same time period, fisheries on GB have experienced cyclic changes in revenue and increased reliance on a single species, sea scallops. Coupled with demographic changes in fisher populations and a decline in the number of New England fleets, this indicates that fisheries utilizing GB may have a lower capacity to adapt to the changing ecosystem. This lower adaptive capacity with a significant shift from baseline conditions in the ecosystem indicate that both the fishery and ecosystem are currently not stable.
 
-Ecological diversity indices can provide insight into ecosystem structure. Changes in ecological diversity over time may indicate altered ecosystem structure with implications for fishery productivity and management. Increasing zooplankton diversity in GB is attributed to an overall increase in zooplankton abundance and the declining dominance of the calanoid copepod *Centropages typicus*. Stable adult fish diversity on GB suggests the same overall number and evenness over time, but does not rule out species substitutions (e.g., warm-water species replacing cold-water ones). Increasing adult diversity in the GOM suggests an increase in warm-water species and should be closely monitored.
-
-As a whole, the examined diversity indicators suggest changes in commercial and recreational fisheries, likely driven by changes in the mix of species landed. However, there seems to be overall stability in ecosystem components. Increasing diversity in the recreational catch, GB zooplankton, and GOM adult fish accompanied by lows in commercial fleet diversity metrics, suggests warning signs of a potential regime shift or ecosystem restructuring and warrants continued monitoring to determine if managed species are affected.
+Within the GOM, managed species continue to have low productivity, while there are long-term increases in large zooplankton and planktivores. Cyclic changes in zooplankton communities may make the impact of these changes unpredictable. As these changes in the ecosystem occur, an increasing proportion of total revenue is generated by the lobster fishery. This increased reliance on a single species reduces the regions’ ability to adapt to changes in resource availability and the environment. For these reasons both the GOM ecosystem and its fisheries are considered not stable.
 
 ```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>
