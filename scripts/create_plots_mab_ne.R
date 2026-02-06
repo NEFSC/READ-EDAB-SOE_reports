@@ -131,7 +131,7 @@ create_plots_mab_and_ne <- function(region)
       ecodata::plot_community_climate_vulnerability(
         report = region,
         plottype = "regionland",
-        n = 24
+        n = 30
       ) +
         ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
         ggplot2::theme(legend.position = 'bottom')
