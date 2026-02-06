@@ -8,18 +8,18 @@
 
 ### Indicators: Port Commercial Fishing Activity and Community Social Vulnerability
 
-The Port Commercial Fishing Activity Indicator (PCFA) highlights significant shifts in industry engagement across major regional ports. New Bedford and Boston, MA, have experienced fishing activity declines of over 20% compared to their 2007–2011 averages. Portland, ME, and Gloucester, MA, show even sharper downturns, with activity dropping 39% and 45%, respectively. Because New Bedford and Boston also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions.Conversely, several communities show substantial growth in fishing activity. Chatham, MA, along with Stonington and Harpswell, ME, are seeing positive trends. Friendship, ME, stands out with a 95% increase in its PCFA score over the same period. 
-
 ```{r commercial-engagement-ne, fig.cap= return_caption(chunk_name = "commercial-engagement", region = "NewEngland"), fig.width = 7, fig.asp = 0.5}
 return_plot("commercial-engagement", region = "NewEngland")
 ```
+
+The [Port Commercial Fishing Activity Indicator (PCFA)](https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72) highlights significant shifts in industry engagement across major regional ports. New Bedford, Gloucester, and Boston, MA and Portland, ME, have lower fishing activity compared to their 2007–2011 averages. Because New Bedford and Boston also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions. Conversely, several communities show substantial growth in fishing activity. Chatham, MA, along with Stonington, Friendship, Harpswell, ME, are seeing increased port activity since 2007-2011. 
 
 ```{r comm-vuln}
 comm_vul_table |>
   flextable::fit_to_width(7.5)
 ```
 
-Of the top-ranked recreational communities, only Provincetown, MA and Falmouth, MA had medium or higher ranks for more than one socio-demographic indicator (Table \ref{tab:recvultab}) examined here (poverty, personal disruption, population composition). This suggests that future changes to recreational fishing conditions may disproportionately impact Provincetown and Falmouth.
+Of the top 10 most active recreational communities, only Seabrook, NH had medium or higher ranks for at least one socio-demographic indicator (Table \ref{tab:recvultab}) examined here (poverty, personal disruption, population composition). This suggests that future changes to recreational fishing conditions may disproportionately impact Seabrook.
 
 \newpage
 ```{r recreational-engagement-ne, fig.cap= return_caption(chunk_name = "recreational-engagement", region = "NewEngland"), fig.width = 6.5, fig.asp = 0.7}

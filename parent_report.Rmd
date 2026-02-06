@@ -89,7 +89,7 @@ cat('# parent_report.Rmd')
 \thispagestyle{fancy}
 
 ```{r, eval = params$draft, results = "asis"}
-cat("This is a draft report that presents all content from both New England and the Mid Atlantic. Several sections are shared between regions, and sections that differ for each region are marked with H1 headers. Some text is shown in square brackets to indicate that that text will differ in the New England and Mid Atlatnic reports (e.g., [Mid Atlantic text] *or* [New England text]). Most figures are shown only once when they are exactly the same in each region's report, but in a few cases the figures are repeated and the figure numbers referenced in the text may refer the reader to the 'wrong' region. All of these editing quirks will be resolved in the final report.")
+cat("This is a draft report that presents all content from both New England and the Mid Atlantic. Several sections are shared between regions, and sections that differ for each region are marked with headers. Some text is shown in square brackets to indicate that that text will differ in the New England and Mid Atlatnic reports (e.g., [Mid Atlantic text] *or* [New England text]). Most figures are shown only once when they are exactly the same in each region's report, but in a few cases the figures are repeated and the figure numbers referenced in the text may refer the reader to the 'wrong' region. All of these editing quirks will be resolved in the final report.")
 ```
 
 # Introduction
@@ -192,9 +192,9 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 <<repeat-child>>
 ```
 
-## Community Social and Climate Vulnerability 
+## Social and Community Risks
 
-Fisheries management seeks to provide for sustained participation of fishing communities and to avoid adverse economic impacts to fishing communities. A new composite indicator (Port Commercial Fishing Activity Indicator or PCFA) utilizes NOAA data on dealers, fish landings, and commercial permits to explore trends in commercial fishing activity over time in top ports. This information can be used to understand how changes in fish stocks, regulations, and other social-ecological factors may have disparately impacted ports throughout the Greater Atlantic region. 
+Fisheries management seeks to provide for sustained participation of fishing communities and to avoid adverse economic impacts to fishing communities. A new [composite indicator](https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72) (Port Commercial Fishing Activity Indicator or PCFA) utilizes NOAA data on dealers, fish landings, and commercial permits to explore trends in commercial fishing activity over time in top ports. This information can be used to understand how changes in fish stocks, regulations, and other social-ecological factors may have disparately impacted ports throughout the Greater Atlantic region. 
 
 The recreational engagement index has not been updated from last year and will be updated with similar methods as PCFAI in future reports. The recreational [engagement](https://noaa-edab.github.io/catalog/engagement.html) index demonstrates participation levels in recreational fishing in a given community relative to other coastal communities in a region. 
 
@@ -216,7 +216,7 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ```
 
 ## Protected Species
-Fishery management objectives for protected species generally focus on reducing threats and on habitat conservation/restoration. Protected species include marine mammals protected under the Marine Mammal Protection Act, endangered and threatened species protected under the Endangered Species Act, and migratory birds protected under the Migratory Bird Treaty Act. In the Northeast U.S., endangered/threatened species include Atlantic salmon, Atlantic and shortnose sturgeon, all sea turtle species, giant manta ray, oceanic whitetip shark, and five baleen whales. Protected species objectives include managing bycatch to remain below potential biological removal (PBR) thresholds, recovering endangered populations, and monitoring unusual mortality events (UMEs). Here we report on performance relative to these objectives with available indicator data, as well as indicating the potential for future interactions driven by observed and predicted ecosystem changes in the Northeast U.S.  
+Fishery management objectives for protected species generally focus on reducing threats and on habitat conservation/restoration. Specific actions include managing bycatch to remain below potential biological removal (PBR) thresholds, recovering endangered populations, and monitoring unusual mortality events (UMEs). Protected species include marine mammals protected under the Marine Mammal Protection Act, endangered and threatened species protected under the Endangered Species Act, and migratory birds protected under the Migratory Bird Treaty Act. In the Northeast U.S., endangered/threatened species include Atlantic salmon, Atlantic and shortnose sturgeon, all sea turtle species, giant manta ray, oceanic whitetip shark, and five baleen whales. Here we report on performance relative to these objectives, as well as how observed and predicted ecosystem changes in the Northeast U.S may impact these objectives in the future.
 
 ### Indicators: bycatch, population (adult and juvenile) numbers, mortalities
 
@@ -225,13 +225,13 @@ The management objective for [harbor porpoise](https://noaa-edab.github.io/catal
 return_plot("harborporpoise", region = "BothReports")
 ```
 
-The annual estimate for gray seal bycatch, most of which occurs in New England, has generally declined since 2019, in part driven by declining gillnet landings. In addition, estimates since 2019 have greater uncertainty stemming from low observer coverage in some times and areas. The U.S. and Canadian range-wide PBR for [gray seals](https://noaa-edab.github.io/catalog/grayseal.html) is 12,052. Despite the PBR for the portion of this stock in U.S. waters being reduced to 756 animals bycatch (Fig. \ref{fig:grayseal}) due to incomplete data on anthropogenic mortality and serious injury, the range-wide mortality and serious injuries are still considered unlikely to exceed the range-wide PBR and thus the management objective has been met.
+The annual estimate for gray seal bycatch, most of which occurs in New England, has generally declined since 2019, in part driven by declining gillnet landings. Although, post-2019 estimates have greater uncertainty stemming from low observer coverage. The U.S. and Canadian range-wide PBR for [gray seals](https://noaa-edab.github.io/catalog/grayseal.html) is 12,052. Despite the PBR for the portion of this stock in U.S. waters being reduced to 756 animals bycatch (Fig. \ref{fig:grayseal}), but due to incomplete data on anthropogenic mortality and serious injury, bycatch for this stock is still considered unlikely to exceed the range-wide PBR. Thus the bycatch management objective gray seals has been met.
 
 ```{r grayseal, fig.cap=return_caption(chunk_name = "grayseal", region = "BothReports"), fig.width=5, fig.asp=0.47}
 return_plot("grayseal", region = "BothReports")
 ```
 
-The [North Atlantic right whale population](https://noaa-edab.github.io/catalog/narw.html) was on a recovery trajectory until 2010, but has since declined (Fig. \ref{fig:narw-abundance}). The sharp decline observed from 2015-2020 appears to have slowed, although the right whale population continues to experience annual mortalities above recovery thresholds. Reduced survival rates of adult females lead to diverging abundance trends between sexes. It is estimated that there are fewer than 70 adult females remaining in the population.
+The [North Atlantic right whale population](https://noaa-edab.github.io/catalog/narw.html) was on a recovery trajectory until 2010, but has since declined (Fig. \ref{fig:narw-abundance}), slowing since 2020. The right whale population continues to experience annual mortalities above recovery thresholds. Reduced survival rates of adult females lead to diverging abundance trends between sexes. It is estimated that there are approximately 70 adult females remaining in the population.
 
 ```{r narw-abundance, fig.cap = return_caption(chunk_name = "narw-abundance", region = "BothReports")}
 return_plot("narw-abundance", region = "BothReports")
@@ -243,10 +243,9 @@ North Atlantic right whale [calf counts](https://noaa-edab.github.io/catalog/nar
 return_plot("NARW-calf-abundance", region = "BothReports")
 ```
 
-This year, the Unusual Mortality Event (UME) for North Atlantic right whales continued. From 2017 through 5 January 2026, the total UME right whale mortalities includes 41 dead stranded whales, 19 in the US and 22 in Canada. When alive but seriously injured whales (40) and sublethal injuries or ill whales (87) are taken into account, 168 individual whales are included in the UME. Recent research suggests that many mortalities go unobserved and the true number of mortalities are about three times the count of the observed mortalities. The primary cause of death is “human interaction” from entanglements or vessel strikes.
+Human interaction from entanglements or vessel strikes remains the primary cause of death in an ongoing North Atlantic right whale Unusual Mortality Event (UME) since 2017. As of 5 January 2026, the UME includes 168 individual whales: 41 confirmed mortalities (19 US; 22 Canada), 40 serious injuries, and 87 sublethal injuries or illnesses. Recent research suggests that many mortalities go unobserved and the true number of mortalities are about three times the count of the observed mortalities. 
 
-A UME continues from previous years for humpback whales (2016-present) and Atlantic minke whales (2018-present); suspected causes include human interactions. A UME for Northeast pinnipeds that began in 2018 for infectious disease is non-active pending closure as of February 2026.
-
+There is an ongoing UME for humpback whales (2016-present) and Atlantic minke whales (2018-present); suspected causes include human interactions. A UME for Northeast pinnipeds that began in 2018 for infectious disease is non-active pending closure as of February 2026.
 
 ### Implications
 Bycatch management measures have been implemented to maintain bycatch below PBR thresholds. The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort. The increasing trend in 5-year average gray seal bycatch may be related to an increase in the gray seal population ([U.S. pup counts](https://noaa-edab.github.io/catalog/seal_pups.html)), supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
@@ -255,11 +254,11 @@ Bycatch management measures have been implemented to maintain bycatch below PBR 
 return_plot("seals", region = "BothReports")
 ```
 
-Strong evidence exists to suggest that interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. Further, right whale distribution has changed since 2010. [Recent research](https://noaa-edab.github.io/catalog/narw.html) suggests that recent climate driven changes in ocean circulation have resulted in right whale distribution changes driven by increased warm water influx through the Northeast Channel, which has reduced the primary right whale prey (the copepod *Calanus finmarchicus*) in the central and eastern portions of the Gulf of Maine. Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat. Additional information can be found in the [offshore wind risks section](#other-ocean-uses-offshore-wind).
+Strong evidence exists to suggest that interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. Further, right whale distribution has changed since 2010. [Recent research](https://noaa-edab.github.io/catalog/narw.html) suggests that recent climate driven changes in ocean circulation have resulted in right whale distribution changes driven by increased warm water influx through the Northeast Channel, which has reduced the [primary right whale prey](https://noaa-edab.github.io/catalog/zoo_energy.html) (the copepod *Calanus finmarchicus*) in the central and eastern portions of the Gulf of Maine. Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat. Additional information can be found in the [offshore wind risks section](#other-ocean-uses-offshore-wind).
 
 The UMEs are under investigation and are likely the result of multiple drivers. For all large whale UMEs, human interaction appears to have contributed to increased mortalities, although investigations are not complete.
 
-A climate vulnerability assessment is published for Atlantic and Gulf marine mammal populations.
+A climate vulnerability assessment (Lettrich et al. 2023) is published for Atlantic and Gulf marine mammal populations.
 
 ## Stability
 
@@ -281,7 +280,7 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 
 ### Risks to managing spatially
 
-Shifting species distributions, or (changes in spatial extent or center of distribution), alter both species and fishery interactions. In particular, shifting species distributions can affect expected management outcomes when spatial allocations and bycatch measures are based on historical fish and protected species distributions. Species availability to surveys can also change as distributions shift within survey footprints, complicating the interpretation of survey trends.
+Shifting species distributions, or (changes in spatial extent or center of distribution), alter both species and fishery interactions. In particular, shifting species distributions can affect expected management outcomes when spatial allocations and bycatch measures are based on historical fish and protected species distributions. Species availability to surveys can also change as distributions shift within or outside of survey footprints, complicating the interpretation of survey trends.
 
 Coastwide indicators are reviewed in this section to evaluate spatial change throughout the Northeast US shelf. Indicators are identical between the Mid-Atlantic and New England reports.
 
@@ -317,7 +316,7 @@ return_plot("calfin-cog", region = "NewEngland")
 return_plot("forageshifts", region = "BothReports")
 ```
 
-In contrast, [macrobenthos](https://noaa-edab.github.io/catalog/benthos_index.html) center of gravity has shifted west and south in the spring (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. [Large copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4)  (including *Calanus finmarchicus*) and euphausiids do not have long-term trends in their centers of gravity (Fig. XX), but small copepods show shifts eastward and northward. Some targeted species distributions may shift in response to these shifts in forage, copepod, and macrobenthos distributions.
+In contrast, [macrobenthos](https://noaa-edab.github.io/catalog/benthos_index.html) center of gravity has shifted west and south in the spring (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. [Large copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4)  (including *Calanus finmarchicus*) and euphausiids do not have long-term trends in their centers of gravity (Fig. \ref{fig:lgcopeall-cog}) (Fig. \ref{fig:euph-cog}), but small copepods show shifts eastward and northward. Some targeted species distributions may shift in response to these shifts in forage, copepod, and macrobenthos distributions.
 
 
 ```{r macrobenthosshifts, fig.cap=return_caption(chunk_name = "macrobenthosshifts", region = "BothReports"), fig.width = 6.5,fig.asp = .3}
@@ -346,7 +345,7 @@ return_plot("bottom-temp-anom", region = "MidAtlantic")
 return_plot("long-term-sst", region = "BothReports")
 ```
 
-Species suitable habitat can expand or contract when changes in temperature and major oceanographic conditions alter distinct water mass habitats.The variability of the Gulf Stream is a major driver of the predominant oceanographic conditions of the Northeast U.S. continental shelf. As the [Gulf Stream](https://noaa-edab.github.io/catalog/gsi.html) had become less stable and was shifting northward until a recent shift in 2023. Since then, the Gulf Stream has been closer to the long-term average, and the supply of Labrador Slope Water to the Northwest Atlantic Shelf has increased. These changes are linked to some of the cooler water temperatures observed in 2024 and 2025 and the composition of the source water entering the Gulf of Maine through the Northeast Channel  (see [2025 Highlights](#highlights)).
+Species suitable habitat can expand or contract when changes in temperature and major oceanographic conditions alter distinct water mass habitats. The variability of the Gulf Stream is a major driver of the predominant oceanographic conditions of the Northeast U.S. continental shelf. As the [Gulf Stream](https://noaa-edab.github.io/catalog/gsi.html) had become less stable and was shifting northward until a recent shift in 2023. Since then, the Gulf Stream has been closer to the long-term average, and the supply of Labrador Slope Water to the Northwest Atlantic Shelf has increased. These changes are linked to some of the cooler water temperatures observed in 2024 and 2025 and the composition of the source water entering the Gulf of Maine through the Northeast Channel  (see [2025 Highlights](#highlights)).
 
 ```{r GSI, fig.cap = return_caption(chunk_name = "GSI", region = "BothReports")}
 return_plot("GSI", region = "BothReports")
@@ -362,7 +361,7 @@ return_plot("cold-pool-size", region = "BothReports")
 
 Distribution shifts caused by changes in thermal habitat and ocean circulation are likely to continue as long as long-term trends persist. Episodic and short-term events (see [2024 Highlights](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html) and [2025 Highlights](#highlights))  may increase variability in the trends, however species distributions are unlikely to reverse to historical ranges in the short term. Increased mechanistic understanding of distribution drivers is needed to better understand future distribution shifts: species with high mobility or short lifespans react differently from immobile or long-lived species.
 
-MOM6 decadal oceanographic forecasts suggest a tendency towards near-normal temperatures over the next decade due to decadal variability in regional circulation. 2026 seasonal forecasts show a high probability of below average surface and bottom temperatures in the winter months. Forecast uncertainty is higher during the spring and summer seasons, and above average conditions are predicted for the fall. These forecasts will continue to be evaluated to determine how well they are able to predict episodic and anomalous events that are outside of the long-term patterns.
+[MOM6 decadal oceanographic forecasts](https://noaa-edab.github.io/catalog/MOM6_forecasts.html) suggest a tendency towards near-normal temperatures over the next decade due to decadal variability in regional circulation. 2026 seasonal forecasts show a high probability of below average surface and bottom temperatures in the winter months. Forecast uncertainty is higher during the spring and summer seasons, and above average conditions are predicted for the fall. These forecasts will continue to be evaluated to determine how well they are able to predict episodic and anomalous events that are outside of the long-term patterns.
 
 Adapting management to changing stock distributions and dynamic ocean processes will require continued monitoring of populations in space and time while evaluating management measures against a range of possible future spatial distributions. The upcoming Climate Vulnerability Assessment 2.0 will also be incorporating MOM6 output and forecasts to help predict changes in species distributions and quantify species exposure to predicted future change. Processes like the [East Coast Coordination Group](https://www.mafmc.org/e3cg) and the HMS Climate Vulnerability Assessment can help coordinate management. 
 
@@ -386,7 +385,7 @@ Understanding whether seasonal patterns are changing for stocks requires regular
 
 The drivers of timing shifts in managed stocks are generally coupled to shifts in environmental or biological conditions, since these can result in changes in habitat quality or food availability within the year. Changes in the timing of fall phytoplankton blooms and seasonal shifts in zooplankton communities are indicators of changes in seasonal food availability to stocks.
 
-Along with the overall warming trends in `r region`, ocean summer conditions have been lasting longer (Fig. \ref{fig:transition}) due to the later [transition](https://noaa-edab.github.io/catalog/trans_dates.html) from warm summer conditions to cooler fall temperatures. These transition dates relate how daily temperatures compare to the seasonal norm. Changes in the timing of seasonal environmental cycles can alter biological processes (migrations, spawning, etc.) that are triggered by seasonal events.  
+Along with the overall warming trends in `r region`, ocean summer conditions have been lasting longer (Fig. \ref{fig:transition}) due to the earlier [transition](https://noaa-edab.github.io/catalog/trans_dates.html) from cool spring conditions to warm summer conditions and the later transition from warm summer conditions to cooler fall temperatures. These transition dates relate how daily temperatures compare to the seasonal norm. Changes in the timing of seasonal environmental cycles can alter biological processes (migrations, spawning, etc.) that are triggered by seasonal events.
 
 ```{r transition, fig.cap=return_caption(chunk_name = "transition", region = "MidAtlantic"), fig.width=6.5, fig.asp=0.3}
  ## TODO: need to modify this to show both plots in draft mode
@@ -438,6 +437,8 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 The processes that control fish productivity and mortality are dynamic and complex, and are the result of the interactions between multiple system drivers. If the observed changes to these processes outlined in this report are not considered when managing fisheries, there is an increased risk that short-term stock projections and rebuilding plans will be more uncertain and will not reflect the current stock productivity. To mitigate this risk, time series of stock productivity and ecosystem conditions are regularly reviewed and are used to select appropriate reference periods that inform projections and reference point estimation. Next generation stock assessment models have also expanded the capacity to incorporate ecosystem changes into scientific products that support fishery management. Increasingly, NEFSC stock assessments model time-varying processes and in some cases environmental time series are used directly to describe changing stock dynamics. Research efforts to understand system drivers, identify change points, and develop paths to use this information more effectively in stock assessment and management are ongoing.
 
 ## Other Ocean Uses: Offshore Wind
+
+Offshore wind development is active and dynamic throughout the region. The following section reflects the status of projects as of 5 February, 2026.
 
 ### Indicators: development timeline, revenue in lease areas, coastal community vulnerability
 All reported potential offshore wind development status and data are based on BOEM’s Offshore Renewable Activities page and projects’ Final Environmental Impact Statements. In 2025, the Presidential Memorandum 90 FR 8363 removed existing planning areas and excluded the establishment of additional lease areas.
