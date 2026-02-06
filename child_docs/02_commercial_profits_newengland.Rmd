@@ -17,6 +17,7 @@ return_plot("comm-revenue", region = "NewEngland")
 Revenue earned by harvesting resources is a function of both the quantity landed of each species and the prices paid for landings. Therefore, total revenue patterns can be driven by harvest levels, the mix of species landed, price changes, or a combination of these. The [Bennet Indicator](https://noaa-edab.github.io/catalog/bennet.html) (BI) decomposes revenue change into two parts, one driven by changing quantities (volumes), and a second driven by changing prices. All changes are in relation to a base year (1982). The 1982 base year was selected because that is the first year the relevant data is available and it allows for an extended period of time to evaluate market trends and dynamics.
 
 In the GB region, revenues have been consistently lower than the 1982 baseline throughout the time series. The changes in total revenue in GB was primarily driven by volumes prior to 2010 rather than by prices (Fig.\ref{fig:bennet-ne}).In more recent years, prices have played a larger role in revenue upticks (such as in 2020), but the overall lower than baseline landings have caused a decreasing revenue in the past three years.
+
 In the GOM, revenues have been above the 1982 baseline in all but three years, with the increase being driven more by relatively higher prices rather than landings. Breaking down the GB revenue by guild (Fig. \ref{fig:bennet-all-ne}), both the volume and price trend have been largely driven by benthivores (lobster) and benthos (scallops, quahogs and surfclams). In the GOM region, increased prices for benthivores (lobster) drove the year-over-year increases in overall prices. Benthivores also had a large influence on the overall volume indicator in the GOM.
 
 ```{r bennet-ne, fig.cap = return_caption(chunk_name = "bennet", region = "NewEngland"), fig.width = 6.5, fig.asp = 0.4}
@@ -27,15 +28,15 @@ return_plot("bennet", region = "NewEngland")
 return_plot("bennet-all", region = "NewEngland")
 ```
 
-This year, we present new indicators of profitability: indices of cost, revenue, and profit. In this index, costs pertain to trip costs, excluding labor, estimated for all federal trips in the region using methods described in Werner et al. 2020). Here the profit indicator is actually net-revenue--determined as the difference between trip revenue and trip costs. Trips were spatially allocated to compile regional indices. Indices are presented as values relative to those from 2000. the first year in the dataset. 
-
-In the GOM, the profit index closely follows the same trends as the revenue index with the exception of 2010 - 2013 where low costs created a surge in the profit index. In 2023, the GOM profit index dropped to its third lowest point in the time series due to both high costs and below average revenues. For trips in GB, the profit index is similarly low due to high costs, but a stronger cyclical cycle of revenue is present due, in part, to rotational scallop management.
-
 ```{r comdat-profit-ne, fig.cap = return_caption(chunk_name = "comdat-profit", region = "NewEngland"),  fig.width = 6.5, fig.asp = 0.35}
 return_plot("comdat-profit", region = "NewEngland")
 ```
 
-[Total vulnerability](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) of revenue was moderate in 2022 with no long-term trend (Fig. \ref{fig:climatevul-rev-ne}). This suggests that while New England commercial fishing is moderately reliant on climate-sensitive species, this proportion has not significantly changed since 2000.
+This year, we present new indicators of [profitability](https://noaa-edab.github.io/catalog/comdat_profit.html): indices of cost, revenue, and profit. In this index, costs pertain to trip costs, excluding labor, estimated for all federal trips in the region. The profit indicator is net-revenue, determined as the difference between trip revenue and trip costs. Trips were spatially allocated to compile regional indices. Indices are presented as values relative to those from 2000, the first year in the dataset.  
+
+In the GOM, the profit index closely follows the same trends as the revenue index with the exception of 2010 - 2013 where low costs created a surge in the profit index. In 2024, the GOM profit index returned to near the long-term average with average costs and revenue. For trips in GB, high costs and low revenue had caused a low profits over the last 3 years, but recent drops in costs have helped compensate for low revenue. GB profits have no long-term trend, but a cyclical revenue driven by rotational scallop management can impact profitability. 
+
+For New England ports, [total vulnerability](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) of revenue was moderate in [2024](#community-social-and-climate-vulnerability) with no long-term trend (Fig. \ref{fig:climatevul-rev-ne}). This suggests that while New England commercial fishing is moderately reliant on climate-sensitive species, this proportion has not significantly changed since 2000.
 
 ```{r, climatevul-rev-ne, fig.cap = return_caption(chunk_name = "climatevul-rev", region = "NewEngland"), fig.width=6.5, fig.asp=0.5}
 return_plot("climatevul-rev", region = "NewEngland")
