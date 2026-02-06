@@ -6,7 +6,9 @@
 <<ma-draft>>
 ```
 
-Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) from trips in the current offshore wind lease areas, including the newly designated lease areas in the Central Atlantic, have varied annually from 2008-2023, with less than \$1 million in maximum annual revenue overlapping with these areas for most fisheries with the exception of the surfclam, monkfish, and longfin squid fisheries. Some fisheries see periodic spikes in revenue overlap with wind energy lease areas, including the surfclam (\$6.5 million), longfin squid (\$4.8 million), monkfish (\$2.5 million), and summer flounder (\$1.3 million) fisheries (Fig. \ref{fig:wea-spp-rev}). 
+Offshore wind indicators are based on federal logbook data and do not include all data for all fisheries; therefore a complete evaluation of potential offshore wind energy development impacts would need to be supplemented by other data sources. For further information on the utility of the data, see the [socioeconomic impacts of offshore wind development data reports page](https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development).
+
+Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) from trips within Active Projects have varied annually from 2008-2024, with less than \$500,000 in maximum annual revenue overlapping with these areas for most fisheries with the exception of the longfin squid (\$2 million), monkfish (\$1.1 million), ocean quahog (\$783,000), and summer flounder (\$556,000) in specific years  (Fig. \ref{fig:wea-spp-rev}). 
 
 ```{r wea-spp-rev, fig.cap=return_caption(chunk_name = "wea-spp-rev", region = "MidAtlantic"),  fig.width=5, fig.asp=.4}
 return_plot("wea-spp-rev", region = "MidAtlantic")
@@ -21,21 +23,21 @@ create_wea_landings_rev_table(council = "MAFMC") |>
   flextable::width(width = c(2,2,2))
 ```
 
-`r wind_interactions`
-
 `r socio_intro`
 
 ```{r wea-port-rev, fig.cap=return_caption(chunk_name = "wea-port-rev", region = "MidAtlantic"),  fig.width=6.5, fig.asp=.82, fig.align='left'}
 return_plot("wea-port-rev", region = "MidAtlantic")
 ```
 
-Based on federal vessel logbook data, Point Lookout, NY (5.5% average, 17% maximum) and Virginia Beach, VA (3% average, 7.5% maximum) have the highest potential revenue loss from the Active Projects based on 2008-2024 total port fisheries revenue. Fewer Mid-Atlantic ports are affected by the Active Projects to date, as most are in the southern New England region, with the exception of CVOW and Empire Wind 1 (Fig. \\ref{fig:wea-port-rev}). Additional fishing revenue may be lost as more areas historically used for fishing are developed for offshore wind energy. In seven New England ports, Mid-Atlantic managed species account for at least 50% of landings from the Active Project areas by value or weight (Fig. \ref{fig:wind-rev}). Furthermore, impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean.
+Based on federal vessel logbook data, Point Lookout, NY (5.5% average, 17% maximum) and Virginia Beach, VA (3% average, 7.5% maximum) have the highest potential revenue loss from the Active Projects based on 2008-2024 total port fisheries revenue. Fewer Mid-Atlantic ports are affected by the Active Projects to date, as most are in the southern New England region, with the exception of CVOW and Empire Wind 1 (Fig. \ref{fig:wea-port-rev}). Additional fishing revenue may be lost as more areas historically used for fishing are developed for offshore wind energy. In seven New England ports, Mid-Atlantic managed species account for at least 50% of landings from the Active Project areas by value or weight (Fig. \ref{fig:wind-rev}). Furthermore, impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean.
 
 ```{r wind-rev, fig.cap=return_caption(chunk_name = "wind-rev", region = "MidAtlantic"), fig.width=6.5, fig.asp=.35, fig.align='left'}
 return_plot("wind-rev", region = "MidAtlantic")
 ```
 
-Top fishing communities with [socio-demographic concerns](https://noaa-edab.github.io/catalog/engagement.html) (i.e., Atlantic City, NJ,  and Hampton Bays, NY) should be considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of underserved communities. These are communities where we need to provide further resources to reach underserved and underrepresented groups and create opportunities for and directly involve these groups in the decision-making process.
+If all proposed projects are developed, BOEM reports that cumulative offshore wind development  could have moderate impacts on low-income members of communities who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation and increased vessel traffic, and existing vulnerabilities of low-income workers to economic impacts.
+
+Top fishing communities with both landings from the Active Projects (i.e., Point Lookout, NY and Newport News, VA) and [socio-demographic or gentrification concerns](https://noaa-edab.github.io/catalog/engagement.html) should be recognized as having additional vulnerability from Active Projects. To reduce further social and economic impacts and aid in the resilience and adaptive capacity of these communities, this vulnerability should be considered in decision making. Historically, the introduction of new industries can trigger industrial and socioeconomic gentrification of fishing ports. Competition for port space and potential pivoting of space use for offshore wind development should be monitored closely to ensure fishing communities are not adversely impacted. Additionally, offshore wind could increase recreational fishing opportunities at the turbines, potentially creating a demand for additional tourism, recreational fishing and boating port space in communities already balancing these uses with commercial fishing infrastructure(e.g., Virginia Beach, VA, Montauk, NY and Barnegate Light, NJ.) Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
 
 ```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>
