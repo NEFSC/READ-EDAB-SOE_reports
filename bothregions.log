@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.26)  5 FEB 2026 13:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.26)  6 FEB 2026 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,10 +868,10 @@ File: images/MidAtlantic/commercial_landings_MidAtlantic_2026-02-02.png Graphic 
 Package pdftex.def Info: images/MidAtlantic/commercial_landings_MidAtlantic_2026-02-02.png  used on input line 402.
 (pdftex.def)             Requested size: 500.484pt x 538.98117pt.
 [7 <./images/MidAtlantic/slide_total_landings_MidAtlantic_2026-01-12.png>]
-<images/MidAtlantic/climatevul_land_MidAtlantic_2026-02-02.png, id=84, 469.755pt x 180.675pt>
-File: images/MidAtlantic/climatevul_land_MidAtlantic_2026-02-02.png Graphic file (type png)
-<use images/MidAtlantic/climatevul_land_MidAtlantic_2026-02-02.png>
-Package pdftex.def Info: images/MidAtlantic/climatevul_land_MidAtlantic_2026-02-02.png  used on input line 413.
+<images/MidAtlantic/climatevul_land_MidAtlantic_2026-02-06.png, id=84, 469.755pt x 180.675pt>
+File: images/MidAtlantic/climatevul_land_MidAtlantic_2026-02-06.png Graphic file (type png)
+<use images/MidAtlantic/climatevul_land_MidAtlantic_2026-02-06.png>
+Package pdftex.def Info: images/MidAtlantic/climatevul_land_MidAtlantic_2026-02-06.png  used on input line 413.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
 [8 <./images/MidAtlantic/commercial_landings_MidAtlantic_2026-02-02.png>]
 <images/MidAtlantic/rec_landings_MidAtlantic_2026-02-02.png, id=96, 469.755pt x 180.675pt>
@@ -884,7 +884,7 @@ File: images/MidAtlantic/rec_hms_MidAtlantic_2026-02-02.png Graphic file (type p
 <use images/MidAtlantic/rec_hms_MidAtlantic_2026-02-02.png>
 Package pdftex.def Info: images/MidAtlantic/rec_hms_MidAtlantic_2026-02-02.png  used on input line 433.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[9 <./images/MidAtlantic/climatevul_land_MidAtlantic_2026-02-02.png> <./images/MidAtlantic/rec_landings_MidAtlantic_2026-02-02.png>]
+[9 <./images/MidAtlantic/climatevul_land_MidAtlantic_2026-02-06.png> <./images/MidAtlantic/rec_landings_MidAtlantic_2026-02-02.png>]
 <images/MidAtlantic/slide_stock_status_MidAtlantic_2026-01-12.png, id=107, 469.755pt x 433.62pt>
 File: images/MidAtlantic/slide_stock_status_MidAtlantic_2026-01-12.png Graphic file (type png)
 <use images/MidAtlantic/slide_stock_status_MidAtlantic_2026-01-12.png>
@@ -925,10 +925,10 @@ File: images/NewEngland/commercial_landings_NewEngland_2026-02-02.png Graphic fi
 Package pdftex.def Info: images/NewEngland/commercial_landings_NewEngland_2026-02-02.png  used on input line 539.
 (pdftex.def)             Requested size: 500.484pt x 538.98117pt.
 [16 <./images/NewEngland/slide_total_landings_NewEngland_2026-01-12.png>] [17 <./images/NewEngland/commercial_landings_NewEngland_2026-02-02.png>]
-<images/NewEngland/climatevul_land_NewEngland_2026-02-02.png, id=184, 469.755pt x 180.675pt>
-File: images/NewEngland/climatevul_land_NewEngland_2026-02-02.png Graphic file (type png)
-<use images/NewEngland/climatevul_land_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/climatevul_land_NewEngland_2026-02-02.png  used on input line 550.
+<images/NewEngland/climatevul_land_NewEngland_2026-02-06.png, id=184, 469.755pt x 180.675pt>
+File: images/NewEngland/climatevul_land_NewEngland_2026-02-06.png Graphic file (type png)
+<use images/NewEngland/climatevul_land_NewEngland_2026-02-06.png>
+Package pdftex.def Info: images/NewEngland/climatevul_land_NewEngland_2026-02-06.png  used on input line 550.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
 <images/NewEngland/rec_landings_NewEngland_2026-02-02.png, id=187, 469.755pt x 180.675pt>
 File: images/NewEngland/rec_landings_NewEngland_2026-02-02.png Graphic file (type png)
@@ -940,7 +940,7 @@ File: images/NewEngland/rec_hms_NE_NewEngland_2026-02-02.png Graphic file (type 
 <use images/NewEngland/rec_hms_NE_NewEngland_2026-02-02.png>
 Package pdftex.def Info: images/NewEngland/rec_hms_NE_NewEngland_2026-02-02.png  used on input line 570.
 (pdftex.def)             Requested size: 500.484pt x 346.4879pt.
-[18 <./images/NewEngland/climatevul_land_NewEngland_2026-02-02.png> <./images/NewEngland/rec_landings_NewEngland_2026-02-02.png>]
+[18 <./images/NewEngland/climatevul_land_NewEngland_2026-02-06.png> <./images/NewEngland/rec_landings_NewEngland_2026-02-02.png>]
 <images/NewEngland/slide_stock_status_NewEngland_2026-01-12.png, id=198, 469.755pt x 433.62pt>
 File: images/NewEngland/slide_stock_status_NewEngland_2026-01-12.png Graphic file (type png)
 <use images/NewEngland/slide_stock_status_NewEngland_2026-01-12.png>
@@ -1598,7 +1598,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  77i,15n,117p,2696b,716s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb>
-Output written on bothregions.pdf (123 pages, 33200622 bytes).
+Output written on bothregions.pdf (123 pages, 33200116 bytes).
 PDF statistics:
  1583 PDF objects out of 1728 (max. 8388607)
  1291 compressed objects within 13 object streams
