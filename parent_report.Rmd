@@ -477,13 +477,15 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ### Implications
 Current plans for buildout of offshore wind in a patchwork of areas spreads the impacts differentially throughout the region (Fig. \ref{fig:wind-dev-cumul}).  `r wind_impact` in lease areas could be forgone or reduced and associated effort displaced if all sites are developed. Displaced fishing effort can alter historic fishing area, timing, and method patterns, which can in turn change habitat, species (managed and protected), and fleet interactions. Several factors, including fishery regulations, fishery availability, and user conflicts affect where, when, and how fishing effort may be displaced, along with impacts to and responses of affected fish species.  
 
+Proposed wind development areas interact with the region’s federal scientific surveys. Scientific surveys are impacted by offshore wind in four ways: 1. Exclusion of NOAA Fisheries’ sampling platforms from the wind development area due to operational and safety limitations. 2. Impacts on the random-stratified statistical design that is the basis for scientific assessments, advice, and analyses. 3. Alteration of benthic and pelagic habitats, and airspace in and around the wind energy development, requiring new designs and methods to sample new habitats. 4. Reduced sampling productivity through navigation impacts of wind energy infrastructure on aerial and vessel survey operations.
+
+Increased vessel transit between stations may decrease data collections that are already limited by annual days-at-sea day allocations. In the Northeast region, 14 [NEFSC surveys](https://noaa-edab.github.io/catalog/osw_survey_impact.html) overlap with offshore wind development projects at varying capacities, with each of the 38 existing lease areas overlapping between 4-14 surveys. The Active Projects overlap between 10-12 surveys. Implementation of the region-wide survey mitigation program is underway with requirements to mitigate impacts to surveys included as a condition of most project approvals.
+
 Planned development [overlaps NARW](https://noaa-edab.github.io/catalog/persistent_hotspots.html) mother and calf migration corridors and a significant foraging habitat that is used throughout the year (Fig. \ref{fig:whales-wind}). Turbine presence and extraction of energy from the system could alter local oceanography and may affect right whale prey availability. For example, persistent foraging hotspots of right whales and seabirds overlap on Nantucket Shoals, where unique hydrography aggregates enhanced prey densities. Wind leases (OCS-A 0521 and OCS-A 0522) currently intersect these hotspots on the southwestern corner of Nantucket Shoals and a prominent tidal front associated with invertebrate prey swarms important to seabirds and possibly right whales. Proposed wind development areas also bring increased vessel strike risk from construction and operation vessels. In addition, there are a number of potential impacts to whales from pile driving and operational noise such as displacement, increased levels of communication masking, and elevated stress hormones.  
 
 ```{r whales-wind, out.width="55%", fig.cap=return_caption(chunk_name = "whales-wind", region = "BothReports")}
 return_plot("whales-wind", region = "BothReports")
 ```
-
-Scientific data collection surveys for ocean and ecosystem conditions, fish, and protected species will be altered, potentially increasing uncertainty for stock assessments and associated management decision making. Increased vessel transit between stations may decrease data collections that are already limited by annual days-at-sea day allocations. 
 
 The increase of offshore wind development can have both positive (e.g., employment opportunities) and negative (e.g., space-use conflicts) effects. Continued increase in coastal development and gentrification pressure has resulted in loss of fishing infrastructure space within ports. Understanding these existing pressures can allow for avoiding and mitigating negative impacts to our shore support industry and communities dependent on fishing. Some of the communities with the highest fisheries revenue overlap with offshore wind development areas that are also vulnerable to gentrification pressure are `r gentrification_ports`.
 
@@ -493,44 +495,70 @@ Aquaculture fisheries and federally-managed fisheries could both compete or bene
 \newpage
 ### 2025 Highlights {#highlights}
 
-This section intends to provide a record of [noteworthy observations reported in 2025](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html) across the Northeast U.S. region. The full ecosystem and fisheries impacts of many of these observations are still to be determined. They should, however, be noted and considered in future analyses and management decisions.
+This section intends to provide a record of [noteworthy observations reported in 2025](https://noaa-edab.github.io/catalog/observation_synthesis_2025.html) across the Northeast U.S. region. The full ecosystem and fisheries impacts of many of these observations are still to be determined. They should, however, be noted and considered in future analyses and management decisions.
 
 The Northeast U.S. region experienced colder than average ocean temperatures, despite record warm [global](https://www.ncei.noaa.gov/news/global-climate-202513) ocean and air temperatures. Similar to 2024, oceanographic and ecological conditions reflected cooler water and changing species abundance, distribution, and timing.
 
 #### Northwest Atlantic Phenomena 
-The below average temperatures observed in 2024 persisted into 2025, although there are seasonal and local exceptions to this pattern. Anomalously cold surface conditions (Fig. 96a) were recorded throughout the Northeast Shelf and were widespread across the Slope Sea for much of the year, however the waters were not as fresh as recorded in 2024. Winter bottom temperatures were also below average across much of the Northeast Shelf (Fig. 96b). Multiple oceanographic and atmospheric factors can contribute to these cooler conditions including a more southerly Gulf Stream and higher proportions of Labrador Slope and Scotian Shelf water entering the system.
+The below average temperatures observed in 2024 persisted into 2025, although there are seasonal and local exceptions to this pattern. Anomalously cold surface conditions (Fig. \ref{fig:slopesea-bottom})(Fig. \ref{fig:slopesea})  were recorded throughout the Northeast Shelf and were widespread across the Slope Sea for much of the year, however the waters were not as fresh as recorded in 2024. Winter bottom temperatures were also below average across much of the Northeast Shelf (Fig. 96b). Multiple oceanographic and atmospheric factors can contribute to these cooler conditions including a more southerly Gulf Stream and higher proportions of Labrador Slope and Scotian Shelf water entering the system.
 
-<!-- REPLACE SLOPE SEA FIG WITH NEW 2 PANEL FIG -->
+```{r slopesea-bottom, out.width="65%", fig.cap=return_caption(chunk_name = "slopesea-bottom", region = "BothReports")}
+return_plot("slopesea-bottom", region = "BothReports")
+```
 
 ```{r slopesea, out.width="65%", fig.cap=return_caption(chunk_name = "slopesea", region = "BothReports")}
 return_plot("slopesea", region = "BothReports")
 ```
 
-In 2023, Labrador Slope water accounted for more than 50% of the [source water](https://noaa-edab.github.io/catalog/slopewater.html) entering the Gulf of Maine through the Northeast Channel (Fig. \ref{fig:slopewater}); data are still being processed for 2024. Colder, fresher water detected deep in the Jordan Basin for the [first half of 2024](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html) suggests an increased influx of Labrador Slope and Scotian Shelf water, which resulted in colder and fresher conditions throughout the Northwest Atlantic and contributed to the increased size and colder temperatures of the  Mid-Atlantic [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html). 
+In 2024, the Gulf of Maine [source water](https://noaa-edab.github.io/catalog/slopewater.html) entering through the Northeast Channel was near equal proportions of Warm Slope Water and cooler Labrador Slope Water (Fig. 97); data are still being processed for 2025. The colder conditions [observed in 2024](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html) continued into 2025 and contributed to the increased size and colder temperatures of the Mid-Atlantic [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html). 
 
 ```{r slopewater, fig.asp=.5, fig.cap=return_caption(chunk_name = "slopewater", region = "BothReports")}
 return_plot("slopewater", region = "BothReports")
 ```
 
+2025 total primary production was below average in Georges Bank and the Mid-Atlantic due to lower phytoplankton biomass and cooler sea surface temperatures. [Phytoplankton biomass](https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp) (shown as chlorophyll a concentration) was also below average for much of 2025 (Fig. \ref{fig:chl-anom-apr})(Fig. \ref{fig:chl-anom-oct}). In particular, the winter-spring bloom period, which typically accounts for a significant proportion to total annual phytoplankton production, was shorter in duration and lower in magnitude across the entire Northeast shelf region. The fall bloom period was above average in the Gulf of Maine and Georges Bank, but near average in the Mid-Atlantic. 
+
+```{r chl-anom-apr, fig.asp=.5, fig.cap=return_caption(chunk_name = "chl-anom-apr", region = "BothReports")}
+return_plot("chl-anom-apr", region = "BothReports")
+```
+
+```{r chl-anom-oct, fig.asp=.5, fig.cap=return_caption(chunk_name = "chl-anom-oct", region = "BothReports")}
+return_plot("chl-anom-oct", region = "BothReports")
+```
+
+Hurricane Erin was the most notable storm in the region in 2025 and caused significant shoreside and oceanographic disturbances despite not making landfall in the Northeast. Its strong winds and large size caused mixing and weakened stratification throughout the Mid-Atlantic resulting in cooler than average surface waters across the shelf and into the Slope Sea. Along the coast, beaches from Maryland to Maine were closed due to rough surf, large waves, and rip currents, while coastal flooding led to road closures and several water rescues, particularly in New Jersey. Beach erosion was significant in some locations.
+
 #### Northeast Shelf and Local Phenomena
 
-The influx of the northern waters is likely linked to multiple observations across the Northeast Shelf including the uncommon presence of Arctic *Calanus* zooplankton species in the Gulf of Maine, delayed migration of many species, and redistribution of some species. Several members of the fishing community noted delayed migration of species into typical fishing grounds. In particular, they attributed the delayed migration of longfin squid, black sea bass, and haddock to the cooler water temperatures. Many also reported redistribution of some species. Specifically, pollock, bluefin tuna, Atlantic mackerel, longfin squid, bluefish, and bonito were observed in surprising or unusual locations. Some species, such as Atlantic mackerel, were reported outside of typical fishing grounds and in higher abundance compared to recent years. Anglers also reported good catches of red drum in Chesapeake Bay and record high (since 1995) numbers were observed at Poplar Island survey location.
+The shift to cooler waters in 2024-2025 is likely linked to multiple observations across the Northeast Shelf including the uncommon presence of Arctic zooplankton species in the Gulf of Maine, delayed migration of many species, and redistribution of some species. These shifts could affect the availability of some species to surveys or fishing, although aggregate species distributions in the cooler 2024-2025 period are tracking on the long-term trend towards northward and deeper waters (Fig. \ref{fig:species-dist}).
 
-In the summer, Chesapeake Bay recorded warm temperatures and low bottom water dissolved oxygen that resulted in less than suitable habitat for species such as striped bass and blue crabs. These poor conditions can affect their distribution, growth, and survival. Additionally, lower than average spring and summer salinity negatively impacted oyster hatchery operations and increased the area of available habitat for invasive blue catfish, potentially increasing predation on blue crabs and other important finfish species.
+Mid-Atlantic scallops in the Elephant Trunk region are showing positive signs following the documented die-off. Two-year olds observed in 2024 had good survival into the 2025 survey. The Elephant Trunk region is scheduled to reopen in 2026. There was also good survival of the 2024 recruits in the southeastern Nantucket Lightship Area in 2025. In contrast, large numbers of the scallop predator *Asterias vulgaris* sea stars were linked to an increased sea scallop mortality in 2024 and 2025 on Georges Bank. 
 
-During the summer months there were multiple prolonged upwelling events that brought cold water to the surface off the New Jersey coast. There was also an atypical phytoplankton bloom south of Long Island in late June to early July 2024, possibly linked to an upwelling event (Fig. \ref{fig:cocobloom}). The bloom was dominated by coccolithophores, which have an exoskeleton made up of calcium carbonate plates that can turn the water an opaque turquoise color. Large blooms of coccolithophores are unusual in this region, but they are not considered harmful and are grazed by zooplankton. Additionally, there were observations of multiple whale species aggregating near the Hudson Canyon between May and August.
+Several members of the fishing community noted changes in species composition, distribution, and timing in their typical fishing grounds and attributed it to the cooler temperatures. These observations may not fully represent the entire ecosystem, but provide local context to recent events that may not be represented in other indicators. Some notable examples include:
+- Several members of the fishing industry reported that it was a “very good year” for billfish. According to the Large Pelagic Survey, it was a record year for white marlin with more than 23,000 fish caught and released. Billfish effort may have been higher than usual due to the closure of the recreational bluefin tuna fishery in August 2025.
+- Chesapeake Bay anglers reported good catch of red drum in 2024, followed by low catch and even cold stunned red drum and spotted sea trout in 2025. Scientists working with charter captains in Chesapeake Bay reported low catch rates of striped bass and red drum from June-September, but higher catch rates in the early spring and fall.
+- Fishers attributed the delayed migration of black sea bass inshore, and scup migrating south for the winter using similar routes as in the early 1970s due to the cooler temperatures.
+- Members of the bluefish fishery in Rhode Island reported very low landings in 2025 attributed to changes in seasonal migration path or timing. 
+- Some species, such as Atlantic mackerel, Illex squid and sandlance, were observed in higher abundance and wider distributions compared to recent years.
+- Fishers in the Gulf of Maine and Georges Bank had mixed reports of lobsters and good catch of sea scallops. 
+- Fishers reported fewer warm water species in 2025 along the New Jersey coast. Others, however, noted more new species (e.g., pomapano, spadefish, triggerfish, Spanish and king mackerel) in Delaware Bay. 
+- Anglers also observed low spring and summer catches of gamefish in Mid-Atlantic bays and on the shelf, and high concentrations of shark species near the coast.
 
-```{r cocobloom, out.width="55%", fig.cap=return_caption(chunk_name = "cocobloom", region = "BothReports")}
-return_plot("cocobloom", region = "BothReports")
+In Chesapeake Bay, colder than average winter 2025 temperatures (Fig. 100) were reported by state agencies as a likely cause of higher blue crab mortality rates compared to the previous winter. Colder winters generally indicate good conditions for striped bass spawning, and while the striped bass juvenile index slightly improved, it was still well below the long-term average. Several years of low striped bass recruitment is a growing concern of fisheries managers. Factors that could be influencing striped bass include below average winter-to-spring freshwater flow and above average water temperatures combined with stressful dissolved oxygen values during the summer. The continued presence of invasive blue catfish and the effect they are having on blue crab, alosines, menhaden, and striped bass populations is also a management concern. 
+
+```{r chesapeake-jan, fig.asp=.5, fig.cap=return_caption(chunk_name = "chesapeake-jan", region = "BothReports")}
+return_plot("chesapeake-jan", region = "BothReports")
 ```
 
-Summer bottom [ocean acidification (OA)](https://noaa-edab.github.io/catalog/ocean_acidification.html) risk in the Mid-Atlantic was the highest recorded since sampling began in 2007. High OA risk is measured as low aragonite saturation state($\Omega$). Similarly, the winter/early spring [Gulf of Maine surface OA risk](https://noaa-edab.github.io/catalog/gom_acidification.html)  was significantly above the climatological average and near the sensitivity levels for cod ($\Omega$<1.19) and lobster ($\Omega$<1.09) (Fig.\ref{fig:GOMoa}). These observations were likely driven by the greater volume of fresher, less-buffered Labrador Slope water entering the Gulf of Maine and Mid-Atlantic, as well as cooler conditions. The 2023 and 2024 high summer OA risk has increased the extent of potentially unfavorable habitat for Atlantic sea scallops ($\Omega$<1.1) and longfin squid ($\Omega$<0.96). Additionally, for the first time, high OA risk conditions were observed outside of summer (fall for both species and spring for Atlantic sea scallops).
-
-```{r GOMoa, out.width="60%", fig.cap=return_caption(chunk_name = "GOMoa", region = "BothReports")}
-return_plot("GOMoa", region = "BothReports")
+```{r chesapeake-apr, fig.asp=.5, fig.cap=return_caption(chunk_name = "chesapeake-apr", region = "BothReports")}
+return_plot("chesapeake-apr", region = "BothReports")
 ```
 
-In contrast to the  documented die-off of scallops in the Mid-Atlantic Elephant Trunk region between the 2022 and 2023 surveys, in 2024 there was strong scallop recruitment in the southeastern portion of the Nantucket Lightship Area.
+[Ocean acidification (OA)](https://noaa-edab.github.io/catalog/ocean_acidification.html)risk in 2025 in the Mid-Atlantic was relatively low. Compared to 2023 and 2024, there were only a few locations in 2025 where OA risk was high for Atlantic sea scallops (outer shelf, spring 2025 only), longfin squid (nearshore, summer 2025 only), and pteropods (nearshore and outer shelf, spring and summer). Gulf of Maine surface OA risk in 2025 was below 2024 levels, as indicated by aragonite saturation state (Ωa) at or near the climatological average (2006-2024).  
+
+#### Offshore Wind/Social
+Active offshore wind projects continue to be developed throughout the region. In Southern New England, South Fork Wind Farm remains the first and only commercial scale project under operation (12 turbines). Vineyard Wind 1 and Revolution Wind continued construction, and Empire Wind 1 in the New York Bight and Sunrise Wind began offshore construction in 2025 (Fig. \ref{fig:wind-dev-cumul}). Coastal Virginia Offshore Wind (CVOW) also continued construction in the Mid-Atlantic. All projects currently under construction are anticipated to be complete by the end of 2026. New London, CT and New Bedford, MA have expanded dedicated space and infrastructure for the offshore wind industry with increased port activity for the first projects under construction in southern New England. There are eight additional projects that have Construction and Operations Plan (COP) approvals (three in Southern New England and five in the Mid-Atlantic/New York Bight) that could begin construction in 2026. However, construction schedules are highly uncertain at this time. 
+
 
 # Contributors
 
