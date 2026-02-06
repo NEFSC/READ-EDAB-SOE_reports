@@ -89,7 +89,7 @@ cat('# parent_report.Rmd')
 \thispagestyle{fancy}
 
 ```{r, eval = params$draft, results = "asis"}
-cat("This is a draft report that presents all content from both New England and the Mid Atlantic. Several sections are shared between regions, and sections that differ for each region are marked with H1 headers. Some text is shown in square brackets to indicate that that text will differ in the New England and Mid Atlatnic reports (e.g., [Mid Atlantic text] *or* [New England text]). Most figures are shown only once when they are exactly the same in each region's report, but in a few cases the figures are repeated and the figure numbers referenced in the text may refer the reader to the 'wrong' region. All of these editing quirks will be resolved in the final report.")
+cat("This is a draft report that presents all content from both New England and the Mid Atlantic. Several sections are shared between regions, and sections that differ for each region are marked with headers. Some text is shown in square brackets to indicate that that text will differ in the New England and Mid Atlatnic reports (e.g., [Mid Atlantic text] *or* [New England text]). Most figures are shown only once when they are exactly the same in each region's report, but in a few cases the figures are repeated and the figure numbers referenced in the text may refer the reader to the 'wrong' region. All of these editing quirks will be resolved in the final report.")
 ```
 
 # Introduction
