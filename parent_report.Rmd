@@ -164,6 +164,8 @@ res <- knitr::knit_child(input = other_child,
 cat(res, sep = "\n\n")
 ```
 
+\newpage
+
 ## Commercial Profits
 
 ```{r}
