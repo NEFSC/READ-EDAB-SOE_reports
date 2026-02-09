@@ -80,7 +80,7 @@ cat('#', knitr::current_input())
 
 ```
 
-```{r child-footer, eval = params$id_child_docs, include = TRUE, results = "asis"}
+```{r child-footer, eval = params$id_child_docs, include = FALSE, results = "asis"}
 # paste("Ending", knitr::current_input())
 cat('# parent_report.Rmd')
 ```

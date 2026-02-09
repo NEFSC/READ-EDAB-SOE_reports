@@ -3,7 +3,7 @@
 devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
 
 region <- "NewEngland" #change to NewEngland to run for NE
-region <- "MidAtlantic" #change to NewEngland to run for NE
+# region <- "MidAtlantic" #change to NewEngland to run for NE
 
 ############################################
 #' Run all report plots
@@ -203,7 +203,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "rec_hms_NE",
     width = 6.5,
-    height = 4.5
+    height = 3
   )
   
   ### Implications ----
@@ -255,11 +255,13 @@ create_plots_mab_and_ne <- function(region)
   if (region == "MidAtlantic") {
     save_plot(
       plot_expression = {
-        plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)
+        plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)+
+          ggplot2::theme(panel.spacing = grid::unit(0, 'lines'),
+                         plot.margin = margin(0, 0, 0, 0)) 
       },
       indicator = "aggregate_biomass_mab",
       width = 6.5,
-      height = 7
+      height =6
     )
   }
   
@@ -272,11 +274,14 @@ create_plots_mab_and_ne <- function(region)
           EPU = "GB",
           n = 10
         ) +
-          ggplot2::theme(panel.spacing = grid::unit(0, 'lines')) 
+          ggplot2::theme(panel.spacing = grid::unit(0, 'lines'),
+                         plot.margin = margin(0, 0, 0, 0),
+                         strip.text = element_text(margin = margin(t = 0, b = 0))
+                         ) 
       },
       indicator = "aggregate_biomass_gb",
       width = 6.5,
-      height = 7
+      height = 6
     )
     # gulf of maine
     save_plot(
@@ -285,11 +290,15 @@ create_plots_mab_and_ne <- function(region)
           report = region,
           EPU = "GOM",
           n = 10
-        ) 
+        ) +
+          ggplot2::theme(panel.spacing = grid::unit(0, 'lines'),
+                         plot.margin = margin(0, 0, 0, 0),
+                         strip.text = element_text(margin = margin(t = 0, b = 0))
+          ) 
       },
       indicator = "aggregate_biomass_gom",
       width = 6.5,
-      height = 7
+      height = 6
     )
   }
   
