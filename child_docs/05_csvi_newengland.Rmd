@@ -15,7 +15,7 @@ return_plot("commercial-engagement", region = "NewEngland")
 The [Port Commercial Fishing Activity Indicator (PCFA)](https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72) highlights significant shifts in industry engagement across major regional ports. New Bedford, Gloucester, and Boston, MA and Portland, ME, have lower fishing activity compared to their 2007–2011 averages. Because New Bedford and Boston also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions. Conversely, several communities show substantial growth in fishing activity. Chatham, MA, along with Stonington, Friendship, Harpswell, ME, are seeing increased port activity since 2007-2011. 
 
 ```{r comm-vuln}
-comm_vul_table |>
+comm_vul_table_ne |>
   flextable::fit_to_width(7.5)
 ```
 
@@ -28,7 +28,7 @@ return_plot("recreational-engagement", region = "NewEngland")
 <!-- \newpage -->
 
 ```{r rec-vuln}
-rec_vul_table|>
+rec_vul_table_ne |>
   flextable::fit_to_width(7.5)
 ```
 
