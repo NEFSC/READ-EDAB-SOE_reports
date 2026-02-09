@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.26)  9 FEB 2026 10:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.26)  9 FEB 2026 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1564,37 +1564,37 @@ Package pdftex.def Info: images/BothReports/slide_slopewater_BothReports_2026-01
 
 LaTeX Warning: Reference `fig:chl-anom-apr' on page 123 undefined on input line 2768.
 
-<images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png, id=1188, 491.31555pt x 481.19775pt>
+<images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png, id=1189, 491.31555pt x 481.19775pt>
 File: images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png>
 Package pdftex.def Info: images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png  used on input line 2772.
 (pdftex.def)             Requested size: 500.484pt x 490.17642pt.
 [123 <./images/BothReports/slide_slopewater_BothReports_2026-01-12.png>]
-<images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png, id=1195, 491.31555pt x 481.19775pt>
+<images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png, id=1196, 491.31555pt x 481.19775pt>
 File: images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png>
 Package pdftex.def Info: images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png  used on input line 2780.
 (pdftex.def)             Requested size: 500.484pt x 490.17642pt.
 [124 <./images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png>] [125 <./images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png>]
-<images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png, id=1208, 63.5976pt x 138.7584pt>
+<images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png, id=1212, 254.3904pt x 554.67226pt>
 File: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png>
 Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png  used on input line 2809.
-(pdftex.def)             Requested size: 500.484pt x 1092.02734pt.
+(pdftex.def)             Requested size: 500.484pt x 1091.3143pt.
 [126]
-Overfull \vbox (439.32112pt too high) has occurred while \output is active []
+Overfull \vbox (438.60808pt too high) has occurred while \output is active []
 
 [127 <./images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png>]
-<images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png, id=1219, 63.5976pt x 138.7584pt>
+<images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png, id=1223, 254.3904pt x 554.67226pt>
 File: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png>
 Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png  used on input line 2817.
-(pdftex.def)             Requested size: 500.484pt x 1092.02734pt.
+(pdftex.def)             Requested size: 500.484pt x 1091.3143pt.
 
-Overfull \vbox (482.32112pt too high) has occurred while \output is active []
+Overfull \vbox (481.60808pt too high) has occurred while \output is active []
 
 [128 <./images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png>] [129]
-<bothregions_files/figure-latex/docformat-1.pdf, id=1237, 445.665pt x 198.7425pt>
+<bothregions_files/figure-latex/docformat-1.pdf, id=1240, 445.665pt x 198.7425pt>
 File: bothregions_files/figure-latex/docformat-1.pdf Graphic file (type pdf)
 <use bothregions_files/figure-latex/docformat-1.pdf>
 Package pdftex.def Info: bothregions_files/figure-latex/docformat-1.pdf  used on input line 2842.
@@ -1638,10 +1638,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  77i,15n,117p,2696b,716s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb>
-Output written on bothregions.pdf (128 pages, 26825349 bytes).
+Output written on bothregions.pdf (128 pages, 27039721 bytes).
 PDF statistics:
- 1646 PDF objects out of 1728 (max. 8388607)
- 1346 compressed objects within 14 object streams
+ 1649 PDF objects out of 1728 (max. 8388607)
+ 1351 compressed objects within 14 object streams
  367 named destinations out of 1000 (max. 500000)
  58523 words of extra memory for PDF output out of 61914 (max. 10000000)
 
