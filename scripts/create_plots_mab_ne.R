@@ -1004,26 +1004,50 @@ create_plots_mab_and_ne <- function(region)
   # Seasonal OISST Anomaly - MAB ONLY
   save_plot(
     plot_expression = {
-      ecodata::plot_seasonal_oisst_anom(report = region, n = 10) 
+      if(region == 'MidAtlantic'){
+        ecodata::plot_seasonal_oisst_anom(report = region, n = 10) 
+      }else{
+        a = ecodata::plot_seasonal_oisst_anom(report = region, n = 10, EPU = 'GOM')
+        b = ecodata::plot_seasonal_oisst_anom(report = region, n = 10, EPU = 'GB') 
+        ggpubr::ggarrange(a, b, nrow = 2,common.legend = T,legend = 'bottom')
+      }
+      
     },
     indicator = "seasonal_oisst_anom",
     width = 6.5,
-    height = 4.5
+    height =  ifelse(region == 'MidAtlantic', 3.5, 5)
   )
   
   # Seasonal Bottom Temp Anomaly - MAB ONLY
   save_plot(
     plot_expression = {
-      ecodata::plot_bottom_temp_model_anom(report = region, 
-                                           n =10, 
-                                           varName = "seasonal", 
-                                           EPU = "MAB", 
-                                           plottype = "GLORYS") +
-        ggplot2::theme(legend.position = 'bottom')
+      if(region == 'MidAtlantic'){
+        ecodata::plot_bottom_temp_model_anom(report = region, 
+                                             n =10, 
+                                             varName = "seasonal", 
+                                             EPU = "MAB", 
+                                             plottype = "GLORYS") +
+          ggplot2::theme(legend.position = 'bottom')
+      }else{
+        a = ecodata::plot_bottom_temp_model_anom(report = region, 
+                                             n =10, 
+                                             varName = "seasonal", 
+                                             EPU = "GOM", 
+                                             plottype = "GLORYS") +
+          ggplot2::theme(legend.position = 'bottom')
+        b = ecodata::plot_bottom_temp_model_anom(report = region, 
+                                                       n =10, 
+                                                       varName = "seasonal", 
+                                                       EPU = "GB", 
+                                                       plottype = "GLORYS") +
+          ggplot2::theme(legend.position = 'bottom')
+        ggpubr::ggarrange(a, b, nrow = 2,common.legend = T,legend = 'bottom')
+      }
+
     },
     indicator = "bottom_temp_anom",
     width = 6.5,
-    height = 4.5
+    height = ifelse(region == 'MidAtlantic',3.5,5)
   )
 }
 

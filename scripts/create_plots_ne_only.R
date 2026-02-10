@@ -91,7 +91,7 @@ create_plots_ne <- function(region = "NewEngland")
     },
     indicator = "calfin_cog",
     width = 6.5,
-    height = 4
+    height = 2.75
   )
   
   # mass inshore survey -- NE only
