@@ -784,12 +784,12 @@ create_plots_mab_and_ne <- function(region)
   save_plot(
     plot_expression = {
       ecodata::plot_trans_dates(report = region, 
-                                varName = "length",
-                                n = 10)
+                                  varName = "length",
+                                  n = 10)
     },
     indicator = "transition_date",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 4, 2.5)
+    height = ifelse(region == "NewEngland", 3.5, 2.5)
   )
   
   # Monthly Chlorophyll Plot

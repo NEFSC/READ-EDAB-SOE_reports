@@ -391,6 +391,8 @@ Indicators of phenological changes in fish populations require regular sampling 
 return_plot("spawntiming", region = "BothReports")
 ```
 
+\newpage
+
 [Migration timing](https://noaa-edab.github.io/catalog/timing_shifts.html) of some tuna and large whale migrations has changed. An analysis of recreational fishing data between 2019 and 2022 identified multiple shifts in important HMS species. For example, Bigeye tuna were caught 50 days earlier; small and large bluefin tuna were caught 38 and 80 days earlier respectively in Massachusetts; and blue marlin in New York were caught 27 days earlier. A separate analysis of acoustic telemetry data predicted delayed departure of southward-migrating sharks from the northeast region under future sea surface temperatures. These results are further supported by the Atlantic Highly Migratory Species Climate Vulnerability Assessment, which found that 57 of 58 highly migratory species and stocks have high or very high potential to shift distributions. In Cape Cod Bay, peak spring habitat use by right and humpback whales has shifted 18-19 days later over time.
 
 Understanding whether seasonal patterns are changing for stocks requires regular observations throughout the year. For example, baseline work on [cetacean presence in Southern New England](https://noaa-edab.github.io/catalog/cetacean_acoustic.html) shows different seasonal use patterns for whale and dolphin species. Despite the importance of understanding seasonal patterns,  we have few indicators that directly assess timing shifts of species. We plan on incorporating more indicators of timing shifts and phenology in future reports.
@@ -403,16 +405,14 @@ Along with the overall warming trends in `r region`, ocean summer conditions hav
 
 ```{r transition, fig.cap=return_caption(chunk_name = "transition", region = "MidAtlantic"), fig.width=6.5, fig.asp=0.3}
  ## TODO: need to modify this to show both plots in draft mode
-return_plot("transition", region = "MidAtlantic")
+return_plot("transition", region = params$region)
 
  # if(params$draft){
  #   opp_region <- ifelse(params$region == "MidAtlantic", "NewEngland", "MidAtlantic")
  #   }
 ```
 
-```{r transition-ne, fig.cap=return_caption(chunk_name = "transition", region = "NewEngland"), fig.width=6.5, fig.asp=0.3}
-return_plot("transition", region = "NewEngland")
-```
+\newpage
 
 ```{r}
 base_child <- "06_risk_seasonal_"
