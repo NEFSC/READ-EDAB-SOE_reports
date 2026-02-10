@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -25,6 +25,6 @@ A contraction of party/charter trips (dropping from 2.2% of trips in 2021 to 1.3
 Managers should consider the differing species and fish sizes for shore-based and vessel-based anglers. Some species use inshore regions as nursery grounds while other species only come inshore as adults. Many states have developed shore-based regulations where the minimum size is lower than in other areas and sectors to maintain opportunities in the shore angling sector. The MAFMC is currently considering recreational sector separation which might establish different options for managing the for-hire sector from other modes.
 
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.9)  10 FEB 2026 14:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.9)  10 FEB 2026 14:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -610,9 +610,6 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count349
 ) (./SOE2026_NEFMC_IR.aux
 
-LaTeX Warning: Label `tab:comm-vuln' multiply defined.
-
-
 LaTeX Warning: Label `tab:wea-landings-rev-ne' multiply defined.
 
 
@@ -868,424 +865,422 @@ File: images/NewEngland/climatevul_rev_NewEngland_2026-02-02.png Graphic file (t
 <use images/NewEngland/climatevul_rev_NewEngland_2026-02-02.png>
 Package pdftex.def Info: images/NewEngland/climatevul_rev_NewEngland_2026-02-02.png  used on input line 675.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/NewEngland/rec_op_NewEngland_2026-02-02.png, id=196, 469.755pt x 180.675pt>
+[19 <./images/NewEngland/climatevul_rev_NewEngland_2026-02-02.png>]
+<images/NewEngland/rec_op_NewEngland_2026-02-02.png, id=203, 469.755pt x 180.675pt>
 File: images/NewEngland/rec_op_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/rec_op_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/rec_op_NewEngland_2026-02-02.png  used on input line 694.
+Package pdftex.def Info: images/NewEngland/rec_op_NewEngland_2026-02-02.png  used on input line 696.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[19 <./images/NewEngland/climatevul_rev_NewEngland_2026-02-02.png>]
-<images/NewEngland/rec_div_NewEngland_2026-02-02.png, id=208, 469.755pt x 180.675pt>
+<images/NewEngland/rec_div_NewEngland_2026-02-02.png, id=204, 469.755pt x 180.675pt>
 File: images/NewEngland/rec_div_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/rec_div_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/rec_div_NewEngland_2026-02-02.png  used on input line 703.
+Package pdftex.def Info: images/NewEngland/rec_div_NewEngland_2026-02-02.png  used on input line 705.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
 [20 <./images/NewEngland/rec_op_NewEngland_2026-02-02.png> <./images/NewEngland/rec_div_NewEngland_2026-02-02.png>]
-<images/NewEngland/commercial_engagement_NewEngland_2026-02-02.png, id=216, 505.89pt x 361.35pt>
+
+LaTeX Warning: Reference `tab:recvultab' on page 21 undefined on input line 732.
+
+<images/NewEngland/commercial_engagement_NewEngland_2026-02-02.png, id=217, 505.89pt x 361.35pt>
 File: images/NewEngland/commercial_engagement_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/commercial_engagement_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/commercial_engagement_NewEngland_2026-02-02.png  used on input line 730.
+Package pdftex.def Info: images/NewEngland/commercial_engagement_NewEngland_2026-02-02.png  used on input line 736.
 (pdftex.def)             Requested size: 500.484pt x 357.495pt.
 [21]
-ignored error: Infinite glue shrinkage found in box being split [22 <./images/NewEngland/commercial_engagement_NewEngland_2026-02-02.png>]
-
-LaTeX Warning: Reference `tab:recvultab' on page 23 undefined on input line 841.
-
-[23]
-<images/NewEngland/recreational_engagement_NewEngland_2026-02-02.png, id=235, 469.755pt x 289.08pt>
+<images/NewEngland/recreational_engagement_NewEngland_2026-02-02.png, id=223, 469.755pt x 289.08pt>
 File: images/NewEngland/recreational_engagement_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/recreational_engagement_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/recreational_engagement_NewEngland_2026-02-02.png  used on input line 846.
+Package pdftex.def Info: images/NewEngland/recreational_engagement_NewEngland_2026-02-02.png  used on input line 847.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[24 <./images/NewEngland/recreational_engagement_NewEngland_2026-02-02.png>]
-<images/NewEngland/commvulex_NewEngland_2026-02-02.png, id=245, 469.755pt x 289.08pt>
+[22 <./images/NewEngland/commercial_engagement_NewEngland_2026-02-02.png>] [23 <./images/NewEngland/recreational_engagement_NewEngland_2026-02-02.png>]
+<images/NewEngland/commvulex_NewEngland_2026-02-02.png, id=239, 469.755pt x 289.08pt>
 File: images/NewEngland/commvulex_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/commvulex_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/commvulex_NewEngland_2026-02-02.png  used on input line 961.
+Package pdftex.def Info: images/NewEngland/commvulex_NewEngland_2026-02-02.png  used on input line 964.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[25 <./images/NewEngland/commvulex_NewEngland_2026-02-02.png>]
-<images/BothReports/harborporpoise_BothReports_2026-02-02.png, id=256, 469.755pt x 216.81pt>
+[24 <./images/NewEngland/commvulex_NewEngland_2026-02-02.png>]
+<images/BothReports/harborporpoise_BothReports_2026-02-02.png, id=249, 469.755pt x 216.81pt>
 File: images/BothReports/harborporpoise_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/harborporpoise_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/harborporpoise_BothReports_2026-02-02.png  used on input line 984.
+Package pdftex.def Info: images/BothReports/harborporpoise_BothReports_2026-02-02.png  used on input line 987.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-<images/BothReports/grayseal_BothReports_2026-02-02.png, id=259, 469.755pt x 216.81pt>
+<images/BothReports/grayseal_BothReports_2026-02-02.png, id=252, 469.755pt x 216.81pt>
 File: images/BothReports/grayseal_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/grayseal_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/grayseal_BothReports_2026-02-02.png  used on input line 995.
+Package pdftex.def Info: images/BothReports/grayseal_BothReports_2026-02-02.png  used on input line 998.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-[26 <./images/BothReports/harborporpoise_BothReports_2026-02-02.png>]
-<images/BothReports/narw_abundance_BothReports_2026-02-02.png, id=269, 469.755pt x 180.675pt>
+[25 <./images/BothReports/harborporpoise_BothReports_2026-02-02.png>]
+<images/BothReports/narw_abundance_BothReports_2026-02-02.png, id=263, 469.755pt x 180.675pt>
 File: images/BothReports/narw_abundance_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/narw_abundance_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/narw_abundance_BothReports_2026-02-02.png  used on input line 1006.
+Package pdftex.def Info: images/BothReports/narw_abundance_BothReports_2026-02-02.png  used on input line 1009.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/BothReports/narw_calves_BothReports_2026-02-02.png, id=272, 469.755pt x 180.675pt>
+<images/BothReports/narw_calves_BothReports_2026-02-02.png, id=266, 469.755pt x 180.675pt>
 File: images/BothReports/narw_calves_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/narw_calves_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/narw_calves_BothReports_2026-02-02.png  used on input line 1017.
+Package pdftex.def Info: images/BothReports/narw_calves_BothReports_2026-02-02.png  used on input line 1020.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[27 <./images/BothReports/grayseal_BothReports_2026-02-02.png> <./images/BothReports/narw_abundance_BothReports_2026-02-02.png>]
-<images/BothReports/seal_pups_BothReports_2026-02-02.png, id=281, 469.755pt x 289.08pt>
+[26 <./images/BothReports/grayseal_BothReports_2026-02-02.png> <./images/BothReports/narw_abundance_BothReports_2026-02-02.png>]
+<images/BothReports/seal_pups_BothReports_2026-02-02.png, id=274, 469.755pt x 289.08pt>
 File: images/BothReports/seal_pups_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/seal_pups_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/seal_pups_BothReports_2026-02-02.png  used on input line 1034.
+Package pdftex.def Info: images/BothReports/seal_pups_BothReports_2026-02-02.png  used on input line 1037.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[28 <./images/BothReports/narw_calves_BothReports_2026-02-02.png>]
+[27 <./images/BothReports/narw_calves_BothReports_2026-02-02.png>]
 
-LaTeX Warning: Reference `fig:commercial-div-species-div' on page 29 undefined on input line 1053.
+LaTeX Warning: Reference `fig:commercial-div-species-div' on page 28 undefined on input line 1056.
 
-[29 <./images/BothReports/seal_pups_BothReports_2026-02-02.png>]
-<images/NewEngland/commercial_div_species_div_NewEngland_2026-02-02.png, id=304, 469.755pt x 180.675pt>
+[28 <./images/BothReports/seal_pups_BothReports_2026-02-02.png>]
+<images/NewEngland/commercial_div_species_div_NewEngland_2026-02-02.png, id=298, 469.755pt x 180.675pt>
 File: images/NewEngland/commercial_div_species_div_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/commercial_div_species_div_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/commercial_div_species_div_NewEngland_2026-02-02.png  used on input line 1063.
+Package pdftex.def Info: images/NewEngland/commercial_div_species_div_NewEngland_2026-02-02.png  used on input line 1066.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/NewEngland/recdat_div_catch_NewEngland_2026-02-02.png, id=305, 469.755pt x 180.675pt>
+<images/NewEngland/recdat_div_catch_NewEngland_2026-02-02.png, id=299, 469.755pt x 180.675pt>
 File: images/NewEngland/recdat_div_catch_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/recdat_div_catch_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/recdat_div_catch_NewEngland_2026-02-02.png  used on input line 1072.
+Package pdftex.def Info: images/NewEngland/recdat_div_catch_NewEngland_2026-02-02.png  used on input line 1075.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[30 <./images/NewEngland/commercial_div_species_div_NewEngland_2026-02-02.png>]
-<images/NewEngland/slide_totpp_NewEngland_2026-01-29.png, id=318, 469.755pt x 289.08pt>
+[29 <./images/NewEngland/commercial_div_species_div_NewEngland_2026-02-02.png>]
+<images/NewEngland/slide_totpp_NewEngland_2026-01-29.png, id=312, 469.755pt x 289.08pt>
 File: images/NewEngland/slide_totpp_NewEngland_2026-01-29.png Graphic file (type png)
 <use images/NewEngland/slide_totpp_NewEngland_2026-01-29.png>
-Package pdftex.def Info: images/NewEngland/slide_totpp_NewEngland_2026-01-29.png  used on input line 1091.
+Package pdftex.def Info: images/NewEngland/slide_totpp_NewEngland_2026-01-29.png  used on input line 1094.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[31 <./images/NewEngland/recdat_div_catch_NewEngland_2026-02-02.png>]
-<images/NewEngland/slide_zoo_community_NewEngland_2026-01-23.png, id=327, 469.755pt x 361.35pt>
+[30 <./images/NewEngland/recdat_div_catch_NewEngland_2026-02-02.png>]
+<images/NewEngland/slide_zoo_community_NewEngland_2026-01-23.png, id=321, 469.755pt x 361.35pt>
 File: images/NewEngland/slide_zoo_community_NewEngland_2026-01-23.png Graphic file (type png)
 <use images/NewEngland/slide_zoo_community_NewEngland_2026-01-23.png>
-Package pdftex.def Info: images/NewEngland/slide_zoo_community_NewEngland_2026-01-23.png  used on input line 1100.
+Package pdftex.def Info: images/NewEngland/slide_zoo_community_NewEngland_2026-01-23.png  used on input line 1103.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[32 <./images/NewEngland/slide_totpp_NewEngland_2026-01-29.png>]
-<images/NewEngland/exp_n_NewEngland_2026-02-02.png, id=333, 469.755pt x 361.35pt>
+[31 <./images/NewEngland/slide_totpp_NewEngland_2026-01-29.png>]
+<images/NewEngland/exp_n_NewEngland_2026-02-02.png, id=327, 469.755pt x 361.35pt>
 File: images/NewEngland/exp_n_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/exp_n_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/exp_n_NewEngland_2026-02-02.png  used on input line 1108.
+Package pdftex.def Info: images/NewEngland/exp_n_NewEngland_2026-02-02.png  used on input line 1111.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[33 <./images/NewEngland/slide_zoo_community_NewEngland_2026-01-23.png>]
-<images/NewEngland/slide_traits_k_NewEngland_2026-01-28.png, id=339, 469.755pt x 325.215pt>
+[32 <./images/NewEngland/slide_zoo_community_NewEngland_2026-01-23.png>]
+<images/NewEngland/slide_traits_k_NewEngland_2026-01-28.png, id=333, 469.755pt x 325.215pt>
 File: images/NewEngland/slide_traits_k_NewEngland_2026-01-28.png Graphic file (type png)
 <use images/NewEngland/slide_traits_k_NewEngland_2026-01-28.png>
-Package pdftex.def Info: images/NewEngland/slide_traits_k_NewEngland_2026-01-28.png  used on input line 1117.
+Package pdftex.def Info: images/NewEngland/slide_traits_k_NewEngland_2026-01-28.png  used on input line 1120.
 (pdftex.def)             Requested size: 500.484pt x 346.4879pt.
-[34 <./images/NewEngland/exp_n_NewEngland_2026-02-02.png>]
-<images/NewEngland/slide_traits_tl_NewEngland_2026-01-28.png, id=345, 469.755pt x 325.215pt>
+[33 <./images/NewEngland/exp_n_NewEngland_2026-02-02.png>]
+<images/NewEngland/slide_traits_tl_NewEngland_2026-01-28.png, id=338, 469.755pt x 325.215pt>
 File: images/NewEngland/slide_traits_tl_NewEngland_2026-01-28.png Graphic file (type png)
 <use images/NewEngland/slide_traits_tl_NewEngland_2026-01-28.png>
-Package pdftex.def Info: images/NewEngland/slide_traits_tl_NewEngland_2026-01-28.png  used on input line 1126.
+Package pdftex.def Info: images/NewEngland/slide_traits_tl_NewEngland_2026-01-28.png  used on input line 1129.
 (pdftex.def)             Requested size: 500.484pt x 346.4879pt.
-[35 <./images/NewEngland/slide_traits_k_NewEngland_2026-01-28.png>] [36 <./images/NewEngland/slide_traits_tl_NewEngland_2026-01-28.png>]
-<images/BothReports/slide_species_dist_BothReports_2026-01-21.png, id=363, 469.755pt x 289.08pt>
+[34 <./images/NewEngland/slide_traits_k_NewEngland_2026-01-28.png>] [35 <./images/NewEngland/slide_traits_tl_NewEngland_2026-01-28.png>]
+<images/BothReports/slide_species_dist_BothReports_2026-01-21.png, id=357, 469.755pt x 289.08pt>
 File: images/BothReports/slide_species_dist_BothReports_2026-01-21.png Graphic file (type png)
 <use images/BothReports/slide_species_dist_BothReports_2026-01-21.png>
-Package pdftex.def Info: images/BothReports/slide_species_dist_BothReports_2026-01-21.png  used on input line 1161.
+Package pdftex.def Info: images/BothReports/slide_species_dist_BothReports_2026-01-21.png  used on input line 1164.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[37]
-<images/BothReports/cetacean_dist_BothReports_2026-02-02.png, id=376, 542.025pt x 289.08pt>
+[36]
+<images/BothReports/cetacean_dist_BothReports_2026-02-02.png, id=370, 542.025pt x 289.08pt>
 File: images/BothReports/cetacean_dist_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/cetacean_dist_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/cetacean_dist_BothReports_2026-02-02.png  used on input line 1170.
+Package pdftex.def Info: images/BothReports/cetacean_dist_BothReports_2026-02-02.png  used on input line 1173.
 (pdftex.def)             Requested size: 500.484pt x 266.93605pt.
-[38 <./images/BothReports/slide_species_dist_BothReports_2026-01-21.png>]
-<images/BothReports/megabenthos_dist_BothReports_2026-02-02.png, id=381, 469.755pt x 252.945pt>
+[37 <./images/BothReports/slide_species_dist_BothReports_2026-01-21.png>]
+<images/BothReports/megabenthos_dist_BothReports_2026-02-02.png, id=375, 469.755pt x 252.945pt>
 File: images/BothReports/megabenthos_dist_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/megabenthos_dist_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/megabenthos_dist_BothReports_2026-02-02.png  used on input line 1179.
+Package pdftex.def Info: images/BothReports/megabenthos_dist_BothReports_2026-02-02.png  used on input line 1182.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[39 <./images/BothReports/cetacean_dist_BothReports_2026-02-02.png> <./images/BothReports/megabenthos_dist_BothReports_2026-02-02.png>]
-<images/NewEngland/calfin_cog_NewEngland_2026-02-02.png, id=390, 469.755pt x 289.08pt>
+[38 <./images/BothReports/cetacean_dist_BothReports_2026-02-02.png> <./images/BothReports/megabenthos_dist_BothReports_2026-02-02.png>]
+<images/NewEngland/calfin_cog_NewEngland_2026-02-02.png, id=384, 469.755pt x 289.08pt>
 File: images/NewEngland/calfin_cog_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/calfin_cog_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/calfin_cog_NewEngland_2026-02-02.png  used on input line 1192.
+Package pdftex.def Info: images/NewEngland/calfin_cog_NewEngland_2026-02-02.png  used on input line 1195.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-<images/BothReports/forage_dist_BothReports_2026-02-02.png, id=391, 469.755pt x 361.35pt>
+<images/BothReports/forage_dist_BothReports_2026-02-02.png, id=385, 469.755pt x 361.35pt>
 File: images/BothReports/forage_dist_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/forage_dist_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/forage_dist_BothReports_2026-02-02.png  used on input line 1201.
+Package pdftex.def Info: images/BothReports/forage_dist_BothReports_2026-02-02.png  used on input line 1204.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[40 <./images/NewEngland/calfin_cog_NewEngland_2026-02-02.png>]
-<images/BothReports/macrobenthos_dist_BothReports_2026-02-02.png, id=407, 469.755pt x 252.945pt>
+[39 <./images/NewEngland/calfin_cog_NewEngland_2026-02-02.png>]
+<images/BothReports/macrobenthos_dist_BothReports_2026-02-02.png, id=400, 469.755pt x 252.945pt>
 File: images/BothReports/macrobenthos_dist_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/macrobenthos_dist_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/macrobenthos_dist_BothReports_2026-02-02.png  used on input line 1212.
+Package pdftex.def Info: images/BothReports/macrobenthos_dist_BothReports_2026-02-02.png  used on input line 1215.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[41 <./images/BothReports/forage_dist_BothReports_2026-02-02.png>]
-<images/BothReports/lgcopeall_cog_BothReports_2026-02-02.png, id=416, 469.755pt x 289.08pt>
+[40 <./images/BothReports/forage_dist_BothReports_2026-02-02.png>]
+<images/BothReports/lgcopeall_cog_BothReports_2026-02-02.png, id=409, 469.755pt x 289.08pt>
 File: images/BothReports/lgcopeall_cog_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/lgcopeall_cog_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/lgcopeall_cog_BothReports_2026-02-02.png  used on input line 1221.
+Package pdftex.def Info: images/BothReports/lgcopeall_cog_BothReports_2026-02-02.png  used on input line 1224.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[42 <./images/BothReports/macrobenthos_dist_BothReports_2026-02-02.png>]
-<images/BothReports/euph_cog_BothReports_2026-02-02.png, id=421, 469.755pt x 289.08pt>
+[41 <./images/BothReports/macrobenthos_dist_BothReports_2026-02-02.png>]
+<images/BothReports/euph_cog_BothReports_2026-02-02.png, id=415, 469.755pt x 289.08pt>
 File: images/BothReports/euph_cog_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/euph_cog_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/euph_cog_BothReports_2026-02-02.png  used on input line 1230.
+Package pdftex.def Info: images/BothReports/euph_cog_BothReports_2026-02-02.png  used on input line 1233.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[43 <./images/BothReports/lgcopeall_cog_BothReports_2026-02-02.png>]
-<images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-02-04.png, id=431, 469.755pt x 325.215pt>
+[42 <./images/BothReports/lgcopeall_cog_BothReports_2026-02-02.png>]
+<images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-02-04.png, id=425, 469.755pt x 325.215pt>
 File: images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-02-04.png Graphic file (type png)
 <use images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-02-04.png>
-Package pdftex.def Info: images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-02-04.png  used on input line 1241.
+Package pdftex.def Info: images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-02-04.png  used on input line 1244.
 (pdftex.def)             Requested size: 500.484pt x 346.4879pt.
-[44 <./images/BothReports/euph_cog_BothReports_2026-02-02.png>]
-<images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-02-04.png, id=437, 469.755pt x 325.215pt>
+[43 <./images/BothReports/euph_cog_BothReports_2026-02-02.png>]
+<images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-02-04.png, id=431, 469.755pt x 325.215pt>
 File: images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-02-04.png Graphic file (type png)
 <use images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-02-04.png>
-Package pdftex.def Info: images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-02-04.png  used on input line 1250.
+Package pdftex.def Info: images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-02-04.png  used on input line 1253.
 (pdftex.def)             Requested size: 500.484pt x 346.4879pt.
-[45 <./images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-02-04.png>]
-<images/BothReports/long_term_sst_BothReports_2026-02-02.png, id=443, 469.755pt x 180.675pt>
+[44 <./images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-02-04.png>]
+<images/BothReports/long_term_sst_BothReports_2026-02-02.png, id=437, 469.755pt x 180.675pt>
 File: images/BothReports/long_term_sst_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/long_term_sst_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/long_term_sst_BothReports_2026-02-02.png  used on input line 1259.
+Package pdftex.def Info: images/BothReports/long_term_sst_BothReports_2026-02-02.png  used on input line 1262.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[46 <./images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-02-04.png> <./images/BothReports/long_term_sst_BothReports_2026-02-02.png>]
-<images/BothReports/slide_west_gsi_BothReports_2026-01-12.png, id=452, 469.755pt x 144.54pt>
+[45 <./images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-02-04.png> <./images/BothReports/long_term_sst_BothReports_2026-02-02.png>]
+<images/BothReports/slide_west_gsi_BothReports_2026-01-12.png, id=445, 469.755pt x 144.54pt>
 File: images/BothReports/slide_west_gsi_BothReports_2026-01-12.png Graphic file (type png)
 <use images/BothReports/slide_west_gsi_BothReports_2026-01-12.png>
-Package pdftex.def Info: images/BothReports/slide_west_gsi_BothReports_2026-01-12.png  used on input line 1270.
+Package pdftex.def Info: images/BothReports/slide_west_gsi_BothReports_2026-01-12.png  used on input line 1273.
 (pdftex.def)             Requested size: 500.484pt x 153.9946pt.
-<images/BothReports/cold_pool_BothReports_2026-02-02.png, id=455, 469.755pt x 361.35pt>
+<images/BothReports/cold_pool_BothReports_2026-02-02.png, id=448, 469.755pt x 361.35pt>
 File: images/BothReports/cold_pool_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/cold_pool_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/cold_pool_BothReports_2026-02-02.png  used on input line 1281.
+Package pdftex.def Info: images/BothReports/cold_pool_BothReports_2026-02-02.png  used on input line 1284.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[47 <./images/BothReports/slide_west_gsi_BothReports_2026-01-12.png>] [48 <./images/BothReports/cold_pool_BothReports_2026-02-02.png>]
-<images/BothReports/slide_spawn_timing_BothReports_2026-01-29.png, id=474, 469.755pt x 289.08pt>
+[46 <./images/BothReports/slide_west_gsi_BothReports_2026-01-12.png>] [47 <./images/BothReports/cold_pool_BothReports_2026-02-02.png>]
+<images/BothReports/slide_spawn_timing_BothReports_2026-01-29.png, id=468, 469.755pt x 289.08pt>
 File: images/BothReports/slide_spawn_timing_BothReports_2026-01-29.png Graphic file (type png)
 <use images/BothReports/slide_spawn_timing_BothReports_2026-01-29.png>
-Package pdftex.def Info: images/BothReports/slide_spawn_timing_BothReports_2026-01-29.png  used on input line 1306.
+Package pdftex.def Info: images/BothReports/slide_spawn_timing_BothReports_2026-01-29.png  used on input line 1309.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[49 <./images/BothReports/slide_spawn_timing_BothReports_2026-01-29.png>]
-<images/MidAtlantic/slide_transition_date_MidAtlantic_2026-01-20.png, id=486, 469.755pt x 180.675pt>
+[48 <./images/BothReports/slide_spawn_timing_BothReports_2026-01-29.png>]
+<images/MidAtlantic/slide_transition_date_MidAtlantic_2026-01-20.png, id=480, 469.755pt x 180.675pt>
 File: images/MidAtlantic/slide_transition_date_MidAtlantic_2026-01-20.png Graphic file (type png)
 <use images/MidAtlantic/slide_transition_date_MidAtlantic_2026-01-20.png>
-Package pdftex.def Info: images/MidAtlantic/slide_transition_date_MidAtlantic_2026-01-20.png  used on input line 1325.
+Package pdftex.def Info: images/MidAtlantic/slide_transition_date_MidAtlantic_2026-01-20.png  used on input line 1328.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/NewEngland/slide_transition_date_NewEngland_2026-01-20.png, id=487, 469.755pt x 361.35pt>
+<images/NewEngland/slide_transition_date_NewEngland_2026-01-20.png, id=481, 469.755pt x 361.35pt>
 File: images/NewEngland/slide_transition_date_NewEngland_2026-01-20.png Graphic file (type png)
 <use images/NewEngland/slide_transition_date_NewEngland_2026-01-20.png>
-Package pdftex.def Info: images/NewEngland/slide_transition_date_NewEngland_2026-01-20.png  used on input line 1334.
+Package pdftex.def Info: images/NewEngland/slide_transition_date_NewEngland_2026-01-20.png  used on input line 1337.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[50 <./images/MidAtlantic/slide_transition_date_MidAtlantic_2026-01-20.png>]
-<images/BothReports/cold_pool_time_BothReports_2026-02-02.png, id=497, 469.755pt x 180.675pt>
+[49 <./images/MidAtlantic/slide_transition_date_MidAtlantic_2026-01-20.png>]
+<images/BothReports/cold_pool_time_BothReports_2026-02-02.png, id=491, 469.755pt x 180.675pt>
 File: images/BothReports/cold_pool_time_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/cold_pool_time_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/cold_pool_time_BothReports_2026-02-02.png  used on input line 1347.
+Package pdftex.def Info: images/BothReports/cold_pool_time_BothReports_2026-02-02.png  used on input line 1350.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[51 <./images/NewEngland/slide_transition_date_NewEngland_2026-01-20.png>]
-<images/NewEngland/monthly_chl_NewEngland_2026-02-02.png, id=507, 469.755pt x 505.89pt>
+[50 <./images/NewEngland/slide_transition_date_NewEngland_2026-01-20.png>]
+<images/NewEngland/monthly_chl_NewEngland_2026-02-02.png, id=501, 469.755pt x 505.89pt>
 File: images/NewEngland/monthly_chl_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/monthly_chl_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/monthly_chl_NewEngland_2026-02-02.png  used on input line 1358.
+Package pdftex.def Info: images/NewEngland/monthly_chl_NewEngland_2026-02-02.png  used on input line 1361.
 (pdftex.def)             Requested size: 500.484pt x 538.98117pt.
-[52 <./images/BothReports/cold_pool_time_BothReports_2026-02-02.png>] [53 <./images/NewEngland/monthly_chl_NewEngland_2026-02-02.png>]
-<images/NewEngland/productivity_anomaly_NewEngland_2026-02-02.png, id=526, 469.755pt x 686.565pt>
+[51 <./images/BothReports/cold_pool_time_BothReports_2026-02-02.png>] [52 <./images/NewEngland/monthly_chl_NewEngland_2026-02-02.png>]
+<images/NewEngland/productivity_anomaly_NewEngland_2026-02-02.png, id=520, 469.755pt x 686.565pt>
 File: images/NewEngland/productivity_anomaly_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/productivity_anomaly_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/productivity_anomaly_NewEngland_2026-02-02.png  used on input line 1383.
+Package pdftex.def Info: images/NewEngland/productivity_anomaly_NewEngland_2026-02-02.png  used on input line 1386.
 (pdftex.def)             Requested size: 500.484pt x 731.47446pt.
-[54]
+[53]
 Overfull \vbox (132.76823pt too high) has occurred while \output is active []
 
-[55 <./images/NewEngland/productivity_anomaly_NewEngland_2026-02-02.png>]
-<images/NewEngland/seabird_productivity_NewEngland_2026-02-02.png, id=541, 469.755pt x 180.675pt>
+[54 <./images/NewEngland/productivity_anomaly_NewEngland_2026-02-02.png>]
+<images/NewEngland/seabird_productivity_NewEngland_2026-02-02.png, id=534, 469.755pt x 180.675pt>
 File: images/NewEngland/seabird_productivity_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/seabird_productivity_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/seabird_productivity_NewEngland_2026-02-02.png  used on input line 1392.
+Package pdftex.def Info: images/NewEngland/seabird_productivity_NewEngland_2026-02-02.png  used on input line 1395.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/NewEngland/salmon_NewEngland_2026-02-02.png, id=542, 469.755pt x 289.08pt>
+<images/NewEngland/salmon_NewEngland_2026-02-02.png, id=535, 469.755pt x 289.08pt>
 File: images/NewEngland/salmon_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/salmon_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/salmon_NewEngland_2026-02-02.png  used on input line 1401.
+Package pdftex.def Info: images/NewEngland/salmon_NewEngland_2026-02-02.png  used on input line 1404.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[56 <./images/NewEngland/seabird_productivity_NewEngland_2026-02-02.png> <./images/NewEngland/salmon_NewEngland_2026-02-02.png>]
-<images/NewEngland/condition_NewEngland_2026-02-02.png, id=550, 469.755pt x 722.7pt>
+[55 <./images/NewEngland/seabird_productivity_NewEngland_2026-02-02.png> <./images/NewEngland/salmon_NewEngland_2026-02-02.png>]
+<images/NewEngland/condition_NewEngland_2026-02-02.png, id=544, 469.755pt x 722.7pt>
 File: images/NewEngland/condition_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/condition_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/condition_NewEngland_2026-02-02.png  used on input line 1412.
+Package pdftex.def Info: images/NewEngland/condition_NewEngland_2026-02-02.png  used on input line 1415.
 (pdftex.def)             Requested size: 500.484pt x 769.97311pt.
-[57]
+[56]
 Overfull \vbox (149.26689pt too high) has occurred while \output is active []
 
-[58 <./images/NewEngland/condition_NewEngland_2026-02-02.png>]
-<images/NewEngland/energy_density_NewEngland.png, id=563, 400.49625pt x 486.618pt>
+[57 <./images/NewEngland/condition_NewEngland_2026-02-02.png>]
+<images/NewEngland/energy_density_NewEngland.png, id=556, 400.49625pt x 486.618pt>
 File: images/NewEngland/energy_density_NewEngland.png Graphic file (type png)
 <use images/NewEngland/energy_density_NewEngland.png>
-Package pdftex.def Info: images/NewEngland/energy_density_NewEngland.png  used on input line 1437.
+Package pdftex.def Info: images/NewEngland/energy_density_NewEngland.png  used on input line 1440.
 (pdftex.def)             Requested size: 500.484pt x 608.14478pt.
-[59]
-<images/NewEngland/foragebio_NewEngland_2026-02-02.png, id=570, 469.755pt x 361.35pt>
+[58]
+<images/NewEngland/foragebio_NewEngland_2026-02-02.png, id=564, 469.755pt x 361.35pt>
 File: images/NewEngland/foragebio_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/foragebio_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/foragebio_NewEngland_2026-02-02.png  used on input line 1446.
+Package pdftex.def Info: images/NewEngland/foragebio_NewEngland_2026-02-02.png  used on input line 1449.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[60 <./images/NewEngland/energy_density_NewEngland.png>]
-<images/NewEngland/benthos_NewEngland_2026-02-02.png, id=579, 469.755pt x 433.62pt>
+[59 <./images/NewEngland/energy_density_NewEngland.png>]
+<images/NewEngland/benthos_NewEngland_2026-02-02.png, id=573, 469.755pt x 433.62pt>
 File: images/NewEngland/benthos_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/benthos_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/benthos_NewEngland_2026-02-02.png  used on input line 1457.
+Package pdftex.def Info: images/NewEngland/benthos_NewEngland_2026-02-02.png  used on input line 1460.
 (pdftex.def)             Requested size: 500.484pt x 461.98387pt.
-[61 <./images/NewEngland/foragebio_NewEngland_2026-02-02.png>] [62 <./images/NewEngland/benthos_NewEngland_2026-02-02.png>]
+[60 <./images/NewEngland/foragebio_NewEngland_2026-02-02.png>] [61 <./images/NewEngland/benthos_NewEngland_2026-02-02.png>]
 
-LaTeX Warning: Reference `fig:zooplankton-season' on page 63 undefined on input line 1470.
+LaTeX Warning: Reference `fig:zooplankton-season' on page 62 undefined on input line 1473.
 
-<images/NewEngland/slide_zooplankton_anomaly_NewEngland_2026-01-22.png, id=596, 469.755pt x 542.025pt>
+<images/NewEngland/slide_zooplankton_anomaly_NewEngland_2026-01-22.png, id=590, 469.755pt x 542.025pt>
 File: images/NewEngland/slide_zooplankton_anomaly_NewEngland_2026-01-22.png Graphic file (type png)
 <use images/NewEngland/slide_zooplankton_anomaly_NewEngland_2026-01-22.png>
-Package pdftex.def Info: images/NewEngland/slide_zooplankton_anomaly_NewEngland_2026-01-22.png  used on input line 1481.
+Package pdftex.def Info: images/NewEngland/slide_zooplankton_anomaly_NewEngland_2026-01-22.png  used on input line 1484.
 (pdftex.def)             Requested size: 500.484pt x 577.47983pt.
-[63]
-<images/NewEngland/wbts_zoo_NewEngland_2026-02-04.png, id=602, 452.28975pt x 335.45325pt>
+[62]
+<images/NewEngland/wbts_zoo_NewEngland_2026-02-04.png, id=596, 452.28975pt x 335.45325pt>
 File: images/NewEngland/wbts_zoo_NewEngland_2026-02-04.png Graphic file (type png)
 <use images/NewEngland/wbts_zoo_NewEngland_2026-02-04.png>
-Package pdftex.def Info: images/NewEngland/wbts_zoo_NewEngland_2026-02-04.png  used on input line 1490.
+Package pdftex.def Info: images/NewEngland/wbts_zoo_NewEngland_2026-02-04.png  used on input line 1493.
 (pdftex.def)             Requested size: 500.484pt x 371.20068pt.
-[64 <./images/NewEngland/slide_zooplankton_anomaly_NewEngland_2026-01-22.png>] [65 <./images/NewEngland/wbts_zoo_NewEngland_2026-02-04.png>]
-<images/NewEngland/marine_cold_spells_NewEngland.png, id=625, 917.1063pt x 466.1415pt>
+[63 <./images/NewEngland/slide_zooplankton_anomaly_NewEngland_2026-01-22.png>] [64 <./images/NewEngland/wbts_zoo_NewEngland_2026-02-04.png>]
+<images/NewEngland/marine_cold_spells_NewEngland.png, id=619, 917.1063pt x 466.1415pt>
 File: images/NewEngland/marine_cold_spells_NewEngland.png Graphic file (type png)
 <use images/NewEngland/marine_cold_spells_NewEngland.png>
-Package pdftex.def Info: images/NewEngland/marine_cold_spells_NewEngland.png  used on input line 1509.
+Package pdftex.def Info: images/NewEngland/marine_cold_spells_NewEngland.png  used on input line 1512.
 (pdftex.def)             Requested size: 500.484pt x 254.37993pt.
-<images/BothReports/slide_therm_hab_persist_BothReports_2026-02-02.png, id=626, 469.755pt x 289.08pt>
+<images/BothReports/slide_therm_hab_persist_BothReports_2026-02-02.png, id=620, 469.755pt x 289.08pt>
 File: images/BothReports/slide_therm_hab_persist_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/slide_therm_hab_persist_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/slide_therm_hab_persist_BothReports_2026-02-02.png  used on input line 1517.
+Package pdftex.def Info: images/BothReports/slide_therm_hab_persist_BothReports_2026-02-02.png  used on input line 1520.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[66 <./images/NewEngland/marine_cold_spells_NewEngland.png>]
-<images/NewEngland/advection_index_NewEngland_2026-02-04.png, id=634, 469.755pt x 325.215pt>
+[65 <./images/NewEngland/marine_cold_spells_NewEngland.png>]
+<images/NewEngland/advection_index_NewEngland_2026-02-04.png, id=628, 469.755pt x 325.215pt>
 File: images/NewEngland/advection_index_NewEngland_2026-02-04.png Graphic file (type png)
 <use images/NewEngland/advection_index_NewEngland_2026-02-04.png>
-Package pdftex.def Info: images/NewEngland/advection_index_NewEngland_2026-02-04.png  used on input line 1528.
+Package pdftex.def Info: images/NewEngland/advection_index_NewEngland_2026-02-04.png  used on input line 1531.
 (pdftex.def)             Requested size: 500.484pt x 346.4879pt.
-[67 <./images/BothReports/slide_therm_hab_persist_BothReports_2026-02-02.png>]
-<images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png, id=642, 2975.115pt x 1136.245pt>
+[66 <./images/BothReports/slide_therm_hab_persist_BothReports_2026-02-02.png>]
+<images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png, id=636, 2975.115pt x 1136.245pt>
 File: images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png Graphic file (type png)
 <use images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png>
-Package pdftex.def Info: images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png  used on input line 1539.
+Package pdftex.def Info: images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png  used on input line 1542.
 (pdftex.def)             Requested size: 500.484pt x 191.13058pt.
-[68 <./images/NewEngland/advection_index_NewEngland_2026-02-04.png>] [69{c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png>]
-<images/BothReports/UpdatedWind_AngelaSilva_2025.png, id=667, 633.8079pt x 817.6146pt>
+[67 <./images/NewEngland/advection_index_NewEngland_2026-02-04.png>] [68{c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./images/BothReports/SOE-2025-OA-figure_final_GraceSaba_2025.png>]
+<images/BothReports/UpdatedWind_AngelaSilva_2025.png, id=661, 633.8079pt x 817.6146pt>
 File: images/BothReports/UpdatedWind_AngelaSilva_2025.png Graphic file (type png)
 <use images/BothReports/UpdatedWind_AngelaSilva_2025.png>
-Package pdftex.def Info: images/BothReports/UpdatedWind_AngelaSilva_2025.png  used on input line 1578.
+Package pdftex.def Info: images/BothReports/UpdatedWind_AngelaSilva_2025.png  used on input line 1581.
 (pdftex.def)             Requested size: 450.43253pt x 581.07184pt.
-[70] [71 <./images/BothReports/UpdatedWind_AngelaSilva_2025.png>]
-<images/BothReports/slide_wind_dev_speed_BothReports_2026-01-12.png, id=682, 469.755pt x 289.08pt>
+[69] [70 <./images/BothReports/UpdatedWind_AngelaSilva_2025.png>]
+<images/BothReports/slide_wind_dev_speed_BothReports_2026-01-12.png, id=676, 469.755pt x 289.08pt>
 File: images/BothReports/slide_wind_dev_speed_BothReports_2026-01-12.png Graphic file (type png)
 <use images/BothReports/slide_wind_dev_speed_BothReports_2026-01-12.png>
-Package pdftex.def Info: images/BothReports/slide_wind_dev_speed_BothReports_2026-01-12.png  used on input line 1589.
+Package pdftex.def Info: images/BothReports/slide_wind_dev_speed_BothReports_2026-01-12.png  used on input line 1592.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-<images/NewEngland/slide_wind_revenue_NewEngland_2026-01-29.png, id=686, 469.755pt x 289.08pt>
+<images/NewEngland/slide_wind_revenue_NewEngland_2026-01-29.png, id=680, 469.755pt x 289.08pt>
 File: images/NewEngland/slide_wind_revenue_NewEngland_2026-01-29.png Graphic file (type png)
 <use images/NewEngland/slide_wind_revenue_NewEngland_2026-01-29.png>
-Package pdftex.def Info: images/NewEngland/slide_wind_revenue_NewEngland_2026-01-29.png  used on input line 1606.
+Package pdftex.def Info: images/NewEngland/slide_wind_revenue_NewEngland_2026-01-29.png  used on input line 1609.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[72 <./images/BothReports/slide_wind_dev_speed_BothReports_2026-01-12.png>]
-ignored error: Infinite glue shrinkage found in box being split [73 <./images/NewEngland/slide_wind_revenue_NewEngland_2026-01-29.png>]
-<images/NewEngland/slide_wea_port_rev_NewEngland_2026-02-02.png, id=702, 469.755pt x 505.89pt>
+[71 <./images/BothReports/slide_wind_dev_speed_BothReports_2026-01-12.png>]
+ignored error: Infinite glue shrinkage found in box being split [72 <./images/NewEngland/slide_wind_revenue_NewEngland_2026-01-29.png>]
+<images/NewEngland/slide_wea_port_rev_NewEngland_2026-02-02.png, id=696, 469.755pt x 505.89pt>
 File: images/NewEngland/slide_wea_port_rev_NewEngland_2026-02-02.png Graphic file (type png)
 <use images/NewEngland/slide_wea_port_rev_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/slide_wea_port_rev_NewEngland_2026-02-02.png  used on input line 1797.
+Package pdftex.def Info: images/NewEngland/slide_wea_port_rev_NewEngland_2026-02-02.png  used on input line 1800.
 (pdftex.def)             Requested size: 500.484pt x 538.98117pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1797--1798
+Underfull \hbox (badness 10000) in paragraph at lines 1800--1801
 
  []
 
-[74] [75 <./images/NewEngland/slide_wea_port_rev_NewEngland_2026-02-02.png>]
-<images/NewEngland/midatlantic_nefmc.png, id=715, 469.755pt x 361.1091pt>
+[73] [74 <./images/NewEngland/slide_wea_port_rev_NewEngland_2026-02-02.png>]
+<images/NewEngland/midatlantic_nefmc.png, id=709, 469.755pt x 361.1091pt>
 File: images/NewEngland/midatlantic_nefmc.png Graphic file (type png)
 <use images/NewEngland/midatlantic_nefmc.png>
-Package pdftex.def Info: images/NewEngland/midatlantic_nefmc.png  used on input line 1810.
+Package pdftex.def Info: images/NewEngland/midatlantic_nefmc.png  used on input line 1813.
 (pdftex.def)             Requested size: 500.484pt x 384.72989pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1810--1811
+Underfull \hbox (badness 10000) in paragraph at lines 1813--1814
 
  []
 
-[76] [77 <./images/NewEngland/midatlantic_nefmc.png>]
-<images/BothReports/NARW_hotspots_final_2024.jpg, id=732, 614.295pt x 794.97pt>
+[75] [76 <./images/NewEngland/midatlantic_nefmc.png>]
+<images/BothReports/NARW_hotspots_final_2024.jpg, id=726, 614.295pt x 794.97pt>
 File: images/BothReports/NARW_hotspots_final_2024.jpg Graphic file (type jpg)
 <use images/BothReports/NARW_hotspots_final_2024.jpg>
-Package pdftex.def Info: images/BothReports/NARW_hotspots_final_2024.jpg  used on input line 1829.
+Package pdftex.def Info: images/BothReports/NARW_hotspots_final_2024.jpg  used on input line 1832.
 (pdftex.def)             Requested size: 275.26772pt x 356.22905pt.
-[78 <./images/BothReports/NARW_hotspots_final_2024.jpg>] [79]
+[77 <./images/BothReports/NARW_hotspots_final_2024.jpg>] [78]
 
-LaTeX Warning: Reference `fig:slopesea-bottom' on page 80 undefined on input line 1852.
+LaTeX Warning: Reference `fig:slopesea-bottom' on page 79 undefined on input line 1855.
 
-<images/BothReports/Highlights_2026-BTemp_Anomaly-202501-NES.png, id=746, 491.31555pt x 481.19775pt>
+<images/BothReports/Highlights_2026-BTemp_Anomaly-202501-NES.png, id=740, 491.31555pt x 481.19775pt>
 File: images/BothReports/Highlights_2026-BTemp_Anomaly-202501-NES.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-BTemp_Anomaly-202501-NES.png>
-Package pdftex.def Info: images/BothReports/Highlights_2026-BTemp_Anomaly-202501-NES.png  used on input line 1854.
+Package pdftex.def Info: images/BothReports/Highlights_2026-BTemp_Anomaly-202501-NES.png  used on input line 1857.
 (pdftex.def)             Requested size: 325.31154pt x 318.6121pt.
-<images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png, id=747, 491.31555pt x 481.19775pt>
+<images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png, id=741, 491.31555pt x 481.19775pt>
 File: images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png>
-Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png  used on input line 1858.
+Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png  used on input line 1861.
 (pdftex.def)             Requested size: 325.31154pt x 318.6121pt.
-[80 <./images/BothReports/Highlights_2026-BTemp_Anomaly-202501-NES.png>]
-<images/BothReports/slide_slopewater_BothReports_2026-01-12.png, id=757, 433.62pt x 289.08pt>
+[79 <./images/BothReports/Highlights_2026-BTemp_Anomaly-202501-NES.png>]
+<images/BothReports/slide_slopewater_BothReports_2026-01-12.png, id=751, 433.62pt x 289.08pt>
 File: images/BothReports/slide_slopewater_BothReports_2026-01-12.png Graphic file (type png)
 <use images/BothReports/slide_slopewater_BothReports_2026-01-12.png>
-Package pdftex.def Info: images/BothReports/slide_slopewater_BothReports_2026-01-12.png  used on input line 1869.
+Package pdftex.def Info: images/BothReports/slide_slopewater_BothReports_2026-01-12.png  used on input line 1872.
 (pdftex.def)             Requested size: 500.484pt x 333.67448pt.
-[81 <./images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png>]
+[80 <./images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png>]
 
-LaTeX Warning: Reference `fig:chl-anom-apr' on page 82 undefined on input line 1876.
+LaTeX Warning: Reference `fig:chl-anom-apr' on page 81 undefined on input line 1879.
 
-<images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png, id=764, 491.31555pt x 481.19775pt>
+<images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png, id=758, 491.31555pt x 481.19775pt>
 File: images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png>
-Package pdftex.def Info: images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png  used on input line 1880.
+Package pdftex.def Info: images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png  used on input line 1883.
 (pdftex.def)             Requested size: 500.484pt x 490.17642pt.
-[82 <./images/BothReports/slide_slopewater_BothReports_2026-01-12.png>]
-<images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png, id=772, 491.31555pt x 481.19775pt>
+[81 <./images/BothReports/slide_slopewater_BothReports_2026-01-12.png>]
+<images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png, id=765, 491.31555pt x 481.19775pt>
 File: images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png>
-Package pdftex.def Info: images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png  used on input line 1888.
+Package pdftex.def Info: images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png  used on input line 1891.
 (pdftex.def)             Requested size: 500.484pt x 490.17642pt.
-[83 <./images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png>] [84 <./images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png>]
-<images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png, id=784, 254.3904pt x 554.67226pt>
+[82 <./images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png>] [83 <./images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png>]
+<images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png, id=778, 254.3904pt x 554.67226pt>
 File: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png>
-Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png  used on input line 1917.
+Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png  used on input line 1920.
 (pdftex.def)             Requested size: 500.484pt x 1091.3143pt.
-[85]
+[84]
 Overfull \vbox (438.60808pt too high) has occurred while \output is active []
 
-[86 <./images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png>]
-<images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png, id=794, 254.3904pt x 554.67226pt>
+[85 <./images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png>]
+<images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png, id=788, 254.3904pt x 554.67226pt>
 File: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png>
-Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png  used on input line 1925.
+Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png  used on input line 1928.
 (pdftex.def)             Requested size: 500.484pt x 1091.3143pt.
 
 Overfull \vbox (481.60808pt too high) has occurred while \output is active []
 
-[87 <./images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png>] [88]
-<C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf, id=812, 469.755pt x 210.7875pt>
+[86 <./images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png>] [87]
+<C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf, id=804, 469.755pt x 210.7875pt>
 File: C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf Graphic file (type pdf)
 <use C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf>
-Package pdftex.def Info: C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf  used on input line 1950.
+Package pdftex.def Info: C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf  used on input line 1953.
 (pdftex.def)             Requested size: 500.484pt x 224.57549pt.
 
-Overfull \hbox (25.40596pt too wide) in alignment at lines 1971--1979
+Overfull \hbox (25.40596pt too wide) in alignment at lines 1974--1982
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.40596pt too wide) in alignment at lines 1979--1985
+Overfull \hbox (25.40596pt too wide) in alignment at lines 1982--1988
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.40596pt too wide) in alignment at lines 1985--2019
+Overfull \hbox (25.40596pt too wide) in alignment at lines 1988--2022
  [] [] [] [] [] 
  []
 
-ignored error: Infinite glue shrinkage found in box being split [89 <c:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf>] [90] (./SOE2026_NEFMC_IR.aux * soulpos - computing points - it may take a few seconds *
+ignored error: Infinite glue shrinkage found in box being split [88 <c:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf>] [89] (./SOE2026_NEFMC_IR.aux * soulpos - computing points - it may take a few seconds *
 \openout3 = `SOE2026_NEFMC_IR.upb'.
 
 (./SOE2026_NEFMC_IR.upa))
@@ -1301,18 +1296,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20517 strings out of 469514
- 408473 string characters out of 5467188
- 821290 words of memory out of 5000000
- 48604 multiletter control sequences out of 15000+600000
+ 20510 strings out of 469514
+ 408388 string characters out of 5467188
+ 821334 words of memory out of 5000000
+ 48600 multiletter control sequences out of 15000+600000
  717156 words of font info for 95 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 77i,15n,117p,2766b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,15n,117p,2766b,620s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb>
-Output written on SOE2026_NEFMC_IR.pdf (87 pages, 21766998 bytes).
+Output written on SOE2026_NEFMC_IR.pdf (86 pages, 21765773 bytes).
 PDF statistics:
- 1090 PDF objects out of 1200 (max. 8388607)
- 877 compressed objects within 9 object streams
- 240 named destinations out of 1000 (max. 500000)
- 730 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1078 PDF objects out of 1200 (max. 8388607)
+ 866 compressed objects within 9 object streams
+ 237 named destinations out of 1000 (max. 500000)
+ 714 words of extra memory for PDF output out of 10000 (max. 10000000)
 

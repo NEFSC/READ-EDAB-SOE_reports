@@ -180,6 +180,8 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 <<repeat-child>>
 ```
 
+\newpage
+
 ## Recreational Opportunities
 
 ```{r}
@@ -193,6 +195,8 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ```{r, eval = params$draft, results = "asis"}
 <<repeat-child>>
 ```
+
+\newpage
 
 ## Social and Community Risks
 
@@ -216,6 +220,8 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ```{r, eval = params$draft, results = "asis"}
 <<repeat-child>>
 ```
+
+\newpage
 
 ## Protected Species
 Fishery management objectives for protected species generally focus on reducing threats and on habitat conservation/restoration. Specific actions include managing bycatch to remain below potential biological removal (PBR) thresholds, recovering endangered populations, and monitoring unusual mortality events (UMEs). Protected species include marine mammals protected under the Marine Mammal Protection Act, endangered and threatened species protected under the Endangered Species Act, and migratory birds protected under the Migratory Bird Treaty Act. In the Northeast U.S., endangered/threatened species include Atlantic salmon, Atlantic and shortnose sturgeon, all sea turtle species, giant manta ray, oceanic whitetip shark, and five baleen whales. Here we report on performance relative to these objectives, as well as how observed and predicted ecosystem changes in the Northeast U.S may impact these objectives in the future.
