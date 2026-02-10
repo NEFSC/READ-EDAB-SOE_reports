@@ -293,7 +293,7 @@ create_plots_both <- function(region = "BothReports")
       },
       indicator = "slopewater",
       width = 6,
-      height = 4
+      height = 3
     )
     
     # small cope center of gravity

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.9)  10 FEB 2026 17:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.9)  10 FEB 2026 17:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1205,11 +1205,11 @@ File: images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png Graphic file
 Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png  used on input line 1773.
 (pdftex.def)             Requested size: 325.31154pt x 318.6121pt.
 [70 <./images/BothReports/Highlights_2026-BTemp_Anomaly-202501-NES.png>]
-<images/BothReports/slopewater_BothReports_2026-02-02.png, id=703, 433.62pt x 289.08pt>
-File: images/BothReports/slopewater_BothReports_2026-02-02.png Graphic file (type png)
-<use images/BothReports/slopewater_BothReports_2026-02-02.png>
-Package pdftex.def Info: images/BothReports/slopewater_BothReports_2026-02-02.png  used on input line 1784.
-(pdftex.def)             Requested size: 500.484pt x 333.67448pt.
+<images/BothReports/slopewater_BothReports_2026-02-10.png, id=703, 433.62pt x 216.81pt>
+File: images/BothReports/slopewater_BothReports_2026-02-10.png Graphic file (type png)
+<use images/BothReports/slopewater_BothReports_2026-02-10.png>
+Package pdftex.def Info: images/BothReports/slopewater_BothReports_2026-02-10.png  used on input line 1784.
+(pdftex.def)             Requested size: 500.484pt x 250.25586pt.
 [71 <./images/BothReports/Highlights_2026-SST_Anomaly-202501-NES.png>]
 
 LaTeX Warning: Reference `fig:chl-anom-apr' on page 72 undefined on input line 1791.
@@ -1218,38 +1218,31 @@ LaTeX Warning: Reference `fig:chl-anom-apr' on page 72 undefined on input line 1
 File: images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png>
 Package pdftex.def Info: images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png  used on input line 1795.
-(pdftex.def)             Requested size: 500.484pt x 490.17642pt.
-[72 <./images/BothReports/slopewater_BothReports_2026-02-02.png>]
+(pdftex.def)             Requested size: 325.31154pt x 318.6121pt.
+[72 <./images/BothReports/slopewater_BothReports_2026-02-10.png>]
 <images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png, id=717, 491.31555pt x 481.19775pt>
 File: images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png>
 Package pdftex.def Info: images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png  used on input line 1803.
-(pdftex.def)             Requested size: 500.484pt x 490.17642pt.
+(pdftex.def)             Requested size: 325.31154pt x 318.6121pt.
 [73 <./images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png>] [74 <./images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png>]
 <images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png, id=729, 254.3904pt x 554.67226pt>
 File: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png>
 Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png  used on input line 1832.
-(pdftex.def)             Requested size: 500.484pt x 1091.3143pt.
-[75]
-Overfull \vbox (438.60808pt too high) has occurred while \output is active []
-
-[76 <./images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png>]
-<images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png, id=740, 254.3904pt x 554.67226pt>
+(pdftex.def)             Requested size: 150.14671pt x 327.39767pt.
+<images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png, id=730, 254.3904pt x 554.67226pt>
 File: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png>
 Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png  used on input line 1840.
-(pdftex.def)             Requested size: 500.484pt x 1091.3143pt.
-
-Overfull \vbox (481.60808pt too high) has occurred while \output is active []
-
-[77 <./images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png>] [78]
-<C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf, id=756, 469.755pt x 210.7875pt>
+(pdftex.def)             Requested size: 150.14671pt x 327.39767pt.
+[75 <./images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png>] [76 <./images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png>]
+<C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf, id=747, 469.755pt x 210.7875pt>
 File: C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf Graphic file (type pdf)
 <use C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf>
 Package pdftex.def Info: C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf  used on input line 1865.
 (pdftex.def)             Requested size: 500.484pt x 224.57549pt.
-
+[77]
 Overfull \hbox (25.40596pt too wide) in alignment at lines 1886--1894
  [] [] [] [] [] 
  []
@@ -1264,7 +1257,7 @@ Overfull \hbox (25.40596pt too wide) in alignment at lines 1900--1934
  [] [] [] [] [] 
  []
 
-ignored error: Infinite glue shrinkage found in box being split [79 <c:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf>] [80] (./SOE2026_NEFMC_IR.aux * soulpos - computing points - it may take a few seconds *
+ignored error: Infinite glue shrinkage found in box being split [78 <c:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_files/figure-latex/docformat-1.pdf>] [79] (./SOE2026_NEFMC_IR.aux * soulpos - computing points - it may take a few seconds *
 \openout3 = `SOE2026_NEFMC_IR.upb'.
 
 (./SOE2026_NEFMC_IR.upa))
@@ -1280,18 +1273,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20462 strings out of 469514
- 405996 string characters out of 5467188
+ 20461 strings out of 469514
+ 405989 string characters out of 5467188
  820815 words of memory out of 5000000
  48571 multiletter control sequences out of 15000+600000
  717156 words of font info for 95 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 77i,15n,117p,2766b,620s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,15n,117p,2783b,620s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/joseph.caracappa/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb>
-Output written on SOE2026_NEFMC_IR.pdf (77 pages, 20532564 bytes).
+Output written on SOE2026_NEFMC_IR.pdf (76 pages, 20498383 bytes).
 PDF statistics:
- 1001 PDF objects out of 1200 (max. 8388607)
- 800 compressed objects within 8 object streams
- 218 named destinations out of 1000 (max. 500000)
+ 997 PDF objects out of 1000 (max. 8388607)
+ 797 compressed objects within 8 object streams
+ 217 named destinations out of 1000 (max. 500000)
  645 words of extra memory for PDF output out of 10000 (max. 10000000)
 
