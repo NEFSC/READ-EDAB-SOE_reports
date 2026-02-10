@@ -993,7 +993,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "wind_revenue",
     width = 6.5,
-    height = 4
+    height = 3
   )
   
   # Advection Index

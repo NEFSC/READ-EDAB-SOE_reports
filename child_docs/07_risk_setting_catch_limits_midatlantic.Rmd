@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -92,6 +92,6 @@ The abundance and distribution of marine mammal, shark predators, and other Atla
 Indicators for shark populations, combined with information on gray seals (see [Protected Species Implications section, above](#protected-species)), suggests predator populations range from stable ([sharks](https://noaa-edab.github.io/catalog/hms_cpue.html)) to increasing ([gray seals](https://noaa-edab.github.io/catalog/seal_pups.html))  in the MAB. [Stock status](https://noaa-edab.github.io/catalog/hms_stock_status.html) is mixed for HMS stocks (including sharks, swordfish, billfish, and tunas) occurring throughout the Northeast U.S. shelf. While there are several HMS species considered to be overfished or that have unknown stock status, the population status for some managed Atlantic sharks and tunas is at or above the biomass target, suggesting the potential for robust (or rebuilt) predator populations and subsequent predation pressure on managed species. Increasing predator populations or changing distribution of predators may result in increased predation pressure.
 
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```

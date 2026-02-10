@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -39,6 +39,6 @@ If all proposed projects are developed, BOEM reports that cumulative offshore wi
 
 Top fishing communities with both landings from the Active Projects (i.e., Point Lookout, NY and Newport News, VA) and [socio-demographic or gentrification concerns](https://noaa-edab.github.io/catalog/engagement.html) should be recognized as having additional vulnerability from Active Projects. To reduce further social and economic impacts and aid in the resilience and adaptive capacity of these communities, this vulnerability should be considered in decision making. Historically, the introduction of new industries can trigger industrial and socioeconomic gentrification of fishing ports. Competition for port space and potential pivoting of space use for offshore wind development should be monitored closely to ensure fishing communities are not adversely impacted. Additionally, offshore wind could increase recreational fishing opportunities at the turbines, potentially creating a demand for additional tourism, recreational fishing and boating port space in communities already balancing these uses with commercial fishing infrastructure(e.g., Virginia Beach, VA, Montauk, NY and Barnegate Light, NJ.) Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```
