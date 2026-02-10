@@ -67,7 +67,7 @@ return_plot <- function(
     # key could include the file name without the date or png extension
     new_file <- list.files(
       path = here::here("images"),
-      pattern = basename(file),
+      pattern = paste0('^',basename(file)),
       full.names = TRUE,
       recursive = TRUE
     )[1] # pick the first file if there are multiple

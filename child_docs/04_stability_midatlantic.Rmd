@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -73,6 +73,6 @@ Production at the base of the food web is variable, but stable over time. Mid-At
 In the MAB, both the fisheries and ecosystem are exhibiting long-term systemic shifts away from historical norms. While these changes don’t appear abrupt like one would expect during a regime shift, they do indicate a potential change in baseline conditions.
 
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```

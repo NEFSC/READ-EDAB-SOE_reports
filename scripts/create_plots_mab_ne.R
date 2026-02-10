@@ -557,7 +557,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "commercial_div_species_div",
     width = 6.5,
-    height = 2.5
+    height = 2
   )
   
   # 3. Recreational Diversity Catch Plot
@@ -567,7 +567,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "recdat_div_catch",
     width = 6.5,
-    height = 2.5
+    height = 2
   )
   
   # total primary production
@@ -607,7 +607,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "totpp",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 2.5)
+    height = ifelse(region == "NewEngland", 4, 2.5)
   )
   
   # 4. Zooplankton Diversity Plot
@@ -651,7 +651,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "exp_n",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3.5)
+    height = ifelse(region == "NewEngland", 4, 3.5)
   )
   
   #zooplankton community PCA
@@ -670,7 +670,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "zoo_community",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3.5)
+    height = ifelse(region == "NewEngland", 4 , 3.5)
   )
   
   
@@ -693,7 +693,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "traits",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3.5)
+    height = ifelse(region == "NewEngland", 3.5, 3.5)
   )
   
   #finfish traits - trophic level
@@ -712,7 +712,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "traits_tl",
     width = 6.5,
-    height = 4.5
+    height = 3.5
   )
   
   #finfish traits - growth rate
@@ -731,7 +731,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "traits_k",
     width = 6.5,
-    height = 4.5
+    height = 3.5
   )
   
   ## Community social and climate vulnerability ----
