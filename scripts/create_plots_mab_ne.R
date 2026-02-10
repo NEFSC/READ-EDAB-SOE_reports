@@ -811,11 +811,18 @@ create_plots_mab_and_ne <- function(region)
     plot_expression = {
       anomaly <- ecodata::plot_productivity_anomaly(report = region, 
                                            varName = "anomaly", 
-                                           plottype = "council") 
+                                           plottype = "council") +
+        ggplot2::ylab('Small fish per large fish \n biomass (anomaly)')+
+        ggplot2::guides(fill = ggplot2::guide_legend(ncol = 4, byrow =T))+
+        ggplot2::theme(legend.position = "bottom")
+        
       
       assessment <- ecodata::plot_productivity_anomaly(report = region, 
                                               varName = "assessment", 
-                                              plottype = "council") 
+                                              plottype = "council") +
+        ggplot2::guides(fill = ggplot2::guide_legend(ncol =4, byrow =T))+
+        ggplot2::theme(legend.position = "bottom")
+      
       if (region == "MidAtlantic") {
         ggpubr::ggarrange(
           anomaly,
@@ -832,7 +839,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "productivity_anomaly",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 9.5, 8.5)
+    height = ifelse(region == "NewEngland", 8.5, 8.5)
   )
   
   # condition factor
@@ -867,7 +874,7 @@ create_plots_mab_and_ne <- function(region)
     indicator = "condition",
     width = 6.5,
     #  height = 7
-    height = ifelse(region == "NewEngland", 10, 6)
+    height = ifelse(region == "NewEngland", 8.5, 5)
   )
   
   # # 5. Energy Density Plot
@@ -893,7 +900,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "foragebio",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 2.5)
+    height = ifelse(region == "NewEngland", 3.5, 2.5)
   )
   
   # 7. Benthos Plot
@@ -919,7 +926,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "benthos",
     width = 6.5,
-    height = 6
+    height = 4.5
   )
   
   # 8. Zooplankton Anomaly Plot
@@ -963,7 +970,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "zooplankton_anomaly",
     width = 6.5,
-    height = 7.5
+    height = 5
   )
   
   # Other ocean uses: offshore wind ----
@@ -997,7 +1004,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "advection_index",
     width = 6.5,
-    height = 4.5
+    height = 3
   )
   
   

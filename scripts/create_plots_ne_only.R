@@ -115,7 +115,7 @@ create_plots_ne <- function(region = "NewEngland")
       },
       indicator = "seabird_productivity",
       width = 6.5,
-      height = 2.5
+      height = 2
     )
   }
   
@@ -130,7 +130,7 @@ create_plots_ne <- function(region = "NewEngland")
       },
       indicator = "salmon",
       width = 6.5,
-      height = 4
+      height = 3
     )
   }
   

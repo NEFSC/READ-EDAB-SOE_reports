@@ -447,8 +447,7 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 <<repeat-child>>
 ```
 
-#### Future Considerations
-The processes that control fish productivity and mortality are dynamic and complex, and are the result of the interactions between multiple system drivers. If the observed changes to these processes outlined in this report are not considered when managing fisheries, there is an increased risk that short-term stock projections and rebuilding plans will be more uncertain and will not reflect the current stock productivity. To mitigate this risk, time series of stock productivity and ecosystem conditions are regularly reviewed and are used to select appropriate reference periods that inform projections and reference point estimation. Next generation stock assessment models have also expanded the capacity to incorporate ecosystem changes into scientific products that support fishery management. Increasingly, NEFSC stock assessments model time-varying processes and in some cases environmental time series are used directly to describe changing stock dynamics. Research efforts to understand system drivers, identify change points, and develop paths to use this information more effectively in stock assessment and management are ongoing.
+\newpage
 
 ## Other Ocean Uses: Offshore Wind
 
