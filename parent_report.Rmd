@@ -326,7 +326,14 @@ return_plot("calfin-cog", region = "NewEngland")
 return_plot("forageshifts", region = "BothReports")
 ```
 
-\newpage
+```{r}
+#| results = "asis",
+#| echo = FALSE
+
+if (params$region == 'NewEngland') {
+  cat("\\newpage")
+}
+```
 
 In contrast, [macrobenthos](https://noaa-edab.github.io/catalog/benthos_index.html) center of gravity has shifted west and south in the spring (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. [Large copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4)  (including *Calanus finmarchicus*) and euphausiids do not have long-term trends in their centers of gravity (Fig. \ref{fig:lgcopeall-cog}) (Fig. \ref{fig:euph-cog}), but small copepods show shifts eastward and northward. Some targeted species distributions may shift in response to these shifts in forage, copepod, and macrobenthos distributions.
 
@@ -429,6 +436,8 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 #### Future Considerations
 
 Species are reliant on environmental processes to dictate the timing of their behavior (e.g., phytoplankton bloom timing, thermal transition, or the duration of the cold pool). Some changes are episodic and have interannual variability, while others may be shifting away from a historic baseline on the scales of years to decades. Other species may rely on the general seasonal succession of environmental drivers (e.g., the timing of the fall turnover) to cue biological processes, and long-term trends in seasonal transitions are unlikely to reverse in coming years. Thus, timing shifts in migration or spawning may continue. Management actions that rely on effective alignment of fisheries availability and biological processes should continue to evaluate whether prior assumptions on seasonal timings still hold, and new indicators should be developed to monitor timing shifts for stocks.
+
+\newpage
 
 ### Risks to setting catch limits
 

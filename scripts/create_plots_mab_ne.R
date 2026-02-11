@@ -1022,7 +1022,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "seasonal_oisst_anom",
     width = 6.5,
-    height =  ifelse(region == 'MidAtlantic', 3.5, 5)
+    height =  ifelse(region == 'MidAtlantic', 3, 5)
   )
   
   # Seasonal Bottom Temp Anomaly - MAB ONLY
@@ -1054,7 +1054,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "bottom_temp_anom",
     width = 6.5,
-    height = ifelse(region == 'MidAtlantic',3.5,5)
+    height = ifelse(region == 'MidAtlantic',3,5)
   )
 }
 

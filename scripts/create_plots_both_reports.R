@@ -245,12 +245,14 @@ create_plots_both <- function(region = "BothReports")
     save_plot(
       plot_expression = {
         a <- ecodata::plot_cold_pool(varName = "cold_pool", n = 10)
-        b <- ecodata::plot_cold_pool(varName = "extent", n = 10)
+        b <- ecodata::plot_cold_pool(varName = "extent", n = 10)+
+          ggplot2::ylim(-32000,13000)
+          
         ggpubr::ggarrange(a, b, nrow = 2)
       },
       indicator = "cold_pool",
       width = 6.5,
-      height = 3.5
+      height = 4
     )
     
     # cold pool timing
