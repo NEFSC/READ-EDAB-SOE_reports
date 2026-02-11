@@ -1,5 +1,5 @@
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -109,6 +109,6 @@ Future commercial and recreational landings are likely to be driven by environme
 return_plot("nefsc-biomass-mab", region = "MidAtlantic")
 ```
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```
