@@ -9,15 +9,19 @@
 #### Indicators: Fish productivity and condition shifts
 Indicators of [fish productivity](https://noaa-edab.github.io/catalog/productivity_anomaly.html) are derived from observations (surveys) or models (stock assessments). Fish productivity declined during the 1990’s and 2000’s with declining production of summer flounder and has been variable since, as described by the small-fish-per-large-fish anomaly indicator (derived from NEFSC bottom trawl survey) (Fig. \ref{fig:productivity-anomaly}). Bluefish, black sea bass, and goosefish have sporadic years with large positive anomalies, but most years have small negative anomalies. This decline in fish productivity is also shown by a similar analysis based on stock assessment model outputs (recruitment per spawning stock biomass anomaly). Most species had positive recruitment anomalies in the 1990s and 1990s and are currently showing negative anomalies, indicating a decline in productivity. Fish productivity can be affected by parental condition, environmental conditions, timing and availability of prey for recruits, as well as retention of recruits within favorable habitat. High offshore advection during spawning seasons can reduce recruitment success and affect overall fish productivity.
 
+The health of individual fish (i.e., fish condition, measured as weight for a given length) can contribute to population productivity through improved growth, reproduction and survival. Mid-Atlantic [fish condition](https://noaa-edab.github.io/catalog/condition.html)  was generally high to very high prior to 2000, low to very low from 2001-2010 (concurrent with declines in productivity, Fig. \ref{fig:productivity-anomaly})), and mixed since 2011. In 2025, condition continued to be mixed, with general improvement since a relatively low condition year in 2021 (Fig. \ref{fig:mab-cf}). Preliminary analyses show that years dominated by small copepods and warmer spring temperatures may improve fish condition for Atlantic mackerel and butterfish. Similar environmental drivers may be important to other species.
+
 ```{r productivity-anomaly, fig.cap = return_caption(chunk_name = "productivity-anomaly", region = "MidAtlantic"), fig.width=6.5, fig.asp=0.6}
 return_plot("productivity-anomaly", region = "MidAtlantic")
 ```
 
-The health of individual fish (i.e., fish condition, measured as weight for a given length) can contribute to population productivity through improved growth, reproduction and survival. Mid-Atlantic [fish condition](https://noaa-edab.github.io/catalog/condition.html)  was generally high to very high prior to 2000, low to very low from 2001-2010 (concurrent with declines in productivity, Fig. \ref{fig:productivity-anomaly})), and mixed since 2011. In 2025, condition continued to be mixed, with general improvement since a relatively low condition year in 2021 (Fig. \ref{fig:mab-cf}). Preliminary analyses show that years dominated by small copepods and warmer spring temperatures may improve fish condition for Atlantic mackerel and butterfish. Similar environmental drivers may be important to other species.
+\newpage
 
 ```{r mab-cf, fig.cap = return_caption(chunk_name = "mab-cf", region = "MidAtlantic"), fig.width=6.5, fig.asp=.7}
 return_plot("mab-cf", region = "MidAtlantic")
 ```
+
+\newpage
 
 #### Drivers:
 
@@ -32,6 +36,8 @@ Forage fish [energy content](https://noaa-edab.github.io/catalog/energy_density.
 ```{r energy-density, fig.cap=return_caption(chunk_name = "energy-density", region = "MidAtlantic"),  fig.width = 6.5, fig.asp = 0.5}
 return_plot("energy-density", region = "MidAtlantic")
 ```
+
+\newpage
 
 Changes in the overall abundance of forage fish can influence managed species productivity as it relates to changes in food availability. A spatially-explicit [forage index](https://noaa-edab.github.io/catalog/forage_index.html) for the Mid-Atlantic shows a long term declining trend in fall, with higher forage biomass in fall than spring (Fig. \ref{fig:foragebio}). Forage biomass was highest during fall in the early-1980s. The decrease of fall forage biomass in the Mid-Atlantic may reduce the health and reproductive output of fish species. Additionally, this may be exacerbated by lower energy densities of prey, especially in years of higher water temperatures when metabolic demands are higher. 
 

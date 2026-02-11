@@ -839,7 +839,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "productivity_anomaly",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 8.5, 8.5)
+    height = ifelse(region == "NewEngland", 7.5, 7.5)
   )
   
   # condition factor
@@ -926,7 +926,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "benthos",
     width = 6.5,
-    height = 4.5
+    height = 4
   )
   
   # 8. Zooplankton Anomaly Plot
