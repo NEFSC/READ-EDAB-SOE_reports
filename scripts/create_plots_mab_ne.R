@@ -651,7 +651,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "exp_n",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 4, 3.5)
+    height = ifelse(region == "NewEngland", 3.5, 3)
   )
   
   #zooplankton community PCA
@@ -670,7 +670,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "zoo_community",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 4 , 3.5)
+    height = ifelse(region == "NewEngland", 3.5 , 3)
   )
   
   

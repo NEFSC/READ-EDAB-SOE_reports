@@ -53,6 +53,8 @@ return_plot("exp-n", region = "MidAtlantic")
 return_plot("zoo-community", region = "MidAtlantic")
 ```
 
+\newpage
+
 [Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, maximum body size, or fecundity, serve to synthesize change in complex, diverse communities by looking beyond species-specific trends. Furthermore, shifts in functional trait distributions for the fish community can indicate changes in  ecosystem-scale resilience. There is evidence of long-term change in trait distributions in the MAB, particularly in the fall season (Fig. \ref{fig:traits-k}) (Fig. \ref{fig:traits-tl}). The fall finfish community in the MAB is showing long-term shifts towards faster life history strategies with lower trophic levels, smaller offspring, younger age and shorter length at maturity, and faster growth rates.  This indicates shifts in a system increasingly composed of smaller, fast-growing species. The long-term trends in the spring season are, however, more equivocal, with some evidence in shifts towards slower life history strategies, including larger length-at-maturity and offspring size. The lack of trend in finfish diversity suggests that these changes in fish communities are not due to a change in the total number of species.
 
 ```{r traits-k, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-k", region = "MidAtlantic")}
