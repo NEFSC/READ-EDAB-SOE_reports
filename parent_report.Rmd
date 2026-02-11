@@ -469,11 +469,11 @@ As of January 2026, 38 offshore [wind development](https://noaa-edab.github.io/c
 
 Construction of these projects during 2025 affected fisheries managed by the [Mid-Atlantic] [New England] Fishery Management Council. There are eight additional projects that have Construction and Operations Plan (COP) approvals (three in Southern New England and five in the Mid-Atlantic/New York Bight) that could begin construction in 2026, however, construction schedules are highly uncertain at this time. Seven additional projects have submitted COPs and are pending approval, while the remaining projects are under the site assessment phase and have not submitted COPs to date (Fig. \ref{fig:wind-dev-cumul}).  
 
+With the first offshore wind energy projects now under construction and operation, all indicator analyses in this section follow a different reporting format than in previous years. Where previous years reported data for all lease areas, this year we investigate impacts of the six commercial scale projects currently under construction or operation, (i.e., Active Projects: South Fork Wind Farm, Revolution Wind, Sunrise Wind, Empire Wind 1, Vineyard Wind 1, and CVOW-Commercial). 
+
 ```{r wind-dev-cumul, fig.cap = return_caption(chunk_name = "wind-dev-cumul", region = "BothReports"), out.width='90%'}
 return_plot("wind-dev-cumul", region = "BothReports")
 ```
-
-With the first offshore wind energy projects now under construction and operation, all indicator analyses in this section follow a different reporting format than in previous years. Where previous years reported data for all lease areas, this year we investigate impacts of the six commercial scale projects currently under construction or operation, (i.e., Active Projects: South Fork Wind Farm, Revolution Wind, Sunrise Wind, Empire Wind 1, Vineyard Wind 1, and CVOW-Commercial). 
 
 ```{r}
 ## TODO: this is a workaround because this caption wasn't coming through in the chunk header
