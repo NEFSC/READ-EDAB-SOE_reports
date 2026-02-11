@@ -1,9 +1,9 @@
 
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
+# devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
 
 # region <- "NewEngland" #change to NewEngland to run for NE
-region <- "MidAtlantic" #change to NewEngland to run for NE
+# region <- "MidAtlantic" #change to NewEngland to run for NE
 
 ############################################
 #' Run all report plots
@@ -11,8 +11,8 @@ region <- "MidAtlantic" #change to NewEngland to run for NE
 #' This function creates all plots that are included in both the NE and MAB SOE Reports
 #'
 #' @param region Region for which to create report plots ("MidAtlantic" or "NewEngland")
-create_plots_mab_and_ne <- function(region)
-{
+create_plots_mab_and_ne <- function(region){
+
   out_dir <- here::here("images", region)
   
   if (!dir.exists(out_dir)) {
@@ -128,7 +128,7 @@ create_plots_mab_and_ne <- function(region)
   # climate vulnerability landings
   save_plot(
     plot_expression = {
-      ecodata::plot_community_climate_vulnerability(
+      ecodata::plot_community_risks(
         report = region,
         plottype = "regionland",
         n = 30
@@ -255,9 +255,9 @@ create_plots_mab_and_ne <- function(region)
   if (region == "MidAtlantic") {
     save_plot(
       plot_expression = {
-        plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)+
+        ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)+
           ggplot2::theme(panel.spacing = grid::unit(0, 'lines'),
-                         plot.margin = margin(0, 0, 0, 0)) 
+                         plot.margin = ggplot2::margin(0, 0, 0, 0)) 
       },
       indicator = "aggregate_biomass_mab",
       width = 6.5,
@@ -269,14 +269,14 @@ create_plots_mab_and_ne <- function(region)
     # georges bank
     save_plot(
       plot_expression = {
-        plot_aggregate_biomass(
+        ecodata::plot_aggregate_biomass(
           report = region,
           EPU = "GB",
           n = 10
         ) +
           ggplot2::theme(panel.spacing = grid::unit(0, 'lines'),
-                         plot.margin = margin(0, 0, 0, 0),
-                         strip.text = element_text(margin = margin(t = 0, b = 0))
+                         plot.margin = ggplot2::margin(0, 0, 0, 0),
+                         strip.text = ggplot2::element_text(margin = ggplot2::margin(t = 0, b = 0))
                          ) 
       },
       indicator = "aggregate_biomass_gb",
@@ -286,14 +286,14 @@ create_plots_mab_and_ne <- function(region)
     # gulf of maine
     save_plot(
       plot_expression = {
-        plot_aggregate_biomass(
+        ecodata::plot_aggregate_biomass(
           report = region,
           EPU = "GOM",
           n = 10
         ) +
           ggplot2::theme(panel.spacing = grid::unit(0, 'lines'),
-                         plot.margin = margin(0, 0, 0, 0),
-                         strip.text = element_text(margin = margin(t = 0, b = 0))
+                         plot.margin = ggplot2::margin(0, 0, 0, 0),
+                         strip.text = ggplot2::element_text(margin =ggplot2::margin(t = 0, b = 0))
           ) 
       },
       indicator = "aggregate_biomass_gom",
@@ -419,7 +419,7 @@ create_plots_mab_and_ne <- function(region)
   # 4. Climate Vulnerability Revenue Plot
   save_plot(
     plot_expression = {
-      ecodata::plot_community_climate_vulnerability(
+      ecodata::plot_community_risks(
         report = region,
         plottype = "regionrev",
         n = 24
@@ -767,7 +767,7 @@ create_plots_mab_and_ne <- function(region)
   # 3. Community Climate Vulnerability Exposure Plot
   save_plot(
     plot_expression = {
-      ecodata::plot_community_climate_vulnerability(
+      ecodata::plot_community_risks(
         report = region,
         n = 24
       ) +
@@ -1056,10 +1056,58 @@ create_plots_mab_and_ne <- function(region)
     width = 6.5,
     height = ifelse(region == 'MidAtlantic',3,5)
   )
+  
+  save_plot(
+    plot_expression = {
+      ecodata::plot_wind_port(report=region)
+                     # data = all_data) 
+    },
+    indicator = "wea_port_rev",
+    width = 6.5,
+    height = 7
+  )
+  
+  ## Mid plot -- NE ports landing majority Mid species
+  ## currently under MidAtlantic/newengland_mafmc
+  # save_plot(
+  #   plot_expression = {
+  #     ecodata::plot_wind_port(port_list = c("BARNSTABLE, MA",
+  #                                  "DAVISVILLE/NORTH KINGSTOWN, RI",
+  #                                  "EAST HAVEN, CT",
+  #                                  "NEW LONDON, CT",
+  #                                  "POINT JUDITH, RI",
+  #                                  "STONINGTON,CT",
+  #                                  "TIVERTON,RI"))
+  #   },
+  #   indicator = "wind_rev",
+  #   width = 6.5,
+  #   height = 4.5
+  # )
+  
+  ## NE plot - MAB ports landing majority NE species
+  ## currently under NewEngland/midatlantic_nefmc
+  # save_plot(
+  #   plot_expression = {
+  #     plot_wind_port(port_list = c("CAPE MAY, NJ",
+  #                                  "NEWPORT NEWS, VA",
+  #                                  "LONG BEACH (TOWN OF), NJ",
+  #                                  "POINT PLEASANT, NJ",
+  #                                  "BARNEGAT LIGHT, NJ",
+  #                                  "HAMPTON, VA",
+  #                                  "WILDWOOD, NJ",
+  #                                  "POINT LOOKOUT, NY",
+  #                                  "BRIELLE, NJ")) +
+  #       ggplot2::ggtitle("Port Revenue from Lease Areas, Majority NEFMC Species")
+  #   },
+  #   indicator = "wind-rev",
+  #   width = 6.5,
+  #   height = 4
+  # )
+  
 }
 
-create_plots_mab_and_ne(region = "NewEngland")
-create_plots_mab_and_ne(region = "MidAtlantic")
+# create_plots_mab_and_ne(region = "NewEngland")
+# create_plots_mab_and_ne(region = "MidAtlantic")
 
 ########################################
 ### NEW PLOT FUNCTION
@@ -1067,50 +1115,5 @@ create_plots_mab_and_ne(region = "MidAtlantic")
 ### THE NEW PLOTTING FUNCTION 'PLOT_WIND_PORT' IS IN PLOT-UPDATES BRANCH OF ECODATA.
 ### R/plot_wind_port.R
 
-save_plot(
-  plot_expression = {
-    plot_wind_port(report=region,
-                   data = all_data) 
-  },
-  indicator = "wea_port_rev",
-  width = 6.5,
-  height = 7
-)
 
-## Mid plot -- NE ports landing majority Mid species
-## currently under MidAtlantic/newengland_mafmc
-save_plot(
-  plot_expression = {
-    plot_wind_port(port_list = c("BARNSTABLE, MA",
-                                 "DAVISVILLE/NORTH KINGSTOWN, RI",
-                                 "EAST HAVEN, CT",
-                                 "NEW LONDON, CT",
-                                 "POINT JUDITH, RI",
-                                 "STONINGTON,CT",
-                                 "TIVERTON,RI"))
-  },
-  indicator = "wind_rev",
-  width = 6.5,
-  height = 4.5
-)
-
-## NE plot - MAB ports landing majority NE species
-## currently under NewEngland/midatlantic_nefmc
-save_plot(
-  plot_expression = {
-    plot_wind_port(port_list = c("CAPE MAY, NJ",
-                                 "NEWPORT NEWS, VA",
-                                 "LONG BEACH (TOWN OF), NJ",
-                                 "POINT PLEASANT, NJ",
-                                 "BARNEGAT LIGHT, NJ",
-                                 "HAMPTON, VA",
-                                 "WILDWOOD, NJ",
-                                 "POINT LOOKOUT, NY",
-                                 "BRIELLE, NJ")) +
-      ggplot2::ggtitle("Port Revenue from Lease Areas, Majority NEFMC Species")
-  },
-  indicator = "wind-rev",
-  width = 6.5,
-  height = 4
-)
 

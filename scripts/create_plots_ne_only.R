@@ -6,7 +6,7 @@
 #' @param region Region for which to create report plots ("NewEngland")
 #' 
 
-region <- "NewEngland"
+# region <- "NewEngland"
 create_plots_ne <- function(region = "NewEngland")
 {
   out_dir <- here::here("images", region)
@@ -146,4 +146,4 @@ create_plots_ne <- function(region = "NewEngland")
     )
   }
 }
-create_plots_ne(region = "NewEngland")
+# create_plots_ne(region = "NewEngland")

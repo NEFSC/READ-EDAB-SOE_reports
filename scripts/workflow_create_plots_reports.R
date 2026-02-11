@@ -20,21 +20,28 @@
 #' The input to plot_wind_port(data = 'all_data') 'all_data' is in '//nefscdata/SOE_ESP_Data/ej_indicator/2026_SOE/output'
 #' 
 #' It is recommended to install the latest version of ecodata prior to running this script. 
-#' @example devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
+#' @example devtools::install_github("NOAA-EDAB/ecodata", ref = "ab03f61")
 
 region <- "NewEngland" 
 region <- "MidAtlantic"
 region <- "BothReports"
 
+
+
+
+
 ## Run all MAB plots
+source(here::here('scripts','create_plots_mab_ne.R'))
 create_plots_mab_and_ne(region = "MidAtlantic")
 
 ## Run all NE plots
 create_plots_mab_and_ne(region = "NewEngland")
 
-## Run NE only plots
+                                                                                                                                                                                                                           ## Run NE only plots
+source(here::here('scripts','create_plots_ne_only.R'))
 create_plots_ne(region = "NewEngland")
 
 ## Run plots for Both Reports
+source(here::here('scripts','create_plots_both_reports.R'))
 create_plots_both(region = "BothReports")
 

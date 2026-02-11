@@ -7,7 +7,7 @@
 #'
 #' 
 
-region <- "BothReports"
+# region <- "BothReports"
 
 create_plots_both <- function(region = "BothReports")
 {
@@ -399,4 +399,4 @@ create_plots_both <- function(region = "BothReports")
     )
   }
 
-create_plots_both(region = "BothReports")
+# create_plots_both(region = "BothReports")
