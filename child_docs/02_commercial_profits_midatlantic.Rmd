@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -6,7 +6,7 @@
 <<ma-draft>>
 ```
 
-### Indicators: revenue (a proxy for profits)  
+### Indicators: revenue & net revenue  
 
 Total [commercial revenue](https://noaa-edab.github.io/catalog/comdat.html) and MAFMC managed species revenue (2024 USD) within the Mid-Atlantic Bight have declined over the past 20 years. In 2024, total revenue and MAFMC managed species revenue were both near an all-time low (Fig. \ref{fig:comm-revenue}).
 
@@ -30,6 +30,8 @@ return_plot("comdat-profit", region = "MidAtlantic")
 
 This year, we present new indicators of [profitability](https://noaa-edab.github.io/catalog/comdat_profit.html): indices of cost, revenue, and profit based on trips catching federally-managed species. In this index, costs pertain to trip costs, excluding labor, estimated for all federal trips in the region. The profit indicator is net-revenue, determined as the difference between trip revenue and trip costs. Trips were spatially allocated to compile regional indices. Indices are presented as values relative to 2000, the first year in the dataset. In the Mid-Atlantic, costs have fluctuated, but overall remain near the time series mean, despite some high costs in 2022, 2014 and 2008. Revenue, however, has declined steadily since 2019 and is driving an overall decline in profits  (Fig. \ref{fig:comdat-profit}). 
 
+\newpage
+
 For Mid-Atlantic ports, [total vulnerability](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) of revenue is high for the entire time series [(2000-2024)](#social-and-community-risks), with no long-term trend. This suggests that Mid-Atlantic port commercial fishing revenue is highly reliant on climate-sensitive species for the entire time period assessed (Fig. \ref{fig:climatevul-rev}). 
 
 ```{r climatevul-rev, fig.width=6.5, fig.asp=0.5, fig.cap=return_caption(chunk_name = "climatevul-rev", region = "MidAtlantic")}
@@ -39,7 +41,7 @@ return_plot("climatevul-rev", region = "MidAtlantic")
 ### Implications 
 Although the Mid-Atlantic region shows declining revenue since 2016, inflation-adjusted revenue from harvested species was still greater than 1982 levels until the past two years (Fig. \ref{fig:bennet}). However, revenue from MAFMC-managed species has been below 2000 levels in several of the past 24 years (Fig.  \ref{fig:comdat-profit}). The Bennet Index demonstrates that this decline is driven by lower volumes and there was no increase in price to compensate. Declines in landings of surfclams and ocean quahogs since 2012 are a result of decreased landings per unit effort over the same period, which may reflect changes in surfclam and quahog aggregation or distribution patterns. Changes in other indicators, particularly those driving landings and those related to climate change, require monitoring as they may become important drivers of revenue in the future.  Multiple stressors including [warming](https://noaa-edab.github.io/catalog/bottom_temp_insitu.html) and [ocean acidification](https://noaa-edab.github.io/catalog/ocean_acidification) are interacting in Mid-Atlantic shellfish habitats, particularly for surfclams, ocean quahogs, and scallops. This is reflected by the high environmental risk for landings from Mid-Atlantic ports.
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```
 

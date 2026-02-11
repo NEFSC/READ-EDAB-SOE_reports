@@ -2,8 +2,8 @@
 # reinstall ecodata
 devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
 
-region <- "NewEngland" #change to NewEngland to run for NE
-# region <- "MidAtlantic" #change to NewEngland to run for NE
+# region <- "NewEngland" #change to NewEngland to run for NE
+region <- "MidAtlantic" #change to NewEngland to run for NE
 
 ############################################
 #' Run all report plots
@@ -106,7 +106,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "total_landings",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3),
+    height = ifelse(region == "NewEngland", 5, 2.5),
   )
   
   # commercial landings
@@ -122,7 +122,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "commercial_landings",
     width = 6.5,
-    height = 7
+    height = ifelse(region == 'NewEngland', 7, 4.5)
   )
   
   # climate vulnerability landings
@@ -412,8 +412,8 @@ create_plots_mab_and_ne <- function(region)
       }
     },
     indicator = "bennet_all",
-    width = ifelse(region == "NewEngland", 9, 6.5),
-    height = 6.5
+    width = 6.5,
+    height = ifelse(region == "NewEngland", 6, 5)
   )
   
   # 4. Climate Vulnerability Revenue Plot
@@ -474,7 +474,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "comdat_profit",
     width = 6.5,
-    height = ifelse (region == "NewEngland", 8, 4.5)
+    height = ifelse (region == "NewEngland", 5, 3.5)
   )
   
   ## Recreational opportunities ----
