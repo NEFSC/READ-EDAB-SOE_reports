@@ -376,7 +376,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "bennet",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 6, 3)
+    height = ifelse(region == "NewEngland", 6, 2.5)
   ) 
   
   # bennet all
@@ -413,7 +413,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "bennet_all",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 6, 5)
+    height = ifelse(region == "NewEngland", 6, 4.5)
   )
   
   # 4. Climate Vulnerability Revenue Plot
