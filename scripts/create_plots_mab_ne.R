@@ -3,9 +3,9 @@
 # devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
 
 # region <- "NewEngland" #change to NewEngland to run for NE
-# region <- "MidAtlantic" #change to NewEngland to run for NE
+region <- "MidAtlantic" #change to NewEngland to run for NE
 
-############################################
+###########################################
 #' Run all report plots
 #'
 #' This function creates all plots that are included in both the NE and MAB SOE Reports
@@ -581,7 +581,7 @@ create_plots_mab_and_ne <- function(region){
           EPU = "MAB",
           n = 27
         )  +
-          ggplot2::coord_cartesian(ylim = c(2e+07, 4e+07), xlim = c(1998, 2023)) +
+          # ggplot2::coord_cartesian(ylim = c(2e+07, 4e+07), xlim = c(1998, 2023)) +
           ggplot2::ggtitle("MAB Primary Production") +
           ggplot2::ylab("Carbon (mt)")
       } else {
