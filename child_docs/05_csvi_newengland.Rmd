@@ -17,7 +17,7 @@ return_plot("commercial-engagement", region = "NewEngland")
 ```
 
 
-```{r comm-vuln}
+```{r comvultab, tab.cap = "Community Vulnerability factors for the top 10 commercially active New England Ports"}
 comm_vul_table |>
   flextable::fit_to_width(7.5)
 ```
@@ -26,7 +26,7 @@ comm_vul_table |>
 return_plot("recreational-engagement", region = "NewEngland")
 ```
 
-```{r rec-vuln}
+```{r recvultab, tab.cap = "Community Vulnerability factors for the top 10 recreationally engaged New England Ports"}
 rec_vul_table|>
   flextable::fit_to_width(7.5)
 ```

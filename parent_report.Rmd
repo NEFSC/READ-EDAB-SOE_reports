@@ -522,14 +522,10 @@ This section intends to provide a record of [noteworthy observations reported in
 The Northeast U.S. region experienced colder than average ocean temperatures, despite record warm [global](https://www.ncei.noaa.gov/news/global-climate-202513) ocean and air temperatures. Similar to 2024, oceanographic and ecological conditions reflected cooler water and changing species abundance, distribution, and timing.
 
 #### Northwest Atlantic Phenomena 
-The below average temperatures observed in 2024 persisted into 2025, although there are seasonal and local exceptions to this pattern. Anomalously cold surface conditions (Fig. \ref{fig:slopesea-bottom})(Fig. \ref{fig:slopesea})  were recorded throughout the Northeast Shelf and were widespread across the Slope Sea for much of the year, however the waters were not as fresh as recorded in 2024. Winter bottom temperatures were also below average across much of the Northeast Shelf (Fig. 96b). Multiple oceanographic and atmospheric factors can contribute to these cooler conditions including a more southerly Gulf Stream and higher proportions of Labrador Slope and Scotian Shelf water entering the system.
+The below average temperatures observed in 2024 persisted into 2025, although there are seasonal and local exceptions to this pattern. Anomalously cold surface conditions (Fig. \ref{fig:slopesea})  were recorded throughout the Northeast Shelf and were widespread across the Slope Sea for much of the year, however the waters were not as fresh as recorded in 2024. Winter bottom temperatures were also below average across much of the Northeast Shelf (Fig. 96b). Multiple oceanographic and atmospheric factors can contribute to these cooler conditions including a more southerly Gulf Stream and higher proportions of Labrador Slope and Scotian Shelf water entering the system.
 
-```{r slopesea-bottom, out.width="65%", fig.cap=return_caption(chunk_name = "slopesea-bottom", region = "BothReports"),fig.height= 3}
-return_plot("slopesea-bottom", region = "BothReports")
-```
-
-```{r slopesea, out.width="65%", fig.height = 3, fig.cap=return_caption(chunk_name = "slopesea", region = "BothReports")}
-return_plot("slopesea", region = "BothReports")
+```{r slopesea, out.width="100%", fig.cap=return_caption(chunk_name = "slopesea", region = "BothReports"),fig.height= 3}
+return_plot(c("slopesea","slopesea-bottom"), region = "BothReports")
 ```
 
 In 2024, the Gulf of Maine [source water](https://noaa-edab.github.io/catalog/slopewater.html) entering through the Northeast Channel was near equal proportions of Warm Slope Water and cooler Labrador Slope Water (Fig. 97); data are still being processed for 2025. The colder conditions [observed in 2024](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html) continued into 2025 and contributed to the increased size and colder temperatures of the Mid-Atlantic [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html). 
@@ -538,14 +534,10 @@ In 2024, the Gulf of Maine [source water](https://noaa-edab.github.io/catalog/sl
 return_plot("slopewater", region = "BothReports")
 ```
 
-2025 total primary production was below average in Georges Bank and the Mid-Atlantic due to lower phytoplankton biomass and cooler sea surface temperatures. [Phytoplankton biomass](https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp) (shown as chlorophyll a concentration) was also below average for much of 2025 (Fig. \ref{fig:chl-anom-apr})(Fig. \ref{fig:chl-anom-oct}). In particular, the winter-spring bloom period, which typically accounts for a significant proportion to total annual phytoplankton production, was shorter in duration and lower in magnitude across the entire Northeast shelf region. The fall bloom period was above average in the Gulf of Maine and Georges Bank, but near average in the Mid-Atlantic. 
+2025 total primary production was below average in Georges Bank and the Mid-Atlantic due to lower phytoplankton biomass and cooler sea surface temperatures. [Phytoplankton biomass](https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp) (shown as chlorophyll a concentration) was also below average for much of 2025 (Fig. \ref{fig:chl-anom}). In particular, the winter-spring bloom period, which typically accounts for a significant proportion to total annual phytoplankton production, was shorter in duration and lower in magnitude across the entire Northeast shelf region. The fall bloom period was above average in the Gulf of Maine and Georges Bank, but near average in the Mid-Atlantic. 
 
-```{r chl-anom-apr, out.width="65%", fig.cap=return_caption(chunk_name = "chl-anom-apr", region = "BothReports")}
-return_plot("chl-anom-apr", region = "BothReports")
-```
-
-```{r chl-anom-oct, out.width="65%", fig.cap=return_caption(chunk_name = "chl-anom-oct", region = "BothReports")}
-return_plot("chl-anom-oct", region = "BothReports")
+```{r chl-anom, out.width="100%", fig.cap=return_caption(chunk_name = "chl-anom-apr", region = "BothReports")}
+return_plot(name = c("chl-anom-apr","chl-anom-oct"), region = "BothReports")
 ```
 
 Hurricane Erin was the most notable storm in the region in 2025 and caused significant shoreside and oceanographic disturbances despite not making landfall in the Northeast. Its strong winds and large size caused mixing and weakened stratification throughout the Mid-Atlantic resulting in cooler than average surface waters across the shelf and into the Slope Sea. Along the coast, beaches from Maryland to Maine were closed due to rough surf, large waves, and rip currents, while coastal flooding led to road closures and several water rescues, particularly in New Jersey. Beach erosion was significant in some locations.
@@ -568,12 +560,8 @@ Several members of the fishing community noted changes in species composition, d
 
 In Chesapeake Bay, colder than average winter 2025 temperatures (Fig. 100) were reported by state agencies as a likely cause of higher blue crab mortality rates compared to the previous winter. Colder winters generally indicate good conditions for striped bass spawning, and while the striped bass juvenile index slightly improved, it was still well below the long-term average. Several years of low striped bass recruitment is a growing concern of fisheries managers. Factors that could be influencing striped bass include below average winter-to-spring freshwater flow and above average water temperatures combined with stressful dissolved oxygen values during the summer. The continued presence of invasive blue catfish and the effect they are having on blue crab, alosines, menhaden, and striped bass populations is also a management concern. 
 
-```{r chesapeake-jan, out.width="30%", fig.cap=return_caption(chunk_name = "chesapeake-jan", region = "BothReports")}
-return_plot("chesapeake-jan", region = "BothReports")
-```
-
-```{r chesapeake-apr, out.width="30%", fig.cap=return_caption(chunk_name = "chesapeake-apr", region = "BothReports")}
-return_plot("chesapeake-apr", region = "BothReports")
+```{r chesapeake-jan, out.width="50%", fig.cap=return_caption(chunk_name = "chesapeake-jan", region = "BothReports")}
+return_plot(c("chesapeake-jan","chesapeake-apr"), region = "BothReports")
 ```
 
 [Ocean acidification (OA)](https://noaa-edab.github.io/catalog/ocean_acidification.html)risk in 2025 in the Mid-Atlantic was relatively low. Compared to 2023 and 2024, there were only a few locations in 2025 where OA risk was high for Atlantic sea scallops (outer shelf, spring 2025 only), longfin squid (nearshore, summer 2025 only), and pteropods (nearshore and outer shelf, spring and summer). Gulf of Maine surface OA risk in 2025 was below 2024 levels, as indicated by aragonite saturation state (Ωa) at or near the climatological average (2006-2024).  

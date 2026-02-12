@@ -15,7 +15,7 @@ return_plot("commercial-engagement", region = "MidAtlantic")
 ```
 
 
-```{r comvultab}
+```{r comvultab, tab.cap = "Community Vulnerability factors for the top 10 commercially active Mid-Atlantic Ports"}
 comm_vul_table
 ```
 
@@ -26,7 +26,7 @@ return_plot("recreational-engagement", region = "MidAtlantic")
 ```
 
 
-```{r recvultab}
+```{r recvultab, tab.cap = "Community Vulnerability factors for the top 10 recreationally engaged Mid-Atlantic Ports"}
 rec_vul_table
 ```
 

@@ -1,0 +1,11 @@
+ref_key,source_file,source_line,recommendation
+tab:recvultab,./child_docs/05_csvi_midatlantic.Rmd,22,FOUND CHUNK: 'recvultab' in 05_csvi_midatlantic.Rmd (Line 29). RMarkdown adds 'fig:' automatically. Ensure chunk has a caption!
+tab:recvultab,./child_docs/05_csvi_newengland.Rmd,13,FOUND CHUNK: 'recvultab' in 05_csvi_midatlantic.Rmd (Line 29). RMarkdown adds 'fig:' automatically. Ensure chunk has a caption!
+tab:recvultab,child_docs/05_csvi_midatlantic.Rmd,22,FOUND CHUNK: 'recvultab' in 05_csvi_midatlantic.Rmd (Line 29). RMarkdown adds 'fig:' automatically. Ensure chunk has a caption!
+tab:recvultab,child_docs/05_csvi_newengland.Rmd,13,FOUND CHUNK: 'recvultab' in 05_csvi_midatlantic.Rmd (Line 29). RMarkdown adds 'fig:' automatically. Ensure chunk has a caption!
+fig:commercial-div-species-div,./child_docs/04_stability_midatlantic.Rmd,69,FOUND CHUNK: 'commercial-div-species-div' in 04_stability_midatlantic.Rmd (Line 23). RMarkdown adds 'fig:' automatically. Ensure chunk has a caption!
+fig:commercial-div-species-div,./child_docs/04_stability_newengland.Rmd,11,FOUND CHUNK: 'commercial-div-species-div' in 04_stability_midatlantic.Rmd (Line 23). RMarkdown adds 'fig:' automatically. Ensure chunk has a caption!
+fig:commercial-div-species-div,child_docs/04_stability_midatlantic.Rmd,69,FOUND CHUNK: 'commercial-div-species-div' in 04_stability_midatlantic.Rmd (Line 23). RMarkdown adds 'fig:' automatically. Ensure chunk has a caption!
+fig:commercial-div-species-div,child_docs/04_stability_newengland.Rmd,11,FOUND CHUNK: 'commercial-div-species-div' in 04_stability_midatlantic.Rmd (Line 23). RMarkdown adds 'fig:' automatically. Ensure chunk has a caption!
+fig:zooplankton-season,./child_docs/07_risk_setting_catch_limits_newengland.Rmd,69,No obvious match found.
+fig:zooplankton-season,child_docs/07_risk_setting_catch_limits_newengland.Rmd,69,No obvious match found.

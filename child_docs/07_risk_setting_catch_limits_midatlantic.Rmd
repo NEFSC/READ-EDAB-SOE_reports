@@ -80,7 +80,7 @@ return_plot("therm-hab-persist-2024", region = "BothReports")
 
 The newly-developed [advection index](https://noaa-edab.github.io/catalog/advection.html) (Fig. \ref{fig:advection-index}) shows total transport of water onto and off the continental shelf which can impact the survival of early life stages of fish and invertebrates. Long-term trends in the Mid-Atlantic show increased offshore movement of surface and bottom waters in June, which could decrease retention of some species. Further species level studies are needed to link spawning timing and larval periods to advection trends at the corresponding spatial and temporal scalesdepth and month.
 
-```{r advection-index, fig.cap = return_caption(chunk_name = "advection-index", region = "BothReports"), fig.width=6.5, fig.asp=.5}
+```{r advection-index, fig.cap = return_caption(chunk_name = "advection-index", region = "MidAtlantic"), fig.width=6.5, fig.asp=.5}
 return_plot("advection-index", region = "MidAtlantic")
 ```
 
