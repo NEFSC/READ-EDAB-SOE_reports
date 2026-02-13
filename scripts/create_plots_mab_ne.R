@@ -527,13 +527,15 @@ create_plots_mab_and_ne <- function(region){
         varName = "Fleet count",
         n = 22
       ) +
-        ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
+        ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))+
+        ggplot2::ggtitle(paste0(region2, ' Fleet Count'))
       b <- ecodata::plot_commercial_div(
         report = region,
         varName = "Fleet diversity in revenue",
         n = 22
       ) +
-        ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
+        ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))+
+        ggplot2::ggtitle(paste0(region2,' Fleet Diversity in Revenue'))
       ggpubr::ggarrange(a, b, nrow = 2)
     },
     indicator = "comm_div_fleet",
@@ -548,7 +550,8 @@ create_plots_mab_and_ne <- function(region){
         report = region,
         varName = "Permit revenue species diversity",
         n = 22
-      )
+      )+
+        ggplot2::ggtitle(paste0(region2,' Permit Revenue Species Diversity'))
       if (region == "MidAtlantic") {
         plt
       } else {
@@ -563,7 +566,8 @@ create_plots_mab_and_ne <- function(region){
   # 3. Recreational Diversity Catch Plot
   save_plot(
     plot_expression = {
-      ecodata::plot_recdat(report = region, varName = "catchdiversity", n = 10)
+      ecodata::plot_recdat(report = region, varName = "catchdiversity", n = 10)+
+        ggplot2::ggtitle('Recreational Diversity of Catch')
     },
     indicator = "recdat_div_catch",
     width = 6.5,
@@ -771,6 +775,7 @@ create_plots_mab_and_ne <- function(region){
         report = region,
         n = 24
       ) +
+        ggplot2::ylab('Proportion of Communities')+
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "commvulex",

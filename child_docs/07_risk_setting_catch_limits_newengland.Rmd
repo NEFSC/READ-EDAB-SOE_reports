@@ -93,9 +93,8 @@ The Gulf of Maine recorded five surface and three bottom marine cold spells in 2
 
 Lower ocean temperatures near long-term averages will affect species differently across the region. While cold-water species like cod may benefit from these conditions, warm-water species such as black sea bass are unlikely to see positive effects. This variability in regional cooling highlights the need for management to account for shifting species distributions and productivity.
 
-<!-- PLACEHOLDER COLD SPELL FIGURE -->
-```{r marine-cold-spells-ne, fig.cap = return_caption(chunk_name = "marine-cold-spells", region = "NewEngland"), fig.width=6.5, fig.asp=.4}
-return_plot("marine-cold-spells", region = "NewEngland")
+```{r mcs-bottom-gom, fig.cap = return_caption(chunk_name = "mcs-bottom-gom", region = "NewEngland"), fig.width=6.5, fig.asp=.4}
+return_plot("mcs-bottom-gom", region = "NewEngland")
 ```
 
 ```{r therm-hab-persist-2024-ne, fig.cap=return_caption(chunk_name = "therm-hab-persist-2024", region = "BothReports"), fig.width=6.5, fig.asp=0.4}

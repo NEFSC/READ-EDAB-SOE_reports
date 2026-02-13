@@ -69,9 +69,8 @@ A single surface [marine heatwave](https://noaa-edab.github.io/catalog/heatwave.
 
 Lower ocean temperatures near long-term averages will affect species differently across the region. While cold-water species like cod may benefit from these conditions, warm-water species such as black sea bass are unlikely to see positive effects. This variability in regional cooling highlights the need for management to account for shifting species distributions and productivity.
 
-<!-- COLD SPELL PLACEHOLDER FIG -->
-```{r marine-cold-spells, fig.cap = return_caption(chunk_name = "marine-cold-spells", region = "MidAtlantic"), fig.width=6.5, fig.asp=.5}
-return_plot("marine-cold-spells", region = "MidAtlantic")
+```{r mcs-bottom-mab, fig.cap = return_caption(chunk_name = "mcs-bottom-mab", region = "MidAtlantic"), fig.width=6.5, fig.asp=.5}
+return_plot(name = "mcs-bottom-mab", region = "MidAtlantic",mode = 'pdf')
 ```
 
 ```{r therm-hab-persist-2024, fig.cap = return_caption(chunk_name = "therm-hab-persist-2024", region = "BothReports"), fig.width=6.5, fig.asp=.5}

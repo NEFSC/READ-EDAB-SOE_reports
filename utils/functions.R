@@ -112,7 +112,13 @@ return_plot <- function(
   
   # 3. Use 'magick' to read and combine images
   #    This preserves original pixel dimensions (fixing the "shrinking" issue)
-  loaded_images <- magick::image_read(image_paths)
+  image_type = tools::file_ext(image_paths)
+  if(image_type[1] == 'pdf'){
+    loaded_images <- magick::image_read_pdf(image_paths)  
+  }else{
+    loaded_images <- magick::image_read(image_paths)
+  }
+  
   
   # stack = FALSE appends them horizontally (side-by-side)
   combined_image <- magick::image_append(loaded_images, stack = FALSE)

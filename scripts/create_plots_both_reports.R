@@ -131,7 +131,8 @@ create_plots_both <- function(region = "BothReports")
     save_plot(
       plot_expression = {
         ecodata::plot_narw(varName = "adult", n = 10) + 
-          ggplot2::ggtitle("North Atlantic right whale abundance") +
+          ggplot2::ggtitle("North Atlantic Right Whale Abundance") +
+          ggplot2::ylab('Number of Individuals')+
           ggplot2::scale_x_continuous(limits = c(1980, 2025))
       },
       indicator = "narw_abundance",
@@ -143,7 +144,8 @@ create_plots_both <- function(region = "BothReports")
     save_plot(
       plot_expression = {
         ecodata::plot_narw(varName = "calf", n = 10) +
-          ggplot2::ggtitle("North Atlantic right whale calf abundance")
+          ggplot2::ggtitle("North Atlantic Right Whale Calf Abundance")+
+          ggplot2::ylab('Number of Individuals')
       },
       indicator = "narw_calves",
       width = 6.5,
