@@ -293,7 +293,8 @@ create_plots_both <- function(region = "BothReports")
     save_plot(
       plot_expression = {
         # for both reports, even though function calls NE
-        ecodata::plot_slopewater(report = "NewEngland", n = 10)
+        ecodata::plot_slopewater(report = "NewEngland", n = 10)+
+          ggplot2::ggtitle('Slopewater Proportions in the Northeast Channel')
       },
       indicator = "slopewater",
       width = 6,

@@ -725,11 +725,11 @@ create_plots_mab_and_ne <- function(region){
       if (region == "MidAtlantic") {
         ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
           ggplot2::theme(legend.position = 'bottom') +
-          ggplot2::ylab('Growth coefficient (k)')
+          ggplot2::ylab('Growth Coefficient (k)')
       } else {
         ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
           ggplot2::theme(legend.position = 'bottom') +
-          ggplot2::ylab('Growth coefficient (k)') +
+          ggplot2::ylab('Growth Coefficient (k)') +
           ggplot2::facet_wrap(~EPU, nrow = 2)
       }
     },
@@ -790,7 +790,8 @@ create_plots_mab_and_ne <- function(region){
     plot_expression = {
       ecodata::plot_trans_dates(report = region, 
                                   varName = "length",
-                                  n = 10)
+                                  n = 10)+
+        ggplot2::ggtitle(paste0('Time Between Spring and Fall Transition: ',region2))
     },
     indicator = "transition_date",
     width = 6.5,
@@ -817,7 +818,8 @@ create_plots_mab_and_ne <- function(region){
       anomaly <- ecodata::plot_productivity_anomaly(report = region, 
                                            varName = "anomaly", 
                                            plottype = "council") +
-        ggplot2::ylab('Small fish per large fish \n biomass (anomaly)')+
+        ggplot2::ylab('Small Fish per Large Fish \n Biomass (Anomaly)')+
+        ggplot2::ggtitle(paste0(region2, ' Council: from Survey Data'))+
         ggplot2::guides(fill = ggplot2::guide_legend(ncol = 4, byrow =T))+
         ggplot2::theme(legend.position = "bottom")
         
@@ -860,11 +862,14 @@ create_plots_mab_and_ne <- function(region){
             plot.title = ggplot2::element_text(size = 12),
             legend.position = "bottom",
           ) +
-          ggplot2::guides(fill= ggplot2::guide_legend(nrow=2,byrow=TRUE))
+          ggplot2::guides(fill= ggplot2::guide_legend(nrow=2,byrow=TRUE))+
+          ggplot2::ggtitle('Relative Condition for Species Sampled in the MAB')
       } else {
-        gb <- ecodata::plot_condition(report = region, EPU = "GB") 
+        gb <- ecodata::plot_condition(report = region, EPU = "GB") +
+          ggplot2::ggtitle('Relative Condition for Species Sampled in GB')
         
-        gom <- ecodata::plot_condition(report = region, EPU = "GOM") 
+        gom <- ecodata::plot_condition(report = region, EPU = "GOM") +
+          ggplot2::ggtitle('Relative Condition for Species Sampled in the GOM')
         
         ggpubr::ggarrange(gb, gom, ncol = 1, common.legend = TRUE, legend = "bottom") +
           ggplot2::theme(
@@ -896,7 +901,8 @@ create_plots_mab_and_ne <- function(region){
   # 6. Forage Index Plot
   save_plot(
     plot_expression = {
-      plt <- ecodata::plot_forage_index(report = region, n = 10)
+      plt <- ecodata::plot_forage_index(report = region, n = 10)+
+        ggplot2::ylab('Relative Forage Biomass')
       if (region == "MidAtlantic") {
         plt
       } else {
@@ -916,11 +922,15 @@ create_plots_mab_and_ne <- function(region){
         varName = "Megabenthos",
         n = 10
       ) +
-        ggplot2::theme(legend.position = "none") 
+        ggplot2::theme(legend.position = "none") +
+        ggplot2::ylab('Biomass')+
+        ggplot2::ggtitle(paste0(region2, ': Megabenthos'))
       macrobenthos_plot <- ecodata::plot_benthos_index(
         report = region,
         varName = "Macrobenthos",
-        n = 10)
+        n = 10)+
+        ggplot2::ylab('Biomass')+
+        ggplot2::ggtitle(paste0(region2, ': Macrobenthos'))
       ggpubr::ggarrange(
         megabenthos_plot,
         macrobenthos_plot,
@@ -944,7 +954,8 @@ create_plots_mab_and_ne <- function(region){
       ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Large Copepods") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10),
+                       plot.title = ggplot2::element_text(margin = ggplot2::margin(b = -5)))
       small_copepod_plot <- ecodata::plot_zooplankton_index(
         report = region,
         varName = "Smallcopeall",
@@ -952,7 +963,8 @@ create_plots_mab_and_ne <- function(region){
       ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Small Copepods") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) 
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10),
+                       plot.title = ggplot2::element_text(margin = ggplot2::margin(b = -5))) 
       euphausiid_plot <- ecodata::plot_zooplankton_index(
         report = region,
         varName = "Euph",
@@ -963,7 +975,8 @@ create_plots_mab_and_ne <- function(region){
         ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Euphasiids") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) 
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10),
+                       plot.title = ggplot2::element_text(margin = ggplot2::margin(b = -5))) 
       ggpubr::ggarrange(
         large_copepod_plot,
         small_copepod_plot,
@@ -989,6 +1002,7 @@ create_plots_mab_and_ne <- function(region){
         plottype = "nofacets",
         n = 16
       )    +
+        ggplot2::ylab('Revenue (Missions $ in 2023 Value)')+
         ggplot2::theme(legend.position = "bottom") +
         if (region == "MidAtlantic") {
           ggplot2::ggtitle("Mid Atlantic: Fishery Revenue in Active Projects") 
@@ -1009,7 +1023,7 @@ create_plots_mab_and_ne <- function(region){
     },
     indicator = "advection_index",
     width = 6.5,
-    height = 3
+    height = 3.5
   )
   
   
