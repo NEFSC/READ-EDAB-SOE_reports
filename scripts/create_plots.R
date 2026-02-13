@@ -863,7 +863,7 @@ save_plot(
   indicator = "condition",
   width = 6.5,
  #  height = 7
-  height = ifelse(region == "NewEngland", 10, 6)
+  height = ifelse(region == "NewEngland", 8, 6)
 )
 
 # 5. Energy Density Plot

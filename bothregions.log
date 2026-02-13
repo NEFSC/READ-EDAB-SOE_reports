@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.26)  6 FEB 2026 17:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.26)  13 FEB 2026 10:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1406,15 +1406,12 @@ File: images/NewEngland/salmon_NewEngland_2026-02-02.png Graphic file (type png)
 Package pdftex.def Info: images/NewEngland/salmon_NewEngland_2026-02-02.png  used on input line 2120.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 [92 <./images/NewEngland/seabird_productivity_NewEngland_2026-02-02.png> <./images/NewEngland/salmon_NewEngland_2026-02-02.png>]
-<images/NewEngland/condition_NewEngland_2026-02-02.png, id=938, 469.755pt x 722.7pt>
-File: images/NewEngland/condition_NewEngland_2026-02-02.png Graphic file (type png)
-<use images/NewEngland/condition_NewEngland_2026-02-02.png>
-Package pdftex.def Info: images/NewEngland/condition_NewEngland_2026-02-02.png  used on input line 2131.
-(pdftex.def)             Requested size: 500.484pt x 769.97311pt.
-[93]
-Overfull \vbox (149.26689pt too high) has occurred while \output is active []
-
-[94 <./images/NewEngland/condition_NewEngland_2026-02-02.png>]
+<images/NewEngland/condition_NewEngland_2026-02-09.png, id=938, 469.755pt x 578.16pt>
+File: images/NewEngland/condition_NewEngland_2026-02-09.png Graphic file (type png)
+<use images/NewEngland/condition_NewEngland_2026-02-09.png>
+Package pdftex.def Info: images/NewEngland/condition_NewEngland_2026-02-09.png  used on input line 2131.
+(pdftex.def)             Requested size: 500.484pt x 615.97849pt.
+[93] [94 <./images/NewEngland/condition_NewEngland_2026-02-09.png>]
 <images/NewEngland/energy_density_NewEngland.png, id=951, 400.49625pt x 486.618pt>
 File: images/NewEngland/energy_density_NewEngland.png Graphic file (type png)
 <use images/NewEngland/energy_density_NewEngland.png>
@@ -1567,37 +1564,37 @@ Package pdftex.def Info: images/BothReports/slide_slopewater_BothReports_2026-01
 
 LaTeX Warning: Reference `fig:chl-anom-apr' on page 123 undefined on input line 2768.
 
-<images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png, id=1188, 491.31555pt x 481.19775pt>
+<images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png, id=1189, 491.31555pt x 481.19775pt>
 File: images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png>
 Package pdftex.def Info: images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png  used on input line 2772.
 (pdftex.def)             Requested size: 500.484pt x 490.17642pt.
 [123 <./images/BothReports/slide_slopewater_BothReports_2026-01-12.png>]
-<images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png, id=1195, 491.31555pt x 481.19775pt>
+<images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png, id=1196, 491.31555pt x 481.19775pt>
 File: images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png Graphic file (type png)
 <use images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png>
 Package pdftex.def Info: images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png  used on input line 2780.
 (pdftex.def)             Requested size: 500.484pt x 490.17642pt.
 [124 <./images/BothReports/Highlights_2026-CHL_Anomaly-202504-NES.png>] [125 <./images/BothReports/Highlights_2026-CHL_Anomaly-202510-NES.png>]
-<images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png, id=1208, 254.3904pt x 554.67226pt>
-File: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png Graphic file (type png)
-<use images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png>
-Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png  used on input line 2809.
-(pdftex.def)             Requested size: 500.484pt x 1091.3143pt.
+<images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png, id=1212, 127.1952pt x 277.39635pt>
+File: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png Graphic file (type png)
+<use images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png>
+Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png  used on input line 2809.
+(pdftex.def)             Requested size: 500.484pt x 1091.55124pt.
 [126]
-Overfull \vbox (438.60808pt too high) has occurred while \output is active []
+Overfull \vbox (438.84502pt too high) has occurred while \output is active []
 
-[127 <./images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png>]
-<images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png, id=1218, 254.3904pt x 554.67226pt>
-File: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png Graphic file (type png)
-<use images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png>
-Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png  used on input line 2817.
-(pdftex.def)             Requested size: 500.484pt x 1091.3143pt.
+[127 <./images/BothReports/Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png>]
+<images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png.png, id=1223, 127.1952pt x 277.39635pt>
+File: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png.png Graphic file (type png)
+<use images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png.png>
+Package pdftex.def Info: images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png.png  used on input line 2817.
+(pdftex.def)             Requested size: 500.484pt x 1091.55124pt.
 
-Overfull \vbox (481.60808pt too high) has occurred while \output is active []
+Overfull \vbox (481.84502pt too high) has occurred while \output is active []
 
-[128 <./images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png>] [129]
-<bothregions_files/figure-latex/docformat-1.pdf, id=1235, 445.665pt x 198.7425pt>
+[128 <./images/BothReports/Highlights_2026-SST_Anomaly-202504-Ches_Bay.png.png>] [129]
+<bothregions_files/figure-latex/docformat-1.pdf, id=1240, 445.665pt x 198.7425pt>
 File: bothregions_files/figure-latex/docformat-1.pdf Graphic file (type pdf)
 <use bothregions_files/figure-latex/docformat-1.pdf>
 Package pdftex.def Info: bothregions_files/figure-latex/docformat-1.pdf  used on input line 2842.
@@ -1634,17 +1631,17 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  23823 strings out of 467533
- 483761 string characters out of 5408559
+ 483849 string characters out of 5408559
  920664 words of memory out of 5000000
  51722 multiletter control sequences out of 15000+600000
  730212 words of font info for 236 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,15n,117p,2696b,716s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb>
-Output written on bothregions.pdf (128 pages, 27068193 bytes).
+Output written on bothregions.pdf (128 pages, 27087237 bytes).
 PDF statistics:
- 1644 PDF objects out of 1728 (max. 8388607)
- 1346 compressed objects within 14 object streams
+ 1649 PDF objects out of 1728 (max. 8388607)
+ 1351 compressed objects within 14 object streams
  367 named destinations out of 1000 (max. 500000)
  58523 words of extra memory for PDF output out of 61914 (max. 10000000)
 
