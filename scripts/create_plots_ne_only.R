@@ -111,7 +111,9 @@ create_plots_ne <- function(region = "NewEngland")
     save_plot(
       plot_expression = {
         ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
-          ggplot2::coord_cartesian(xlim = c(1991, 2025))
+          ggplot2::coord_cartesian(xlim = c(1991, 2025))+
+          ggplot2::ylab('Fledged Chicks per Nest')+
+          ggplot2::ggtitle('Common Tern Productivity')
       },
       indicator = "seabird_productivity",
       width = 6.5,

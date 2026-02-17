@@ -28,7 +28,7 @@ difftime(Sys.time(), now)
 now <- Sys.time()
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
-  output_file = "SOE2026_MAFMC_IR_V3.pdf",
+  output_file = "SOE2026_MAFMC_IR_Final.pdf",
   params = list(
     region = "MidAtlantic",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
@@ -52,7 +52,7 @@ difftime(Sys.time(), now)
 now <- Sys.time()
 rmarkdown::render(
   here::here("parent_report.Rmd"),
-  output_file = here::here("SOE2026_NEFMC_IR_V3.pdf"),
+  output_file = here::here("SOE2026_NEFMC_IR_Final.pdf"),
   params = list(
     region = "NewEngland",
     fig_caption = here::here("utils/figure_captions_summary.csv"),

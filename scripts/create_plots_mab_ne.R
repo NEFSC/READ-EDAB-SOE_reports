@@ -2,8 +2,8 @@
 # reinstall ecodata
 # devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
 
-# region <- "NewEngland" #change to NewEngland to run for NE
-region <- "MidAtlantic" #change to NewEngland to run for NE
+region <- "NewEngland" #change to NewEngland to run for NE
+# region <- "MidAtlantic" #change to NewEngland to run for NE
 
 ###########################################
 #' Run all report plots
@@ -213,14 +213,17 @@ create_plots_mab_and_ne <- function(region){
     plot_expression = {
       stock_status_plot <- ecodata::plot_stock_status(report = region)
       if (region == "MidAtlantic") {
-        stock_status_plot$p 
+        stock_status_plot$p +
+          ggplot2::theme(legend.direction = 'horizontal')
       } else {
-        stock_status_plot$p 
+        stock_status_plot$p+
+          ggplot2::scale_y_continuous(breaks = c(0,0.5,1,2,8))+
+          ggplot2::theme(legend.direction = 'horizontal')
       }
     },
     indicator = "stock_status",
     width = 6.5,
-    height = 6
+    height = 5.5
   )
   
   
@@ -395,6 +398,7 @@ create_plots_mab_and_ne <- function(region){
           EPU = "GB"
         ) +
           ggplot2::ylab("Million USD (2023)") +
+          ggplot2::ggtitle('Bennet Indicator: GB')+
           ggplot2::theme(
             axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
         gom <- ecodata::plot_bennet(
@@ -403,6 +407,7 @@ create_plots_mab_and_ne <- function(region){
           EPU = "GOM"
         ) +
           ggplot2::ylab("Million USD (2023)") +
+          ggplot2::ggtitle('Bennet Indicator: GOM')+
           ggplot2::theme(
             axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
             legend.position = "bottom")
@@ -747,7 +752,8 @@ create_plots_mab_and_ne <- function(region){
         report = region,
         varName = "Commercial"
       ) +
-        ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0)) 
+        ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0)) +
+        ggplot2::ggtitle(paste0('Top Commercial Port Activity: ',region2))
     },
     indicator = "commercial_engagement",
     width = 7,
@@ -761,7 +767,8 @@ create_plots_mab_and_ne <- function(region){
         report = region,
         varName = "Recreational"
       ) +
-        ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
+        ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))+
+        ggplot2::ggtitle(paste0('Top Recreational Port Activity: ',region2,' 2024'))
     },
     indicator = "recreational_engagement",
     width = 6.5,
@@ -1002,7 +1009,7 @@ create_plots_mab_and_ne <- function(region){
         plottype = "nofacets",
         n = 16
       )    +
-        ggplot2::ylab('Revenue (Missions $ in 2023 Value)')+
+        ggplot2::ylab('Revenue (Millions $ in 2023 Value)')+
         ggplot2::theme(legend.position = "bottom") +
         if (region == "MidAtlantic") {
           ggplot2::ggtitle("Mid Atlantic: Fishery Revenue in Active Projects") 
@@ -1033,8 +1040,10 @@ create_plots_mab_and_ne <- function(region){
       if(region == 'MidAtlantic'){
         ecodata::plot_seasonal_oisst_anom(report = region, n = 10) 
       }else{
-        a = ecodata::plot_seasonal_oisst_anom(report = region, n = 10, EPU = 'GOM')
-        b = ecodata::plot_seasonal_oisst_anom(report = region, n = 10, EPU = 'GB') 
+        a = ecodata::plot_seasonal_oisst_anom(report = region, n = 10, EPU = 'GOM')+
+          ggplot2::xlim(1982,2026)
+        b = ecodata::plot_seasonal_oisst_anom(report = region, n = 10, EPU = 'GB') +
+          ggplot2::xlim(1982,2026)
         ggpubr::ggarrange(a, b, nrow = 2,common.legend = T,legend = 'bottom')
       }
       
