@@ -3,7 +3,8 @@
 ## TODO: move flextable aesthetics into ecodata function
 tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for", region2, "communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.")
 
-comm_vul_table <- ecodata::plot_community_factors(report = params$region, varName = "Social", plottype = "Commercial") |>
+# Mid Atlantic Table
+comm_vul_table_ma <- ecodata::plot_community_factors(report = "MidAtlantic", varName = "Social", plottype = "Commercial") |>
   flextable::flextable() |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
                                pop_composition_rank = "Population Composition",
@@ -12,10 +13,23 @@ comm_vul_table <- ecodata::plot_community_factors(report = params$region, varNam
   flextable::set_caption(tbl_caption)|>
   flextable::autofit() 
 
+# New England Table
+comm_vul_table_ne <- ecodata::plot_community_factors(report = "NewEngland", varName = "Social", plottype = "Commercial") |>
+  flextable::flextable() |>
+  flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
+                               pop_composition_rank = "Population Composition",
+                               poverty_rank = "Poverty") |>
+  flextable::colformat_num(na_str = "-") |>
+  flextable::set_caption(tbl_caption)|>
+  flextable::autofit()
+
+
 ## rec vulnerability table
 ## TODO: move flextable aesthetics into ecodata function
 tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for", region2, "communities most engaged in recreational fishing, 2022. Blank spaces indicate no data available.")
-rec_vul_table <- ecodata::plot_community_factors(report = params$region, varName = "Social", plottype = "Recreational") |>
+
+# Mid Atlantic Table
+rec_vul_table_ma <- ecodata::plot_community_factors(report = params$region, varName = "Social", plottype = "Recreational") |>
   flextable::flextable() |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
                                pop_composition_rank = "Population Composition",
@@ -23,6 +37,16 @@ rec_vul_table <- ecodata::plot_community_factors(report = params$region, varName
   flextable::colformat_num(na_str = "-") |>
   flextable::set_caption(tbl_caption) |>
   flextable::autofit() 
+
+# New England Table
+rec_vul_table_ne <- ecodata::plot_community_factors(report = "NewEngland", varName = "Social", plottype = "Recreational") |>
+  flextable::flextable() |>
+  flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
+                               pop_composition_rank = "Population Composition",
+                               poverty_rank = "Poverty") |>
+  flextable::colformat_num(na_str = "-") |>
+  flextable::set_caption(tbl_caption) |>
+  flextable::autofit()
 
 # council <- dplyr::case_when(params$draft ~ c("MAFMC", "NEFMC"),
 #                             params$region == "MidAtlantic" ~ "MAFMC",

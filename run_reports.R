@@ -1,5 +1,5 @@
 ## both reports, for text edits (pdf) ----
-now <- Sys.time()
+now <- Sys.time() 
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
   output_file = "bothregions.pdf",
