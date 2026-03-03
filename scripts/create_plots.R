@@ -1174,9 +1174,9 @@ save_plot(
 save_plot(
   plot_expression = {
     a <- ecodata::plot_species_dist(varName = "along", n = 10) +
-      ggplot2::coord_cartesian(xlim = c(1969, 2021))
+      ggplot2::coord_cartesian(xlim = c(1969, 2025))
     b <- ecodata::plot_species_dist(varName = "depth", n = 10) +
-      ggplot2::coord_cartesian(xlim = c(1969, 2021))
+      ggplot2::coord_cartesian(xlim = c(1969, 2025))
     ggpubr::ggarrange(a, b, ncol = 2)
   },
   indicator = "species_dist",
