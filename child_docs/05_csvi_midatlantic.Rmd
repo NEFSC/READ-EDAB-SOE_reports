@@ -15,8 +15,8 @@ return_plot("commercial-engagement", region = "MidAtlantic")
 ```
 
 
-```{r comvultab, tab.cap = "Community Vulnerability factors for the top 10 commercially active Mid-Atlantic Ports"}
-comm_vul_table
+```{r comvultab, tab.cap = "Community Vulnerability factors for the municipalities housing the top 10 commercially active Mid-Atlantic Ports"}
+comm_vul_table_ma
 ```
 
 Of those included in the top-ranked recreational communities, both Morehead City, NC and Virginia Beach, VA had medium or higher ranks for at least one socio-demographic indicator (Table \ref{tab:recvultab}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
@@ -27,7 +27,7 @@ return_plot("recreational-engagement", region = "MidAtlantic")
 
 
 ```{r recvultab, tab.cap = "Community Vulnerability factors for the top 10 recreationally engaged Mid-Atlantic Ports"}
-rec_vul_table
+rec_vul_table_ma
 ```
 
 
