@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "ae539f2")
 
 # setup ----
 
@@ -734,11 +734,12 @@ save_plot(
 # 1. Commercial Engagement Plot
 save_plot(
   plot_expression = {
-    commercial_engagement_plot <- plot_engagement(
+    commercial_engagement_plot <- ecodata::plot_engagement(
       report = region,
       varName = "Commercial"
     ) +
-      ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0)) 
+      ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0),
+                     legend.title = ggplot2::element_blank()) 
   },
   indicator = "commercial_engagement",
   width = 7,
@@ -862,8 +863,7 @@ save_plot(
   },
   indicator = "condition",
   width = 6.5,
- #  height = 7
-  height = ifelse(region == "NewEngland", 8, 6)
+  height = ifelse(region == "NewEngland", 7, 6)
 )
 
 # 5. Energy Density Plot
