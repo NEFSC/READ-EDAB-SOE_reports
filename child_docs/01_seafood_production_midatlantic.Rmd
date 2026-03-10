@@ -1,5 +1,5 @@
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -20,6 +20,8 @@ return_plot("total-landings", region = "MidAtlantic")
 ```{r, comm-landings, fig.asp=1.6, fig.cap = return_caption(chunk_name = "comm-landings", region = "MidAtlantic")}
 return_plot("comm-landings", region = "MidAtlantic")
 ```
+
+\newpage
 
 Mid-Atlantic ports face a moderate to high risk from environmental variability, as evaluated by the 2025 [Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) (Fig. \ref{fig:climatevul-land}). These [indicators](#community-social-and-climate-vulnerability) assess port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much a region’s landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
 
@@ -109,6 +111,6 @@ Future commercial and recreational landings are likely to be driven by environme
 return_plot("nefsc-biomass-mab", region = "MidAtlantic")
 ```
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```

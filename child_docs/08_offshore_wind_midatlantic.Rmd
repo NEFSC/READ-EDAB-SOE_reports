@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -17,9 +17,19 @@ return_plot("wea-spp-rev", region = "MidAtlantic")
 Within Active Projects, the MAFMC managed fisheries most affected based on historic landings include longfin squid, monkfish, scup, Atlantic mackerel, and summer flounder, with a maximum of 6% of annual regional fishery revenue for chub mackerel occurring within Active Projects during 2008-2024, 5% for bluefish, 4% for butterfish, and 3% each for monkfish, scup, black sea bass, and longfin squid, respectively (see Table \ref{tab:wea-landings-rev}). Future offshore wind development may increase effects on these and additional species if more projects begin construction. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.
 
 ```{r wea-landings-rev, ft.arraystretch = 1}
+spp.mark = c('Chub Mackerel','Bluefish','Golden Tilefish')
+
 create_wea_landings_rev_table(council = "MAFMC") |>
+  dplyr::arrange(desc(`Maximum Percent Total Annual Regional Species Revenue`)) |> 
+  dplyr::slice_head(n = 10) |>
+  dplyr::mutate(
+    `NEFMC, MAFMC, and ASMFC Managed Species` = dplyr::case_when(
+      `NEFMC, MAFMC, and ASMFC Managed Species` %in% spp.mark ~ paste0(`NEFMC, MAFMC, and ASMFC Managed Species`, "*"),
+      TRUE ~ `NEFMC, MAFMC, and ASMFC Managed Species`
+    )
+  ) |>
   flextable::flextable() %>%
-  flextable::set_caption("Mid-Atlantic managed species Landings and Revenue from Wind Energy Areas. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species.") %>%
+  flextable::set_caption("Top 10 Mid-Atlantic managed species Landings and Revenue from Wind Energy Areas. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species.") %>%
   flextable::width(width = c(2,2,2))
 ```
 
@@ -39,6 +49,6 @@ If all proposed projects are developed, BOEM reports that cumulative offshore wi
 
 Top fishing communities with both landings from the Active Projects (i.e., Point Lookout, NY and Newport News, VA) and [socio-demographic or gentrification concerns](https://noaa-edab.github.io/catalog/engagement.html) should be recognized as having additional vulnerability from Active Projects. To reduce further social and economic impacts and aid in the resilience and adaptive capacity of these communities, this vulnerability should be considered in decision making. Historically, the introduction of new industries can trigger industrial and socioeconomic gentrification of fishing ports. Competition for port space and potential pivoting of space use for offshore wind development should be monitored closely to ensure fishing communities are not adversely impacted. Additionally, offshore wind could increase recreational fishing opportunities at the turbines, potentially creating a demand for additional tourism, recreational fishing and boating port space in communities already balancing these uses with commercial fishing infrastructure(e.g., Virginia Beach, VA, Montauk, NY and Barnegate Light, NJ.) Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```

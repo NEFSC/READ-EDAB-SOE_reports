@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -46,6 +46,6 @@ return_plot("climatevul-rev", region = "NewEngland")
 
 The overall volume of lobster and scallops, quahogs and surfclams dictates the revenue trends within the GB region. In the GOM, lobster prices are primarily responsible for relatively high revenues over the time series. Notably, both lobsters and scallops are sensitive to ocean warming and acidification and it is important to monitor the effects of these and other ecosystem drivers.
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```

@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -55,17 +55,18 @@ return_plot("foragebio", region = "NewEngland")
 
 [Benthic invertebrates](https://noaa-edab.github.io/catalog/benthos_index.html) are extremely important forage for some managed species (e.g., flatfish, juvenile cod and haddock) Macrobenthos indices show long term declines in spring. In contrast, megabenthos indices show long-term increases during the fall in both GB and GOM (Fig. \ref{fig:benthos-ne}). Fish productivity may be negatively impacted in recent years for fish such as flounders and juvenile fish that target macrobenthos such as small crustaceans and polychaetes in the spring, and positively impacted for fish such as larger skates, hakes and gadids that target megabenthos such as crabs.
 
-```{r benthos-ne, fig.cap=return_caption(chunk_name = "benthos", region = "NewEngland"), fig.width=6.5, fig.asp=.9}
-return_plot("benthos", region = "NewEngland")
-```
-
 ##### Biological Drivers: Lower trophic levels
 
 Phytoplankton are the foundation of the marine food web and are the primary food source for zooplankton and filter feeders such as shellfish. Multiple environmental and oceanographic drivers affect the abundance, composition, spatial distribution, and productivity of phytoplankton. While changes in phytoplankton productivity could affect fish productivity (including forage), there is no clear long-term trend in New England total primary production (Fig. \ref{fig:totpp-ne}).
 
 New England [zooplankton abundance](https://noaa-edab.github.io/catalog/zoo_abundance_anom.html) is shifting in ways that could impact fish condition and marine mammal prey availability. In the Gulf of Maine (GOM), increased small-bodied copepods and euphausiids are linked to improved condition in species like Atlantic mackerel, and baleen whales (humpback, sei, and fin) may benefit from long-term increases in prey availability, although euphausiid biomass has been recently high variable (Fig. 83). Conversely, large-bodied copepods in Georges Bank (GB) have declined recently. Zooplankton energy density varies by season and location, with high-energy large copepods peaking from April through  June. Since 2023, [zooplankton communities](https://noaa-edab.github.io/catalog/zoo_community.html) have reverted to compositions similar to pre-1990 and 2000-2011 periods; research is currently underway to determine the drivers and management implications of these shifts.
 
-*Calanus finmarchicus* abundance has declined in the GOM following a 2008 shift in oceanographic conditions, which poses a risk to the critically endangered North Atlantic right whale and key energy link in subarctic ecosystems. This lipid-rich copepod can comprise 71% of the total zooplankton biomass. Observations in the Wilkinson Basin indicate that the spring and summer abundance and biomass of Calanus in 2024 was comparable to 2005. However, [late-stage abundance](https://noaa-edab.github.io/catalog/wbts_zoo.html) has declined 64% in fall and 71% in winter. Consequently, overall mesozooplankton biomass in 2024 was only 27% of 2005 levels (Fig. \ref{fig:zooplankton-season}).  
+
+```{r benthos-ne, fig.cap=return_caption(chunk_name = "benthos", region = "NewEngland"), fig.width=6.5, fig.asp=.9}
+return_plot("benthos", region = "NewEngland")
+```
+
+*Calanus finmarchicus* abundance has declined in the GOM following a 2008 shift in oceanographic conditions, which poses a risk to the critically endangered North Atlantic right whale and key energy link in subarctic ecosystems. This lipid-rich copepod can comprise 71% of the total zooplankton biomass. Observations in the Wilkinson Basin indicate that the spring and summer abundance and biomass of Calanus in 2024 was comparable to 2005. However, [late-stage abundance](https://noaa-edab.github.io/catalog/wbts_zoo.html) has declined 64% in fall and 71% in winter. Consequently, overall mesozooplankton biomass in 2024 was only 27% of 2005 levels (Fig. \ref{fig:wbts-zoo}).  
 
 The seasonal differences in *Calanus* are driven by five factors:
 1. Late winter and early spring phytoplankton levels control reproductive output.
@@ -92,12 +93,11 @@ The Gulf of Maine recorded five surface and three bottom marine cold spells in 2
 
 Lower ocean temperatures near long-term averages will affect species differently across the region. While cold-water species like cod may benefit from these conditions, warm-water species such as black sea bass are unlikely to see positive effects. This variability in regional cooling highlights the need for management to account for shifting species distributions and productivity.
 
-<!-- PLACEHOLDER COLD SPELL FIGURE -->
-```{r marine-cold-spells-ne, fig.cap = return_caption(chunk_name = "marine-cold-spells", region = "NewEngland"), fig.width=6.5, fig.asp=.5}
-return_plot("marine-cold-spells", region = "NewEngland")
+```{r mcs-bottom-gom, fig.cap = return_caption(chunk_name = "mcs-bottom-gom", region = "NewEngland"), fig.width=6.5, fig.asp=.4}
+return_plot("mcs-bottom-gom", region = "NewEngland")
 ```
 
-```{r therm-hab-persist-2024-ne, fig.cap=return_caption(chunk_name = "therm-hab-persist-2024", region = "BothReports"), fig.width=6.5, fig.asp=0.5}
+```{r therm-hab-persist-2024-ne, fig.cap=return_caption(chunk_name = "therm-hab-persist-2024", region = "BothReports"), fig.width=6.5, fig.asp=0.4}
 return_plot("therm-hab-persist-2024", region = "BothReports")
 ```
 
@@ -109,7 +109,7 @@ return_plot("advection-index", region = "NewEngland")
 
 [Ocean acidification](https://noaa-edab.github.io/catalog/ocean_acidification.html) risks vary among species and include reduced survival, growth, reproduction, and productivity,reached record levels in 2024, though were moderated in 2025. Atlantic sea scallop and longfin squid faced high OA risk in Long Island Sound and the New Jersey shelf during the summers of 2016, 2018, 2019, 2023, and 2024, with 2024 marking the highest risk recorded since 2007. By 2025, risk levels decreased but still exceeded biological sensitivity limits for scallops on the New Jersey outer shelf in [spring](https://noaa-edab.github.io/catalog/ocean_acidification.html) and reached sensitivity limits for longfin squid in nearshore New Jersey waters during summer. These risks are heightened by cold-water CO2 absorption and the movement of high-CO2 water masses. While 2025 bottom temperatures remained as cool as 2024, higher salinity indicated a shift in water mass composition that resulted in lower overall OA risk compared to the previous two years.
 
-```{r mab-oa, eval = TRUE, out.width = '100%', fig.cap = return_caption(chunk_name = "mab-oa", region = "BothReports")}
+```{r mab-oa, eval = TRUE, out.width = '100%', fig.asp = 0.4, fig.cap = return_caption(chunk_name = "mab-oa", region = "BothReports")}
 return_plot("mab-oa", region = "BothReports")
 ```
 
@@ -125,6 +125,6 @@ The abundance and distribution of predators can affect both the productivity and
 
 The processes that control fish productivity and mortality are dynamic, complex, and the result of the interactions between multiple system drivers. There is a real risk that short-term predictions in assessments and rebuilding plans that assume unchanging underlying conditions will not be as effective, given the observed ecological and environmental process changes documented throughout the report. Assumptions for species’ growth, reproduction, and natural mortality should continue to be evaluated for individual species. With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval =FALSE, results = "asis"}
 <<child-footer>>
 ```

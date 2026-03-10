@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -30,7 +30,7 @@ return_plot("recdat-div-catch", region = "MidAtlantic")
 ```
 
 #### Ecological Stability
-Long-term changes in biological processes suggest the Mid-Atlantic ecosystem is experiencing a systemic shift. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html), a measure of the total amount of carbon (i.e., energy) produced by phytoplankton per year, has no clear trend (Fig. \ref{fig:totpp}), suggesting stability in energy at the base of the food web. However, we are monitoring for shifts in the phytoplankton community, which can affect the amount of primary production available to higher trophic levels. [Zooplankton diversity](https://noaa-edab.github.io/catalog/zoo_diversity.html) is increasing in the MAB, and measures of zooplankton community composition also indicate a long-term shift in [zooplankton communities](https://noaa-edab.github.io/catalog/zoo_communities.html) . Together, these indicators show a gradual but systemic change in lower trophic levels towards a community with a higher proportion of euphausiids and less dominated by copepods, which would not be expected in a stable ecosystem.
+Long-term changes in biological processes suggest the Mid-Atlantic ecosystem is experiencing a systemic shift. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html), a measure of the total amount of carbon (i.e., energy) produced by phytoplankton per year, has no clear trend (Fig. \ref{fig:totpp}), suggesting stability in energy at the base of the food web. However, we are monitoring for shifts in the phytoplankton community, which can affect the amount of primary production available to higher trophic levels. [Zooplankton diversity](https://noaa-edab.github.io/catalog/zoo_diversity.html) is increasing in the MAB, and measures of zooplankton community composition also indicate a long-term shift in [zooplankton communities](https://noaa-edab.github.io/catalog/zoo_community.html) . Together, these indicators show a gradual but systemic change in lower trophic levels towards a community with a higher proportion of euphausiids and less dominated by copepods, which would not be expected in a stable ecosystem.
 
 There are long-term increases in the biomass of the euphausid, benthivore, and benthos [guilds](https://noaa-edab.github.io/catalog/aggregate_biomass.html) (Fig. \ref{fig:nefsc-biomass-mab}). These lower trophic groups have similar roles within the ecosystem and these changes indicate a shift towards an ecosystem with a higher representation of those functional groups. [Adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html), the expected number of species in a standard number of individuals sampled from the NEFSC bottom trawl survey, appears stable over time, with current values within one standard deviation from most historic estimates (Fig. \ref{fig:exp-n}). This suggests that biomass increases in some guilds is due to an overall productivity increase rather than an influx of new species.
 
@@ -53,6 +53,8 @@ return_plot("exp-n", region = "MidAtlantic")
 return_plot("zoo-community", region = "MidAtlantic")
 ```
 
+\newpage
+
 [Functional traits](https://noaa-edab.github.io/catalog/finfish_traits.html), such as length at maturity, maximum body size, or fecundity, serve to synthesize change in complex, diverse communities by looking beyond species-specific trends. Furthermore, shifts in functional trait distributions for the fish community can indicate changes in  ecosystem-scale resilience. There is evidence of long-term change in trait distributions in the MAB, particularly in the fall season (Fig. \ref{fig:traits-k}) (Fig. \ref{fig:traits-tl}). The fall finfish community in the MAB is showing long-term shifts towards faster life history strategies with lower trophic levels, smaller offspring, younger age and shorter length at maturity, and faster growth rates.  This indicates shifts in a system increasingly composed of smaller, fast-growing species. The long-term trends in the spring season are, however, more equivocal, with some evidence in shifts towards slower life history strategies, including larger length-at-maturity and offspring size. The lack of trend in finfish diversity suggests that these changes in fish communities are not due to a change in the total number of species.
 
 ```{r traits-k, fig.width = 5, fig.asp=0.5, fig.cap= return_caption(chunk_name = "traits-k", region = "MidAtlantic")}
@@ -73,6 +75,6 @@ Production at the base of the food web is variable, but stable over time. Mid-At
 In the MAB, both the fisheries and ecosystem are exhibiting long-term systemic shifts away from historical norms. While these changes don’t appear abrupt like one would expect during a regime shift, they do indicate a potential change in baseline conditions.
 
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```

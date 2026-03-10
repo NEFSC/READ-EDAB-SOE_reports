@@ -6,7 +6,7 @@
 #' @param region Region for which to create report plots ("NewEngland")
 #' 
 
-region <- "NewEngland"
+# region <- "NewEngland"
 create_plots_ne <- function(region = "NewEngland")
 {
   out_dir <- here::here("images", region)
@@ -91,7 +91,7 @@ create_plots_ne <- function(region = "NewEngland")
     },
     indicator = "calfin_cog",
     width = 6.5,
-    height = 4
+    height = 2.75
   )
   
   # mass inshore survey -- NE only
@@ -111,11 +111,13 @@ create_plots_ne <- function(region = "NewEngland")
     save_plot(
       plot_expression = {
         ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
-          ggplot2::coord_cartesian(xlim = c(1991, 2025))
+          ggplot2::coord_cartesian(xlim = c(1991, 2025))+
+          ggplot2::ylab('Fledged Chicks per Nest')+
+          ggplot2::ggtitle('Common Tern Productivity')
       },
       indicator = "seabird_productivity",
       width = 6.5,
-      height = 2.5
+      height = 2
     )
   }
   
@@ -130,7 +132,7 @@ create_plots_ne <- function(region = "NewEngland")
       },
       indicator = "salmon",
       width = 6.5,
-      height = 4
+      height = 3
     )
   }
   
@@ -146,4 +148,4 @@ create_plots_ne <- function(region = "NewEngland")
     )
   }
 }
-create_plots_ne(region = "NewEngland")
+# create_plots_ne(region = "NewEngland")

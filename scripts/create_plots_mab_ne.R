@@ -1,18 +1,18 @@
 
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
+# devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
 
 region <- "NewEngland" #change to NewEngland to run for NE
-region <- "MidAtlantic" #change to NewEngland to run for NE
+# region <- "MidAtlantic" #change to NewEngland to run for NE
 
-############################################
+###########################################
 #' Run all report plots
 #'
 #' This function creates all plots that are included in both the NE and MAB SOE Reports
 #'
 #' @param region Region for which to create report plots ("MidAtlantic" or "NewEngland")
-create_plots_mab_and_ne <- function(region)
-{
+create_plots_mab_and_ne <- function(region){
+
   out_dir <- here::here("images", region)
   
   if (!dir.exists(out_dir)) {
@@ -106,7 +106,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "total_landings",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3),
+    height = ifelse(region == "NewEngland", 5, 2.5),
   )
   
   # commercial landings
@@ -122,13 +122,13 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "commercial_landings",
     width = 6.5,
-    height = 7
+    height = ifelse(region == 'NewEngland', 7, 4.5)
   )
   
   # climate vulnerability landings
   save_plot(
     plot_expression = {
-      ecodata::plot_community_climate_vulnerability(
+      ecodata::plot_community_risks(
         report = region,
         plottype = "regionland",
         n = 30
@@ -203,7 +203,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "rec_hms_NE",
     width = 6.5,
-    height = 4.5
+    height = 3
   )
   
   ### Implications ----
@@ -213,14 +213,17 @@ create_plots_mab_and_ne <- function(region)
     plot_expression = {
       stock_status_plot <- ecodata::plot_stock_status(report = region)
       if (region == "MidAtlantic") {
-        stock_status_plot$p 
+        stock_status_plot$p +
+          ggplot2::theme(legend.direction = 'horizontal')
       } else {
-        stock_status_plot$p 
+        stock_status_plot$p+
+          ggplot2::scale_y_continuous(breaks = c(0,0.5,1,2,8))+
+          ggplot2::theme(legend.direction = 'horizontal')
       }
     },
     indicator = "stock_status",
     width = 6.5,
-    height = 6
+    height = 5.5
   )
   
   
@@ -255,11 +258,13 @@ create_plots_mab_and_ne <- function(region)
   if (region == "MidAtlantic") {
     save_plot(
       plot_expression = {
-        plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)
+        ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)+
+          ggplot2::theme(panel.spacing = grid::unit(0, 'lines'),
+                         plot.margin = ggplot2::margin(0, 0, 0, 0)) 
       },
       indicator = "aggregate_biomass_mab",
       width = 6.5,
-      height = 7
+      height =6
     )
   }
   
@@ -267,29 +272,36 @@ create_plots_mab_and_ne <- function(region)
     # georges bank
     save_plot(
       plot_expression = {
-        plot_aggregate_biomass(
+        ecodata::plot_aggregate_biomass(
           report = region,
           EPU = "GB",
           n = 10
         ) +
-          ggplot2::theme(panel.spacing = grid::unit(0, 'lines')) 
+          ggplot2::theme(panel.spacing = grid::unit(0, 'lines'),
+                         plot.margin = ggplot2::margin(0, 0, 0, 0),
+                         strip.text = ggplot2::element_text(margin = ggplot2::margin(t = 0, b = 0))
+                         ) 
       },
       indicator = "aggregate_biomass_gb",
       width = 6.5,
-      height = 7
+      height = 6
     )
     # gulf of maine
     save_plot(
       plot_expression = {
-        plot_aggregate_biomass(
+        ecodata::plot_aggregate_biomass(
           report = region,
           EPU = "GOM",
           n = 10
-        ) 
+        ) +
+          ggplot2::theme(panel.spacing = grid::unit(0, 'lines'),
+                         plot.margin = ggplot2::margin(0, 0, 0, 0),
+                         strip.text = ggplot2::element_text(margin =ggplot2::margin(t = 0, b = 0))
+          ) 
       },
       indicator = "aggregate_biomass_gom",
       width = 6.5,
-      height = 7
+      height = 6
     )
   }
   
@@ -367,7 +379,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "bennet",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 6, 3)
+    height = ifelse(region == "NewEngland", 6, 2.5)
   ) 
   
   # bennet all
@@ -386,6 +398,7 @@ create_plots_mab_and_ne <- function(region)
           EPU = "GB"
         ) +
           ggplot2::ylab("Million USD (2023)") +
+          ggplot2::ggtitle('Bennet Indicator: GB')+
           ggplot2::theme(
             axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
         gom <- ecodata::plot_bennet(
@@ -394,6 +407,7 @@ create_plots_mab_and_ne <- function(region)
           EPU = "GOM"
         ) +
           ggplot2::ylab("Million USD (2023)") +
+          ggplot2::ggtitle('Bennet Indicator: GOM')+
           ggplot2::theme(
             axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
             legend.position = "bottom")
@@ -403,14 +417,14 @@ create_plots_mab_and_ne <- function(region)
       }
     },
     indicator = "bennet_all",
-    width = ifelse(region == "NewEngland", 9, 6.5),
-    height = 6.5
+    width = 6.5,
+    height = ifelse(region == "NewEngland", 6, 4.5)
   )
   
   # 4. Climate Vulnerability Revenue Plot
   save_plot(
     plot_expression = {
-      ecodata::plot_community_climate_vulnerability(
+      ecodata::plot_community_risks(
         report = region,
         plottype = "regionrev",
         n = 24
@@ -465,7 +479,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "comdat_profit",
     width = 6.5,
-    height = ifelse (region == "NewEngland", 8, 4.5)
+    height = ifelse (region == "NewEngland", 5, 3.5)
   )
   
   ## Recreational opportunities ----
@@ -518,13 +532,15 @@ create_plots_mab_and_ne <- function(region)
         varName = "Fleet count",
         n = 22
       ) +
-        ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
+        ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))+
+        ggplot2::ggtitle(paste0(region2, ' Fleet Count'))
       b <- ecodata::plot_commercial_div(
         report = region,
         varName = "Fleet diversity in revenue",
         n = 22
       ) +
-        ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
+        ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))+
+        ggplot2::ggtitle(paste0(region2,' Fleet Diversity in Revenue'))
       ggpubr::ggarrange(a, b, nrow = 2)
     },
     indicator = "comm_div_fleet",
@@ -539,7 +555,8 @@ create_plots_mab_and_ne <- function(region)
         report = region,
         varName = "Permit revenue species diversity",
         n = 22
-      )
+      )+
+        ggplot2::ggtitle(paste0(region2,' Permit Revenue Species Diversity'))
       if (region == "MidAtlantic") {
         plt
       } else {
@@ -548,17 +565,18 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "commercial_div_species_div",
     width = 6.5,
-    height = 2.5
+    height = 2
   )
   
   # 3. Recreational Diversity Catch Plot
   save_plot(
     plot_expression = {
-      ecodata::plot_recdat(report = region, varName = "catchdiversity", n = 10)
+      ecodata::plot_recdat(report = region, varName = "catchdiversity", n = 10)+
+        ggplot2::ggtitle('Recreational Diversity of Catch')
     },
     indicator = "recdat_div_catch",
     width = 6.5,
-    height = 2.5
+    height = 2
   )
   
   # total primary production
@@ -572,7 +590,7 @@ create_plots_mab_and_ne <- function(region)
           EPU = "MAB",
           n = 27
         )  +
-          ggplot2::coord_cartesian(ylim = c(2e+07, 4e+07), xlim = c(1998, 2023)) +
+          # ggplot2::coord_cartesian(ylim = c(2e+07, 4e+07), xlim = c(1998, 2023)) +
           ggplot2::ggtitle("MAB Primary Production") +
           ggplot2::ylab("Carbon (mt)")
       } else {
@@ -598,7 +616,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "totpp",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 2.5)
+    height = ifelse(region == "NewEngland", 4, 2.5)
   )
   
   # 4. Zooplankton Diversity Plot
@@ -642,7 +660,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "exp_n",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3.5)
+    height = ifelse(region == "NewEngland", 3.5, 3)
   )
   
   #zooplankton community PCA
@@ -661,7 +679,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "zoo_community",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3.5)
+    height = ifelse(region == "NewEngland", 3.5 , 3)
   )
   
   
@@ -684,7 +702,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "traits",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3.5)
+    height = ifelse(region == "NewEngland", 3.5, 3.5)
   )
   
   #finfish traits - trophic level
@@ -703,7 +721,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "traits_tl",
     width = 6.5,
-    height = 4.5
+    height = 3.5
   )
   
   #finfish traits - growth rate
@@ -712,17 +730,17 @@ create_plots_mab_and_ne <- function(region)
       if (region == "MidAtlantic") {
         ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
           ggplot2::theme(legend.position = 'bottom') +
-          ggplot2::ylab('Growth coefficient (k)')
+          ggplot2::ylab('Growth Coefficient (k)')
       } else {
         ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
           ggplot2::theme(legend.position = 'bottom') +
-          ggplot2::ylab('Growth coefficient (k)') +
+          ggplot2::ylab('Growth Coefficient (k)') +
           ggplot2::facet_wrap(~EPU, nrow = 2)
       }
     },
     indicator = "traits_k",
     width = 6.5,
-    height = 4.5
+    height = 3.5
   )
   
   ## Community social and climate vulnerability ----
@@ -734,7 +752,8 @@ create_plots_mab_and_ne <- function(region)
         report = region,
         varName = "Commercial"
       ) +
-        ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0)) 
+        ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0)) +
+        ggplot2::ggtitle(paste0('Top Commercial Port Activity: ',region2))
     },
     indicator = "commercial_engagement",
     width = 7,
@@ -748,7 +767,8 @@ create_plots_mab_and_ne <- function(region)
         report = region,
         varName = "Recreational"
       ) +
-        ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
+        ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))+
+        ggplot2::ggtitle(paste0('Top Recreational Port Activity: ',region2,' 2024'))
     },
     indicator = "recreational_engagement",
     width = 6.5,
@@ -758,10 +778,11 @@ create_plots_mab_and_ne <- function(region)
   # 3. Community Climate Vulnerability Exposure Plot
   save_plot(
     plot_expression = {
-      ecodata::plot_community_climate_vulnerability(
+      ecodata::plot_community_risks(
         report = region,
         n = 24
       ) +
+        ggplot2::ylab('Proportion of Communities')+
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "commvulex",
@@ -775,12 +796,13 @@ create_plots_mab_and_ne <- function(region)
   save_plot(
     plot_expression = {
       ecodata::plot_trans_dates(report = region, 
-                                varName = "length",
-                                n = 10)
+                                  varName = "length",
+                                  n = 10)+
+        ggplot2::ggtitle(paste0('Time Between Spring and Fall Transition: ',region2))
     },
     indicator = "transition_date",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 4, 2.5)
+    height = ifelse(region == "NewEngland", 3.5, 2.5)
   )
   
   # Monthly Chlorophyll Plot
@@ -802,11 +824,19 @@ create_plots_mab_and_ne <- function(region)
     plot_expression = {
       anomaly <- ecodata::plot_productivity_anomaly(report = region, 
                                            varName = "anomaly", 
-                                           plottype = "council") 
+                                           plottype = "council") +
+        ggplot2::ylab('Small Fish per Large Fish \n Biomass (Anomaly)')+
+        ggplot2::ggtitle(paste0(region2, ' Council: from Survey Data'))+
+        ggplot2::guides(fill = ggplot2::guide_legend(ncol = 4, byrow =T))+
+        ggplot2::theme(legend.position = "bottom")
+        
       
       assessment <- ecodata::plot_productivity_anomaly(report = region, 
                                               varName = "assessment", 
-                                              plottype = "council") 
+                                              plottype = "council") +
+        ggplot2::guides(fill = ggplot2::guide_legend(ncol =4, byrow =T))+
+        ggplot2::theme(legend.position = "bottom")
+      
       if (region == "MidAtlantic") {
         ggpubr::ggarrange(
           anomaly,
@@ -823,7 +853,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "productivity_anomaly",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 9.5, 8.5)
+    height = ifelse(region == "NewEngland", 7.5, 7.5)
   )
   
   # condition factor
@@ -839,11 +869,14 @@ create_plots_mab_and_ne <- function(region)
             plot.title = ggplot2::element_text(size = 12),
             legend.position = "bottom",
           ) +
-          ggplot2::guides(fill= ggplot2::guide_legend(nrow=2,byrow=TRUE))
+          ggplot2::guides(fill= ggplot2::guide_legend(nrow=2,byrow=TRUE))+
+          ggplot2::ggtitle('Relative Condition for Species Sampled in the MAB')
       } else {
-        gb <- ecodata::plot_condition(report = region, EPU = "GB") 
+        gb <- ecodata::plot_condition(report = region, EPU = "GB") +
+          ggplot2::ggtitle('Relative Condition for Species Sampled in GB')
         
-        gom <- ecodata::plot_condition(report = region, EPU = "GOM") 
+        gom <- ecodata::plot_condition(report = region, EPU = "GOM") +
+          ggplot2::ggtitle('Relative Condition for Species Sampled in the GOM')
         
         ggpubr::ggarrange(gb, gom, ncol = 1, common.legend = TRUE, legend = "bottom") +
           ggplot2::theme(
@@ -858,7 +891,7 @@ create_plots_mab_and_ne <- function(region)
     indicator = "condition",
     width = 6.5,
     #  height = 7
-    height = ifelse(region == "NewEngland", 10, 6)
+    height = ifelse(region == "NewEngland", 8.5, 5)
   )
   
   # # 5. Energy Density Plot
@@ -875,7 +908,8 @@ create_plots_mab_and_ne <- function(region)
   # 6. Forage Index Plot
   save_plot(
     plot_expression = {
-      plt <- ecodata::plot_forage_index(report = region, n = 10)
+      plt <- ecodata::plot_forage_index(report = region, n = 10)+
+        ggplot2::ylab('Relative Forage Biomass')
       if (region == "MidAtlantic") {
         plt
       } else {
@@ -884,7 +918,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "foragebio",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 2.5)
+    height = ifelse(region == "NewEngland", 3.5, 2.5)
   )
   
   # 7. Benthos Plot
@@ -895,11 +929,15 @@ create_plots_mab_and_ne <- function(region)
         varName = "Megabenthos",
         n = 10
       ) +
-        ggplot2::theme(legend.position = "none") 
+        ggplot2::theme(legend.position = "none") +
+        ggplot2::ylab('Biomass')+
+        ggplot2::ggtitle(paste0(region2, ': Megabenthos'))
       macrobenthos_plot <- ecodata::plot_benthos_index(
         report = region,
         varName = "Macrobenthos",
-        n = 10)
+        n = 10)+
+        ggplot2::ylab('Biomass')+
+        ggplot2::ggtitle(paste0(region2, ': Macrobenthos'))
       ggpubr::ggarrange(
         megabenthos_plot,
         macrobenthos_plot,
@@ -910,7 +948,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "benthos",
     width = 6.5,
-    height = 6
+    height = 4
   )
   
   # 8. Zooplankton Anomaly Plot
@@ -923,7 +961,8 @@ create_plots_mab_and_ne <- function(region)
       ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Large Copepods") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10),
+                       plot.title = ggplot2::element_text(margin = ggplot2::margin(b = -5)))
       small_copepod_plot <- ecodata::plot_zooplankton_index(
         report = region,
         varName = "Smallcopeall",
@@ -931,7 +970,8 @@ create_plots_mab_and_ne <- function(region)
       ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Small Copepods") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) 
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10),
+                       plot.title = ggplot2::element_text(margin = ggplot2::margin(b = -5))) 
       euphausiid_plot <- ecodata::plot_zooplankton_index(
         report = region,
         varName = "Euph",
@@ -942,7 +982,8 @@ create_plots_mab_and_ne <- function(region)
         ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Euphasiids") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) 
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10),
+                       plot.title = ggplot2::element_text(margin = ggplot2::margin(b = -5))) 
       ggpubr::ggarrange(
         large_copepod_plot,
         small_copepod_plot,
@@ -954,7 +995,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "zooplankton_anomaly",
     width = 6.5,
-    height = 7.5
+    height = 5
   )
   
   # Other ocean uses: offshore wind ----
@@ -968,6 +1009,7 @@ create_plots_mab_and_ne <- function(region)
         plottype = "nofacets",
         n = 16
       )    +
+        ggplot2::ylab('Revenue (Millions $ in 2023 Value)')+
         ggplot2::theme(legend.position = "bottom") +
         if (region == "MidAtlantic") {
           ggplot2::ggtitle("Mid Atlantic: Fishery Revenue in Active Projects") 
@@ -977,7 +1019,7 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "wind_revenue",
     width = 6.5,
-    height = 4
+    height = 3
   )
   
   # Advection Index
@@ -988,38 +1030,112 @@ create_plots_mab_and_ne <- function(region)
     },
     indicator = "advection_index",
     width = 6.5,
-    height = 4.5
+    height = 3.5
   )
   
   
   # Seasonal OISST Anomaly - MAB ONLY
   save_plot(
     plot_expression = {
-      ecodata::plot_seasonal_oisst_anom(report = region, n = 10) 
+      if(region == 'MidAtlantic'){
+        ecodata::plot_seasonal_oisst_anom(report = region, n = 10) 
+      }else{
+        a = ecodata::plot_seasonal_oisst_anom(report = region, n = 10, EPU = 'GOM')+
+          ggplot2::xlim(1982,2026)
+        b = ecodata::plot_seasonal_oisst_anom(report = region, n = 10, EPU = 'GB') +
+          ggplot2::xlim(1982,2026)
+        ggpubr::ggarrange(a, b, nrow = 2,common.legend = T,legend = 'bottom')
+      }
+      
     },
     indicator = "seasonal_oisst_anom",
     width = 6.5,
-    height = 4.5
+    height =  ifelse(region == 'MidAtlantic', 3, 5)
   )
   
   # Seasonal Bottom Temp Anomaly - MAB ONLY
   save_plot(
     plot_expression = {
-      ecodata::plot_bottom_temp_model_anom(report = region, 
-                                           n =10, 
-                                           varName = "seasonal", 
-                                           EPU = "MAB", 
-                                           plottype = "GLORYS") +
-        ggplot2::theme(legend.position = 'bottom')
+      if(region == 'MidAtlantic'){
+        ecodata::plot_bottom_temp_model_anom(report = region, 
+                                             n =10, 
+                                             varName = "seasonal", 
+                                             EPU = "MAB", 
+                                             plottype = "GLORYS") +
+          ggplot2::theme(legend.position = 'bottom')
+      }else{
+        a = ecodata::plot_bottom_temp_model_anom(report = region, 
+                                             n =10, 
+                                             varName = "seasonal", 
+                                             EPU = "GOM", 
+                                             plottype = "GLORYS") +
+          ggplot2::theme(legend.position = 'bottom')
+        b = ecodata::plot_bottom_temp_model_anom(report = region, 
+                                                       n =10, 
+                                                       varName = "seasonal", 
+                                                       EPU = "GB", 
+                                                       plottype = "GLORYS") +
+          ggplot2::theme(legend.position = 'bottom')
+        ggpubr::ggarrange(a, b, nrow = 2,common.legend = T,legend = 'bottom')
+      }
+
     },
     indicator = "bottom_temp_anom",
     width = 6.5,
-    height = 4.5
+    height = ifelse(region == 'MidAtlantic',3,5)
   )
+  
+  save_plot(
+    plot_expression = {
+      ecodata::plot_wind_port(report=region)
+                     # data = all_data) 
+    },
+    indicator = "wea_port_rev",
+    width = 6.5,
+    height = 7
+  )
+  
+  ## Mid plot -- NE ports landing majority Mid species
+  ## currently under MidAtlantic/newengland_mafmc
+  # save_plot(
+  #   plot_expression = {
+  #     ecodata::plot_wind_port(port_list = c("BARNSTABLE, MA",
+  #                                  "DAVISVILLE/NORTH KINGSTOWN, RI",
+  #                                  "EAST HAVEN, CT",
+  #                                  "NEW LONDON, CT",
+  #                                  "POINT JUDITH, RI",
+  #                                  "STONINGTON,CT",
+  #                                  "TIVERTON,RI"))
+  #   },
+  #   indicator = "wind_rev",
+  #   width = 6.5,
+  #   height = 4.5
+  # )
+  
+  ## NE plot - MAB ports landing majority NE species
+  ## currently under NewEngland/midatlantic_nefmc
+  # save_plot(
+  #   plot_expression = {
+  #     plot_wind_port(port_list = c("CAPE MAY, NJ",
+  #                                  "NEWPORT NEWS, VA",
+  #                                  "LONG BEACH (TOWN OF), NJ",
+  #                                  "POINT PLEASANT, NJ",
+  #                                  "BARNEGAT LIGHT, NJ",
+  #                                  "HAMPTON, VA",
+  #                                  "WILDWOOD, NJ",
+  #                                  "POINT LOOKOUT, NY",
+  #                                  "BRIELLE, NJ")) +
+  #       ggplot2::ggtitle("Port Revenue from Lease Areas, Majority NEFMC Species")
+  #   },
+  #   indicator = "wind-rev",
+  #   width = 6.5,
+  #   height = 4
+  # )
+  
 }
 
-create_plots_mab_and_ne(region = "NewEngland")
-create_plots_mab_and_ne(region = "MidAtlantic")
+# create_plots_mab_and_ne(region = "NewEngland")
+# create_plots_mab_and_ne(region = "MidAtlantic")
 
 ########################################
 ### NEW PLOT FUNCTION
@@ -1027,50 +1143,5 @@ create_plots_mab_and_ne(region = "MidAtlantic")
 ### THE NEW PLOTTING FUNCTION 'PLOT_WIND_PORT' IS IN PLOT-UPDATES BRANCH OF ECODATA.
 ### R/plot_wind_port.R
 
-save_plot(
-  plot_expression = {
-    plot_wind_port(report=region,
-                   data = all_data) 
-  },
-  indicator = "wea_port_rev",
-  width = 6.5,
-  height = 7
-)
 
-## Mid plot -- NE ports landing majority Mid species
-## currently under MidAtlantic/newengland_mafmc
-save_plot(
-  plot_expression = {
-    plot_wind_port(port_list = c("BARNSTABLE, MA",
-                                 "DAVISVILLE/NORTH KINGSTOWN, RI",
-                                 "EAST HAVEN, CT",
-                                 "NEW LONDON, CT",
-                                 "POINT JUDITH, RI",
-                                 "STONINGTON,CT",
-                                 "TIVERTON,RI"))
-  },
-  indicator = "wind_rev",
-  width = 6.5,
-  height = 4.5
-)
-
-## NE plot - MAB ports landing majority NE species
-## currently under NewEngland/midatlantic_nefmc
-save_plot(
-  plot_expression = {
-    plot_wind_port(port_list = c("CAPE MAY, NJ",
-                                 "NEWPORT NEWS, VA",
-                                 "LONG BEACH (TOWN OF), NJ",
-                                 "POINT PLEASANT, NJ",
-                                 "BARNEGAT LIGHT, NJ",
-                                 "HAMPTON, VA",
-                                 "WILDWOOD, NJ",
-                                 "POINT LOOKOUT, NY",
-                                 "BRIELLE, NJ")) +
-      ggplot2::ggtitle("Port Revenue from Lease Areas, Majority NEFMC Species")
-  },
-  indicator = "wind-rev",
-  width = 6.5,
-  height = 4
-)
 

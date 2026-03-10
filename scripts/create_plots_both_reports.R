@@ -7,7 +7,7 @@
 #'
 #' 
 
-region <- "BothReports"
+# region <- "BothReports"
 
 create_plots_both <- function(region = "BothReports")
 {
@@ -131,7 +131,8 @@ create_plots_both <- function(region = "BothReports")
     save_plot(
       plot_expression = {
         ecodata::plot_narw(varName = "adult", n = 10) + 
-          ggplot2::ggtitle("North Atlantic right whale abundance") +
+          ggplot2::ggtitle("North Atlantic Right Whale Abundance") +
+          ggplot2::ylab('Number of Individuals')+
           ggplot2::scale_x_continuous(limits = c(1980, 2025))
       },
       indicator = "narw_abundance",
@@ -143,7 +144,8 @@ create_plots_both <- function(region = "BothReports")
     save_plot(
       plot_expression = {
         ecodata::plot_narw(varName = "calf", n = 10) +
-          ggplot2::ggtitle("North Atlantic right whale calf abundance")
+          ggplot2::ggtitle("North Atlantic Right Whale Calf Abundance")+
+          ggplot2::ylab('Number of Individuals')
       },
       indicator = "narw_calves",
       width = 6.5,
@@ -169,11 +171,11 @@ create_plots_both <- function(region = "BothReports")
           ggplot2::coord_cartesian(xlim = c(1969, 2021))
         b <- ecodata::plot_species_dist(varName = "depth", n = 10) +
           ggplot2::coord_cartesian(xlim = c(1969, 2021))
-        ggpubr::ggarrange(a, b, ncol = 2)
+        ggpubr::ggarrange(a, b, ncol = 1)
       },
       indicator = "species_dist",
       width = 6.5,
-      height = 5
+      height = 3.5
     )
     
     # whale and dolphin dist shifts
@@ -197,7 +199,7 @@ create_plots_both <- function(region = "BothReports")
       },
       indicator = "forage_dist",
       width = 6.5,
-      height = 5
+      height = 2.75
     )
     
     # macrobenthos shifts
@@ -218,7 +220,7 @@ create_plots_both <- function(region = "BothReports")
       },
       indicator = "macrobenthos_dist",
       width = 6.5,
-      height = 5
+      height = 3
     )
     
     # longterm sst
@@ -245,12 +247,14 @@ create_plots_both <- function(region = "BothReports")
     save_plot(
       plot_expression = {
         a <- ecodata::plot_cold_pool(varName = "cold_pool", n = 10)
-        b <- ecodata::plot_cold_pool(varName = "extent", n = 10)
+        b <- ecodata::plot_cold_pool(varName = "extent", n = 10)+
+          ggplot2::ylim(-32000,13000)
+          
         ggpubr::ggarrange(a, b, nrow = 2)
       },
       indicator = "cold_pool",
       width = 6.5,
-      height = 5
+      height = 4
     )
     
     # cold pool timing
@@ -289,11 +293,12 @@ create_plots_both <- function(region = "BothReports")
     save_plot(
       plot_expression = {
         # for both reports, even though function calls NE
-        ecodata::plot_slopewater(report = "NewEngland", n = 10)
+        ecodata::plot_slopewater(report = "NewEngland", n = 10)+
+          ggplot2::ggtitle('Slopewater Proportions in the Northeast Channel')
       },
       indicator = "slopewater",
       width = 6,
-      height = 4
+      height = 3
     )
     
     # small cope center of gravity
@@ -309,7 +314,7 @@ create_plots_both <- function(region = "BothReports")
       },
       indicator = "smallcopeall_cog",
       width = 6.5,
-      height = 4
+      height = 3.5
     )
     
     # large cope center of gravity
@@ -325,7 +330,7 @@ create_plots_both <- function(region = "BothReports")
       },
       indicator = "lgcopeall_cog",
       width = 6.5,
-      height = 4
+      height = 3
     )
     
     # macrobenthos shifts
@@ -348,7 +353,7 @@ create_plots_both <- function(region = "BothReports")
       },
       indicator = "macrobenthos_dist",
       width = 6.5,
-      height = 3.5
+      height = 3
     )
     
     # megabenthos shifts
@@ -393,8 +398,8 @@ create_plots_both <- function(region = "BothReports")
       },
       indicator = "euph_cog",
       width = 6.5,
-      height = 4
+      height = 3
     )
   }
 
-create_plots_both(region = "BothReports")
+# create_plots_both(region = "BothReports")

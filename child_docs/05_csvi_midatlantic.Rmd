@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -15,8 +15,8 @@ return_plot("commercial-engagement", region = "MidAtlantic")
 ```
 
 
-```{r comvultab}
-comm_vul_table_ma
+```{r comvultab, tab.cap = "Community Vulnerability factors for the top 10 commercially active Mid-Atlantic Ports"}
+comm_vul_table
 ```
 
 Of those included in the top-ranked recreational communities, both Morehead City, NC and Virginia Beach, VA had medium or higher ranks for at least one socio-demographic indicator (Table \ref{tab:recvultab}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
@@ -26,8 +26,8 @@ return_plot("recreational-engagement", region = "MidAtlantic")
 ```
 
 
-```{r recvultab}
-rec_vul_table_ma
+```{r recvultab, tab.cap = "Community Vulnerability factors for the top 10 recreationally engaged Mid-Atlantic Ports"}
+rec_vul_table
 ```
 
 
@@ -49,6 +49,6 @@ A range of socioeconomic and environmental variability risk concerns are found t
 
 A majority of Mid-Atlantic communities have high to very high total environmental variability risk based on revenue. Coastal fishing communities are greatly affected by environmental change, both because of their physical location and because of their frequent social, cultural, and economic dependence on fishing. These impacts are expected to become more pressing as changes become more extensive. Changes in [ocean temperature](https://noaa-edab.github.io/catalog/bottom_temp_insitu.html) and [acidification](https://noaa-edab.github.io/catalog/ocean_acidification.html) affecting marine life have the potential to directly impact fisheries and fishery dependent livelihoods.
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```

@@ -80,7 +80,7 @@ cat('#', knitr::current_input())
 
 ```
 
-```{r child-footer, eval = params$id_child_docs, include = TRUE, results = "asis"}
+```{r child-footer, eval = params$id_child_docs, include = FALSE, results = "asis"}
 # paste("Ending", knitr::current_input())
 cat('# parent_report.Rmd')
 ```
@@ -88,8 +88,8 @@ cat('# parent_report.Rmd')
 \setcounter{page}{4}
 \thispagestyle{fancy}
 
-```{r, eval = params$draft, results = "asis"}
-cat("This is a draft report that presents all content from both New England and the Mid Atlantic. Several sections are shared between regions, and sections that differ for each region are marked with headers. Some text is shown in square brackets to indicate that that text will differ in the New England and Mid Atlatnic reports (e.g., [Mid Atlantic text] *or* [New England text]). Most figures are shown only once when they are exactly the same in each region's report, but in a few cases the figures are repeated and the figure numbers referenced in the text may refer the reader to the 'wrong' region. All of these editing quirks will be resolved in the final report.")
+```{r, eval = FALSE, results = "asis"}
+ cat("This is a draft report that presents all content from both New England and the Mid Atlantic. Several sections are shared between regions, and sections that differ for each region are marked with headers. Some text is shown in square brackets to indicate that that text will differ in the New England and Mid Atlatnic reports (e.g., [Mid Atlantic text] *or* [New England text]). Most figures are shown only once when they are exactly the same in each region's report, but in a few cases the figures are repeated and the figure numbers referenced in the text may refer the reader to the 'wrong' region. All of these editing quirks will be resolved in the final report.")
 ```
 
 # Introduction
@@ -138,6 +138,8 @@ The two main sections contain subsections for each management objective or poten
 ```{r, child = here::here("child_docs/management_tables.Rmd")}
 ```
 
+\newpage
+
 # Performance Relative to Fishery Management Objectives
 
 In this section, we examine indicators related to broad, ecosystem-level fishery management objectives. We also provide hypotheses on the implications of these trends—why we are seeing them, what’s driving them, and potential or observed regime shifts or changes in ecosystem structure. Identifying multiple drivers, regime shifts, and potential changes to ecosystem structure, as well as identifying the most vulnerable resources, can help managers determine whether anything needs to be done differently to meet objectives and how to prioritize upcoming issues/risks.
@@ -164,6 +166,8 @@ res <- knitr::knit_child(input = other_child,
 cat(res, sep = "\n\n")
 ```
 
+\newpage
+
 ## Commercial Profits
 
 ```{r}
@@ -178,6 +182,8 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 <<repeat-child>>
 ```
 
+\newpage
+
 ## Recreational Opportunities
 
 ```{r}
@@ -191,6 +197,8 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ```{r, eval = params$draft, results = "asis"}
 <<repeat-child>>
 ```
+
+\newpage
 
 ## Social and Community Risks
 
@@ -214,6 +222,8 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ```{r, eval = params$draft, results = "asis"}
 <<repeat-child>>
 ```
+
+\newpage
 
 ## Protected Species
 Fishery management objectives for protected species generally focus on reducing threats and on habitat conservation/restoration. Specific actions include managing bycatch to remain below potential biological removal (PBR) thresholds, recovering endangered populations, and monitoring unusual mortality events (UMEs). Protected species include marine mammals protected under the Marine Mammal Protection Act, endangered and threatened species protected under the Endangered Species Act, and migratory birds protected under the Migratory Bird Treaty Act. In the Northeast U.S., endangered/threatened species include Atlantic salmon, Atlantic and shortnose sturgeon, all sea turtle species, giant manta ray, oceanic whitetip shark, and five baleen whales. Here we report on performance relative to these objectives, as well as how observed and predicted ecosystem changes in the Northeast U.S may impact these objectives in the future.
@@ -254,11 +264,13 @@ Bycatch management measures have been implemented to maintain bycatch below PBR 
 return_plot("seals", region = "BothReports")
 ```
 
-Strong evidence exists to suggest that interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. Further, right whale distribution has changed since 2010. [Recent research](https://noaa-edab.github.io/catalog/narw.html) suggests that recent climate driven changes in ocean circulation have resulted in right whale distribution changes driven by increased warm water influx through the Northeast Channel, which has reduced the [primary right whale prey](https://noaa-edab.github.io/catalog/zoo_energy.html) (the copepod *Calanus finmarchicus*) in the central and eastern portions of the Gulf of Maine. Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat. Additional information can be found in the [offshore wind risks section](#other-ocean-uses-offshore-wind).
+Strong evidence exists to suggest that interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. Further, right whale distribution has changed since 2010. [Recent research](https://noaa-edab.github.io/catalog/narw.html) suggests that recent climate driven changes in ocean circulation have resulted in right whale distribution changes driven by increased warm water influx through the Northeast Channel, which has reduced the [primary right whale prey](https://noaa-edab.github.io/catalog/preyfield_energy.html) (the copepod *Calanus finmarchicus*) in the central and eastern portions of the Gulf of Maine. Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat. Additional information can be found in the [offshore wind risks section](#other-ocean-uses-offshore-wind).
 
 The UMEs are under investigation and are likely the result of multiple drivers. For all large whale UMEs, human interaction appears to have contributed to increased mortalities, although investigations are not complete.
 
 A climate vulnerability assessment (Lettrich et al. 2023) is published for Atlantic and Gulf marine mammal populations.
+
+\newpage
 
 ## Stability
 
@@ -273,6 +285,8 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ```{r, eval = params$draft, results = "asis"}
 <<repeat-child>>
 ```
+
+\newpage
 
 # Risks to Meeting Fishery Management Objectives
 
@@ -307,13 +321,20 @@ return_plot("megabenthosshifts", region = "BothReports")
 #### Drivers: 
 
 Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists.  Changes in managed species distribution is partially related to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts.  [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring. 
-
 ```{r calfin-cog, fig.cap = return_caption(chunk_name = "calfin-cog", region = "NewEngland"), fig.width = 7.5, fig.asp = .3, eval = params$region == 'NewEngland'}
 return_plot("calfin-cog", region = "NewEngland")
 ```
-
 ```{r forageshifts, fig.cap=return_caption(chunk_name = "forageshifts", region = "BothReports"), fig.width = 6.5, fig.asp = .3}
 return_plot("forageshifts", region = "BothReports")
+```
+
+```{r}
+#| results = "asis",
+#| echo = FALSE
+
+if (params$region == 'NewEngland') {
+  cat("\\newpage")
+}
 ```
 
 In contrast, [macrobenthos](https://noaa-edab.github.io/catalog/benthos_index.html) center of gravity has shifted west and south in the spring (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. [Large copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4)  (including *Calanus finmarchicus*) and euphausiids do not have long-term trends in their centers of gravity (Fig. \ref{fig:lgcopeall-cog}) (Fig. \ref{fig:euph-cog}), but small copepods show shifts eastward and northward. Some targeted species distributions may shift in response to these shifts in forage, copepod, and macrobenthos distributions.
@@ -334,18 +355,18 @@ return_plot("euph-cog", region = "BothReports")
 Ocean temperatures influence the distribution, seasonal timing, and productivity of managed species (see sections below). The Northeast US shelf, including the Mid-Atlantic, has experienced a continued warming trend for both the [long term annual sea surface](https://noaa-edab.github.io/catalog/long_term_sst.html) (Fig. \ref{fig:long-term-sst}) and [seasonal  surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) and [bottom temperature](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html). However, 2025 surface and bottom temperatures were near normal to cooler than normal conditions in all seasons in the MAB (see also the [2025 Highlights section](#highlights)).
 
 ```{r seasonal-oisst-anom, fig.cap=return_caption(chunk_name = "seasonal-oisst-anom", region = "MidAtlantic")}
-return_plot("seasonal-oisst-anom", region = "MidAtlantic")
+return_plot("seasonal-oisst-anom", region = params$region)
 ```
 
 ```{r bottom-temp-anom, fig.cap=return_caption(chunk_name = "bottom-temp-anom", region = "MidAtlantic")}
-return_plot("bottom-temp-anom", region = "MidAtlantic")
+return_plot("bottom-temp-anom", region = params$region)
 ```
+
+Species suitable habitat can expand or contract when changes in temperature and major oceanographic conditions alter distinct water mass habitats. The variability of the Gulf Stream is a major driver of the predominant oceanographic conditions of the Northeast U.S. continental shelf. As the [Gulf Stream](https://noaa-edab.github.io/catalog/gsi.html) had become less stable and was shifting northward until a recent shift in 2023. Since then, the Gulf Stream has been closer to the long-term average, and the supply of Labrador Slope Water to the Northwest Atlantic Shelf has increased. These changes are linked to some of the cooler water temperatures observed in 2024 and 2025 and the composition of the source water entering the Gulf of Maine through the Northeast Channel  (see [2025 Highlights](#highlights)).
 
 ```{r long-term-sst, fig.cap=return_caption(chunk_name = "long-term-sst", region = "BothReports")}
 return_plot("long-term-sst", region = "BothReports")
 ```
-
-Species suitable habitat can expand or contract when changes in temperature and major oceanographic conditions alter distinct water mass habitats. The variability of the Gulf Stream is a major driver of the predominant oceanographic conditions of the Northeast U.S. continental shelf. As the [Gulf Stream](https://noaa-edab.github.io/catalog/gsi.html) had become less stable and was shifting northward until a recent shift in 2023. Since then, the Gulf Stream has been closer to the long-term average, and the supply of Labrador Slope Water to the Northwest Atlantic Shelf has increased. These changes are linked to some of the cooler water temperatures observed in 2024 and 2025 and the composition of the source water entering the Gulf of Maine through the Northeast Channel  (see [2025 Highlights](#highlights)).
 
 ```{r GSI, fig.cap = return_caption(chunk_name = "GSI", region = "BothReports")}
 return_plot("GSI", region = "BothReports")
@@ -365,6 +386,8 @@ Distribution shifts caused by changes in thermal habitat and ocean circulation a
 
 Adapting management to changing stock distributions and dynamic ocean processes will require continued monitoring of populations in space and time while evaluating management measures against a range of possible future spatial distributions. The upcoming Climate Vulnerability Assessment 2.0 will also be incorporating MOM6 output and forecasts to help predict changes in species distributions and quantify species exposure to predicted future change. Processes like the [East Coast Coordination Group](https://www.mafmc.org/e3cg) and the HMS Climate Vulnerability Assessment can help coordinate management. 
 
+\newpage
+
 ### Risks to managing seasonally
 
 The effectiveness of seasonal management actions (fishing seasons or area opening/closing periods) depends on a proper alignment with the seasonal life cycle events (phenology) of fish stocks (e.g., migration and spawning timing). If not accounted for, changes in the timing of these biological cycles can reduce the effectiveness of seasonal management measures. The timing of seasonal patterns can also change the interactions between fisheries and non-target species thus influencing bycatch and the availability of species to surveys.
@@ -377,6 +400,8 @@ Indicators of phenological changes in fish populations require regular sampling 
 return_plot("spawntiming", region = "BothReports")
 ```
 
+\newpage
+
 [Migration timing](https://noaa-edab.github.io/catalog/timing_shifts.html) of some tuna and large whale migrations has changed. An analysis of recreational fishing data between 2019 and 2022 identified multiple shifts in important HMS species. For example, Bigeye tuna were caught 50 days earlier; small and large bluefin tuna were caught 38 and 80 days earlier respectively in Massachusetts; and blue marlin in New York were caught 27 days earlier. A separate analysis of acoustic telemetry data predicted delayed departure of southward-migrating sharks from the northeast region under future sea surface temperatures. These results are further supported by the Atlantic Highly Migratory Species Climate Vulnerability Assessment, which found that 57 of 58 highly migratory species and stocks have high or very high potential to shift distributions. In Cape Cod Bay, peak spring habitat use by right and humpback whales has shifted 18-19 days later over time.
 
 Understanding whether seasonal patterns are changing for stocks requires regular observations throughout the year. For example, baseline work on [cetacean presence in Southern New England](https://noaa-edab.github.io/catalog/cetacean_acoustic.html) shows different seasonal use patterns for whale and dolphin species. Despite the importance of understanding seasonal patterns,  we have few indicators that directly assess timing shifts of species. We plan on incorporating more indicators of timing shifts and phenology in future reports.
@@ -387,18 +412,16 @@ The drivers of timing shifts in managed stocks are generally coupled to shifts i
 
 Along with the overall warming trends in `r region`, ocean summer conditions have been lasting longer (Fig. \ref{fig:transition}) due to the earlier [transition](https://noaa-edab.github.io/catalog/trans_dates.html) from cool spring conditions to warm summer conditions and the later transition from warm summer conditions to cooler fall temperatures. These transition dates relate how daily temperatures compare to the seasonal norm. Changes in the timing of seasonal environmental cycles can alter biological processes (migrations, spawning, etc.) that are triggered by seasonal events.
 
-```{r transition, fig.cap=return_caption(chunk_name = "transition", region = "MidAtlantic"), fig.width=6.5, fig.asp=0.3}
+```{r transition, fig.cap=return_caption(chunk_name = "transition", region = params$region), fig.width=6.5, fig.asp=0.3}
  ## TODO: need to modify this to show both plots in draft mode
-return_plot("transition", region = "MidAtlantic")
+return_plot("transition", region = params$region)
 
  # if(params$draft){
  #   opp_region <- ifelse(params$region == "MidAtlantic", "NewEngland", "MidAtlantic")
  #   }
 ```
 
-```{r transition-ne, fig.cap=return_caption(chunk_name = "transition", region = "NewEngland"), fig.width=6.5, fig.asp=0.3}
-return_plot("transition", region = "NewEngland")
-```
+\newpage
 
 ```{r}
 base_child <- "06_risk_seasonal_"
@@ -415,6 +438,8 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 #### Future Considerations
 
 Species are reliant on environmental processes to dictate the timing of their behavior (e.g., phytoplankton bloom timing, thermal transition, or the duration of the cold pool). Some changes are episodic and have interannual variability, while others may be shifting away from a historic baseline on the scales of years to decades. Other species may rely on the general seasonal succession of environmental drivers (e.g., the timing of the fall turnover) to cue biological processes, and long-term trends in seasonal transitions are unlikely to reverse in coming years. Thus, timing shifts in migration or spawning may continue. Management actions that rely on effective alignment of fisheries availability and biological processes should continue to evaluate whether prior assumptions on seasonal timings still hold, and new indicators should be developed to monitor timing shifts for stocks.
+
+\newpage
 
 ### Risks to setting catch limits
 
@@ -433,8 +458,7 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 <<repeat-child>>
 ```
 
-#### Future Considerations
-The processes that control fish productivity and mortality are dynamic and complex, and are the result of the interactions between multiple system drivers. If the observed changes to these processes outlined in this report are not considered when managing fisheries, there is an increased risk that short-term stock projections and rebuilding plans will be more uncertain and will not reflect the current stock productivity. To mitigate this risk, time series of stock productivity and ecosystem conditions are regularly reviewed and are used to select appropriate reference periods that inform projections and reference point estimation. Next generation stock assessment models have also expanded the capacity to incorporate ecosystem changes into scientific products that support fishery management. Increasingly, NEFSC stock assessments model time-varying processes and in some cases environmental time series are used directly to describe changing stock dynamics. Research efforts to understand system drivers, identify change points, and develop paths to use this information more effectively in stock assessment and management are ongoing.
+\newpage
 
 ## Other Ocean Uses: Offshore Wind
 
@@ -447,11 +471,11 @@ As of January 2026, 38 offshore [wind development](https://noaa-edab.github.io/c
 
 Construction of these projects during 2025 affected fisheries managed by the [Mid-Atlantic] [New England] Fishery Management Council. There are eight additional projects that have Construction and Operations Plan (COP) approvals (three in Southern New England and five in the Mid-Atlantic/New York Bight) that could begin construction in 2026, however, construction schedules are highly uncertain at this time. Seven additional projects have submitted COPs and are pending approval, while the remaining projects are under the site assessment phase and have not submitted COPs to date (Fig. \ref{fig:wind-dev-cumul}).  
 
+With the first offshore wind energy projects now under construction and operation, all indicator analyses in this section follow a different reporting format than in previous years. Where previous years reported data for all lease areas, this year we investigate impacts of the six commercial scale projects currently under construction or operation, (i.e., Active Projects: South Fork Wind Farm, Revolution Wind, Sunrise Wind, Empire Wind 1, Vineyard Wind 1, and CVOW-Commercial). 
+
 ```{r wind-dev-cumul, fig.cap = return_caption(chunk_name = "wind-dev-cumul", region = "BothReports"), out.width='90%'}
 return_plot("wind-dev-cumul", region = "BothReports")
 ```
-
-With the first offshore wind energy projects now under construction and operation, all indicator analyses in this section follow a different reporting format than in previous years. Where previous years reported data for all lease areas, this year we investigate impacts of the six commercial scale projects currently under construction or operation, (i.e., Active Projects: South Fork Wind Farm, Revolution Wind, Sunrise Wind, Empire Wind 1, Vineyard Wind 1, and CVOW-Commercial). 
 
 ```{r}
 ## TODO: this is a workaround because this caption wasn't coming through in the chunk header
@@ -500,14 +524,10 @@ This section intends to provide a record of [noteworthy observations reported in
 The Northeast U.S. region experienced colder than average ocean temperatures, despite record warm [global](https://www.ncei.noaa.gov/news/global-climate-202513) ocean and air temperatures. Similar to 2024, oceanographic and ecological conditions reflected cooler water and changing species abundance, distribution, and timing.
 
 #### Northwest Atlantic Phenomena 
-The below average temperatures observed in 2024 persisted into 2025, although there are seasonal and local exceptions to this pattern. Anomalously cold surface conditions (Fig. \ref{fig:slopesea-bottom})(Fig. \ref{fig:slopesea})  were recorded throughout the Northeast Shelf and were widespread across the Slope Sea for much of the year, however the waters were not as fresh as recorded in 2024. Winter bottom temperatures were also below average across much of the Northeast Shelf (Fig. 96b). Multiple oceanographic and atmospheric factors can contribute to these cooler conditions including a more southerly Gulf Stream and higher proportions of Labrador Slope and Scotian Shelf water entering the system.
+The below average temperatures observed in 2024 persisted into 2025, although there are seasonal and local exceptions to this pattern. Anomalously cold surface conditions (Fig. \ref{fig:slopesea})  were recorded throughout the Northeast Shelf and were widespread across the Slope Sea for much of the year, however the waters were not as fresh as recorded in 2024. Winter bottom temperatures were also below average across much of the Northeast Shelf (Fig. 96b). Multiple oceanographic and atmospheric factors can contribute to these cooler conditions including a more southerly Gulf Stream and higher proportions of Labrador Slope and Scotian Shelf water entering the system.
 
-```{r slopesea-bottom, out.width="65%", fig.cap=return_caption(chunk_name = "slopesea-bottom", region = "BothReports")}
-return_plot("slopesea-bottom", region = "BothReports")
-```
-
-```{r slopesea, out.width="65%", fig.cap=return_caption(chunk_name = "slopesea", region = "BothReports")}
-return_plot("slopesea", region = "BothReports")
+```{r slopesea, out.width="100%", fig.cap=return_caption(chunk_name = "slopesea", region = "BothReports"),fig.height= 3}
+return_plot(c("slopesea","slopesea-bottom"), region = "BothReports")
 ```
 
 In 2024, the Gulf of Maine [source water](https://noaa-edab.github.io/catalog/slopewater.html) entering through the Northeast Channel was near equal proportions of Warm Slope Water and cooler Labrador Slope Water (Fig. 97); data are still being processed for 2025. The colder conditions [observed in 2024](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html) continued into 2025 and contributed to the increased size and colder temperatures of the Mid-Atlantic [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html). 
@@ -516,14 +536,10 @@ In 2024, the Gulf of Maine [source water](https://noaa-edab.github.io/catalog/sl
 return_plot("slopewater", region = "BothReports")
 ```
 
-2025 total primary production was below average in Georges Bank and the Mid-Atlantic due to lower phytoplankton biomass and cooler sea surface temperatures. [Phytoplankton biomass](https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp) (shown as chlorophyll a concentration) was also below average for much of 2025 (Fig. \ref{fig:chl-anom-apr})(Fig. \ref{fig:chl-anom-oct}). In particular, the winter-spring bloom period, which typically accounts for a significant proportion to total annual [phytoplankton production](https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp), was shorter in duration and lower in magnitude across the entire Northeast shelf region. The fall bloom period was above average in the Gulf of Maine and Georges Bank, but near average in the Mid-Atlantic. 
+2025 total primary production was below average in Georges Bank and the Mid-Atlantic due to lower phytoplankton biomass and cooler sea surface temperatures. [Phytoplankton biomass](https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp) (shown as chlorophyll a concentration) was also below average for much of 2025 (Fig. \ref{fig:chl-anom}). In particular, the winter-spring bloom period, which typically accounts for a significant proportion to total annual phytoplankton production, was shorter in duration and lower in magnitude across the entire Northeast shelf region. The fall bloom period was above average in the Gulf of Maine and Georges Bank, but near average in the Mid-Atlantic. 
 
-```{r chl-anom-apr, fig.asp=.5, fig.cap=return_caption(chunk_name = "chl-anom-apr", region = "BothReports")}
-return_plot("chl-anom-apr", region = "BothReports")
-```
-
-```{r chl-anom-oct, fig.asp=.5, fig.cap=return_caption(chunk_name = "chl-anom-oct", region = "BothReports")}
-return_plot("chl-anom-oct", region = "BothReports")
+```{r chl-anom, out.width="100%", fig.cap=return_caption(chunk_name = "chl-anom-apr", region = "BothReports")}
+return_plot(name = c("chl-anom-apr","chl-anom-oct"), region = "BothReports")
 ```
 
 Hurricane Erin was the most notable storm in the region in 2025 and caused significant shoreside and oceanographic disturbances despite not making landfall in the Northeast. Its strong winds and large size caused mixing and weakened stratification throughout the Mid-Atlantic resulting in cooler than average surface waters across the shelf and into the Slope Sea. Along the coast, beaches from Maryland to Maine were closed due to rough surf, large waves, and rip currents, while coastal flooding led to road closures and several water rescues, particularly in New Jersey. Beach erosion was significant in some locations.
@@ -546,12 +562,8 @@ Several members of the fishing community noted changes in species composition, d
 
 In Chesapeake Bay, colder than average winter 2025 temperatures (Fig. 100) were reported by state agencies as a likely cause of higher blue crab mortality rates compared to the previous winter. Colder winters generally indicate good conditions for striped bass spawning, and while the striped bass juvenile index slightly improved, it was still well below the long-term average. Several years of low striped bass recruitment is a growing concern of fisheries managers. Factors that could be influencing striped bass include below average winter-to-spring freshwater flow and above average water temperatures combined with stressful dissolved oxygen values during the summer. The continued presence of invasive blue catfish and the effect they are having on blue crab, alosines, menhaden, and striped bass populations is also a management concern. 
 
-```{r chesapeake-jan, fig.width = 2.5, fig.height = 4.5, fig.cap=return_caption(chunk_name = "chesapeake-jan", region = "BothReports")}
-return_plot("chesapeake-jan", region = "BothReports")
-```
-
-```{r chesapeake-apr, fig.width = 2.5, fig.height = 4.5, fig.cap=return_caption(chunk_name = "chesapeake-apr", region = "BothReports")}
-return_plot("chesapeake-apr", region = "BothReports")
+```{r chesapeake-jan, out.width="50%", fig.cap=return_caption(chunk_name = "chesapeake-jan", region = "BothReports")}
+return_plot(c("chesapeake-jan","chesapeake-apr"), region = "BothReports")
 ```
 
 [Ocean acidification (OA)](https://noaa-edab.github.io/catalog/ocean_acidification.html)risk in 2025 in the Mid-Atlantic was relatively low. Compared to 2023 and 2024, there were only a few locations in 2025 where OA risk was high for Atlantic sea scallops (outer shelf, spring 2025 only), longfin squid (nearshore, summer 2025 only), and pteropods (nearshore and outer shelf, spring and summer). Gulf of Maine surface OA risk in 2025 was below 2024 levels, as indicated by aragonite saturation state (Ωa) at or near the climatological average (2006-2024).  
