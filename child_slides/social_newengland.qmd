@@ -15,7 +15,7 @@ return_plot("commercial-engagement", region = "NewEngland", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r}
-ecodata::plot_engagement(report = 'NewEngland',varName = 'Commercial',plottype = 'Social')
+ecodata::plot_engagement(report = 'NewEngland',varName = 'Commercial')
 ```
 
 :::
@@ -67,7 +67,7 @@ return_plot("recreational-engagement", region = "NewEngland", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r}
-ecodata::plot_engagement(varName = "Recreational",report = 'NewEngland', plottype = 'Social')
+ecodata::plot_engagement(varName = "Recreational",report = 'NewEngland')
 ```
 
 :::

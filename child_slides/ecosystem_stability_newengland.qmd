@@ -20,8 +20,7 @@ return_plot("totpp", region = "NewEngland", mode = "slide")
 
 
 ```{r}
-#| fig-cap: "Left = GB, right = GOM"
-return_plot("zoo-comm", region = "NewEngland", mode = "slide")
+return_plot("zoo-community", region = "NewEngland", mode = "slide")
 ```
 
 :::
