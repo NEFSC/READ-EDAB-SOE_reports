@@ -915,7 +915,7 @@ save_plot(
   },
   indicator = "benthos",
   width = 6.5,
-  height = 6
+  height = 4
 )
 
 # 8. Zooplankton Anomaly Plot
@@ -1342,7 +1342,6 @@ save_plot(
       varName = "Macrobenthos",
       n = 10
     ) +
-      ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
       ggplot2::ggtitle("Northeast U.S. Macrobenthos Distribution") +
       ggplot2::ylab("Center of Gravity, km") +
     ggplot2::theme(legend.position = 'bottom') +
@@ -1365,7 +1364,6 @@ save_plot(
       varName = "Megabenthos",
       n = 10
     ) +
-      # ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
       ggplot2::ggtitle("Northeast U.S. Megabenthos Distribution") +
       ggplot2::ylab("Center of Gravity, km") +
       ggplot2::facet_grid(
