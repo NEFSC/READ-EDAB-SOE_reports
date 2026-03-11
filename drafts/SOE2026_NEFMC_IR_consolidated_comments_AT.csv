@@ -1,0 +1,166 @@
+Author,Page,Date,Type,Subject,Comment
+Chris Legault,2,2026-02-20 09:06:45,highlight,Comment on Text,This statement does not match the symbol to the left which indicates no trend in diversity.
+Chris Legault,2,2026-02-20 09:07:22,highlight,Comment on Text,"Missing word? Should something like ""declines"" be added to the end of the sentence?"
+Robert Murphy,2,2026-02-23 08:57:07,highlight,Comment on Text,"add text that explains this is over the entire time series, not just this last year"
+Samantha.L.Werner,2,2026-02-25 13:19:59,highlight,Comment on Text,"change due to ""primarily driven"""
+Samantha.L.Werner,2,2026-02-25 13:25:24,highlight,Comment on Text,"potentially change this all to ""Recent revenue declines are driven by to scallop landings decreases dictated by rotational management"""
+Samantha.L.Werner,2,2026-02-25 13:32:40,strikeout,Cross-Out,"Though lower than the historic average, the 2024 profit index has been increased from 2023 due to decreasing costs."
+Samantha.L.Werner,2,2026-02-25 14:31:57,highlight,Comment on Text,"add ""profit index (managed only)."""
+Samantha.L.Werner,2,2026-02-25 14:40:28,highlight,Comment on Text,ideally like this to be revenues and profits
+Kristan Blackhart,2,2026-02-26 11:40:45,highlight,Comment on Text,This statement is unclear
+Amanda Hart,2,2026-03-02 09:08:17,highlight,Comment on Text,Over what time period? Based on this sentence as written I would expect the trend to be declining not stable
+Amanda Hart,2,2026-03-02 09:09:04,highlight,Comment on Text,NEFMC managed revenue? I would match the language from seafood production section
+Amanda Hart,2,2026-03-02 09:11:44,highlight,Comment on Text,Fleet count (defined by gear/operating characteristics) or vessel count? May need clarification.
+Amanda Hart,2,2026-03-02 09:13:32,highlight,Comment on Text,decline
+Cameron Hodgdon,3,2026-02-18 16:26:16,highlight,Comment on Text,This is a partial sentence.
+Chris Legault,3,2026-02-20 09:11:02,highlight,Comment on Text,"Missing word? Should something like ""declines"" be added to the end of the sentence?"
+Chris Legault,3,2026-02-20 09:15:08,highlight,Comment on Text,This statement does not match the symbol to the left which indicates no trend in diversity.
+Robert Murphy,3,2026-02-23 08:57:42,highlight,Comment on Text,see above comment
+Cameron Hodgdon,3,2026-02-25 10:50:05,highlight,Comment on Text,"""threatening"""
+Amanda Hart,3,2026-03-02 09:16:16,highlight,Comment on Text,NEFMC managed
+Amanda Hart,3,2026-03-02 09:23:26,highlight,Comment on Text,"This sentence may seem contradictory to anyone who doesn't know/remember that lobster is managed by the state, may be worth mentioning for a general audience."
+Amanda Hart,3,2026-03-02 09:26:24,highlight,Comment on Text,decline
+Chris Legault,4,2026-02-20 09:25:08,highlight,Comment on Text,"If the forecasts are initialized with current conditions, why don't the dots lie on top of th GLORYS line?"
+Kristan Blackhart,4,2026-02-26 11:48:32,highlight,Comment on Text,"The language here might be reconsidered. It reads as if changes are well understood and it's a simple decision to consider them, or not. That's not an accurate description of the situation and the NEFSC should do a better job of managing expectations with our partners."
+Kristan Blackhart,4,2026-02-26 11:50:17,caret,Inserted Text,C
+Kristan Blackhart,4,2026-02-26 11:51:30,caret,Inserted Text,C
+Amanda Hart,4,2026-03-02 09:41:16,highlight,Comment on Text,average
+Cameron Hodgdon,5,2026-02-25 11:50:39,highlight,Comment on Text,distribution and timing should both be plural.
+Robert Murphy,6,2026-02-23 08:59:27,highlight,Comment on Text,this is old text. we should say commercial fishing activity
+Kristan Blackhart,6,2026-02-26 12:58:20,highlight,Comment on Text,"there are references/summaries for 2024 and 2025 (and 2026!), but it's not explained anywhere why. This might be useful to orient readers."
+Kristan Blackhart,9,2026-02-26 13:03:07,highlight,Comment on Text,"Although explained in 71a, it would be helpful to readers to provide information in each caption for how to interpret these figures. This one lacks information about the short-term significant trend lines."
+Kristan Blackhart,9,2026-02-26 14:13:42,caret,Inserted Text,long-term
+Kristan Blackhart,9,2026-02-26 14:13:48,caret,Inserted Text,s
+Charles Perretti,10,2026-02-18 15:27:43,text,Sticky Note,Formatting error.
+Robert Murphy,10,2026-02-23 09:08:40,highlight,Comment on Text,add space
+Kristan Blackhart,10,2026-02-26 14:12:48,highlight,Comment on Text,same comment as Figure 1
+Kristan Blackhart,11,2026-02-26 14:17:17,highlight,Comment on Text,What is the puce line on the figure?
+Charles Perretti,12,2026-02-18 15:29:27,highlight,Comment on Text,Formatting error.
+Kristan Blackhart,13,2026-02-26 14:25:08,highlight,Comment on Text,??
+Kristan Blackhart,13,2026-02-26 14:25:42,highlight,Comment on Text,Consider alternative presentation format? Difficult to interpret.
+Robert Murphy,14,2026-02-23 09:11:27,highlight,Comment on Text,is it fully or just partly attributed to..
+Robert Murphy,14,2026-02-23 09:12:11,highlight,Comment on Text,this might open up some scrutiny unless we explain a bit more what this means
+Robert Murphy,14,2026-02-23 09:16:03,highlight,Comment on Text,"I don't think we have any evidence for this. In fact, there is evidence in the literature to the opposite. please remove"
+Robert Murphy,14,2026-02-23 09:17:23,highlight,Comment on Text,add space
+Kristan Blackhart,14,2026-02-26 14:27:01,highlight,Comment on Text,"This deserves a footnote, since the managed stocks no longer align with the science and recommended stock status was accepted for all four new cod stocks."
+Samantha.L.Werner,18,2026-02-25 11:53:20,highlight,Comment on Text,Delete this sentence as it is not comprehensive.
+Kristan Blackhart,18,2026-02-26 14:34:14,caret,Inserted Text,and long-term increases (orange)
+Samantha.L.Werner,19,2026-02-25 12:03:29,highlight,Comment on Text,"Looks as though 1984, 1988, 2003, 2004 and 2006 all may fall below the baseline. Can you double check and add the relevant years to the text to improve clarity?"
+Samantha.L.Werner,19,2026-02-25 12:17:46,highlight,Comment on Text,"change to ""revenues which are lower than the baseline"""
+Samantha.L.Werner,19,2026-02-25 12:18:42,strikeout,Cross-Out,"Change this sentence to: ""However, lower landings played a larger role in relative revenue declines in 2023 and 2024."""
+Samantha.L.Werner,19,2026-02-25 12:32:35,strikeout,Cross-Out,"Change to: ""Increases in the late 90s and early 2000s were  primarily driven by higher than baseline prices. Prices remained strong in the early 2000s- 2006, but revenues declined due to lower landings. The latter half of the time series (post 2006) illustrates higher than baseline revenues, for which the primary driver changes from year to year. The higher revenues in 2024, for example, were driven by higher prices. """
+Samantha.L.Werner,19,2026-02-25 12:39:44,text,Sticky Note,Suggest making this a new paragraph
+Samantha.L.Werner,19,2026-02-25 14:14:09,text,Sticky Note,Missing revenue
+Kristan Blackhart,19,2026-02-27 06:52:14,highlight,Comment on Text,This statement does not seem to agree with the figure below
+Samantha.L.Werner,20,2026-02-25 14:13:49,text,Sticky Note,Revenue?
+Samantha.L.Werner,21,2026-02-25 12:55:25,highlight,Comment on Text,Would move this section up in the paragraph before GOM to be consistent with the figure.
+Samantha.L.Werner,21,2026-02-25 12:56:58,highlight,Comment on Text,Need to reference Figure 13 somewhere (not listed between 12 and 14).
+Samantha.L.Werner,22,2026-02-25 13:07:40,highlight,Comment on Text,"Change to ""have dictated"""
+Samantha.L.Werner,22,2026-02-25 13:09:14,underline,Underline,"add ""and landings"""
+Samantha.L.Werner,22,2026-02-25 13:10:29,text,Sticky Note,"after for add ""the overall"""
+Robert Murphy,24,2026-02-23 09:50:19,highlight,Comment on Text,"I don;t know where this text came from, but it is differently from what I originally wrote. HEre is the old text ""Temporal comparisons of the new Port Commercial Fishing Activity Indicator (PCFA) revealed notable trends across several top fishing ports. For example, both New Bedford and Boston, MA have seen similar declines in fishing activity over the last two decades, whereby their 2024 PCFA scores are over 20% lower than their average scores from 2007-2011 (from hereon, percentage changes are reported in this same format). Gloucester, MA and Portland, ME have suffered even more precipitous 45% and 39% declines, respectively, in port activity. Importantly, New Bedford and Boston rank moderate or higher for all three socio-demographic CSVIs as well, suggesting that fishing industry participants that live in and/or utilize resources in this municipality may more vulnerable to change. Opposite trends (i.e., positive growth in fishing activity) were identified for several top communities including Chatham, MA and Stonington, Harpswell, and Friendship, ME; the latter of which benefited from a 95% increase in PCFA scores over time."""
+Kristan Blackhart,24,2026-02-27 07:28:56,highlight,Comment on Text,"Inconsistent usage - PCFAI here, PCFA elsewhere"
+Robert Murphy,25,2026-02-23 09:53:51,highlight,Comment on Text,I don't know where this list is coming from. It is not the correct list
+Kristan Blackhart,27,2026-02-27 07:32:14,caret,Inserted Text,.
+Kristan Blackhart,28,2026-02-27 07:35:32,highlight,Comment on Text,sentence needs to be rewritten for clarity
+Kristin Precoda,28,2026-03-03 08:46:47,highlight,Comment on Text,"change to ""landings, although post-2019"""
+Kristin Precoda,28,2026-03-03 08:46:55,highlight,Comment on Text,"delete ""but"""
+Kristin Precoda,28,2026-03-03 08:47:07,highlight,Comment on Text,"change to ""objective for gray"""
+Kristan Blackhart,29,2026-02-27 07:37:02,highlight,Comment on Text,"has not been definedis there not a more current estimate available than 2024 draft?"
+Daniel Linden,29,2026-03-09 11:33:43,caret,Inserted Text,a steep decline after 2010
+Daniel Linden,29,2026-03-09 11:34:08,caret,Inserted Text,[delete]
+Daniel Linden,29,2026-03-09 11:34:42,caret,Inserted Text,While the
+Daniel Linden,29,2026-03-09 11:35:55,caret,Inserted Text,"has exhibited slow growth since 2020, it"
+Danielle Cholewiak,29,2026-03-10 16:55:33,highlight,Comment on Text,reproductively active adult females
+Danielle Cholewiak,29,2026-03-10 16:56:50,highlight,Comment on Text,"Please see Dan Linden's edits for this text, and apply to both reports."
+Kristin Precoda,30,2026-03-03 08:47:51,highlight,Comment on Text,"Fig. 24 is never referred to in the text. Suggest adding it here so it reads ""(U.S. pup counts, Fig. 24)"""
+Danielle Cholewiak,30,2026-03-10 16:59:14,highlight,Comment on Text,"You can add a link to the website for more up-to-date information: https://www.fisheries.noaa.gov/national/marine-life-distress/2017-2026-north-atlantic-right-whale-unusual-mortality-event"
+Amanda Hart,32,2026-03-02 10:21:22,highlight,Comment on Text,vessel?
+Amanda Hart,32,2026-03-02 13:19:27,highlight,Comment on Text,vessel
+Amanda Hart,32,2026-03-02 13:20:01,text,Sticky Note,"or ""fleet size"" instead of ""fleet count""?"
+Amanda Hart,32,2026-03-02 13:25:54,highlight,Comment on Text,"There are no figure references to back this up, maybe figure 4/5?"
+Kristan Blackhart,33,2026-02-27 07:58:30,highlight,Comment on Text,"This figure is not referenced in the text, there are others missing text references  or referenced out of order"
+Amanda Hart,33,2026-03-02 13:31:54,highlight,Comment on Text,No figure to back up this claim
+Amanda Hart,33,2026-03-02 13:32:09,highlight,Comment on Text,Doesn't reference figure below
+Kristan Blackhart,34,2026-02-27 07:51:12,text,Sticky Note,"Missing captionAppears that figure numbering after this is affected"
+Harvey Walsh,34,2026-02-27 16:10:13,text,Sticky Note,No figure caption.  I assume this is the same analysis as fig. 29 in the MAFMC document.  Is shift in 2023 due to an increase in Calanus and decrease in small copepods (Centropages and Pseduocalanus)?
+Amanda Hart,35,2026-03-02 13:30:18,highlight,Comment on Text,The light orange is nearly impossible to see and is not distinguishable from the dark orange
+Amanda Hart,35,2026-03-02 13:32:45,highlight,Comment on Text,Probably a formatting issue when generating the PDF
+Kristan Blackhart,36,2026-02-27 09:39:06,highlight,Comment on Text,"For this figure and the next, I can figure out which time series the trend lines go with, but do you want to make your readers work that hard?"
+Amanda Hart,36,2026-03-02 13:34:58,highlight,Comment on Text,Why are there 2 orange lines?
+Amanda Hart,36,2026-03-02 13:35:25,text,Sticky Note,orange is harder to see against red/blue
+Amanda Hart,36,2026-03-02 13:37:39,highlight,Comment on Text,"Difficult to see both color and trend given thickness of the line, suggest a darker, thinner trend line for this and prior plots"
+Amanda Hart,37,2026-03-02 13:42:43,highlight,Comment on Text,Was there a figure that showed this? Is it number of fleets (defined by gear type and operating characteristic) or number of vessels declining?
+Kristan Blackhart,38,2026-02-27 08:01:29,highlight,Comment on Text,sentence needs to be rewritten for clarity
+Kristan Blackhart,40,2026-02-27 08:06:47,highlight,Comment on Text,"italicizeexplain trend line"
+Harvey Walsh,40,2026-02-27 16:18:28,text,Sticky Note,The difference in Figure 34 and 37 lead me to believe that Large Copepods has other taxa besides Calanus finmarchicus.  I think it would be helpful to have those described somewhere in the document.
+paula.fratantoni,40,2026-03-05 10:34:16,highlight,Comment on Text,I don't see a reference to this figure in the text
+Harvey Walsh,41,2026-02-27 16:19:38,text,Sticky Note,No recent decrease shown in the figure.
+Kristan Blackhart,42,2026-02-27 08:09:54,highlight,Comment on Text,has not been defined in this report
+Kristan Blackhart,42,2026-02-27 08:13:10,highlight,Comment on Text,Unclear if this is the correct text
+paula.fratantoni,42,2026-03-05 10:37:55,text,Sticky Note,(Fig 39)
+paula.fratantoni,42,2026-03-05 10:38:37,text,Sticky Note,Fig 40
+paula.fratantoni,42,2026-03-05 10:40:46,highlight,Comment on Text,except in summer at the surface when the SST was above normal
+paula.fratantoni,42,2026-03-05 10:43:07,highlight,Comment on Text,Gulf of Maine and Georges Bank
+Kristan Blackhart,43,2026-02-27 08:11:13,caret,Inserted Text,Gulf of Maine (GOM; top) and Georges Bank (GB; bottom)
+Kristan Blackhart,44,2026-02-27 08:14:34,highlight,Comment on Text,Gulf of Maine (GOM; top) and Georges Bank (GB; bottom)
+paula.fratantoni,44,2026-03-05 10:44:39,highlight,Comment on Text,Are we no longer presenting in situ bottom temperature time series as submitted each year?
+paula.fratantoni,44,2026-03-05 10:45:20,highlight,Comment on Text,"I suggest rewording this as below.  Since we are not showing a figure demonstrating the decreased stability of the GS, I suggest we remove that piece. 
+
+""The Gulf Stream has been shifted north of its long-term mean position over much of the last decade (Figure 42).  However, since 2023 the Gulf Stream has shifted southward and remained close to its mean position. With this shift, the supply of Labrador Slope Water has increased along the Northwest Atlantic Shelf.  These changes are linked to the cooler water temperatures observed in 2024 and 2025 and shifts in the composition of source waters entering the Gulf of Maine through the Northeast Channel (see 2025 Highlights)"""
+Cameron Hodgdon,47,2026-02-19 14:46:38,highlight,Comment on Text,"""peaked"" as you're referencing the earlier bit of the time series here"
+Cameron Hodgdon,47,2026-02-24 12:42:18,highlight,Comment on Text,I would cite Fig 44 here again so readers know the Fig is not just for haddock.
+Cameron Hodgdon,47,2026-02-24 12:44:06,highlight,Comment on Text,"I'm quite cautious stating this with certainty for SNEMA yellowtail- this observation could be an artifact of the extremely low sample sizes in the recent time series or the truncated spatial area of survey catches moving northward. Maybe a change of wording here using ""could have also shifted"""
+Cameron Hodgdon,47,2026-02-25 15:03:01,text,Sticky Note,Why the separate trend of the recent series for Haddock GB? How were these years decided as a recent series?
+Kristan Blackhart,47,2026-02-27 08:31:44,caret,Inserted Text,/
+Kristan Blackhart,47,2026-02-27 08:32:57,highlight,Comment on Text,"are these long-term/short-term as in other plots (i.e. GB haddock)? If so, that should be clearly explained in the caption."
+Cameron Hodgdon,48,2026-02-24 12:46:38,caret,Inserted Text,"""whales"""
+Cameron Hodgdon,48,2026-02-24 12:48:10,highlight,Comment on Text,I would state how long. Years? Decades?
+Cameron Hodgdon,48,2026-02-24 12:50:22,highlight,Comment on Text,Do you mean to say that each species' patterns are changing? It currently reads that the patterns across species are different from each other.
+Cameron Hodgdon,48,2026-02-25 15:04:00,highlight,Comment on Text,"""have"""
+Kristan Blackhart,48,2026-02-27 08:36:59,caret,Inserted Text,b
+paula.fratantoni,48,2026-03-05 10:53:08,highlight,Comment on Text,"this is not demonstrated in recent years for the GOM or GB as shown in Fig 45.  Unlike the MAB, the figure indicates that the duration of ocean summer conditions is near normal in the GOM and shorter than normal on GB."
+Cameron Hodgdon,49,2026-02-25 10:34:25,highlight,Comment on Text,"This is true, but it may also be worth noting here than the 2025 management track stock assessment for SNEMA yellowtail flounder has included an effect of the Gulf Stream Index on recruitment (outperformed the cold pool index in that assessment)."
+Kristan Blackhart,49,2026-02-27 08:41:07,caret,Inserted Text,the
+paula.fratantoni,49,2026-03-05 10:55:02,text,Sticky Note,Looks like Oct and December are highlighted in the GOM panel
+Cameron Hodgdon,50,2026-02-25 10:40:19,highlight,Comment on Text,Significantly increasing trends?
+Kristan Blackhart,52,2026-03-02 07:55:53,caret,Inserted Text,effects on stocks are not well understood
+Alex Hansell,53,2026-02-19 16:38:42,text,Sticky Note,Is this title correct? I would double check
+Alex Hansell,53,2026-02-19 16:38:53,text,Sticky Note,The black line stops early
+Kristan Blackhart,54,2026-02-27 09:29:27,highlight,Comment on Text,explain short-term trend line
+Alex Hansell,56,2026-02-19 16:40:39,text,Sticky Note,This should be ED
+Alex Hansell,56,2026-02-19 16:41:59,text,Sticky Note,Reference the figures?
+Alex Hansell,57,2026-02-19 16:41:18,text,Sticky Note,This figure is blurry
+Alex Hansell,57,2026-02-19 16:41:40,text,Sticky Note,add (ED)
+Harvey Walsh,60,2026-02-27 16:22:42,text,Sticky Note,Suggest putting species names next to large and small in the figure caption for clarity.
+Kristan Blackhart,61,2026-02-27 09:48:25,highlight,Comment on Text,This legend needs to be rewritten in plain language to be more descriptive of the what this complicated figure is trying to convey to the target audience.
+Kristan Blackhart,64,2026-02-27 10:12:46,caret,Inserted Text,(OA)
+Kristan Blackhart,65,2026-02-27 10:17:32,caret,Inserted Text,.
+Kristin Precoda,65,2026-03-03 08:48:23,highlight,Comment on Text,"change to ""increasing presence in New England. Recent"""
+Kristan Blackhart,66,2026-02-27 10:19:15,caret,Inserted Text,.
+Jessica Blaylock,67,2026-02-27 14:51:28,highlight,Comment on Text,Suggest replacing with 'partially'
+Jessica Blaylock,67,2026-02-27 15:02:09,highlight,Comment on Text,Confirm -  I believe this is partially operational while construction resumed (same as Vineyard Wind 1)
+Jessica Blaylock,67,2026-02-27 15:07:17,highlight,Comment on Text,Just keep 'New England' here
+Jessica Blaylock,67,2026-02-27 15:08:29,text,Sticky Note,(Keep 'Mid-Atlantic' only for the MA SOE report)
+Jessica Blaylock,67,2026-02-27 15:48:56,highlight,Comment on Text,It is not clear which ones these are from Fig 61.
+Jessica Blaylock,67,2026-02-27 15:49:10,highlight,Comment on Text,It is not clear which ones these are from Fig 61.
+Jessica Blaylock,67,2026-02-27 15:49:22,highlight,Comment on Text,It is not clear which ones these are from Fig 61.
+Jessica Blaylock,68,2026-02-27 15:50:09,highlight,Comment on Text,2-year
+Kristan Blackhart,69,2026-02-27 10:25:34,highlight,Comment on Text,text repeated
+Jessica Blaylock,69,2026-02-27 16:04:21,highlight,Comment on Text,Fig. 62 is not referenced in the text. Same for Fig. 59 in the MA report
+Jessica Blaylock,69,2026-02-27 16:06:43,highlight,Comment on Text,Check this.  There is no Figure 92. Should it be Fig. 63?
+Kristan Blackhart,70,2026-02-27 10:27:18,highlight,Comment on Text,trend line
+Kristan Blackhart,70,2026-02-27 10:29:14,highlight,Comment on Text,unclear why this information is necessary here since individual skate species are included in the table
+Jessica Blaylock,70,2026-02-27 16:06:09,highlight,Comment on Text,Fig. 63 is not referenced in the text.
+Kristan Blackhart,72,2026-02-27 10:33:01,highlight,Comment on Text,is this the correct figure?
+Danielle Cholewiak,73,2026-03-10 17:07:27,highlight,Comment on Text,"please see comments below, and remove or revise this figure."
+Danielle Cholewiak,74,2026-03-10 17:06:59,highlight,Comment on Text,"How is this figure generated? There is no information on how ""persistence probability"" is generated, which is an incredibly difficult metric to quantify. As such, I find the inclusion of this graphic to be very problematic. If all you need to do is show overlap between NARW areas and WEAs, you can use published literature or do a SPUE analysis.  Stakeholders within the scientific community have previously flagged the problematic nature of this figure. Please consider taking a different approach."
+Amanda Hart,76,2026-03-02 13:47:40,highlight,Comment on Text,of
+Kristan Blackhart,78,2026-02-27 10:49:11,highlight,Comment on Text,is this supposed to be a bulleted list?
+Kristan Blackhart,78,2026-02-27 10:52:41,highlight,Comment on Text,"If these reports are prepared for the NEFMC and MAFMC, why is this content that is applicable to neither included?"
+Amanda Hart,78,2026-03-02 14:05:39,highlight,Comment on Text,"suggest changing to ""stressful low/high dissolved oxygen"" to clarify if low or high DO is responsible"
+Amanda Hart,78,2026-03-02 14:06:09,highlight,Comment on Text,missing space
+Amanda Hart,78,2026-03-02 14:08:23,highlight,Comment on Text,No figure references available for this section
+Kristan Blackhart,79,2026-02-27 10:56:41,highlight,Comment on Text,this should be specific to New England report?
+Kristan Blackhart,79,2026-02-27 10:58:47,highlight,Comment on Text,"Amanda Hart missingmaybe Cameron Hodgdon should be added too?"
+Kristin Precoda,79,2026-03-03 08:48:42,highlight,Comment on Text,"change to ""GARFO"""
