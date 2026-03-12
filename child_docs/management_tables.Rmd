@@ -43,7 +43,7 @@ flextable::as_grouped_data(mng_obj, groups = "service") |>
   flextable::set_caption(paste("Ecosystem-scale fishery management objectives in", region)) |>
   flextable::autofit()
 ```
- \newpage
+<!-- \newpage -->
 ```{r management-risks, ft.arraystretch = 1.5}
 mng_obj <- data.frame(
   "Risks" = c(

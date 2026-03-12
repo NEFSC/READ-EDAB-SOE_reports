@@ -39,7 +39,7 @@ create_wea_landings_rev_table(council = "NEFMC") |>
 return_plot("wea-port-rev", region = "NewEngland")
 ```
 
-\newpage
+<!-- \newpage -->
 
 Based on federal vessel logbook data, Little Compton, RI (13% average and 24% maximum) and Westport, MA (6% average and 12% maximum) have the highest potential revenue loss from Active Projects based on 2008-2024 total port fisheries revenue, with all other New England communities having less than 5% (Fig. \ref{fig:wea-port-rev}). Additional fishing revenue may be lost as more areas historically used for fishing are developed for offshore wind energy. In seven Mid-Atlantic ports, New England managed species account for at least 50% of landings from the Active Project areas by value or weight (Fig. \ref{fig:wind-rev}). Furthermore, impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean.
 

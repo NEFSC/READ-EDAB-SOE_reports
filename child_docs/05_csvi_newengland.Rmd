@@ -31,7 +31,7 @@ rec_vul_table_ne |>
   flextable::fit_to_width(7.5)
 ```
 
-\newpage
+<!-- \newpage -->
 
 ### Indicators: Community Environmental Variability Risk in New England
 

@@ -52,7 +52,7 @@ Single species [management objectives](https://noaa-edab.github.io/catalog/stock
 return_plot("stock-status", region = "NewEngland")
 ```
 
-\newpage
+<!-- \newpage -->
 
 ```{r stock-status-table, ft.arraystretch = 1}
 stock_status_plot <- ecodata::plot_stock_status(report = "NewEngland")

@@ -15,13 +15,13 @@ The health of individual fish (i.e., fish condition, measured as weight for a gi
 return_plot("productivity-anomaly", region = "MidAtlantic")
 ```
 
-\newpage
+<!-- \newpage -->
 
 ```{r mab-cf, fig.cap = return_caption(chunk_name = "mab-cf", region = "MidAtlantic"), fig.width=6.5, fig.asp=.7}
 return_plot("mab-cf", region = "MidAtlantic")
 ```
 
-\newpage
+<!-- \newpage -->
 
 #### Drivers:
 
@@ -37,7 +37,7 @@ Forage fish [energy content](https://noaa-edab.github.io/catalog/energy_density.
 return_plot("energy-density", region = "MidAtlantic")
 ```
 
-\newpage
+<!-- \newpage -->
 
 Changes in the overall abundance of forage fish can influence managed species productivity as it relates to changes in food availability. A spatially-explicit [forage index](https://noaa-edab.github.io/catalog/forage_index.html) for the Mid-Atlantic shows a long term declining trend in fall, with higher forage biomass in fall than spring (Fig. \ref{fig:foragebio}). Forage biomass was highest during fall in the early-1980s. The decrease of fall forage biomass in the Mid-Atlantic may reduce the health and reproductive output of fish species. Additionally, this may be exacerbated by lower energy densities of prey, especially in years of higher water temperatures when metabolic demands are higher. 
 
