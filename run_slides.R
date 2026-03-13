@@ -1,3 +1,5 @@
+# Council slides ----
+
 ## mid slides ----
 now <- Sys.time()
 quarto::quarto_render(
@@ -40,6 +42,24 @@ quarto::quarto_render(
     fig_caption = here::here("utils/figure_captions_summary.csv"),
     date = Sys.Date() |> format("%B %d, %Y"),
     author = "NEFSC"
+  ),
+  output_format = "all"
+)
+difftime(Sys.time(), now)
+
+# SSC slides ----
+
+## NE ----
+now <- Sys.time()
+quarto::quarto_render(
+  input = here::here("parent_presentation_ssc.qmd"),
+  output_file = "newengland_ssc_draft.html",
+  execute_params = list(
+    region = "NewEngland",
+    council = "NEFMC",
+    fig_caption = here::here("utils/figure_captions_summary.csv"),
+    date = Sys.Date() |> format("%B %d, %Y"),
+    author = "Joe Caracappa, lead editor, NEFSC"
   ),
   output_format = "all"
 )
