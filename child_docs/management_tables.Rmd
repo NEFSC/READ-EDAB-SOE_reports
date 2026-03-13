@@ -59,8 +59,8 @@ mng_obj <- data.frame(
     "Fishery revenue and landings from wind lease areas by species and port"
   ),
   "Potential Driver Indicators" = c(
-    "Benthic and pelagic forage distribution; ocean temperature, changes in currents and cold pool",
-    "Habitat timing: Length of ocean summer, cold pool seasonal persistence",
+    "Benthic and pelagic forage distribution; ocean temperature, changes in currents and Cold Pool",
+    "Habitat timing: Length of ocean summer, Cold Pool seasonal persistence",
     "Benthic and pelagic forage quality & abundance: ocean temperature & acidification ",
     "Wind development speed; Protected species presence and  hotspots"
   )
