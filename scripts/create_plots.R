@@ -806,11 +806,11 @@ save_plot(
 # productivity anomaly
 save_plot(
   plot_expression = {
-      anomaly <- plot_productivity_anomaly(report = region, 
+      anomaly <- ecodata::plot_productivity_anomaly(report = region, 
                                 varName = "anomaly", 
                                 plottype = "council") 
 
-      assessment <- plot_productivity_anomaly(report = region, 
+      assessment <- ecodata::plot_productivity_anomaly(report = region, 
                                               varName = "assessment", 
                                               plottype = "council") 
       if (region == "MidAtlantic") {
