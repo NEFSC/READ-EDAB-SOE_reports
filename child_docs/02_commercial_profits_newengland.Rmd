@@ -32,7 +32,7 @@ return_plot("bennet-all", region = "NewEngland")
 return_plot("comdat-profit", region = "NewEngland")
 ```
 
-This year, we present new indicators of [profitability](https://noaa-edab.github.io/catalog/comdat_profit.html): indices of cost, revenue, and profit. In this index, costs pertain to trip costs, excluding labor, estimated for all federal trips in the region. The profit indicator is net-revenue, determined as the difference between trip revenue and trip costs. Trips were spatially allocated to compile regional indices. Indices are presented as values relative to those from 2000, the first year in the dataset.  
+This year, we present new indicators of [profitability](https://noaa-edab.github.io/catalog/comdat_profit.html): indices of cost, revenue, and profit (Fig. \ref{fig:comdat-profit-ne}). In this index, costs pertain to trip costs, excluding labor, estimated for all federal trips in the region. The profit indicator is net-revenue, determined as the difference between trip revenue and trip costs. Trips were spatially allocated to compile regional indices. Indices are presented as values relative to those from 2000, the first year in the dataset.  
 
 In the GOM, the profit index closely follows the same trends as the revenue index with the exception of 2010 - 2013 where low costs created a surge in the profit index. In 2024, the GOM profit index returned to near the long-term average with average costs and revenue. For trips in GB, high costs and low revenue had caused a low profits over the last 3 years, but recent drops in costs have helped compensate for low revenue. GB profits have no long-term trend, but a cyclical revenue driven by rotational scallop management can impact profitability. 
 
