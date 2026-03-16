@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  16 MAR 2026 13:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  16 MAR 2026 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -772,10 +772,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 Package marginnote Info: Using workaround for absolute page number on input line 362.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6796cb3.png, id=58, 469.755pt x 361.35pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6796cb3.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6796cb3.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6796cb3.png  used on input line 386.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7d3f6079.png, id=58, 469.755pt x 361.35pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7d3f6079.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7d3f6079.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7d3f6079.png  used on input line 386.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
 <images/NOAA_logo.png, id=59, 240.9pt x 240.9pt>
 File: images/NOAA_logo.png Graphic file (type png)
@@ -790,38 +790,38 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.59677pt}.
 
 [5 <./images/NOAA_logo.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c27d22331.png, id=71, 469.755pt x 505.89pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c27d22331.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c27d22331.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c27d22331.png  used on input line 395.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c4eec7859.png, id=71, 469.755pt x 505.89pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4eec7859.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4eec7859.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4eec7859.png  used on input line 395.
 (pdftex.def)             Requested size: 500.484pt x 538.98117pt.
-[6 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6796cb3.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c43c7612a.png, id=78, 469.755pt x 180.675pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c43c7612a.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c43c7612a.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c43c7612a.png  used on input line 406.
+[6 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7d3f6079.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7c7a2e5d.png, id=78, 469.755pt x 180.675pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7c7a2e5d.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7c7a2e5d.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7c7a2e5d.png  used on input line 406.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[7 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c27d22331.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7c0590f.png, id=88, 469.755pt x 180.675pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7c0590f.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7c0590f.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7c0590f.png  used on input line 417.
+[7 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c4eec7859.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c60c6368d.png, id=88, 469.755pt x 180.675pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c60c6368d.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c60c6368d.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c60c6368d.png  used on input line 417.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7ec236f1.png, id=89, 469.755pt x 216.81pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7ec236f1.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7ec236f1.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7ec236f1.png  used on input line 426.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7609182d.png, id=89, 469.755pt x 216.81pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7609182d.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7609182d.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7609182d.png  used on input line 426.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-[8 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c43c7612a.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7c0590f.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c5c47aca.png, id=100, 469.755pt x 397.485pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5c47aca.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5c47aca.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5c47aca.png  used on input line 445.
+[8 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7c7a2e5d.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c60c6368d.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a102c91.png, id=100, 469.755pt x 397.485pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a102c91.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a102c91.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a102c91.png  used on input line 445.
 (pdftex.def)             Requested size: 500.484pt x 423.48521pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 449.
-[9 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7ec236f1.png>]
-ignored: Infinite glue shrinkage found in box being split [10{c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <../../AppData/Local/Temp/RtmpInFHXE/file4b0c5c47aca.png>]
+[9 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7609182d.png>]
+ignored: Infinite glue shrinkage found in box being split [10{c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a102c91.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 575.
 (c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -829,419 +829,425 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 LaTeX Warning: Hyper reference `community-social-and-climate-vulnerability' on page 11 undefined on input line 581.
 
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c1855173.png, id=127, 469.755pt x 433.62pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1855173.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1855173.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1855173.png  used on input line 586.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7121f76.png, id=127, 469.755pt x 433.62pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7121f76.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7121f76.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7121f76.png  used on input line 586.
 (pdftex.def)             Requested size: 500.484pt x 461.98387pt.
 [11{c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c386351c9.png, id=142, 469.755pt x 433.62pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c386351c9.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c386351c9.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c386351c9.png  used on input line 595.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c3c28bc2.png, id=142, 469.755pt x 433.62pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3c28bc2.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3c28bc2.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3c28bc2.png  used on input line 595.
 (pdftex.def)             Requested size: 500.484pt x 461.98387pt.
-[12 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c1855173.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c22f950c9.png, id=148, 433.62pt x 433.62pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c22f950c9.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c22f950c9.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c22f950c9.png  used on input line 604.
+[12 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7121f76.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c51ff3a79.png, id=148, 433.62pt x 433.62pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c51ff3a79.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c51ff3a79.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c51ff3a79.png  used on input line 604.
 (pdftex.def)             Requested size: 500.484pt x 500.51175pt.
-[13 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c386351c9.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a5912eb.png, id=155, 469.755pt x 361.35pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a5912eb.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a5912eb.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a5912eb.png  used on input line 619.
+[13 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c3c28bc2.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c3e016b04.png, id=155, 469.755pt x 361.35pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3e016b04.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3e016b04.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3e016b04.png  used on input line 619.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[14 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c22f950c9.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c58ad1023.png, id=166, 469.755pt x 433.62pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c58ad1023.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c58ad1023.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c58ad1023.png  used on input line 634.
+[14 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c51ff3a79.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6dfc5059.png, id=166, 469.755pt x 433.62pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6dfc5059.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6dfc5059.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6dfc5059.png  used on input line 634.
 (pdftex.def)             Requested size: 500.484pt x 461.98387pt.
-[15 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a5912eb.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c1851659e.png, id=173, 469.755pt x 433.62pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1851659e.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1851659e.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1851659e.png  used on input line 644.
+[15 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c3e016b04.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6c584132.png, id=173, 469.755pt x 433.62pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6c584132.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6c584132.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6c584132.png  used on input line 644.
 (pdftex.def)             Requested size: 500.484pt x 461.98387pt.
-[16 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c58ad1023.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c585c2939.png, id=179, 469.755pt x 361.35pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c585c2939.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c585c2939.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c585c2939.png  used on input line 653.
+[16 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6dfc5059.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7e831930.png, id=179, 469.755pt x 361.35pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7e831930.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7e831930.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7e831930.png  used on input line 653.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[17 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c1851659e.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c621736d.png, id=189, 469.755pt x 180.675pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c621736d.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c621736d.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c621736d.png  used on input line 668.
+[17 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6c584132.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c71a4199d.png, id=189, 469.755pt x 180.675pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c71a4199d.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c71a4199d.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c71a4199d.png  used on input line 668.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[18 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c585c2939.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c5d3940b6.png, id=201, 469.755pt x 180.675pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5d3940b6.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5d3940b6.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5d3940b6.png  used on input line 687.
+[18 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7e831930.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c5b5f26df.png, id=201, 469.755pt x 180.675pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5b5f26df.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5b5f26df.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5b5f26df.png  used on input line 687.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[19 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c621736d.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c5eb23e7.png, id=211, 469.755pt x 180.675pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5eb23e7.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5eb23e7.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5eb23e7.png  used on input line 696.
+[19 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c71a4199d.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c2ab21a29.png, id=211, 469.755pt x 180.675pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2ab21a29.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2ab21a29.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2ab21a29.png  used on input line 696.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[20 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c5d3940b6.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c5eb23e7.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c32a6ec.png, id=223, 505.89pt x 361.35pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c32a6ec.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c32a6ec.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c32a6ec.png  used on input line 725.
+[20 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c5b5f26df.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c2ab21a29.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c2b1370dc.png, id=223, 505.89pt x 361.35pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2b1370dc.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2b1370dc.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2b1370dc.png  used on input line 725.
 (pdftex.def)             Requested size: 500.484pt x 357.495pt.
 [21]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c78fd7edb.png, id=232, 469.755pt x 289.08pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c78fd7edb.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c78fd7edb.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c78fd7edb.png  used on input line 836.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c63d33d1a.png, id=232, 469.755pt x 289.08pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c63d33d1a.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c63d33d1a.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c63d33d1a.png  used on input line 836.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[22 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c32a6ec.png>] [23 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c78fd7edb.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a4c75e.png, id=246, 469.755pt x 289.08pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a4c75e.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a4c75e.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a4c75e.png  used on input line 951.
+[22 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c2b1370dc.png>] [23 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c63d33d1a.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c754d5251.png, id=246, 469.755pt x 289.08pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c754d5251.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c754d5251.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c754d5251.png  used on input line 951.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[24 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a4c75e.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c73577b0.png, id=256, 469.755pt x 216.81pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c73577b0.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c73577b0.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c73577b0.png  used on input line 972.
+[24 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c754d5251.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c171dff.png, id=256, 469.755pt x 216.81pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c171dff.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c171dff.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c171dff.png  used on input line 972.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0cd851775.png, id=259, 469.755pt x 216.81pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0cd851775.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0cd851775.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0cd851775.png  used on input line 983.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c48ec33ac.png, id=259, 469.755pt x 216.81pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c48ec33ac.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c48ec33ac.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c48ec33ac.png  used on input line 983.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-[25 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c73577b0.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c18516d60.png, id=269, 469.755pt x 180.675pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c18516d60.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c18516d60.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c18516d60.png  used on input line 994.
+[25 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c171dff.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c13dc120c.png, id=269, 469.755pt x 180.675pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c13dc120c.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c13dc120c.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c13dc120c.png  used on input line 994.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c465894b.png, id=272, 469.755pt x 180.675pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c465894b.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c465894b.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c465894b.png  used on input line 1005.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6e35e22.png, id=272, 469.755pt x 180.675pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6e35e22.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6e35e22.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6e35e22.png  used on input line 1005.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[26 <../../AppData/Local/Temp/RtmpInFHXE/file4b0cd851775.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c18516d60.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6ebd5742.png, id=282, 469.755pt x 289.08pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6ebd5742.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6ebd5742.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6ebd5742.png  used on input line 1022.
+[26 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c48ec33ac.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c13dc120c.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0cb67f73.png, id=282, 469.755pt x 289.08pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0cb67f73.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0cb67f73.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0cb67f73.png  used on input line 1022.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[27 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c465894b.png>] [28 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6ebd5742.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c4cff5d7d.png, id=305, 469.755pt x 144.54pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4cff5d7d.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4cff5d7d.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4cff5d7d.png  used on input line 1049.
+[27 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6e35e22.png>] [28 <../../AppData/Local/Temp/RtmpInFHXE/file4b0cb67f73.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c2a01404c.png, id=305, 469.755pt x 144.54pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2a01404c.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2a01404c.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2a01404c.png  used on input line 1049.
 (pdftex.def)             Requested size: 500.484pt x 153.9946pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c804a07.png, id=306, 469.755pt x 144.54pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c804a07.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c804a07.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c804a07.png  used on input line 1058.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c3b774d87.png, id=306, 469.755pt x 144.54pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3b774d87.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3b774d87.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3b774d87.png  used on input line 1058.
 (pdftex.def)             Requested size: 500.484pt x 153.9946pt.
-[29 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c4cff5d7d.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0ca9e6fa6.png, id=314, 469.755pt x 289.08pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0ca9e6fa6.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0ca9e6fa6.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0ca9e6fa6.png  used on input line 1071.
+[29 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c2a01404c.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6d5c4885.png, id=315, 469.755pt x 289.08pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6d5c4885.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6d5c4885.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6d5c4885.png  used on input line 1071.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[30 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c804a07.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0ca9e6fa6.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c144a1c53.png, id=321, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c144a1c53.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c144a1c53.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c144a1c53.png  used on input line 1082.
+[30 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c3b774d87.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6d5c4885.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c60c12f6.png, id=323, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c60c12f6.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c60c12f6.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c60c12f6.png  used on input line 1082.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6b68722b.png, id=322, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6b68722b.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6b68722b.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6b68722b.png  used on input line 1090.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c1f87894.png, id=324, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1f87894.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1f87894.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1f87894.png  used on input line 1091.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[31 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c144a1c53.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c44da17.png, id=331, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c44da17.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c44da17.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c44da17.png  used on input line 1101.
+[31 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c60c12f6.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c4f05ec6.png, id=333, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4f05ec6.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4f05ec6.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4f05ec6.png  used on input line 1102.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[32 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6b68722b.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0cd97488f.png, id=339, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0cd97488f.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0cd97488f.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0cd97488f.png  used on input line 1110.
+[32 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c1f87894.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c9632e75.png, id=341, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c9632e75.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c9632e75.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c9632e75.png  used on input line 1111.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[33 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c44da17.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0cd97488f.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c8b74b50.png, id=353, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c8b74b50.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c8b74b50.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c8b74b50.png  used on input line 1143.
+[33 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c4f05ec6.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c9632e75.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6931729a.png, id=355, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6931729a.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6931729a.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6931729a.png  used on input line 1144.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
 [34]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0cec66a09.png, id=366, 542.025pt x 289.08pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0cec66a09.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0cec66a09.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0cec66a09.png  used on input line 1152.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c44e265d6.png, id=368, 542.025pt x 289.08pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c44e265d6.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c44e265d6.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c44e265d6.png  used on input line 1153.
 (pdftex.def)             Requested size: 500.484pt x 266.93605pt.
-[35 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c8b74b50.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0cec66a09.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c174c4007.png, id=375, 469.755pt x 198.7425pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c174c4007.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c174c4007.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c174c4007.png  used on input line 1165.
+[35 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6931729a.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c44e265d6.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c40af40b4.png, id=377, 469.755pt x 198.7425pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c40af40b4.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c40af40b4.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c40af40b4.png  used on input line 1166.
 (pdftex.def)             Requested size: 500.484pt x 211.74258pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c3cec4a5f.png, id=376, 469.755pt x 198.7425pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3cec4a5f.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3cec4a5f.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3cec4a5f.png  used on input line 1174.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c110538c3.png, id=378, 469.755pt x 198.7425pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c110538c3.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c110538c3.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c110538c3.png  used on input line 1175.
 (pdftex.def)             Requested size: 500.484pt x 211.74258pt.
-[36 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c174c4007.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c3cec4a5f.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c742b2305.png, id=388, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c742b2305.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c742b2305.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c742b2305.png  used on input line 1187.
+[36 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c40af40b4.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c110538c3.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6cf4e6a.png, id=390, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6cf4e6a.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6cf4e6a.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6cf4e6a.png  used on input line 1188.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c17b455fa.png, id=395, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c17b455fa.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c17b455fa.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c17b455fa.png  used on input line 1198.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c822934.png, id=397, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c822934.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c822934.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c822934.png  used on input line 1199.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[37 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c742b2305.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c640b5e0c.png, id=405, 469.755pt x 216.81pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c640b5e0c.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c640b5e0c.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c640b5e0c.png  used on input line 1207.
+[37 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6cf4e6a.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7f0f1475.png, id=408, 469.755pt x 216.81pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7f0f1475.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7f0f1475.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7f0f1475.png  used on input line 1208.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c4ea16aa.png, id=406, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4ea16aa.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4ea16aa.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4ea16aa.png  used on input line 1216.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c58043163.png, id=409, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c58043163.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c58043163.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c58043163.png  used on input line 1217.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[38 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c17b455fa.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c640b5e0c.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c2a257047.png, id=412, 469.755pt x 216.81pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2a257047.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2a257047.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2a257047.png  used on input line 1225.
+[38 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c822934.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7f0f1475.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0ca16141b.png, id=414, 469.755pt x 216.81pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0ca16141b.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0ca16141b.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0ca16141b.png  used on input line 1226.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c32812b55.png, id=420, 469.755pt x 361.35pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c32812b55.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c32812b55.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c32812b55.png  used on input line 1236.
+[39 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c58043163.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0ca16141b.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c5843f4.png, id=429, 469.755pt x 361.35pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c5843f4.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c5843f4.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c5843f4.png  used on input line 1237.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[39 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c4ea16aa.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c2a257047.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c50475a01.png, id=428, 469.755pt x 361.35pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c50475a01.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c50475a01.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c50475a01.png  used on input line 1245.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c57b9467c.png, id=430, 469.755pt x 361.35pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c57b9467c.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c57b9467c.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c57b9467c.png  used on input line 1246.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[40 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c32812b55.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c31156c55.png, id=437, 469.755pt x 180.675pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c31156c55.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c31156c55.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c31156c55.png  used on input line 1256.
+[40 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c5843f4.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c21b866e3.png, id=436, 469.755pt x 361.35pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c21b866e3.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c21b866e3.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c21b866e3.png  used on input line 1254.
+(pdftex.def)             Requested size: 500.484pt x 384.98656pt.
+[41 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c57b9467c.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c643929ff.png, id=445, 469.755pt x 180.675pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c643929ff.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c643929ff.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c643929ff.png  used on input line 1265.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[41 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c50475a01.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c5f9028a.png, id=443, 469.755pt x 180.675pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5f9028a.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5f9028a.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5f9028a.png  used on input line 1265.
+[42 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c21b866e3.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7bb36338.png, id=451, 469.755pt x 180.675pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7bb36338.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7bb36338.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7bb36338.png  used on input line 1274.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c71062fb9.png, id=446, 469.755pt x 289.08pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c71062fb9.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c71062fb9.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c71062fb9.png  used on input line 1276.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c3b78ee.png, id=454, 469.755pt x 289.08pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c3b78ee.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c3b78ee.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c3b78ee.png  used on input line 1285.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[42 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c31156c55.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c5f9028a.png>] [43 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c71062fb9.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a244b29.png, id=465, 469.755pt x 289.08pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a244b29.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a244b29.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a244b29.png  used on input line 1301.
+[43 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c643929ff.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7bb36338.png>] [44 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c1c3b78ee.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c33132744.png, id=473, 469.755pt x 289.08pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c33132744.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c33132744.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c33132744.png  used on input line 1310.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[44 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a244b29.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6d4578e4.png, id=476, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6d4578e4.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6d4578e4.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6d4578e4.png  used on input line 1320.
+[45 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c33132744.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c4dca64f.png, id=484, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4dca64f.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4dca64f.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4dca64f.png  used on input line 1329.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[45 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6d4578e4.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c74346f26.png, id=487, 469.755pt x 180.675pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c74346f26.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c74346f26.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c74346f26.png  used on input line 1331.
+[46 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c4dca64f.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c5c5f7d56.png, id=496, 469.755pt x 180.675pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5c5f7d56.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5c5f7d56.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5c5f7d56.png  used on input line 1340.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c38b91357.png, id=490, 469.755pt x 505.89pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c38b91357.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c38b91357.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c38b91357.png  used on input line 1342.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c51a96d2e.png, id=499, 469.755pt x 505.89pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c51a96d2e.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c51a96d2e.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c51a96d2e.png  used on input line 1351.
 (pdftex.def)             Requested size: 500.484pt x 538.98117pt.
-[46 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c74346f26.png>] [47 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c38b91357.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c2fcf3f20.png, id=508, 469.755pt x 542.025pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2fcf3f20.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2fcf3f20.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c2fcf3f20.png  used on input line 1363.
+[47 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c5c5f7d56.png>] [48 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c51a96d2e.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c24f67deb.png, id=516, 469.755pt x 542.025pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c24f67deb.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c24f67deb.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c24f67deb.png  used on input line 1372.
 (pdftex.def)             Requested size: 500.484pt x 577.47983pt.
-[48]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c60864d87.png, id=517, 469.755pt x 144.54pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c60864d87.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c60864d87.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c60864d87.png  used on input line 1372.
+[49]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6fa8138e.png, id=525, 469.755pt x 144.54pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6fa8138e.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6fa8138e.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6fa8138e.png  used on input line 1381.
 (pdftex.def)             Requested size: 500.484pt x 153.9946pt.
-[49 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c2fcf3f20.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a8d6cb1.png, id=522, 469.755pt x 216.81pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a8d6cb1.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a8d6cb1.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a8d6cb1.png  used on input line 1381.
+[50 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c24f67deb.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c1d5a59bb.png, id=530, 469.755pt x 216.81pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1d5a59bb.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1d5a59bb.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1d5a59bb.png  used on input line 1390.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c5b1d7d4c.png, id=526, 469.755pt x 505.89pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5b1d7d4c.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5b1d7d4c.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5b1d7d4c.png  used on input line 1392.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c3f275721.png, id=534, 469.755pt x 505.89pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3f275721.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3f275721.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3f275721.png  used on input line 1401.
 (pdftex.def)             Requested size: 500.484pt x 538.98117pt.
-[50 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c60864d87.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6a8d6cb1.png>] [51 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c5b1d7d4c.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c3e6f3e5b.png, id=542, 4215.75pt x 5119.125pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3e6f3e5b.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3e6f3e5b.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3e6f3e5b.png  used on input line 1417.
+[51 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c6fa8138e.png> <../../AppData/Local/Temp/RtmpInFHXE/file4b0c1d5a59bb.png>] [52 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c3f275721.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c48a4654f.png, id=551, 4215.75pt x 5119.125pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c48a4654f.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c48a4654f.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c48a4654f.png  used on input line 1426.
 (pdftex.def)             Requested size: 500.484pt x 607.70714pt.
-[52]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c761075b6.png, id=551, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c761075b6.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c761075b6.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c761075b6.png  used on input line 1426.
+[53]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c401e737a.png, id=559, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c401e737a.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c401e737a.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c401e737a.png  used on input line 1435.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[53 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c3e6f3e5b.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c5193576.png, id=562, 469.755pt x 289.08pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5193576.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5193576.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5193576.png  used on input line 1443.
+[54 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c48a4654f.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c12a951d7.png, id=570, 469.755pt x 289.08pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c12a951d7.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c12a951d7.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c12a951d7.png  used on input line 1452.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[54 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c761075b6.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a141cde.png, id=573, 469.755pt x 361.35pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a141cde.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a141cde.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a141cde.png  used on input line 1461.
+[55 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c401e737a.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c32ed70a9.png, id=581, 469.755pt x 361.35pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c32ed70a9.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c32ed70a9.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c32ed70a9.png  used on input line 1470.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[55 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c5193576.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c565273a3.png, id=581, 469.755pt x 289.08pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c565273a3.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c565273a3.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c565273a3.png  used on input line 1470.
+[56 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c12a951d7.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c3af74a57.png, id=589, 469.755pt x 289.08pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3af74a57.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3af74a57.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3af74a57.png  used on input line 1479.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[56 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7a141cde.png>] [57 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c565273a3.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c1044749c.pdf, id=601, 916.8654pt x 465.9006pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1044749c.pdf Graphic file (type pdf)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1044749c.pdf>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1044749c.pdf  used on input line 1489.
+[57 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c32ed70a9.png>] [58 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c3af74a57.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c687c5226.pdf, id=610, 916.8654pt x 465.9006pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c687c5226.pdf Graphic file (type pdf)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c687c5226.pdf>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c687c5226.pdf  used on input line 1498.
 (pdftex.def)             Requested size: 500.484pt x 254.31956pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c26707947.png, id=602, 469.755pt x 289.08pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c26707947.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c26707947.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c26707947.png  used on input line 1498.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c48444964.png, id=611, 469.755pt x 289.08pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c48444964.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c48444964.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c48444964.png  used on input line 1507.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[58 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c1044749c.pdf>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c427649a2.png, id=611, 469.755pt x 252.945pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c427649a2.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c427649a2.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c427649a2.png  used on input line 1509.
+[59 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c687c5226.pdf>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c10c55b2f.png, id=619, 469.755pt x 252.945pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c10c55b2f.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c10c55b2f.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c10c55b2f.png  used on input line 1518.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[59 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c26707947.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c3b87c47.png, id=620, 3613.5pt x 1606.0pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3b87c47.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3b87c47.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3b87c47.png  used on input line 1520.
+[60 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c48444964.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c5512631d.png, id=628, 3613.5pt x 1606.0pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5512631d.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5512631d.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c5512631d.png  used on input line 1529.
 (pdftex.def)             Requested size: 500.484pt x 222.43692pt.
-[60{c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <../../AppData/Local/Temp/RtmpInFHXE/file4b0c427649a2.png>] [61 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c3b87c47.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c1d893682.pdf, id=647, 614.295pt x 794.97pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1d893682.pdf Graphic file (type pdf)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1d893682.pdf>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c1d893682.pdf  used on input line 1555.
+[61{c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <../../AppData/Local/Temp/RtmpInFHXE/file4b0c10c55b2f.png>] [62 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c5512631d.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c4f356e21.pdf, id=655, 614.295pt x 794.97pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4f356e21.pdf Graphic file (type pdf)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4f356e21.pdf>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4f356e21.pdf  used on input line 1564.
 (pdftex.def)             Requested size: 450.43253pt x 582.91916pt.
-[62] [63 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c1d893682.pdf>]
+[63] [64 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c4f356e21.pdf>]
 
-LaTeX Warning: Reference `wea-spp-rev-ne' on page 64 undefined on input line 1566.
+LaTeX Warning: Reference `wea-spp-rev-ne' on page 65 undefined on input line 1575.
 
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c39746f99.png, id=662, 469.755pt x 216.81pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c39746f99.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c39746f99.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c39746f99.png  used on input line 1570.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c172c407b.png, id=671, 469.755pt x 216.81pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c172c407b.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c172c407b.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c172c407b.png  used on input line 1579.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
 
-ignored: Infinite glue shrinkage found in box being split [64 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c39746f99.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c30663c3f.png, id=674, 469.755pt x 471.4413pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c30663c3f.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c30663c3f.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c30663c3f.png  used on input line 1683.
+ignored: Infinite glue shrinkage found in box being split [65 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c172c407b.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c50b07a69.png, id=682, 469.755pt x 471.4413pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c50b07a69.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c50b07a69.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c50b07a69.png  used on input line 1692.
 (pdftex.def)             Requested size: 500.484pt x 502.27911pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1683--1684
-
- []
-
-[65]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c51b4eb9.png, id=682, 469.755pt x 361.1091pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c51b4eb9.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c51b4eb9.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c51b4eb9.png  used on input line 1692.
-(pdftex.def)             Requested size: 500.484pt x 384.72989pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1692--1693
 
  []
 
-[66 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c30663c3f.png>] [67 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c51b4eb9.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c3ef7484.jpg, id=698, 614.295pt x 794.97pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3ef7484.jpg Graphic file (type jpg)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3ef7484.jpg>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c3ef7484.jpg  used on input line 1713.
+[66]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0ce844c52.png, id=690, 469.755pt x 361.1091pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0ce844c52.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0ce844c52.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0ce844c52.png  used on input line 1701.
+(pdftex.def)             Requested size: 500.484pt x 384.72989pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1701--1702
+
+ []
+
+[67 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c50b07a69.png>] [68 <../../AppData/Local/Temp/RtmpInFHXE/file4b0ce844c52.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c7532756c.jpg, id=706, 614.295pt x 794.97pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7532756c.jpg Graphic file (type jpg)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7532756c.jpg>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c7532756c.jpg  used on input line 1722.
 (pdftex.def)             Requested size: 275.26772pt x 356.22905pt.
-[68] [69 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c3ef7484.jpg>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c26693b2.png, id=714, 982.6311pt x 481.19775pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c26693b2.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c26693b2.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c26693b2.png  used on input line 1738.
+[69] [70 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c7532756c.jpg>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c68aa4d91.png, id=723, 982.6311pt x 481.19775pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c68aa4d91.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c68aa4d91.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c68aa4d91.png  used on input line 1747.
 (pdftex.def)             Requested size: 500.484pt x 245.08453pt.
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c18e31383.png, id=719, 433.62pt x 216.81pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c18e31383.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c18e31383.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c18e31383.png  used on input line 1749.
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c4dba1bca.png, id=728, 433.62pt x 216.81pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4dba1bca.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4dba1bca.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4dba1bca.png  used on input line 1758.
 (pdftex.def)             Requested size: 500.484pt x 250.25586pt.
-[70 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c26693b2.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0cdc33d52.png, id=730, 982.6311pt x 481.19775pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0cdc33d52.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0cdc33d52.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0cdc33d52.png  used on input line 1760.
+[71 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c68aa4d91.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c9371cc5.png, id=738, 982.6311pt x 481.19775pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c9371cc5.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c9371cc5.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c9371cc5.png  used on input line 1769.
 (pdftex.def)             Requested size: 500.484pt x 245.08453pt.
-[71 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c18e31383.png>] [72 <../../AppData/Local/Temp/RtmpInFHXE/file4b0cdc33d52.png>]
-<../../AppData/Local/Temp/RtmpInFHXE/file4b0c4b06383.png, id=747, 254.3904pt x 277.39635pt>
-File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4b06383.png Graphic file (type png)
-<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4b06383.png>
-Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c4b06383.png  used on input line 1801.
+[72 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c4dba1bca.png>] [73 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c9371cc5.png>]
+<../../AppData/Local/Temp/RtmpInFHXE/file4b0c19901b39.png, id=755, 254.3904pt x 277.39635pt>
+File: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c19901b39.png Graphic file (type png)
+<use ../../AppData/Local/Temp/RtmpInFHXE/file4b0c19901b39.png>
+Package pdftex.def Info: ../../AppData/Local/Temp/RtmpInFHXE/file4b0c19901b39.png  used on input line 1810.
 (pdftex.def)             Requested size: 250.24199pt x 272.8878pt.
-[73 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c4b06383.png>] [74]
-<C:/Users/stephanie.owen/Documents/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Final_files/figure-latex/docformat-1.pdf, id=763, 469.755pt x 210.7875pt>
+[74 <../../AppData/Local/Temp/RtmpInFHXE/file4b0c19901b39.png>] [75]
+<C:/Users/stephanie.owen/Documents/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Final_files/figure-latex/docformat-1.pdf, id=771, 469.755pt x 210.7875pt>
 File: C:/Users/stephanie.owen/Documents/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Final_files/figure-latex/docformat-1.pdf Graphic file (type pdf)
 <use C:/Users/stephanie.owen/Documents/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Final_files/figure-latex/docformat-1.pdf>
-Package pdftex.def Info: C:/Users/stephanie.owen/Documents/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Final_files/figure-latex/docformat-1.pdf  used on input line 1826.
+Package pdftex.def Info: C:/Users/stephanie.owen/Documents/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Final_files/figure-latex/docformat-1.pdf  used on input line 1835.
 (pdftex.def)             Requested size: 500.484pt x 224.57549pt.
 
-Overfull \hbox (25.40596pt too wide) in alignment at lines 1847--1855
+Overfull \hbox (25.40596pt too wide) in alignment at lines 1856--1864
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.40596pt too wide) in alignment at lines 1855--1861
+Overfull \hbox (25.40596pt too wide) in alignment at lines 1864--1870
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.40596pt too wide) in alignment at lines 1861--1895
+Overfull \hbox (25.40596pt too wide) in alignment at lines 1870--1904
  [] [] [] [] [] 
  []
 
 
-ignored: Infinite glue shrinkage found in box being split [75 <c:/Users/stephanie.owen/Documents/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Final_files/figure-latex/docformat-1.pdf>] [76] (./SOE2026_NEFMC_IR_Final.aux * soulpos - computing points - it may take a few seconds *
+ignored: Infinite glue shrinkage found in box being split [76 <c:/Users/stephanie.owen/Documents/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Final_files/figure-latex/docformat-1.pdf>] [77] (./SOE2026_NEFMC_IR_Final.aux * soulpos - computing points - it may take a few seconds *
 \openout3 = `SOE2026_NEFMC_IR_Final.upb'.
 
 (./SOE2026_NEFMC_IR_Final.upa))
@@ -1257,18 +1263,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20499 strings out of 469515
- 402910 string characters out of 5467386
- 829680 words of memory out of 5000000
- 48610 multiletter control sequences out of 15000+600000
+ 20513 strings out of 469515
+ 403777 string characters out of 5467386
+ 830175 words of memory out of 5000000
+ 48622 multiletter control sequences out of 15000+600000
  710194 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  77i,15n,117p,3029b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on SOE2026_NEFMC_IR_Final.pdf (73 pages, 19554684 bytes).
+Output written on SOE2026_NEFMC_IR_Final.pdf (74 pages, 19722630 bytes).
 PDF statistics:
- 1008 PDF objects out of 1200 (max. 8388607)
- 810 compressed objects within 9 object streams
- 212 named destinations out of 1000 (max. 500000)
- 630 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1016 PDF objects out of 1200 (max. 8388607)
+ 816 compressed objects within 9 object streams
+ 214 named destinations out of 1000 (max. 500000)
+ 635 words of extra memory for PDF output out of 10000 (max. 10000000)
 

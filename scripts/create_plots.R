@@ -765,7 +765,7 @@ save_plot(
   plot_expression = {
     ecodata::plot_community_risks(
       report = region,
-      n = 24
+      n = 30
     ) +
         ggplot2::theme(legend.position = 'bottom')
   },
