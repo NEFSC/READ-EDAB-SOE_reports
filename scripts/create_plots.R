@@ -129,12 +129,12 @@ save_plot(
 # climate vulnerability landings
 save_plot(
   plot_expression = {
-    ecodata::plot_community_climate_vulnerability(
+    ecodata::plot_community_risks(
       report = region,
       plottype = "regionland",
       n = 30
     ) +
-      ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
+      ggplot2::ylab("Total Vulnerability \n (Regional Landings)") +
       ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "climatevul_land",
@@ -413,13 +413,13 @@ save_plot(
 # 4. Climate Vulnerability Revenue Plot
 save_plot(
   plot_expression = {
-    ecodata::plot_community_climate_vulnerability(
+    ecodata::plot_community_risks(
       report = region,
       plottype = "regionrev",
       n = 24
     ) +
          ggplot2::theme(legend.position = "bottom") +
-        ggplot2::ylab("Total Climate Vulnerability \n (Regional Revenue)") 
+        ggplot2::ylab("Total Vulnerability \n (Regional Revenue)") 
   },
   indicator = "climatevul_rev",
   width = 6.5,
@@ -763,7 +763,7 @@ save_plot(
 # 3. Community Climate Vulnerability Exposure Plot
 save_plot(
   plot_expression = {
-    ecodata::plot_community_climate_vulnerability(
+    ecodata::plot_community_risks(
       report = region,
       n = 24
     ) +
@@ -997,6 +997,25 @@ save_plot(
   width = 6.5,
   height = 4.5
 )
+
+# In situ bottom temperature
+save_plot(
+  plot_expression = {
+    if (region == "MidAtlantic") {
+      ecodata::plot_bottom_temp_insitu(report = region, n = 10)  
+    } else {
+      ecodata::plot_bottom_temp_insitu(
+        report = region,
+        n = 10
+      )   +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
+  },
+  indicator = "bottom_temp_insitu",
+  width = 6.5,
+  height = ifelse(region == "NewEngland", 5, 2.5)
+)
+
 # Other ocean uses: offshore wind ----
 
 # 1. Wind Species Revenue Plot
