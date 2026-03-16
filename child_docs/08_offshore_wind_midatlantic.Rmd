@@ -29,7 +29,7 @@ create_wea_landings_rev_table(council = "MAFMC") |>
     )
   ) |>
   flextable::flextable() %>%
-  flextable::set_caption("Top 10 Mid-Atlantic managed species Landings and Revenue from Wind Energy Areas. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species.") %>%
+  flextable::set_caption("Top 10 Mid-Atlantic managed species Landings and Revenue from Active Projects. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species.") %>%
   flextable::width(width = c(2,2,2))
 ```
 

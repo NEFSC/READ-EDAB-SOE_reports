@@ -3,7 +3,7 @@
 ## TODO: move flextable aesthetics into ecodata function
 tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for", region2, "communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.")
 
-# Mid Atlantic Table
+# Mid-Atlantic Table
 comm_vul_table_ma <- ecodata::plot_community_factors(report = "MidAtlantic", varName = "Social", plottype = "Commercial") |>
   flextable::flextable() |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
@@ -28,7 +28,7 @@ comm_vul_table_ne <- ecodata::plot_community_factors(report = "NewEngland", varN
 ## TODO: move flextable aesthetics into ecodata function
 tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for", region2, "communities most engaged in recreational fishing, 2022. Blank spaces indicate no data available.")
 
-# Mid Atlantic Table
+# Mid-Atlantic Table
 rec_vul_table_ma <- ecodata::plot_community_factors(report = params$region, varName = "Social", plottype = "Recreational") |>
   flextable::flextable() |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",

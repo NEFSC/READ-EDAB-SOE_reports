@@ -14,7 +14,7 @@ Results from the [Crew Survey](https://noaa-edab.github.io/catalog/crew_survey.h
 
 [Communities at Sea](https://noaa-edab.github.io/catalog/communities_at_sea.html) indicators show a decline in the number of New England fishing communities since 1996, suggesting a consolidation of fishing operations and employment concentrated into fewer ports. Fishing days on trawlers, a proxy for employment, has also declined over this time period, while employment in lobster communities has increased. Adaptive capacity indicators show that the ability to shift target species and fishing grounds varies by community, which is most limited in lobster potting communities. The Communities at Sea indicators combined with the declining fleet count and declining overall landings, suggests a reduced capacity for New England commercial fisheries to adapt to future change.
 
-The number of [recreational trips](https://noaa-edab.github.io/catalog/recdat.html) is below average, although there is no long-term trend, and recreational landings have been declining. Low recreational landings may also be driven by a shift to catch-and-release fishing and stricter shark and large sport fish regulations. Recreational effort diversity is near average with no trend and there has been no shift in angling modes, suggesting steady recreational fishing opportunities. Recreational species catch diversity has increased over time (Fig. \ref{fig:recdat-div-catch-ne}), indicating that anglers are catching a more varied mix of species, likely due to shifting species distributions. 
+The number of [recreational trips](https://noaa-edab.github.io/catalog/recdat.html) is below average, although there is no long-term trend, and recreational landings have been declining. Low recreational landings may also be driven by a shift to catch-and-release fishing and stricter shark and large sport fish regulations. Recreational effort diversity is near average with no trend (Fig. \ref{fig:permit-div}) and there has been no shift in angling modes, suggesting steady recreational fishing opportunities. Recreational species catch diversity has increased over time (Fig. \ref{fig:recdat-div-catch-ne}), indicating that anglers are catching a more varied mix of species, likely due to shifting species distributions. 
 
 ```{r permit-div, fig.cap = return_caption(chunk_name = "commercial-div-species-div", region = "NewEngland"),fig.width = 6.5,fig.asp = 0.3}
 return_plot("commercial-div-species-div", region = "NewEngland")
@@ -26,15 +26,15 @@ return_plot("recdat-div-catch", region = "NewEngland")
 
 #### Ecological Stability
 
-Long-term changes in biological production suggest the Georges Bank ecosystem is experiencing a system-wide shift. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html) (TPP) is a measure of the total amount of carbon (i.e., energy) produced by phytoplankton per year and is variable over time. Zooplankton biomass and the biomass of some groups of fish are also increasing. However, the productivity of managed species has declined over time, suggesting that although the system remains productive, this productivity is driven by non-target species. 
+Long-term changes in biological production suggest the Georges Bank ecosystem is experiencing a system-wide shift. Total annual [primary production](https://noaa-edab.github.io/catalog/chl_pp.html) (TPP) (Fig. \ref{fig:totpp-ne})is a measure of the total amount of carbon (i.e., energy) produced by phytoplankton per year and is variable over time. Zooplankton biomass and the biomass of some groups of fish are also increasing. However, the productivity of managed species has declined over time, suggesting that although the system remains productive, this productivity is driven by non-target species. 
 
 ```{r totpp-ne, fig.cap =return_caption(chunk_name = "totpp", region = "NewEngland"),fig.width = 7.5,fig.asp = 0.3}
 return_plot("totpp", region = "NewEngland")
 ```
 
-\newpage
+<!-- \newpage -->
 
-The Gulf of Maine ecosystem has also continued to change over time leading to less predictable ecosystem conditions. Long-term primary productivity has remained relatively constant, but increases in planktivores and euphausiids suggest changing ecosystem dynamics and potential for complex interactions with higher trophic levels. The zooplankton community displays distinct regime shifts in composition corresponding to approximately decadal time scales, with the most recent shift in community composition occurring in 2023. Productivity of managed species has declined, with current levels below average, but it is unclear if that is the result of these ecosystem changes.
+The Gulf of Maine ecosystem has also continued to change over time leading to less predictable ecosystem conditions. Long-term primary productivity has remained relatively constant, but increases in planktivores and euphausiids suggest changing ecosystem dynamics and potential for complex interactions with higher trophic levels. The zooplankton community displays distinct regime shifts in composition corresponding to approximately decadal time scales, with the most recent shift in community composition occurring in 2023 (Fig. \ref{fig:zoo-comm-ne}). Productivity of managed species has declined, with current levels below average, but it is unclear if that is the result of these ecosystem changes.
 
 ```{r zoo-comm-ne, fig.cap = return_caption(chunk_name = "zoo-community", region = "NewEngland"), fig.width=5, fig.asp=.4}
 return_plot("zoo-community", region = "NewEngland")
@@ -54,7 +54,7 @@ return_plot("traits-k", region = "NewEngland")
 return_plot("traits-tl", region = "NewEngland")
 ```
 
-\newpage
+<!-- \newpage -->
 
 Increasing [Adult fish diversity](https://noaa-edab.github.io/catalog/exp_n.html) (Fig. \ref{fig:exp-n-ne}) and changes in functional traits such as the mean trophic level suggest that fish communities have changed from a historic baseline. Long-term trends in biomass and functional traits would not be expected in a stable system. However, because the biomass of functional groups of fish has remained relatively constant over time, the system appears able to adapt to change.
 
