@@ -10,7 +10,7 @@ With the first offshore wind energy projects now under construction and operatio
 
 Offshore wind indicators are based on federal logbook data and do not include all data for all fisheries; therefore a complete evaluation of potential offshore wind energy development impacts would need to be supplemented by other data sources. For further information on the utility of the data, see the [socioeconomic impacts of offshore wind development data reports page](https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development).
 
-Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) from trips within Active Projects varied annually from 2008-2024. Maximum annual revenue for the fisheries with the most overlap with Active Projects peaked at over \$8.7 million for the sea scallop fishery, \$1.1 million for monkfish, \$477,000 for skates, \$377,000 for yellowtail flounder, and $344,000 for Atlantic herring (Fig. 92). Individual groundfish species are more affected on a percentage basis, with up to 13% of historical annual revenues overlapping with Active Projects for species such as little skate (13%), barndoor skate (11%), yellowtail flounder (10%), and 6% each for red hake, clearnose skate, and winter skate, respectively (Table \ref{tab:wea-landings-rev-ne}). Future fishery resource overlap with wind leases, especially scallops, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.
+Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) from trips within Active Projects varied annually from 2008-2024. Maximum annual revenue for the fisheries with the most overlap with Active Projects peaked at over \$8.7 million for the sea scallop fishery, \$1.1 million for monkfish, \$477,000 for skates, \$377,000 for yellowtail flounder, and $344,000 for Atlantic herring (Fig. \ref{wea-spp-rev-ne}). Individual groundfish species are more affected on a percentage basis, with up to 13% of historical annual revenues overlapping with Active Projects for species such as little skate (13%), barndoor skate (11%), yellowtail flounder (10%), and 6% each for red hake, clearnose skate, and winter skate, respectively (Table \ref{tab:wea-landings-rev-ne}). Future fishery resource overlap with wind leases, especially scallops, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.
 
 ```{r wea-spp-rev-ne, fig.cap=return_caption(chunk_name = "wea-spp-rev", region = "NewEngland"),  fig.width=6, fig.asp=.6}
 return_plot("wea-spp-rev", region = "NewEngland")
@@ -29,7 +29,7 @@ create_wea_landings_rev_table(council = "NEFMC") |>
     )
   ) |>
   flextable::flextable() %>%
-  flextable::set_caption("Top 10 New England managed species Landings and Revenue from Wind Energy Areas. Skates includes barndoor, winter, clearnose, smooth, little, and general skates reported in logbooks. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species..") %>%
+  flextable::set_caption("Top 10 New England managed species Landings and Revenue from Active Projects. Skates includes barndoor, winter, clearnose, smooth, little, and general skates reported in logbooks. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species.") %>%
   flextable::width(width = c(2,2,2))
 ```
 
@@ -39,7 +39,7 @@ create_wea_landings_rev_table(council = "NEFMC") |>
 return_plot("wea-port-rev", region = "NewEngland")
 ```
 
-\newpage
+<!-- \newpage -->
 
 Based on federal vessel logbook data, Little Compton, RI (13% average and 24% maximum) and Westport, MA (6% average and 12% maximum) have the highest potential revenue loss from Active Projects based on 2008-2024 total port fisheries revenue, with all other New England communities having less than 5% (Fig. \ref{fig:wea-port-rev}). Additional fishing revenue may be lost as more areas historically used for fishing are developed for offshore wind energy. In seven Mid-Atlantic ports, New England managed species account for at least 50% of landings from the Active Project areas by value or weight (Fig. \ref{fig:wind-rev}). Furthermore, impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean.
 

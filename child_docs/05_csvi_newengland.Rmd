@@ -8,17 +8,17 @@
 
 ### Indicators: Port Commercial Fishing Activity and Community Social Vulnerability
 
-The [Port Commercial Fishing Activity Indicator (PCFA)](https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72) highlights significant shifts in industry engagement across major regional ports. New Bedford, Gloucester, and Boston, MA and Portland, ME, have lower fishing activity compared to their 2007–2011 averages. Because New Bedford and Boston also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions. Conversely, several communities show substantial growth in fishing activity. Chatham, MA, along with Stonington, Friendship, Harpswell, ME, are seeing increased port activity since 2007-2011. 
+The [Port Commercial Fishing Activity Indicator (PCFA)](https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72) (Fig. \ref{fig:commercial-engagement-ne}) highlights significant shifts in industry engagement across major regional ports. New Bedford, Gloucester, and Boston, MA and Portland, ME, have lower fishing activity compared to their 2007–2011 averages. Because New Bedford and Boston also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions. Conversely, several communities show substantial growth in fishing activity. Chatham, MA, along with Stonington, Friendship, Harpswell, ME, are seeing increased port activity since 2007-2011. 
 
-Of the top 10 most active recreational communities, only Seabrook, NH had medium or higher ranks for at least one socio-demographic indicator (Table \ref{tab:recvultab}) examined here (poverty, personal disruption, population composition). This suggests that future changes to recreational fishing conditions may disproportionately impact Seabrook.
+Of the top 10 most active recreational communities, only Seabrook, NH had medium or higher ranks for at least one socio-demographic indicator (Table \ref{tab:recvultab}) (Fig. \ref{fig:recreational-engagement-ne})examined here (poverty, personal disruption, population composition). This suggests that future changes to recreational fishing conditions may disproportionately impact Seabrook.
 
 ```{r commercial-engagement-ne, fig.cap= return_caption(chunk_name = "commercial-engagement", region = "NewEngland"), fig.width = 7, fig.asp = 0.5}
 return_plot("commercial-engagement", region = "NewEngland")
 ```
 
 
-```{r comvultab, tab.cap = "Community Vulnerability factors for the top 10 commercially active New England Ports"}
-comm_vul_table |>
+```{r comvultab, tab.cap = "Community Vulnerability factors for the municipalities housing the top 10 commercially active New England Ports"}
+comm_vul_table_ne |>
   flextable::fit_to_width(7.5)
 ```
 
@@ -27,11 +27,11 @@ return_plot("recreational-engagement", region = "NewEngland")
 ```
 
 ```{r recvultab, tab.cap = "Community Vulnerability factors for the top 10 recreationally engaged New England Ports"}
-rec_vul_table|>
+rec_vul_table_ne |>
   flextable::fit_to_width(7.5)
 ```
 
-\newpage
+<!-- \newpage -->
 
 ### Indicators: Community Environmental Variability Risk in New England
 

@@ -10,7 +10,7 @@
 
 ### Indicators: Landings; commercial and recreational
 
-In New England, total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html) (includes bait and industrial uses), U.S. seafood landings (excludes industrial and bait uses), and NEFMC-managed landings have long-term declines (Fig. 1). Declines are seen in commercial landings by [guild](https://noaa-edab.github.io/catalog/species_groupings.html), which include all species and all uses caught with GB and the GOM, and are reported in total and for NEFMC managed species only. Downward trends persist for piscivores and benthivores in both regions. Current high total landings for benthivores (GOM) are attributable to American lobster. High benthos landings (GB) are attributable to clams and scallops, although they are below the long-term mean in 2024 (Fig. \ref{fig:total-landings}). Current landings of planktivores and piscivores remain among the lowest points in the time series.
+In New England, total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html) (includes bait and industrial uses), U.S. seafood landings (excludes industrial and bait uses), and NEFMC-managed landings have long-term declines ((Fig. \ref{fig:total-landings}). Declines are seen in commercial landings by [guild](https://noaa-edab.github.io/catalog/species_groupings.html) (Fig. \ref{fig:comm-landings}), which include all species and all uses caught with GB and the GOM, and are reported in total and for NEFMC managed species only. Downward trends persist for piscivores and benthivores in both regions. Current high total landings for benthivores (GOM) are attributable to American lobster. High benthos landings (GB) are attributable to clams and scallops, although they are below the long-term mean in 2024 (Fig. \ref{fig:total-landings}). Current landings of planktivores and piscivores remain among the lowest points in the time series.
 
  
 ```{r, total-landings, fig.width = 6.5, fig.asp = 0.4, fig.cap = return_caption(chunk_name = "total-landings", region = "NewEngland")}
@@ -21,7 +21,7 @@ return_plot("total-landings", region = "NewEngland")
 return_plot("comm-landings", region = "NewEngland")
 ```
 
-New England ports face a moderate risk from environmental variability with no long-term trend, as evaluated by the 2025 [Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html)indicators (Fig. \ref{fig:climatevul-land}). These indicators assess port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much of a region’s landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
+New England ports face a moderate risk from environmental variability with no long-term trend, as evaluated by the 2025 [Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) (Fig. \ref{fig:climatevul-land}). These indicators assess port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much of a region’s landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
 
 ```{r, climatevul-land, fig.cap = return_caption(chunk_name = "climatevul-land", region = "NewEngland"), fig.width=6.5, fig.asp=0.5}
 return_plot("climatevul-land", region = "NewEngland")
@@ -52,7 +52,7 @@ Single species [management objectives](https://noaa-edab.github.io/catalog/stock
 return_plot("stock-status", region = "NewEngland")
 ```
 
-\newpage
+<!-- \newpage -->
 
 ```{r stock-status-table, ft.arraystretch = 1}
 stock_status_plot <- ecodata::plot_stock_status(report = "NewEngland")
