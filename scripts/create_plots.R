@@ -517,11 +517,19 @@ save_plot(
 # 1. Commercial Diversity Fleet Plot
 save_plot(
   plot_expression = {
+    if (region == "MidAtlantic") {
     a <- ecodata::plot_commercial_div(
       report = region,
       varName = "Fleet count",
       n = 22
     ) +
+         ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
+    } else {
+      a <- ecodata::plot_commercial_div(
+        report = region,
+        varName = "Fleet count",
+        n = 22
+      ) +
          ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     b <- ecodata::plot_commercial_div(
       report = region,
@@ -530,10 +538,11 @@ save_plot(
     ) +
          ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     ggpubr::ggarrange(a, b, nrow = 2)
+    }
   },
   indicator = "comm_div_fleet",
   width = 6.5,
-  height = 5
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 # 2. Commercial Diversity Species Diversity Plot
