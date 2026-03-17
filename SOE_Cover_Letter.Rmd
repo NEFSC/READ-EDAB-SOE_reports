@@ -1,0 +1,33 @@
+---
+author:
+- Sarah Gaichas, PhD
+- Research Fishery Biologist
+- Ecosystem Dynamics and Assessment Branch
+- Northeast Fisheries Science Center
+opening: To the SSC,
+closing: Sincerely,
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+address:
+- New England Fishery Management Council
+- 50 Water St No. 2 
+- Newburyport, MA 01950
+encl:
+ - "State of the Ecosystem 2024: Request Tracking Memo"
+cc:
+- Jon Hare
+letterhead: letterhead/NEFSCletterhead.pdf
+signature: signature/gaichas.pdf
+signature-before: -8ex
+
+output: linl::linl
+
+---
+
+In this memo we list comments and requests received on the 2019-2023 State of the Ecosystem (SOE) reports, and how we responded to those requests. We include comments from both Councils because adjustments to the report were made in response to both. We welcome feedback on whether this memo is useful and how to improve it for future SOE reporting.
+
+Since 2023, the memo is organized into categories of requests in descending order of overall Council priority. The Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022.
+
+The attached document includes a table where we summarize all comments and requests with sources. The Status and Progress columns briefly summarize how we responded, with a more detailed response in each memo section. In each detailed response, we refer to SOE sections where changes are found or describe information that was not sufficiently developed to include in the 2023 SOE in an effort to solicit feedback on how best to develop indicators for future reports.
+
+We welcome comments on the entire SOE report as well as information included in this memo, and look forward to feedback from the SSC and Council.
+
