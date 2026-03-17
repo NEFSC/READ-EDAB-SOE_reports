@@ -1042,6 +1042,7 @@ save_plot(
       plottype = "nofacets",
       n = 16
     )    +
+      ecodata::geom_gls()+
          ggplot2::theme(legend.position = "bottom") +
       if (region == "MidAtlantic") {
         ggplot2::ggtitle("Mid Atlantic: Fishery Revenue in Active Projects") 
