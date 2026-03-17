@@ -149,7 +149,7 @@ All indicators are updated with the most recent data available as of January 202
 
 # Document Orientation
 
-The figure format is illustrated in Fig \ref{fig:docformat}a. Trend lines are shown when slope is significantly different from 0 at the p < 0.05 level. An orange line signifies an overall positive trend, and purple signifies a negative trend. To minimize bias introduced by small sample size, no trend is fit for < 30 year time series. Dashed lines represent mean values of time series unless the indicator is an anomaly, in which case the dashed line is equal to 0. Shaded regions indicate the past ten years. If there are no new data for 2022, the shaded region will still cover this time period. The spatial scale of indicators is either coastwide, Mid-Atlantic states (New York, New Jersey, Delaware, Maryland, Virginia, North Carolina), or at the Mid-Atlantic Bight (MAB) Ecosystem Production Unit (EPU, Fig. \ref{fig:docformat}b) level.
+The figure format is illustrated in Fig \ref{fig:docformat}a. Trend lines are shown when slope is significantly different from 0 at the p < 0.05 level. An orange line signifies an overall positive trend, and purple signifies a negative trend. To minimize bias introduced by small sample size, no trend is fit for < 30 year time series. Dashed lines represent mean values of time series unless the indicator is an anomaly, in which case the dashed line is equal to 0. Shaded regions indicate the past ten years. If there are no new data for 2022, the shaded region will still cover this time period. Indicators are scaled at several levels: coastwide; by state groups (Mid-Atlantic: NY, NJ, DE, MD, VA, NC; New England: ME, NH, MA, RI, CT); or by Ecosystem Production Unit (EPU), including the Mid-Atlantic Bight (MAB), Georges Bank (GB), and Gulf of Maine (GOM) (Fig. \ref{fig:docformat}b).
 
 ```{r docformat, fig.cap = return_caption(chunk_name = "docformat", region = "BothReports"),  fig.width = 6.5, fig.height = 2.5}
 ecodata::plot_demo(n = 10)
@@ -582,7 +582,7 @@ In 2024, the Gulf of Maine [source water](https://noaa-edab.github.io/catalog/sl
 return_plot("slopewater", region = "BothReports")
 ```
 
-2025 total primary production was below average in Georges Bank and the Mid-Atlantic due to lower phytoplankton biomass and cooler sea surface temperatures. [Phytoplankton biomass](https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp) (shown as chlorophyll a concentration) was also below average for much of 2025 (Fig. \ref{fig:chl-anom}). In particular, the winter-spring bloom period, which typically accounts for a significant proportion to total annual phytoplankton production, was shorter in duration and lower in magnitude across the entire Northeast shelf region. The fall bloom period was above average in the Gulf of Maine and Georges Bank, but near average in the Mid-Atlantic. 
+2025 total primary production was below average in Georges Bank and the Mid-Atlantic due to lower phytoplankton biomass and cooler sea surface temperatures. [Phytoplankton biomass](https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp) (shown as chlorophyll a concentration) was also below average for much of 2025 (Fig. \ref{fig:chl-anom}). In particular, the winter-spring bloom period, which typically accounts for a significant proportion of total annual phytoplankton production, was shorter in duration and lower in magnitude across the entire Northeast shelf region. The fall bloom period was above average in the Gulf of Maine and Georges Bank, but near average in the Mid-Atlantic. 
 
 ```{r chl-anom, out.width="100%", fig.cap=return_caption(chunk_name = "chl-anom-apr", region = "BothReports")}
 return_plot(name = c("chl-anom-apr","chl-anom-oct"), region = "BothReports")
@@ -598,22 +598,22 @@ Mid-Atlantic scallops in the Elephant Trunk region are showing positive signs fo
 
 Several members of the fishing community noted changes in species composition, distribution, and timing in their typical fishing grounds and attributed it to the cooler temperatures. These observations may not fully represent the entire ecosystem, but provide local context to recent events that may not be represented in other indicators. Some notable examples include:
 
-  - Several members of the fishing industry reported that it was a “very good year” for billfish. According to the Large Pelagic Survey, it was a record year for white marlin with more than 23,000 fish caught and released. Billfish effort may have been higher than usual due to the closure of the recreational bluefin tuna fishery in August 2025.
-  - Chesapeake Bay anglers reported good catch of red drum in 2024, followed by low catch and even cold stunned red drum and spotted sea trout in 2025. Scientists working with charter captains in Chesapeake Bay reported low catch rates of striped bass and red drum from June-September, but higher catch rates in the early spring and fall.
-  - Fishers attributed the delayed migration of black sea bass inshore, and scup migrating south for the winter using similar routes as in the early 1970s due to the cooler temperatures.
-  - Members of the bluefish fishery in Rhode Island reported very low landings in 2025 attributed to changes in seasonal migration path or timing. 
-  - Some species, such as Atlantic mackerel, Illex squid and sandlance, were observed in higher abundance and wider distributions compared to recent years.
-  - Fishers in the Gulf of Maine and Georges Bank had mixed reports of lobsters and good catch of sea scallops. 
-  - Fishers reported fewer warm water species in 2025 along the New Jersey coast. Others, however, noted more new species (e.g., pomapano, spadefish, triggerfish, Spanish and king mackerel) in Delaware Bay. 
-  - Anglers also observed low spring and summer catches of gamefish in Mid-Atlantic bays and on the shelf, and high concentrations of shark species near the coast.
+- Several members of the fishing industry reported that it was a “very good year” for billfish. According to the Large Pelagic Survey, it was a record year for white marlin with more than 23,000 fish caught and released. Billfish effort may have been higher than usual due to the closure of the recreational bluefin tuna fishery in August 2025.
+- Chesapeake Bay anglers reported good catch of red drum in 2024, followed by low catch and even cold stunned red drum and spotted sea trout in 2025. Scientists working with charter captains in Chesapeake Bay reported low catch rates of striped bass and red drum from June-September, but higher catch rates in the early spring and fall.
+- Fishers attributed the delayed migration of black sea bass inshore, and scup migrating south for the winter using similar routes as in the early 1970s due to the cooler temperatures.
+- Members of the bluefish fishery in Rhode Island reported very low landings in 2025 attributed to changes in seasonal migration path or timing. 
+- Some species, such as Atlantic mackerel, Illex squid and sandlance, were observed in higher abundance and wider distributions compared to recent years.
+- Fishers in the Gulf of Maine and Georges Bank had mixed reports of lobsters and good catch of sea scallops. 
+- Fishers reported fewer warm water species in 2025 along the New Jersey coast. Others, however, noted more new species (e.g., pomapano, spadefish, triggerfish, Spanish and king mackerel) in Delaware Bay. 
+- Anglers also observed low spring and summer catches of gamefish in Mid-Atlantic bays and on the shelf, and high concentrations of shark species near the coast.
 
-In Chesapeake Bay, colder than average winter 2025 temperatures (Fig. \ref{fig:chesapeake-jan}) were reported by state agencies as a likely cause of higher blue crab mortality rates compared to the previous winter. Colder winters generally indicate good conditions for striped bass spawning, and while the striped bass juvenile index slightly improved, it was still well below the long-term average. Several years of low striped bass recruitment is a growing concern of fisheries managers. Factors that could be influencing striped bass include below average winter-to-spring freshwater flow and above average water temperatures combined with stressful dissolved oxygen values during the summer. The continued presence of invasive blue catfish and the effect they are having on blue crab, alosines, menhaden, and striped bass populations is also a management concern. 
+In Chesapeake Bay, colder than average winter 2025 temperatures (Fig. \ref{fig:chesapeake-jan}) were reported by state agencies as a likely cause of higher blue crab mortality rates compared to the previous winter. Colder winters generally indicate good conditions for striped bass spawning, and while the striped bass juvenile index slightly improved, it was still well below the long-term average. Several years of low striped bass recruitment is a growing concern of fisheries managers. Factors that could be influencing striped bass include below average winter-to-spring freshwater flow and above average water temperatures combined with stressfully low dissolved oxygen values during the summer. The continued presence of invasive blue catfish and the effect they are having on blue crab, alosines, menhaden, and striped bass populations is also a management concern. 
 
 ```{r chesapeake-jan, out.width="50%", fig.cap=return_caption(chunk_name = "chesapeake-jan", region = "BothReports")}
 return_plot(c("chesapeake-jan","chesapeake-apr"), region = "BothReports")
 ```
 
-[Ocean acidification (OA)](https://noaa-edab.github.io/catalog/ocean_acidification.html)risk in 2025 in the Mid-Atlantic was relatively low. Compared to 2023 and 2024, there were only a few locations in 2025 where OA risk was high for Atlantic sea scallops (outer shelf, spring 2025 only), longfin squid (nearshore, summer 2025 only), and pteropods (nearshore and outer shelf, spring and summer). Gulf of Maine surface OA risk in 2025 was below 2024 levels, as indicated by aragonite saturation state (Ωa) at or near the climatological average (2006-2024).  
+[Ocean acidification (OA)](https://noaa-edab.github.io/catalog/ocean_acidification.html) risk in 2025 in the Mid-Atlantic was relatively low (Fig. \ref{fig:mab-oa}). Compared to 2023 and 2024, there were only a few locations in 2025 where OA risk was high for Atlantic sea scallops (outer shelf, spring 2025 only), longfin squid (nearshore, summer 2025 only), and pteropods (nearshore and outer shelf, spring and summer). [Gulf of Maine surface OA risk](https://noaa-edab.github.io/catalog/gom_acidification.html) in 2025 was below 2024 levels, as indicated by aragonite saturation state (Ωa) at or near the climatological average (2006-2024).  
 
 #### Offshore Wind/Social
 Active offshore wind projects continue to be developed throughout the region. In Southern New England, South Fork Wind Farm remains the first and only commercial scale project under operation (12 turbines). Vineyard Wind 1 and Revolution Wind continued construction, and Empire Wind 1 in the New York Bight and Sunrise Wind began offshore construction in 2025 (Fig. \ref{fig:wind-dev-cumul}). Coastal Virginia Offshore Wind (CVOW) also continued construction in the Mid-Atlantic. All projects currently under construction are anticipated to be complete by the end of 2026. New London, CT and New Bedford, MA have expanded dedicated space and infrastructure for the offshore wind industry with increased port activity for the first projects under construction in southern New England. There are eight additional projects that have Construction and Operations Plan (COP) approvals (three in Southern New England and five in the Mid-Atlantic/New York Bight) that could begin construction in 2026. However, construction schedules are highly uncertain at this time. 
@@ -623,5 +623,32 @@ Active offshore wind projects continue to be developed throughout the region. In
 
 **Editors** (NOAA NMFS Northeast Fisheries Science Center, NEFSC): Abigail Tyrell, Joseph Caracappa, Andy Beet, Brandon Beltz, Kimberly Hyde, Scott Large, Laurel Smith.
 
-**Contributors** (NEFSC unless otherwise noted): Sydney Alhale (SEFSC), Andrew Applegate (NEFMC), Christina Asante, Kimberly Bastille, Heather Baertlein (NMFS Atlantic HMS Management Division), Aaron Beaver (Anchor QEA), Andy Beet, Brandon Beltz, Kristan Blackhart, Ruth Boettcher (Virginia Department of Game and Inland Fisheries), Mandy Bromilow (NOAA Chesapeake Bay Office), Joseph Caracappa, Samuel Chavez-Rosales, Baoshan Chen (Stony Brook University), Zhuomin Chen (UConn), Doug Christel (GARFO), Patricia Clay, Lisa Colburn, Jennifer Cudney (NMFS Atlantic HMS Management Division), Tobey Curtis (NMFS Atlantic HMS Management Division), Cameron Day, Kiley Dancy (MAFMC), Art Degaetano (Cornell U), Geret DePiper, Bart DiFiore (MA DMF), Gregory Ellis, Emily Farr (NMFS Office of Habitat Conservation), Michael Fogarty, Paula Fratantoni, Kevin Friedland, Marjy Friedrichs (VIMS), Sarah Gaichas (Hydra Scientific), Ben Galuardi (GAFRO), Avijit Gangopadhyay (School for Marine Science and Technology, University of Massachusetts Dartmouth), James Gartland (VIMS), Lori Garzio (Rutgers University), Glen Gawarkiewicz (WHOI), Maxwell Grezlik, Laura Gruenburg (Stony Brook University), Sean Hardison, Amanda Hart, Dvora Hart, Cliff Hutt (NMFS Atlantic HMS Management Division), Kimberly Hyde, Grace Jensen (WHOI), Toni Kerns (ASMFC), John Kocik, Steve Kress (National Audubon Society’s Seabird Restoration Program), Young-Oh Kwon (Woods Hole Oceanographic Institution), Scott Large, Gabe Larouche (Cornell U), Daniel Linden, Andrew Lipsky, Sean Lucey (@ Orchard), Don Lyons (National Audubon Society’s Seabird Restoration Program), Kevin Madley, George Maynard, Chris Melrose, Anna Mercer, Shannon Meseck, Kiera Morrill, Ryan Morse, Ray Mroch (SEFSC), Nicole Mucci, Brandon Muffley (MAFMC), Robert Murphy, Kimberly Murray, NEFSC staff, David Moe Nelson (NCCOS), Chris Orphanides, Stephanie Owen, Richard Pace, Debi Palka, Tom Parham (Maryland DNR), CJ Pellerin (NOAA Chesapeake Bay Office), Charles Perretti, Kristin Precoda, Grace Roskar (NMFS Office of Habitat Conservation), Andrew Ross, Jeffrey Runge (U Maine), Grace Saba (Rutgers University), Vincent Saba, Sarah Salois, Chris Schillaci (GARFO), Amy Schueller (SEFSC), Teresa Schwemmer (URI), Tarsila Seara, Dave Secor (CBL), Emily Slesinger, Angela Silva, Adrienne Silver (WHOI), Laurel Smith, Linus Stoltz (Commercial Fisheries Research Foundation), Talya tenBrink (GARFO), Abigail Tyrell, Rebecca Van Hoeck, Bruce Vogt (NOAA Chesapeake Bay Office), Ron Vogel (University of Maryland Cooperative Institute for Satellite Earth System Studies and NOAA/NESDIS Center for Satellite Applications and Research), John Walden, Harvey Walsh, Sarah Weisberg, Changhua Weng, Dave Wilcox (VIMS), Timothy White (Environmental Studies Program, BOEM), Sarah Wilkin (NMFS Office of Protected Resources), Mark Wuenschel, Joseph Warren, Zhitao Yu, Qian Zhang (U Maryland).
+```{r, results='asis', echo=FALSE}
+contrib.file = here::here('utils', 'contributors_list.csv')
 
+if (file.exists(contrib.file)) {
+  contributors <- read.csv(contrib.file, stringsAsFactors = FALSE)
+  
+  # 1. Rejoin the names and apply the NEFSC logic
+  reconstructed_entries <- contributors %>%
+    mutate(
+      # Combine names and trim in case Last_Name is empty
+      Full_Name = str_trim(paste(First_Name, Last_Name)),
+      # If affiliation is NEFSC, just show name; otherwise, show Name (Affiliation)
+      formatted = ifelse(Affiliation == "NEFSC", 
+                         Full_Name, 
+                         paste0(Full_Name, " (", Affiliation, ")"))
+    ) %>%
+    pull(formatted)
+  
+  # 2. Collapse into a single comma-separated string
+  final_string <- paste(reconstructed_entries, collapse = ", ")
+  
+  # 3. Add the header and render as Markdown
+  prefix <- "**Contributors** (NEFSC unless otherwise noted): "
+  cat(paste0(prefix, final_string))
+  
+} else {
+  cat("Contributor list file not found.")
+}
+```
