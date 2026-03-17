@@ -69,3 +69,15 @@ rmarkdown::render(
   )
 )
 difftime(Sys.time(), now)
+
+#Render CoverLetter
+rmarkdown::render(
+  input = here::here("SOE_Cover_Letter.Rmd"),
+  output_file = here::here("SOE2026_NEFMC_Cover_Letter.pdf"),
+  params = list(
+    region = "NewEngland",
+    signature = here::here("utils/caracappa_signature.pdf"),
+    cache = FALSE,
+    id_child_docs = TRUE
+  )
+)

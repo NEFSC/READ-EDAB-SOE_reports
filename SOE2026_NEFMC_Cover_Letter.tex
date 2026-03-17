@@ -1,0 +1,113 @@
+\documentclass[10pt,]{letter}
+\usepackage{mathpazo}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip =
+.5cm]{geometry}
+\usepackage[unicode=true]{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{
+            pdfauthor={Joseph Caracappa, PhD; Research Fishery Biologist; Ecosystem Dynamics and Assessment Branch; Northeast Fisheries Science Center},
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{graphicx,grffile}
+\signature{\vspace*{-8ex}\includegraphics{C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE\_reports/utils/caracappa\_signature.pdf}\\Joseph
+Caracappa, PhD\\Research Fishery Biologist\\Ecosystem Dynamics and
+Assessment Branch\\Northeast Fisheries Science Center}
+
+\date{17 March, 2026}
+
+\usepackage{float}
+\address{}
+
+\usepackage{mdframed} % color is loaded by mdframed
+\definecolor{greyborder}{RGB}{221,221,221}
+\definecolor{greytext}{RGB}{119,119,119}
+\newmdenv[rightline=false,bottomline=false,topline=false,linewidth=3pt,linecolor=greyborder,skipabove=\parskip]{blockquote}
+\renewenvironment{quote}{\begin{blockquote}\list{}{\rightmargin=0em\leftmargin=0em}%
+\item\relax\color{greytext}\ignorespaces}{\unskip\unskip\endlist\end{blockquote}}
+
+\usepackage{wallpaper}
+\ThisULPositionWallPaper{1}{0pt}{0pt}{utils/NEFSCletterhead.pdf}
+
+
+\begin{document}
+
+
+\begin{letter}{New England Fishery Management Council\\50 Water St
+No.~2\\Newburyport, MA 01950}
+\opening{To the SSC,}
+
+In this memo we list comments and requests received on the 2019-2023
+State of the Ecosystem (SOE) reports, and how we responded to those
+requests. We include comments from both Councils because adjustments to
+the report were made in response to both. We welcome feedback on whether
+this memo is useful and how to improve it for future SOE reporting.
+
+Since 2023, the memo is organized into categories of requests in
+descending order of overall Council priority. The Rank column summarizes
+priority and was derived from combined discussion with the Mid-Atlantic
+SSC ecosystem working group and a survey of selected MAFMC members
+coordinated by Council staff in July 2022.
+
+The attached document includes a table where we summarize all comments
+and requests with sources. The Status and Progress columns briefly
+summarize how we responded, with a more detailed response in each memo
+section. In each detailed response, we refer to SOE sections where
+changes are found or describe information that was not sufficiently
+developed to include in the 2023 SOE in an effort to solicit feedback on
+how best to develop indicators for future reports.
+
+We welcome comments on the entire SOE report as well as information
+included in this memo, and look forward to feedback from the SSC and
+Council.
+
+\longindentation=0pt
+\closing{Sincerely,}
+\encl{State of the Ecosystem 2024: Request Tracking Memo}
+\cc{Jon Hare}
+
+\end{letter}
+
+\end{document}

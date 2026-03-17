@@ -1,26 +1,48 @@
 ---
+# --- 1. MUST DECLARE PARAMS HERE ---
+params:
+  region: "NewEngland"
+  signature: ""
+  cache: FALSE
+  id_child_docs: TRUE
+
+# --- Conditional Letter-Specific Fields ---
 author:
-- Sarah Gaichas, PhD
-- Research Fishery Biologist
-- Ecosystem Dynamics and Assessment Branch
-- Northeast Fisheries Science Center
+  - "`r if(params$region == 'MidAtlantic') 'Abigail Tyrell, PhD' else 'Joseph Caracappa, PhD'`"
+  - "Research Fishery Biologist"
+  - "Ecosystem Dynamics and Assessment Branch"
+  - "Northeast Fisheries Science Center"
+
+address:
+  - "`r if(params$region == 'MidAtlantic') 'Mid-Atlantic Fishery Management Council' else 'New England Fishery Management Council'`"
+  - "`r if(params$region == 'MidAtlantic') '800 N. State St., Suite 201' else '50 Water St No. 2'`"
+  - "`r if(params$region == 'MidAtlantic') 'Dover, DE 19901' else 'Newburyport, MA 01950'`"
+
+signature: "`r params$signature`"
+
 opening: To the SSC,
 closing: Sincerely,
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-address:
-- New England Fishery Management Council
-- 50 Water St No. 2 
-- Newburyport, MA 01950
 encl:
  - "State of the Ecosystem 2024: Request Tracking Memo"
 cc:
 - Jon Hare
-letterhead: letterhead/NEFSCletterhead.pdf
-signature: signature/gaichas.pdf
+letterhead: utils/NEFSCletterhead.pdf
 signature-before: -8ex
 
-output: linl::linl
+# --- Document Settings & Dependencies ---
+fontsize: 10pt
+link-citations: yes
+geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
+subparagraph: yes
+urlcolor: blue
+always_allow_html: true
 
+# --- 2. OUTPUT DEFINED ONLY HERE ---
+output: 
+  linl::linl:
+    keep_tex: true
+    extra_dependencies: ["float"]
 ---
 
 In this memo we list comments and requests received on the 2019-2023 State of the Ecosystem (SOE) reports, and how we responded to those requests. We include comments from both Councils because adjustments to the report were made in response to both. We welcome feedback on whether this memo is useful and how to improve it for future SOE reporting.
