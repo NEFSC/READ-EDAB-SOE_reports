@@ -52,7 +52,7 @@ difftime(Sys.time(), now)
 now <- Sys.time()
 rmarkdown::render(
   here::here("parent_report.Rmd"),
-  output_file = here::here("SOE2026_NEFMC_IR_Final.pdf"),
+  output_file = here::here("SOE2026_NEFMC_IR_Edits.pdf"),
   params = list(
     region = "NewEngland",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
@@ -69,3 +69,15 @@ rmarkdown::render(
   )
 )
 difftime(Sys.time(), now)
+
+#Render CoverLetter
+rmarkdown::render(
+  input = here::here("SOE_Cover_Letter.Rmd"),
+  output_file = here::here("SOE2026_NEFMC_Cover_Letter.pdf"),
+  params = list(
+    region = "NewEngland",
+    signature = here::here("utils/caracappa_signature.pdf"),
+    cache = FALSE,
+    id_child_docs = TRUE
+  )
+)
