@@ -364,7 +364,7 @@ return_plot("smallcopeall-cog", region = "BothReports")
 return_plot("euph-cog", region = "BothReports")
 ```
 
-Ocean temperatures influence the distribution, seasonal timing, and productivity of managed species (see sections below). The Northeast US shelf, including the Mid-Atlantic, has experienced a continued warming trend for both the [long term annual sea surface](https://noaa-edab.github.io/catalog/long_term_sst.html) (Fig. \ref{fig:long-term-sst}) and [seasonal  surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) (Fig. \ref{fig:seasonal-oisst-anom}) and [bottom temperature](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html) (Figs. \ref{fig:bottom-temp-anom}, \ref{fig:bottom-temp-insitu}). However, 2025 surface and bottom temperatures were near normal to cooler than normal conditions in all seasons in the MAB (see also the [2025 Highlights section](#highlights)).
+Ocean temperatures influence the distribution, seasonal timing, and productivity of managed species (see sections below). `r temp_obs`
 
 ```{r seasonal-oisst-anom, fig.cap=return_caption(chunk_name = "seasonal-oisst-anom", region = params$region)}
 return_plot("seasonal-oisst-anom", region = params$region)
@@ -428,7 +428,7 @@ Understanding whether seasonal patterns are changing for stocks requires regular
 
 The drivers of timing shifts in managed stocks are generally coupled to shifts in environmental or biological conditions, since these can result in changes in habitat quality or food availability within the year. Changes in the timing of fall phytoplankton blooms and seasonal shifts in zooplankton communities are indicators of changes in seasonal food availability to stocks.
 
-Along with the overall warming trends in `r region`, ocean summer conditions have been lasting longer (Fig. \ref{fig:transition}) due to the earlier [transition](https://noaa-edab.github.io/catalog/trans_dates.html) from cool spring conditions to warm summer conditions and the later transition from warm summer conditions to cooler fall temperatures. These transition dates relate how daily temperatures compare to the seasonal norm. `r ifelse(region == "NewEngland", "However, in 2025 the duration of ocean summer conditions was near normal in the GOM and shorter than normal on GB.", "")` Changes in the timing of seasonal environmental cycles can alter biological processes (migrations, spawning, etc.) that are triggered by seasonal events.
+Along with the overall warming trends in `r region`, ocean summer conditions have been lasting longer (Fig. \ref{fig:transition}) due to the earlier [transition](https://noaa-edab.github.io/catalog/trans_dates.html) from cool spring conditions to warm summer conditions and the later transition from warm summer conditions to cooler fall temperatures. These transition dates relate how daily temperatures compare to the seasonal norm. `r ifelse(params$region == "NewEngland", "However, in 2025 the duration of ocean summer conditions was near normal in the GOM and shorter than normal on GB.", "")` Changes in the timing of seasonal environmental cycles can alter biological processes (migrations, spawning, etc.) that are triggered by seasonal events.
 
 ```{r transition, fig.cap=return_caption(chunk_name = "transition", region = params$region), fig.width=6.5, fig.asp=0.3}
  ## TODO: need to modify this to show both plots in draft mode
@@ -484,7 +484,7 @@ Offshore wind development is active and dynamic throughout the region. The follo
 
 ### Indicators: development timeline, revenue in lease areas, coastal community vulnerability
 
-Offshore wind indicators are used to quantify the influence of offshore wind on fisheries and ecosystems. They are based on BOEM’s Offshore Renewable Activities page and projects’ Final Environmental Impact Statements. In 2025, the Presidential Memorandum 90 FR 8363 removed existing planning areas and excluded the establishment of additional lease areas.
+Offshore wind indicators are used to quantify the influence of offshore wind on fisheries and ecosystems. They are based on BOEM’s Offshore Renewable Activities page and projects’ Final Environmental Impact Statements. In 2025, Presidential Memorandum 90 FR 8363 removed existing planning areas and excluded the establishment of additional lease areas.
 
 As of January 2026, 38 offshore [wind development](https://noaa-edab.github.io/catalog/wind_dev_speed.html) leases are under different stages of development in the Northeast (Fig. \ref{fig:wind-dev-cumul}). One project (South Fork Wind Farm) is fully operational and another (Vineyard Wind 1) is partially operational while construction finishes. The southern New England region has two other projects currently under construction (Revolution Wind and Sunrise Wind). Empire Wind and Coastal Virginia Offshore Wind (CVOW) are currently under construction in the New York Bight and Mid-Atlantic Region, respectively, with CVOW expected to start generating power in early 2026.
 
