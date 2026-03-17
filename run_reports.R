@@ -1,5 +1,5 @@
 ## both reports, for text edits (pdf) ----
-now <- Sys.time() 
+now <- Sys.time()
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
   output_file = "bothregions.pdf",
@@ -48,11 +48,15 @@ rmarkdown::render(
 )
 difftime(Sys.time(), now)
 
-## NE report (pdf) ---- 
+## NE report (pdf) ----
 now <- Sys.time()
 rmarkdown::render(
   here::here("parent_report.Rmd"),
+<<<<<<< HEAD
   output_file = here::here("SOE2026_NEFMC_IR_Edits.pdf"),
+=======
+  output_file = here::here("SOE2026_NEFMC_V2.pdf"),
+>>>>>>> origin/edits_AT
   params = list(
     region = "NewEngland",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
