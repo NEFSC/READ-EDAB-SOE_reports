@@ -59,6 +59,7 @@ stock_status_plot <- ecodata::plot_stock_status(report = "NewEngland")
 
 stock_status_plot$unknown |>
   dplyr::select(Stock) |>
+  dplyr::filter(Stock != "Atlantic cod - Gulf of Maine") |>
   flextable::flextable() |>
   flextable::set_header_labels(F.Fmsy = "F/Fmsy",
                                B.Bmsy = "B/Bmsy") |>
