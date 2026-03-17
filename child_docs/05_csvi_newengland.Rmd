@@ -42,7 +42,7 @@ return_plot("commvulex", region = "NewEngland")
 ```
 
 ### Implications
-Social and demographic indicators highlight potential vulnerabilities in New England's most active commercial fishing ports. Industry participants in these locations face increased risk from shifting fishing patterns, whether driven by new regulations or broader ecosystem changes. Because many of these primary communities show medium to high socio-demographic risk, they may lack the necessary resources to adapt effectively to industry transitions
+Social and demographic indicators highlight potential vulnerabilities in New England's most active commercial fishing ports. Industry participants in these locations face increased risk from shifting fishing patterns, whether driven by new regulations or broader ecosystem changes. Because many of these primary communities show medium to high socio-demographic risk, they may lack the necessary resources to adapt effectively to industry transitions.
 
 ```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
