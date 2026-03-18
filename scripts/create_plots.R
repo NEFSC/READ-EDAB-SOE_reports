@@ -517,11 +517,19 @@ save_plot(
 # 1. Commercial Diversity Fleet Plot
 save_plot(
   plot_expression = {
+    if (region == "MidAtlantic") {
     a <- ecodata::plot_commercial_div(
       report = region,
       varName = "Fleet count",
       n = 22
     ) +
+         ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
+    } else {
+      a <- ecodata::plot_commercial_div(
+        report = region,
+        varName = "Fleet count",
+        n = 22
+      ) +
          ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     b <- ecodata::plot_commercial_div(
       report = region,
@@ -530,10 +538,11 @@ save_plot(
     ) +
          ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     ggpubr::ggarrange(a, b, nrow = 2)
+    }
   },
   indicator = "comm_div_fleet",
   width = 6.5,
-  height = 5
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 # 2. Commercial Diversity Species Diversity Plot
@@ -781,7 +790,7 @@ save_plot(
   plot_expression = {
       ecodata::plot_trans_dates(report = region, 
                                 varName = "length",
-                                n = 10)
+                                n = 10) 
   },
   indicator = "transition_date",
   width = 6.5,
@@ -808,7 +817,13 @@ save_plot(
   plot_expression = {
       anomaly <- ecodata::plot_productivity_anomaly(report = region, 
                                 varName = "anomaly", 
-                                plottype = "council") 
+                                plottype = "council") + 
+        ggplot2::labs(title = paste0(region, " Productivity Anomaly from Survey Data")) + 
+        if (region == "MidAtlantic") {
+          ggplot2::labs(subtitle = "MAFMC managed species")
+        } else {
+          ggplot2::labs(subtitle = "NEFMC managed species")
+        }
 
       assessment <- ecodata::plot_productivity_anomaly(report = region, 
                                               varName = "assessment", 
@@ -1027,6 +1042,7 @@ save_plot(
       plottype = "nofacets",
       n = 16
     )    +
+      ecodata::geom_gls()+
          ggplot2::theme(legend.position = "bottom") +
       if (region == "MidAtlantic") {
         ggplot2::ggtitle("Mid Atlantic: Fishery Revenue in Active Projects") 
@@ -1192,8 +1208,8 @@ save_plot(
 # species dist
 save_plot(
   plot_expression = {
-    a <- ecodata::plot_species_dist(varName = "along", n = 10) 
-    b <- ecodata::plot_species_dist(varName = "depth", n = 10) 
+    a <- plot_species_dist(varName = "along", n = 10) 
+    b <- plot_species_dist(varName = "depth", n = 10) 
     ggpubr::ggarrange(a, b, ncol = 1)
   },
   indicator = "species_dist",
@@ -1481,14 +1497,15 @@ if (region == "NewEngland") {
   )
 }
 
-# WBTS Zoo - NE only
-if (region == "NewEngland") {
-  save_plot(
-    plot_expression = {
-      ecodata::plot_wbts_zoo(report = region, n = 10)
-    },
-    indicator = "wbts_zoo",
-    width = 6.5,
-    height = 4
-  )
-}
+# # WBTS Zoo - NE only
+## NOTE: THIS PLOT IS NO LONGER CREATED IN ECODATA. WILL NEED TO BE READ IN AS AN IMAGE.
+# if (region == "NewEngland") {
+#   save_plot(
+#     plot_expression = {
+#       ecodata::plot_wbts_zoo(report = region, n = 10)
+#     },
+#     indicator = "wbts_zoo",
+#     width = 6.5,
+#     height = 4
+#   )
+# }
