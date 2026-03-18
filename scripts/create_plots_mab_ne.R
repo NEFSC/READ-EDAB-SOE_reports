@@ -131,9 +131,9 @@ create_plots_mab_and_ne <- function(region){
       ecodata::plot_community_risks(
         report = region,
         plottype = "regionland",
-        n = 30
+        n = 25
       ) +
-        ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
+        ggplot2::ylab("Total Vulnerability \n (Regional Landings)") +
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "climatevul_land",
@@ -427,10 +427,10 @@ create_plots_mab_and_ne <- function(region){
       ecodata::plot_community_risks(
         report = region,
         plottype = "regionrev",
-        n = 24
+        n = 25
       ) +
         ggplot2::theme(legend.position = "bottom") +
-        ggplot2::ylab("Total Climate Vulnerability \n (Regional Revenue)") 
+        ggplot2::ylab("Total Vulnerability \n (Regional Revenue)") 
     },
     indicator = "climatevul_rev",
     width = 6.5,
@@ -780,7 +780,7 @@ create_plots_mab_and_ne <- function(region){
     plot_expression = {
       ecodata::plot_community_risks(
         report = region,
-        n = 24
+        n = 25
       ) +
         ggplot2::ylab('Proportion of Communities')+
         ggplot2::theme(legend.position = 'bottom')

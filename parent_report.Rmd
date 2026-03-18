@@ -91,7 +91,7 @@ cat('#', knitr::current_input())
 cat('# parent_report.Rmd')
 ```
 
-\setcounter{page}{4}
+\setcounter{page}{6}
 \thispagestyle{fancy}
 
 ```{r, eval = FALSE, results = "asis"}
