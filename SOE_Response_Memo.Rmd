@@ -1,0 +1,379 @@
+---
+title:
+geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
+output:
+  pdf_document:
+    includes:
+      in_header: latex/header1.tex
+    keep_tex: yes
+bibliography: SOE2023.bib
+csl: plos.csl
+link-citations: yes
+fontsize: 10pt
+subparagraph: yes
+urlcolor: blue
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+#Default Rmd options
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      dev = "cairo_pdf",
+                      fig.align = 'center') #allows for inserting R code into captions
+
+library(tidyverse)
+library(readxl)
+library(kableExtra)
+library(ecodata)
+library(googledrive)
+library(pacman)
+p_load(repmis, RCurl, DT, magrittr, gsubfn, stringr, tidyverse)
+
+library(flextable)
+
+set_flextable_defaults(
+  font.size = 9,
+  padding.bottom = 0,  
+  padding.top = 1, 
+  line_spacing = 1,
+  font.family = "Palatino")
+
+
+```
+
+```{r, include = F}
+#this is to wrap text around figures if we want
+defOut <- knitr::knit_hooks$get("plot")  # save the default plot hook 
+knitr::knit_hooks$set(plot = function(x, options) {  # set new plot hook ...
+  x <- defOut(x, options)  # first apply the default hook
+  if(!is.null(options$wrapfigure)) {  # then, if option wrapfigure is given ...
+    # create the new opening string for the wrapfigure environment ...
+    wf <- sprintf("\\begin{wrapfigure}{%s}{%g\\textwidth}", options$wrapfigure[[1]], options$wrapfigure[[2]])
+    x  <- gsub("\\begin{figure}", wf, x, fixed = T)  # and replace the default one with it.
+    x  <- gsub("{figure}", "{wrapfigure}", x, fixed = T)  # also replace the environment ending
+  }
+  return(x)
+})
+```
+
+<!--
+NOTES
+
+Use the code=readLines with the setup chunks from ecodata: need to do before each set of figs from a region/subgroup
+-->
+
+```{r, results='hide'}
+ #  uncomment to get refreshed file from gdrive, otherwise it reads the one originally downloaded
+
+# google has changed authorization
+# after running googledrive::drive_find... below
+# you will get a line on the console that says 
+# Selection:
+# type 1
+# it will go to a browser window
+# select your google account
+# you _have_ to check the box that says Tidyverse API can access all your google stuff and change it
+# sounds bad but this won't work without it--you will get permission denied
+# once that happens the way to fix it to let you try again is to run the following line
+
+#    googledrive::drive_auth(email = NA)
+
+# once authorized these lines will run and save the file locally
+
+ #  resultfile <- googledrive::drive_find(pattern = "SOE prioritization worksheet", type = "spreadsheet")
+ # 
+ # requests <- googledrive::drive_download(resultfile, type = "csv", overwrite = TRUE) %>% {read.csv(.$local_path)} 
+ #   
+
+ requests <- read.csv(here::here("SOE-response-memo/SOE prioritization worksheet.csv"))
+```
+
+# Introduction
+
+In the table below we summarize a running list of comments and requests with sources from MAFMC, NEFMC, and both SSCs. The memo is now reorganized into categories of requests in descending order of overall Council priority. The Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022, and updated based on discussion with the Mid-Atlantic SSC ecosystem and economic working groups and the New England SSC chair in July 2024. The Progress column briefly summarizes how we responded, with a more detailed response to each request in a section for each request category. In the Status column, "In SOE" indicates a change included in the report(s), and "In Catalog" indicates information included in the online indicator catalog.
+
+```{r summtable, ft.arraystretch = 1}
+# take from google drive to automatically update any changes
+#googledrive::drive_download("Northeast IEA/State of the Ecosystem Reports/SOE 2020/Workshop & Meeting Notes/Request checklist", path="2019requests.xlsx", overwrite = TRUE)
+
+#requests <- read_excel("2019requests.xlsx", sheet="MemoTable", range = 'A1:D31')
+
+#requests$`Memo Section` <- paste0("[", requests$`Memo Section`, "](#",requests$`Memo Section`,")") #trying to make clickable links in the table to sections, not working
+#adding format = "markdown" to kable statement made them links but they still didnt jump to report sections and messed up other formatting
+
+requeststab <- requests %>%
+  dplyr::select(Request, Year, Aggregate = Aggregate.Category, Project, Source, Status, Progress, Order) %>%
+  dplyr::mutate(Source = str_trim(str_extract(Source, "[^-]+"))) %>%
+  dplyr::group_by(factor(Aggregate, levels = c("System level thresholds/ref pts",
+                                               "Management",
+                                               "Short term forecasts",
+                                               "Regime shifts",
+                                               "Multiple system drivers",
+                                               "Functional group level status/thresholds/ref pts",
+                                               "Stock level indicators",
+                                               "SOE admin"))
+                  )%>% #, Project) %>%
+  dplyr::mutate(#AvgOrder = mean(Order, na.rm=T),
+                Rank = factor(case_when(Order > 0 & Order < 1.5 ~ "Highest", 
+                                     Order >= 1.5 & Order < 1.75 ~ "High",
+                                     Order >= 1.75 & Order < 2 ~ "Moderate",
+                                     Order >= 2 & Order < 2.5 ~ "Low",
+                                     Order >=2.5 ~ "Lowest",
+                                     TRUE ~ "Unranked"),
+                       levels=c("Highest", "High", "Moderate", "Unranked", "Low", "Lowest")))%>%
+  dplyr::arrange(Rank, Order, .by_group = TRUE) %>% #AvgOrder, 
+  # arrange(match(Status, c("In SOE", 
+  #                         "In SOE-MAFMC",
+  #                         "In SOE-MAFMC, In progress-NEFMC",
+  #                         "In progress", 
+  #                         "Not started")), desc(Year)) %>%
+  dplyr::ungroup() %>%
+  #dplyr::mutate("Memo Section" = rownames(.)) %>%
+  #dplyr::mutate(Section = dplyr::group_indices(.)) %>%
+  dplyr::select(Request, Year, Aggregate, Rank, Source, Status, Progress)
+
+#requeststab$Section <- group_indices(requeststab)
+  
+
+# knitr::kable(requeststab, longtable = T, booktabs = TRUE, linesep = "") %>%
+#   kable_styling(font_size=9, latex_options = c("hold_position", "striped", "repeat_header")) %>%
+#   row_spec(0,bold=TRUE) %>%
+#   column_spec(1, width="5cm") %>%
+#   column_spec(2, width="1cm") %>%
+#   column_spec(3, width="2cm") %>%
+#   column_spec(4, width="5cm") %>%
+#   column_spec(5, width="2cm")
+
+flextable::as_grouped_data(requeststab, groups = "Aggregate") %>% 
+  flextable::as_flextable(hide_grouplabel=TRUE) %>% 
+  flextable::align(i = ~ !is.na(Aggregate), align = "left") %>% 
+  flextable::bold(i = ~ !is.na(Aggregate), bold = TRUE) %>%
+  flextable::theme_zebra() %>%
+  flextable::bg(i = ~ !is.na(Aggregate), bg = "beige", part = "body") %>%
+  flextable::hline(i = ~ !is.na(Aggregate)) %>%
+  flextable::set_caption("State of the Ecosystem requests by category and Council priority.") %>%
+  #flextable::autofit() 
+  flextable::width(width = c(2.5,0.5,0.7,0.7,0.7,1.5))
+
+```
+
+
+# Overview of requests
+
+This memo is organized into categories by topic, and categories are listed in descending order of overall priority based on approximate weighting within the category.  Therefore, a range of priority may be applied to individual requests within a category even though the entire category has an overall priority.  Priorities originally established in 2022 were reviewed by representatives from both SSCs in July 2024, and have been retained for 2025 in this memo. The request categories are:
+
+#### System level thresholds/reference points
+Includes requests to develop analytical methods that can be applied across all indicator types and operationalized for management advice. Much of this high priority methodological work is in progress.
+
+#### Management
+Includes analyses related to management performance. Work on this category is resource limited.
+
+#### Short term forecasts 
+Includes requests for biological and environmental forecasts. These forecasts include forthcoming CEFI products once they are tested. Work in this category started this year, but has been suspended due to the loss of multiple people hired to do this work.
+
+#### Regime shifts 
+Many analyses have been conducted and are in progress for individual ecosystem components, but a unifying framework with consistent methods is needed for the SOE.
+
+#### Multiple system drivers
+This category has the most requests. Most unranked requests from 2023-2024 are in this category. Further prioritization within this category is sorely needed.
+
+#### Functional group level status/thresholds/reference points
+Most of these requests are in progress. 
+
+#### Stock level indicators
+Requests for this information may be more appropriately directed to stock specific ecosystem products such as [Ecosystem and Socioeconomic Profiles (ESPs)](https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/ecosystem-and-socioeconomic-profiles-northeast-united-states). 
+
+New requests from 2023-2024 were either prioritized jointly through SSC discussion, or are listed without prioritization, while previously prioritized requests have been noted with adjustments to years in the table. We welcome further feedback on planned and continuing work.
+
+## Adjustments to general SOE report structure
+
+The first SOE section on Performance Relative to Management Objectives has been positively received since it was introduced in 2021, so it has been retained. Objectives in this section are derived from U.S. Legislation (MSFCMA, ESA, MMPA, NEPA) and agency guidance implementing this legislation [@depiper_operationalizing_2017]. However, legislation generally does not identify reference points or thresholds for these objectives, and regional Councils have different contexts surrounding these objectives. The SOE team always welcomes input from Councils on additions to the list objectives, and regional specification of objectives, decision contexts, reference points, and performance metrics so that we can optimize indicators for Council use. 
+
+In response to feedback that the 2024 revision of the Climate and Ecosystem Risks section was useful, we have retained that section and made adjustments based on suggestions from both Council's staff in January 2025. The Climate and Ecosystem Risks section continues to center on management decisions. It includes 3 sections with modified titles to better align with management decisions: 
+
++  Risks to managing spatially, highlighting distribution shifts in managed species with potential drivers
++  Risks to managing seasonally, highlighting temporal shifts in managed species with potential drivers 
++  Risks to setting catch limits, highlighting productivity and condition shifts, with potential drivers
+    
+In response to positive feedback on the 2023 Highlights section, we will continue to include a section summarizing conditions in the previous year. The 2024 Highlights section reviews new conditions, activities, and anomalous observations across the Northeast US from the past year. This section is summarized graphically on p.3 (Mid-Atlantic report) and p.4 (New England report).
+
+We have retained and updated the [online indicator catalog](https://noaa-edab.github.io/catalog/index.html) that provides a "deep dive" into each indicator, with multiple visualizations of the data and clearer links to the datasets in the [ecodata R package](https://noaa-edab.github.io/ecodata/) for increased transparency and ease of use by investigators throughout the region. We are also updating the [online technical documentation](https://noaa-edab.github.io/tech-doc/).  
+
+
+```{r, results='asis', eval=FALSE}
+
+for(j in 1:length(unique(requeststab$Aggregate))) {
+  cat("##", unique(requeststab$Aggregate)[j], "\n")
+  # for(i in 1:nrow(requeststab)) {
+  #   #cat("##", requeststab$'Memo Section'[i], as.character(requeststab$Request[i]), "\n")
+  #   
+  #   cat("###", as.character(requeststab$Request[i]), "\n")
+  #   cat("\n")
+  # } 
+  cat("\n")
+}
+
+```
+
+## Summary of progress by category
+
+### System level thresholds/reference points: highest priority
+
+In July 2024, representatives from the NEFMC and MAFMC SSC prioritized the following requests: 
+
++ maintain high priority on trend/threshold evaluation
++ express indicators relative to biological thresholds
++ standardize uncertainty language (IPCC)
++ longer term: simulation analysis of thresholds
+
+#### Trend/threshold evaluation
+The 2025 SOE addressed the first request by introducing a new short term trend analysis by Andy Beet (NEFSC) and applying it to all indicators where the analysis is appropriate. Short term trend analysis was applied the most recent 10 years of data for long (>30 year) time series, and to the full time series for indicators with fewer than 30 years of data for the 2025 SOE. The `ecodata` R package already incorporates long term trend estimation based on Hardison et al. @hardison_simulation_2019. This research found that trends were most robustly distinguished from autocorrelation in indicator time series of 30 years or longer. The new [short term trend analysis](https://noaa-edab.github.io/tech-doc/short-term-trend-analysis.html) allows for the detection of a linear trend in short time series when autocorrelation is present. The method uses maximum likelihood for parameter estimation and a parametric bootstrap to assess significance. Missing data can be accommodated.
+
+Automated methods for evaluating time series inflection points, and identifying breakpoints (regimes) have been tested for inclusion in future SOEs. Kim Bastille (NEFSC) worked on methods to identify inflection points in indicator time series based on Large et al. @large_defining_2013 and @large_quantifying_2015. A standardized method has been implemented as a prototype and applied to several existing SOE indicators in 2022, but several questions on default approaches to be used across multiple indicators require more in depth analysis and review. A method for identifying breakpoints has been implemented by Kim Bastille and Laurel Smith (NEFSC) and a prototype analysis developed using SOE indicators in 2022. These methods are promising, but limited resources have been devoted to other priorities for the past several years.
+
+#### Biological thresholds 
+Since 2023, SOEs have expressed ocean acidification indicators relative to biological thresholds for several species. In 2025, [ocean acidification indicators](https://noaa-edab.github.io/catalog/ocean_acidification.html) are expressed relative to sensitivity levels for Atlantic sea scallop (*Placopecten magellanicus*), longfin squid (*Doryteuthis pealeii*), Atlantic cod (*Gadus morhua*) and American lobster (*Homarus americanus*).  The 2024 SOE showed the number of days where [2022 bottom temperatures exceeded stressful levels for Atlantic scallop on a map](https://noaa-edab.github.io/catalog/observation_synthesis.html#key-results-and-visualizations-60). 
+
+```{r scallopmap, fig.cap="The number of days in 2022 where bottom temperature was between 17 and 19 ℃ (stressful thermal temperatures for sea scallops) in each GLORYS grid cell. The gray lines show the sea scallop estimation areas, with the Elephant Trunk region highlighted in black lines.", out.width='45%'}
+magick::image_read("https://github.com/NOAA-EDAB/ecodata/raw/master/workshop/images/bottom_temp_threshold_17_19_Elephant_Trunk.png")
+```
+
+
+Since producing this indicator, SOE team members initiated a project to gather information on temperature and salinity sensitivity levels for all managed species on the Northeast US shelf. To date, the project has completed a literature review as well as an empirical analysis of temperature ranges for over 50 species from NEFSC bottom trawl surveys and the NRHA database. In addition, bottom temperature products were developed so that users could produce plots similar to the scallop plot for any species, once temperature sensitivity thresholds were established.
+
+<!-- (Fig. \ref{fig:survdattemps}) -->
+<!-- \begin{figure} -->
+
+<!-- {\centering \includegraphics[width=1\linewidth]{images/Survdat_Threshold_Density_Ridge_Plots_demersal}  -->
+
+<!-- } -->
+
+<!--\caption{Observed bottom temperature ranges for NEFSC bottom trawl survey species}\label{fig:survdattemps}-->
+<!--\end{figure}-->
+
+#### Standard uncertainty language 
+The SOE team has not had resources to review and incorporate standardized uncertainty language similar to that used by the IPCC for the 2025 report, although there is a desire to do so. One challenge is that not all contributed indicators include uncertainty estimates, so advice on treating a mix of indicators with various approaches to uncertainty would be most welcome. 
+
+#### Indicator and threshold simulation analysis
+Longer term simulation analysis of ecosystem thresholds is similarly of great interest to the SOE team, with a project currently in progress to evaluate ecosystem level overfishing (EOF) thresholds for the Northeast US region.  The EOF indicators were first presented in 2021 and were discussed in depth with the MAFMC SSC working group in April 2022 and February 2023. Considerable progress has been made on updating data inputs for the EOF indicators and planning for system level threshold analyses with the MAFMC SSC. After reviewing previous presentations of the EOF indicators, Andy Beet (NEFSC) reviewed solutions to several data input problems identified in July 2022 (menhaden landings were added and differences between different data sources were resolved). In 2023, estimates of regional productivity were added to calculate regional thresholds, for comparison with published global thresholds. An outstanding data input task is completing discard estimates for all species in the Northeast US, which is in progress. 
+
+A simulation study is being planned to use the Northeast US Atlantis ecosystem model [@caracappa_northeast_2022] to investigate robustness of thresholds and determine how informative they can be. This portion of the research will likely address the MAFMC request to evaluate how phytoplankton size composition might affect the EOF indicator. It will also address SSC questions raised about tradeoffs between fishing for different species groups to address EOF, and how climate driven changes in transfer efficiency might be incorporated into or impact EOF indicators. In addition, the NEUS Atlantis model may be able to address the lower priority requests on nutrient input and benthic flux contributions to system productivity once model sensitivity analysis determines whether these model components behave reasonably. 
+
+
+### Management: high priority
+
+In July 2024, SSC review prioritized the following requests:  
+
++  include indicators for risk policy/risk assessment processes
+
+The SOE team prioritized this request for 2025. The SOE already includes many indicators used in the MAFMC's EAFM risk assessment process, and several proposed for the newly approved NEFMC risk policy. Additional indicators associated with the MAFMC EAFM risk assessment have been added to the SOE ecodata package for 2025 (shoreside support indicators), and multiple new EAFM risk assessment indicators have also been included in 2025 (e.g., low trophic level prey abundance indices for benthic invertebrates and zooplankton that are combined with existing fish condition indicators to assess prey availability, social vulnerability indicators for all communities, and community climate risk indicators). Additional indicators are in development for offshore habitat risks based on stock-specific indicators, which will be presented in the MAFMC EAFM Risk Assessment document. These indicators will be added or adjusted after review by MAFMC for upcoming SOE and other ecosystem reporting products. The SOE team is actively engaged with the NEFMC's risk policy implementation and plans to coordinate indicators as that process continues to develop.
+
+Requests on management complexity and recreational bycatch mortality remain inadequately staffed to make progress. The request to re-evaluate Ecosystem Production Units (EPUs) was ranked lowest priority. We do not forsee having the resources to address this request, which is a large project, in the near future. 
+
+### Short term forecasts: high priority
+
+In July 2024, SSC review prioritized the following requests:  
+
++  include Climate Ecosystem Fisheries Initiative (CEFI) projections
+
+In order to better develop short term forcasts, the SOE team seeks specific feedback on what decisions or contexts would ocean forecasts be most useful for, and what are the desired characteristics of a forecast?
+
+New resources to address this request came online at the NEFSC through the Climate Ecosystem Fisheries Initiative (CEFI) in 2024. This national effort seeks to link ocean model forecasts with products used in management. In the Northeast region, the SOE team was closely collaborating with CEFI modelers to test and present new products to the Councils and SSCs as they come online.
+
+A preview of short term forecasts of bottom temperature for each EPU was initially reviewed in late February 2025. The intention was to continue to develop these forecasts and include retrospective forecasts alongside observations in the SOE Catalog to continue review for potential inclusion in the 2026 SOE. Due to CEFI staff loss, the timeline for this work is now significantly delayed. 
+
+MAFMC is continuing work on short term forecasts of species distributions for fisheries management [with Rutgers University](https://www.mafmc.org/s/Rutgers-Project-Overview.pdf), which also addresses this request. 
+
+### Regime shifts: high priority
+
+In July 2024, SSC review prioritized the following requests:  
+
++  characterize current conditions in context of expected short term change
+
+The SOE team included general language on the likelihood of currently observed species distributions to persist in the near future in the 2025 SOE. However, fully addressing the request to characterize expected short term change is linked to the short term forecasts category above. 
+
+The SOE team reviewed current projects that may be included in future SOEs, including a zooplankton analysis to evaluate potential regime shifts, and multiple other regime shift projects may contribute to synthetic evaluation of regimes. We are working to coordinate existing projects listed in previous Request Memos into a synthesis product for the SOE. Because the projects are on different timelines, it is difficult to give a target date for SOE synthesis. However, a workshop held May 2024 to review and synthesize regime shift methods and results for the Northeast Region may also contribute to this request. The workshop report was not available for the 2025 SOE. 
+
+
+### Multiple system drivers: moderate-high priority
+
+In July 2024, SSC review prioritized the following requests: 
+
++  profits vs revenue: provide incomplete net revenue and index of costs
++  clarify objectives and terminology for fishing community engagement and social indicators
+    +  time series of community indicators
+    +  social and economic linkages to climate
+    +  consider appropriate scale for indicators
+    
+#### Profits vs Revenue
+Geret DePiper (NEFSC) has completed a full analysis at the request of the SSCs, included as an attachment to this request memo. Geret presents a net revenue assessment (gross revenue minus trip costs, for federally reporting trips), profitability ratio (gross revenue for all trips divided by average trip costs), and cointegration analysis of gross revenue and fuel prices, by ecological production unit (EPU) between the years 2000 - 2023. The full analysis will be presented to the SSC.
+
+We propose that the SSCs consider *one* of the following two alternatives to carry forward to include in future SOEs and risk assessments:
+
+1. A combination of Gross Revenue from all trips in the Mid-Atlantic or New England region and Net Revenue estimates (Fig. \ref{fig:netrev}) for federally-permitted vessels.  
+2. Revenue, Cost, and Profitability Indices (Fig. \ref{fig:profits}) as outlined in Section 4 of the attached document.
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/netrev-1} 
+
+}
+
+\caption{Net revenue generated by federally permitted trips}\label{fig:netrev}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/Profitability-1} 
+
+}
+
+\caption{Revenue, Cost, and Profitability Indices by region}\label{fig:profits}
+\end{figure}
+
+
+The analyses in the attached paper highlight that federally permitted and non-federally permitted trips within the Mid-Atlantic region present different gross revenue dynamics, indicating differences in underlying production functions. This, in turn, suggests that proxying for non-federal trip costs with federal trip costs is inappropriate.
+
+The net revenue estimate for federally permitted vessels is straightforward to calculate and informative for that fleet segment. Given that gross revenue for non-federally permitted vessels is not cointegrated with diesel prices, the only remaining alternative for consideration is the profitability ratio of total gross revenue to average trip cost on federally permitted trips. The utility of the profitability ratio implicitly relies on a tentative relationship between the average trip cost on federally permitted and non-federally permitted trips.
+
+#### Fishing community indicators
+In 2025, considerable effort was devoted to clarifying terminology and objectives for fishing community indicators, and the range of communities and social indicators included in the SOE ecodata package was expanded to all available data for the Northeast US. In addition, new Community Climate Change Risk Indicator were introduced that address the three sub bullets above: these are time series indicators that provide social and economic linkages to climate, which are included at multiple scales from community to regional in the 2025 SOE.
+
+Terminology for community fishery participation was clarified in the 2025 SOE and catalog. The engagement indices demonstrate the importance of commercial and recreational fishing to a given community relative to other coastal communities in a region. In particular, the commercial fishing engagement index measures the number of permits and dealers, and pounds and value of fish landed in a community. Recreational fishing engagement measures shore, private vessel, and for-hire fishing effort. Population relative engagement indices express these numbers based on fishing effort relative to the population of a community. Note that we recast commercial and recreational "reliance" indicators (from previous reports) as relative engagement indicators given that they are a proxy for how engaged each community is in fishing relative to its total population size and many more factors ultimately contribute to a fishing community’s reliance on fishing. Importantly, the calculation of these indicators remains the same for 2025. Transition to new indicator analysis methods that permit comparisons for communities across time is in progress and will be incorporated into the SOE when available.
+
+Social vulnerability indicators measure social factors that shape a community’s ability to adapt to change. These are derived from the NOAA Fisheries Community Social Vulnerability Indicators (CSVIs) which characterize aspects of well-being for coastal communities engaged in fishing activities. The updated dataset includes indicators of social, economic, and gentrification vulnerabilities. All of these factors were evaluated for inclusion in the Mid-Atlantic risk assessment, and all are summarized for the top fishing communities in the SOE [indicator catalog](https://noaa-edab.github.io/catalog/engagement.html).
+
+A new dataset with time series of Community Climate Change Risk indicators is in the 2025 SOE, presented at both the regional scale and summarizing results at the community scale. The dataset contains by year by community scores for community sensitivity to temperature, ocean acidification, stock size/status, total sensitivity, and total vulnerability based on Hare et al. 2016 species vulnerability and community dependency. Reciprocal Simpson’s Diversity scores for each community, Regional Quotients, and Regional climate vulnerability scores are also included. Indicators are reported summed at the regional scale to evaluate the climate vulnerability of fisheries landings and revenue in the SOE, as well as evaluating the proportion of communities at each level of climate vulnerablity in each region. 
+
+#### Other notable progress
+The impact of climate on data streams is being addressed by a new MAFMC project. Results of this project will be considered in future SOEs.
+
+In late 2024 the Project Oversight Team was established for the Mid-Atlantic Council’s IRA project titled “Evaluating the Data Needs and Management Strategies to Support Climate-Ready Fisheries Management". The contract was awarded to University of Maine and an initial meeting was held on Jan. 10th, 2025. 
+Specific project objectives will include:
+
+*  Phase 1: Synthesize the challenges associated with changes in fishery independent and fishery dependent data collection programs along the US East Coast (2010 to present).
+*  Phase 2: Use management strategy evaluation to evaluate the performance of US fisheries management strategies in the context of climate change and data uncertainty.
+*  Phase 3: Review management strategy evaluation outcomes and develop sampling, assessment, and management recommendations.
+
+### Functional group level status/thresholds/ref pts: moderate priority
+
+In July 2024, SSC review did not prioritize requests, but discussed including more aggregations for biomass and landings (Council-managed, status). Information on Council management was added to the SOE ecodata package for 2025 so that additional analyses and visualizations can be developed in future years. 
+
+The NEFMC requested a forage availability index (including both managed species such as herring and unmanaged species such as sandlance). A spatial index of forage availability was developed for the bluefish research track assessment as described above. This index was partitioned into EPUs and presented in the 2023 and 2024 SOEs. An index of forage center of gravity was also included as a potential driver of distribution shifts in the 2024 Risks to Spatial Management section. Additional indices of abundance and center of gravity for benthic forage and zooplankton forage were added to the 2025 SOE. This also addresses the request to include time series of biomass not well represented in bottom trawl surveys. 
+
+Gray seal pup count indices are already included in the NEFMC SOE, and indices of populations for other seals and apex predators are in development by the NEFSC protected species division. These additional indices were not ready for the 2025 report. 
+
+### Stock level indicators: moderate priority
+
+In July 2024, SSC review did not prioritize requests, but highlighted a request to cross reference ESP products where appropriate. The SOE team agrees and work is ongoing to coordinate SOE and ESP products. 
+
+### SOE admin: unranked priority
+
+In July 2024, SSC review did not prioritize requests in this category. However, the 2024 request by both SSCs for criteria used to include information in the new ["Highlights"](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html) sections was addressed. Observations were solicited from contributors to the State of the Ecosystem reports, colleagues at the NEFSC, academic and management partners, and the fishing industry. An email account was set up so that anyone can provide observations to the SOE team: <northeast.ecosystem.highlights@noaa.gov>. Items selected for inclusion in the synthesis include observations that were at or near their respective time series record (high or low) or had a large departure from the recent trends, were reported by multiple contributors, affected fishing efforts, or were considered newsworthy. 
+
+\newpage
+# References
+
