@@ -4,10 +4,10 @@ geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
 output:
   pdf_document:
     includes:
-      in_header: latex/header1.tex
+      # in_header: latex/header1.tex
     keep_tex: yes
-bibliography: SOE2023.bib
-csl: plos.csl
+# bibliography: SOE2023.bib
+# csl: plos.csl
 link-citations: yes
 fontsize: 10pt
 subparagraph: yes
@@ -27,9 +27,9 @@ library(tidyverse)
 library(readxl)
 library(kableExtra)
 library(ecodata)
-library(googledrive)
-library(pacman)
-p_load(repmis, RCurl, DT, magrittr, gsubfn, stringr, tidyverse)
+# library(googledrive)
+# library(pacman)
+# p_load(repmis, RCurl, DT, magrittr, gsubfn, stringr, tidyverse)
 
 library(flextable)
 
@@ -39,8 +39,6 @@ set_flextable_defaults(
   padding.top = 1, 
   line_spacing = 1,
   font.family = "Palatino")
-
-
 ```
 
 ```{r, include = F}
@@ -65,100 +63,85 @@ Use the code=readLines with the setup chunks from ecodata: need to do before eac
 -->
 
 ```{r, results='hide'}
- #  uncomment to get refreshed file from gdrive, otherwise it reads the one originally downloaded
+cat_key <- tibble::tibble(orig = c("system_level",     "management"  ,     "forecasts",        "system_drivers"  ,"functional_group", "stock_level",      "admin"),
+                          new = c("System level thresholds/ ref pts",
+                                  "Management",
+                                  "Short term forecasts",
+                                  "Multiple system drivers",
+                                  "Functional group level status/ thresholds/ ref pts",
+                                  "Stock level indicators",
+                                  "SOE admin"))
 
-# google has changed authorization
-# after running googledrive::drive_find... below
-# you will get a line on the console that says 
-# Selection:
-# type 1
-# it will go to a browser window
-# select your google account
-# you _have_ to check the box that says Tidyverse API can access all your google stuff and change it
-# sounds bad but this won't work without it--you will get permission denied
-# once that happens the way to fix it to let you try again is to run the following line
+levels_priority <- c("Unranked", "Lowest", "Low", "Moderate", "High", "Highest")
 
-#    googledrive::drive_auth(email = NA)
+requests <- read.csv(here::here("utils/SOE Prioritization 2025_2026-03-18.csv")) |>
+  dplyr::left_join(cat_key, by = c("Category" = "orig")) |>
+  dplyr::mutate(Category = new) |>
+  dplyr::select(- new)
 
-# once authorized these lines will run and save the file locally
+requests$Priority <- factor(requests$Priority, levels = levels_priority)
 
- #  resultfile <- googledrive::drive_find(pattern = "SOE prioritization worksheet", type = "spreadsheet")
- # 
- # requests <- googledrive::drive_download(resultfile, type = "csv", overwrite = TRUE) %>% {read.csv(.$local_path)} 
- #   
+create_table <- function(data, cap, widths) {
+  tbl <- data |>
+  flextable::as_grouped_data(groups = "Category") |>
+  flextable::as_flextable(hide_grouplabel=TRUE) |>
+  flextable::width(width = widths) |>
+  flextable::align(i = ~ !is.na(Category), align = "left")|> 
+  flextable::bold(i = ~ !is.na(Category), bold = TRUE) |>
+  flextable::theme_zebra() |>
+  flextable::bg(i = ~ !is.na(Category), bg = "beige", part = "body")|>
+  flextable::hline(i = ~ !is.na(Category)) |>
+  flextable::set_caption(cap)
+  
+  return(tbl)
+}
 
- requests <- read.csv(here::here("SOE-response-memo/SOE prioritization worksheet.csv"))
+ret_widths <- function(n) {
+  out <- rep(2/n, n)
+  return(out)
+}
 ```
 
 # Introduction
 
 In the table below we summarize a running list of comments and requests with sources from MAFMC, NEFMC, and both SSCs. The memo is now reorganized into categories of requests in descending order of overall Council priority. The Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022, and updated based on discussion with the Mid-Atlantic SSC ecosystem and economic working groups and the New England SSC chair in July 2024. The Progress column briefly summarizes how we responded, with a more detailed response to each request in a section for each request category. In the Status column, "In SOE" indicates a change included in the report(s), and "In Catalog" indicates information included in the online indicator catalog.
 
-```{r summtable, ft.arraystretch = 1}
-# take from google drive to automatically update any changes
-#googledrive::drive_download("Northeast IEA/State of the Ecosystem Reports/SOE 2020/Workshop & Meeting Notes/Request checklist", path="2019requests.xlsx", overwrite = TRUE)
-
-#requests <- read_excel("2019requests.xlsx", sheet="MemoTable", range = 'A1:D31')
-
-#requests$`Memo Section` <- paste0("[", requests$`Memo Section`, "](#",requests$`Memo Section`,")") #trying to make clickable links in the table to sections, not working
-#adding format = "markdown" to kable statement made them links but they still didnt jump to report sections and messed up other formatting
-
-requeststab <- requests %>%
-  dplyr::select(Request, Year, Aggregate = Aggregate.Category, Project, Source, Status, Progress, Order) %>%
-  dplyr::mutate(Source = str_trim(str_extract(Source, "[^-]+"))) %>%
-  dplyr::group_by(factor(Aggregate, levels = c("System level thresholds/ref pts",
-                                               "Management",
-                                               "Short term forecasts",
-                                               "Regime shifts",
-                                               "Multiple system drivers",
-                                               "Functional group level status/thresholds/ref pts",
-                                               "Stock level indicators",
-                                               "SOE admin"))
-                  )%>% #, Project) %>%
-  dplyr::mutate(#AvgOrder = mean(Order, na.rm=T),
-                Rank = factor(case_when(Order > 0 & Order < 1.5 ~ "Highest", 
-                                     Order >= 1.5 & Order < 1.75 ~ "High",
-                                     Order >= 1.75 & Order < 2 ~ "Moderate",
-                                     Order >= 2 & Order < 2.5 ~ "Low",
-                                     Order >=2.5 ~ "Lowest",
-                                     TRUE ~ "Unranked"),
-                       levels=c("Highest", "High", "Moderate", "Unranked", "Low", "Lowest")))%>%
-  dplyr::arrange(Rank, Order, .by_group = TRUE) %>% #AvgOrder, 
-  # arrange(match(Status, c("In SOE", 
-  #                         "In SOE-MAFMC",
-  #                         "In SOE-MAFMC, In progress-NEFMC",
-  #                         "In progress", 
-  #                         "Not started")), desc(Year)) %>%
-  dplyr::ungroup() %>%
-  #dplyr::mutate("Memo Section" = rownames(.)) %>%
-  #dplyr::mutate(Section = dplyr::group_indices(.)) %>%
-  dplyr::select(Request, Year, Aggregate, Rank, Source, Status, Progress)
-
-#requeststab$Section <- group_indices(requeststab)
-  
-
-# knitr::kable(requeststab, longtable = T, booktabs = TRUE, linesep = "") %>%
-#   kable_styling(font_size=9, latex_options = c("hold_position", "striped", "repeat_header")) %>%
-#   row_spec(0,bold=TRUE) %>%
-#   column_spec(1, width="5cm") %>%
-#   column_spec(2, width="1cm") %>%
-#   column_spec(3, width="2cm") %>%
-#   column_spec(4, width="5cm") %>%
-#   column_spec(5, width="2cm")
-
-flextable::as_grouped_data(requeststab, groups = "Aggregate") %>% 
-  flextable::as_flextable(hide_grouplabel=TRUE) %>% 
-  flextable::align(i = ~ !is.na(Aggregate), align = "left") %>% 
-  flextable::bold(i = ~ !is.na(Aggregate), bold = TRUE) %>%
-  flextable::theme_zebra() %>%
-  flextable::bg(i = ~ !is.na(Aggregate), bg = "beige", part = "body") %>%
-  flextable::hline(i = ~ !is.na(Aggregate)) %>%
-  flextable::set_caption("State of the Ecosystem requests by category and Council priority.") %>%
-  #flextable::autofit() 
-  flextable::width(width = c(2.5,0.5,0.7,0.7,0.7,1.5))
-
+```{r, ft.arraystretch = 1}
+requests |>
+  dplyr::filter(Status == "Done") |>
+  dplyr::select(-Status) |>
+    dplyr::group_by(Category) |>
+    dplyr::mutate(n = dplyr::n()) |>
+  dplyr::arrange(n) |>
+  dplyr::arrange(n, Category, desc(Priority)) |>
+  dplyr::select(-n) |>
+  create_table(widths = c(4.5, ret_widths(2)),
+               cap = "Requests that have been completed as of the 2026 State of the Ecosytem reports.")
 ```
 
+```{r, ft.arraystretch = 1}
+requests |>
+  dplyr::filter(Status == "Not feasible") |>
+  dplyr::select(-c(Status, Priority)) |>
+  create_table(widths = c(4.5, ret_widths(1)),
+               cap = "Requests that are out of scope for the State of the Ecosystem reports.")
+```
+
+\newpage
+
+```{r, ft.arraystretch = 1}
+requests |>
+dplyr::filter(!Status %in% c("Done", "Not feasible"),
+              Status != "",
+              Status != "Removed") |>
+  dplyr::group_by(Category) |>
+  dplyr::mutate(n = dplyr::n()) |>
+  dplyr::arrange(n) |>
+  dplyr::arrange(n, Category, desc(Priority)) |>
+  dplyr::select(-n) |>
+  create_table(widths = c(4.5, ret_widths(3)),
+               cap = "Remaining research requests for the State of the Ecosystem reports.")
+```
 
 # Overview of requests
 
@@ -236,7 +219,7 @@ Automated methods for evaluating time series inflection points, and identifying 
 #### Biological thresholds 
 Since 2023, SOEs have expressed ocean acidification indicators relative to biological thresholds for several species. In 2025, [ocean acidification indicators](https://noaa-edab.github.io/catalog/ocean_acidification.html) are expressed relative to sensitivity levels for Atlantic sea scallop (*Placopecten magellanicus*), longfin squid (*Doryteuthis pealeii*), Atlantic cod (*Gadus morhua*) and American lobster (*Homarus americanus*).  The 2024 SOE showed the number of days where [2022 bottom temperatures exceeded stressful levels for Atlantic scallop on a map](https://noaa-edab.github.io/catalog/observation_synthesis.html#key-results-and-visualizations-60). 
 
-```{r scallopmap, fig.cap="The number of days in 2022 where bottom temperature was between 17 and 19 ℃ (stressful thermal temperatures for sea scallops) in each GLORYS grid cell. The gray lines show the sea scallop estimation areas, with the Elephant Trunk region highlighted in black lines.", out.width='45%'}
+```{r scallopmap, fig.cap="The number of days in 2022 where bottom temperature was between 17 and 19 ℃ (stressful thermal temperatures for sea scallops) in each GLORYS grid cell. The gray lines show the sea scallop estimation areas, with the Elephant Trunk region highlighted in black lines.", eval = FALSE, out.width='45%'}
 magick::image_read("https://github.com/NOAA-EDAB/ecodata/raw/master/workshop/images/bottom_temp_threshold_17_19_Elephant_Trunk.png")
 ```
 
@@ -316,23 +299,23 @@ We propose that the SSCs consider *one* of the following two alternatives to car
 2. Revenue, Cost, and Profitability Indices (Fig. \ref{fig:profits}) as outlined in Section 4 of the attached document.
 
 
-\begin{figure}
+<!-- \begin{figure} -->
 
-{\centering \includegraphics[width=0.8\linewidth]{images/netrev-1} 
+<!-- {\centering \includegraphics[width=0.8\linewidth]{images/netrev-1}  -->
 
-}
+<!-- } -->
 
-\caption{Net revenue generated by federally permitted trips}\label{fig:netrev}
-\end{figure}
+<!-- \caption{Net revenue generated by federally permitted trips}\label{fig:netrev} -->
+<!-- \end{figure} -->
 
-\begin{figure}
+<!-- \begin{figure} -->
 
-{\centering \includegraphics[width=0.8\linewidth]{images/Profitability-1} 
+<!-- {\centering \includegraphics[width=0.8\linewidth]{images/Profitability-1}  -->
 
-}
+<!-- } -->
 
-\caption{Revenue, Cost, and Profitability Indices by region}\label{fig:profits}
-\end{figure}
+<!-- \caption{Revenue, Cost, and Profitability Indices by region}\label{fig:profits} -->
+<!-- \end{figure} -->
 
 
 The analyses in the attached paper highlight that federally permitted and non-federally permitted trips within the Mid-Atlantic region present different gross revenue dynamics, indicating differences in underlying production functions. This, in turn, suggests that proxying for non-federal trip costs with federal trip costs is inappropriate.
