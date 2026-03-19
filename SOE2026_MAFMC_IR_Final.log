@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  18 MAR 2026 13:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  19 MAR 2026 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1104,18 +1104,21 @@ File: images/MidAtlantic/monthly_chl_MidAtlantic_2026-02-17.png Graphic file (ty
 Package pdftex.def Info: images/MidAtlantic/monthly_chl_MidAtlantic_2026-02-17.png  used on input line 1334.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
 [45 <./images/BothReports/cold_pool_time_BothReports_2026-02-17.png>] [46 <./images/MidAtlantic/monthly_chl_MidAtlantic_2026-02-17.png>]
-<images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-18.png, id=539, 469.755pt x 505.89pt>
+<images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-18.png, id=539, 469.755pt x 578.16pt>
 File: images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-18.png Graphic file (type png)
 <use images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-18.png>
 Package pdftex.def Info: images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-18.png  used on input line 1357.
-(pdftex.def)             Requested size: 500.484pt x 538.98117pt.
+(pdftex.def)             Requested size: 500.484pt x 615.97849pt.
 [47]
-<images/MidAtlantic/condition_MidAtlantic_2026-02-17.png, id=545, 469.755pt x 361.35pt>
+Overfull \vbox (17.27226pt too high) has occurred while \output is active []
+
+[48 <./images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-18.png>]
+<images/MidAtlantic/condition_MidAtlantic_2026-02-17.png, id=549, 469.755pt x 361.35pt>
 File: images/MidAtlantic/condition_MidAtlantic_2026-02-17.png Graphic file (type png)
 <use images/MidAtlantic/condition_MidAtlantic_2026-02-17.png>
 Package pdftex.def Info: images/MidAtlantic/condition_MidAtlantic_2026-02-17.png  used on input line 1366.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[48 <./images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-18.png>] [49 <./images/MidAtlantic/condition_MidAtlantic_2026-02-17.png>]
+[49 <./images/MidAtlantic/condition_MidAtlantic_2026-02-17.png>]
 <images/MidAtlantic/energy_density_MidAtlantic.png, id=559, 1011.78pt x 614.295pt>
 File: images/MidAtlantic/energy_density_MidAtlantic.png Graphic file (type png)
 <use images/MidAtlantic/energy_density_MidAtlantic.png>
@@ -1242,13 +1245,13 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  20447 strings out of 469515
  402189 string characters out of 5467386
- 825359 words of memory out of 5000000
+ 825377 words of memory out of 5000000
  48572 multiletter control sequences out of 15000+600000
  710194 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  77i,15n,117p,2996b,722s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on SOE2026_MAFMC_IR_Final.pdf (66 pages, 16437161 bytes).
+Output written on SOE2026_MAFMC_IR_Final.pdf (66 pages, 16451757 bytes).
 PDF statistics:
  1061 PDF objects out of 1200 (max. 8388607)
  865 compressed objects within 9 object streams

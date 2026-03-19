@@ -844,7 +844,7 @@ save_plot(
       },
       indicator = "productivity_anomaly",
       width = 6.5,
-      height = ifelse(region == "NewEngland", 9.5, 8)
+      height = ifelse(region == "NewEngland", 8.5, 8)
     )
 
 # condition factor
