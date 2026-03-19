@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  19 MAR 2026 13:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  19 MAR 2026 14:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1279,13 +1279,13 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  20530 strings out of 469515
  405830 string characters out of 5467386
- 826269 words of memory out of 5000000
+ 826066 words of memory out of 5000000
  48636 multiletter control sequences out of 15000+600000
  710194 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  77i,15n,117p,3052b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/stephanie.owen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on SOE2026_NEFMC_IR_Edits.pdf (76 pages, 19442728 bytes).
+Output written on SOE2026_NEFMC_IR_Edits.pdf (76 pages, 19442360 bytes).
 PDF statistics:
  1127 PDF objects out of 1200 (max. 8388607)
  910 compressed objects within 10 object streams
