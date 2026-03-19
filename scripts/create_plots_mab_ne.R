@@ -2,7 +2,7 @@
 # reinstall ecodata
 # devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
 
-region <- "NewEngland" #change to NewEngland to run for NE
+# region <- "NewEngland" #change to NewEngland to run for NE
 # region <- "MidAtlantic" #change to NewEngland to run for NE
 
 ###########################################
@@ -106,7 +106,7 @@ create_plots_mab_and_ne <- function(region){
     },
     indicator = "total_landings",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 2.5),
+    height = ifelse(region == "NewEngland", 4, 2.5),
   )
   
   # commercial landings
@@ -131,9 +131,9 @@ create_plots_mab_and_ne <- function(region){
       ecodata::plot_community_risks(
         report = region,
         plottype = "regionland",
-        n = 30
+        n = 25
       ) +
-        ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
+        ggplot2::ylab("Total Vulnerability \n (Regional Landings)") +
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "climatevul_land",
@@ -427,10 +427,10 @@ create_plots_mab_and_ne <- function(region){
       ecodata::plot_community_risks(
         report = region,
         plottype = "regionrev",
-        n = 24
+        n = 25
       ) +
         ggplot2::theme(legend.position = "bottom") +
-        ggplot2::ylab("Total Climate Vulnerability \n (Regional Revenue)") 
+        ggplot2::ylab("Total Vulnerability \n (Regional Revenue)") 
     },
     indicator = "climatevul_rev",
     width = 6.5,
@@ -780,7 +780,7 @@ create_plots_mab_and_ne <- function(region){
     plot_expression = {
       ecodata::plot_community_risks(
         report = region,
-        n = 24
+        n = 25
       ) +
         ggplot2::ylab('Proportion of Communities')+
         ggplot2::theme(legend.position = 'bottom')
@@ -891,7 +891,7 @@ create_plots_mab_and_ne <- function(region){
     indicator = "condition",
     width = 6.5,
     #  height = 7
-    height = ifelse(region == "NewEngland", 8.5, 5)
+    height = ifelse(region == "NewEngland", 8, 5)
   )
   
   # # 5. Energy Density Plot

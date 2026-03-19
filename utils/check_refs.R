@@ -7,7 +7,7 @@ library(stringr)
 
 # 1. The compiled TeX file (Source of Truth for what is broken)
 # TEX_FILE <- here::here("SOE2026_NEFMC_IR_Final.tex" )
-TEX_FILE <- here::here("SOE2026_MAFMC_IR_Final.tex" )
+TEX_FILE <- here::here("SOE2026_NEFMC_IR_Edits.tex" )
 
 # 2. Directories to scan for Rmd source files
 #    (Adjust if your child docs are elsewhere)

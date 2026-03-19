@@ -137,15 +137,17 @@ create_plots_ne <- function(region = "NewEngland")
   }
   
   # WBTS Zoo - NE only
-  if (region == "NewEngland") {
-    save_plot(
-      plot_expression = {
-        ecodata::plot_wbts_zoo(report = region, n = 10)
-      },
-      indicator = "wbts_zoo",
-      width = 6.5,
-      height = 4
-    )
-  }
+  # if (region == "NewEngland") {
+  #   save_plot(
+  #     plot_expression = {
+  #       ecodata::plot_wbts_zoo(report = region, n = 10)
+  #     },
+  #     indicator = "wbts_zoo",
+  #     width = 6.5,
+  #     height = 4
+  #   )
+  # }
+  
+  
 }
 # create_plots_ne(region = "NewEngland")

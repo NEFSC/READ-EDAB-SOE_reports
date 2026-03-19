@@ -91,7 +91,7 @@ cat('#', knitr::current_input())
 cat('# parent_report.Rmd')
 ```
 
-\setcounter{page}{4}
+\setcounter{page}{6}
 \thispagestyle{fancy}
 
 ```{r, eval = FALSE, results = "asis"}
@@ -144,6 +144,8 @@ The two main sections contain subsections for each management objective or poten
 All indicators are updated with the most recent data available as of January 2026, and all indicators are updated with the same data years across both reports. In some cases, indicators are only updated through 2024 due to data availability. In these cases, we still include the indicator in the report to provide context for the most recent data year and to allow for future updates.
 
 Because this report is intended to provide a high-level overview of marine ecosystem information in the Northeast United States, we do not include complete methods or detailed results for all of the indicators that we present. More information can be found hyperlinked in blue text. 
+
+\newpage
 
 ```{r, child = here::here("child_docs/management_tables.Rmd")}
 ```
@@ -214,6 +216,7 @@ cat(res, sep = "\n\n")
 ```
 
 <!-- \newpage -->
+`r if(params$region == "NewEngland") "\\newpage"`
 
 ## Commercial Profits
 
@@ -230,6 +233,7 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ```
 
 <!-- \newpage -->
+`r if(params$region == "NewEngland") "\\newpage"`
 
 ## Recreational Opportunities
 
@@ -318,6 +322,7 @@ The UMEs are under investigation and are likely the result of multiple drivers. 
 A climate vulnerability assessment (Lettrich et al. 2023) is published for Atlantic and Gulf marine mammal populations.
 
 <!-- \newpage -->
+`r if(params$region == "NewEngland") "\\newpage"`
 
 ## Stability
 
@@ -361,10 +366,10 @@ return_plot("protectedspp-dist-shifts", region = "BothReports")
 
 #### Drivers: 
 
-Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists.  Changes in managed species distribution is partially related to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts.  [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring. 
+Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists.  Changes in managed species distribution is partially related to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts.  [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring (Fig. \ref{fig:smallcopeall-cog}). 
 
 ```{r calfin-cog, fig.cap = return_caption(chunk_name = "calfin-cog", region = "NewEngland"), fig.width = 7.5, fig.asp = .3, eval = params$region == 'NewEngland'}
-return_plot("calfin-cog", region = "NewEngland")
+# return_plot("calfin-cog", region = "NewEngland")
 ```
 
 ```{r forageshifts, fig.cap=return_caption(chunk_name = "forageshifts", region = "BothReports"), fig.width = 6.5, fig.asp = .3}
@@ -446,6 +451,7 @@ Distribution shifts caused by changes in thermal habitat and ocean circulation a
 Adapting management to changing stock distributions and dynamic ocean processes will require continued monitoring of populations in space and time while evaluating management measures against a range of possible future spatial distributions. The upcoming Climate Vulnerability Assessment 2.0 will also be incorporating MOM6 output and forecasts to help predict changes in species distributions and quantify species exposure to predicted future change. Processes like the [East Coast Coordination Group](https://www.mafmc.org/e3cg) and the HMS Climate Vulnerability Assessment can help coordinate management. 
 
 <!-- \newpage -->
+`r if(params$region == "NewEngland") "\\newpage"`
 
 ### Risks to managing seasonally
 
@@ -568,6 +574,8 @@ The increase of offshore wind development can have both positive (e.g., employme
 Aquaculture fisheries and federally-managed fisheries could compete with or benefit each other  with spatial access, shoreside infrastructure, or the supply of seafood. Unlike offshore wind, offshore aquaculture is not regulated by any federal leasing program but is permitted via the U.S. Army Corps of Engineers and the U.S. EPA. Currently, there are no federally-permitted aquaculture projects in the Northeast U.S. The marine aquaculture industry of the Northeast currently occurs in nearshore waters which are regulated by state leasing and permitting processes and federal permitting processes, as applicable. Analyses are needed to quantify the nearshore spatial distribution of aquaculture in the Northeast. 
 
 <!-- \newpage -->
+`r if(params$region == "NewEngland") "\\newpage"`
+
 ### 2025 Highlights {#highlights}
 
 This section intends to provide a record of [noteworthy observations reported in 2025](https://noaa-edab.github.io/catalog/observation_synthesis_2025.html) across the Northeast U.S. region. The full ecosystem and fisheries impacts of many of these observations are still to be determined. They should, however, be noted and considered in future analyses and management decisions.

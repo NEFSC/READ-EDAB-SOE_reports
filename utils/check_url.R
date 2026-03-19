@@ -7,7 +7,7 @@ library(httr)
 # ==============================================================================
 
 # Point this to your generated .tex file (usually same name as .Rmd)
-TEX_FILE <- here::here("SOE2026_NEFMC_IR_FINAL.tex" )
+TEX_FILE <- here::here("SOE2026_NEFMC_IR_Edits.tex" )
 # TEX_FILE <- here::here("SOE2026_MAFMC_IR_FINAL.tex" )
 
 # ==============================================================================
