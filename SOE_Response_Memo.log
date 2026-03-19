@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.18)  18 MAR 2026 16:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.18)  19 MAR 2026 11:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,60 +636,61 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 95.
-[1
+
+ignored: Infinite glue shrinkage found in box being split [1
 
 {c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
 ignored: Infinite glue shrinkage found in box being split [2]
 ignored: Infinite glue shrinkage found in box being split [3] [4]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1128.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1182.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1183.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1237.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [5{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [6]
+) [5{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [6] [7]
 
-LaTeX Warning: Reference `fig:netrev' on page 7 undefined on input line 1414.
+LaTeX Warning: Reference `fig:netrev' on page 8 undefined on input line 1468.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1413--1417
+Underfull \hbox (badness 10000) in paragraph at lines 1467--1471
 
  []
 
 
-LaTeX Warning: Reference `fig:profits' on page 7 undefined on input line 1417.
+LaTeX Warning: Reference `fig:profits' on page 8 undefined on input line 1471.
 
-[7] [8]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1563.
+[8]
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1617.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1563.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1617.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 1563.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 1617.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 1563.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 1617.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 1563.
+(Font)              <10> on input line 1617.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1563.
+(Font)              <7> on input line 1617.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 1563.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 1563.
+(Font)              <5> on input line 1617.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 1617.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 1563.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 1617.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -704,15 +705,15 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15634 strings out of 469454
- 251907 string characters out of 5465099
- 821590 words of memory out of 5000000
+ 15636 strings out of 469454
+ 251927 string characters out of 5465099
+ 822873 words of memory out of 5000000
  43855 multiletter control sequences out of 15000+600000
- 676075 words of font info for 141 fonts, out of 8000000 for 9000
+ 676164 words of font info for 142 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  69i,7n,84p,1014b,590s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on SOE_Response_Memo.pdf (10 pages, 229340 bytes).
+Output written on SOE_Response_Memo.pdf (10 pages, 229753 bytes).
 PDF statistics:
  188 PDF objects out of 1000 (max. 8388607)
  159 compressed objects within 2 object streams

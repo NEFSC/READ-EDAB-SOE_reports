@@ -121,19 +121,10 @@ requests |>
 
 ```{r, ft.arraystretch = 1}
 requests |>
-  dplyr::filter(Status == "Not feasible") |>
-  dplyr::select(-c(Status, Priority)) |>
-  create_table(widths = c(4.5, ret_widths(1)),
-               cap = "Requests that are out of scope for the State of the Ecosystem reports.")
-```
-
-\newpage
-
-```{r, ft.arraystretch = 1}
-requests |>
 dplyr::filter(!Status %in% c("Done", "Not feasible"),
               Status != "",
-              Status != "Removed") |>
+              Status != "Removed",
+              Priority != "Lowest") |>
   dplyr::group_by(Category) |>
   dplyr::mutate(n = dplyr::n()) |>
   dplyr::arrange(n) |>
@@ -141,6 +132,15 @@ dplyr::filter(!Status %in% c("Done", "Not feasible"),
   dplyr::select(-n) |>
   create_table(widths = c(4.5, ret_widths(3)),
                cap = "Remaining research requests for the State of the Ecosystem reports.")
+```
+
+```{r, ft.arraystretch = 1}
+requests |>
+  dplyr::filter(Status == "Not feasible" |
+                  Priority == "Lowest") |>
+  dplyr::select(-c(Status, Priority)) |>
+  create_table(widths = c(4.5, ret_widths(1)),
+               cap = "Requests that have been removed from tracking due to being out of scope or not well-defined.")
 ```
 
 # Overview of requests
