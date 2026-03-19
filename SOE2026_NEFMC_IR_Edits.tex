@@ -2,13 +2,11 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
 \documentclass[
   10pt,
 ]{article}
-\usepackage{xcolor}
-\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{amsmath,amssymb}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -39,6 +37,8 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
+\usepackage{xcolor}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -67,6 +67,7 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Set up the fonts
 \usepackage[urw-palatino]{mathdesign}
 \usepackage[T1]{fontenc}
@@ -119,12 +120,12 @@
 \cfoot{\thepage}
 
 \fancyheadinit{%
-   \ifthenelse{\value{page}=5}%
-      {\fancyhead[R]{\includegraphics[width=40pt]{images/NOAA_logo.png} \\ \textsf{\emph{Feb 13, 2026}}}
-       \fancyhead[L]{\textsf{\LARGE State of the Ecosystem 2025: REVIEW DRAFT}}
+   \ifthenelse{\value{page}=6}%
+      {\fancyhead[R]{\includegraphics[width=40pt]{images/NOAA_logo.png} \\ \textsf{\emph{March 18, 2026}}}
+       \fancyhead[L]{\textsf{\LARGE State of the Ecosystem 2026: New England}}
       }%
       {\fancyhead[R]{}
-       \fancyhead[L]{\textsf{\emph{State of the Ecosystem 2025: REVIEW DRAFT}}}
+       \fancyhead[L]{\textsf{\emph{State of the Ecosystem 2026: New England}}}
       }
 }
 
@@ -143,7 +144,6 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{colortbl}
-\usepackage{ulem}
 \usepackage{hhline}
 \newlength\Oldarrayrulewidth
 \newlength\Oldtabcolsep
@@ -168,7 +168,7 @@
 
 \begin{document}
 
-\setcounter{page}{4}
+\setcounter{page}{6}
 \thispagestyle{fancy}
 
 \section{Introduction}\label{introduction}
@@ -188,6 +188,8 @@ The two main sections contain subsections for each management objective or poten
 All indicators are updated with the most recent data available as of January 2026, and all indicators are updated with the same data years across both reports. In some cases, indicators are only updated through 2024 due to data availability. In these cases, we still include the indicator in the report to provide context for the most recent data year and to allow for future updates.
 
 Because this report is intended to provide a high-level overview of marine ecosystem information in the Northeast United States, we do not include complete methods or detailed results for all of the indicators that we present. More information can be found hyperlinked in blue text.
+
+\newpage
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -381,11 +383,11 @@ The figure format is illustrated in Fig \ref{fig:docformat}a. Both long-term and
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{C:/Users/stephanie.owen/Documents/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Edits_files/figure-latex/docformat-1} 
+{\centering \includegraphics[width=1\linewidth,]{C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Edits_files/figure-latex/docformat-1} 
 
 }
 
-\caption{Document orientation. a) Key to figures: orange line - significant long-term increasing trend (purple for decreasing), dark orange line - significant increasing short-term trend (dark purple for decreasing), dashed line - time-series mean. b)The Northeast Large Marine Ecosystem: Ecological production units (EPUs) defined for the Gulf of Maine (GOM), Georges Bank (GB), and the Mid-Atlantic Bight (MAB).}\label{fig:docformat}
+\caption{Document orientation. a) Key to figures: orange line - significant long-term increasing trend (purple for decreasing), dark orange line - significant increasing short-term trend (dark purple for decreasing), dashed line - time-series mean. b) The Northeast Large Marine Ecosystem: Ecological production units (EPUs) defined for the Gulf of Maine (GOM), Georges Bank (GB), and the Mid-Atlantic Bight (MAB).}\label{fig:docformat}
 \end{figure}
 
 Fish and invertebrates are aggregated into similar feeding categories (Table \ref{tab:species-groupings}) to evaluate ecosystem level trends in predators and prey.
@@ -470,11 +472,11 @@ In this section, we examine indicators related to broad, ecosystem-level fishery
 
 \subsubsection{Indicators: Landings; commercial and recreational}\label{indicators-landings-commercial-and-recreational}
 
-In New England, total \href{https://noaa-edab.github.io/catalog/comdat.html}{commercial landings} (includes bait and industrial uses), U.S. seafood landings (excludes industrial and bait uses), and NEFMC-managed landings have long-term declines ((Fig. \ref{fig:total-landings}). Declines are seen in commercial landings by \href{https://noaa-edab.github.io/catalog/species_groupings.html}{guild} (Fig. \ref{fig:comm-landings}), which include all species and all uses caught with GB and the GOM, and are reported in total and for NEFMC managed species only. Downward trends persist for piscivores and benthivores in both regions. Current high total landings for benthivores (GOM) are attributable to American lobster. High benthos landings (GB) are attributable to clams and scallops, although they are below the long-term mean in 2024 (Fig. \ref{fig:total-landings}). Current landings of planktivores and piscivores remain among the lowest points in the time series.
+In New England, total \href{https://noaa-edab.github.io/catalog/comdat.html}{commercial landings} (includes bait and industrial uses), U.S. seafood landings (excludes industrial and bait uses), and NEFMC-managed landings have long-term declines (Fig. \ref{fig:total-landings}). Declines are seen in commercial landings by \href{https://noaa-edab.github.io/catalog/species_groupings.html}{guild} (Fig. \ref{fig:comm-landings}), which include all species and all uses caught with GB and the GOM, and are reported in total and for NEFMC managed species only. Downward trends persist for piscivores and benthivores in both regions. Current high total landings for benthivores (GOM) are attributable to American lobster. High benthos landings (GB) are attributable to clams and scallops, although they are below the long-term mean in 2024 (Fig. \ref{fig:total-landings}). Current landings of planktivores and piscivores remain among the lowest points in the time series.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/total_landings_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/total_landings_NewEngland_2026-03-19} 
 
 }
 
@@ -483,29 +485,29 @@ In New England, total \href{https://noaa-edab.github.io/catalog/comdat.html}{com
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/commercial_landings_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/commercial_landings_NewEngland_2026-03-18} 
 
 }
 
-\caption{Total commercial landings (black) and New England Fishery Management Council managed U.S seafood landings (red) by feeding guild for the Gulf of Maine (GOM, right) and Georges Bank (GB, left), with significant long-term declines (purple).}\label{fig:comm-landings}
+\caption{Total commercial landings (black) and NEFMC managed U.S. seafood landings (red) by feeding guild for the Gulf of Maine (GOM, right) and Georges Bank (GB, left), with significant long-term declines (purple).}\label{fig:comm-landings}
 \end{figure}
 
-New England ports face a moderate risk from environmental variability with no long-term trend, as evaluated by the 2025 \href{https://noaa-edab.github.io/catalog/community_climate_vulnerability.html}{Community Environmental Variability Risk Indicators} (Fig. \ref{fig:climatevul-land}). These indicators assess port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much of a region's landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
+New England ports face a moderate risk from environmental variability with no long-term trend, as evaluated by the 2025 \href{https://noaa-edab.github.io/catalog/community_risks.html}{Community Environmental Variability Risk Indicators} (Fig. \ref{fig:climatevul-land}). These indicators assess port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much of a region's landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/climatevul_land_NewEngland_2026-03-16} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/climatevul_land_NewEngland_2026-03-18} 
 
 }
 
-\caption{New England region total vulnerability of commercial landings (sum of New England port landings weighted by species climate vulnerability from the Climate Vulnerability Assessment.  Horizontal colored bars show different climate risk levels.}\label{fig:climatevul-land}
+\caption{New England region total vulnerability of commercial landings (sum of New England port landings weighted by species climate vulnerability from Hare et al. 2016). Horizontal colored bars show different climate risk levels. There is a significant long-term trend (orange).}\label{fig:climatevul-land}
 \end{figure}
 
 In New England, \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational harvest} (retained fish presumed to be eaten) shows a long-term decline with recent harvest remaining at a time series low (Fig. \ref{fig:rec-landings}). This pattern may indicate a shift towards catch-and-release strategies as opposed to catch for harvest. \href{https://noaa-edab.github.io/catalog/rec_hms.html}{Recreational shark landings} have generally decreased for most shark groups through 2024 (Fig. \ref{fig:rec-hms-ne}). The recent low in pelagic shark landings is largely driven by regulatory changes implemented in 2018, followed by the closure of the shortfin mako fishery in 2022. These actions were intended to rebuild the North Atlantic shortfin mako stock and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT).
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/rec_landings_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/rec_landings_NewEngland_2026-03-18} 
 
 }
 
@@ -514,7 +516,7 @@ In New England, \href{https://noaa-edab.github.io/catalog/recdat.html}{recreatio
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/rec_hms_NE_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/rec_hms_NE_NewEngland_2026-03-18} 
 
 }
 
@@ -529,16 +531,18 @@ Declining commercial landings (total and seafood) and recreational harvest can b
 
 \paragraph{Stock Status}\label{stock-status}
 
-Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{management objectives} (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are not being met for some NEFMC managed species. Specifically, 17 stocks are currently estimated to be below B\textsubscript{MSY} targets and 10 below B\textsubscript{MSY} thresholds (Fig. \ref{fig:stock-status}) However, the status of 12 stocks is unknown (Table \ref{tab:stock-status-table}). Although stock status and associated management constraints are likely contributing to decreased landings, these management actions are enacted in response to biomass, where less conservative regulations would not necessarily mean higher landings. To better address the role of management in future reports, we could examine how the total allowable catch (TAC) and the percentage of the TAC utilized for each species has changed through time.
+Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{management objectives} (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are not being met for some NEFMC managed species. Specifically, 17 stocks are currently estimated to be below B\textsubscript{MSY} targets and 10 below B\textsubscript{MSY} thresholds (Fig. \ref{fig:stock-status}). However, the status of 12 stocks is unknown (Table \ref{tab:stock-status-table}). Although stock status and associated management constraints are likely contributing to decreased landings, these management actions are enacted in response to biomass, where less conservative regulations would not necessarily mean higher landings. To better address the role of management in future reports, we could examine how the total allowable catch (TAC) and the percentage of the TAC utilized for each species has changed through time.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/stock_status_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/stock_status_NewEngland_2026-03-18} 
 
 }
 
-\caption{Summary of single species status for New England Fishery Management Council and jointly federally managed stocks (goosefish and spiny dogfish).  The dotted vertical line at one is the target biomass reference point of B.  The dashed lines are the management thresholds of B (vertical) or F (horizontal). Stocks with a $B/B_{MSY}$ estimate but without an $F/F_{MSY}$ estimate are denoted in a separate box plot (top). Colors denote stocks with $B/B_{MSY}$ < 0.5 or $F/F_{MSY}$ (orange), stocks 0.5<$B/B_{MSY}$<1 (blue), and stocks $B/B_{MSY}$>1 (green).CCGOM = Cape Cod Gulf of Maine, GOM = Gulf of Maine, GB = Georges Bank, SNEMA = Southern New England Mid Atlantic}\label{fig:stock-status}
+\caption{Summary of single species status for NEFMC and jointly federally managed stocks (goosefish and spiny dogfish).  The dotted vertical line at one is the target biomass reference point of B.  The dashed lines are the management thresholds of B (vertical) or F (horizontal). Stocks with a $B/B_{MSY}$ estimate but without an $F/F_{MSY}$ estimate are denoted in a separate box plot (top). Colors denote stocks with $B/B_{MSY}$ < 0.5 or $F/F_{MSY}$ (orange)>1, stocks 0.5<$B/B_{MSY}$<1 (blue), and stocks $B/B_{MSY}$>1 (green).CCGOM = Cape Cod Gulf of Maine, GOM = Gulf of Maine, GB = Georges Bank, SNEMA = Southern New England Mid-Atlantic}\label{fig:stock-status}
 \end{figure}
+
+\newpage
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -650,7 +654,7 @@ Declining landings are likely driven by the relative abundance of specific targe
 
 With the poor or unknown stock status of many managed species, the decline in commercial seafood landings in the Gulf of Maine most likely reflects lower catch quotas implemented to rebuild overfished stocks, as well as market dynamics.
 
-The recent decline in \href{Fig.\%20/ref\%7Bfig:rec-landings\%7D}{recreational seafood harvest} is likely associated with a combination of targeted management actions, shifting social behaviors, data collection changes, and potentially low biomass of targeted species. The decline in recreational shark landings can partially be attributed to management actions intended to reduce fishing mortality on mako sharks. The lower than average landings since 2018 for species other than sharks could be driven by either changes in fishing behavior or reflect the modified methodology in NOAA Fisheries' Marine Recreational Information Program survey in 2018.
+The recent decline in \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational seafood harvest}(Fig. \ref{fig:rec-landings}) is likely associated with a combination of targeted management actions, shifting social behaviors, data collection changes, and potentially low biomass of targeted species. The decline in recreational shark landings can partially be attributed to management actions intended to reduce fishing mortality on mako sharks. The lower than average landings since 2018 for species other than sharks could be driven by either changes in fishing behavior or reflect the modified methodology in NOAA Fisheries' Marine Recreational Information Program survey in 2018.
 
 Future commercial and recreational landings are likely to be driven by environmental changes that require continued monitoring. Fisheries and communities rely on different combinations of stocks, and individual stocks will respond differently to these drivers. Some key drivers include :
 
@@ -668,7 +672,7 @@ Future commercial and recreational landings are likely to be driven by environme
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/aggregate_biomass_gb_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/aggregate_biomass_gb_NewEngland_2026-03-18} 
 
 }
 
@@ -677,7 +681,7 @@ Future commercial and recreational landings are likely to be driven by environme
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/aggregate_biomass_gom_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/aggregate_biomass_gom_NewEngland_2026-03-18} 
 
 }
 
@@ -686,12 +690,14 @@ Future commercial and recreational landings are likely to be driven by environme
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/mass_inshore_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/mass_inshore_NewEngland_2026-03-18} 
 
 }
 
 \caption{Spring (left) and fall (right) surveyed biomass from the state of Massachusetts inshore survey, with increasing (orange) and decreasing (purple) long-term trends. The shaded area around each annual mean represents 2 standard deviations from the mean.}\label{fig:mass-biomass}
 \end{figure}
+
+\newpage
 
 \subsection{Commercial Profits}\label{commercial-profits}
 
@@ -701,11 +707,11 @@ Total \href{https://noaa-edab.github.io/catalog/comdat.html}{commercial revenues
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/comm_revenue_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/comm_revenue_NewEngland_2026-03-18} 
 
 }
 
-\caption{Commercial revenue through 2024 for Georges Bank (top) and the Gulf of Maine (bottom): total (black) and from New England Fishery Management Council managed species (red), with significant long-term increase (orange), and long-term (light purple) and short-term (dark purple) declines. Dashed lines represent the long-term annual mean.}\label{fig:comm-revenue-ne}
+\caption{Commercial revenue through 2024 for Georges Bank (top) and the Gulf of Maine (bottom): total (black) and from NEFMC managed species (red), with significant long-term increase (orange), and long-term (light purple) and short-term (dark purple) declines. Dashed lines represent the long-term annual mean.}\label{fig:comm-revenue-ne}
 \end{figure}
 
 Revenue earned by harvesting resources is a function of both the quantity landed of each species and the prices paid for landings. Therefore, total revenue patterns can be in part driven by harvest levels, the mix of species landed, price changes, or a combination of these. The \href{https://noaa-edab.github.io/catalog/bennet.html}{Bennet Indicator} (BI) decomposes revenue change into two parts, one driven by changing quantities (volumes), and a second driven by changing prices. All changes are in relation to a base year (1982). The 1982 base year was selected because that is the first year the relevant data is available and it allows for an extended period of time to evaluate market trends and dynamics.
@@ -718,7 +724,7 @@ Breaking down the GB revenue by guild (Fig. \ref{fig:bennet-all-ne}), both the v
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/bennet_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/bennet_NewEngland_2026-03-18} 
 
 }
 
@@ -728,7 +734,7 @@ commercial landings in Georges Bank (GB: top) and the Gulf of Maine (GOM: bottom
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/bennet_all_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/bennet_all_NewEngland_2026-03-18} 
 
 }
 
@@ -737,31 +743,33 @@ commercial landings in Georges Bank (GB: top) and the Gulf of Maine (GOM: bottom
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/comdat_profit_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/comdat_profit_NewEngland_2026-03-18} 
 
 }
 
-\caption{Profitability indices for Georges Bank (GB, top) and the Gulf of Maine (GOM, bottom): cost index (red), profit index (green), and revenue index (blue). Dashed lines represent the long-term annual means for each index. Long-term increasing trend (orange) in the GOM associated with revenue index.}\label{fig:comdat-profit-ne}
+\caption{Profitability indices for GB (top) and GOM (bottom): cost index (red), profit index (green), and revenue index (blue). Dashed lines represent the long-term annual means for each index. Long-term increasing trend (orange) in the GOM associated with revenue index.}\label{fig:comdat-profit-ne}
 \end{figure}
 
 This year, we present new indicators of \href{https://noaa-edab.github.io/catalog/comdat_profit.html}{profitability}: indices of cost, revenue, and profit (Fig. \ref{fig:comdat-profit-ne}). In this index, costs pertain to trip costs, excluding labor, estimated for all federal trips in the region. The profit indicator is net-revenue, determined as the difference between trip revenue and trip costs. Trips were spatially allocated to compile regional indices. Indices are presented as values relative to those from 2000, the first year in the dataset.
 
 For trips in GB, high costs and low revenue had caused a low profits over the last 3 years, but recent drops in costs have helped compensate for low revenue. GB profits have no long-term trend, but a cyclical revenue driven by rotational scallop management can impact profitability. In the GOM, the profit index closely follows the same trends as the revenue index with the exception of 2010 - 2013 where low costs created a surge in the profit index. In 2024, the GOM profit index returned to near the long-term average with average costs and revenue.
 
-For New England ports, \href{https://noaa-edab.github.io/catalog/community_climate_vulnerability.html}{total vulnerability} of revenue was moderate in \hyperref[social-and-community-risks]{2024} with no long-term trend (Fig. \ref{fig:climatevul-rev-ne}). This suggests that while New England commercial fishing is moderately reliant on climate-sensitive species, this proportion has not significantly changed since 2000.
+For New England ports, \href{https://noaa-edab.github.io/catalog/community_risks.html}{total vulnerability} of revenue was moderate in \hyperref[social-and-community-risks]{2024} with no long-term trend (Fig. \ref{fig:climatevul-rev-ne}). This suggests that while New England commercial fishing is moderately reliant on climate-sensitive species, this proportion has not significantly changed since 2000.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/climatevul_rev_NewEngland_2026-03-16} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/climatevul_rev_NewEngland_2026-03-18} 
 
 }
 
-\caption{New England region total vulnerability of commercial revenue (sum of New England port revenue weighted by species climate vulnerability from the Climate Vulnerability Assessment. Horizontal colored bars show different climate risk levels.}\label{fig:climatevul-rev-ne}
+\caption{New England region total vulnerability of commercial revenue (sum of New England port revenue weighted by species climate vulnerability from Hare et al. 2016). Horizontal colored bars show different climate risk levels.}\label{fig:climatevul-rev-ne}
 \end{figure}
 
 \subsubsection{Implications}\label{implications-1}
 
 The overall volume of lobster and scallops, quahogs and surfclams have dictated the revenue trends within the GB region. In the GOM, lobster prices and landings are primarily responsible for the overall high revenues over the time series. Notably, both lobsters and scallops are sensitive to ocean warming and acidification and it is important to monitor the effects of these and other ecosystem drivers.
+
+\newpage
 
 \subsection{Recreational Opportunities}\label{recreational-opportunities}
 
@@ -771,25 +779,25 @@ The overall volume of lobster and scallops, quahogs and surfclams have dictated 
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/rec_op_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/rec_op_NewEngland_2026-03-18} 
 
 }
 
-\caption{Recreational effort (total number of recreational angler trips from 1980-2024) in New England. Derived from NOAA Fisheries Marine Recreational Information Program's Effort Time Series Query.}\label{fig:rec-op-ne}
+\caption{Recreational effort (total number of recreational angler trips from 1980-2024) in New England. Derived from MRIP's Effort Time Series Query.}\label{fig:rec-op-ne}
 \end{figure}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/rec_div_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/rec_div_NewEngland_2026-03-18} 
 
 }
 
-\caption{Recreational fleet effort diversity from 1980-2024 in New England.}\label{fig:rec-div-ne}
+\caption{Recreational fleet effort diversity from 1980-2024  in New England.}\label{fig:rec-div-ne}
 \end{figure}
 
 \subsubsection{Implications}\label{implications-2}
 
-The absence of a long term trend in recreational angler trips and fleet effort diversity suggests relative stability in the overall number of recreational opportunities in the region.
+The absence of a long-term trend in recreational angler trips and fleet effort diversity suggests relative stability in the overall number of recreational opportunities in the region.
 
 \subsection{Social and Community Risks}\label{social-and-community-risks}
 
@@ -809,7 +817,7 @@ Of the top 10 most active recreational communities, only Seabrook, NH had medium
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/commercial_engagement_NewEngland_2026-03-10} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/commercial_engagement_NewEngland_2026-03-18} 
 
 }
 
@@ -920,7 +928,7 @@ Of the top 10 most active recreational communities, only Seabrook, NH had medium
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/recreational_engagement_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/recreational_engagement_NewEngland_2026-03-18} 
 
 }
 
@@ -1031,11 +1039,11 @@ Of the top 10 most active recreational communities, only Seabrook, NH had medium
 
 \subsubsection{Indicators: Community Environmental Variability Risk in New England}\label{indicators-community-environmental-variability-risk-in-new-england}
 
-\href{https://noaa-edab.github.io/catalog/community_climate_vulnerability.html}{Community Environmental Variability Risk Indicators} (CEVRI) measure risk by linking commercial landings and revenue to specific climate sensitivity factors, including temperature, ocean acidification, and stock status using the Climate Vulnerability Assessment (CVA) scores (based on Hare et al.~2016). These indicators calculate total sensitivity and vulnerability scores based on a community's dependence on species vulnerable to climate change. Risk scores range from low (1) to high (4), increasing as a community relies more heavily on species at higher risk from environmental shifts.While there is no long-term trend in risk across New England communities, the proportion of communities with moderate risk is decreasing and shifting more towards high or very high risk scores (Fig. \ref{fig:commvulex-ne}). This shift demonstrates that regional communities are increasing their dependence on species that are highly vulnerable to changing ocean conditions for their commercial revenue. Strategies for management should account for this increased reliance on climate-sensitive stocks.
+\href{https://noaa-edab.github.io/catalog/community_risks.html}{Community Environmental Variability Risk Indicators} (CEVRI) measure risk by linking commercial landings and revenue to specific climate sensitivity factors, including temperature, ocean acidification, and stock status using the Climate Vulnerability Assessment (CVA) scores (based on Hare et al.~2016). These indicators calculate total sensitivity and vulnerability scores based on a community's dependence on species vulnerable to climate change. Risk scores range from low (1) to high (4), increasing as a community relies more heavily on species at higher risk from environmental shifts.While there is no long-term trend in risk across New England communities, the proportion of communities with moderate risk is decreasing and shifting more towards high or very high risk scores (Fig. \ref{fig:commvulex-ne}). This shift demonstrates that regional communities are increasing their dependence on species that are highly vulnerable to changing ocean conditions for their commercial revenue. Strategies for management should account for this increased reliance on climate-sensitive stocks.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/commvulex_NewEngland_2026-03-16} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/commvulex_NewEngland_2026-03-18} 
 
 }
 
@@ -1056,7 +1064,7 @@ The management objective for \href{https://noaa-edab.github.io/catalog/harborpor
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/harborporpoise_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/harborporpoise_BothReports_2026-03-18} 
 
 }
 
@@ -1067,33 +1075,33 @@ The annual estimate for gray seal bycatch, most of which occurs in New England, 
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/grayseal_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/grayseal_BothReports_2026-03-18} 
 
 }
 
-\caption{Gray seal five-year average bycatch estimate for New England and Mid-Atlantic U.S. gillnet fisheries (blue, with confidence interval shaded) and the potential U.S. biological removal (red). The range-wide potential biological removal (PBR), including both U.S. and Canadian portions of the population, is 12,052 in the draft 2024 SAR. The dashed line (black) represents the annual estimated bycatch.}\label{fig:grayseal}
+\caption{Gray seal five-year average bycatch estimate for New England and Mid-Atlantic U.S. gillnet fisheries (blue, with confidence interval shaded) and the potential U.S. biological removal (red). The range-wide Potential Biological Removal, including both U.S. and Canadian portions of the population, is 12,052 in the draft 2024 stock assessment report. The dashed line (black) represents the annual estimated bycatch.}\label{fig:grayseal}
 \end{figure}
 
 The \href{https://noaa-edab.github.io/catalog/narw.html}{North Atlantic right whale population} was on a recovery trajectory until a steep decline after 2010 (Fig. \ref{fig:narw-abundance}). While the right whale population has exhibited slow growth since 2020, it continues to experience annual mortalities above recovery thresholds. Reduced survival rates of adult females lead to diverging abundance trends between sexes. It is estimated that there are approximately 70 reproductively active adult females remaining in the population.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/narw_abundance_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/narw_abundance_BothReports_2026-03-18} 
 
 }
 
-\caption{Estimated North Atlantic right whale abundance on the Northeast Shelf. 95\% confidence interval shaded in gray around the line. }\label{fig:narw-abundance}
+\caption{Estimated North Atlantic right whale abundance on the Northeast Shelf. 95\% confidence interval shaded in gray around the line. Analysis is based on methods by Pace, Corkeron, and Kraus (2017), as documented most recently by Linden (2025).}\label{fig:narw-abundance}
 \end{figure}
 
 North Atlantic right whale \href{https://noaa-edab.github.io/catalog/narw.html}{calf counts} have generally declined after 2009 to the point of having zero new calves observed in 2018 (Fig. \ref{fig:NARW-calf-abundance}). However, since 2020, calf births have been closer to the long-term average, with 11 calves born in 2025.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/narw_calves_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/narw_calves_BothReports_2026-03-18} 
 
 }
 
-\caption{Number of North Atlantic right whale calf births since 1980. }\label{fig:NARW-calf-abundance}
+\caption{Number of North Atlantic right whale calf births since 1980. Calf birth estimates are available in Linden (2025).}\label{fig:NARW-calf-abundance}
 \end{figure}
 
 Human interaction from entanglements or vessel strikes remains the primary cause of death in an ongoing North Atlantic right whale Unusual Mortality Event (UME) since 2017. As of January 5, 2026, \href{https://www.fisheries.noaa.gov/national/marine-life-distress/2017-2026-north-atlantic-right-whale-unusual-mortality-event}{the UME} includes 168 individual whales: 41 confirmed mortalities (19 US; 22 Canada), 40 serious injuries, and 87 sublethal injuries or illnesses. Recent research suggests that many mortalities go unobserved and the true number of mortalities are about three times the count of the observed mortalities.
@@ -1106,11 +1114,11 @@ Bycatch management measures have been implemented to maintain bycatch below PBR 
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/seal_pups_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/seal_pups_BothReports_2026-03-18} 
 
 }
 
-\caption{Estimated number of gray seal pups born at four United States pupping colonies at various times from 1988 to 2021. }\label{fig:seals}
+\caption{Estimated number of gray seal pups born at four United States pupping colonies at various times from 1988 to 2021. Recreated from Wood et al. 2022 (Figure 5).}\label{fig:seals}
 \end{figure}
 
 Strong evidence exists to suggest that interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. Further, right whale distribution has changed since 2010. \href{https://noaa-edab.github.io/catalog/narw.html}{Recent research} suggests that recent climate driven changes in ocean circulation have resulted in right whale distribution changes driven by increased warm water influx through the Northeast Channel, which has reduced the \href{https://noaa-edab.github.io/catalog/preyfield_energy.html}{primary right whale prey} (the copepod \emph{Calanus finmarchicus}) in the central and eastern portions of the Gulf of Maine. Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat. Additional information can be found in the \hyperref[other-ocean-uses-offshore-wind]{offshore wind risks section}.
@@ -1119,11 +1127,13 @@ The UMEs are under investigation and are likely the result of multiple drivers. 
 
 A climate vulnerability assessment (Lettrich et al.~2023) is published for Atlantic and Gulf marine mammal populations.
 
+\newpage
+
 \subsection{Stability}\label{stability}
 
 \paragraph{Fishery Stability}\label{fishery-stability}
 
-Fisheries in Georges Bank and the Gulf of Maine are dominated by single species. Total landings are declining in both regions, although overall revenue does not have a long-term trend. Revenue from Council-managed fisheries in the GOM and GB have declined over time. However, \href{https://noaa-edab.github.io/catalog/effective_sweptarea.html}{revenue per unit effort} remains steady or increasing over time for most gear types, indicating financial viability of current fishing operations. Although the effective number of species being landed in the commercial fleet rebounded slightly from the historical low of 2021, the \href{https://noaa-edab.github.io/catalog/recdat.html}{diversity in catch} is still well below the series average, indicating increasing reliance on a smaller number of species. Commercial fishery fleet count (Fig. \ref{fig:comm-div-fleet}) is also below the time series average due to varying barriers to enter and invest into the fleet. While some opportunity to diversify catch has allowed crew and vessel owners to continue at a sustainable rate, other barriers such as shifting species distribution and population shifts leave commercial crew and vessel owners in vulnerable positions to adapt to these changes. In Georges Bank, cyclic landings and revenue patterns are driven by scallops and decrease the predictability of earnings from year to year. In the Gulf of Maine, landings and revenue are driven by lobster. The increasing importance of lobster over time is mirrored in the decreasing contribution of Council-managed fisheries to Gulf of Maine total landings and revenue.
+Fisheries in Georges Bank and the Gulf of Maine are dominated by single species. Total landings are declining in both regions, although overall revenue does not have a long-term trend. Revenue from Council-managed fisheries in the GOM and GB have declined over time. However, \href{https://noaa-edab.github.io/catalog/effective_sweptarea.html}{revenue per unit effort} remains steady or increasing over time for most gear types, indicating financial viability of current fishing operations. Although the effective number of species being landed in the commercial fleet rebounded slightly from the historical low of 2021, the \href{https://noaa-edab.github.io/catalog/recdat.html}{diversity in catch} is still well below the series average, indicating increasing reliance on a smaller number of species. Commercial fishery fleet count (Fig. \ref{fig:comm-div-fleet-ne}) is also below the time series average due to varying barriers to enter and invest into the fleet. While some opportunity to diversify catch has allowed crew and vessel owners to continue at a sustainable rate, other barriers such as shifting species distribution and population shifts leave commercial crew and vessel owners in vulnerable positions to adapt to these changes. In Georges Bank, cyclic landings and revenue patterns are driven by scallops and decrease the predictability of earnings from year to year. In the Gulf of Maine, landings and revenue are driven by lobster. The increasing importance of lobster over time is mirrored in the decreasing contribution of Council-managed fisheries to Gulf of Maine total landings and revenue.
 
 Results from the \href{https://noaa-edab.github.io/catalog/crew_survey.html}{Crew Survey} suggest many commercial fishing crews in New England are dissatisfied with the predictability of their earnings, the amount of time away from home, and the physical fatigue and personal health impacts from the job. Additionally, the survey results demonstrate evidence of aging or ``graying'' of the fleet in New England, which combined with a lack of new entrants to the industry suggests that participation in commercial fishing is declining across the region.
 
@@ -1133,16 +1143,16 @@ The number of \href{https://noaa-edab.github.io/catalog/recdat.html}{recreationa
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/comm_div_fleet_NewEngland_2026-03-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/comm_div_fleet_NewEngland_2026-03-18} 
 
 }
 
-\caption{Commercial fleet count in New England with significant long-term decline (purple line).}\label{fig:comm-div-fleet-ne}
+\caption{Commercial fleet count (top) and fleet diversity in revenue (bottom) in New England with long-term significant decline in fleet count (purple line).}\label{fig:comm-div-fleet-ne}
 \end{figure}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/commercial_div_species_div_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/commercial_div_species_div_NewEngland_2026-03-18} 
 
 }
 
@@ -1151,20 +1161,20 @@ The number of \href{https://noaa-edab.github.io/catalog/recdat.html}{recreationa
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/recdat_div_catch_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/recdat_div_catch_NewEngland_2026-03-18} 
 
 }
 
-\caption{Diversity of recreational catch in New England, with long-term increasing trend (orange). Derived from NOAA Fisheries Marine Recreational Information Program's Catch Time Series Query.}\label{fig:recdat-div-catch-ne}
+\caption{Diversity of recreational catch in New England, with long-term increasing trend (orange). Derived from MRIP's Catch Time Series Query.}\label{fig:recdat-div-catch-ne}
 \end{figure}
 
 \paragraph{Ecological Stability}\label{ecological-stability}
 
-Long-term changes in biological production suggest the Georges Bank ecosystem is experiencing a system-wide shift. Total annual \href{https://noaa-edab.github.io/catalog/chl_pp.html}{primary production} (TPP) (Fig. \ref{fig:totpp-ne})is a measure of the total amount of carbon (i.e., energy) produced by phytoplankton per year and is variable over time. Zooplankton biomass \{Fig. \ref{fig:zoopanom-ne}\} and the biomass of some groups of fish are also increasing (Fig. \ref{fig:nefsc-biomass-gb}). However, the productivity of managed species has declined over time, suggesting that although the system remains productive, this productivity is driven by non-target species.
+Long-term changes in biological production suggest the Georges Bank ecosystem is experiencing a system-wide shift. Total annual \href{https://noaa-edab.github.io/catalog/chl_pp.html}{primary production} (TPP) (Fig. \ref{fig:totpp-ne})is a measure of the total amount of carbon (i.e., energy) produced by phytoplankton per year and is variable over time. Zooplankton biomass (Fig. \ref{fig:zoopanom-ne}) and the biomass of some groups of fish are also increasing (Fig. \ref{fig:nefsc-biomass-gb}). However, the productivity of managed species has declined over time, suggesting that although the system remains productive, this productivity is driven by non-target species.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/totpp_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/totpp_NewEngland_2026-03-18} 
 
 }
 
@@ -1175,40 +1185,40 @@ The Gulf of Maine ecosystem has also continued to change over time leading to le
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/zoo_community_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/zoo_community_NewEngland_2026-03-18} 
 
 }
 
-\caption{Principal component analysis of zooplankton community composition for Georges Bank (GB, top) and the Gulf of Maine (GOM, bottom). Lines show the first two principal components (colors), with a long-term increase in GB (orange).}\label{fig:zoo-comm-ne}
+\caption{Principal component analysis of zooplankton community composition for GB (top) and the GOM (bottom). Lines show the first two principal components (colors), with a long-term increase in the GB (orange).}\label{fig:zoo-comm-ne}
 \end{figure}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/exp_n_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/exp_n_NewEngland_2026-03-18} 
 
 }
 
-\caption{Adult fish diversity for Georges Bank (GB, top) and in the Gulf of Maine (GOM, bottom) with long-term (light orange) and short-term (dark orange) increasing trends, based on expected number of species in a standard number of individuals. Results from survey vessels Albatross (red) and Bigelow (blue) are reported separately due to catchability differences.}\label{fig:exp-n-ne}
+\caption{Adult fish diversity for Georges Bank (top) and in the Gulf of Maine (bottom) with long-term (light orange) and short-term (dark orange) increasing trends, based on expected number of species in a standard number of individuals. Results from survey vessels Albatross (red) and Bigelow (blue) are reported separately due to catchability differences.}\label{fig:exp-n-ne}
 \end{figure}
 
-\href{https://noaa-edab.github.io/catalog/finfish_traits.html}{Functional traits}, such as length at maturity, maximum body size, or fecundity, serve to synthesize change in complex, diverse communities by looking beyond species-specific trends. Furthermore, shifts in functional trait distributions for the fish community can indicate changes in ecosystem-scale resilience. There is evidence for shifts in functional trait distributions in New England (Fig. \ref{fig:traits-k-ne}, Fig. \ref{fig:traits-tl-ne}). George's Bank (GB) displayed few long-term trends other than reductions in fecundity in both fall and spring. The Gulf of Maine (GOM) displayed long-term trends consistent with shifts towards faster life history strategies particularly in the spring finfish community, including younger age and shorter length at maturity, lower fecundity, and faster growth rate. Interestly, the spring finfish community in the GOM also displayed increases in trophic level.
+\href{https://noaa-edab.github.io/catalog/finfish_traits.html}{Functional traits}, such as length at maturity, maximum body size, or fecundity, serve to synthesize change in complex, diverse communities by looking beyond species-specific trends. Furthermore, shifts in functional trait distributions for the fish community can indicate changes in ecosystem-scale resilience. There is evidence for shifts in functional trait distributions in New England (Fig. \ref{fig:traits-k-ne}, Fig. \ref{fig:traits-tl-ne}). Georges Bank (GB) displayed few long-term trends other than reductions in fecundity in both fall and spring. The Gulf of Maine (GOM) displayed long-term trends consistent with shifts towards faster life history strategies particularly in the spring finfish community, including younger age and shorter length at maturity, lower fecundity, and faster growth rate. Interestingly, the spring finfish community in the GOM also displayed increases in trophic level.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/traits_k_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/traits_k_NewEngland_2026-03-18} 
 
 }
 
-\caption{Fish community functional traits (growth rate) in Georges Bank (GB, top) and the Gulf of Maine (GOM, bottom) based on Fall (red) and Spring (blue) survey data with an increasing long-term trend (orange). Dashed lines represent the long-term annual mean for each survey.}\label{fig:traits-k-ne}
+\caption{Fish community functional traits (growth rate) in New England based on Fall (red) and Spring (blue) survey data with an increasing long-term trend (orange). Dashed lines represent the long-term annual mean for each survey.}\label{fig:traits-k-ne}
 \end{figure}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/traits_tl_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/traits_tl_NewEngland_2026-03-18} 
 
 }
 
-\caption{Fish community functional traits (trophic level) in  Georges Bank (GB, top) and the Gulf of Maine (GOM, bottom) based on Fall (red) and Spring (blue) survey data with increasing long-term trend (orange) and increasing short-term trend (dark orange). Dashed lines represent the long-term annual mean for each survey.}\label{fig:traits-tl-ne}
+\caption{Fish community functional traits (trophic level) in New England based on Fall (red) and Spring (blue) survey data with increasing long-term trend (orange) and increasing short-term trend (dark orange). Dashed lines represent the long-term annual mean for each survey.}\label{fig:traits-tl-ne}
 \end{figure}
 
 Increasing \href{https://noaa-edab.github.io/catalog/exp_n.html}{Adult fish diversity} (Fig. \ref{fig:exp-n-ne}) and changes in functional traits such as the mean trophic level suggest that fish communities have changed from a historic baseline. Long-term trends in biomass and functional traits would not be expected in a stable system. However, because the biomass of functional groups of fish has remained relatively constant over time, the system appears able to adapt to change.
@@ -1217,7 +1227,7 @@ Increasing \href{https://noaa-edab.github.io/catalog/exp_n.html}{Adult fish dive
 
 The long-term changes in GB suggest an increasingly productive ecosystem from zooplankton to higher trophic levels, but this is occurring simultaneously with low productivity of managed species. Over the same time period, fisheries on GB have experienced cyclic changes in revenue and increased reliance on a single species, sea scallops. Coupled with demographic changes in fisher populations and a decline in the number of New England fleets, this indicates that fisheries utilizing GB may have a lower capacity to adapt to the changing ecosystem. This lower adaptive capacity with a significant shift from baseline conditions in the ecosystem indicate that both the fishery and ecosystem are currently not stable.
 
-Within the GOM, managed species continue to have low productivity, while there are long-term increases in large zooplankton and planktivores. Cyclic changes in zooplankton communities may make the impact of these changes unpredictable. As these changes in the ecosystem occur, an increasing proportion of total revenue is generated by the lobster fishery. This increased reliance on a single species reduces the regions' ability to adapt to changes in resource availability and the environment. For these reasons both the GOM ecosystem and its fisheries are considered not stable.
+Within the GOM, managed species continue to have low productivity, while there are long-term increases in large zooplankton and planktivores. Cyclic changes in zooplankton communities may make the impact of these changes unpredictable. As these changes in the ecosystem occur, an increasing proportion of total revenue is generated by the lobster fishery. This increased reliance on a single species reduces the region's ability to adapt to changes in resource availability and the environment. For these reasons both the GOM ecosystem and its fisheries are considered not stable.
 
 \section{Risks to Meeting Fishery Management Objectives}\label{risks-to-meeting-fishery-management-objectives}
 
@@ -1237,7 +1247,7 @@ As noted in the \hyperref[implications]{Seafood Production Implications section}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/species_dist_BothReports_2026-03-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/species_dist_BothReports_2026-03-18} 
 
 }
 
@@ -1246,7 +1256,7 @@ As noted in the \hyperref[implications]{Seafood Production Implications section}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cetacean_dist_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cetacean_dist_BothReports_2026-03-18} 
 
 }
 
@@ -1255,20 +1265,11 @@ As noted in the \hyperref[implications]{Seafood Production Implications section}
 
 \paragraph{Drivers:}\label{drivers}
 
-Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is partially related to the \href{https://noaa-edab.github.io/catalog/forage_index.html}{distribution of forage biomass}. Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts. \href{https://noaa-edab.github.io/catalog/zooplankton_index.html\#key-results-and-visualizations-4}{Small copepods}, widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring.
+Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is partially related to the \href{https://noaa-edab.github.io/catalog/forage_index.html}{distribution of forage biomass}. Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts. \href{https://noaa-edab.github.io/catalog/zooplankton_index.html\#key-results-and-visualizations-4}{Small copepods}, widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring (Fig. \ref{fig:smallcopeall-cog}).
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/calfin_cog_NewEngland_2026-02-17} 
-
-}
-
-\caption{Eastward (top) and northward (bottom) shifts in the center of gravity for (\textit{Calanus finmarchicus}) on the Northeast U.S. Shelf in fall (left) and spring (right). }\label{fig:calfin-cog}
-\end{figure}
-
-\begin{figure}[!htbp]
-
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/forage_dist_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/forage_dist_BothReports_2026-03-18} 
 
 }
 
@@ -1281,7 +1282,7 @@ Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. 
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/megabenthos_dist_BothReports_2026-03-11} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/megabenthos_dist_BothReports_2026-03-18} 
 
 }
 
@@ -1292,7 +1293,7 @@ In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macro
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/macrobenthos_dist_BothReports_2026-03-11} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/macrobenthos_dist_BothReports_2026-03-18} 
 
 }
 
@@ -1301,16 +1302,16 @@ In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macro
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/lgcopeall_cog_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/lgcopeall_cog_BothReports_2026-03-18} 
 
 }
 
-\caption{Eastward (top) and northward (bottom) shifts in the center of gravity for large copepod species ((\textit{Calanus finmarchicus}), (\textit{Metridia lucens}), (\textit{Calanus minor}), (\textit{Eucalanus sp.}), (\textit{Calanus spp.})) on the Northeast U.S. Shelf in fall (left) and spring (right). }\label{fig:lgcopeall-cog}
+\caption{Eastward (top) and northward (bottom) shifts in the center of gravity for large copepod species (\textit{Calanus finmarchicus}, \textit{Metridia lucens}, \textit{Calanus minor}, \textit{Eucalanus sp.}, \textit{Calanus spp.}) on the Northeast U.S. Shelf in fall (left) and spring (right). }\label{fig:lgcopeall-cog}
 \end{figure}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/smallcopeall_cog_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/smallcopeall_cog_BothReports_2026-03-18} 
 
 }
 
@@ -1319,22 +1320,22 @@ In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macro
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/euph_cog_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/euph_cog_BothReports_2026-03-18} 
 
 }
 
 \caption{Eastward (top) and northward (bottom) shifts in the center of gravity for Euphausiid species on the Northeast U.S. Shelf in fall (left) and spring (right). }\label{fig:euph-cog}
 \end{figure}
 
-Ocean temperatures influence the distribution, seasonal timing, and productivity of managed species (see sections below). The Northeast US shelf, including New England, has experienced a continued warming trend for the \href{https://noaa-edab.github.io/catalog/long_term_sst.html}{long term annual sea surface} (Fig. ef\{fig:long-term-sst\}). GB and the GOM have experienced a seasonal warming trend for surface waters in all seasons but winter (ef\{fig:seasonal-oisst-anom\}). Bottom temperature has also been inreasing in GB (winter and spring) and in the GOM (spring and summer) (Figs. ef\{fig:bottom-temp-anom\}, ef\{fig:bottom-temp-insitu\}). However, 2025 observations show cooler to average sea surface temperature in all seasons in GB and all seasons but summer in the GOM. Bottom temperature in 2025 has stayed near or below average in all seasons across New England. See the \hyperref[highlights]{2025 Highlights section} for the recent events linked to these cooler conditions.
+Ocean temperatures influence the distribution, seasonal timing, and productivity of managed species (see sections below). The Northeast US shelf, including New England, has experienced a continued warming trend for the \href{https://noaa-edab.github.io/catalog/long_term_sst.html}{long term annual sea surface} (Fig. \ref{fig:long-term-sst}). GB and the GOM have experienced a seasonal warming trend for surface waters in all seasons but winter (\ref{fig:seasonal-oisst-anom}). Bottom temperature has also been increasing in GB (winter and spring) and in the GOM (spring and summer) (Figs. \ref{fig:bottom-temp-anom}, \ref{fig:bottom-temp-insitu}). However, 2025 observations show cooler to average sea surface temperature in all seasons in GB and all seasons but summer in the GOM. Bottom temperature in 2025 has stayed near or below average in all seasons across New England. See the \hyperref[highlights]{2025 Highlights section} for the recent events linked to these cooler conditions.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/seasonal_oisst_anom_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/seasonal_oisst_anom_NewEngland_2026-03-18} 
 
 }
 
-\caption{Seasonal Optimum Interpolation Sea Surface Temperature (OISST) anomaly by season for the Gulf of Maine (GOM, top) and Georges Bank (GB, bottom), with long-term increasing trends (orange).}\label{fig:seasonal-oisst-anom}
+\caption{Seasonal Optimum Interpolation Sea Surface Temperature (OISST) anomaly by season for the GOM (top) and GB (bottom), with long-term increasing trends (orange).}\label{fig:seasonal-oisst-anom}
 \end{figure}
 
 \begin{figure}[!htbp]
@@ -1343,16 +1344,16 @@ Ocean temperatures influence the distribution, seasonal timing, and productivity
 
 }
 
-\caption{Annual in situ bottom temperature anomaly for Georges Bank (GB, top) and the Gulf of Maine (GOM, bottom), with long-term increasing trends (orange).}\label{fig:bottom-temp-insitu}
+\caption{Annual in situ bottom temperature anomaly for Georges Bank (top) and the Gulf of Maine (bottom), with long-term increasing trends (orange).}\label{fig:bottom-temp-insitu}
 \end{figure}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/bottom_temp_anom_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/bottom_temp_anom_NewEngland_2026-03-18} 
 
 }
 
-\caption{GLORYS (black) and debiased Regional Ocean Modeling System (ROMS) (red) seasonal bottom temperature anomaly for the Gulf of Maine (GOM, top) and Georges Bank (GB, bottom), with long-term increasing trends (orange).}\label{fig:bottom-temp-anom}
+\caption{GLORYS (black) and debiased ROMS (red) seasonal bottom temperature anomaly for the GOM (top) and GB (bottom), with long-term increasing trends (orange).}\label{fig:bottom-temp-anom}
 \end{figure}
 
 Species suitable habitat can expand or contract when changes in temperature and major oceanographic conditions alter distinct water mass habitats. The variability of the Gulf Stream is a major driver of the predominant oceanographic conditions of the Northeast U.S. continental shelf.
@@ -1361,7 +1362,7 @@ The \href{https://noaa-edab.github.io/catalog/gsi.html}{Gulf Stream} has been sh
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/long_term_sst_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/long_term_sst_BothReports_2026-03-18} 
 
 }
 
@@ -1370,7 +1371,7 @@ The \href{https://noaa-edab.github.io/catalog/gsi.html}{Gulf Stream} has been sh
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/west_gsi_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/west_gsi_BothReports_2026-03-18} 
 
 }
 
@@ -1381,11 +1382,11 @@ Changes in ocean temperature and circulation alter habitat features such as the 
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cold_pool_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cold_pool_BothReports_2026-03-18} 
 
 }
 
-\caption{Seasonal cold pool mean temperature (top) and spatial extent index (bottom), based on bias-corrected Regional Ocean Modeling System-Northwest Atlantic (ROMS-NWA) (open circles) and GLORYS (closed circles), with long-term declining trends (purple).}\label{fig:cold-pool-size}
+\caption{Seasonal cold pool mean temperature (top) and spatial extent index (bottom), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with long-term declining trends (purple).}\label{fig:cold-pool-size}
 \end{figure}
 
 \paragraph{Future Considerations}\label{future-considerations}
@@ -1395,6 +1396,8 @@ Distribution shifts caused by changes in thermal habitat and ocean circulation a
 \href{https://noaa-edab.github.io/catalog/MOM6_forecasts.html}{MOM6 decadal oceanographic forecasts} suggest a tendency towards near-normal temperatures over the next decade due to decadal variability in regional circulation. 2026 seasonal forecasts show a high probability of below average surface and bottom temperatures in the winter months. Forecast uncertainty is higher during the spring and summer seasons, and above average conditions are predicted for the fall. These forecasts will continue to be evaluated to determine how well they are able to predict episodic and anomalous events that are outside of the long-term patterns.
 
 Adapting management to changing stock distributions and dynamic ocean processes will require continued monitoring of populations in space and time while evaluating management measures against a range of possible future spatial distributions. The upcoming Climate Vulnerability Assessment 2.0 will also be incorporating MOM6 output and forecasts to help predict changes in species distributions and quantify species exposure to predicted future change. Processes like the \href{https://www.mafmc.org/e3cg}{East Coast Coordination Group} and the HMS Climate Vulnerability Assessment can help coordinate management.
+
+\newpage
 
 \subsubsection{Risks to managing seasonally}\label{risks-to-managing-seasonally}
 
@@ -1406,11 +1409,11 @@ Indicators of phenological changes in fish populations require regular sampling 
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/spawn_timing_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/spawn_timing_BothReports_2026-03-18} 
 
 }
 
-\caption{Percent resting stage (non-spawning) mature female fish (black) from spring Northeast Fisheries Science Center bottom trawl survey with significant long-term increases (orange), short-term decreases (dark purple), and long-term decreases (purple) from two haddock and three yellowtail flounder stocks: CC = Cape Cod, Gulf of Maine, GOM = Gulf of Maine, GB = Georges Bank, SNE = Southern New England.}\label{fig:spawntiming}
+\caption{Percent resting stage (non-spawning) mature female fish (black) from spring NEFSC bottom trawl survey with significant long-term increases (orange), short-term decreases (dark purple), and long-term decreases (purple) from two haddock and three yellowtail flounder stocks: CC = Cape Cod, Gulf of Maine, GOM = Gulf of Maine, GB = Georges Bank, SNE = Southern New England.}\label{fig:spawntiming}
 \end{figure}
 
 \href{https://noaa-edab.github.io/catalog/timing_shifts.html}{Migration timing} of some tuna and large whales has changed. An analysis of recreational fishing data between 2019 and 2022 identified multiple shifts in important HMS species. For example, bigeye tuna were caught 50 days earlier; small and large bluefin tuna were caught 38 and 80 days earlier respectively in Massachusetts; and blue marlin in New York were caught 27 days earlier. A separate analysis of acoustic telemetry data predicted delayed departure of southward-migrating sharks from the northeast region under future sea surface temperatures. These results are further supported by the Atlantic Highly Migratory Species Climate Vulnerability Assessment, which found that 57 of 58 highly migratory species and stocks have high or very high potential to shift distributions. In Cape Cod Bay, \href{https://noaa-edab.github.io/catalog/timing_shifts.html}{peak spring habitat use} by right and humpback whales has shifted 18-19 days later between 1998 and 2018.
@@ -1425,33 +1428,33 @@ Along with the overall warming trends in New England, ocean summer conditions ha
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/transition_date_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/transition_date_NewEngland_2026-03-18} 
 
 }
 
-\caption{Ocean summer length in New England (Georges Bank (GB), top; Gulf of Maine (GOM), bottom): the annual total number of days between the spring thermal transition date and the fall thermal transition date (black), with a long-term increasing trend (orange). Transition dates are based on sea surface temperatures.}\label{fig:transition}
+\caption{Ocean summer length in New England (Georges Bank, top; Gulf of Maine, bottom): the annual total number of days between the spring thermal transition date and the fall thermal transition date (black), with a long-term increasing trend (orange). Transition dates are based on sea surface temperatures.}\label{fig:transition}
 \end{figure}
 
 The Mid-Atlantic Bight \href{https://noaa-edab.github.io/catalog/cold_pool.html}{Cold Pool} is a summer to early fall feature that creates seasonally suitable habitat for many species, including some managed by the NEFMC. Cold Pool persistence has decreased, indicating that the duration of the Cold Pool habitat is shorter compared to the 1960s (Fig. \ref{fig:cold-pool-time-ne}). However, all Cold Pool indices were near or above the long-term average in 2025 and likely related to the influx of northern waters into the system (see \href{https://noaa-edab.github.io/catalog/observation_synthesis_2024.html}{2024 Highlights} ). A change in the timing of the autumn breakdown of the Cold Pool may impact the recruitment of species that rely on it for seasonal cues and habitat. Southern New England-Mid-Atlantic yellowtail flounder recruitment and settlement are related to the strength of the Cold Pool (a factor of extent and persistence). The correlation of pre-recruit settlers to the Cold Pool is thought to represent a bottleneck in yellowtail flounder life history, whereby a local and temporary increase in bottom temperature can negatively impact the survival of settlers. Including environmental covariates on yellowtail recruitment reduced retrospective patterns and improved predictive skill in the stock assessment model. This connection is especially important given the long-term decline in the duration of the Cold Pool.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cold_pool_time_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cold_pool_time_BothReports_2026-03-18} 
 
 }
 
-\caption{The Mid-Atlantic Bight Cold Pool persistence index based on bias-corrected Regional Ocean Modeling System-Northwest Atlantic(open circles) and GLORYS (closed circles), with significant long-term decline (purple).}\label{fig:cold-pool-time-ne}
+\caption{The Mid-Atlantic Bight Cold Pool persistence index based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with significant long-term decline (purple).}\label{fig:cold-pool-time-ne}
 \end{figure}
 
 The seasonal timing of \href{https://noaa-edab.github.io/catalog/chl_pp.html}{phytoplankton} blooms shows a tendency towards an increased fall bloom over time in the GOM and GB, with chlorophyll concentrations significantly increasing in October and November (GB) and October and December (GOM) (Fig. \ref{fig:chl-month-ne}). This increased production at the base of the food web may increase prey availability, and fall blooms in particular have been associated with increased recruitment for species such as haddock.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/monthly_chl_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/monthly_chl_NewEngland_2026-03-18} 
 
 }
 
-\caption{Monthly median chlorophyll a concentration time series for Georges Bank (GB, top) and Gulf of Maine (GOM, bottom), with increasing long-term trends (orange). }\label{fig:chl-month-ne}
+\caption{Monthly median chlorophyll a concentration time series for Georges Bank (top) and Gulf of Maine (bottom), with increasing long-term trends (orange). }\label{fig:chl-month-ne}
 \end{figure}
 
 \paragraph{Future Considerations}\label{future-considerations-1}
@@ -1464,20 +1467,20 @@ The efficacy of short-term stock projections and rebuilding plans rely on accura
 
 \paragraph{Indicators: Fish productivity and condition shifts}\label{indicators-fish-productivity-and-condition-shifts}
 
-Indicators of \href{https://noaa-edab.github.io/catalog/productivity_anomaly.html}{fish productivity} derived from observations (surveys) or models (stock assessments) show variability over the time series. Since 2020, fish productivity has been below the long-term average productivity (derived from NEFSC bottom trawl survey), and 2025 was below average for all managed species (Fig. \ref{fig:productivity-anomaly-ne}). A similar analysis based on stock assessment model outputs shows a decline in productivity over the time series with relatively high productivity in the 1990s and relatively low productivity in the 2000's (recruitment per spawning stock biomass anomaly). Fish productivity can be affected by parental condition, environmental conditions, timing and availability of prey for recruits, as well as retention of recruits within favorable habitat. In years where offshore advection is high in a depth range and month when a fish species spawns, fish productivity and recruitment may be reduced. Other signs of changing productivity in New England are the declines in \href{https://noaa-edab.github.io/catalog/seabird_ne.html}{common tern chicks} per nest (Fig. \ref{fig:seabird-ne-productivity}) and continued low overall \href{https://noaa-edab.github.io/catalog/gom_salmon.html}{Atlantic salmon} abundance (Fig. \ref{fig:salmon}) despite short-term increases in return rates and salmon numbers.
+Indicators of \href{https://noaa-edab.github.io/catalog/productivity_anomaly.html}{fish productivity} derived from observations (surveys) or models (stock assessments) show variability over the time series. Since 2020, fish productivity has been below the long-term average productivity (derived from NEFSC bottom trawl survey), and 2025 was below average for all managed species (Fig. \ref{fig:productivity-anomaly-ne}). A similar analysis based on stock assessment model outputs shows a decline in productivity over the time series with relatively high productivity in the 1990s and relatively low productivity in the 2000s (recruitment per spawning stock biomass anomaly). Fish productivity can be affected by parental condition, environmental conditions, timing and availability of prey for recruits, as well as retention of recruits within favorable habitat. In years where offshore advection is high in a depth range and month when a fish species spawns, fish productivity and recruitment may be reduced. Other signs of changing productivity in New England are the declines in \href{https://noaa-edab.github.io/catalog/seabird_ne.html}{common tern chicks} per nest (Fig. \ref{fig:seabird-ne-productivity}) and continued low overall \href{https://noaa-edab.github.io/catalog/gom_salmon.html}{Atlantic salmon} abundance (Fig. \ref{fig:salmon}) despite short-term increases in return rates and salmon numbers.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/productivity_anomaly_NewEngland_2026-03-19} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/productivity_anomaly_NewEngland_2026-03-18} 
 
 }
 
-\caption{Fish productivity measures. Top: Small-fish-per-large-fish survey biomass anomaly for species managed by the New England Fishery Management Council (NEFMC). Bottom: assessment recruitment per spawning stock biomass anomaly for stocks managed by the NEFMC. The summed anomaly across species is shown by the black line, drawn across all years with the same number of stocks analyzed.}\label{fig:productivity-anomaly-ne}
+\caption{Fish productivity measures. Top: Small-fish-per-large-fish survey biomass anomaly for species managed by the New England Fishery Management Council. Bottom: assessment recruitment per spawning stock biomass anomaly for stocks managed by the New England Fishery Management Council. The summed anomaly across species is shown by the black line, drawn across all years with the same number of stocks analyzed.}\label{fig:productivity-anomaly-ne}
 \end{figure}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/seabird_productivity_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/seabird_productivity_NewEngland_2026-03-18} 
 
 }
 
@@ -1486,7 +1489,7 @@ Indicators of \href{https://noaa-edab.github.io/catalog/productivity_anomaly.htm
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/salmon_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/salmon_NewEngland_2026-03-18} 
 
 }
 
@@ -1497,11 +1500,11 @@ The health of individual fish (i.e., fish condition) can contribute to populatio
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/condition_NewEngland_2026-03-10} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/condition_NewEngland_2026-03-19} 
 
 }
 
-\caption{Condition factor for fish species in New England (top: Georges Bank, GB; bottom: Gulf of Maine, GOM) based on fall Northeast Fisheries Science Center bottom trawl survey data. No survey was conducted in 2020.}\label{fig:ne-cf}
+\caption{Condition factor for fish species in New England (top: Georges Bank, GB; bottom: Gulf of Maine, GOM) based on fall NEFSC bottom trawl survey data. No survey was conducted in 2020.}\label{fig:ne-cf}
 \end{figure}
 
 \paragraph{Drivers}\label{drivers-2}
@@ -1526,16 +1529,16 @@ Shifts in forage abundance directly influence managed species productivity. Whil
 
 }
 
-\caption{Energy density (mean and standard deviation) of eight forage species from Northeast Fisheries Science Center bottom trawl surveys by season and year for the Gulf of Maine (GOM). Symbol size represents abundance (mean kg/tow) estimated from bottom trawl survey tows in Georges Bank (GB, top) and the GOM (bottom). }\label{fig:energy-density-ne}
+\caption{Energy density (mean and standard deviation) of eight forage species from NEFSC bottom trawl surveys by season and year for the GOM. Symbol size represents abundance (mean kg/tow) estimated from bottom trawl survey tows in GB (top) and the GOM (bottom). }\label{fig:energy-density-ne}
 \end{figure}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/foragebio_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/foragebio_NewEngland_2026-03-18} 
 
 }
 
-\caption{Forage fish index in Georges Bank (GB, top) and the Gulf of Maine (GOM, bottom, significant long-term increase for spring in orange) for spring (blue) and fall (red) surveys. Index values are relative to the maximum observation within a region across surveys.}\label{fig:foragebio-ne}
+\caption{Forage fish index in GB (top) and GOM  (bottom, significant long-term increase for spring in orange) for spring (blue) and fall (red) surveys. Index values are relative to the maximum observation within a region across surveys.}\label{fig:foragebio-ne}
 \end{figure}
 
 \href{https://noaa-edab.github.io/catalog/benthos_index.html}{Benthic invertebrates} are extremely important forage for some managed species (e.g., flatfish, juvenile cod and haddock) Macrobenthos indices show long term declines in spring. In contrast, megabenthos indices show long-term increases during the fall in both GB and GOM (Fig. \ref{fig:benthos-ne}). Fish productivity may be negatively impacted in recent years for fish such as flounders and juvenile fish that target macrobenthos such as small crustaceans and polychaetes in the spring, and positively impacted for fish such as larger skates, hakes and gadids that target megabenthos such as crabs.
@@ -1544,18 +1547,18 @@ Shifts in forage abundance directly influence managed species productivity. Whil
 
 Phytoplankton are the foundation of the marine food web and are the primary food source for zooplankton and filter feeders such as shellfish. Multiple environmental and oceanographic drivers affect the abundance, composition, spatial distribution, and productivity of phytoplankton. While changes in phytoplankton productivity could affect fish productivity (including forage), there is no clear long-term trend in New England total primary production (Fig. \ref{fig:totpp-ne}).
 
-New England \href{https://noaa-edab.github.io/catalog/zoo_abundance_anom.html}{zooplankton abundance} is shifting in ways that could impact fish condition and marine mammal prey availability. In the Gulf of Maine (GOM), increased small-bodied copepods and euphausiids are linked to improved condition in species like Atlantic mackerel, and baleen whales (humpback, sei, and fin) may benefit from long-term increases in prey availability, although euphausiid biomass has been recently high variable (Fig. \ref{fig:zoop-anom}). Conversely, large-bodied copepods in Georges Bank (GB) have declined recently. Zooplankton energy density varies by season and location, with high-energy large copepods peaking from April through June. Since 2023, \href{https://noaa-edab.github.io/catalog/zoo_community.html}{zooplankton communities} have reverted to compositions similar to pre-1990 and 2000-2011 periods; research is currently underway to determine the drivers and management implications of these shifts.
+New England \href{https://noaa-edab.github.io/catalog/zoo_abundance_anom.html}{zooplankton abundance} is shifting in ways that could impact fish condition and marine mammal prey availability. In the Gulf of Maine (GOM), increased small-bodied copepods and euphausiids are linked to improved condition in species like Atlantic mackerel, and baleen whales (humpback, sei, and fin) may benefit from long-term increases in prey availability, although euphausiid biomass has been recently high variable (Fig. \ref{fig:zoopanom-ne}). Conversely, large-bodied copepods in Georges Bank (GB) have declined recently. Zooplankton energy density varies by season and location, with high-energy large copepods peaking from April through June. Since 2023, \href{https://noaa-edab.github.io/catalog/zoo_community.html}{zooplankton communities} have reverted to compositions similar to pre-1990 and 2000-2011 periods; research is currently underway to determine the drivers and management implications of these shifts.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/benthos_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/benthos_NewEngland_2026-03-18} 
 
 }
 
 \caption{Changes in spring (blue) and fall (red) benthos abundance in New England for megabenthos (top) and macrobenthos (bottom), with significant long-term increasing (orange), short-term increasing (dark orange), and long-term decreasing (purple) trends. }\label{fig:benthos-ne}
 \end{figure}
 
-\emph{Calanus finmarchicus} abundance has declined (Fig. \ref{fig:zoopanom-ne}) in the GOM following a 2008 shift in oceanographic conditions, which poses a risk to the critically endangered North Atlantic right whale and key energy link in subarctic ecosystems. This lipid-rich copepod can comprise 71\% of the total zooplankton biomass. Observations in the Wilkinson Basin indicate that the spring and summer abundance and biomass of Calanus in 2024 was comparable to 2005. However, \href{https://noaa-edab.github.io/catalog/wbts_zoo.html}{late-stage abundance} has declined 64\% in fall and 71\% in winter. Consequently, overall mesozooplankton biomass in 2024 was only 27\% of 2005 levels (Fig. \ref{fig:wbts-zoo}).
+\emph{Calanus finmarchicus} abundance has declined (Fig. \ref{fig:zoopanom-ne}) in the GOM following a 2008 shift in oceanographic conditions, which poses a risk to the critically endangered North Atlantic right whale and key energy link in subarctic ecosystems. This lipid-rich copepod can comprise 71\% of the total zooplankton biomass. Observations in the Wilkinson Basin indicate that the spring and summer abundance and biomass of \emph{Calanus} in 2024 was comparable to 2005. However, \href{https://noaa-edab.github.io/catalog/wbts_zoo.html}{late-stage abundance} has declined 64\% in fall and 71\% in winter. Consequently, overall mesozooplankton biomass in 2024 was only 27\% of 2005 levels (Fig. \ref{fig:wbts-zoo}).
 
 The seasonal differences in \emph{Calanus} are driven by five factors:
 1. Late winter and early spring phytoplankton levels control reproductive output.
@@ -1566,16 +1569,16 @@ The seasonal differences in \emph{Calanus} are driven by five factors:
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/zooplankton_anomaly_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/zooplankton_anomaly_NewEngland_2026-03-18} 
 
 }
 
-\caption{Changes in the abundance anomalies of three zooplankton groups in Georges Bank (GB, left) and the Gulf of Maine (GOM, right): large copepods (includes (\textit{Calanus finmarchicus}, top), small copepods (including (\textit{C. typicus} and (\textit{Pseudocalanus spp.}), and Euphausiids (bottom), with significant decreases (short-term, dark purple) in large copepods and long-term increases (orange) in GOM small copepods and GB and GOM euphausiids.}\label{fig:zoopanom-ne}
+\caption{Changes in the abundance anomalies of three zooplankton groups in New England: large copepods (includes \textit{Calanus finmarchicus}, top), small copepods (including \textit{C. typicus} and \textit{Pseudocalanus spp.}), and Euphausiids (bottom), with significant decreases (short-term, dark purple) in large copepods and long-term increases (orange) in GOM small copepods and GB and GOM euphausiids.}\label{fig:zoopanom-ne}
 \end{figure}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/wbts_zoo_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/WBTS_biomass_phenology} 
 
 }
 
@@ -1598,7 +1601,7 @@ Lower ocean temperatures near long-term averages will affect species differently
 
 }
 
-\caption{Marine cold spells based on detrended GLORYS12V1 bottom temperature from October 2024 though October 2025 in the Gulf of Maine. Cold spells defined by events where observered temperature (black) exceeds  a threshold (green) based on the climatology (blue). Blue shaded areas show the cold spell events with the largest event in dark blue. }\label{fig:mcs-bottom-gom}
+\caption{Marine cold spells based on detrended GLORYS12V1 bottom temperature from October 2024 though October 2025 in the GOM. Cold spells defined by events where observed temperature (black) exceeds  a threshold (green) based on the climatology (blue). Blue shaded areas show the cold spell events with the largest event in dark blue. }\label{fig:mcs-bottom-gom}
 \end{figure}
 
 \begin{figure}[!htbp]
@@ -1614,7 +1617,7 @@ The newly-developed \href{https://noaa-edab.github.io/catalog/advection.html}{ad
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/advection_index_NewEngland_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/advection_index_NewEngland_2026-03-18} 
 
 }
 
@@ -1639,6 +1642,8 @@ Biological and oceanographic processes can affect the amount of oxygen present i
 The abundance and distribution of predators can affect both the productivity and mortality rates on managed stocks. Predators can consume managed species or compete for the same resources resulting in increased natural mortality or declining productivity, respectively. The northeast shift in some \href{https://noaa-edab.github.io/catalog/cetacean_dist.html}{highly cetacean migratory species} (Fig. \ref{fig:protectedspp-dist-shifts}) indicates a change in the overlap between predators and prey. Managed fishes also act as predators on other managed species. Since we also observe distribution shifts in both managed and forage species, the effect of changing predator distributions alone is difficult to quantify.
 
 \href{https://noaa-edab.github.io/catalog/grayseal.html}{Gray seals} are fish predators with increasing populations in New England. Recent white shark aggregations have been observed near Cape Cod, however, both gray seals and white sharks are broad generalist feeders that do not generally target commercially-sized managed species. \href{https://noaa-edab.github.io/catalog/hms_stock_status.html}{Stock status} is mixed for Atlantic Highly Migratory Species (HMS) stocks (including sharks, swordfish, billfish, and tunas) occurring throughout the Northeast U.S. shelf. While there are several HMS species considered to be overfished or that have unknown stock status, the population status for some managed Atlantic sharks and tunas is at or above the biomass target, suggesting the potential for robust (or rebuilt) predator populations among these managed species. Stable predator populations suggest stable predation pressure on managed species, but increasing predator populations may reflect increasing predation pressure.
+
+\newpage
 
 \paragraph{Future Considerations}\label{future-considerations-2}
 
@@ -1673,11 +1678,11 @@ Based on federal vessel logbook data, \href{https://noaa-edab.github.io/catalog/
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/wind_revenue_NewEngland_2026-03-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/wind_revenue_NewEngland_2026-03-18} 
 
 }
 
-\caption{Revenue of species managed by the New England Fishery Management Council within existing offshore wind lease areas, with significant long-term declines (purple) in Atlantic sea scallop,  Atlantic herring, monkfish, and silver hake.}\label{fig:wea-spp-rev-ne}
+\caption{Revenue of species managed by the New England Fishery Management Council within existing offshore wind lease areas, with significant long-term declines (purple) in Atlantic sea scallop,  Atlantic herring, monkfish, and silver hake (purple).}\label{fig:wea-spp-rev-ne}
 \end{figure}
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
@@ -1786,7 +1791,7 @@ The socio-demographic conditions, and resultant vulnerabilities, of some communi
 
 \begin{figure}[!htbp]
 
-\includegraphics[width=1\linewidth,]{images/NewEngland/wea_port_rev_NewEngland_2026-02-17} \hfill{}
+\includegraphics[width=1\linewidth,]{images/NewEngland/wea_port_rev_NewEngland_2026-03-18} \hfill{}
 
 \caption{Percent of New England port fisheries revenue from wind lease areas from all leases (green), leases not under construction (blue), and active leases (orange).}\label{fig:wea-port-rev}
 \end{figure}
@@ -1797,7 +1802,7 @@ Based on federal vessel logbook data, Little Compton, RI (13\% average and 24\% 
 
 \includegraphics[width=1\linewidth,]{images/NewEngland/midatlantic_nefmc} \hfill{}
 
-\caption{Percent of port revenue from wind lease areas for Mid-Atlantic ports that land a majority of New England Fishery Management Council-managed species within the wind lease areas. Percent of revenue is shown for leases not under construction (blue) and active leases (orange).}\label{fig:wind-rev}
+\caption{Percent of port revenue from wind lease areas for Mid-Atlantic ports that land a majority of NEFMC-managed species within the wind lease areas. Percent of revenue is shown for leases not under construction (blue) and active leases (orange).}\label{fig:wind-rev}
 \end{figure}
 
 BOEM reports that cumulative offshore wind development (if all proposed projects are developed) could have moderate impacts on low-income members of vulnerable communities who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation, and increased vessel traffic as well as exacerbation of existing vulnerabilities of low-income workers to economic impacts.
@@ -1829,6 +1834,8 @@ The increase of offshore wind development can have both positive (e.g., employme
 
 Aquaculture fisheries and federally-managed fisheries could compete with or benefit each other with spatial access, shoreside infrastructure, or the supply of seafood. Unlike offshore wind, offshore aquaculture is not regulated by any federal leasing program but is permitted via the U.S. Army Corps of Engineers and the U.S. EPA. Currently, there are no federally-permitted aquaculture projects in the Northeast U.S. The marine aquaculture industry of the Northeast currently occurs in nearshore waters which are regulated by state leasing and permitting processes and federal permitting processes, as applicable. Analyses are needed to quantify the nearshore spatial distribution of aquaculture in the Northeast.
 
+\newpage
+
 \subsubsection{2025 Highlights}\label{highlights}
 
 This section intends to provide a record of \href{https://noaa-edab.github.io/catalog/observation_synthesis_2025.html}{noteworthy observations reported in 2025} across the Northeast U.S. region. The full ecosystem and fisheries impacts of many of these observations are still to be determined. They should, however, be noted and considered in future analyses and management decisions.
@@ -1852,7 +1859,7 @@ In 2024, the Gulf of Maine \href{https://noaa-edab.github.io/catalog/slopewater.
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/slopewater_BothReports_2026-02-17} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/slopewater_BothReports_2026-03-18} 
 
 }
 
