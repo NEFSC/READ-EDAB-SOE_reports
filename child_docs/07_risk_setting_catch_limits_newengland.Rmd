@@ -66,7 +66,7 @@ New England [zooplankton abundance](https://noaa-edab.github.io/catalog/zoo_abun
 return_plot("benthos", region = "NewEngland")
 ```
 
-*Calanus finmarchicus* abundance has declined (Fig. \ref{fig:zoopanom-ne}) in the GOM following a 2008 shift in oceanographic conditions, which poses a risk to the critically endangered North Atlantic right whale and key energy link in subarctic ecosystems. This lipid-rich copepod can comprise 71% of the total zooplankton biomass. Observations in the Wilkinson Basin indicate that the spring and summer abundance and biomass of Calanus in 2024 was comparable to 2005. However, [late-stage abundance](https://noaa-edab.github.io/catalog/wbts_zoo.html) has declined 64% in fall and 71% in winter. Consequently, overall mesozooplankton biomass in 2024 was only 27% of 2005 levels (Fig. \ref{fig:wbts-zoo}).  
+*Calanus finmarchicus* abundance has declined (Fig. \ref{fig:zoopanom-ne}) in the GOM following a 2008 shift in oceanographic conditions, which poses a risk to the critically endangered North Atlantic right whale and key energy link in subarctic ecosystems. This lipid-rich copepod can comprise 71% of the total zooplankton biomass. Observations in the Wilkinson Basin indicate that the spring and summer abundance and biomass of *Calanus* in 2024 was comparable to 2005. However, [late-stage abundance](https://noaa-edab.github.io/catalog/wbts_zoo.html) has declined 64% in fall and 71% in winter. Consequently, overall mesozooplankton biomass in 2024 was only 27% of 2005 levels (Fig. \ref{fig:wbts-zoo}).  
 
 The seasonal differences in *Calanus* are driven by five factors:
 1. Late winter and early spring phytoplankton levels control reproductive output.
