@@ -2,7 +2,7 @@
 # reinstall ecodata
 # devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
 
-region <- "NewEngland" #change to NewEngland to run for NE
+# region <- "NewEngland" #change to NewEngland to run for NE
 # region <- "MidAtlantic" #change to NewEngland to run for NE
 
 ###########################################
@@ -106,7 +106,7 @@ create_plots_mab_and_ne <- function(region){
     },
     indicator = "total_landings",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 2.5),
+    height = ifelse(region == "NewEngland", 4, 2.5),
   )
   
   # commercial landings
@@ -891,7 +891,7 @@ create_plots_mab_and_ne <- function(region){
     indicator = "condition",
     width = 6.5,
     #  height = 7
-    height = ifelse(region == "NewEngland", 8.5, 5)
+    height = ifelse(region == "NewEngland", 8, 5)
   )
   
   # # 5. Energy Density Plot

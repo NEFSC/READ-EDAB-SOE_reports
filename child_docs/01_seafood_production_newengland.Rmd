@@ -10,7 +10,7 @@
 
 ### Indicators: Landings; commercial and recreational
 
-In New England, total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html) (includes bait and industrial uses), U.S. seafood landings (excludes industrial and bait uses), and NEFMC-managed landings have long-term declines ((Fig. \ref{fig:total-landings}). Declines are seen in commercial landings by [guild](https://noaa-edab.github.io/catalog/species_groupings.html) (Fig. \ref{fig:comm-landings}), which include all species and all uses caught with GB and the GOM, and are reported in total and for NEFMC managed species only. Downward trends persist for piscivores and benthivores in both regions. Current high total landings for benthivores (GOM) are attributable to American lobster. High benthos landings (GB) are attributable to clams and scallops, although they are below the long-term mean in 2024 (Fig. \ref{fig:total-landings}). Current landings of planktivores and piscivores remain among the lowest points in the time series.
+In New England, total [commercial landings](https://noaa-edab.github.io/catalog/comdat.html) (includes bait and industrial uses), U.S. seafood landings (excludes industrial and bait uses), and NEFMC-managed landings have long-term declines (Fig. \ref{fig:total-landings}). Declines are seen in commercial landings by [guild](https://noaa-edab.github.io/catalog/species_groupings.html) (Fig. \ref{fig:comm-landings}), which include all species and all uses caught with GB and the GOM, and are reported in total and for NEFMC managed species only. Downward trends persist for piscivores and benthivores in both regions. Current high total landings for benthivores (GOM) are attributable to American lobster. High benthos landings (GB) are attributable to clams and scallops, although they are below the long-term mean in 2024 (Fig. \ref{fig:total-landings}). Current landings of planktivores and piscivores remain among the lowest points in the time series.
 
  
 ```{r, total-landings, fig.width = 6.5, fig.asp = 0.4, fig.cap = return_caption(chunk_name = "total-landings", region = "NewEngland")}
@@ -45,14 +45,13 @@ return_plot("rec-hms", region = "NewEngland")
 
 #### Stock Status
 
-Single species [management objectives](https://noaa-edab.github.io/catalog/stock_status.html)  (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are not being met for some NEFMC managed species. Specifically, 17 stocks are currently estimated to be below B~MSY~ targets and 10 below B~MSY~ thresholds (Fig. \ref{fig:stock-status}) However, the status of 12 stocks is unknown (Table \ref{tab:stock-status-table}). Although stock status and associated management constraints are likely contributing to decreased landings, these management actions are enacted in response to biomass, where less conservative regulations would not necessarily mean higher landings. To better address the role of management in future reports, we could examine how the total allowable catch (TAC) and the percentage of the TAC utilized for each species has changed through time.
-
+Single species [management objectives](https://noaa-edab.github.io/catalog/stock_status.html)  (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are not being met for some NEFMC managed species. Specifically, 17 stocks are currently estimated to be below B~MSY~ targets and 10 below B~MSY~ thresholds (Fig. \ref{fig:stock-status}). However, the status of 12 stocks is unknown (Table \ref{tab:stock-status-table}). Although stock status and associated management constraints are likely contributing to decreased landings, these management actions are enacted in response to biomass, where less conservative regulations would not necessarily mean higher landings. To better address the role of management in future reports, we could examine how the total allowable catch (TAC) and the percentage of the TAC utilized for each species has changed through time.
 
 ```{r stock-status, fig.cap = return_caption(chunk_name = "stock-status", region = "NewEngland"), fig.width = 6, fig.asp = 0.8, cache = FALSE}
 return_plot("stock-status", region = "NewEngland")
 ```
 
-<!-- \newpage -->
+\newpage
 
 ```{r stock-status-table, ft.arraystretch = 1}
 stock_status_plot <- ecodata::plot_stock_status(report = "NewEngland")
