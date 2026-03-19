@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.18)  19 MAR 2026 14:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.18)  19 MAR 2026 15:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -858,13 +858,12 @@ File: images/NewEngland/commercial_landings_NewEngland_2026-03-18.png Graphic fi
 <use images/NewEngland/commercial_landings_NewEngland_2026-03-18.png>
 Package pdftex.def Info: images/NewEngland/commercial_landings_NewEngland_2026-03-18.png  used on input line 488.
 (pdftex.def)             Requested size: 500.484pt x 538.98117pt.
-[10 <./images/NewEngland/total_landings_NewEngland_2026-03-19.png>]
-<images/NewEngland/climatevul_land_NewEngland_2026-03-18.png, id=106, 469.755pt x 180.675pt>
+[10 <./images/NewEngland/total_landings_NewEngland_2026-03-19.png>] [11 <./images/NewEngland/commercial_landings_NewEngland_2026-03-18.png>]
+<images/NewEngland/climatevul_land_NewEngland_2026-03-18.png, id=111, 469.755pt x 180.675pt>
 File: images/NewEngland/climatevul_land_NewEngland_2026-03-18.png Graphic file (type png)
 <use images/NewEngland/climatevul_land_NewEngland_2026-03-18.png>
 Package pdftex.def Info: images/NewEngland/climatevul_land_NewEngland_2026-03-18.png  used on input line 499.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[11 <./images/NewEngland/commercial_landings_NewEngland_2026-03-18.png>]
 <images/NewEngland/rec_landings_NewEngland_2026-03-18.png, id=116, 469.755pt x 180.675pt>
 File: images/NewEngland/rec_landings_NewEngland_2026-03-18.png Graphic file (type png)
 <use images/NewEngland/rec_landings_NewEngland_2026-03-18.png>
@@ -1191,17 +1190,18 @@ File: images/NewEngland/zooplankton_anomaly_NewEngland_2026-03-18.png Graphic fi
 Package pdftex.def Info: images/NewEngland/zooplankton_anomaly_NewEngland_2026-03-18.png  used on input line 1572.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
 [61 <./images/NewEngland/benthos_NewEngland_2026-03-18.png>]
-<images/NewEngland/WBTS_biomass_phenology.png, id=632, 578.16pt x 433.62pt>
-File: images/NewEngland/WBTS_biomass_phenology.png Graphic file (type png)
-<use images/NewEngland/WBTS_biomass_phenology.png>
-Package pdftex.def Info: images/NewEngland/WBTS_biomass_phenology.png  used on input line 1581.
-(pdftex.def)             Requested size: 500.484pt x 375.36066pt.
-[62 <./images/NewEngland/zooplankton_anomaly_NewEngland_2026-03-18.png>] [63 <./images/NewEngland/WBTS_biomass_phenology.png>]
-<images/NewEngland/SOE_2026_GOM_Bottom_MCS.pdf, id=652, 916.97421pt x 466.00328pt>
+<images/NewEngland/wbts_zoo_NewEngland_2026-02-17.png, id=632, 469.755pt x 289.08pt>
+File: images/NewEngland/wbts_zoo_NewEngland_2026-02-17.png Graphic file (type png)
+<use images/NewEngland/wbts_zoo_NewEngland_2026-02-17.png>
+Package pdftex.def Info: images/NewEngland/wbts_zoo_NewEngland_2026-02-17.png  used on input line 1581.
+(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
+[62 <./images/NewEngland/zooplankton_anomaly_NewEngland_2026-03-18.png>]
+<images/NewEngland/SOE_2026_GOM_Bottom_MCS.pdf, id=645, 916.97421pt x 466.00328pt>
 File: images/NewEngland/SOE_2026_GOM_Bottom_MCS.pdf Graphic file (type pdf)
 <use images/NewEngland/SOE_2026_GOM_Bottom_MCS.pdf>
 Package pdftex.def Info: images/NewEngland/SOE_2026_GOM_Bottom_MCS.pdf  used on input line 1600.
 (pdftex.def)             Requested size: 500.484pt x 254.34006pt.
+[63 <./images/NewEngland/wbts_zoo_NewEngland_2026-02-17.png>]
 <images/BothReports/therm_hab_persist_BothReports_2026-02-02.png, id=653, 469.755pt x 289.08pt>
 File: images/BothReports/therm_hab_persist_BothReports_2026-02-02.png Graphic file (type png)
 <use images/BothReports/therm_hab_persist_BothReports_2026-02-02.png>
@@ -1297,15 +1297,15 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22689 strings out of 469454
- 444112 string characters out of 5465099
- 886339 words of memory out of 5000000
+ 22687 strings out of 469454
+ 444178 string characters out of 5465099
+ 886820 words of memory out of 5000000
  50527 multiletter control sequences out of 15000+600000
- 729351 words of font info for 228 fonts, out of 8000000 for 9000
+ 729221 words of font info for 227 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  77i,15n,117p,3057b,629s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb>
-Output written on SOE2026_NEFMC_IR_Edits.pdf (74 pages, 19724371 bytes).
+Output written on SOE2026_NEFMC_IR_Edits.pdf (74 pages, 19241071 bytes).
 PDF statistics:
  1124 PDF objects out of 1200 (max. 8388607)
  909 compressed objects within 10 object streams
