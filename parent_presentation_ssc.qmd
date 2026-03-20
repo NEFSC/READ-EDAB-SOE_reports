@@ -67,10 +67,10 @@ format:
 ```{r, child = here::here("child_slides/highlights_midatlantic_2025.qmd"), eval = params$region != "NewEngland"}
 ```
 
-```{r, child = here::here("child_slides/highlights_newengland_2025.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/highlights_newengland_2026.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
-{{< include child_slides/shared_summary_highlights_2025.qmd >}}
+{{< include child_slides/shared_summary_highlights_2026.qmd >}}
 
 {{< include child_slides/request_memo.qmd >}}
 

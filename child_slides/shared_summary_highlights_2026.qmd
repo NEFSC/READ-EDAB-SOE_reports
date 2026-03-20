@@ -1,0 +1,66 @@
+## State of the Ecosystem Summary 2026: 
+
+:::: {.soe-50-50-slide}
+
+::: {}
+**Risks to meeting fishery management objectives**  
+
+Climate: risks to managing spatially, managing seasonally, and catch specification
+
+*  Fish and protected species distribution shifts
+
+*  Changing spawning and migration timing
+
+*  Multiple stocks with poor condition, declining productivity 
+
+Other ocean uses: offshore wind development
+
+*  Average annual revenue in leases under construction/operational is <5% for most ports and for most Council-managed species
+    
+*  Overlap with important right whale foraging habitats, increased vessel strike and noise risks
+
+:::
+
+::: {.soe-50-img}
+
+```{r, fig.alt = ""}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-NE-02282025-508-risks.png")
+```
+
+:::
+
+::::
+
+## State of the Ecosystem Summary 2026: **Ocean Forecasts**
+
+```{r, fig.alt = ""}
+knitr::include_graphics(here::here("images/BothReports/Mom6-OOF-Graphic.png"))
+```
+
+## State of the Ecosystem Summary 2026: **2025 Highlights**
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+### Ecosystem observations
+
+Cooler conditions in the Northeast persisted despite another record warm year globally.
+
+### Fishing observations
+- Reports of record levels of white marlin, and higher abundance of billfish, sandlance, Illex squid and
+Atlantic mackerel than in recent years.
+- Observations of some species (Atlantic mackerel, striped bass, red drum, bluefish, and other gamefish) showed shifting distributions and unpredictable timing.
+- Good hook and line fishing near the wind turbines.
+
+We welcome your observations! <northeast.ecosystem.highlights@noaa.gov>
+
+:::
+
+::: {.soe-50-img}
+
+```{r, fig.alt = ""}
+knitr::include_graphics(here::here("images/BothReports/Observations-Map-V8.png"))
+```
+:::
+
+::::
