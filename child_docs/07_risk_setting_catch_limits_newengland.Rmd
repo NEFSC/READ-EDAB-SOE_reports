@@ -121,12 +121,6 @@ The abundance and distribution of predators can affect both the productivity and
 
 [Gray seals](https://noaa-edab.github.io/catalog/grayseal.html) are fish predators with increasing populations in New England. Recent white shark aggregations have been observed near Cape Cod, however, both gray seals and white sharks are broad generalist feeders that do not generally target commercially-sized managed species.  [Stock status](https://noaa-edab.github.io/catalog/hms_stock_status.html) is mixed for Atlantic Highly Migratory Species (HMS) stocks (including sharks, swordfish, billfish, and tunas) occurring throughout the Northeast U.S. shelf. While there are several HMS species considered to be overfished or that have unknown stock status, the population status for some managed Atlantic sharks and tunas is at or above the biomass target, suggesting the potential for robust (or rebuilt) predator populations among these managed species. Stable predator populations suggest stable predation pressure on managed species, but increasing predator populations may reflect increasing predation pressure.
 
-\newpage
-
-#### Future Considerations
-
-The processes that control fish productivity and mortality are dynamic, complex, and the result of the interactions between multiple system drivers. There is a real risk that short-term predictions in assessments and rebuilding plans that assume unchanging underlying conditions will not be as effective, given the observed ecological and environmental process changes documented throughout the report. Assumptions for species’ growth, reproduction, and natural mortality should continue to be evaluated for individual species. With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management.
-
 ```{r, eval =FALSE, results = "asis"}
 <<child-footer>>
 ```

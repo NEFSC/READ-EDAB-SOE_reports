@@ -366,14 +366,20 @@ return_plot("protectedspp-dist-shifts", region = "BothReports")
 
 #### Drivers: 
 
-Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists.  Changes in managed species distribution is partially related to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts.  [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring (Fig. \ref{fig:smallcopeall-cog}). 
+Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists.  Changes in managed species distribution is partially related to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts. [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring (Fig. \ref{fig:smallcopeall-cog}. 
 
 ```{r calfin-cog, fig.cap = return_caption(chunk_name = "calfin-cog", region = "NewEngland"), fig.width = 7.5, fig.asp = .3, eval = params$region == 'NewEngland'}
 # return_plot("calfin-cog", region = "NewEngland")
+# removing for now because calfin is included in large copepod cog plot and the calfin-specific plot is not adding much information
+
 ```
 
 ```{r forageshifts, fig.cap=return_caption(chunk_name = "forageshifts", region = "BothReports"), fig.width = 6.5, fig.asp = .3}
 return_plot("forageshifts", region = "BothReports")
+```
+
+```{r smallcopeall-cog, fig.cap=return_caption(chunk_name = "smallcopeall-cog", region = "BothReports"), fig.width = 6.5,fig.asp = .3}
+return_plot("smallcopeall-cog", region = "BothReports")
 ```
 
 ```{r}
@@ -391,8 +397,9 @@ Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. 
 return_plot("megabenthosshifts", region = "BothReports")
 ```
 
-In contrast, [macrobenthos](https://noaa-edab.github.io/catalog/benthos_index.html) center of gravity has shifted west and south in the spring (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. [Large copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4)  (including *Calanus finmarchicus*) and euphausiids do not have long-term trends in their centers of gravity (Fig. \ref{fig:lgcopeall-cog}) (Fig. \ref{fig:euph-cog}), but small copepods (Fig. \ref{fig:smallcopeall-cog}) show shifts eastward and northward. Some targeted species distributions may shift in response to these shifts in forage, copepod, and macrobenthos distributions.
+In contrast, [macrobenthos](https://noaa-edab.github.io/catalog/benthos_index.html) center of gravity has shifted west and south in the spring (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. 
 
+[Large copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4)  (including *Calanus finmarchicus*) and euphausiids do not have long-term trends in their centers of gravity (Fig. \ref{fig:lgcopeall-cog}, \ref{fig:euph-cog}). Some targeted species distributions may shift in response to these shifts in forage, copepod, and macrobenthos distributions.
 
 ```{r macrobenthosshifts, fig.cap=return_caption(chunk_name = "macrobenthosshifts", region = "BothReports"), fig.width = 6.5,fig.asp = .3}
 return_plot("macrobenthosshifts", region = "BothReports")
@@ -400,10 +407,6 @@ return_plot("macrobenthosshifts", region = "BothReports")
 
 ```{r lgcopeall-cog, fig.cap=return_caption(chunk_name = "lgcopeall-cog", region = "BothReports"), fig.width = 6.5,fig.asp = .3}
 return_plot("lgcopeall-cog", region = "BothReports")
-```
-
-```{r smallcopeall-cog, fig.cap=return_caption(chunk_name = "smallcopeall-cog", region = "BothReports"), fig.width = 6.5,fig.asp = .3}
-return_plot("smallcopeall-cog", region = "BothReports")
 ```
 
 ```{r euph-cog, fig.cap=return_caption(chunk_name = "euph-cog", region = "BothReports"), fig.width = 6.5,fig.asp = .3}
@@ -522,6 +525,10 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ```{r, eval = params$draft, results = "asis"}
 <<repeat-child>>
 ```
+
+#### Future Considerations
+
+The processes that control fish productivity and mortality are dynamic, complex, and the result of the interactions between multiple system drivers. Fishing effects could impact fish productivity, although we do not explore those connections at this time. There is a real risk that short-term predictions in assessments and rebuilding plans that assume unchanging underlying conditions will not be as effective, given the observed ecological and environmental process changes documented throughout the report. Assumptions for species’ growth, reproduction, and natural mortality should continue to be evaluated for individual species. With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management.
 
 <!-- \newpage -->
 
