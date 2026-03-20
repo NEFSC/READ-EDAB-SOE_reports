@@ -4,7 +4,7 @@ geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
 output:
   pdf_document:
     includes:
-      # in_header: latex/header1.tex
+      in_header: "utils/header1_memo.tex"
     keep_tex: yes
 # bibliography: SOE2023.bib
 # csl: plos.csl
