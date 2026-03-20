@@ -525,7 +525,7 @@ save_plot(
 # 1. Commercial Diversity Fleet Plot
 save_plot(
   plot_expression = {
-    if (region == "MidAtlantic") {
+    if (region == "NewEngland") {
       a <- ecodata::plot_commercial_div(
         report = region,
         varName = "Fleet count",
