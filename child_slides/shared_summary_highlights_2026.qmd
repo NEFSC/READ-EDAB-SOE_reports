@@ -1,35 +1,10 @@
 ## State of the Ecosystem Summary 2026: 
 
-:::: {.soe-50-50-slide}
-
-::: {}
 **Risks to meeting fishery management objectives**  
 
-Climate: risks to managing spatially, managing seasonally, and catch specification
-
-*  Fish and protected species distribution shifts
-
-*  Changing spawning and migration timing
-
-*  Multiple stocks with poor condition, declining productivity 
-
-Other ocean uses: offshore wind development
-
-*  Average annual revenue in leases under construction/operational is <5% for most ports and for most Council-managed species
-    
-*  Overlap with important right whale foraging habitats, increased vessel strike and noise risks
-
-:::
-
-::: {.soe-50-img}
-
 ```{r, fig.alt = ""}
-knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-NE-02282025-508-risks.png")
+knitr::include_graphics(here::here("images/BothReports/SOE-NE-2026-v5_Page_4.png"))
 ```
-
-:::
-
-::::
 
 ## State of the Ecosystem Summary 2026: **Ocean Forecasts**
 
