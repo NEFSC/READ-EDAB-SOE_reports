@@ -5,11 +5,11 @@ Drivers: Environmental
 
 ::: {layout-nrow=1}
 
-```{r}
+```{r, eval = FALSE}
 return_plot("mab-oa-scallop", region = "BothReports")
 ```
 
-```{r}
+```{r, eval = FALSE}
 return_plot("mab-oa-squid", region = "BothReports")
 ```
 
