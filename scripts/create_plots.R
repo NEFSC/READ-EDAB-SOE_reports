@@ -1208,8 +1208,8 @@ save_plot(
 # species dist
 save_plot(
   plot_expression = {
-    a <- plot_species_dist(varName = "along", n = 10) 
-    b <- plot_species_dist(varName = "depth", n = 10) 
+    a <- ecodata::plot_species_dist(varName = "along", n = 10) 
+    b <- ecodata::plot_species_dist(varName = "depth", n = 10) 
     ggpubr::ggarrange(a, b, ncol = 1)
   },
   indicator = "species_dist",
@@ -1237,27 +1237,6 @@ save_plot(
       ggplot2::coord_cartesian(xlim = c(1982, 2023)) 
   },
   indicator = "forage_dist",
-  width = 6.5,
-  height = 5
-)
-
-# macrobenthos shifts
-save_plot(
-  plot_expression = {
-    ecodata::plot_benthos_index(
-      plottype = "cog",
-      varName = "Macrobenthos",
-      n = 10
-    )  +
-         ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
-        ggplot2::ggtitle("Northeast U.S. Macrobenthos Distribution") +
-       ggplot2::ylab("Center of Gravity, km") +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
-     ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-          ggplot2::theme(legend.position = 'bottom') +
-         ggplot2::facet_grid(cols = ggplot2::vars(Season), rows = ggplot2::vars(Direction), scales = "free_y")
-  },
-  indicator = "macrobenthos_dist",
   width = 6.5,
   height = 5
 )
