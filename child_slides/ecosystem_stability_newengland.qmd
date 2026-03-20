@@ -1,54 +1,65 @@
-## Objective: New England Ecological Stability `r I(mixed_trend)` `r I(above_average)`
+## Objective: Georges Bank Ecological Stability: Not Stable
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
-*Ecological* Indicators: zooplankton communities and total primary production
-
-```{r}
-return_plot("zoopanom", region = "NewEngland", mode = "slide")
-```
-
-:::
-
-::: {.soe-50-column}
-
-```{r}
-return_plot("totpp", region = "NewEngland", mode = "slide")
-```
-
+*Ecological* Indicators: zooplankton communities
 
 ```{r}
 return_plot("zoo-community", region = "NewEngland", mode = "slide")
 ```
 
+* GB seeing large-scale shifts in the broad species that make up zooplankton communities
+
+:::
+
+::: {.soe-50-column}
+
+*Ecological* Indicators: Survey Biomass
+
+```{r}
+#| fig-cap: "Georges Bank"
+#| fig-height: 3.5
+#| fig-width: 6
+#| out-height: "600px"
+return_plot("nefsc-biomass-gb", region = "NewEngland", mode = "slide")
+```
+
+* Biomass of large functional groups is changing for some but not all species suggesting a change in fish communities
+
+
 :::
 
 ::::
 
-## Objective: New England Ecological Stability (Cont.)
+## Objective: Gulf of Maine Ecological Stability: Not Stable
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
-*Ecological* Indicators: fish richness and traits
+*Ecological* Indicators: fish traits
 
 ```{r}
-return_plot("traits", region = "NewEngland", mode = "slide")
+return_plot("traits-tl", region = "NewEngland", mode = "slide")
 ```
+
+* Finfish with a higher trophic level in spring
+* Finfish show a shorter length at maturity, lower fecundity, and faster growth rates. 
 
 :::
 
 ::: {.soe-50-column}
 
+*Ecological* Indicators: Survey Diversity
+
 ```{r}
 return_plot("exp-n", region = "NewEngland", mode = "slide")
 ```
 
-
-* Declines in species trophic level & other life history traits suggests changing ecology
+* Increase in number of species caught in trawl survey
+* Fish communities are experience large-scale changes potentially chaning structure and function of ecosystem
 
 :::
 

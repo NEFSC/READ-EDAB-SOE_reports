@@ -186,17 +186,22 @@ save_plot(
         "Large Pelagics Survey Rec. Shark Landings"
       )) +
       ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
-    ggpubr::ggarrange(
-      rec_lps_sharks_plot,
-      rec_hms_plot,
-      ncol = 1,
-      common.legend = TRUE,
-      legend = "bottom"
-    )
+    if(region == 'MidAtlantic'){
+      ggpubr::ggarrange(
+        rec_lps_sharks_plot,
+        rec_hms_plot,
+        ncol = 1,
+        common.legend = TRUE,
+        legend = "bottom"
+      )
+    }else{
+      rec_lps_sharks_plot
+    }
+
   },
   indicator = "rec_hms",
   width = 6.5,
-  height = 5
+  height = ifelse(region == 'MidAtlantic',5, 2)
 )
 
 #NE only - rec_hms from LPS only, no MRIP
@@ -283,7 +288,7 @@ if (region == "NewEngland") {
         ggplot2::theme(panel.spacing = grid::unit(0, 'lines')) 
     },
     indicator = "aggregate_biomass_gb",
-    width = 5,
+    width = 6,
     height = 7
   )
   # gulf of maine
@@ -296,13 +301,55 @@ if (region == "NewEngland") {
       ) 
     },
     indicator = "aggregate_biomass_gom",
-    width = 5,
+    width = 6,
     height = 7
   )
 }
 
 ## Commercial profits ----
-
+save_plot(
+  plot_expression = {
+    if (region == "MidAtlantic") {
+      ecodata::plot_comdat_profit(
+        report = region,
+        n = 23
+      ) +
+        ggplot2::scale_color_discrete(
+          limits = c("cost_index", "profit_index", "revenue_index"),
+          labels = c("Cost Index", "Profit Index", "Revenue Index")
+        ) +
+        ggplot2::theme(legend.position = "bottom")
+    }
+    
+    else {  
+      gb <- ecodata::plot_comdat_profit(
+        report = region,
+        EPU = "GB",
+        n = 23
+      ) +
+        ggplot2::scale_color_discrete(
+          limits = c("cost_index", "profit_index", "revenue_index"),
+          labels = c("Cost Index", "Profit Index", "Revenue Index")
+        ) +
+        ggplot2::theme(legend.position = "none") 
+      
+      gom <- ecodata::plot_comdat_profit(
+        report = region,
+        EPU = "GOM",
+        n = 23
+      ) +
+        ggplot2::scale_color_discrete(
+          limits = c("cost_index", "profit_index", "revenue_index"),
+          labels = c("Cost Index", "Profit Index", "Revenue Index")
+        ) +
+        ggplot2::theme(legend.position = "bottom")
+      ggpubr::ggarrange(gb, gom, nrow = 2)
+    }
+  },
+  indicator = "comdat_profit",
+  width = 6.5,
+  height = ifelse (region == "NewEngland", 6, 3.5)
+)
 ## Commercial profits ----
 
 ### Indicators ----

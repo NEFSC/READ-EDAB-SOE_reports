@@ -1,6 +1,6 @@
-## New England Community Social and Climate Vulnerability
+## Objective: Social and Cultural
 
-Indicators: Commercial fishery engagement, social vulnerability, revenue climate vulnerability
+Indicators: Commercial port activity and recreational engagement
 
 :::: {.soe-50-50-slide}
 
@@ -10,23 +10,34 @@ Indicators: Commercial fishery engagement, social vulnerability, revenue climate
 return_plot("commercial-engagement", region = "NewEngland", mode = "slide")
 ```
 
+New Indicator: Port Activity based on dealers, landings, and permits
+
+  * New Bedford dominates but ports change in activity over time
+  * New Bedford and Boston still have high community vulnerability risk factors
+
 :::
 
 ::: {.soe-50-column}
 
 ```{r}
-ecodata::plot_engagement(report = 'NewEngland',varName = 'Commercial')
+return_plot("recreational-engagement", region = "NewEngland", mode = "slide")
 ```
+```{r}
+ecodata::plot_community_factors(report = 'NewEngland',plottype = 'Commercial',varName = 'Social', n = 5) |> 
+  flextable::flextable()
+```
+
+
+Recreational Community Engagement not updated from last year but will adapted to Port Activity metrics
+
 
 :::
 
 ::::
 
-Implications: Highlighted communities may be vulnerable to changes in fishing patterns due to regulations and/or climate change. When also experiencing social vulnerabilities, they may have lower ability to successfully respond to change.
+## Objective: Social and Cultural
 
-## New England Community Social and Climate Vulnerability 
-
-Indicators: Commercial fishery revenue climate vulnerability
+Indicators: Community Environmental Risk
 
 :::: {.soe-50-50-slide}
 
@@ -36,39 +47,14 @@ Indicators: Commercial fishery revenue climate vulnerability
 return_plot("commvulex", region = "NewEngland", mode = "slide")
 ```
 
-The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) are calculated by multiplying the percent contribution of species to the total value landed in a community by their respective Total Vulnerability scores (based on NOAA’s Climate Vulnerability Assessment) for different sensitivity and exposure factors and then summing the resulting values by year.
-
-**New England communities shifting towads High/Very High climate vulnerability. Consolidating Species**
+* Measures of how dependent communities are to species sensitive to environmental variability (temperature, acidifcation, etc.)
+* Majority of communities in moderate risk level but more are shifting towards high/very high dependence on vulnerable species
 
 :::
 
 ::: {.soe-50-img}
 
 ![CCCVR map total vulnerability](https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/NE_Total_Vulnerability_092624-TarsilaSeara_2025.jpg)
-
-:::
-
-::::
-
-## New England Community Social and Climate Vulnerability
-
-Indicators: Recreational fishery engagement, social vulnerability
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-```{r}
-return_plot("recreational-engagement", region = "NewEngland", mode = "slide")
-```
-
-:::
-
-::: {.soe-50-column}
-
-```{r}
-ecodata::plot_engagement(varName = "Recreational",report = 'NewEngland')
-```
 
 :::
 
