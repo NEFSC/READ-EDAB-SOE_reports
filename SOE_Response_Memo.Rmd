@@ -42,43 +42,7 @@ set_flextable_defaults(
 ```
 
 ```{r, results='hide'}
-cat_key <- tibble::tibble(orig = c("system_level",     "management"  ,     "forecasts",        "system_drivers"  ,"functional_group", "stock_level",      "admin"),
-                          new = c("System level thresholds/ ref pts",
-                                  "Management",
-                                  "Short term forecasts",
-                                  "Multiple system drivers",
-                                  "Functional group level status/ thresholds/ ref pts",
-                                  "Stock level indicators",
-                                  "SOE admin"))
-
-levels_priority <- c("Unranked", "Lowest", "Low", "Moderate", "High", "Highest")
-
-requests <- read.csv(here::here("utils/SOE Prioritization 2025_2026-03-19.csv")) |>
-  dplyr::left_join(cat_key, by = c("Category" = "orig")) |>
-  dplyr::mutate(Category = new) |>
-  dplyr::select(- new)
-
-requests$Priority <- factor(requests$Priority, levels = levels_priority)
-
-create_table <- function(data, cap, widths) {
-  tbl <- data |>
-  flextable::as_grouped_data(groups = "Category") |>
-  flextable::as_flextable(hide_grouplabel=TRUE) |>
-  flextable::width(width = widths) |>
-  flextable::align(i = ~ !is.na(Category), align = "left")|> 
-  flextable::bold(i = ~ !is.na(Category), bold = TRUE) |>
-  flextable::theme_zebra() |>
-  flextable::bg(i = ~ !is.na(Category), bg = "beige", part = "body")|>
-  flextable::hline(i = ~ !is.na(Category)) |>
-  flextable::set_caption(cap)
-  
-  return(tbl)
-}
-
-ret_widths <- function(n) {
-  out <- rep(2/n, n)
-  return(out)
-}
+source(here::here("utils/memo_utils.R"))
 ```
 
 # Introduction
@@ -86,16 +50,7 @@ ret_widths <- function(n) {
 In this document, we summarize a running list of comments and requests from the Mid Atlantic Fishery Management council (MAFMC), New England Fishery Management Council (NEFMC), and both Science and Statistical Committees (SSCs). The memo is organized by task based on its current status and topic category. The Priority column (formerly called Rank) has been updated based on quantitative scoring guidelines that were developed following the publication of 2025 State of the Ecosystem (SOE) reports. Priority determination methods and scores were discussed with Council staff and SSC members at the July 2025 State of the Ecosystem Prioritization meeting. We first show requests that have been completed as of the 2026 SOE reports (Table 1), research requests that are in progress or not yet started (Table 2), and requests that have been removed from tracking due to being out of scope or not well-defined (Table 3).
 
 ```{r, ft.arraystretch = 1}
-requests |>
-  dplyr::filter(Status == "Done") |>
-  dplyr::select(-Status) |>
-    dplyr::group_by(Category) |>
-    dplyr::mutate(n = dplyr::n()) |>
-  dplyr::arrange(n) |>
-  dplyr::arrange(n, Category, desc(Priority)) |>
-  dplyr::select(-n) |>
-  create_table(widths = c(4.5, ret_widths(2)),
-               cap = "Requests that have been completed as of the 2026 State of the Ecosytem reports.")
+completed
 ```
 
 \newpage
