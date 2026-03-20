@@ -91,7 +91,7 @@ cat('#', knitr::current_input())
 cat('# parent_report.Rmd')
 ```
 
-\setcounter{page}{4}
+\setcounter{page}{6}
 \thispagestyle{fancy}
 
 ```{r, eval = FALSE, results = "asis"}
@@ -145,6 +145,8 @@ All indicators are updated with the most recent data available as of January 202
 
 Because this report is intended to provide a high-level overview of marine ecosystem information in the Northeast United States, we do not include complete methods or detailed results for all of the indicators that we present. More information can be found hyperlinked in blue text. 
 
+\newpage
+
 ```{r, child = here::here("child_docs/management_tables.Rmd")}
 ```
 
@@ -185,7 +187,7 @@ flextable::flextable(df) %>%
   flextable::width(width = c(1, 1, 1, 1, 3))
 ```
 
-<!-- \newpage -->
+\newpage
 
 # Performance Relative to Fishery Management Objectives
 
@@ -214,6 +216,7 @@ cat(res, sep = "\n\n")
 ```
 
 <!-- \newpage -->
+`r if(params$region == "NewEngland") "\\newpage"`
 
 ## Commercial Profits
 
@@ -230,6 +233,7 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ```
 
 <!-- \newpage -->
+`r if(params$region == "NewEngland") "\\newpage"`
 
 ## Recreational Opportunities
 
@@ -315,9 +319,10 @@ Strong evidence exists to suggest that interactions between right whales and bot
 
 The UMEs are under investigation and are likely the result of multiple drivers. For all large whale UMEs, human interaction appears to have contributed to increased mortalities, although investigations are not complete.
 
-A climate vulnerability assessment (Lettrich et al. 2023) is published for Atlantic and Gulf marine mammal populations.
+[A climate vulnerability assessment](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0290643) is published for Atlantic and Gulf marine mammal populations.
 
 <!-- \newpage -->
+`r if(params$region == "NewEngland") "\\newpage"`
 
 ## Stability
 
@@ -366,6 +371,7 @@ Mobile populations shift distributions to maintain suitable habitat and prey fie
 ```{r calfin-cog, fig.cap = return_caption(chunk_name = "calfin-cog", region = "NewEngland"), fig.width = 7.5, fig.asp = .3, eval = params$region == 'NewEngland'}
 # return_plot("calfin-cog", region = "NewEngland")
 # removing for now because calfin is included in large copepod cog plot and the calfin-specific plot is not adding much information
+
 ```
 
 ```{r forageshifts, fig.cap=return_caption(chunk_name = "forageshifts", region = "BothReports"), fig.width = 6.5, fig.asp = .3}
@@ -433,7 +439,7 @@ return_plot("long-term-sst", region = "BothReports")
 return_plot("GSI", region = "BothReports")
 ```
 
-Changes in ocean temperature and circulation alter habitat features such as the Mid-Atlantic Bight [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html), a band of relatively cold near-bottom water present from spring to fall over the northern MAB. The Cold Pool represents essential fish spawning and nursery habitat, and affects fish distribution and behavior. The Cold Pool has been getting warmer and its areal extent has been shrinking over time (Fig. \ref{fig:cold-pool-size}). In 2025, however, the Cold Pool temperature index and extent were above the long-term average, likely due to the influx of Labrador Slope and Scotian Shelf waters into the system. Mobile target species that track a preferred temperature range can show increased interannual variability in their distributions as regional temperatures fluctuate from record warms to average over short periods of time.
+Changes in ocean temperature and circulation alter habitat features such as the Mid-Atlantic Bight [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html), a band of relatively cold near-bottom water present from spring to fall over the northern MAB. The Cold Pool represents essential fish spawning and nursery habitat, and affects fish distribution and behavior. The Cold Pool has been getting warmer and its areal extent has been shrinking over time (Fig. \ref{fig:cold-pool-size}). In 2025, however, the Cold Pool temperature and extent were above the long-term average, likely due to the influx of Labrador Slope and Scotian Shelf waters into the system. Mobile target species that track a preferred temperature range can show increased interannual variability in their distributions as regional temperatures fluctuate over short periods of time.
 
 ```{r cold-pool-size, fig.cap=return_caption(chunk_name = "cold-pool-size", region = "BothReports"), fig.width = 6.5, fig.asp = 0.3}
 return_plot("cold-pool-size", region = "BothReports")
@@ -448,6 +454,7 @@ Distribution shifts caused by changes in thermal habitat and ocean circulation a
 Adapting management to changing stock distributions and dynamic ocean processes will require continued monitoring of populations in space and time while evaluating management measures against a range of possible future spatial distributions. The upcoming Climate Vulnerability Assessment 2.0 will also be incorporating MOM6 output and forecasts to help predict changes in species distributions and quantify species exposure to predicted future change. Processes like the [East Coast Coordination Group](https://www.mafmc.org/e3cg) and the HMS Climate Vulnerability Assessment can help coordinate management. 
 
 <!-- \newpage -->
+`r if(params$region == "NewEngland") "\\newpage"`
 
 ### Risks to managing seasonally
 
@@ -455,7 +462,7 @@ The effectiveness of seasonal management actions (fishing seasons or area openin
 
 #### Indicators: Timing shifts
 
-Indicators of phenological changes in fish populations require regular sampling and observations, and therefore a limited number of these indicators are currently available. One indicator shows shifts in [spawning timing](https://noaa-edab.github.io/catalog/spawn_timing.html) of haddock and yellowtail flounder. Spawning of both haddock stocks occurred earlier in the year, as indicated by more resting (post-spawning) stage fish in recent years compared to earlier in the time series (Fig. \ref{fig:spawntiming}). The high percentage of northern stock (Cape Cod/GOM) yellowtail flounder females in the resting maturity stage shown earlier in the time series is reflective of spring surveys sampling them well before spawning, which peaked in June for the northern stock (Fig. \ref{fig:spawntiming}). More recently, the females are much closer to spawning, indicating that yellowtail flounder are spawning earlier in the year. Similarly, increased catch of post-spawning fish in Southern New England, indicates that the peak spawning of the southern stock could have also shifted to earlier in the year. Yellowtail flounder spawning is related to bottom temperature, week of year, and decade sampled for each of the three stocks. Changes to spawning times could impact the survival of early life stages of fish, subsequently affecting the larger population size, health, and market value.  
+Indicators of phenological changes in fish populations require regular sampling and observations, and therefore a limited number of these indicators are currently available. One indicator shows shifts in [spawning timing](https://noaa-edab.github.io/catalog/spawn_timing.html) of haddock and yellowtail flounder. Spawning of both haddock stocks occurred earlier in the year, as indicated by more resting (post-spawning) stage fish in recent years compared to earlier in the time series (Fig. \ref{fig:spawntiming}). The high percentage of northern stock (Cape Cod/GOM) yellowtail flounder females in the resting maturity stage shown earlier in the time series is reflective of spring surveys sampling them well before spawning, which peaked in June for the northern stock (Fig. \ref{fig:spawntiming}). More recently, the females are much closer to spawning, indicating that yellowtail flounder are spawning earlier in the year. Similarly, increased catch of post-spawning fish in Southern New England indicates that the peak spawning of the southern stock could have also shifted to earlier in the year. Yellowtail flounder spawning is related to bottom temperature, week of year, and decade sampled for each of the three stocks. Changes to spawning times could impact the survival of early life stages of fish, subsequently affecting the population size, health, and market value.  
 
 ```{r spawntiming, fig.cap=return_caption(chunk_name = "spawntiming", region = "BothReports"), fig.width = 6.5, fig.asp=.5}
 return_plot("spawntiming", region = "BothReports")
@@ -574,6 +581,8 @@ The increase of offshore wind development can have both positive (e.g., employme
 Aquaculture fisheries and federally-managed fisheries could compete with or benefit each other  with spatial access, shoreside infrastructure, or the supply of seafood. Unlike offshore wind, offshore aquaculture is not regulated by any federal leasing program but is permitted via the U.S. Army Corps of Engineers and the U.S. EPA. Currently, there are no federally-permitted aquaculture projects in the Northeast U.S. The marine aquaculture industry of the Northeast currently occurs in nearshore waters which are regulated by state leasing and permitting processes and federal permitting processes, as applicable. Analyses are needed to quantify the nearshore spatial distribution of aquaculture in the Northeast. 
 
 <!-- \newpage -->
+`r if(params$region == "NewEngland") "\\newpage"`
+
 ### 2025 Highlights {#highlights}
 
 This section intends to provide a record of [noteworthy observations reported in 2025](https://noaa-edab.github.io/catalog/observation_synthesis_2025.html) across the Northeast U.S. region. The full ecosystem and fisheries impacts of many of these observations are still to be determined. They should, however, be noted and considered in future analyses and management decisions.
@@ -618,7 +627,7 @@ Several members of the fishing community noted changes in species composition, d
 - Fishers reported fewer warm water species in 2025 along the New Jersey coast. Others, however, noted more new species (e.g., pomapano, spadefish, triggerfish, Spanish and king mackerel) in Delaware Bay. 
 - Anglers also observed low spring and summer catches of gamefish in Mid-Atlantic bays and on the shelf, and high concentrations of shark species near the coast.
 
-In Chesapeake Bay, colder than average winter 2025 temperatures (Fig. \ref{fig:chesapeake-jan}) were reported by state agencies as a likely cause of higher blue crab mortality rates compared to the previous winter. Colder winters generally indicate good conditions for striped bass spawning, and while the striped bass juvenile index slightly improved, it was still well below the long-term average. Several years of low striped bass recruitment is a growing concern of fisheries managers. Factors that could be influencing striped bass include below average winter-to-spring freshwater flow and above average water temperatures combined with stressfully low dissolved oxygen values during the summer. The continued presence of invasive blue catfish and the effect they are having on blue crab, alosines, menhaden, and striped bass populations is also a management concern. 
+In Chesapeake Bay, colder than average winter 2025 temperatures (Fig. \ref{fig:chesapeake-jan}) were reported by state agencies as a likely cause of higher blue crab mortality rates compared to the previous winter. Colder winters generally indicate good conditions for striped bass spawning, and while the striped bass juvenile index slightly increased, it was still well below the long-term average. Several years of low striped bass recruitment is a growing concern of fisheries managers. Factors that could be influencing striped bass include below average winter-to-spring freshwater flow and above average water temperatures combined with stressfully low dissolved oxygen values during the summer. The continued presence of invasive blue catfish and the effect they are having on blue crab, alosines, menhaden, and striped bass populations is also a management concern. 
 
 ```{r chesapeake-jan, out.width="50%", fig.cap=return_caption(chunk_name = "chesapeake-jan", region = "BothReports")}
 return_plot(c("chesapeake-jan","chesapeake-apr"), region = "BothReports")
@@ -626,8 +635,8 @@ return_plot(c("chesapeake-jan","chesapeake-apr"), region = "BothReports")
 
 [Ocean acidification (OA)](https://noaa-edab.github.io/catalog/ocean_acidification.html) risk in 2025 in the Mid-Atlantic was relatively low (Fig. \ref{fig:mab-oa}). Compared to 2023 and 2024, there were only a few locations in 2025 where OA risk was high for Atlantic sea scallops (outer shelf, spring 2025 only), longfin squid (nearshore, summer 2025 only), and pteropods (nearshore and outer shelf, spring and summer). [Gulf of Maine surface OA risk](https://noaa-edab.github.io/catalog/gom_acidification.html) in 2025 was below 2024 levels, as indicated by aragonite saturation state (Ωa) at or near the climatological average (2006-2024).  
 
-#### Offshore Wind/Social
-Active offshore wind projects continue to be developed throughout the region. In Southern New England, South Fork Wind Farm remains the first and only commercial scale project under operation (12 turbines). Vineyard Wind 1 and Revolution Wind continued construction, and Empire Wind 1 in the New York Bight and Sunrise Wind began offshore construction in 2025 (Fig. \ref{fig:wind-dev-cumul}). Coastal Virginia Offshore Wind (CVOW) also continued construction in the Mid-Atlantic. All projects currently under construction are anticipated to be complete by the end of 2026. New London, CT and New Bedford, MA have expanded dedicated space and infrastructure for the offshore wind industry with increased port activity for the first projects under construction in southern New England. There are eight additional projects that have Construction and Operations Plan (COP) approvals (three in Southern New England and five in the Mid-Atlantic/New York Bight) that could begin construction in 2026. However, construction schedules are highly uncertain at this time. 
+#### Offshore Wind
+Offshore wind projects continue to be developed throughout the region. Information here represents the status as of the end of January 2026. In Southern New England, South Fork Wind Farm remains the first and only commercial scale project under operation (12 turbines), Vineyard Wind 1 and Revolution Wind continued construction, and Sunrise Wind began offshore construction (Fig. \ref{fig:wind-dev-cumul}). In the New York Bight, Empire Wind 1 began offshore construction (Fig. \ref{fig:wind-dev-cumul}). Coastal Virginia Offshore Wind (CVOW) also continued construction in the Mid-Atlantic. All projects currently under construction are anticipated to be complete by the end of 2026. New London, CT and New Bedford, MA have expanded dedicated space and infrastructure for the offshore wind industry with increased port activity for the first projects under construction in southern New England. There are eight additional projects that have Construction and Operations Plan (COP) approvals (three in Southern New England and five in the Mid-Atlantic/New York Bight) that could begin construction in 2026. However, construction schedules are highly uncertain at this time. 
 
 
 # Contributors
@@ -663,3 +672,5 @@ if (file.exists(contrib.file)) {
   cat("Contributor list file not found.")
 }
 ```
+
+We used generative artificial intelligence (Google Gemini) to assist with language consistency and to improve readability. All outputs from generative AI were reviewed and edited as necessary. 

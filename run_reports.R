@@ -70,7 +70,7 @@ rmarkdown::render(
 )
 difftime(Sys.time(), now)
 
-#Render CoverLetter
+#Render CoverLetter ----
 rmarkdown::render(
   input = here::here("SOE_Cover_Letter.Rmd"),
   output_file = here::here("SOE2026_NEFMC_Cover_Letter.pdf"),

@@ -38,7 +38,7 @@ This year, we present new indicators of [profitability](https://noaa-edab.github
 
 For trips in GB, high costs and low revenue had caused a low profits over the last 3 years, but recent drops in costs have helped compensate for low revenue. GB profits have no long-term trend, but a cyclical revenue driven by rotational scallop management can impact profitability. In the GOM, the profit index closely follows the same trends as the revenue index with the exception of 2010 - 2013 where low costs created a surge in the profit index. In 2024, the GOM profit index returned to near the long-term average with average costs and revenue. 
 
-For New England ports, [total vulnerability](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) of revenue was moderate in [2024](#social-and-community-risks) with no long-term trend (Fig. \ref{fig:climatevul-rev-ne}). This suggests that while New England commercial fishing is moderately reliant on climate-sensitive species, this proportion has not significantly changed since 2000.
+For New England ports, [total vulnerability](https://noaa-edab.github.io/catalog/community_risks.html) of revenue was moderate in [2024](#social-and-community-risks) with no long-term trend (Fig. \ref{fig:climatevul-rev-ne}). This suggests that while New England commercial fishing is moderately reliant on climate-sensitive species, this proportion has not significantly changed since 2000.
 
 ```{r, climatevul-rev-ne, fig.cap = return_caption(chunk_name = "climatevul-rev", region = "NewEngland"), fig.width=6.5, fig.asp=0.5}
 return_plot("climatevul-rev", region = "NewEngland")

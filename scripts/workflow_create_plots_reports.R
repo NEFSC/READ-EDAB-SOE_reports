@@ -27,9 +27,6 @@ region <- "MidAtlantic"
 region <- "BothReports"
 
 
-
-
-
 ## Run all MAB plots
 source(here::here('scripts','create_plots_mab_ne.R'))
 create_plots_mab_and_ne(region = "MidAtlantic")

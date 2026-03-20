@@ -20,7 +20,7 @@ return_plot("rec-div", region = "NewEngland")
 
 ### Implications
 
-The absence of a long term trend in recreational angler trips and fleet effort diversity suggests relative stability in the overall number of recreational opportunities in the region.
+The absence of a long-term trend in recreational angler trips and fleet effort diversity suggests relative stability in the overall number of recreational opportunities in the region.
 
 ```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
