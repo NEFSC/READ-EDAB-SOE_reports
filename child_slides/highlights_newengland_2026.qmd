@@ -1,6 +1,4 @@
-## New England State of the Ecosystem Summary 2026: 
-
-**Performance relative to management objectives - Georges Bank** 
+## Georges Bank: Summary of Performance relative to management objectives
 
 :::: {.soe-50-50-slide}
 
@@ -21,9 +19,7 @@ knitr::include_graphics(here::here("images/NewEngland/SOE-NE-2026-v5_cropped2.pn
 
 ::::
 
-## New England State of the Ecosystem Summary 2026: 
-
-**Performance relative to management objectives - Gulf of Maine**
+## Gulf of Maine: Summary of Performance relative to management objectives
 
 :::: {.soe-50-50-slide}
 

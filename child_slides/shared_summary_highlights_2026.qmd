@@ -1,18 +1,16 @@
-## State of the Ecosystem Summary 2026: 
-
-**Risks to meeting fishery management objectives**  
+## Summary of Risks to meeting fishery management objectives
 
 ```{r, fig.alt = ""}
 knitr::include_graphics(here::here("images/BothReports/SOE-NE-2026-v5_Page_4.png"))
 ```
 
-## State of the Ecosystem Summary 2026: **Ocean Forecasts**
+## New this year: Ocean Forecasts
 
 ```{r, fig.alt = ""}
 knitr::include_graphics(here::here("images/BothReports/Mom6-OOF-Graphic.png"))
 ```
 
-## State of the Ecosystem Summary 2026: **2025 Highlights**
+## 2025 Highlights
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}

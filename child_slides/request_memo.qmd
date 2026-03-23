@@ -1,4 +1,4 @@
-## 2026 State of the Ecosystem Request tracking memo: Completed requests
+## Request tracking memo: Completed requests
 
 ```{r}
 source(here::here("utils/memo_utils.R"))
@@ -10,7 +10,7 @@ completed
 ```
 :::
 
-## 2026 State of the Ecosystem Request tracking memo: Highest priority requests
+## Request tracking memo: Highest priority requests
 
 ```{r}
 requests |>

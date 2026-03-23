@@ -16,6 +16,7 @@ format:
   # This uses the built-in Quarto revealjs format
   revealjs:
     theme: ""
+    footer: "{{< meta footer >}} State of the Ecosystem 2026 | Northeast Fisheries Science Center"
     slide-number: true
     # auto-stretch: false
     # Sets the slide aspect ratio
@@ -61,6 +62,11 @@ format:
 ---
 
 {{< include child_slides/setup.qmd >}}
+
+```{r output = "asis"}
+# set dynamic footer
+quarto::write_yaml_metadata_block(footer = region2)
+```
 
 {{< include child_slides/synthesis_meeting_intro.qmd >}}
 
@@ -138,6 +144,8 @@ format:
 ```
 
 {{< include child_slides/risks_catch.qmd >}}
+
+{{< include child_slides/risks_wind_map.qmd >}}
 
 ```{r, child = here::here("child_slides/risks_wind_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
