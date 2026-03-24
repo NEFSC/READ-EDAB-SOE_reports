@@ -76,7 +76,7 @@ return_plot("benthos", region = "NewEngland", mode = "slide")
 
 ::: {.soe-50-column}
 
-Low trophic levels processes
+Low trophic level processes
 
 ```{r totppagain}
 return_plot("totpp", region = "NewEngland", mode = "slide")

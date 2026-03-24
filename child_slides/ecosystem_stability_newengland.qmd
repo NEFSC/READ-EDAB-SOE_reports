@@ -58,7 +58,7 @@ return_plot("exp-n", region = "NewEngland", mode = "slide")
 ```
 
 * Increase in number of species caught in trawl survey
-* Fish communities are experience large-scale changes potentially chaning structure and function of ecosystem
+* Fish communities are experience large-scale changes potentially changing structure and function of ecosystem
 
 :::
 

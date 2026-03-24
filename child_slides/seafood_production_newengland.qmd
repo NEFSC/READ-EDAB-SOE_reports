@@ -54,7 +54,7 @@ Changes:
 
 All Cod stocks have B/Bmsy < 1
 
-17 stocks below target, 10 below thresholds,and 12 with unknown status
+17 stocks below target, 10 below thresholds, and 12 with unknown status
 
 _Stock status and required management actions still likely playing large role in seafood declines._
 
@@ -76,7 +76,7 @@ Indicator: Survey Biomass
 return_plot("nefsc-biomass-gom", region = "NewEngland", mode = "slide")
 ```
 
-Increasing guild biomass in planktivores & benthos *despite* declining landings
+Increasing guild biomass in planktivores & benthos *despite* declining landings and
 Piscivores more present in fall than spring survey
 
 :::

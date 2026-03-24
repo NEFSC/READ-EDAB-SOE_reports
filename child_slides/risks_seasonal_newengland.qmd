@@ -10,7 +10,7 @@ Drivers: Seasonal transitions, habitat persistence, bloom timing
 return_plot("transition", region = "NewEngland", mode = "slide")
 ```
 
-Seasonal habitat cycles vary annual and show changes
+Seasonal habitat cycles vary annually and show changes
 
 Fall blooms getting later (later peak)
 

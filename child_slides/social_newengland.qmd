@@ -28,7 +28,7 @@ ecodata::plot_community_factors(report = 'NewEngland',plottype = 'Commercial',va
 ```
 
 
-Recreational Community Engagement not updated from last year but will adapted to Port Activity metrics
+Recreational Community Engagement not updated from last year but will be adapted to Port Activity metrics
 
 
 :::
@@ -47,7 +47,7 @@ Indicators: Community Environmental Risk
 return_plot("commvulex", region = "NewEngland", mode = "slide")
 ```
 
-* Measures of how dependent communities are to species sensitive to environmental variability (temperature, acidifcation, etc.)
+* Measures of how dependent communities are on species sensitive to environmental variability (temperature, acidifcation, etc.)
 * Majority of communities in moderate risk level but more are shifting towards high/very high dependence on vulnerable species
 
 :::

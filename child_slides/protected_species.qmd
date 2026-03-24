@@ -21,7 +21,7 @@ return_plot("grayseal", region = "BothReports")
 Implications: 
 
 * High uncertainty in gray seal bycatch estimates but considered meeting objectives
-* Gray seal among the highest bycatch of any U.S. marine mammal. The increasing trend in gray seal bycatch may be related to an increase in the gray seal population (U.S. pup counts).
+* Gray seal are among the highest bycatch of any U.S. marine mammal. The increasing trend in gray seal bycatch may be related to an increase in the gray seal population (U.S. pup counts).
 ```{r, eval = FALSE, results = "asis"}
 cat('* Risk element: TechInteract, evaluated by species and sector:  14 <span style="background-color:lightgreen;">low</span>, 7 <span style="background-color:yellow;">low-mod</span>, 2 <span style="background-color:orange;">mod-high</span> risk')
 ```

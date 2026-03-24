@@ -51,7 +51,7 @@ return_plot("cold-pool-time", region = "BothReports", mode = "slide")
 
 **Life Cycle Events**
 
-*  Effective fishing seasona & openings/closing rely on alignment with seasonal events in fish stocks
+*  Effective fishing seasons & openings/closing rely on alignment with seasonal events in fish stocks
 *  Though limited, evidence of large-scale changes in spawn timing
 
 **Migratory Species**

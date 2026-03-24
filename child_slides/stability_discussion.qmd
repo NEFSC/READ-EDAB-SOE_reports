@@ -5,7 +5,7 @@
 ::: {.soe-50-column}
 In 2025 we moved from increasing/decreasing stability to stable/not-stable and have refined the criteria
 
-Stabiity is measured by:
+Stability is measured by:
 
   - Volatility: How much do we expect the system to change year to year and is it predicatable?
   - Adaptive Capacity: How well can the system respond to changes?
