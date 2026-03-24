@@ -183,3 +183,40 @@ find_all_files <- function(text, path = here::here()) {
     return(out)
   }
 }
+
+create_contributors <- function(contrib.file, mode) {
+  if (file.exists(contrib.file)) {
+    contributors <- read.csv(contrib.file, stringsAsFactors = FALSE)
+
+    # 1. Rejoin the names and apply the NEFSC logic
+    reconstructed_entries <- contributors |>
+      dplyr::arrange(Last_Name, .locale = "en") |>
+      dplyr::mutate(
+        # Combine names and trim in case Last_Name is empty
+        Full_Name = stringr::str_trim(paste(First_Name, Last_Name)),
+        # If affiliation is NEFSC, just show name; otherwise, show Name (Affiliation)
+        formatted = ifelse(
+          Affiliation == "NEFSC",
+          Full_Name,
+          paste0(Full_Name, " (", Affiliation, ")")
+        )
+      ) |>
+      dplyr::pull(formatted)
+
+    if (mode == "slide") {
+      return(reconstructed_entries)
+    }
+
+    # 2. Collapse into a single comma-separated string
+    final_string <- paste(
+      c(reconstructed_entries, "NEFSC staff"),
+      collapse = ", "
+    )
+
+    # 3. Add the header and render as Markdown
+    prefix <- "**Contributors** (NEFSC unless otherwise noted): "
+    cat(paste0(prefix, final_string))
+  } else {
+    cat("Contributor list file not found.")
+  }
+}
