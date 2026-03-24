@@ -20,15 +20,13 @@ return_plot("grayseal", region = "BothReports")
 
 Implications: 
 
-* Currently meeting objectives, but uncertainty in gray seal estimates
-
+* High uncertainty in gray seal bycatch estimates but considered meeting objectives
+* Gray seal among the highest bycatch of any U.S. marine mammal. The increasing trend in gray seal bycatch may be related to an increase in the gray seal population (U.S. pup counts).
 ```{r, eval = FALSE, results = "asis"}
 cat('* Risk element: TechInteract, evaluated by species and sector:  14 <span style="background-color:lightgreen;">low</span>, 7 <span style="background-color:yellow;">low-mod</span>, 2 <span style="background-color:orange;">mod-high</span> risk')
 ```
 
 * The downward trend in harbor porpoise bycatch can also be due to a decrease in harbor porpoise abundance in US waters, reducing their overlap with fisheries, and a decrease in gillnet effort. 
-
-* Gray seal among the highest bycatch of any U.S. marine mammal. The increasing trend in gray seal bycatch may be related to an increase in the gray seal population (U.S. pup counts).
 
 :::
 
@@ -57,14 +55,12 @@ return_plot("NARW-calf-abundance", region = "BothReports")
 
 Implications:  
 
-* Signs the adult population stabilized 2020-2023
-
-* Population drivers for North Atlantic Right Whales (NARW) include combined fishery interactions/ship strikes, distribution shifts, and copepod availability. 
-
-* Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat.
-
+* No change in adult populations since 2020 but mortality still above recovery rate
+* Strong interactions between North Atlantic Right Whales (NARW) and fixed gear fisheries and offshore wind development
+* Distribution shifts  driven by copepod availability. 
 * Unusual mortality events continue for 3 large whale species.
 
+* Atlantic salmon return rates continue to decline
 
 ```{r}
 return_plot("salmon", region = "NewEngland")

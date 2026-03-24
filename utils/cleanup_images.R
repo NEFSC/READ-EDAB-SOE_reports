@@ -87,6 +87,8 @@ clean_dated_files <- function(directory = ".", dry_run = TRUE) {
 
 # Assumes images are in a folder named "images"
 clean_dated_files(directory = "images/NewEngland", dry_run = TRUE)
+clean_dated_files(directory = "images/MidAtlantic", dry_run = T)
+clean_dated_files(directory = "images/BothReports", dry_run = T)
 
 clean_dated_files(directory = "images/NewEngland", dry_run = FALSE)
 clean_dated_files(directory = "images/MidAtlantic", dry_run = FALSE)

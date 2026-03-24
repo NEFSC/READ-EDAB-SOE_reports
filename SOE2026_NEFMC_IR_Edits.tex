@@ -383,7 +383,7 @@ The figure format is illustrated in Fig \ref{fig:docformat}a. Both long-term and
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Edits_files/figure-latex/docformat-1} 
+{\centering \includegraphics[width=1\linewidth,]{C:/Users/joseph.caracappa/Documents/GitHub/READ-EDAB-SOE_reports/SOE2026_NEFMC_IR_Edits_files/figure-latex/docformat-1} 
 
 }
 
@@ -502,7 +502,7 @@ New England ports face a moderate risk from environmental variability with no lo
 
 }
 
-\caption{New England region total vulnerability of commercial landings (sum of New England port landings weighted by species climate vulnerability from the Climate Vulnerability Assessment.  Horizontal colored bars show different climate risk levels.}\label{fig:climatevul-land}
+\caption{New England region total vulnerability of commercial landings (sum of New England port landings weighted by species vulnerability scores).  Horizontal colored bars show different environmental variability risk levels.}\label{fig:climatevul-land}
 \end{figure}
 
 In New England, \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational harvest} (retained fish presumed to be eaten) shows a long-term decline with recent harvest remaining at a time series low (Fig. \ref{fig:rec-landings}). This pattern may indicate a shift towards catch-and-release strategies as opposed to catch for harvest. \href{https://noaa-edab.github.io/catalog/rec_hms.html}{Recreational shark landings} have generally decreased for most shark groups through 2024 (Fig. \ref{fig:rec-hms-ne}). The recent low in pelagic shark landings is largely driven by regulatory changes implemented in 2018, followed by the closure of the shortfin mako fishery in 2022. These actions were intended to rebuild the North Atlantic shortfin mako stock and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT).
@@ -764,7 +764,7 @@ For New England ports, \href{https://noaa-edab.github.io/catalog/community_risks
 
 }
 
-\caption{New England region total vulnerability of commercial revenue (sum of New England port revenue weighted by species climate vulnerability from the Climate Vulnerability Assessment. Horizontal colored bars show different climate risk levels.}\label{fig:climatevul-rev-ne}
+\caption{New England region total vulnerability of commercial revenue (sum of New England port landings weighted by species vulnerability scores). Horizontal colored bars show different environmental variability risk levels.}\label{fig:climatevul-rev-ne}
 \end{figure}
 
 \subsubsection{Implications}\label{implications-1}
@@ -1133,6 +1133,8 @@ The UMEs are under investigation and are likely the result of multiple drivers. 
 
 \subsection{Stability}\label{stability}
 
+This year, we have updated the definition of stability for fisheries and ecosystems as a measure of how consistent we expect the system to be over time. Three components of stability are considered for the purpose of this report: volatility, adaptive capacity, and a shift from baseline. Volatility is a measure of predictability, where volatile conditions indicate that future years are more likely to be different than the recent past. Adaptive capacity refers to a system's ability to respond to changes without fundamentally changing its composition or structure. A shift from baseline refers to a systemic shift in a system towards a new status, where prior conditions may no longer be the norm. Measures of volatility are currently being developed. Therefore, we assess fisheries and ecosystem stability as ``stable'' if there is no notable change in adaptive capacity or shifts from a historic baseline, and ``not stable'' if there are changes in either of these components.
+
 \paragraph{Fishery Stability}\label{fishery-stability}
 
 Fisheries in Georges Bank and the Gulf of Maine are dominated by single species. Total landings are declining in both regions, although overall revenue does not have a long-term trend. Revenue from Council-managed fisheries in the GOM and GB have declined over time. However, \href{https://noaa-edab.github.io/catalog/effective_sweptarea.html}{revenue per unit effort} remains steady or increasing over time for most gear types, indicating financial viability of current fishing operations. Although the effective number of species being landed in the commercial fleet rebounded slightly from the historical low of 2021, the \href{https://noaa-edab.github.io/catalog/recdat.html}{diversity in catch} is still well below the series average, indicating increasing reliance on a smaller number of species. Commercial fishery fleet count (Fig. \ref{fig:comm-div-fleet-ne}) is also below the time series average due to varying barriers to enter and invest into the fleet. While some opportunity to diversify catch has allowed crew and vessel owners to continue at a sustainable rate, other barriers such as shifting species distribution and population shifts leave commercial crew and vessel owners in vulnerable positions to adapt to these changes. In Georges Bank, cyclic landings and revenue patterns are driven by scallops and decrease the predictability of earnings from year to year. In the Gulf of Maine, landings and revenue are driven by lobster. The increasing importance of lobster over time is mirrored in the decreasing contribution of Council-managed fisheries to Gulf of Maine total landings and revenue.
@@ -1267,7 +1269,7 @@ As noted in the \hyperref[implications]{Seafood Production Implications section}
 
 \paragraph{Drivers:}\label{drivers}
 
-Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is partially related to the \href{https://noaa-edab.github.io/catalog/forage_index.html}{distribution of forage biomass}. Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts. \href{https://noaa-edab.github.io/catalog/zooplankton_index.html\#key-results-and-visualizations-4}{Small copepods}, widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring (Fig. \ref{fig:smallcopeall-cog}).
+Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is partially related to the \href{https://noaa-edab.github.io/catalog/forage_index.html}{distribution of forage biomass}. Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts. \href{https://noaa-edab.github.io/catalog/zooplankton_index.html\#key-results-and-visualizations-4}{Small copepods}, widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring (Fig. \ref{fig:smallcopeall-cog}.
 
 \begin{figure}[!htbp]
 
@@ -1276,6 +1278,15 @@ Mobile populations shift distributions to maintain suitable habitat and prey fie
 }
 
 \caption{Eastward (top) and northward (bottom) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf in fall (left) and spring (right), with long-term increasing trends (orange) for fall eastward and northward and spring northward center of gravity.}\label{fig:forageshifts}
+\end{figure}
+
+\begin{figure}[!htbp]
+
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/smallcopeall_cog_BothReports_2026-03-18} 
+
+}
+
+\caption{Eastward (top) and northward (bottom) shifts in the center of gravity for small copepod species on the Northeast U.S. Shelf in fall (left) and spring (right), with long-term increasing trends (orange)  in fall eastward and fall and spring northward center of gravity}\label{fig:smallcopeall-cog}
 \end{figure}
 
 \newpage
@@ -1291,7 +1302,9 @@ Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. 
 \caption{Eastward (top) and northward (bottom) shifts in the center of gravity for megabenthos species on the Northeast U.S. Shelf in fall (left) and spring (right), with short-term increasing trend (orange) for spring eastward center of gravity.}\label{fig:megabenthosshifts}
 \end{figure}
 
-In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macrobenthos} center of gravity has shifted west and south in the spring (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. \href{https://noaa-edab.github.io/catalog/zooplankton_index.html\#key-results-and-visualizations-4}{Large copepods} (including \emph{Calanus finmarchicus}) and euphausiids do not have long-term trends in their centers of gravity (Fig. \ref{fig:lgcopeall-cog}) (Fig. \ref{fig:euph-cog}), but small copepods (Fig. \ref{fig:smallcopeall-cog}) show shifts eastward and northward. Some targeted species distributions may shift in response to these shifts in forage, copepod, and macrobenthos distributions.
+In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macrobenthos} center of gravity has shifted west and south in the spring (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species.
+
+\href{https://noaa-edab.github.io/catalog/zooplankton_index.html\#key-results-and-visualizations-4}{Large copepods} (including \emph{Calanus finmarchicus}) and euphausiids do not have long-term trends in their centers of gravity (Fig. \ref{fig:lgcopeall-cog}, \ref{fig:euph-cog}). Some targeted species distributions may shift in response to these shifts in forage, copepod, and macrobenthos distributions.
 
 \begin{figure}[!htbp]
 
@@ -1309,15 +1322,6 @@ In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macro
 }
 
 \caption{Eastward (top) and northward (bottom) shifts in the center of gravity for large copepod species (\textit{Calanus finmarchicus}, \textit{Metridia lucens}, \textit{Calanus minor}, \textit{Eucalanus sp.}, \textit{Calanus spp.}) on the Northeast U.S. Shelf in fall (left) and spring (right). }\label{fig:lgcopeall-cog}
-\end{figure}
-
-\begin{figure}[!htbp]
-
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/smallcopeall_cog_BothReports_2026-03-18} 
-
-}
-
-\caption{Eastward (top) and northward (bottom) shifts in the center of gravity for small copepod species on the Northeast U.S. Shelf in fall (left) and spring (right), with long-term increasing trends (orange)  in fall eastward and fall and spring northward center of gravity}\label{fig:smallcopeall-cog}
 \end{figure}
 
 \begin{figure}[!htbp]
@@ -1473,7 +1477,7 @@ Indicators of \href{https://noaa-edab.github.io/catalog/productivity_anomaly.htm
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/productivity_anomaly_NewEngland_2026-03-18} 
+{\centering \includegraphics[width=1\linewidth,]{images/NewEngland/productivity_anomaly_NewEngland_2026-03-19} 
 
 }
 
@@ -1645,11 +1649,9 @@ The abundance and distribution of predators can affect both the productivity and
 
 \href{https://noaa-edab.github.io/catalog/grayseal.html}{Gray seals} are fish predators with increasing populations in New England. Recent white shark aggregations have been observed near Cape Cod, however, both gray seals and white sharks are broad generalist feeders that do not generally target commercially-sized managed species. \href{https://noaa-edab.github.io/catalog/hms_stock_status.html}{Stock status} is mixed for Atlantic Highly Migratory Species (HMS) stocks (including sharks, swordfish, billfish, and tunas) occurring throughout the Northeast U.S. shelf. While there are several HMS species considered to be overfished or that have unknown stock status, the population status for some managed Atlantic sharks and tunas is at or above the biomass target, suggesting the potential for robust (or rebuilt) predator populations among these managed species. Stable predator populations suggest stable predation pressure on managed species, but increasing predator populations may reflect increasing predation pressure.
 
-\newpage
-
 \paragraph{Future Considerations}\label{future-considerations-2}
 
-The processes that control fish productivity and mortality are dynamic, complex, and the result of the interactions between multiple system drivers. There is a real risk that short-term predictions in assessments and rebuilding plans that assume unchanging underlying conditions will not be as effective, given the observed ecological and environmental process changes documented throughout the report. Assumptions for species' growth, reproduction, and natural mortality should continue to be evaluated for individual species. With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management.
+The processes that control fish productivity and mortality are dynamic, complex, and the result of the interactions between multiple system drivers. Fishing effects could impact fish productivity, although we do not explore those connections at this time. There is a real risk that short-term predictions in assessments and rebuilding plans that assume unchanging underlying conditions will not be as effective, given the observed ecological and environmental process changes documented throughout the report. Assumptions for species' growth, reproduction, and natural mortality should continue to be evaluated for individual species. With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management.
 
 \subsection{Other Ocean Uses: Offshore Wind}\label{other-ocean-uses-offshore-wind}
 
@@ -1930,7 +1932,7 @@ Offshore wind projects continue to be developed throughout the region. Informati
 
 \textbf{Editors} (NOAA NMFS Northeast Fisheries Science Center, NEFSC): Abigail Tyrell, Joseph Caracappa, Andy Beet, Brandon Beltz, Kimberly Hyde, Scott Large, Laurel Smith.
 
-\textbf{Contributors} (NEFSC unless otherwise noted): Sydney Alhale (SEFSC), Andrew Applegate (NEFMC), Christina Asante, Heather Baertlein (NMFS Atlantic HMS Management Division), Kimberly Bastille, Aaron Beaver (Anchor QEA), Andy Beet, Brandon Beltz, Kristan Blackhart, Ruth Boettcher (Virginia Department of Game and Inland Fisheries), Mandy Bromilow (NOAA Chesapeake Bay Office), Joseph Caracappa, Samuel Chavez-Rosales, Baoshan Chen (Stony Brook University), Zhuomin Chen (UConn), Doug Christel (GARFO), Patricia Clay, Lisa Colburn, Jennifer Cudney (NMFS Atlantic HMS Management Division), Tobey Curtis (NMFS Atlantic HMS Management Division), Kiley Dancy (MAFMC), Cameron Day, Geret DePiper, Art Degaetano (Cornell U), Bart DiFiore (MA DMF), Gregory Ellis, Emily Farr (NMFS Office of Habitat Conservation), Michael Fogarty, Paula Fratantoni, Kevin Friedland, Marjy Friedrichs (VIMS), Sarah Gaichas (Hydra Scientific), Ben Galuardi (GARFO), Avijit Gangopadhyay (School for Marine Science and Technology, University of Massachusetts Dartmouth), James Gartland (VIMS), Lori Garzio (Rutgers University), Glen Gawarkiewicz (WHOI), Maxwell Grezlik, Laura Gruenburg (Stony Brook University), Sean Hardison, Amanda Hart, Dvora Hart, Cameron Hodgdon, Cliff Hutt (NMFS Atlantic HMS Management Division), Kimberly Hyde, Grace Jensen (WHOI), Toni Kerns (ASMFC), John Kocik, Steve Kress (National Audubon Society's Seabird Restoration Program), Young-Oh Kwon (Woods Hole Oceanographic Institution), Scott Large, Gabe Larouche (Cornell U), Daniel Linden, Andrew Lipsky, Sean Lucey (@ Orchard), Don Lyons (National Audubon Society's Seabird Restoration Program), Kevin Madley, George Maynard, Chris Melrose, Anna Mercer, Shannon Meseck, David Moe Nelson (NCCOS), Kiera Morrill, Ryan Morse, Ray Mroch (SEFSC), Nicole Mucci, Brandon Muffley (MAFMC), Robert Murphy, Kimberly Murray, Chris Orphanides, Stephanie Owen, Richard Pace, Debi Palka, Tom Parham (Maryland DNR), CJ Pellerin (NOAA Chesapeake Bay Office), Charles Perretti, Kristin Precoda, Grace Roskar (NMFS Office of Habitat Conservation), Andrew Ross, Jeffrey Runge (U Maine), Grace Saba (Rutgers University), Vincent Saba, Sarah Salois, Chris Schillaci (GARFO), Amy Schueller (SEFSC), Teresa Schwemmer (URI), Tarsila Seara, Dave Secor (CBL), Angela Silva, Adrienne Silver (WHOI), Emily Slesinger, Laurel Smith, Linus Stoltz (Commercial Fisheries Research Foundation), Abigail Tyrell, Rebecca Van Hoeck, Ron Vogel (University of Maryland Cooperative Institute for Satellite Earth System Studies and NOAA/NESDIS Center for Satellite Applications and Research), Bruce Vogt (NOAA Chesapeake Bay Office), John Walden, Harvey Walsh, Joseph Warren, Sarah Weisberg (ICES), Changhua Weng, Timothy White (Environmental Studies Program, BOEM), Dave Wilcox (VIMS), Sarah Wilkin (NMFS Office of Protected Resources), Mark Wuenschel, Zhitao Yu, Qian Zhang (U Maryland), NEFSC staff, Talya tenBrink (GARFO)
+\textbf{Contributors} (NEFSC unless otherwise noted): Sydney Alhale (SEFSC), Andrew Applegate (NEFMC), Christina Asante, Heather Baertlein (NMFS Atlantic HMS Management Division), Kimberly Bastille, Aaron Beaver (Anchor QEA), Andy Beet, Brandon Beltz, Kristan Blackhart, Ruth Boettcher (Virginia Department of Game and Inland Fisheries), Mandy Bromilow (NOAA Chesapeake Bay Office), Joseph Caracappa, Samuel Chavez-Rosales, Baoshan Chen (Stony Brook University), Zhuomin Chen (UConn), Doug Christel (GARFO), Patricia Clay, Lisa Colburn, Jennifer Cudney (NMFS Atlantic HMS Management Division), Tobey Curtis (NMFS Atlantic HMS Management Division), Kiley Dancy (MAFMC), Cameron Day, Geret DePiper (TAMUCC), Art Degaetano (Cornell U), Bart DiFiore (MA DMF), Gregory Ellis, Emily Farr (NMFS Office of Habitat Conservation), Michael Fogarty, Paula Fratantoni, Kevin Friedland, Marjy Friedrichs (VIMS), Sarah Gaichas (Hydra Scientific), Ben Galuardi (GARFO), Avijit Gangopadhyay (School for Marine Science and Technology, University of Massachusetts Dartmouth), James Gartland (VIMS), Lori Garzio (Rutgers University), Glen Gawarkiewicz (WHOI), Maxwell Grezlik, Laura Gruenburg (Stony Brook University), Sean Hardison (UA Fairbanks), Amanda Hart, Dvora Hart, Cameron Hodgdon, Cliff Hutt (NMFS Atlantic HMS Management Division), Kimberly Hyde, Grace Jensen (WHOI), Toni Kerns (ASMFC), John Kocik, Steve Kress (National Audubon Society's Seabird Restoration Program), Young-Oh Kwon (Woods Hole Oceanographic Institution), Scott Large, Gabe Larouche (Cornell U), Daniel Linden, Andrew Lipsky, Sean Lucey (@ Orchard), Don Lyons (National Audubon Society's Seabird Restoration Program), Kevin Madley, George Maynard, Chris Melrose, Anna Mercer, Shannon Meseck, David Moe Nelson (NCCOS), Kiera Morrill, Ryan Morse, Ray Mroch (SEFSC), Nicole Mucci, Brandon Muffley (MAFMC), Robert Murphy, Kimberly Murray, Chris Orphanides, Stephanie Owen, Richard Pace, Debi Palka, Tom Parham (Maryland DNR), CJ Pellerin (NOAA Chesapeake Bay Office), Charles Perretti, Kristin Precoda, Grace Roskar (NMFS Office of Habitat Conservation), Andrew Ross, Jeffrey Runge (U Maine), Grace Saba (Rutgers University), Vincent Saba, Sarah Salois, Chris Schillaci (GARFO), Amy Schueller (SEFSC), Teresa Schwemmer (URI), Tarsila Seara, Dave Secor (CBL), Angela Silva, Adrienne Silver (WHOI), Emily Slesinger, Laurel Smith, Linus Stoltz (Commercial Fisheries Research Foundation), Abigail Tyrell, Rebecca Van Hoeck, Ron Vogel (University of Maryland Cooperative Institute for Satellite Earth System Studies and NOAA/NESDIS Center for Satellite Applications and Research), Bruce Vogt (NOAA Chesapeake Bay Office), John Walden, Harvey Walsh, Joseph Warren, Sarah Weisberg (ICES), Changhua Weng, Timothy White (Environmental Studies Program, BOEM), Dave Wilcox (VIMS), Sarah Wilkin (NMFS Office of Protected Resources), Mark Wuenschel, Zhitao Yu, Qian Zhang (U Maryland), NEFSC staff, Talya tenBrink (GARFO)
 
 We used generative artificial intelligence (Google Gemini) to assist with language consistency and to improve readability. All outputs from generative AI were reviewed and edited as necessary.
 

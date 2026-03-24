@@ -1,19 +1,19 @@
-## Objective: New England Commercial Profits `r I(mixed_trend)`  `r I(below_average)` 
+## Objective: New England Commercial Profits `r I(no_trend)`  `r I(below_average)` 
 
 ::: { .soe-50-50-slide}
 
 ::: {.soe-50-column}
-Indicator: Commercial Revenue; profit indicators under SSC review
+Indicator: Commercial Revenue
 
 ```{r}
 return_plot("comm-revenue", region = "NewEngland", mode = "slide")
 ```
 
-```{r}
-return_plot("climatevul-rev", region = "NewEngland", mode = "slide")
-```
+Both regions revenue depends on a single species sensitive to environmental changes (scallop and lobster)
 
-Both regions dependent on single climate-vulnerable species
+Less percent of total GOM revenue is coming from NEFMC-managed species
+
+New England community landings are _moderately dependent_ on species sensitive to environmental variability with no trend.
 
 :::
 
@@ -21,10 +21,39 @@ Both regions dependent on single climate-vulnerable species
 Indicator: Bennet--price and volume indices
 
 ```{r}
+#| out-height: "650"
 return_plot("bennet", region = "NewEngland", mode = "slide")
 ```
 
-GOM high revenue despite low volume
+GB: Low 2023/2024 revenue driven by low volume of landings (benthos/shellfish)
+GOM: Higher 2024 revenue driven by high prices (benthivores/lobster)
+
+:::
+
+::::
+
+## Objective: New England Commercial Profits `r I(no_trend)`  `r I(below_average)` 
+
+::: { .soe-50-50-slide}
+
+::: {.soe-50-column}
+Indicator: Profit Index
+
+```{r}
+return_plot("comdat-profit", region = "NewEngland", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+<br>
+<br>
+
+New Indicator: Index of Revenue, Costs, and Profits from *federal trips only*
+
+GB: High costs since 2021, but recent decrease helps offset low revenue
+
+GOM: Profit generally follows revenue. 2024 showed average costs and profitability
 
 :::
 
