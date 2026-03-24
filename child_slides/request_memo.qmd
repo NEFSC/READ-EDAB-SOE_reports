@@ -1,5 +1,27 @@
-## 2025 State of the Ecosystem Request tracking memo: updates noted along the way
+## Request tracking memo: Completed requests
+
+```{r}
+source(here::here("utils/memo_utils.R"))
+```
   
 ::: {.column-screen}
-![](images/BothReports/SOE Prioritization 2025.png)
+```{r}
+completed
+```
 :::
+
+## Request tracking memo: Highest priority requests
+
+```{r}
+requests |>
+dplyr::filter(!Status %in% c("Done", "Not feasible"),
+              Status != "",
+              Status != "Removed",
+              Priority == "Highest") |>
+  dplyr::group_by(Category) |>
+  dplyr::mutate(n = dplyr::n()) |>
+  dplyr::arrange(n) |>
+  dplyr::arrange(n, Category, desc(Priority)) |>
+  dplyr::select(-n) |>
+  create_table(widths = c(4.5, ret_widths(3)), cap = "")
+```

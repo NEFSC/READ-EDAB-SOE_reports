@@ -1,0 +1,41 @@
+## Georges Bank: Summary of Performance relative to management objectives
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-img}
+```{r}
+knitr::include_graphics(here::here("images/NewEngland/SOE-NE-2026-v5_cropped1.png"))
+```
+
+:::
+
+::: {.soe-50-img}
+
+```{r}
+knitr::include_graphics(here::here("images/NewEngland/SOE-NE-2026-v5_cropped2.png"))
+```
+
+:::
+
+::::
+
+## Gulf of Maine: Summary of Performance relative to management objectives
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-img}
+```{r}
+knitr::include_graphics(here::here("images/NewEngland/SOE-NE-2026-v5_Page_3_cropped1.png"))
+```
+
+:::
+
+::: {.soe-50-img}
+
+```{r}
+knitr::include_graphics(here::here("images/NewEngland/SOE-NE-2026-v5_Page_3_cropped2.png"))
+```
+
+:::
+
+::::

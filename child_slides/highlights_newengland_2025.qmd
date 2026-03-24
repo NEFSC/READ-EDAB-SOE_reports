@@ -1,14 +1,14 @@
-## New England State of the Ecosystem Summary 2025: 
+## New England State of the Ecosystem Summary 2026: 
 :::: {.soe-50-50-slide}
 
 ::: {}
 **Performance relative to management objectives - Georges Bank** 
 
-Seafood production Total `r I(no_trend)`, Managed `r I(decreasing)`, Both `r I(below_average)`
+Seafood production: Total, NEFMC managed, and recreational `r I(decreasing)` `r I(below_average)`
 
-Profits `r I(no_trend)`, `r I(below_average)`
+Profits: Total and NEFMC managed revenue, profitability `r I(no_trend)` `r I(below_average)`
 
-Recreational opportunities:  Effort `r I(no_trend)` `r I(near_average)` Effort diversity `r I(no_trend)` `r I(near_average)` 
+Recreational opportunities:  Effort `r I(no_trend)` `r I(below_average)`, effort and catch diversity `r I(mixed_trend)` `r I(near_average)` 
 
 Stability: Fishery not stable; Ecological not stable
 
@@ -16,13 +16,13 @@ Social and cultural:
 
 *  Fishing engagement and social vulnerability status by community
 
-*  Revenue climate vulnerability `r I(mixed_trend)`, majority medium risk
+*  Total community environmental variability `r I(increasing)`, majority medium risk
 
 Protected species: 
 
-*  Maintain bycatch below thresholds (harbor porpoise, gray seals) `r I(mixed_trend)` `r I(meeting_objectives)`
+*  Maintain bycatch below thresholds: Harbor porpoise and gray seals `r I(mixed_trend)` `r I(meeting_objectives)`
 
-*  Recover endangered populations `r I(mixed_trend)`, NARW `r I(below_average)` Gray seal `r I(above_average)` 
+*  Recover endangered populations: `r I(mixed_trend)`, NARW `r I(below_average)`, Gray seal `r I(above_average)` 
 :::
 
 ::: {.soe-50-img}
@@ -37,17 +37,19 @@ knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/d
 
 ::::
 
-## New England State of the Ecosystem Summary 2025: 
+## New England State of the Ecosystem Summary 2026: 
 :::: {.soe-50-50-slide}
 
 ::: {}
 **Performance relative to management objectives - Gulf of Maine** 
 
-Seafood production `r I(decreasing)`, `r I(below_average)`
+Seafood production: Total, NEFMC managed, and recreational `r I(decreasing)` `r I(below_average)`
 
-Profits Total `r I(no_trend)`, `r I(near_average)`; NEFMC managed `r I(decreasing)`, `r I(below_average)`
+Profits: Total and NEFMC managed revenue, profitability 
 
-Recreational opportunities:  Effort `r I(no_trend)` `r I(near_average)` Effort diversity `r I(no_trend)` `r I(near_average)` 
+Profits: Total `r I(increasing)`, `r I(near_average)`, NEFMC managed `r I(decreasing)`, `r I(below_average)`, profitability `r I(no_trend)`, `r I(near_average)`
+
+Recreational opportunities:  Effort `r I(no_trend)` `r I(below_average)`, effort and catch diversity `r I(mixed_trend)` `r I(near_average)` 
 
 Stability: Fishery not stable; Ecological not stable
 
@@ -55,13 +57,13 @@ Social and cultural:
 
 *  Fishing engagement and social vulnerability status by community
 
-*  Revenue climate vulnerability `r I(mixed_trend)`, majority medium risk
+*  Total community environmental variability `r I(increasing)`, majority medium risk
 
 Protected species: 
 
-*  Maintain bycatch below thresholds (harbor porpoise, gray seals) `r I(mixed_trend)` `r I(meeting_objectives)`
+*  Maintain bycatch below thresholds: Harbor porpoise and gray seals `r I(mixed_trend)` `r I(meeting_objectives)`
 
-*  Recover endangered populations `r I(mixed_trend)`, NARW `r I(below_average)` Gray seal `r I(above_average)` Salmon `r I(below_average)`
+*  Recover endangered populations: `r I(mixed_trend)`, NARW `r I(below_average)`, gray seal `r I(above_average)`, salmon `r I(below_average)`
 :::
 
 ::: {.soe-50-img}
@@ -74,7 +76,7 @@ knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/d
 
 ::::
 
-## State of the Ecosystem Summary 2025: 
+## State of the Ecosystem Summary 2026: 
 
 :::: {.soe-50-50-slide}
 

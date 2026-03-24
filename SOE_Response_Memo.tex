@@ -59,6 +59,79 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Set up the fonts
+\usepackage[urw-palatino]{mathdesign}
+\usepackage[T1]{fontenc}
+
+% Add accessibility support from http://www.richschwinn.com/accessibility
+\RequirePackage{accsupp}
+\RequirePackage{pdfcomment}
+\newcommand{\AccTool}[2]{\BeginAccSupp{method=pdfstringdef,unicode,Alt={{#1}}}\pdftooltip{{#2}}{{#1}}\EndAccSupp{}}
+
+% Set the language for 508
+\hypersetup{
+  pdftitle = {title},
+  pdflang = en-US}
+
+% left-align all figure captions 
+\usepackage{caption}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+
+% Set up the headers and footers
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+%\usepackage{everypage-1x}
+\usepackage{float}
+%\usepackage{subfig}
+%\usepackage{subcaption}
+
+% Avoid struggling over figure and table float in Rmarkdown
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+
+\let\origtable\table
+\let\endorigtable\endtable
+\renewenvironment{table}[1][2] {
+    \expandafter\origtable\expandafter[H]
+} {
+    \endorigtable
+}
+
+% First page has the large title and NOAA logo
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{40pt}
+\fancyheadoffset[L]{0.5cm}
+\cfoot{\thepage}
+
+\fancyheadinit{%
+   \ifthenelse{\value{page}=1}%
+      {\fancyhead[R]{\includegraphics[width=40pt]{images/NOAA_logo.png} \\ \textsf{\emph{March 20, 2026}}}
+       \fancyhead[L]{\textsf{\LARGE State of the Ecosystem 2026: Request Tracking Memo}}
+      }%
+      {\fancyhead[R]{}
+       \fancyhead[L]{\textsf{\emph{State of the Ecosystem 2026: Request Tracking Memo}}}
+      }
+}
+
+
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Make caption fonts a bit smaller
+\usepackage[font={small}]{caption}
+
+
+% Change section labels to san serif
+\usepackage{sectsty}
+\allsectionsfont{\normalfont\sffamily\bfseries}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -1242,7 +1315,7 @@ Bay Water Quality Standards Attainment catalog page}.
 
 \subsubsection{Multiple system drivers}\label{multiple-system-drivers-1}
 
-The profitability indicator developed by Geret dePiper has been
+The profitability indicator developed by Geret DePiper (TAMUCC) has been
 incorporated into the report for the second year in a row, and this
 request has been removed from tracking.
 
