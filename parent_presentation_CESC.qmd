@@ -3,7 +3,7 @@ title: 'State of the Ecosystem <br /> `r dplyr::case_when(
   params$region == "MidAtlantic" ~ "Mid-Atlantic",
   params$region == "NewEngland" ~ "New England",
   TRUE ~  "[Mid-Atlantic] *or* [New England]")` 2026'
-subtitle: "`r params$council` SSC Update <br /> `r params$date`"
+subtitle: "`r params$council` CESC Update <br March 27, 2026/> "
 author: "`r params$author`"
 editor: source
 params:
