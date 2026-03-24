@@ -153,7 +153,7 @@ quarto::write_yaml_metadata_block(footer = region2)
 ```{r, child = here::here("child_slides/risks_wind_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
-{{< include child_slides/risks_wind.qmd >}}
+<!-- {{< include child_slides/risks_wind.qmd >}} -->
 
 {{< include child_slides/highlights_conclusions.qmd >}}
 

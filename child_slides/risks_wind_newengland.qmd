@@ -1,4 +1,4 @@
-## Risks: Offshore Wind Development New England
+## Risks: Offshore Wind Development
 
 :::: {.soe-50-50-slide}
 
@@ -27,16 +27,9 @@ return_plot("wea-port-rev", region = "NewEngland", mode = "slide")
 
 ::::
 
-## Risks: Offshore Wind Development New England
+## Risks: Offshore Wind Development
 
 :::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-- Council request to look at NEFMC-managed species that are being caught in the wind lease areas and landed in the Mid-Atlantic
-- Point Lookout, NY is the only Mid-Atlantic port landing >5% of its revenue from NEFMC-managed species in the wind lease areas
-
-:::
 
 ::: {.soe-50-column}
 
@@ -44,6 +37,20 @@ return_plot("wea-port-rev", region = "NewEngland", mode = "slide")
 return_plot("wind-rev", region = "NewEngland", mode = "slide")
 ```
 
+\
+
+- *Above:* Council request to look at Mid-Atlantic ports that are catching NEFMC-managed species in the wind lease areas
+  - Ports shown have >50% of landings or revenue from NEFMC-managed species in the wind lease areas
+- *Right:* Lease areas overlap with North Atlantic right whale habitat. Development may alter local oceanography and prey availability, increase vessel strike risk, and result in pile driving noise impacts.
+- Current plans for buildout of offshore wind in a patchwork of areas spreads the impacts differentially throughout the region. 
+
 :::
+
+::: {.soe-50-img}
+
+![](https://github.com/NOAA-EDAB/ecodata/raw/master/data-raw/workshop/images/SOE_2023_right_whales_hatteras_frame_v3_2024.jpg)
+
+:::
+
 
 ::::
