@@ -28,7 +28,9 @@ Please send observations to: <northeast.ecosystem.highlights@noaa.gov>
 
 ::: {.soe-50-img}
 
-![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/CCCFA-Feb2025-highlight.png)
+```{r}
+knitr::include_graphics(here::here("images\\BothReports\\input_request.png"))
+```
 
 :::
 
