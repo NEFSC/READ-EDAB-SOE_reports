@@ -647,33 +647,7 @@ Offshore wind projects continue to be developed throughout the region. Informati
 **Editors** (NOAA NMFS Northeast Fisheries Science Center, NEFSC): Abigail Tyrell, Joseph Caracappa, Andy Beet, Brandon Beltz, Kimberly Hyde, Scott Large, Laurel Smith.
 
 ```{r, results='asis', echo=FALSE}
-contrib.file = here::here('utils', 'contributors_list.csv')
-
-if (file.exists(contrib.file)) {
-  contributors <- read.csv(contrib.file, stringsAsFactors = FALSE)
-  
-  # 1. Rejoin the names and apply the NEFSC logic
-  reconstructed_entries <- contributors %>%
-    mutate(
-      # Combine names and trim in case Last_Name is empty
-      Full_Name = str_trim(paste(First_Name, Last_Name)),
-      # If affiliation is NEFSC, just show name; otherwise, show Name (Affiliation)
-      formatted = ifelse(Affiliation == "NEFSC", 
-                         Full_Name, 
-                         paste0(Full_Name, " (", Affiliation, ")"))
-    ) %>%
-    pull(formatted)
-  
-  # 2. Collapse into a single comma-separated string
-  final_string <- paste(reconstructed_entries, collapse = ", ")
-  
-  # 3. Add the header and render as Markdown
-  prefix <- "**Contributors** (NEFSC unless otherwise noted): "
-  cat(paste0(prefix, final_string))
-  
-} else {
-  cat("Contributor list file not found.")
-}
+create_contributors(contrib.file = here::here('utils', 'contributors_list.csv'))
 ```
 
 We used generative artificial intelligence (Google Gemini) to assist with language consistency and to improve readability. All outputs from generative AI were reviewed and edited as necessary. 
