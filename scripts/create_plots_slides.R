@@ -216,7 +216,7 @@ save_plot(
   },
   indicator = "rec_hms",
   width = 6.5,
-  height = 4.5
+  height = 3
 )
 
 ### Implications ----
@@ -348,7 +348,7 @@ save_plot(
   },
   indicator = "comdat_profit",
   width = 6.5,
-  height = ifelse (region == "NewEngland", 6, 3.5)
+  height = ifelse (region == "NewEngland", 5, 4)
 )
 ## Commercial profits ----
 
@@ -833,7 +833,7 @@ save_plot(
   },
   indicator = "recreational_engagement",
   width = 6.5,
-  height = 4
+  height = 3.5
 )
 
 # 3. Community Climate Vulnerability Exposure Plot
@@ -1286,14 +1286,14 @@ save_plot(
 # whale and dolphin dist shifts
 save_plot(
   plot_expression = {
-    ecodata::plot_cetacean_dist() +
+    p = ecodata::plot_cetacean_dist() +
       ggplot2::ggtitle("Whale and Dolphin Distribution Shifts") +
       ggplot2::facet_wrap(~season, nrow = 1) +
       ggplot2::theme(legend.position = "bottom")
   },
   indicator = "cetacean_dist",
   width = 7.5,
-  height = 6.5
+  height = 4
 )
 
 # forage shifts
@@ -1331,12 +1331,13 @@ save_plot(
 save_plot(
   plot_expression = {
     a <- ecodata::plot_cold_pool(varName = "cold_pool", n = 10)
-    b <- ecodata::plot_cold_pool(varName = "extent", n = 10)
+    b <- ecodata::plot_cold_pool(varName = "extent", n = 10)+
+      ggplot2::ylim(-32000,11000)
     ggpubr::ggarrange(a, b, nrow = 2)
   },
   indicator = "cold_pool",
   width = 6.5,
-  height = 4
+  height = 5
 )
 
 # cold pool timing

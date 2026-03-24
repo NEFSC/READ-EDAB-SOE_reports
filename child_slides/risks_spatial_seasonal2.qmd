@@ -2,7 +2,10 @@
 
 **Future considerations**
 
-Distribution shifts caused by changes in thermal habitat and ocean circulation are likely to continue as long as long-term trends persist. Episodic and short-term events (see [2024 Highlights](#2024-highlights)) may increase variability in the trends, however species distributions are unlikely to reverse to historical ranges in the short term. Increased mechanistic understanding of distribution drivers is needed to better understand future distribution shifts: species with high mobility or short lifespans react differently from immobile or long lived species. 
+* Distribution shifts caused by changes in thermal habitat and ocean circulation are likely to continue as long as long-term trends persist. 
+* Episodic and short-term events (see [2025 Highlights](#2025-highlights)) may increase variability in the trends
+* However species distributions are unlikely to reverse to historical ranges in the short term.
+* We need a better understanding of the drivers of distribution shifts to make predictions: species with high mobility or short lifespans react differently from immobile or long lived species. 
 
 :::: {.soe-50-50-slide}
 
