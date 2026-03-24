@@ -126,9 +126,6 @@ quarto::write_yaml_metadata_block(footer = region2)
 
 {{< include child_slides/risks_spatial_seasonal.qmd >}}
 
-```{r, child = here::here("child_slides/risks_spatial_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
-
 {{< include child_slides/risks_spatial_seasonal2.qmd >}}
 
 ```{r, child = here::here("child_slides/risks_seasonal_midatlantic.qmd"), eval = params$region != "NewEngland"}

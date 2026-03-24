@@ -1,39 +1,68 @@
-
-## Risks to Setting Catch Limits: New England
-
-Indicator: Fish productivity
-
-```{r productivity-anomaly}
-return_plot("productivity-anomaly", region = "NewEngland", mode = "slide")
-```
-
-## Risks to Setting Catch Limits: New England
-
-Indicator: Condition
-
-```{r}
-return_plot("ne-cf", region = "NewEngland", mode = "slide")
-```
-
-## Risks to Setting Catch Limits: New England Drivers
+## Risks to Setting Catch Limits: Indicators
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
-Drivers: Forage Quality and Abundance
+Fish productivity
 
-```{r foragebio}
-return_plot("foragebio", region = "NewEngland", mode = "slide")
+```{r productivity-anomaly}
+#| out-height: "750px"
+return_plot("productivity-anomaly", region = "NewEngland", mode = "slide")
 ```
 
 :::
 
 ::: {.soe-50-column}
 
-New indicators: benthos abundance
+**Management Concerns**
+
+* Sustainable management and rebuilding plans rely on assumptions about fish productivity (growth, reproduction, and natural mortality)
+* Even if not understood well, environmental changes can impact biological processes and reference points
+
+**Fish Productivity**
+
+* Productivity is the net result of growth, reproduction, and natural mortality
+* Fish productivity had been low since 2020
+
+:::
+
+::::
+
+## Risks to Setting Catch Limits: Indicators
+Fish Condition
+
+```{r}
+#| out-height: "650px"
+#| fig-align: center
+return_plot("ne-cf", region = "NewEngland", mode = "slide")
+```
+
+Condition relates to reproduction potential and market quality. High variability but patterns emerge across species.
+
+## Risks to Setting Catch Limits: Drivers
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Forage Quality and Abundance
+
+```{r foragebio}
+return_plot("foragebio", region = "NewEngland", mode = "slide")
+```
+
+Forage fish abundance/quality and benthic prey changes annually.
+Declines in spring macrobenthos may impact juvenile fish
+
+:::
+
+::: {.soe-50-column}
+
+benthos abundance
 
 ```{r benthos}
+#| out-height: "700px"
 return_plot("benthos", region = "NewEngland", mode = "slide")
 ```
 
@@ -41,23 +70,27 @@ return_plot("benthos", region = "NewEngland", mode = "slide")
 
 ::::
 
-## Risks to Setting Catch Limits: New England Drivers
+## Risks to Setting Catch Limits: Drivers
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
-Drivers: Low trophic levels
+Low trophic levels processes
 
 ```{r totppagain}
 return_plot("totpp", region = "NewEngland", mode = "slide")
 ```
+
+* Primary production determines the energy available to the ecosystem
+* Forage and juvenile fish and marine mammals rely on zooplankton to grow. Shifts in zooplankton communities can change the overall quality of food. 
 
 :::
 
 ::: {.soe-50-column}
 
 ```{r zoopanom}
+#| out-height: "800px"
 return_plot("zoopanom", region = "NewEngland", mode = "slide")
 ```
 
@@ -65,9 +98,11 @@ return_plot("zoopanom", region = "NewEngland", mode = "slide")
 
 ::::
 
-## Risks to Setting Catch Limits: New England Drivers
+## Risks to Setting Catch Limits: Drivers
 
 Changes in fish traits
+
+Finfish communities are changing in GOM towards species with higher trophic levels and faster growth rates
 
 :::: {.soe-50-50-slide}
 
@@ -82,18 +117,18 @@ return_plot("traits-k", region = "NewEngland", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r}
-return_plot("traits-tl", region = "NewEngland")
+return_plot("traits-tl", region = "NewEngland", mode = 'slide')
 ```
 
 :::
 
 ::::
 
-## Risks to Setting Catch Limits: Coastwide
 
-Drivers: Environmental   
 
-*2024 Thermal habitat area by depth*
+## Risks to Setting Catch Limits: Drivers
+
+*2025 Thermal habitat area by depth*
 
 ```{r}
 b <- ecodata::plot_thermal_habitat_area(report = "NewEngland", EPU="GB") + ggplot2::theme(legend.position = "none")

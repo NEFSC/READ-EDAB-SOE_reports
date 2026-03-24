@@ -179,7 +179,7 @@ return_plot("GSI", region = "BothReports", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r cold-pool-size, fig.alt="Seasonal cold pool mean temperature (left) and spatial extent index (right), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple)."}
-#| out-height: "600px"
+#| out-height: "500px"
 return_plot("cold-pool-size", region = "BothReports", mode = "slide")
 ```
 

@@ -1,22 +1,35 @@
-## Risks to Setting Catch Limits: Coastwide
+## Risks to Setting Catch Limits: Drivers
 
-Drivers: Environmental
-*Potential Ocean Acidification Impacts: Scallops and Longfin squid*
+Environmental: Habitat Quality and Circulation
 
-::: {layout-nrow=1}
-
-```{r, eval = FALSE}
-return_plot("mab-oa-scallop", region = "BothReports")
+```{r, eval = TRUE}
+#| fig-align: center
+#| out-height: "350px"
+return_plot("mab-oa", region = "BothReports",mode = 'slide')
 ```
 
-```{r, eval = FALSE}
-return_plot("mab-oa-squid", region = "BothReports")
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r, eval = TRUE}
+#| out-height: "350px"
+return_plot("advection-index", region = params$region, mode = 'slide')
 ```
+
 
 :::
 
-Drivers: Predation  
-*Seals increasing, mix of population status for HMS, advection*
+::: {.soe-50-column}
+
+* Episodic habitat risk events for scallops and squid present but sparse in 2025
+* New Indicator: Advection off shelf (how much are larvae getting carried offshore?)
+  * Mid and Deep water more likely to leave shore in spring over time
+
+:::
+
+::::
 
 ## Risks to Setting Catch Limits
 
@@ -28,9 +41,9 @@ Future considerations
 
 *   Processes that control fish productivity and mortality are dynamic, complex, and are the result of the interactions between multiple changing system drivers.
 
-*   There is a real risk that short-term predictions in assessments and rebuilding plans that assume unchanging underlying conditions will not be as effective, given the observed change documented in the prior sections in both ecological and environmental processes. 
+*   There is a real risk that assuming constant reference points can lead to less effective short-term predictions in assessments and rebuilding plans. 
 
-*   Assumptions for species’ growth, reproduction, and natural mortality should continue to be evaluated for individual species.
+*   Assumptions for species’ growth, reproduction, and natural mortality is not well understood for all stocks and should continue to be evaluated for individual species.
 
 *   With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management.
 

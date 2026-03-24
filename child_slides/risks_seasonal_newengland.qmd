@@ -4,11 +4,16 @@
 
 ::: {.soe-50-column}
 
-Drivers: thermal transition, habitat persistence, bloom timing
+Drivers: Seasonal transitions, habitat persistence, bloom timing
 
 ```{r transition}
 return_plot("transition", region = "NewEngland", mode = "slide")
 ```
+
+Seasonal habitat cycles vary annual and show changes
+
+Fall blooms getting later (later peak)
+
 
 :::
 
@@ -20,9 +25,9 @@ return_plot("chl-month", region = "NewEngland", mode = "slide")
 
 Future considerations 
 
-*  Management actions that rely on effective alignment of fisheries availability and biological processes should continue to evaluate whether prior assumptions on seasonal timings still hold.
+*  Do assumptions of seasonal timings still hold?
 
-*  New indicators should be developed to monitor timing shifts for stocks.
+*  Strong need for new indicators should be developed to monitor timing shifts for stocks.
 
 :::
 

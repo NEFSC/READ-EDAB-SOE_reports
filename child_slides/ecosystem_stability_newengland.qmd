@@ -19,7 +19,6 @@ return_plot("zoo-community", region = "NewEngland", mode = "slide")
 *Ecological* Indicators: Survey Biomass
 
 ```{r}
-#| fig-cap: "Georges Bank"
 #| fig-height: 3.5
 #| fig-width: 6
 #| out-height: "600px"

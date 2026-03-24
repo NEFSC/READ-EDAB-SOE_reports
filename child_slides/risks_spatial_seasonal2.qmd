@@ -1,19 +1,23 @@
-## Risks to Managing Spatially: Coastwide
-
-**Future considerations**
+## Risks to Managing Spatially: Future considerations
 
 * Distribution shifts caused by changes in thermal habitat and ocean circulation are likely to continue as long as long-term trends persist. 
-* Episodic and short-term events (see [2025 Highlights](#2025-highlights)) may increase variability in the trends
-* However species distributions are unlikely to reverse to historical ranges in the short term.
-* We need a better understanding of the drivers of distribution shifts to make predictions: species with high mobility or short lifespans react differently from immobile or long lived species. 
+* Episodic and short-term events (see [2025 Highlights](#2025-highlights)) may increase variability in the trends.
+* We need a better understanding of the drivers of distribution shifts to make predictions
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
-Long-term oceanographic projections forecast a [temporary pause in warming](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL110946) over the next decade due to internal variability in circulation and a southward shift of the Gulf Stream. Near-term forecasts are being evaluated to determine how well they are able to predict episodic and anomalous events that are outside of the long-term patterns.
+**Forecasts**
 
-Adapting management to changing stock distributions and dynamic ocean processes will require continued monitoring of populations in space and evaluating management measures against a range of possible future spatial distributions. Processes like the [East Coast Climate Scenario Planning](https://www.mafmc.org/climate-change-scenario-planning), and subsequent formation of the [East Coast Climate Coordination Group](https://www.mafmc.org/e3cg), can help coordinate management.
+* 10 year oceanographic projections forecast a [temporary pause in warming](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL110946) resulting from variability in circulation and a southward shift of the Gulf Stream **not** a shift in the long-term patterns.
+* Evaluating how well these forecasts can predict episodic and anomalous events that are outside of the long-term patterns.
+
+**Management Considerations**
+
+* Adapting management strategies to changing stock distributions and dynamic ocean processes
+* Continued monitoring of populations in space and evaluating management measures against possible future spatial distributions.
+* Use [East Coast Climate Scenario Planning](https://www.mafmc.org/climate-change-scenario-planning) and the subsequent [East Coast Coordination Group](https://www.mafmc.org/e3cg) to help coordinate management responses to change.
 
 :::
 
@@ -24,9 +28,9 @@ Adapting management to changing stock distributions and dynamic ocean processes 
 
 ::::
 
-## Risks to Managing Seasonally: Coastwide
+## Risks to Managing Seasonally: Indicators
 
-Indicators: spawning timing, migration change
+Spawning timing & changes in migration patterns
 
 :::: {.soe-50-50-slide}
 
@@ -36,19 +40,25 @@ Indicators: spawning timing, migration change
 return_plot("spawntiming", region = "BothReports", mode = "slide")
 ```
 
+```{r, eval = params$region != "MidAtlantic"}
+return_plot("cold-pool-time", region = "BothReports", mode = "slide")
+```
+
+
 :::
 
 ::: {.soe-50-column}
 
-*  Recreational tuna fisheries [50 days earlier](https://noaa-edab.github.io/catalog/timing_shifts.html#key-results-and-visualizations-59) in the year in 2019 compared to 2002. 
+**Life Cycle Events**
 
-*  In Cape Cod Bay, peak spring habitat use by right and humpback whales has shifted 18-19 days later over time.
+*  Effective fishing seasona & openings/closing rely on alignment with seasonal events in fish stocks
+*  Though limited, evidence of large-scale changes in spawn timing
 
+**Migratory Species**
+
+*  Recreational bigeye tuna caught [50 days earlier](https://noaa-edab.github.io/catalog/timing_shifts.html#key-results-and-visualizations-59) and bluefin tuna 38-80 days earlier (2002 to 2019).
+*  Right and humpback whale peak spring habitat has shifted 18-19 days later.
 *  Baseline information on [large whale seasonal presence](https://noaa-edab.github.io/catalog/cetacean_acoustic.html) has been collected.
-
-```{r, eval = params$region != "MidAtlantic"}
-return_plot("cold-pool-time", region = "BothReports", mode = "slide")
-```
 
 :::
 

@@ -21,11 +21,12 @@ New England community landings are _moderately dependent_ on species sensitive t
 Indicator: Bennet--price and volume indices
 
 ```{r}
-#| out-height: "650"
+#| out-height: "600px"
 return_plot("bennet", region = "NewEngland", mode = "slide")
 ```
 
 GB: Low 2023/2024 revenue driven by low volume of landings (benthos/shellfish)
+
 GOM: Higher 2024 revenue driven by high prices (benthivores/lobster)
 
 :::

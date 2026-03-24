@@ -348,7 +348,7 @@ save_plot(
   },
   indicator = "comdat_profit",
   width = 6.5,
-  height = ifelse (region == "NewEngland", 5, 4)
+  height = ifelse (region == "NewEngland", 5.5, 4)
 )
 ## Commercial profits ----
 
@@ -379,7 +379,7 @@ save_plot(
   },
   indicator = "comm_revenue",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 4.5)
+  height = ifelse(region == "NewEngland", 4.5, 4.5)
 )
 
 # bennet
@@ -597,7 +597,7 @@ save_plot(
   },
   indicator = "comm_div_fleet",
   width = 6.5,
-  height = 5
+  height = 4
 )
 
 # 2. Commercial Diversity Species Diversity Plot
@@ -802,7 +802,7 @@ save_plot(
   },
   indicator = "traits_tl",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 3.5, 4)
+  height = ifelse(region == "NewEngland", 4.5, 4.5)
 )
 
 ## Community social and climate vulnerability ----
