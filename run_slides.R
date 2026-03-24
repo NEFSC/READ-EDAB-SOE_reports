@@ -20,7 +20,7 @@ difftime(Sys.time(), now)
 now <- Sys.time()
 quarto::quarto_render(
   input = here::here("parent_presentation.qmd"),
-  output_file = "SOE2026_NEFMC_SSC_slides.html",
+  output_file = "SOE2026_NEFMC_SSC_present.html",
   execute_params = list(
     region = "NewEngland",
     council = "NEFMC",
@@ -53,7 +53,23 @@ difftime(Sys.time(), now)
 now <- Sys.time()
 quarto::quarto_render(
   input = here::here("parent_presentation_ssc.qmd"),
-  output_file = "newengland_ssc_draft.html",
+  output_file = "newengland_ssc_draft_v2.html",
+  execute_params = list(
+    region = "NewEngland",
+    council = "NEFMC",
+    fig_caption = here::here("utils/figure_captions_summary.csv"),
+    date = Sys.Date() |> format("%B %d, %Y"),
+    author = "Joe Caracappa, lead editor, NEFSC"
+  ),
+  output_format = "all"
+)
+difftime(Sys.time(), now)
+
+## NEFMC CESC ----
+now <- Sys.time()
+quarto::quarto_render(
+  input = here::here("parent_presentation_CESC.qmd"),
+  output_file = "SOE2026_newengland_CESC",
   execute_params = list(
     region = "NewEngland",
     council = "NEFMC",

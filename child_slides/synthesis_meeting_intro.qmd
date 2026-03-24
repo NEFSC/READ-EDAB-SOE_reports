@@ -197,6 +197,7 @@ ggpubr::ggarrange(a, b, ncol = 2)
 ```  
 
 ```{r}
+#| out-height: "450px"
 knitr::include_graphics(here::here("images/plot_key.png"))
 ```
 

@@ -23,10 +23,10 @@ format:
     # aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
     width: 1600
     height: 900
-    margin: 0.05
+    margin: 0.1
     min-scale: 0.2
     max-scale: 1.0
-    
+
     # CSS files for styling
     css:                         # Equivalent to css: [...]
       - libs/EDAB_theme_2026.css
@@ -125,9 +125,6 @@ quarto::write_yaml_metadata_block(footer = region2)
 {{< include child_slides/risks_header.qmd >}}
 
 {{< include child_slides/risks_spatial_seasonal.qmd >}}
-
-```{r, child = here::here("child_slides/risks_spatial_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
 
 {{< include child_slides/risks_spatial_seasonal2.qmd >}}
 

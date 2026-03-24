@@ -2,8 +2,8 @@
 title: 'State of the Ecosystem <br /> `r dplyr::case_when(
   params$region == "MidAtlantic" ~ "Mid-Atlantic",
   params$region == "NewEngland" ~ "New England",
-  TRUE ~  "[Mid-Atlantic] *or* [New England]")` 2025'
-subtitle: "`r params$council` <br /> `r params$date`"
+  TRUE ~  "[Mid-Atlantic] *or* [New England]")` 2026'
+subtitle: "`r params$council` CESC Update <br March 27, 2026/> "
 author: "`r params$author`"
 editor: source
 params:
@@ -16,16 +16,17 @@ format:
   # This uses the built-in Quarto revealjs format
   revealjs:
     theme: ""
+    footer: "{{< meta footer >}} State of the Ecosystem 2026 | Northeast Fisheries Science Center"
     slide-number: true
     # auto-stretch: false
     # Sets the slide aspect ratio
     # aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
     width: 1600
     height: 900
-    margin: 0.05
+    margin: 0.1
     min-scale: 0.2
     max-scale: 1.0
-    
+
     # CSS files for styling
     css:                         # Equivalent to css: [...]
       - libs/EDAB_theme_2026.css
@@ -62,17 +63,22 @@ format:
 
 {{< include child_slides/setup.qmd >}}
 
-{{< include child_slides/intro_slides.qmd >}}
+```{r output = "asis"}
+# set dynamic footer
+quarto::write_yaml_metadata_block(footer = region2)
+```
 
-{{< include child_slides/request_memo.qmd >}}
+{{< include child_slides/synthesis_meeting_intro.qmd >}}
 
 ```{r, child = here::here("child_slides/highlights_midatlantic_2025.qmd"), eval = params$region != "NewEngland"}
 ```
 
-```{r, child = here::here("child_slides/highlights_newengland_2025.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/highlights_newengland_2026.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
-{{< include child_slides/shared_summary_highlights_2025.qmd >}}
+{{< include child_slides/shared_summary_highlights_2026.qmd >}}
+
+{{< include child_slides/request_memo.qmd >}}
 
 {{< include child_slides/performance_header.qmd >}}
 
@@ -102,6 +108,7 @@ format:
 
 {{< include child_slides/protected_species.qmd >}}
 
+{{< include child_slides/stability_discussion.qmd >}}
 
 ```{r, child = here::here("child_slides/fishery_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
@@ -114,7 +121,6 @@ format:
 
 ```{r, child = here::here("child_slides/ecosystem_stability_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
-
 
 {{< include child_slides/risks_header.qmd >}}
 
@@ -136,13 +142,15 @@ format:
 
 {{< include child_slides/risks_catch.qmd >}}
 
+{{< include child_slides/risks_wind_map.qmd >}}
+
 ```{r, child = here::here("child_slides/risks_wind_midatlantic.qmd"), eval = params$region != "NewEngland"}
 ```
 
 ```{r, child = here::here("child_slides/risks_wind_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
 
-{{< include child_slides/risks_wind.qmd >}}
+<!-- {{< include child_slides/risks_wind.qmd >}} -->
 
 {{< include child_slides/highlights_conclusions.qmd >}}
 

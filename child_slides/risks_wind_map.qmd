@@ -14,7 +14,7 @@ knitr::include_graphics(here::here("images/BothReports/OffshoreWindDevelopmentMa
 
 - Six "Active Projects"
   - One operational commercial-scale wind project (South Fork Wind Farm)
-  - Two projects partially operational during construction construction (Vineyard Wind 1 and Revolution Wind)
+  - Two projects partially operational during construction (Vineyard Wind 1 and Revolution Wind)
     - Rev Wind came online after the report text was finalized
   - Three projects under construction (Sunrise Wind, Empire Wind 1, Central Virginia Offshore Wind)
 - Most wind lease areas that have had construction activities are in the NY Bight and Southern New England
