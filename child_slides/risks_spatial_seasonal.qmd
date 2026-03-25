@@ -49,6 +49,7 @@ FitFlextableToPage(tab)
 
 ### Risks to Managing Spatially
 Potential Impacts: Spatial mis-allocation of quotas may lead to unmet quotas, increased discards, and/or miscalculated fishing targets. 
+
 ### Risks to Managing Seasonally
 Potential Impacts: Spawning closures, seasonal openings, and seasonal quota allocations may be less effective if mis-timed with biological events, resulting in decreased seafood production.
 
