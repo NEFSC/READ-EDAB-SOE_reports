@@ -70,6 +70,15 @@ quarto::write_yaml_metadata_block(footer = region2)
 
 {{< include child_slides/synthesis_meeting_intro.qmd >}}
 
+## Discussion Question: Management Objectives
+
+Looking for feedback from SSC on performance objectives
+
+<br><br><br>
+1. Are the stated metrics well defined?
+<br><br><br>
+2. Are the metrics used appropriate to evaluate these objectives?
+
 ```{r, child = here::here("child_slides/highlights_midatlantic_2025.qmd"), eval = params$region != "NewEngland"}
 ```
 
@@ -77,6 +86,26 @@ quarto::write_yaml_metadata_block(footer = region2)
 ```
 
 {{< include child_slides/shared_summary_highlights_2026.qmd >}}
+
+## Discussion Question: Forecasts
+
+Looking for feed back from the SSC on using forecast information in the SOE
+
+\vspace{20mm}
+
+1. We're using deviations from the historical average temperature as the reference point for forecast probabilities. Is this a useful format for the Council?
+
+\vspace{20mm}
+
+2. Are there other "events" or reference points that could be used instead
+
+\vspace{20mm}
+
+3. How should uncertainty be discussed alongside observations? (Measurement error vs forecast uncertainty)
+
+\vspace{20mm}
+
+4. Are there specific research questions or Council decisions that forecasted ocean conditions could assist?
 
 {{< include child_slides/request_memo.qmd >}}
 
@@ -121,6 +150,18 @@ quarto::write_yaml_metadata_block(footer = region2)
 
 ```{r, child = here::here("child_slides/ecosystem_stability_newengland.qmd"), eval = params$region != "MidAtlantic"}
 ```
+
+## Discussion Question: Stability
+
+Looking for feedback from the SSC on fishery and ecosystem stability
+
+\vspace{20mm}
+
+1. Does reframing of stability components as _Changes from Baseline_, _Adaptive Capacity_ , and _Volatility_ better address the Council's needs?
+ 
+\vspace{20mm}
+
+2. Are there suggestions for how these could be refined?
 
 {{< include child_slides/risks_header.qmd >}}
 
