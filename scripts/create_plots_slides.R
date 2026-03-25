@@ -225,10 +225,13 @@ save_plot(
 save_plot(
   plot_expression = {
     stock_status_plot <- ecodata::plot_stock_status(report = region)
+    p = stock_status_plot$p+
+      ggplot2::scale_y_continuous(breaks = c(0,0.5,1,2,8))+
+      ggplot2::theme(legend.direction = 'horizontal')
     if (region == "MidAtlantic") {
-      stock_status_plot$p
+      p
     } else {
-      stock_status_plot$p
+      p
     }
   },
   indicator = "stock_status",

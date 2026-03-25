@@ -19,7 +19,7 @@ mng_obj <- data.frame("Risks" = c("Risks to Managing Spatially",
                       "Potential Driver Indicators" = c("Benthic and pelagic forage distribution; ocean temperature, changes in currents and cold pool",
                                                         "Habitat timing: Length of ocean summer, cold pool seasonal persistence",
                                                         "Benthic and pelagic forage quality & abundance: ocean temperature & acidification ",
-                                                        "Wind development speed; Protected species presence and  hotspots"
+                                                        "Wind development map; Protected species presence and  hotspots"
                       ))
 
 mng_obj$service <- c(rep("Climate and Ecosystem Risks", 3), 
@@ -48,13 +48,12 @@ FitFlextableToPage(tab)
 ::: {.soe-50-column}
 
 ### Risks to Managing Spatially
-Potential Impacts: Spatial misallocation of quotas within and across jurisdictions, leading to unmet quotas and/or increased discards. Specification of gear management areas may not utilize quotas and minimize bycatch.
-
+Potential Impacts: Spatial mis-allocation of quotas may lead to unmet quotas, increased discards, and/or miscalculated fishing targets. 
 ### Risks to Managing Seasonally
-Potential Impacts: Spawning closures are less effective if peak spawning occurs outside the seasonal closure. Seasonal openings of exemption areas may be inconsistent with species presence. Seasonal quota allocations may be misaligned with availability.
+Potential Impacts: Spawning closures, seasonal openings, and seasonal quota allocations may be less effective if mis-timed with biological events, resulting in decreased seafood production.
 
 ### Risks to Setting Catch Limits
-Potential Impacts: Changes in environmental conditions can affect stock reference points and short-term stock projections. When productivity changes are not accounted for, they can lead to misspecified quotas and rebuilding plans.
+Potential Impacts: Unaccounted for and unknown productivity changes may lead to mis-specified quotas and rebuilding plans, especially if they are not considered in stock reference points and short-term stock projections.
 
 :::
 
@@ -170,7 +169,7 @@ return_plot("long-term-sst", region = "BothReports", mode = "slide")
 return_plot("GSI", region = "BothReports", mode = "slide")
 ```
 
-* The entire shelf is getting warmer with northward shifts in gulf stream
+* The entire shelf is getting warmer with northward shifts in Gulf Stream
 * Since 2023 - sharp drop in gulf stream and temperature
 * Changes in currents and temperature can alter habitat suitability for species
 * Mobile species can follow changes, but others cannot (i.e. scallops)

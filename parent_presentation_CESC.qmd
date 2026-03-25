@@ -3,7 +3,7 @@ title: 'State of the Ecosystem <br /> `r dplyr::case_when(
   params$region == "MidAtlantic" ~ "Mid-Atlantic",
   params$region == "NewEngland" ~ "New England",
   TRUE ~  "[Mid-Atlantic] *or* [New England]")` 2026'
-subtitle: "`r params$council` CESC Update <br March 27, 2026/> "
+subtitle: "`r params$council` CESC Update <br> March 27, 2026 "
 author: "`r params$author`"
 editor: source
 params:
@@ -80,81 +80,24 @@ quarto::write_yaml_metadata_block(footer = region2)
 
 {{< include child_slides/request_memo.qmd >}}
 
-{{< include child_slides/performance_header.qmd >}}
-
-```{r, child = here::here("child_slides/seafood_production_midatlantic.qmd"), eval = params$region != "NewEngland"}
-```
-
-```{r, child = here::here("child_slides/seafood_production_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
-
-```{r, child = here::here("child_slides/commercial_profits_midatlantic.qmd"), eval = params$region != "NewEngland"}
-```
-
-```{r, child = here::here("child_slides/commercial_profits_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
-
-```{r, child = here::here("child_slides/rec_opp_midatlantic.qmd"), eval = params$region != "NewEngland"}
-```
-
-```{r, child = here::here("child_slides/rec_opp_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
-
-```{r, child = here::here("child_slides/social_midatlantic.qmd"), eval = params$region != "NewEngland"}
-```
-
-```{r, child = here::here("child_slides/social_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
-
-{{< include child_slides/protected_species.qmd >}}
-
-{{< include child_slides/stability_discussion.qmd >}}
-
-```{r, child = here::here("child_slides/fishery_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
-```
-
-```{r, child = here::here("child_slides/fishery_stability_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
-
-```{r, child = here::here("child_slides/ecosystem_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
-```
-
-```{r, child = here::here("child_slides/ecosystem_stability_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
-
-{{< include child_slides/risks_header.qmd >}}
-
-{{< include child_slides/risks_spatial_seasonal.qmd >}}
-
-{{< include child_slides/risks_spatial_seasonal2.qmd >}}
-
-```{r, child = here::here("child_slides/risks_seasonal_midatlantic.qmd"), eval = params$region != "NewEngland"}
-```
-
-```{r, child = here::here("child_slides/risks_seasonal_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
-
-```{r, child = here::here("child_slides/risks_catch_midatlantic.qmd"), eval = params$region != "NewEngland"}
-```
-
-```{r, child = here::here("child_slides/risks_catch_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
-
-{{< include child_slides/risks_catch.qmd >}}
-
-{{< include child_slides/risks_wind_map.qmd >}}
-
-```{r, child = here::here("child_slides/risks_wind_midatlantic.qmd"), eval = params$region != "NewEngland"}
-```
-
-```{r, child = here::here("child_slides/risks_wind_newengland.qmd"), eval = params$region != "MidAtlantic"}
-```
-
-<!-- {{< include child_slides/risks_wind.qmd >}} -->
-
 {{< include child_slides/highlights_conclusions.qmd >}}
 
-```{r, child = here::here("child_slides/takehome_midatlantic.qmd"), eval = params$region != "NewEngland"}
-```
+## CESC Discussion Questions
+
+1. Which MOM6 forecast products are useful for the NEFMC? What is the appropriate scope and scale for decisions?
+
+\vspace{20mm}
+
+2. When considering probabilistic forecasts, what are the "events" we're interested in predicting?
+
+\vspace{20mm}
+
+3. How do the SOE's "management objectives" actually align with the NEFMC's strategic planning? Should we redefine objectives?
+
+\vspace{20mm}
+
+4. How does the CESC recommend the SOE incorporate public/industry observations if no formal data is available?
 
 {{< include child_slides/closing_slides.qmd >}}
+
+
