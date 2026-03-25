@@ -19,8 +19,8 @@ difftime(Sys.time(), now)
 ## ne slides ----
 now <- Sys.time()
 quarto::quarto_render(
-  input = here::here("parent_presentation.qmd"),
-  output_file = "SOE2026_NEFMC.html",
+  input = here::here("parent_presentation_council.qmd"),
+  output_file = "SOE2026_NEFMC_final.html",
   execute_params = list(
     region = "NewEngland",
     council = "NEFMC",
