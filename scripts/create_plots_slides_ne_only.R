@@ -1,13 +1,13 @@
 ####################################
-#' Run NE only report plots
+#' Run NE only slide plots
 #'
-#' This function creates all plots that are solely for the NE report
+#' This function creates all plots that are solely for the NE slides
 #'
-#' @param region Region for which to create report plots ("NewEngland")
+#' @param region Region for which to create slides plots ("NewEngland")
 #' 
 
 # region <- "NewEngland"
-create_plots_ne <- function(region = "NewEngland")
+create_plots_slides_ne <- function(region = "NewEngland")
 {
   out_dir <- here::here("images", region)
   
@@ -35,6 +35,7 @@ create_plots_ne <- function(region = "NewEngland")
     file.path(
       dir,
       paste0(
+        "slide_",
         indicator,
         "_",
         file_region,
@@ -78,6 +79,21 @@ create_plots_ne <- function(region = "NewEngland")
     }
   }
   
+  #NE only - rec_hms from LPS only, no MRIP
+  save_plot(
+    plot_expression = {
+      rec_lps_sharks_plot <- ecodata::plot_lps_sharks(
+        report = region,
+        n = 10
+      )  +
+        ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
+        ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
+    },
+    indicator = "rec_hms",
+    width = 6.5,
+    height = 3
+  )
+  
   # calfin center of gravity -- NE only
   save_plot(
     plot_expression = {
@@ -98,7 +114,7 @@ create_plots_ne <- function(region = "NewEngland")
   save_plot(
     plot_expression = {
       ecodata::plot_mass_inshore_survey(report = region, n = 10) +
-        ggplot2::geom_point()+
+        ggplot2::geom_point() +
         ggplot2::geom_line()
     },
     indicator = "mass_inshore",
@@ -133,21 +149,4 @@ create_plots_ne <- function(region = "NewEngland")
       height = 4
     )
   }
-  
-  #NE only - rec_hms from LPS only, no MRIP
-  save_plot(
-    plot_expression = {
-      rec_lps_sharks_plot <- ecodata::plot_lps_sharks(
-        report = region,
-        n = 10
-      )  +
-        ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
-        ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
-    },
-    indicator = "rec_hms_NE",
-    width = 6.5,
-    height = 4.5
-  )
-  
 }
-# create_plots_ne(region = "NewEngland")

@@ -1,24 +1,23 @@
 ##################################
-#' Run BothReports plots
+#' Run BothReports slides plots
 #'
-#' This function creates all plots that are the same for both the MAB and NE reports
+#' This function creates all plots that are the same for both the MAB and NE slides
 #'
-#' @param region Region for which to create report plots ("BothReports")
+#' @param region Region for which to create slides plots ("BothReports")
 #'
 #'
 
-# region <- "BothReports"
+region <- "BothReports"
 
-create_plots_both <- function(region = "BothReports") {
-  # setup ----
-
+create_plots_slides_both <- function(region = "BothReports") {
+  
   out_dir <- here::here("images", region)
   if (!dir.exists(out_dir)) {
     dir.create(out_dir)
   }
-
+  
   ## functions ----
-
+  
   # A function to create a standardized filename
   create_filename <- function(
     indicator,
@@ -29,6 +28,7 @@ create_plots_both <- function(region = "BothReports") {
     file.path(
       dir,
       paste0(
+        "slide_",
         indicator,
         "_",
         file_region,
@@ -38,7 +38,7 @@ create_plots_both <- function(region = "BothReports") {
       )
     )
   }
-
+  
   # A flexible function to generate and save a plot
   save_plot <- function(
     plot_expression,
@@ -49,7 +49,7 @@ create_plots_both <- function(region = "BothReports") {
   ) {
     # Execute the code to create the plot
     p <- eval(plot_expression)
-
+    
     # Check if the plot object is valid before saving
     if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
       message(report)
@@ -71,7 +71,7 @@ create_plots_both <- function(region = "BothReports") {
       stop("Plot object is not a valid ggplot or ggarrange object.")
     }
   }
-
+  
   # 9. Thermal Habitat Persistence Plot
   save_plot(
     plot_expression = {
@@ -83,16 +83,15 @@ create_plots_both <- function(region = "BothReports") {
   )
   
   # 5. Energy Density Plot
-  # THIS IS A STATIC PLOT IN 2026
-  # save_plot(
-  #   plot_expression = {
-  #     # plot is the same even though it takes a region parameter
-  #     ecodata::plot_energy_density(report = "NewEngland")
-  #   },
-  #   indicator = "energy_density",
-  #   width = 6.5,
-  #   height = 4
-  # )
+  save_plot(
+    plot_expression = {
+      # plot is the same even though it takes a region parameter
+      ecodata::plot_energy_density(report = "NewEngland") 
+    },
+    indicator = "energy_density",
+    width = 6.5,
+    height = 4
+  )
   
   # GOM ocean acidification
   GOMoa_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf"
@@ -112,7 +111,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "harborporpoise",
     width = 6.5,
-    height = 3
+    height = 4
   )
   
   # gray seal
@@ -122,13 +121,13 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "grayseal",
     width = 6.5,
-    height = 3
+    height = 4
   )
   
   # narw-abundance
   save_plot(
     plot_expression = {
-      ecodata::plot_narw(varName = "adult", n = 10) + 
+      ecodata::plot_narw(varName = "adult", n = 10) +
         ggplot2::ggtitle("North Atlantic right whale abundance") +
         ggplot2::scale_x_continuous(limits = c(1980, 2025))
     },
@@ -169,16 +168,16 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "species_dist",
     width = 6.5,
-    height = 3.5
+    height = 4
   )
   
   # whale and dolphin dist shifts
   save_plot(
     plot_expression = {
-      ecodata::plot_cetacean_dist() +
+      p = ecodata::plot_cetacean_dist() +
         ggplot2::ggtitle("Whale and Dolphin Distribution Shifts") +
         ggplot2::facet_wrap(~season, nrow = 1) +
-        ggplot2::theme(legend.position = "bottom") 
+        ggplot2::theme(legend.position = "bottom")
     },
     indicator = "cetacean_dist",
     width = 7.5,
@@ -193,7 +192,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "forage_dist",
     width = 6.5,
-    height = 5
+    height = 3.5
   )
   
   # longterm sst
@@ -203,7 +202,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "long_term_sst",
     width = 6.5,
-    height = 2.5
+    height = 2
   )
   
   # gsi
@@ -213,14 +212,15 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "west_gsi",
     width = 6.5,
-    height = 2.5
+    height = 2
   )
   
   # cold pool size
   save_plot(
     plot_expression = {
       a <- ecodata::plot_cold_pool(varName = "cold_pool", n = 10)
-      b <- ecodata::plot_cold_pool(varName = "extent", n = 10)
+      b <- ecodata::plot_cold_pool(varName = "extent", n = 10)+
+        ggplot2::ylim(-32000,11000)
       ggpubr::ggarrange(a, b, nrow = 2)
     },
     indicator = "cold_pool",
@@ -368,6 +368,5 @@ create_plots_both <- function(region = "BothReports") {
     width = 6.5,
     height = 4
   )
+  
 }
-
-# create_plots_both(region = "BothReports")
