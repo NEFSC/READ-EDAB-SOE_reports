@@ -215,8 +215,8 @@ res <- knitr::knit_child(input = other_child,
 cat(res, sep = "\n\n")
 ```
 
-<!-- \newpage -->
-`r if(params$region == "NewEngland") "\\newpage"`
+\newpage
+<!-- `r if(params$region == "NewEngland") "\\newpage"` -->
 
 ## Commercial Profits
 
@@ -321,8 +321,8 @@ The UMEs are under investigation and are likely the result of multiple drivers. 
 
 [A climate vulnerability assessment](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0290643) is published for Atlantic and Gulf marine mammal populations.
 
-<!-- \newpage -->
-`r if(params$region == "NewEngland") "\\newpage"`
+\newpage
+<!-- `r if(params$region == "NewEngland") "\\newpage"` -->
 
 ## Stability
 
