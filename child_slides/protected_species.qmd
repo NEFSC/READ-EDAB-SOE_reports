@@ -56,7 +56,7 @@ return_plot("NARW-calf-abundance", region = "BothReports")
 Implications:  
 
 * No change in adult populations since 2020 but mortality still above recovery rate
-* Strong interactions between North Atlantic Right Whales (NARW) and fixed gear fisheries and offshore wind development
+* Interactions between North Atlantic Right Whales (NARW) and fixed gear fisheries and offshore wind development
 * Distribution shifts  driven by copepod availability. 
 * Unusual mortality events continue for 3 large whale species.
 

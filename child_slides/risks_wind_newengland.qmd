@@ -10,7 +10,7 @@ Indicators: fishery and community specific revenue in lease areas
 return_plot("wea-spp-rev", region = "NewEngland", mode = "slide")
 ```
 
-- Although sea scallops have the highest revenue in Active Project areas, representing $\leq 1$% of the total revenue for the fishery. 
+- Although sea scallops have the highest revenue in Active Project areas, it represents $\leq 1$% of the total revenue for the fishery. 
 - Some groundfish and skates have up to 13% of their revenue from Active Project areas, but these species have lower overall revenue than scallops.
 <!-- - Wind lease areas that are under construction or complete generally represent <5% of port-level revenue for New England ports, with the exceptions of Little Compton, RI and Westport, MA. -->
 <!-- - Wind lease areas that have not yet begun construction generally represent <5% of port-level revenue for New England ports, with the exception of Boston, MA. -->

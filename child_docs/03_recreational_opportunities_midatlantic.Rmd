@@ -7,7 +7,7 @@
 ```
 
 ### Indicators: Angler trips, fleet diversity  
-[Recreational effort](https://noaa-edab.github.io/catalog/recdat.html) (angler trips) in the MAB increased from 1982 to 2010, but has since declined to near the long-term average (Fig. \ref{fig:rec-op}). in the MAB. MAB. However, there is a long-term declining trend in recreational fleet diversity (i.e., effort by shoreside, private boat, and for-hire anglers) (Fig. \ref{fig:rec-div}). Billfish landings were notably high in 2025 (See [2025 Highlights](https://noaa-edab.github.io/catalog/observation_synthesis_2025.html) Section), but long-term time series are in development.
+[Recreational effort](https://noaa-edab.github.io/catalog/recdat.html) (angler trips) in the MAB increased from 1982 to 2010, but has since declined to near the long-term average (Fig. \ref{fig:rec-op}). However, there is a long-term declining trend in recreational fleet diversity (i.e., effort by shoreside, private boat, and for-hire anglers) (Fig. \ref{fig:rec-div}). Billfish landings were notably high in 2025 (See [2025 Highlights](https://noaa-edab.github.io/catalog/observation_synthesis_2025.html) Section), and indicator time series are in development.
 
 ```{r rec-op, fig.cap = return_caption(chunk_name = "rec-op", region = "MidAtlantic")}
 return_plot("rec-op", region = "MidAtlantic")

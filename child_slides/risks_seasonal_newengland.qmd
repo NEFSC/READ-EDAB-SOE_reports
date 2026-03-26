@@ -27,7 +27,7 @@ Future considerations
 
 *  Do assumptions of seasonal timings still hold?
 
-*  Strong need for new indicators should be developed to monitor timing shifts for stocks.
+*  Strong need for new indicators to be developed to monitor timing shifts for stocks.
 
 :::
 

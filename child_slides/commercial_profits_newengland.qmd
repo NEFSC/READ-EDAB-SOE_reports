@@ -13,7 +13,7 @@ Both regions' revenue depends on a single species sensitive to environmental cha
 
 Lower percent of total GOM revenue is coming from NEFMC-managed species
 
-New England community landings are _moderately dependent_ on species sensitive to environmental variability with no trend.
+New England community revenue is _moderately dependent_ on species sensitive to environmental variability with no trend.
 
 :::
 
