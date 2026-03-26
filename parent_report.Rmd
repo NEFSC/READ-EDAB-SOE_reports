@@ -15,9 +15,9 @@ params:
   id_child_docs: FALSE
   draft: FALSE
   date: "March 2026"
-# output: 
+# output:
 #   pdf_document:
-#     extra_dependencies: ["float"] 
+#     extra_dependencies: ["float"]
 
 ---
 
@@ -34,7 +34,7 @@ knitr::opts_chunk$set(
   out.width = "100%",
   fig.align = "center",
   cache = params$cache,
-  fig.pos = "!htbp",
+  fig.pos = "T",
   out.extra = ""
   
 ) 

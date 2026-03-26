@@ -28,7 +28,7 @@ difftime(Sys.time(), now)
 now <- Sys.time()
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
-  output_file = "SOE2026_MAFMC_IR_Final.pdf",
+  output_file = "SOE2026_MAFMC_edits.pdf",
   params = list(
     region = "MidAtlantic",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
@@ -43,7 +43,9 @@ rmarkdown::render(
     ),
     keep_tex = TRUE,
     toc = FALSE,
-    number_sections = FALSE
+    number_sections = FALSE,
+    # don't think this is doing anything?
+    extra_dependencies = "float"
   )
 )
 difftime(Sys.time(), now)

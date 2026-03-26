@@ -184,7 +184,7 @@ find_all_files <- function(text, path = here::here()) {
   }
 }
 
-create_contributors <- function(contrib.file, mode) {
+create_contributors <- function(contrib.file, mode = "") {
   if (file.exists(contrib.file)) {
     contributors <- read.csv(contrib.file, stringsAsFactors = FALSE)
 
