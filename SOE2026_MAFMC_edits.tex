@@ -2,13 +2,11 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
 \documentclass[
   10pt,
 ]{article}
-\usepackage{xcolor}
-\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{amsmath,amssymb}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -39,6 +37,8 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
+\usepackage{xcolor}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -67,6 +67,7 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Set up the fonts
 \usepackage[urw-palatino]{mathdesign}
 \usepackage[T1]{fontenc}
@@ -144,7 +145,6 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{colortbl}
-\usepackage{ulem}
 \usepackage{hhline}
 \newlength\Oldarrayrulewidth
 \newlength\Oldtabcolsep
@@ -496,6 +496,8 @@ In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/comdat.html
 
 Mid-Atlantic ports face a moderate to high risk from environmental variability, as evaluated by the 2025 \href{https://noaa-edab.github.io/catalog/community_climate_vulnerability.html}{Community Environmental Variability Risk Indicators} (Fig. \ref{fig:climatevul-land}). These \hyperref[community-social-and-climate-vulnerability]{indicators} assess port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much a region's landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
 
+In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational harvest} (retained fish presumed to be eaten) shows a long-term decline with recent harvest remaining near a time series low (Fig. \ref{fig:rec-landings}). This pattern may indicate a shift towards catch-and-release strategies as opposed to catch for harvest. \href{https://noaa-edab.github.io/catalog/rec_hms.html}{Recreational shark landings} have generally decreased for most shark groups through 2024 (Fig \ref{fig:rec-hms}). The recent low in pelagic shark landings is largely driven by regulatory changes implemented in 2018, followed by the closure of the shortfin mako fishery in 2022. These actions were intended to rebuild the North Atlantic shortfin mako stock and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT).
+
 \begin{figure}[T]
 
 {\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/climatevul_land_MidAtlantic_2026-03-26} 
@@ -504,8 +506,6 @@ Mid-Atlantic ports face a moderate to high risk from environmental variability, 
 
 \caption{Mid-Atlantic region Total Vulnerability of commercial landings (sum of Mid-Atlantic port landings weighted by species vulnerability scores). Horizontal colored bars show different environmental variability risk levels. }\label{fig:climatevul-land}
 \end{figure}
-
-In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational harvest} (retained fish presumed to be eaten) shows a long-term decline with recent harvest remaining near a time series low (Fig. \ref{fig:rec-landings}). This pattern may indicate a shift towards catch-and-release strategies as opposed to catch for harvest. \href{https://noaa-edab.github.io/catalog/rec_hms.html}{Recreational shark landings} have generally decreased for most shark groups through 2024 (Fig \ref{fig:rec-hms}). The recent low in pelagic shark landings is largely driven by regulatory changes implemented in 2018, followed by the closure of the shortfin mako fishery in 2022. These actions were intended to rebuild the North Atlantic shortfin mako stock and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT).
 
 \begin{figure}[T]
 
@@ -819,7 +819,7 @@ The \href{https://noaa-edab.github.io/catalog/engagement.html?q=engage\#introduc
 
 \renewcommand*{\arraystretch}{1}
 
-Of those included in the top-ranked recreational communities, both Morehead City, NC and Virginia Beach, VA had medium or higher ranks for at least one socio-demographic indicator (Table \ref{tab:recvultab}) (Fig. \ref{recreational-engagement}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
+Of those included in the top-ranked recreational communities, both Morehead City, NC and Virginia Beach, VA had medium or higher ranks for at least one socio-demographic indicator (Table \ref{tab:recvultab}) (Fig. \ref{fig:recreational-engagement}). This suggests that future changes to recreational fishing conditions may disproportionately impact these places.
 
 \begin{figure}[T]
 
@@ -1161,6 +1161,8 @@ As noted in the \hyperref[implications]{Seafood Production Implications section}
 
 Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is partially related to the \href{https://noaa-edab.github.io/catalog/forage_index.html}{distribution of forage biomass}. Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts. \href{https://noaa-edab.github.io/catalog/zooplankton_index.html\#key-results-and-visualizations-4}{Small copepods}, widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring (Fig. \ref{fig:smallcopeall-cog}.
 
+Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. \ref{fig:megabenthosshifts}). Megabenthos are large, non-federally-managed benthic invertebrates sampled by scallop dredge, otter trawl, and the Campbell grab. These include crabs, decapods, and sea stars, which are often prey for many managed species.
+
 \begin{figure}[T]
 
 {\centering \includegraphics[width=1\linewidth,]{images/BothReports/forage_dist_BothReports_2026-03-27} 
@@ -1178,8 +1180,6 @@ Mobile populations shift distributions to maintain suitable habitat and prey fie
 
 \caption{Eastward (top) and northward (bottom) shifts in the center of gravity for small copepod species on the Northeast U.S. Shelf in fall (left) and spring (right), with long-term increasing trends (orange)  in fall eastward and fall and spring northward center of gravity}\label{fig:smallcopeall-cog}
 \end{figure}
-
-Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. \ref{fig:megabenthosshifts}). Megabenthos are large, non-federally-managed benthic invertebrates sampled by scallop dredge, otter trawl, and the Campbell grab. These include crabs, decapods, and sea stars, which are often prey for many managed species.
 
 \begin{figure}[T]
 
@@ -1365,7 +1365,7 @@ The health of individual fish (i.e., fish condition, measured as weight for a gi
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-27} 
 
 }
 
@@ -1485,8 +1485,6 @@ The newly-developed \href{https://noaa-edab.github.io/catalog/advection.html}{ad
 \caption{Locations where bottom aragonite saturation state ($\Omega_{Arag}$; summer only: June-August) were at or below the laboratory-derived sensitivity level for Atlantic sea scallop (left panel) and longfin squid (right panel) for the time periods 2007-2022 (dark cyan), 2023 only (magenta) and 2024 only (cyan). Gray circles indicate locations where bottom $\Omega_{Arag}$ values were above the species specific sensitivity values.}\label{fig:mab-oa}
 \end{figure}
 
-`
-
 \href{https://noaa-edab.github.io/catalog/dissolved_oxygen.html}{Low dissolved oxygen levels} (\textless{} 5 mg/L) remained localized and brief on the \href{https://noaa-edab.github.io/catalog/observation_synthesis_2023.html}{MAB shelf in 2025}, resulting in no industry-reported mass mortality events despite the potential for hypoxia to reduce species growth or cause death. Localized hypoxia (\textless{} 2 mg/L) occurred nearshore east of Point Pleasant, NJ, southwest of Newport, RI, and at the western end of the Cape Cod Canal, while broader shelf-wide levels below 5 mg/L were not widespread. This contrast follows previous years where \href{https://noaa-edab.github.io/catalog/observation_synthesis_2023.html}{hypoxic} events in Cape Cod Bay (2019, 2020) and off New Jersey (2023) potentially caused fish, lobster, and crab \href{https://sebsnjaesnews.rutgers.edu/2023/12/rutgers-scientists-observe-unusual-ocean-conditions-possibly-linked-to-mortality-in-marine-life-off-new-jersey/}{mortality}. While shelf-wide monitoring data is currently limited, biological and oceanographic drivers of oxygen levels continue to be tracked to assess the duration and extent of future events.
 
 \subparagraph{Drivers: Predation}\label{drivers-predation}
@@ -1536,6 +1534,8 @@ Offshore wind indicators are based on federal logbook data and do not include al
 \end{figure}
 
 Based on revenue between 2008-2024, MAFMC-managed fisheries derived a maximum of 6\% of annual regional fishery revenue from the Active Project areas. The specific fisheries affected include chub mackerel (6\% of revenue), bluefish (5\%), butterfish (4\%), and monkfish, scup, black sea bass, and longfin squid (3\% each) (Table \ref{tab:wea-landings-rev}). Future offshore wind development may increase effects on these and additional species if more projects begin construction. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings and/or revenue.
+
+\newpage
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -1691,6 +1691,8 @@ The increase of offshore wind development can have both positive (e.g., employme
 \paragraph{Marine Aquaculture}\label{marine-aquaculture}
 
 Aquaculture fisheries and federally-managed fisheries could compete with or benefit each other with spatial access, shoreside infrastructure, or the supply of seafood. Unlike offshore wind, offshore aquaculture is not regulated by any federal leasing program but is permitted via the U.S. Army Corps of Engineers and the U.S. EPA. Currently, there are no federally-permitted aquaculture projects in the Northeast U.S. The marine aquaculture industry of the Northeast currently occurs in nearshore waters which are regulated by state leasing and permitting processes and federal permitting processes, as applicable. Analyses are needed to quantify the nearshore spatial distribution of aquaculture in the Northeast.
+
+\newpage
 
 \subsubsection{2025 Highlights}\label{highlights}
 

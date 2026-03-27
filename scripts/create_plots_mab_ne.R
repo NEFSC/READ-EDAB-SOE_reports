@@ -689,6 +689,7 @@ create_plots_mab_and_ne <- function(region) {
           varName = "length_maturity",
           n = 10
         ) +
+          ggplot2::facet_grid() +
           ggplot2::theme(legend.position = 'bottom')
       } else {
         ecodata::plot_finfish_traits(
@@ -715,6 +716,7 @@ create_plots_mab_and_ne <- function(region) {
           varName = "trophic_level",
           n = 10
         ) +
+          ggplot2::facet_grid() +
           ggplot2::theme(legend.position = 'bottom') +
           ggplot2::ylab('Trophic Level')
       } else {
@@ -728,9 +730,9 @@ create_plots_mab_and_ne <- function(region) {
           ggplot2::facet_wrap(~EPU, nrow = 2)
       }
     },
-    indicator = "traits_trophic_level",
+    indicator = "traits_tl",
     width = 6.5,
-    height = 4.5
+    height = ifelse(region == "NewEngland", 4.5, 3.5)
   )
 
   #finfish traits - growth rate
@@ -738,6 +740,7 @@ create_plots_mab_and_ne <- function(region) {
     plot_expression = {
       if (region == "MidAtlantic") {
         ecodata::plot_finfish_traits(report = region, varName = "k", n = 10) +
+          ggplot2::facet_grid() +
           ggplot2::theme(legend.position = 'bottom') +
           ggplot2::ylab('Growth coefficient (k)')
       } else {
@@ -747,9 +750,9 @@ create_plots_mab_and_ne <- function(region) {
           ggplot2::facet_wrap(~EPU, nrow = 2)
       }
     },
-    indicator = "traits_growth_rate",
+    indicator = "traits_k",
     width = 6.5,
-    height = 4.5
+    height = ifelse(region == "NewEngland", 4.5, 3.5)
   )
 
   ## Community social and climate vulnerability ----
@@ -866,7 +869,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "productivity_anomaly",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 8.5, 8)
+    height = ifelse(region == "NewEngland", 8.5, 7.5)
   )
 
   # condition factor

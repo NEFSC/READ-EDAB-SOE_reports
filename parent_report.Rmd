@@ -371,6 +371,8 @@ return_plot("protectedspp-dist-shifts", region = "BothReports")
 
 Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists.  Changes in managed species distribution is partially related to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts. [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring (Fig. \ref{fig:smallcopeall-cog}. 
 
+Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. \ref{fig:megabenthosshifts}). Megabenthos are large, non-federally-managed benthic invertebrates sampled by scallop dredge, otter trawl, and the Campbell grab. These include crabs, decapods, and sea stars, which are often prey for many managed species.
+
 ```{r calfin-cog, fig.cap = return_caption(chunk_name = "calfin-cog", region = "NewEngland"), fig.width = 7.5, fig.asp = .3, eval = params$region == 'NewEngland'}
 # return_plot("calfin-cog", region = "NewEngland")
 # removing for now because calfin is included in large copepod cog plot and the calfin-specific plot is not adding much information
@@ -393,8 +395,6 @@ if (params$region == 'NewEngland') {
   cat("\\newpage")
 }
 ```
-
-Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. \ref{fig:megabenthosshifts}). Megabenthos are large, non-federally-managed benthic invertebrates sampled by scallop dredge, otter trawl, and the Campbell grab. These include crabs, decapods, and sea stars, which are often prey for many managed species.
 
 ```{r megabenthosshifts, fig.cap= return_caption(chunk_name = "megabenthosshifts", region = "BothReports"), fig.width=6.5, fig.asp=0.8}
 return_plot("megabenthosshifts", region = "BothReports")
@@ -587,8 +587,8 @@ The increase of offshore wind development can have both positive (e.g., employme
 #### Marine Aquaculture
 Aquaculture fisheries and federally-managed fisheries could compete with or benefit each other  with spatial access, shoreside infrastructure, or the supply of seafood. Unlike offshore wind, offshore aquaculture is not regulated by any federal leasing program but is permitted via the U.S. Army Corps of Engineers and the U.S. EPA. Currently, there are no federally-permitted aquaculture projects in the Northeast U.S. The marine aquaculture industry of the Northeast currently occurs in nearshore waters which are regulated by state leasing and permitting processes and federal permitting processes, as applicable. Analyses are needed to quantify the nearshore spatial distribution of aquaculture in the Northeast. 
 
-<!-- \newpage -->
-`r if(params$region == "NewEngland") "\\newpage"`
+\newpage
+<!-- `r if(params$region == "NewEngland") "\\newpage"` -->
 
 ### 2025 Highlights {#highlights}
 

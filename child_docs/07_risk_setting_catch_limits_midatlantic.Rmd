@@ -88,7 +88,6 @@ return_plot("advection-index", region = "MidAtlantic")
 ```{r mab-oa, eval = TRUE, out.width = '100%', fig.asp = 0.4, fig.cap = return_caption(chunk_name = "mab-oa", region = "BothReports")}
 return_plot("mab-oa", region = "BothReports")
 ```
-`
 
 [Low dissolved oxygen levels](https://noaa-edab.github.io/catalog/dissolved_oxygen.html) (< 5 mg/L) remained localized and brief on the [MAB shelf in 2025](https://noaa-edab.github.io/catalog/observation_synthesis_2023.html), resulting in no industry-reported mass mortality events despite the potential for hypoxia to reduce species growth or cause death. Localized hypoxia (< 2 mg/L) occurred nearshore east of Point Pleasant, NJ, southwest of Newport, RI, and at the western end of the Cape Cod Canal, while broader shelf-wide levels below 5 mg/L were not widespread. This contrast follows previous years where [hypoxic](https://noaa-edab.github.io/catalog/observation_synthesis_2023.html) events in Cape Cod Bay (2019, 2020) and off New Jersey (2023) potentially caused fish, lobster, and crab [mortality](https://sebsnjaesnews.rutgers.edu/2023/12/rutgers-scientists-observe-unusual-ocean-conditions-possibly-linked-to-mortality-in-marine-life-off-new-jersey/). While shelf-wide monitoring data is currently limited, biological and oceanographic drivers of oxygen levels continue to be tracked to assess the duration and extent of future events.
 
