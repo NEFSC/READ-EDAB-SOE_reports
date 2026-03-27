@@ -406,8 +406,8 @@ save_plot(
     }
   },
   indicator = "bennet_all",
-  width = ifelse(region == "NewEngland", 9, 6.5),
-  height = 6.5
+  height = ifelse(region == "NewEngland", 9, 4),
+  width = 6.5
 )
 
 # 4. Climate Vulnerability Revenue Plot
@@ -714,9 +714,9 @@ save_plot(
         ggplot2::facet_wrap(~EPU, nrow = 2)
     }
   },
-  indicator = "traits_trophic_level",
+  indicator = "traits_tl",
   width = 6.5,
-  height = 4.5
+  height = 3.5
 )
 
 #finfish traits - growth rate
@@ -733,9 +733,9 @@ save_plot(
         ggplot2::facet_wrap(~EPU, nrow = 2)
     }
   },
-  indicator = "traits_growth_rate",
+  indicator = "traits_k",
   width = 6.5,
-  height = 4.5
+  height = 3.5
 )
 
 ## Community social and climate vulnerability ----
@@ -808,7 +808,7 @@ save_plot(
   },
   indicator = "monthly_chl",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 7, 4)
+  height = ifelse(region == "NewEngland", 7, 3.5)
 )
 
 ### Risks to setting catch limits ----
@@ -930,7 +930,7 @@ save_plot(
   },
   indicator = "benthos",
   width = 6.5,
-  height = 4
+  height = 5
 )
 
 # 8. Zooplankton Anomaly Plot
@@ -1233,12 +1233,11 @@ save_plot(
 # forage shifts
 save_plot(
   plot_expression = {
-    ecodata::plot_forage_index(varName = "cog", n = 10) +
-      ggplot2::coord_cartesian(xlim = c(1982, 2023)) 
+    ecodata::plot_forage_index(varName = "cog", n = 10)
   },
   indicator = "forage_dist",
   width = 6.5,
-  height = 5
+  height = 3.5
 )
 
 # longterm sst
@@ -1329,7 +1328,7 @@ save_plot(
   },
   indicator = "smallcopeall_cog",
   width = 6.5,
-  height = 4
+  height = 3.5
 )
 
 # large cope center of gravity
@@ -1345,7 +1344,7 @@ save_plot(
   },
   indicator = "lgcopeall_cog",
   width = 6.5,
-  height = 4
+  height = 3.5
 )
 
 # macrobenthos shifts
@@ -1411,7 +1410,7 @@ save_plot(
   },
   indicator = "euph_cog",
   width = 6.5,
-  height = 4
+  height = 3.5
 )
 
 

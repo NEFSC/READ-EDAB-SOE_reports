@@ -2,11 +2,13 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
-%
 \documentclass[
   10pt,
 ]{article}
+\usepackage{xcolor}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -37,8 +39,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -67,7 +67,6 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Set up the fonts
 \usepackage[urw-palatino]{mathdesign}
 \usepackage[T1]{fontenc}
@@ -145,6 +144,7 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{colortbl}
+\usepackage{ulem}
 \usepackage{hhline}
 \newlength\Oldarrayrulewidth
 \newlength\Oldtabcolsep
@@ -522,7 +522,7 @@ In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/recdat.html
 
 }
 
-\caption{Recreational shark landings in the Mid-Atlantic region from NOAA Fisheries Large Pelagics Survey (top, with short-term sigificant decline in dark purple) and Marine Recreational Information Program (MRIP, bottom) with declining trends (purple). Note that the trend line is associated with the Large Coastal group, which has had no reported MRIP landings after 2020.}\label{fig:rec-hms}
+\caption{Recreational shark landings in the Mid-Atlantic region from NOAA Fisheries Large Pelagics Survey (top, with short-term sigificant decline in dark purple) and Marine Recreational Information Program (MRIP, bottom) with long-term declining trend (purple). Note that the trend line is associated with the Large Coastal group, which has had no reported MRIP landings after 2020.}\label{fig:rec-hms}
 \end{figure}
 
 \href{https://noaa-edab.github.io/catalog/aquaculture.html?q=aqua\#aquaculture}{Aquaculture} can comprise a significant proportion of seafood production in specific communities, but not all aquaculture production is included in total seafood landings above. In 2022, the Northeast region produced approximately 6,300 metric tons of aquacultured shellfish, with revenue of \$133 million.
@@ -613,7 +613,7 @@ Total \href{https://noaa-edab.github.io/catalog/comdat.html}{commercial revenue}
 
 }
 
-\caption{Commercial revenue (2024 USD) through 2024 for the Mid-Atlantic region: total (black) and from Mid Atlantic Fishery Managment Councli managed species (red). Dashed lines represent the long-term annual mean. A short-term significant decrease is present for total revenue (purple).}\label{fig:comm-revenue}
+\caption{Commercial revenue (2024 USD) through 2024 for the Mid-Atlantic region: total (black) and from Mid-Atlantic Fishery Managment Councli managed species (red). Dashed lines represent the long-term annual mean. A short-term significant decrease is present for total revenue (purple).}\label{fig:comm-revenue}
 \end{figure}
 
 Revenue earned by harvesting resources is a function of both the quantity landed of each species and the prices paid for landings. Therefore, total revenue patterns can be driven by harvest levels, the mix of species landed, price changes, or a combination of these. The \href{https://noaa-edab.github.io/catalog/bennet.html}{Bennet Indicator} (BI) decomposes revenue change into two parts, one driven by changing quantities (volumes), and a second driven by changing prices. All changes are in relation to a base year (1982). The 1982 base year was selected because that is the first year the relevant data is available and it allows for an extended period of time to evaluate market trends and dynamics. The BI results demonstrate that relatively high revenues in 2014-2016 were somewhat equally due to higher landings and prices (Fig. \ref{fig:bennet}). In more recent years, both landings and prices have been closer to values from the reference year (1982). Low prices coupled with low volumes landed led to low revenue in 2024. Recent lower than baseline revenues are partially due to lower volumes and prices of benthos species (Fig. \ref{fig:bennet-all}).
@@ -629,7 +629,7 @@ Revenue earned by harvesting resources is a function of both the quantity landed
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bennet_all_MidAtlantic_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bennet_all_MidAtlantic_2026-03-27} 
 
 }
 
@@ -642,7 +642,7 @@ Revenue earned by harvesting resources is a function of both the quantity landed
 
 }
 
-\caption{Profitability indices for Mid Atlantic federally managed species: cost index (red), profit index (green), and revenue index (blue). Dashed lines represent the long-term annual means for each index. Long-term declining trend (purple) associated with revenue index.}\label{fig:comdat-profit}
+\caption{Profitability indices for Mid-Atlantic federally managed species: cost index (red), profit index (green), and revenue index (blue). Dashed lines represent the long-term annual means for each index. Long-term declining trend (purple) associated with revenue index.}\label{fig:comdat-profit}
 \end{figure}
 
 This year, we present new indicators of \href{https://noaa-edab.github.io/catalog/comdat_profit.html}{profitability}: indices of cost, revenue, and profit based on trips catching federally-managed species. In this index, costs pertain to trip costs, excluding labor, estimated for all federal trips in the region. The profit indicator is net-revenue, determined as the difference between trip revenue and trip costs. Trips were spatially allocated to compile regional indices. Indices are presented as values relative to 2000, the first year in the dataset. In the Mid-Atlantic, costs have fluctuated, but overall remain near the time series mean, despite some high costs in 2022, 2014 and 2008. The revenue index, however, has declined steadily since 2019 and is driving an overall decline in profits (Fig. \ref{fig:comdat-profit}).
@@ -944,7 +944,7 @@ While long-term risk trends across the Mid-Atlantic remain stable, most individu
 
 }
 
-\caption{Proportion of Mid-Atlantic communities at each revenue environmental variability risk level over time. Total vulnerability ranges from low (green), moderate (yellow), high (orange), to very high (red).}\label{fig:commvulex}
+\caption{Proportion of Mid-Atlantic communities at each revenue environmental variability risk level over time. Total vulnerability ranges from low (green), moderate (yellow), high (orange), to very high (red), with a long-term increase (orange) in very high risk communities and long-term declines (purple) in moderate and low risk communities.}\label{fig:commvulex}
 \end{figure}
 
 \subsubsection{Implications}\label{implications-3}
@@ -1048,7 +1048,7 @@ Despite reduced \href{https://noaa-edab.github.io/catalog/recdat.html}{recreatio
 
 }
 
-\caption{Species revenue diversity (permit-level species effective Shannon index) in the Mid Atlantic.}\label{fig:commercial-div-species-div}
+\caption{Species revenue diversity (permit-level species effective Shannon index) in the Mid-Atlantic.}\label{fig:commercial-div-species-div}
 \end{figure}
 
 \begin{figure}[T]
@@ -1057,7 +1057,7 @@ Despite reduced \href{https://noaa-edab.github.io/catalog/recdat.html}{recreatio
 
 }
 
-\caption{Diversity of recreational catch in the Mid Atlantic. Derived from NOAA Fisheries Marine Recreational Information Program's Catch Time Series Query.}\label{fig:recdat-div-catch}
+\caption{Diversity of recreational catch in the Mid-Atlantic. Derived from NOAA Fisheries Marine Recreational Information Program's Catch Time Series Query.}\label{fig:recdat-div-catch}
 \end{figure}
 
 \paragraph{Ecological Stability}\label{ecological-stability}
@@ -1097,20 +1097,20 @@ There are long-term increases in the biomass of the euphausid, benthivore, and b
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/traits_k_MidAtlantic_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/traits_k_MidAtlantic_2026-03-27} 
 
 }
 
-\caption{Fish community functional traits (growth rate) in the Mid Atlantic Bight based on Fall (red) and Spring (blue) survey data with a significant long-term increase (orange) present in the fall. Dashed lines represent the long-term annual mean for each survey.}\label{fig:traits-k}
+\caption{Fish community functional traits (growth rate) in the Mid-Atlantic Bight based on Fall (red) and Spring (blue) survey data with a significant long-term increase (orange) present in the fall. Dashed lines represent the long-term annual mean for each survey.}\label{fig:traits-k}
 \end{figure}
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/traits_tl_MidAtlantic_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/traits_tl_MidAtlantic_2026-03-27} 
 
 }
 
-\caption{Fish community functional traits (trophic level) in the Mid Atlantic Bight based on Fall (red) and Spring (blue) survey data with a significant long-term decrease (purple) present in the fall. Dashed lines represent the long-term annual mean for each survey.}\label{fig:traits-tl}
+\caption{Fish community functional traits (trophic level) in the Mid-Atlantic Bight based on Fall (red) and Spring (blue) survey data with a significant long-term decrease (purple) present in the fall. Dashed lines represent the long-term annual mean for each survey.}\label{fig:traits-tl}
 \end{figure}
 
 \subsubsection{Implications}\label{implications-5}
@@ -1163,7 +1163,7 @@ Mobile populations shift distributions to maintain suitable habitat and prey fie
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/forage_dist_BothReports_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/forage_dist_BothReports_2026-03-27} 
 
 }
 
@@ -1172,7 +1172,7 @@ Mobile populations shift distributions to maintain suitable habitat and prey fie
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/smallcopeall_cog_BothReports_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/smallcopeall_cog_BothReports_2026-03-27} 
 
 }
 
@@ -1183,7 +1183,7 @@ Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. 
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/megabenthos_dist_BothReports_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/megabenthos_dist_BothReports_2026-03-27} 
 
 }
 
@@ -1196,7 +1196,7 @@ In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macro
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/macrobenthos_dist_BothReports_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/macrobenthos_dist_BothReports_2026-03-27} 
 
 }
 
@@ -1205,7 +1205,7 @@ In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macro
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/lgcopeall_cog_BothReports_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/lgcopeall_cog_BothReports_2026-03-27} 
 
 }
 
@@ -1214,7 +1214,7 @@ In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macro
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/euph_cog_BothReports_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/euph_cog_BothReports_2026-03-27} 
 
 }
 
@@ -1229,12 +1229,12 @@ Ocean temperatures influence the distribution, seasonal timing, and productivity
 
 }
 
-\caption{Seasonal Optimum Interpolation Sea Surface Temperature (OISST) anomaly by season for the Mid-Atlantic Bight, with long-term increasing trends (orange).}\label{fig:seasonal-oisst-anom}
+\caption{Seasonal Optimum Interpolation Sea Surface Temperature (OISST) anomaly by season for the Mid-Atlantic Bight, with long-term increasing trends (orange) in spring, summer, and fall, and short-term increasing trend in spring.}\label{fig:seasonal-oisst-anom}
 \end{figure}
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bottom_temp_insitu_MidAtlantic_2026-03-16} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bottom_temp_insitu_MidAtlantic_2026-03-26} 
 
 }
 
@@ -1342,7 +1342,7 @@ The seasonal timing of Mid-Atlantic \href{https://noaa-edab.github.io/catalog/ch
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/monthly_chl_MidAtlantic_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/monthly_chl_MidAtlantic_2026-03-27} 
 
 }
 
@@ -1415,7 +1415,7 @@ Changes in the overall abundance of forage fish can influence managed species pr
 
 \begin{figure}[T]
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/benthos_MidAtlantic_2026-03-26} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/benthos_MidAtlantic_2026-03-27} 
 
 }
 
@@ -1471,7 +1471,7 @@ The newly-developed \href{https://noaa-edab.github.io/catalog/advection.html}{ad
 
 }
 
-\caption{Net advection in June across the Mid-Atlantic continental shelf break within 3 depth bands, with significant long-term declines (purple). }\label{fig:advection-index}
+\caption{Net advection in June across the Mid-Atlantic continental shelf break within 3 depth bands, with significant long-term declines (purple) in >40m and <15m. }\label{fig:advection-index}
 \end{figure}
 
 \href{https://noaa-edab.github.io/catalog/ocean_acidification.html}{Ocean acidification} (OA) risks vary among species and include reduced survival, growth, reproduction, and productivity, where high OA risk indicates potential negative effects to species. OA risk can also be heightened during colder conditions due to increased CO2 absorption by colder water or by transport of high CO2 water masses as was suggested to have occurred in 2024 (see \href{https://noaa-edab.github.io/catalog/observation_synthesis_2024.html}{2024 Highlights}). The OA indicator observed on the Mid-Atlantic coastal shelf during summer 2024 was the most extreme recorded when compared to all of the years sampled (since 2007). In 2025, however, OA risk conditions were less than those observed in 2023 and 2024. High OA conditions in 2025 were limited to a few outer shelf coastal New Jersey (NJ) observations in spring, where sensitivity levels for Atlantic sea scallops were exceeded (not shown, see \href{https://noaa-edab.github.io/catalog/ocean_acidification.html}{ocean acidification}), and in nearshore NJ waters in summer, where sensitivity levels for Longfin squid were reached (Fig. \ref{fig:mab-oa}). Although relatively cool bottom seawater temperatures in 2025 were similar to 2024, salinity was higher in 2025, which suggests a different composition of oceanographic properties and water masses between the two years and as a result, different OA risk conditions.
