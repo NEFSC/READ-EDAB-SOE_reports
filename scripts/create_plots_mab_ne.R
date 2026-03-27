@@ -390,7 +390,7 @@ create_plots_mab_and_ne <- function(region) {
       }
     },
     indicator = "bennet_all",
-    width = ifelse(region == "NewEngland", 9, 6.5),
+    width = ifelse(region == "NewEngland", 9, 4),
     height = 6.5
   )
 
@@ -822,7 +822,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "monthly_chl",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 7, 4)
+    height = ifelse(region == "NewEngland", 7, 3.5)
   )
 
   ### Risks to setting catch limits ----
@@ -959,7 +959,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "benthos",
     width = 6.5,
-    height = 4
+    height = 5
   )
 
   # 8. Zooplankton Anomaly Plot
