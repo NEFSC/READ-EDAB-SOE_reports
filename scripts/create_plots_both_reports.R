@@ -193,7 +193,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "forage_dist",
     width = 6.5,
-    height = 5
+    height = 3.5
   )
 
   # longterm sst
@@ -225,7 +225,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "cold_pool",
     width = 6.5,
-    height = 5
+    height = 4
   )
 
   # cold pool timing
@@ -267,7 +267,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "slopewater",
     width = 6,
-    height = 4
+    height = 2.5
   )
 
   # small cope center of gravity
@@ -283,7 +283,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "smallcopeall_cog",
     width = 6.5,
-    height = 4
+    height = 3.5
   )
 
   # large cope center of gravity
@@ -299,7 +299,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "lgcopeall_cog",
     width = 6.5,
-    height = 4
+    height = 3.5
   )
 
   # macrobenthos shifts
@@ -366,7 +366,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "euph_cog",
     width = 6.5,
-    height = 4
+    height = 3.5
   )
 }
 

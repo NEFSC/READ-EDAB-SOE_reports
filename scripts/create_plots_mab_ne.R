@@ -101,7 +101,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "total_landings",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3),
+    height = ifelse(region == "NewEngland", 5, 2.5),
   )
 
   # commercial landings
@@ -347,7 +347,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "bennet",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 6, 3)
+    height = ifelse(region == "NewEngland", 6, 2.5)
   )
 
   # bennet all
@@ -402,7 +402,10 @@ create_plots_mab_and_ne <- function(region) {
         plottype = "regionrev",
         n = 30
       ) +
-        ggplot2::theme(legend.position = "bottom") +
+        ggplot2::theme(
+          legend.position = "bottom",
+          legend.title = ggplot2::element_blank()
+        ) +
         ggplot2::ylab("Total Vulnerability \n (Regional Revenue)")
     },
     indicator = "climatevul_rev",
@@ -422,7 +425,10 @@ create_plots_mab_and_ne <- function(region) {
             limits = c("cost_index", "profit_index", "revenue_index"),
             labels = c("Cost Index", "Profit Index", "Revenue Index")
           ) +
-          ggplot2::theme(legend.position = "bottom")
+          ggplot2::theme(
+            legend.position = "bottom",
+            legend.title = ggplot2::element_blank()
+          )
       } else {
         gb <- ecodata::plot_comdat_profit(
           report = region,
@@ -444,13 +450,16 @@ create_plots_mab_and_ne <- function(region) {
             limits = c("cost_index", "profit_index", "revenue_index"),
             labels = c("Cost Index", "Profit Index", "Revenue Index")
           ) +
-          ggplot2::theme(legend.position = "bottom")
+          ggplot2::theme(
+            legend.position = "bottom",
+            legend.title = ggplot2::element_blank()
+          )
         ggpubr::ggarrange(gb, gom, nrow = 2)
       }
     },
     indicator = "comdat_profit",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 8, 4.5)
+    height = ifelse(region == "NewEngland", 8, 2.5)
   )
 
   ## Recreational opportunities ----
@@ -658,7 +667,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "exp_n",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3.5)
+    height = ifelse(region == "NewEngland", 5, 2.5)
   )
 
   #zooplankton community PCA
@@ -677,7 +686,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "zoo_community",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3.5)
+    height = ifelse(region == "NewEngland", 5, 2.5)
   )
 
   # finfish traits
@@ -704,7 +713,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "traits",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 3.5)
+    height = ifelse(region == "NewEngland", 5, 2.5)
   )
 
   #finfish traits - trophic level
@@ -732,7 +741,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "traits_tl",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 4.5, 3.5)
+    height = ifelse(region == "NewEngland", 4.5, 2.5)
   )
 
   #finfish traits - growth rate
@@ -752,7 +761,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "traits_k",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 4.5, 3.5)
+    height = ifelse(region == "NewEngland", 4.5, 2.5)
   )
 
   ## Community social and climate vulnerability ----
@@ -799,7 +808,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "commvulex",
     width = 6.5,
-    height = 4
+    height = 3
   )
 
   ### Risks to managing seasonally ----
@@ -1017,7 +1026,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "advection_index",
     width = 6.5,
-    height = 4.5
+    height = 3
   )
 
   # Seasonal OISST Anomaly - MAB ONLY
@@ -1090,6 +1099,6 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "wind_revenue",
     width = 6.5,
-    height = 4
+    height = 2.5
   )
 }
