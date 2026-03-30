@@ -107,7 +107,7 @@ save_plot(
   },
   indicator = "total_landings",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 3),
+  height = ifelse(region == "NewEngland", 5, 2.5),
 )
 
 # commercial landings
@@ -370,7 +370,7 @@ save_plot(
   },
   indicator = "bennet",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 6, 3)
+  height = ifelse(region == "NewEngland", 6, 2.5)
 ) 
 
 # bennet all
@@ -468,7 +468,7 @@ save_plot(
   },
   indicator = "comdat_profit",
   width = 6.5,
-  height = ifelse (region == "NewEngland", 8, 4.5)
+  height = ifelse (region == "NewEngland", 8, 4)
 )
 
 
@@ -655,7 +655,7 @@ save_plot(
   },
   indicator = "exp_n",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 3.5)
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 #zooplankton community PCA
@@ -674,7 +674,7 @@ save_plot(
   },
   indicator = "zoo_community",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 3.5)
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 
@@ -683,30 +683,30 @@ save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
       ecodata::plot_finfish_traits(report = region, varName = "length_maturity", n = 10)  +
-             ggplot2::theme(legend.position = 'bottom')
+        ggplot2::theme(legend.position = 'bottom')
     } else {
       ecodata::plot_finfish_traits(
         report = region,
         varName = 'fecundity',
         n = 10
       )   +
-             ggplot2::ylab('Fecundity (number of \noffspring per mature female)') +
-            ggplot2::theme(legend.position = 'bottom') +
-           ggplot2::facet_wrap(~EPU, nrow = 2)
+        ggplot2::ylab('Fecundity (number of \noffspring per mature female)') +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
     }
   },
   indicator = "traits",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 3.5)
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 #finfish traits - trophic level
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-    ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
-         ggplot2::theme(legend.position = 'bottom') +
-         ggplot2::ylab('Trophic Level')
+      ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::ylab('Trophic Level')
     } else {
       ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
         ggplot2::theme(legend.position = 'bottom') +
@@ -716,16 +716,16 @@ save_plot(
   },
   indicator = "traits_tl",
   width = 6.5,
-  height = 3.5
+  height = 2.5
 )
 
 #finfish traits - growth rate
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-    ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
-         ggplot2::theme(legend.position = 'bottom') +
-         ggplot2::ylab('Growth coefficient (k)')
+      ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::ylab('Growth coefficient (k)')
     } else {
       ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
         ggplot2::theme(legend.position = 'bottom') +
@@ -735,7 +735,7 @@ save_plot(
   },
   indicator = "traits_k",
   width = 6.5,
-  height = 3.5
+  height = 2.5
 )
 
 ## Community social and climate vulnerability ----
@@ -1128,16 +1128,17 @@ save_plot(
   height = 4
 )
 
-# 5. Energy Density Plot
-save_plot(
-  plot_expression = {
-    # plot is the same even though it takes a region parameter
-    ecodata::plot_energy_density(report = "NewEngland")
-  },
-  indicator = "energy_density",
-  width = 6.5,
-  height = 4
-)
+# # 5. Energy Density Plot
+# IN 2026 REPORT AS A STATIC PLOT
+# save_plot(
+#   plot_expression = {
+#     # plot is the same even though it takes a region parameter
+#     ecodata::plot_energy_density(report = "NewEngland")
+#   },
+#   indicator = "energy_density",
+#   width = 6.5,
+#   height = 4
+# )
 
 # GOM ocean acidification
 GOMoa_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf"
@@ -1157,7 +1158,7 @@ save_plot(
   },
   indicator = "harborporpoise",
   width = 6.5,
-  height = 3
+  height = 2.5
 )
 
 # gray seal
@@ -1167,7 +1168,7 @@ save_plot(
   },
   indicator = "grayseal",
   width = 6.5,
-  height = 3
+  height = 2.5
 )
 
 # narw-abundance
