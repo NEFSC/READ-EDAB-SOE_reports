@@ -1,0 +1,119 @@
+section_name,line_number,shorthand,url,verified,status_code
+Document Orientation,383,statistically significant,https://noaa-edab.github.io/tech-doc/trend-analysis.html,TRUE,200
+Indicators: Landings; commercial and recreational,478,commercial landings,https://noaa-edab.github.io/catalog/comdat.html,TRUE,200
+Indicators: Landings; commercial and recreational,478,guild,https://noaa-edab.github.io/catalog/species_groupings.html,TRUE,200
+Indicators: Landings; commercial and recreational,498,Community Environmental Variability Risk Indicators,https://noaa-edab.github.io/catalog/community_climate_vulnerability.html,FALSE,404
+Indicators: Landings; commercial and recreational,500,recreational harvest,https://noaa-edab.github.io/catalog/recdat.html,TRUE,200
+Indicators: Landings; commercial and recreational,500,Recreational shark landings,https://noaa-edab.github.io/catalog/rec_hms.html,TRUE,200
+Indicators: Landings; commercial and recreational,529,Aquaculture,https://noaa-edab.github.io/catalog/aquaculture.html?q=aqua#aquaculture,FALSE,404
+Implications,537,management objectives,https://noaa-edab.github.io/catalog/stock_status.html,TRUE,200
+Implications,570,Aggregate biomass,https://noaa-edab.github.io/catalog/aggregate_biomass.html,TRUE,200
+Indicators: revenue \& net revenue,609,commercial revenue,https://noaa-edab.github.io/catalog/comdat.html,TRUE,200
+Indicators: revenue \& net revenue,620,Bennet Indicator,https://noaa-edab.github.io/catalog/bennet.html,TRUE,200
+Indicators: revenue \& net revenue,649,profitability,https://noaa-edab.github.io/catalog/comdat_profit.html,TRUE,200
+Indicators: revenue \& net revenue,651,total vulnerability,https://noaa-edab.github.io/catalog/community_climate_vulnerability.html,FALSE,404
+Implications,664,landings per unit effort,https://noaa-edab.github.io/catalog/effective_sweptarea.html,TRUE,200
+Implications,664,warming,https://noaa-edab.github.io/catalog/bottom_temp_insitu.html,TRUE,200
+Implications,664,ocean acidification,https://noaa-edab.github.io/catalog/ocean_acidification,TRUE,200
+"Indicators: Angler trips, fleet diversity",670,Recreational effort,https://noaa-edab.github.io/catalog/recdat.html,TRUE,200
+"Indicators: Angler trips, fleet diversity",670,2025 Highlights,https://noaa-edab.github.io/catalog/observation_synthesis_2025.html,TRUE,200
+Social and Community Risks,700,composite indicator,https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72,TRUE,200
+Social and Community Risks,702,engagement,https://noaa-edab.github.io/catalog/engagement.html,TRUE,200
+Indicators: Port Commercial Fishing Activity and Community Social Vulnerability,710,Port Commercial Fishing Activity Indicator (PCFA),https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72,TRUE,200
+Indicators: Community Environmental Variability Risk in the Mid-Atlantic,938,Community Environmental Variability Risk Indicators,https://noaa-edab.github.io/catalog/community_climate_vulnerability.html,FALSE,404
+Implications,955,ocean temperature,https://noaa-edab.github.io/catalog/bottom_temp_insitu.html,TRUE,200
+Implications,955,acidification,https://noaa-edab.github.io/catalog/ocean_acidification.html,TRUE,200
+"Indicators: bycatch, population (adult and juvenile) numbers, mortalities",963,harbor porpoise,https://noaa-edab.github.io/catalog/harborporpoise.html,TRUE,200
+"Indicators: bycatch, population (adult and juvenile) numbers, mortalities",974,gray seals,https://noaa-edab.github.io/catalog/grayseal.html,TRUE,200
+"Indicators: bycatch, population (adult and juvenile) numbers, mortalities",985,North Atlantic right whale population,https://noaa-edab.github.io/catalog/narw.html,TRUE,200
+"Indicators: bycatch, population (adult and juvenile) numbers, mortalities",996,calf counts,https://noaa-edab.github.io/catalog/narw.html,TRUE,200
+"Indicators: bycatch, population (adult and juvenile) numbers, mortalities",1007,the UME,https://www.fisheries.noaa.gov/national/marine-life-distress/2017-2026-north-atlantic-right-whale-unusual-mortality-event,TRUE,200
+Implications,1013,U.S. pup counts,https://noaa-edab.github.io/catalog/seal_pups.html,TRUE,200
+Implications,1015,Recent research,https://noaa-edab.github.io/catalog/narw.html,TRUE,200
+Implications,1015,primary right whale prey,https://noaa-edab.github.io/catalog/preyfield_energy.html,TRUE,200
+Implications,1019,A climate vulnerability assessment,https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0290643,TRUE,200
+Stability,1029,Revenue per unit effort,https://noaa-edab.github.io/catalog/effective_sweptarea.html,TRUE,200
+Stability,1031,Crew Survey,https://noaa-edab.github.io/catalog/crew_survey.html,TRUE,200
+Stability,1031,Communities at Sea,https://noaa-edab.github.io/catalog/communities_at_sea.html,TRUE,200
+Stability,1033,recreational landings,https://noaa-edab.github.io/catalog/recdat.html,TRUE,200
+Stability,1033,recreational fleet effort diversity,https://noaa-edab.github.io/catalog/recdat.html,TRUE,200
+Stability,1064,primary production,https://noaa-edab.github.io/catalog/chl_pp.html,TRUE,200
+Stability,1064,Zooplankton diversity,https://noaa-edab.github.io/catalog/zoo_diversity.html,TRUE,200
+Stability,1064,zooplankton communities,https://noaa-edab.github.io/catalog/zoo_community.html,TRUE,200
+Stability,1066,guilds,https://noaa-edab.github.io/catalog/aggregate_biomass.html,TRUE,200
+Stability,1066,Adult fish diversity,https://noaa-edab.github.io/catalog/exp_n.html,TRUE,200
+Stability,1095,Functional traits,https://noaa-edab.github.io/catalog/finfish_traits.html,TRUE,200
+Risks to managing spatially,1139,distribution,https://noaa-edab.github.io/catalog/species_dist.html,TRUE,200
+Risks to managing spatially,1139,highly migratory species,https://noaa-edab.github.io/catalog/species_dist.html,TRUE,200
+Risks to managing spatially,1141,Habitat model-based species richness,https://noaa-edab.github.io/catalog/habitat_diversity.html,TRUE,200
+Risks to managing spatially,1141,marine mammals,https://noaa-edab.github.io/catalog/cetacean_dist.html,TRUE,200
+Risks to managing spatially,1163,distribution of forage biomass,https://noaa-edab.github.io/catalog/forage_index.html,TRUE,200
+Risks to managing spatially,1163,Small copepods,https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4,TRUE,200
+Risks to managing spatially,1194,macrobenthos,https://noaa-edab.github.io/catalog/benthos_index.html,TRUE,200
+Risks to managing spatially,1196,Large copepods,https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4,TRUE,200
+Risks to managing spatially,1225,long term annual sea surface,https://noaa-edab.github.io/catalog/long_term_sst.html,TRUE,200
+Risks to managing spatially,1225,seasonal surface,https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html,TRUE,200
+Risks to managing spatially,1225,bottom temperature,https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html,TRUE,200
+Risks to managing spatially,1256,Gulf Stream,https://noaa-edab.github.io/catalog/gsi.html,TRUE,200
+Risks to managing spatially,1276,Cold Pool,https://noaa-edab.github.io/catalog/cold_pool.html,TRUE,200
+Risks to managing spatially,1289,2024 Highlights,https://noaa-edab.github.io/catalog/observation_synthesis_2024.html,TRUE,200
+Risks to managing spatially,1291,MOM6 decadal oceanographic forecasts,https://noaa-edab.github.io/catalog/MOM6_forecasts.html,TRUE,200
+Risks to managing spatially,1293,East Coast Coordination Group,https://www.mafmc.org/e3cg,TRUE,200
+Risks to managing seasonally,1301,spawning timing,https://noaa-edab.github.io/catalog/spawn_timing.html,TRUE,200
+Risks to managing seasonally,1312,Migration timing,https://noaa-edab.github.io/catalog/timing_shifts.html,TRUE,200
+Risks to managing seasonally,1312,peak spring habitat use,https://noaa-edab.github.io/catalog/timing_shifts.html,TRUE,200
+Risks to managing seasonally,1314,cetacean presence in Southern New England,https://noaa-edab.github.io/catalog/cetacean_acoustic.html,TRUE,200
+Risks to managing seasonally,1320,transition,https://noaa-edab.github.io/catalog/trans_dates.html,TRUE,200
+Risks to managing seasonally,1331,Cold Pool,https://noaa-edab.github.io/catalog/cold_pool.html,TRUE,200
+Risks to managing seasonally,1331,2024 Highlights,https://noaa-edab.github.io/catalog/observation_synthesis_2024.html,TRUE,200
+Risks to managing seasonally,1342,phytoplankton,https://noaa-edab.github.io/catalog/chl_pp.html,TRUE,200
+Risks to setting catch limits,1363,fish productivity,https://noaa-edab.github.io/catalog/productivity_anomaly.html,TRUE,200
+Risks to setting catch limits,1365,fish condition,https://noaa-edab.github.io/catalog/condition.html,TRUE,200
+Risks to setting catch limits,1393,energy content,https://noaa-edab.github.io/catalog/energy_density.html,TRUE,200
+Risks to setting catch limits,1404,forage index,https://noaa-edab.github.io/catalog/forage_index.html,TRUE,200
+Risks to setting catch limits,1415,Benthic invertebrates,https://noaa-edab.github.io/catalog/benthos_index.html,TRUE,200
+Risks to setting catch limits,1428,Phytoplankton,https://noaa-edab.github.io/catalog/chl_pp.html,TRUE,200
+Risks to setting catch limits,1428,composition,https://noaa-edab.github.io/catalog/chl_pp.html,TRUE,200
+Risks to setting catch limits,1430,zooplankton abundance,https://noaa-edab.github.io/catalog/zoo_abundance_anom.html,TRUE,200
+Risks to setting catch limits,1430,April through June,https://noaa-edab.github.io/catalog/preyfield_energy.html,TRUE,200
+Risks to setting catch limits,1443,surface,https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html,TRUE,200
+Risks to setting catch limits,1443,bottom,https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html,TRUE,200
+Risks to setting catch limits,1443,thermal tolerance,https://noaa-edab.github.io/catalog/thermal_habitat_gridded.html,TRUE,200
+Risks to setting catch limits,1445,marine heatwave,https://noaa-edab.github.io/catalog/heatwave.html,TRUE,200
+Risks to setting catch limits,1445,cold spells,https://noaa-edab.github.io/catalog/cold_spell.html,TRUE,200
+Risks to setting catch limits,1467,advection index,https://noaa-edab.github.io/catalog/advection.html,TRUE,200
+Risks to setting catch limits,1478,Ocean acidification,https://noaa-edab.github.io/catalog/ocean_acidification.html,TRUE,200
+Risks to setting catch limits,1478,2024 Highlights,https://noaa-edab.github.io/catalog/observation_synthesis_2024.html,TRUE,200
+Risks to setting catch limits,1478,ocean acidification,https://noaa-edab.github.io/catalog/ocean_acidification.html,TRUE,200
+Risks to setting catch limits,1489,Low dissolved oxygen levels,https://noaa-edab.github.io/catalog/dissolved_oxygen.html,FALSE,404
+Risks to setting catch limits,1489,MAB shelf in 2025,https://noaa-edab.github.io/catalog/observation_synthesis_2023.html,TRUE,200
+Risks to setting catch limits,1489,hypoxic,https://noaa-edab.github.io/catalog/observation_synthesis_2023.html,TRUE,200
+Risks to setting catch limits,1489,mortality,https://sebsnjaesnews.rutgers.edu/2023/12/rutgers-scientists-observe-unusual-ocean-conditions-possibly-linked-to-mortality-in-marine-life-off-new-jersey/,TRUE,200
+Risks to setting catch limits,1493,whales and dolphins,https://noaa-edab.github.io/catalog/cetacean_dist.html,TRUE,200
+Risks to setting catch limits,1495,sharks,https://noaa-edab.github.io/catalog/hms_cpue.html,TRUE,200
+Risks to setting catch limits,1495,gray seals,https://noaa-edab.github.io/catalog/seal_pups.html,TRUE,200
+Risks to setting catch limits,1495,Stock status,https://noaa-edab.github.io/catalog/hms_stock_status.html,TRUE,200
+"Indicators: development timeline, revenue in lease areas, coastal community vulnerability",1509,wind development,https://noaa-edab.github.io/catalog/wind_dev_speed.html,TRUE,200
+"Indicators: development timeline, revenue in lease areas, coastal community vulnerability",1524,socioeconomic impacts of offshore wind development data reports page,https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development,TRUE,200
+"Indicators: development timeline, revenue in lease areas, coastal community vulnerability",1526,Commercial fishery revenue,https://noaa-edab.github.io/catalog/wind_revenue.html,TRUE,200
+"Indicators: development timeline, revenue in lease areas, coastal community vulnerability",1641,impact specific coastal communities,https://noaa-edab.github.io/catalog/wind_port.html,TRUE,200
+"Indicators: development timeline, revenue in lease areas, coastal community vulnerability",1652,present information,https://noaa-edab.github.io/catalog/wind_port.html,TRUE,200
+"Indicators: development timeline, revenue in lease areas, coastal community vulnerability",1663,socio-demographic or gentrification concerns,https://noaa-edab.github.io/catalog/engagement.html,TRUE,200
+Implications,1675,NEFSC surveys,https://noaa-edab.github.io/catalog/osw_survey_impact.html,TRUE,200
+Implications,1677,overlaps NARW,https://noaa-edab.github.io/catalog/persistent_hotspots.html,TRUE,200
+2025 Highlights,1698,noteworthy observations reported in 2025,https://noaa-edab.github.io/catalog/observation_synthesis_2025.html,TRUE,200
+2025 Highlights,1700,global,https://www.ncei.noaa.gov/news/global-climate-202513,FALSE,"Error: Server returned nothing (no headers, no data) [www.ncei.noaa.gov]:
+Empty reply from server"
+2025 Highlights,1715,source water,https://noaa-edab.github.io/catalog/slopewater.html,TRUE,200
+2025 Highlights,1715,observed in 2024,https://noaa-edab.github.io/catalog/observation_synthesis_2024.html,TRUE,200
+2025 Highlights,1715,Cold Pool,https://noaa-edab.github.io/catalog/cold_pool.html,TRUE,200
+2025 Highlights,1726,Phytoplankton biomass,https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp,TRUE,200
+2025 Highlights,1743,documented die-off,https://noaa-edab.github.io/catalog/observation_synthesis_2023.html,TRUE,200
+2025 Highlights,1743,2024 recruits,https://noaa-edab.github.io/catalog/observation_synthesis_2024.html,TRUE,200
+2025 Highlights,1743,Nantucket Lightship Area in 2025,https://noaa-edab.github.io/catalog/observation_synthesis_2025.html,TRUE,200
+2025 Highlights,1778,Ocean acidification (OA),https://noaa-edab.github.io/catalog/ocean_acidification.html,TRUE,200
+2025 Highlights,1778,Gulf of Maine surface OA risk,https://noaa-edab.github.io/catalog/gom_acidification.html,TRUE,200
+Report structure,185,Raw URL,https://noaa-edab.github.io/tech-doc/glossary.html,TRUE,200
+Report structure,185,Raw URL,https://noaa-edab.github.io/tech-doc/,TRUE,200
+Report structure,185,Raw URL,https://noaa-edab.github.io/ecodata/,TRUE,200
+Report structure,185,Raw URL,https://noaa-edab.github.io/catalog/index.html,TRUE,200

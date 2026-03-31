@@ -1,3 +1,5 @@
+# full report ----
+
 ## both reports, for text edits (pdf) ----
 now <- Sys.time()
 rmarkdown::render(
@@ -28,7 +30,7 @@ difftime(Sys.time(), now)
 now <- Sys.time()
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
-  output_file = "SOE2026_MAFMC_edits.pdf",
+  output_file = "SOE2026_MAFMC_SSC.pdf",
   params = list(
     region = "MidAtlantic",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
@@ -73,12 +75,25 @@ rmarkdown::render(
 difftime(Sys.time(), now)
 
 #Render CoverLetter ----
+### NE ----
 rmarkdown::render(
   input = here::here("SOE_Cover_Letter.Rmd"),
   output_file = here::here("SOE2026_NEFMC_Cover_Letter.pdf"),
   params = list(
     region = "NewEngland",
     signature = here::here("utils/caracappa_signature.pdf"),
+    cache = FALSE,
+    id_child_docs = TRUE
+  )
+)
+
+### mid ----
+rmarkdown::render(
+  input = here::here("SOE_Cover_Letter.Rmd"),
+  output_file = here::here("SOE2026_MAFMC_Cover_Letter.pdf"),
+  params = list(
+    region = "MidAtlantic",
+    signature = here::here("utils/signature_tyrell.jpg"),
     cache = FALSE,
     id_child_docs = TRUE
   )

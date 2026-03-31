@@ -15,7 +15,7 @@ return_plot("commercial-engagement", region = "MidAtlantic")
 ```
 
 
-```{r comvultab, tab.cap = "Community Vulnerability factor rankings for the municipalities housing the top 10 commercially active Mid-Atlantic ports"}
+```{r comvultab, tab.cap = "Community Vulnerability factor rankings for the municipalities housing the top 10 commercially active Mid-Atlantic ports."}
 comm_vul_table_ma
 ```
 
@@ -31,7 +31,7 @@ rec_vul_table_ma
 
 ### Indicators: Community Environmental Variability Risk  in the Mid-Atlantic
 
-[Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) (CEVRI) measure risk by linking commercial landings and revenue to specific climate sensitivity factors, including temperature, ocean acidification, and stock status using the Climate Vulnerability Assessment (CVA) scores. These indicators calculate total sensitivity and vulnerability scores based on a community's dependence on species vulnerable to climate change. Risk scores range from low (1) to high (4), increasing as a community relies more heavily on species at higher risk from environmental shifts.
+[Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_risks.html) (CEVRI) measure risk by linking commercial landings and revenue to specific climate sensitivity factors, including temperature, ocean acidification, and stock status using the Climate Vulnerability Assessment (CVA) scores. These indicators calculate total sensitivity and vulnerability scores based on a community's dependence on species vulnerable to climate change. Risk scores range from low (1) to high (4), increasing as a community relies more heavily on species at higher risk from environmental shifts.
 
 While long-term risk trends across the Mid-Atlantic remain stable, most individual fishing communities currently rank as high or very high risk (Fig. \ref{fig:commvulex}). This high ranking demonstrates that a majority of regional communities depend on species that are highly vulnerable to changing ocean conditions for their commercial revenue. Strategies for management should account for this widespread reliance on climate-sensitive stocks.
 
