@@ -80,3 +80,19 @@ quarto::quarto_render(
   output_format = "all"
 )
 difftime(Sys.time(), now)
+
+## Core Team Presenation ----
+now <- Sys.time()
+quarto::quarto_render(
+  input = here::here("parent_presentation_ECCG.qmd"),
+  output_file = "SOE2026_newengland_ECCG",
+  execute_params = list(
+    region = "NewEngland",
+    council = "NEFMC",
+    fig_caption = here::here("utils/figure_captions_summary.csv"),
+    date = Sys.Date() |> format("%B %d, %Y"),
+    author = "Joe Caracappa, lead editor, NEFSC"
+  ),
+  output_format = "all"
+)
+difftime(Sys.time(), now)
