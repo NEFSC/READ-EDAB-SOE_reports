@@ -1,4 +1,4 @@
-## Mid Atlantic Community Social and Climate Vulnerability 
+## Mid Atlantic Social and Cultural
 
 :::: {.soe-50-50-slide}
 
@@ -16,24 +16,15 @@ return_plot("commercial-engagement", region = "MidAtlantic", mode = "slide")
 
 ```{r comvultab}
 
-ecodata::plot_engagement(report = 'MidAtlantic',plottype = "Social")
-
-# t |>
-  # flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
-  #                              pop_composition_rank = "Population Composition",
-  #                              poverty_rank = "Poverty") |>
-  # flextable::colformat_num(na_str = "-") |>
-  # #flextable::set_caption("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for Mid-Atlantic communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.") |>
-  # flextable::fontsize(size = 12, part = "all") |>
-  # flextable::autofit() 
-  
+ecodata::plot_community_factors(report = 'MidAtlantic',plottype = 'Commercial',varName = 'Social', n = 5) |> 
+  flextable::flextable()
 ```
 
 :::
 
 ::::
 
-## Community Social and Climate Vulnerability 
+## Mid Atlantic Social and Cultural
 
 Indicators: Commercial fishery revenue climate vulnerability
 
@@ -57,7 +48,7 @@ The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catal
 
 ::::
 
-## Community Social and Climate Vulnerability 
+## Mid Atlantic Social and Cultural
 
 Indicators: Recreational fishery engagement, social vulnerability
 
@@ -73,18 +64,9 @@ return_plot("recreational-engagement", region = "MidAtlantic", mode = "slide")
 
 ::: {.soe-50-column}
 
-```{r recvultab}
-
-ecodata::plot_engagement(report = 'MidAtlantic',varName = 'Recreational',plottype = 'Social') 
-  # flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
-  #                              pop_composition_rank = "Population Composition",
-  #                              poverty_rank = "Poverty") |>
-  # flextable::colformat_num(na_str = "-",big.mark = '') |>
-  # #flextable::set_caption("Socio-demographic indicator rankings (ranging from low = low vulnerability to high = high vulnerability) for Mid-Atlantic communities most engaged in commercial fishing, 2022. Blank spaces indicate no data available.") |>
-  # flextable::fontsize(size = 12, part = "all") |>
-  # flextable::autofit() 
-  
-  
+```{r}
+ecodata::plot_community_factors(report = 'MidAtlantic',plottype = 'Commercial',varName = 'Social', n = 5) |> 
+  flextable::flextable()
 ```
 
 :::

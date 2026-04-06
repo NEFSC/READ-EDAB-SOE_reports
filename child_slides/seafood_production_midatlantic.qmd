@@ -6,6 +6,7 @@
 Indicators: Commercial landings, climate risk
 
 ```{r}
+#| out-height: "500px"
 return_plot("total-landings", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -19,10 +20,12 @@ return_plot("climatevul-land", region = "MidAtlantic", mode = "slide")
 Indicators: Recreational harvest
 
 ```{r}
+#| out-height: "250px"
 return_plot("rec-landings", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r}
+#| out-height: "400px"
 return_plot("rec-hms", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -36,21 +39,27 @@ Multiple potential drivers: ecosystem and stock production, management, market c
 
 :::: {.soe-50-50-slide}
 
-::: {}
+::: {.soe-50-column}
 
 Indicator: Stock status
 
 ```{r stock-status}
+#| out-height: "500px"
 return_plot("stock-status", region = "MidAtlantic", mode = "slide")
+```
+
+```{r abcacl}
+#| out-height: "250px"
 return_plot("abcacl-catch", region = "MidAtlantic", mode = "slide")
 ```
 :::
 
-::: {}
+::: {.soe-50-column}
 
 Indicators: Total ABC or ACL, and Realized catch relative to management target
 
 ```{r}
+#| out-height: "650px"
 return_plot("abcacl-stacked", region = "MidAtlantic", mode = "slide")
 
 ```
@@ -65,31 +74,33 @@ Catch near limits on average
 
 ::::{.soe-50-50-slide}
 
-::: {}
+::: {.soe-50-column}
 
 Biomass does not appear to drive landings trends
 
 ```{r}
+#| out-height: "650"
 return_plot("nefsc-biomass-mab", region = "MidAtlantic", mode = "slide")
 ```
 
+
+Recreational drivers differ: shark fishery management, possibly survey methodology
+
 :::
 
-::: {}
-* Declining aggregate planktivores, benthos?
+::: {.soe-50-column}
+
+Declining aggregate planktivores, benthos?
 
 ```{r}
+#| out-height: "500px"
 return_plot("comm-landings", region = "MidAtlantic", mode = "slide")
 ```
-
-* Recreational drivers differ: shark fishery management, possibly survey methodology
 
 Monitor: 
 
 * climate risks including warming, ocean acidification, and shifting distributions  
-
 * ecosystem composition and production changes  
-
 * fishing engagement  
 
 :::
