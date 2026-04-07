@@ -1,4 +1,4 @@
-## Objective: Mid Atlantic Commercial Profits `r I(no_trend)`  `r I(below_average)` 
+## Objective: Mid Atlantic Commercial Profits `r I(decreasing)`  `r I(below_average)` 
 
 ::: { .soe-50-50-slide}
 
@@ -6,6 +6,7 @@
 Indicator: Commercial Revenue; profit indicators under SSC review
 
 ```{r}
+#| out-height: "500px"
 return_plot("comm-revenue", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -19,9 +20,37 @@ return_plot("climatevul-rev", region = "MidAtlantic")
 Indicator: Bennet--price and volume indices
 
 ```{r bennet}
+#| out-height: "350px"
 return_plot("bennet", region = "MidAtlantic", mode = "slide")
+```
+
+```{r bennet-guild}
+#| out-height: "400px"
 return_plot("bennet-all", region = "MidAtlantic", mode = "slide")
 ```
+:::
+
+::::
+
+
+## Objective: Mid Atlantic Commercial Profits `r I(no_trend)`  `r I(below_average)` 
+
+::: { .soe-50-50-slide}
+
+::: {.soe-50-column}
+Indicator: Profit Index
+
+```{r}
+return_plot("comdat-profit", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+<br>
+<br>
+
+New Indicator: Index of Revenue, Costs, and Profits from *federal trips only*
 
 :::
 

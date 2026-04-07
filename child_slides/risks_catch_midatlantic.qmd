@@ -31,7 +31,7 @@ return_plot("mab-cf", region = "MidAtlantic", mode = "slide")
 
 Drivers: Forage Quality and Abundance
 
-```{r, fig.alt="Forage fish energy density mean and standard deviation by season and year, compared with 1980s (solid line) and 1990s (dashed line) values."}
+```{r, fig.alt="Forage fish energy density mean and standard deviation by season and year, compared with 1980s (solid line) and 1990s (dashed line) values.",eval = FALSE}
 return_plot("energy-density", region = "BothReports", mode = "slide")
 ```
 
@@ -100,3 +100,64 @@ return_plot("traits-tl", region = "MidAtlantic", mode = "slide")
 :::
 
 ::::
+
+## Risks to Setting Catch Limits: Drivers
+
+Environmental: Habitat Quality and Circulation
+
+```{r, eval = TRUE}
+#| fig-align: center
+#| out-height: "350px"
+return_plot("mab-oa", region = "BothReports",mode = 'slide')
+```
+
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r, eval = TRUE}
+#| out-height: "350px"
+return_plot("advection-index", region = 'MidAtlantic', mode = 'slide')
+```
+
+
+:::
+
+::: {.soe-50-column}
+
+* Episodic habitat risk events for scallops and squid present but sparse in 2025
+* New Indicator: Advection off shelf (how much are larvae getting carried offshore?)
+  * Mid and Deep water more likely to leave shore in spring over time
+
+:::
+
+::::
+
+## Risks to Setting Catch Limits
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Future considerations
+
+*   Processes that control fish productivity and mortality are dynamic, complex, and are the result of the interactions between multiple changing system drivers.
+
+*   Managers should consider that historic environment conditions and productivity may no longer represent likely future scenarios.
+
+*   Assumptions for species’ growth, reproduction, and natural mortality should continue to be evaluated for individual species.
+
+*   With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management.
+
+:::
+
+::: {.soe-50-img}
+
+![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//RegimeShift_V5.jpg)
+
+:::
+
+::::
+
+

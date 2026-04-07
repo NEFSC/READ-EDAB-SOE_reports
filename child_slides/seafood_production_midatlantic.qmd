@@ -1,11 +1,12 @@
-## Objective: Mid Atlantic Seafood production `r I(decreasing)` `r I(below_average)` 
+## Objective: Mid Atlantic Seafood production `r I(decreasing)` (total and recreational) `r I(no_trend)` (managed) `r I(below_average)` 
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
-Indicators: Commercial landings, climate risk
+Indicators: Commercial landings, climate vulnerability
 
 ```{r}
+#| out-height: "500px"
 return_plot("total-landings", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -20,10 +21,12 @@ Mid Atlantic community landings are _moderately dependent_ on species sensitive 
 Indicators: Recreational harvest
 
 ```{r}
+#| out-height: "250px"
 return_plot("rec-landings", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r}
+#| out-height: "400px"
 return_plot("rec-hms", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -37,21 +40,27 @@ Drivers: Shifts in fishing behavior (landed vs catch-and-release) and closure of
 
 :::: {.soe-50-50-slide}
 
-::: {}
+::: {.soe-50-column}
 
 Indicator: Stock status
 
 ```{r stock-status}
+#| out-height: "500px"
 return_plot("stock-status", region = "MidAtlantic", mode = "slide")
+```
+
+```{r abcacl}
+#| out-height: "250px"
 return_plot("abcacl-catch", region = "MidAtlantic", mode = "slide")
 ```
 :::
 
-::: {}
+::: {.soe-50-column}
 
 Indicators: Total ABC or ACL, and realized catch relative to management target
 
 ```{r}
+#| out-height: "650px"
 return_plot("abcacl-stacked", region = "MidAtlantic", mode = "slide")
 
 ```
@@ -66,24 +75,28 @@ Two groups of species: those with catch ratios near 1, and those with catch rati
 
 ::::{.soe-50-50-slide}
 
-::: {}
+::: {.soe-50-column}
 
 Regional biomass does not appear to drive landings trends
 
 ```{r}
+#| out-height: "650"
 return_plot("nefsc-biomass-mab", region = "MidAtlantic", mode = "slide")
 ```
 
+
+Recreational drivers differ: shark fishery management, possibly survey methodology
+
 :::
 
-::: {}
-* Declining aggregate planktivores, benthos?
+::: {.soe-50-column}
+
+Declining aggregate planktivores, benthos?
 
 ```{r}
+#| out-height: "500px"
 return_plot("comm-landings", region = "MidAtlantic", mode = "slide")
 ```
-
-* Recreational drivers differ: shark fishery management, possibly survey methodology
 
 Monitor: 
 

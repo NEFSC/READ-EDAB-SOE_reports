@@ -1,0 +1,155 @@
+---
+title: 'State of the Ecosystem <br/> Mid-Atlantic & New England 2026'
+subtitle: "April 9, 2026"
+author: "`r params$author`"
+editor: source
+params:
+  region: "Both"
+  council: "MAFMC"
+  fig_caption: "utils/figure_captions_summary.csv"
+  date: !expr Sys.Date() |> format("%B %d, %Y")
+  author: "Abigail Tyrell, lead editor, NEFSC"
+format:
+  # This uses the built-in Quarto revealjs format
+  revealjs:
+    theme: ""
+    footer: "{{< meta footer >}} State of the Ecosystem 2026 | Northeast Fisheries Science Center"
+    slide-number: true
+    # auto-stretch: false
+    # Sets the slide aspect ratio
+    # aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
+    width: 1600
+    height: 900
+    margin: 0.1
+    min-scale: 0.2
+    max-scale: 1.0
+
+    # CSS files for styling
+    css:                         # Equivalent to css: [...]
+      - libs/EDAB_theme_2026.css
+      - libs/cols.css
+      
+    # Syntax highlighting style
+    highlight-style: github      # Equivalent to highlightStyle: githubp (Using Quarto's built-in 'github')
+    
+    # Allows highlighting specific lines in code blocks
+    code-line-numbers: true      # Equivalent to highlightLines: true
+    
+    # Custom JavaScript files (macros) are included in the header
+    include-in-header:
+      - text: |
+          <!-- <link href="libs/EDAB_theme_2026.css" rel="stylesheet" /> -->
+          <script src="libs/macros.js"></script>
+          <script src="libs/cols_macro.js"></script>
+          
+    # --- Mapped from revealjs::revealjs_presentation ---
+    # Controls if resources are embedded or linked
+    embed-resources: false       # Equivalent to self_contained: false
+
+    title-slide-attributes:
+      # Use the path relative to the .qmd file (project root)
+      data-background-image: libs/SOEtitleslide.png
+      data-background-size: 60%
+      data-background-position: left top
+      data-background-class: right-align-title
+    
+    # --- Other important Quarto options ---
+    # This prevents the render process from counting step-by-step reveals as separate slides
+    incremental: false           # Equivalent to countIncrementalSlides: false
+---
+
+{{< include child_slides/setup.qmd >}}
+
+```{r output = "asis"}
+# set dynamic footer
+quarto::write_yaml_metadata_block(footer = region2)
+```
+
+{{< include child_slides/synthesis_meeting_intro.qmd >}}
+
+```{r, child = here::here("child_slides/highlights_midatlantic_2026.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/highlights_newengland_2026.qmd"), eval = TRUE}
+```
+
+{{< include child_slides/shared_summary_highlights_2026.qmd >}}
+
+{{< include child_slides/request_memo.qmd >}}
+
+{{< include child_slides/performance_header.qmd >}}
+
+```{r, child = here::here("child_slides/seafood_production_midatlantic.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/seafood_production_newengland.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/commercial_profits_midatlantic.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/commercial_profits_newengland.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/rec_opp_midatlantic.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/rec_opp_newengland.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/social_midatlantic.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/social_newengland.qmd"), eval = TRUE}
+```
+
+{{< include child_slides/protected_species.qmd >}}
+
+{{< include child_slides/stability_discussion.qmd >}}
+
+```{r, child = here::here("child_slides/fishery_stability_midatlantic.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/fishery_stability_newengland.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/ecosystem_stability_midatlantic.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/ecosystem_stability_newengland.qmd"), eval = TRUE}
+```
+
+{{< include child_slides/risks_header.qmd >}}
+
+{{< include child_slides/risks_spatial_seasonal.qmd >}}
+
+{{< include child_slides/risks_spatial_seasonal2.qmd >}}
+
+```{r, child = here::here("child_slides/risks_seasonal_midatlantic.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/risks_seasonal_newengland.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/risks_catch_midatlantic.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/risks_catch_newengland.qmd"), eval = TRUE}
+```
+
+{{< include child_slides/risks_wind_map.qmd >}}
+
+```{r, child = here::here("child_slides/risks_wind_midatlantic.qmd"), eval = TRUE}
+```
+
+```{r, child = here::here("child_slides/risks_wind_newengland.qmd"), eval = TRUE}
+```
+
+<!-- {{< include child_slides/risks_wind.qmd >}} -->
+
+{{< include child_slides/highlights_conclusions.qmd >}}
+
+```{r, child = here::here("child_slides/takehome_midatlantic.qmd"), eval = TRUE}
+```
+
+{{< include child_slides/closing_slides.qmd >}}
