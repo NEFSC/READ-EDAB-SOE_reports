@@ -16,33 +16,27 @@ In the Mid-Atlantic, total [commercial landings](https://noaa-edab.github.io/cat
 return_plot("total-landings", region = "MidAtlantic")
 ```
 
-
 ```{r, comm-landings, fig.asp=1.6, fig.cap = return_caption(chunk_name = "comm-landings", region = "MidAtlantic")}
 return_plot("comm-landings", region = "MidAtlantic")
 ```
 
-<!-- \newpage -->
+Mid-Atlantic ports face a moderate to high risk from environmental variability, as evaluated by the 2025 [Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_risks.html) (Fig. \ref{fig:climatevul-land}). These [indicators](#community-social-and-climate-vulnerability) assess port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much a region’s landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
 
-Mid-Atlantic ports face a moderate to high risk from environmental variability, as evaluated by the 2025 [Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) (Fig. \ref{fig:climatevul-land}). These [indicators](#community-social-and-climate-vulnerability) assess port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much a region’s landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
+In the Mid-Atlantic, total [recreational harvest](https://noaa-edab.github.io/catalog/recdat.html) (retained fish presumed to be eaten) shows a long-term decline with recent harvest remaining near a time series low (Fig. \ref{fig:rec-landings}). This pattern may indicate a shift towards catch-and-release strategies as opposed to catch for harvest. [Recreational shark landings](https://noaa-edab.github.io/catalog/rec_hms.html) have generally decreased for most shark groups through 2024 (Fig \ref{fig:rec-hms}). The recent low in pelagic shark landings is largely driven by regulatory changes implemented in 2018, followed by the closure of the shortfin mako fishery in 2022. These actions were intended to rebuild the North Atlantic shortfin mako stock and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT). 
 
 ```{r climatevul-land, fig.width = 6.5, fig.asp = 0.5, fig.cap = return_caption(chunk_name = "climatevul-land",  region = "MidAtlantic")}
 return_plot("climatevul-land", region = "MidAtlantic")
 ```
 
-In the Mid-Atlantic, total [recreational harvest](https://noaa-edab.github.io/catalog/recdat.html) (retained fish presumed to be eaten) shows a long-term decline with recent harvest remaining near a time series low (Fig. \ref{fig:rec-landings}). This pattern may indicate a shift towards catch-and-release strategies as opposed to catch for harvest. [Recreational shark landings](https://noaa-edab.github.io/catalog/rec_hms.html) have generally decreased for most shark groups through 2024 (Fig \ref{fig:rec-hms}). The recent low in pelagic shark landings is largely driven by regulatory changes implemented in 2018, followed by the closure of the shortfin mako fishery in 2022. These actions were intended to rebuild the North Atlantic shortfin mako stock and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT). 
-
-
 ```{r, rec-landings, fig.cap = return_caption(chunk_name = "rec-landings", region = "MidAtlantic")}
 return_plot("rec-landings", region = "MidAtlantic")
 ```
-
 
 ```{r rec-hms, fig.cap=return_caption(chunk_name = "rec-hms", region = "MidAtlantic"), fig.width=6.5, fig.asp=.35}
 return_plot("rec-hms", region = "MidAtlantic")
 ```
 
-[Aquaculture](https://noaa-edab.github.io/catalog/aquaculture.html?q=aqua#aquaculture) can comprise a significant proportion of seafood production in specific communities, but not all aquaculture production is included in total seafood landings above. In 2022, the Northeast region produced approximately 6,300 metric tons of aquacultured shellfish, with revenue of $133 million. 
-
+[Aquaculture](https://www.fisheries.noaa.gov/topic/aquaculture) can comprise a significant proportion of seafood production in specific communities, but not all aquaculture production is included in total seafood landings above. In 2022, the Northeast region produced approximately 6,300 metric tons of aquacultured shellfish, with revenue of $133 million. 
 
 ### Implications
 

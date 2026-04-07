@@ -1,6 +1,6 @@
 ---
 title: "State of the Ecosystem 2026: Request Tracking Memo"
-geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
+geometry: left=2cm, right=2cm, top=2cm, bottom=2cm, footskip = .5cm
 output:
   pdf_document:
     includes:
@@ -93,6 +93,7 @@ The new priority definitions are:
 
 Please note that some requests are currently marked as "low priority" due to the imprecise or vague wording, which could be updated in the future if the request is made more specific. All rankings can continue to be discussed and refined in the next SOE Prioritization meeting.
 
+\newpage
 
 # Overview of requests
 
