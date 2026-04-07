@@ -1,9 +1,9 @@
-## Objective: Mid Atlantic Seafood production `r I(decreasing)` `r I(below_average)` 
+## Objective: Mid Atlantic Seafood production `r I(decreasing)` (total and recreational) `r I(no_trend)` (managed) `r I(below_average)` 
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
-Indicators: Commercial landings, climate risk
+Indicators: Commercial landings, climate vulnerability
 
 ```{r}
 #| out-height: "500px"
