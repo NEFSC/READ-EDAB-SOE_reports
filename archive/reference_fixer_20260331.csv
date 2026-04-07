@@ -1,0 +1,2 @@
+ref_key,source_file,source_line,recommendation
+fig:seals,./parent_report.Rmd,315,FOUND CHUNK: 'seals' in parent_report.Rmd (Line 317). RMarkdown adds 'fig:' automatically. Ensure chunk has a caption!

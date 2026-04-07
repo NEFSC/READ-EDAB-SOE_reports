@@ -37,7 +37,7 @@ return_plot("rec-landings", region = "NewEngland")
 return_plot("rec-hms", region = "NewEngland")
 ```
 
-[Aquaculture](https://noaa-edab.github.io/catalog/aquaculture.html?q=aqua#aquaculture) can comprise a significant proportion of seafood production in specific communities, but not all aquaculture production is included in total seafood landings above. In 2022, the Northeast region produced approximately 6,300 metric tons of aquacultured shellfish, with revenue of $133 million (Fisheries of the United States, 2022). 
+[Aquaculture](https://www.fisheries.noaa.gov/topic/aquaculture) can comprise a significant proportion of seafood production in specific communities, but not all aquaculture production is included in total seafood landings above. In 2022, the Northeast region produced approximately 6,300 metric tons of aquacultured shellfish, with revenue of $133 million (Fisheries of the United States, 2022). 
 
 ### Implications
 

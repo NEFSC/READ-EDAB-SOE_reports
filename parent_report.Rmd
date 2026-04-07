@@ -15,9 +15,9 @@ params:
   id_child_docs: FALSE
   draft: FALSE
   date: "March 2026"
-# output: 
+# output:
 #   pdf_document:
-#     extra_dependencies: ["float"] 
+#     extra_dependencies: ["float"]
 
 ---
 
@@ -34,7 +34,7 @@ knitr::opts_chunk$set(
   out.width = "100%",
   fig.align = "center",
   cache = params$cache,
-  fig.pos = "!htbp",
+  # fig.pos = "T",
   out.extra = ""
   
 ) 
@@ -91,7 +91,10 @@ cat('#', knitr::current_input())
 cat('# parent_report.Rmd')
 ```
 
-\setcounter{page}{6}
+`r if(params$region == "NewEngland") "\\setcounter{page}{6}"`
+`r if(params$region == "MidAtlantic") "\\setcounter{page}{4}"`
+
+
 \thispagestyle{fancy}
 
 ```{r, eval = FALSE, results = "asis"}
@@ -215,8 +218,8 @@ res <- knitr::knit_child(input = other_child,
 cat(res, sep = "\n\n")
 ```
 
-<!-- \newpage -->
-`r if(params$region == "NewEngland") "\\newpage"`
+\newpage
+<!-- `r if(params$region == "NewEngland") "\\newpage"` -->
 
 ## Commercial Profits
 
@@ -309,7 +312,7 @@ Human interaction from entanglements or vessel strikes remains the primary cause
 There is an ongoing UME for humpback whales (2016-present) and Atlantic minke whales (2018-present); suspected causes include human interactions. A UME for Northeast pinnipeds that began in 2018 for infectious disease is non-active pending closure as of February 2026.
 
 ### Implications
-Bycatch management measures have been implemented to maintain bycatch below PBR thresholds. The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort. The increasing trend in 5-year average gray seal bycatch may be related to an increase in the gray seal population ([U.S. pup counts](https://noaa-edab.github.io/catalog/seal_pups.html); Fig. \ref{fig:seals}), supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
+Bycatch management measures have been implemented to maintain bycatch below PBR thresholds. The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort. The increasing trend in 5-year average gray seal bycatch may be related to an increase in the gray seal population ([U.S. pup counts](https://noaa-edab.github.io/catalog/seal_pups.html) `r if(params$region == "NewEngland") "; Fig. \\ref{fig:seals})"`, supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
 
 ```{r seals, fig.cap = return_caption(chunk_name = "seals", region = "BothReports"),fig.width = 6.5, fig.asp = 0.4, eval = params$region == "NewEngland"}
 return_plot("seals", region = "BothReports")
@@ -342,6 +345,7 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ```
 
 <!-- \newpage -->
+`r if(params$region == "MidAtlantic") "\\newpage"`
 
 # Risks to Meeting Fishery Management Objectives
 
@@ -371,6 +375,8 @@ return_plot("protectedspp-dist-shifts", region = "BothReports")
 
 Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists.  Changes in managed species distribution is partially related to the [distribution of forage biomass](https://noaa-edab.github.io/catalog/forage_index.html). Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts. [Small copepods](https://noaa-edab.github.io/catalog/zooplankton_index.html#key-results-and-visualizations-4), widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring (Fig. \ref{fig:smallcopeall-cog}. 
 
+Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. \ref{fig:megabenthosshifts}). Megabenthos are large, non-federally-managed benthic invertebrates sampled by scallop dredge, otter trawl, and the Campbell grab. These include crabs, decapods, and sea stars, which are often prey for many managed species.
+
 ```{r calfin-cog, fig.cap = return_caption(chunk_name = "calfin-cog", region = "NewEngland"), fig.width = 7.5, fig.asp = .3, eval = params$region == 'NewEngland'}
 # return_plot("calfin-cog", region = "NewEngland")
 # removing for now because calfin is included in large copepod cog plot and the calfin-specific plot is not adding much information
@@ -393,8 +399,6 @@ if (params$region == 'NewEngland') {
   cat("\\newpage")
 }
 ```
-
-Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. \ref{fig:megabenthosshifts}). Megabenthos are large, non-federally-managed benthic invertebrates sampled by scallop dredge, otter trawl, and the Campbell grab. These include crabs, decapods, and sea stars, which are often prey for many managed species.
 
 ```{r megabenthosshifts, fig.cap= return_caption(chunk_name = "megabenthosshifts", region = "BothReports"), fig.width=6.5, fig.asp=0.8}
 return_plot("megabenthosshifts", region = "BothReports")
@@ -587,8 +591,8 @@ The increase of offshore wind development can have both positive (e.g., employme
 #### Marine Aquaculture
 Aquaculture fisheries and federally-managed fisheries could compete with or benefit each other  with spatial access, shoreside infrastructure, or the supply of seafood. Unlike offshore wind, offshore aquaculture is not regulated by any federal leasing program but is permitted via the U.S. Army Corps of Engineers and the U.S. EPA. Currently, there are no federally-permitted aquaculture projects in the Northeast U.S. The marine aquaculture industry of the Northeast currently occurs in nearshore waters which are regulated by state leasing and permitting processes and federal permitting processes, as applicable. Analyses are needed to quantify the nearshore spatial distribution of aquaculture in the Northeast. 
 
-<!-- \newpage -->
-`r if(params$region == "NewEngland") "\\newpage"`
+\newpage
+<!-- `r if(params$region == "NewEngland") "\\newpage"` -->
 
 ### 2025 Highlights {#highlights}
 
@@ -609,7 +613,7 @@ In 2024, the Gulf of Maine [source water](https://noaa-edab.github.io/catalog/sl
 return_plot("slopewater", region = "BothReports")
 ```
 
-2025 total primary production was below average in Georges Bank and the Mid-Atlantic due to lower phytoplankton biomass and cooler sea surface temperatures. [Phytoplankton biomass](https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp) (shown as chlorophyll a concentration) was also below average for much of 2025 (Fig. \ref{fig:chl-anom}). In particular, the winter-spring bloom period, which typically accounts for a significant proportion of total annual phytoplankton production, was shorter in duration and lower in magnitude across the entire Northeast shelf region. The fall bloom period was above average in the Gulf of Maine and Georges Bank, but near average in the Mid-Atlantic. 
+2025 total primary production was below average in Georges Bank and the Mid-Atlantic due to lower phytoplankton biomass and cooler sea surface temperatures. [Phytoplankton biomass](https://noaa-edab.github.io/catalog/chl_pp.html?q=phyt#chl_pp) (shown as chlorophyll a concentration) was also below average for much of 2025 (Fig. \ref{fig:chl-anom}). In particular, the winter-spring bloom period, which typically accounts for a significant proportion of total annual phytoplankton production, was shorter in duration and lower in magnitude across the entire Northeast Shelf region. The fall bloom period was above average in the Gulf of Maine and Georges Bank, but near average in the Mid-Atlantic. 
 
 ```{r chl-anom, out.width="100%", fig.cap=return_caption(chunk_name = "chl-anom-apr", region = "BothReports")}
 return_plot(name = c("chl-anom-apr","chl-anom-oct"), region = "BothReports")
@@ -645,6 +649,7 @@ return_plot(c("chesapeake-jan","chesapeake-apr"), region = "BothReports")
 #### Offshore Wind
 Offshore wind projects continue to be developed throughout the region. Information here represents the status as of the end of January 2026. In Southern New England, South Fork Wind Farm remains the first and only commercial scale project under operation (12 turbines), Vineyard Wind 1 and Revolution Wind continued construction, and Sunrise Wind began offshore construction (Fig. \ref{fig:wind-dev-cumul}). In the New York Bight, Empire Wind 1 began offshore construction (Fig. \ref{fig:wind-dev-cumul}). Coastal Virginia Offshore Wind (CVOW) also continued construction in the Mid-Atlantic. All projects currently under construction are anticipated to be complete by the end of 2026. New London, CT and New Bedford, MA have expanded dedicated space and infrastructure for the offshore wind industry with increased port activity for the first projects under construction in southern New England. There are eight additional projects that have Construction and Operations Plan (COP) approvals (three in Southern New England and five in the Mid-Atlantic/New York Bight) that could begin construction in 2026. However, construction schedules are highly uncertain at this time. 
 
+`r if(params$region == "MidAtlantic") "\\newpage"`
 
 # Contributors
 
