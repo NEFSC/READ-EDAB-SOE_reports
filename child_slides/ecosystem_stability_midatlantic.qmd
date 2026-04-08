@@ -110,11 +110,11 @@ return_plot("traits-tl", region = "MidAtlantic")
 
 ## Objective: Mid Atlantic Ecological Stability: Not Stable
 
-*Ecological* Indicators: fish productivity
-
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
+
+*Ecological* Indicators: fish productivity
 
 - Declines in productivity of managed species
 - But no trend in aggregate biomass at the guild level suggests the system is able to adapt to change
