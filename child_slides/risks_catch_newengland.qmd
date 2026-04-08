@@ -1,4 +1,4 @@
-## Risks to Setting Catch Limits: Indicators
+## Risks to Setting Catch Limits: New England Indicators
 
 :::: {.soe-50-50-slide}
 
@@ -29,7 +29,7 @@ return_plot("productivity-anomaly", region = "NewEngland", mode = "slide")
 
 ::::
 
-## Risks to Setting Catch Limits: Indicators
+## Risks to Setting Catch Limits: New England Indicators
 Fish Condition
 
 ```{r}
@@ -40,7 +40,7 @@ return_plot("ne-cf", region = "NewEngland", mode = "slide")
 
 Condition relates to reproduction potential and market quality. High variability but patterns emerge across species.
 
-## Risks to Setting Catch Limits: Drivers
+## Risks to Setting Catch Limits: New England Drivers
 
 :::: {.soe-50-50-slide}
 
@@ -70,7 +70,7 @@ return_plot("benthos", region = "NewEngland", mode = "slide")
 
 ::::
 
-## Risks to Setting Catch Limits: Drivers
+## Risks to Setting Catch Limits: New England Drivers
 
 :::: {.soe-50-50-slide}
 
@@ -98,7 +98,7 @@ return_plot("zoopanom", region = "NewEngland", mode = "slide")
 
 ::::
 
-## Risks to Setting Catch Limits: Drivers
+## Risks to Setting Catch Limits: New England Drivers
 
 Changes in fish traits
 
@@ -124,20 +124,7 @@ return_plot("traits-tl", region = "NewEngland", mode = 'slide')
 
 ::::
 
-
-
-## Risks to Setting Catch Limits: Drivers
-
-*2025 Thermal habitat area by depth*
-
-```{r}
-b <- ecodata::plot_thermal_habitat_area(report = "NewEngland", EPU="GB") + ggplot2::theme(legend.position = "none")
-c <- ecodata::plot_thermal_habitat_area(report = "NewEngland", EPU="GOM") + ggplot2::theme(legend.position = "none")
-
-ggpubr::ggarrange(b, c, nrow = 1, common.legend = TRUE,legend = "bottom")
-```
-
-## Risks to Setting Catch Limits: Drivers
+## Risks to Setting Catch Limits: New England Drivers
 
 Environmental: Habitat Quality and Circulation
 
@@ -164,35 +151,8 @@ return_plot("advection-index", region = 'NewEngland', mode = 'slide')
 
 * Episodic habitat risk events for scallops and squid present but sparse in 2025
 * New Indicator: Advection off shelf (how much are larvae getting carried offshore?)
-  * Mid and Deep water more likely to leave shore in spring over time
+  * Mid and Deep water more likely to move onshore in spring over time
 
 :::
 
 ::::
-
-## Risks to Setting Catch Limits
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-Future considerations
-
-*   Processes that control fish productivity and mortality are dynamic, complex, and are the result of the interactions between multiple changing system drivers.
-
-*   Managers should consider that historic environment conditions and productivity may no longer represent likely future scenarios.
-
-*   Assumptions for species’ growth, reproduction, and natural mortality should continue to be evaluated for individual species.
-
-*   With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management.
-
-:::
-
-::: {.soe-50-img}
-
-![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//RegimeShift_V5.jpg)
-
-:::
-
-::::
-

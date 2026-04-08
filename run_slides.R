@@ -91,8 +91,8 @@ quarto::quarto_render(
     council = "NEFMC",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
     date = Sys.Date() |> format("%B %d, %Y"),
-    author = "Joe Caracappa, lead editor, NEFSC"
+    author = "Joe Caracappa & Abby Tyrell, lead editors, NEFSC"
   ),
   output_format = "all"
 )
-  difftime(Sys.time(), now)
+difftime(Sys.time(), now)

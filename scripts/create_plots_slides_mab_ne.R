@@ -1070,7 +1070,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "advection_index",
     width = 6.5,
-    height = 4.5
+    height = 3
   )
 
   # Seasonal OISST Anomaly - MAB ONLY

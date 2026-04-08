@@ -4,7 +4,7 @@
 
 ::: {.soe-50-column}
 
-Indicators: Commercial fishery engagement, social vulnerability, revenue climate vulnerability
+Indicators: Commercial fishery engagement, social vulnerability
 
 ```{r commercial-engagement}
 return_plot("commercial-engagement", region = "MidAtlantic", mode = "slide")
@@ -14,11 +14,17 @@ return_plot("commercial-engagement", region = "MidAtlantic", mode = "slide")
 
 ::: {.soe-50-column}
 
-```{r comvultab}
+<br>
+<br>
 
+```{r comvultab}
 ecodata::plot_community_factors(report = 'MidAtlantic',plottype = 'Commercial',varName = 'Social', n = 5) |> 
   flextable::flextable()
 ```
+
+- More variability in the most commercially active ports -- Cape May and Reedville
+- Increasing activity in Shinnecock/Hampton Bays
+- Crew Survey shows inconsistent job satisfaction among crew and evidence of aging of the fleet
 
 :::
 
@@ -36,7 +42,9 @@ Indicators: Commercial fishery revenue climate vulnerability
 return_plot("commvulex", region = "MidAtlantic", mode = "slide")
 ```
 
-The [Community Climate Change Risk Indicators](https://noaa-edab.github.io/catalog/community_climate_vulnerability.html) are calculated by multiplying the percent contribution of species to the total value landed in a community by their respective Total Vulnerability scores (based on NOAA’s Climate Vulnerability Assessment) for different sensitivity and exposure factors and then summing the resulting values by year.
+- Measures of how dependent communities are on species sensitive to environmental variability (temperature, acidifcation, etc.)
+- Most communities, especially those in the Chesapeake Bay, are highly dependent on species that are very highly sensitive to environmental variability
+- On average, Mid Atlantic communities' landings are _moderately dependent_ on species sensitive to environmental variability, while community revenue is _highly dependent_ on species sensitive to environmental variability. 
 
 :::
 
@@ -64,8 +72,11 @@ return_plot("recreational-engagement", region = "MidAtlantic", mode = "slide")
 
 ::: {.soe-50-column}
 
+<br>
+<br>
+
 ```{r}
-ecodata::plot_community_factors(report = 'MidAtlantic',plottype = 'Commercial',varName = 'Social', n = 5) |> 
+ecodata::plot_community_factors(report = 'MidAtlantic',plottype = 'Recreational',varName = 'Social', n = 5) |> 
   flextable::flextable()
 ```
 

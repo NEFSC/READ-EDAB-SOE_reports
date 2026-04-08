@@ -137,6 +137,8 @@ quarto::write_yaml_metadata_block(footer = region2)
 ```{r, child = here::here("child_slides/risks_catch_newengland.qmd"), eval = TRUE}
 ```
 
+{{< include child_slides/risks_catch_shared.qmd >}}
+
 {{< include child_slides/risks_wind_map.qmd >}}
 
 ```{r, child = here::here("child_slides/risks_wind_midatlantic.qmd"), eval = TRUE}
@@ -149,7 +151,7 @@ quarto::write_yaml_metadata_block(footer = region2)
 
 {{< include child_slides/highlights_conclusions.qmd >}}
 
-```{r, child = here::here("child_slides/takehome_midatlantic.qmd"), eval = TRUE}
+```{r, child = here::here("child_slides/takehome_midatlantic.qmd"), eval = FALSE}
 ```
 
 {{< include child_slides/closing_slides.qmd >}}
