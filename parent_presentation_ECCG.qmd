@@ -13,7 +13,7 @@ format:
   # This uses the built-in Quarto revealjs format
   revealjs:
     theme: ""
-    footer: "{{< meta footer >}} State of the Ecosystem 2026 | Northeast Fisheries Science Center"
+    footer: "Mid-Atlantic & New England State of the Ecosystem 2026 | Northeast Fisheries Science Center"
     slide-number: true
     # auto-stretch: false
     # Sets the slide aspect ratio
