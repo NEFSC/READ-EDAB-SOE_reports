@@ -16,6 +16,8 @@ return_plot("wea-spp-rev", region = "MidAtlantic")
 
 Based on revenue between 2008-2024, MAFMC-managed fisheries derived a maximum of 6% of annual regional fishery revenue from the Active Project areas. The specific fisheries affected include chub mackerel (6% of revenue), bluefish (5%), butterfish (4%), and monkfish, scup, black sea bass, and longfin squid (3% each) (Table \ref{tab:wea-landings-rev}). Future offshore wind development may increase effects on these and additional species if more projects begin construction. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings and/or revenue.
 
+<!-- \newpage -->
+
 ```{r wea-landings-rev, ft.arraystretch = 1}
 spp.mark = c('Chub Mackerel','Bluefish','Golden Tilefish')
 

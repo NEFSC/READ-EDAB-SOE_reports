@@ -24,7 +24,7 @@ opening: To the SSC,
 closing: Sincerely,
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 encl:
- - "State of the Ecosystem 2024: Request Tracking Memo"
+ - "State of the Ecosystem 2026: Request Tracking Memo"
 cc:
 - Jon Hare
 letterhead: utils/NEFSCletterhead.pdf
@@ -33,7 +33,7 @@ signature-before: -8ex
 # --- Document Settings & Dependencies ---
 fontsize: 10pt
 link-citations: yes
-geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
+geometry: left=2cm, right=2cm, top=3.5cm, bottom=2cm, footskip = .5cm
 subparagraph: yes
 urlcolor: blue
 always_allow_html: true

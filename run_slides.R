@@ -95,4 +95,4 @@ quarto::quarto_render(
   ),
   output_format = "all"
 )
-  difftime(Sys.time(), now)
+difftime(Sys.time(), now)

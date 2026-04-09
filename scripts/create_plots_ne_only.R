@@ -91,7 +91,7 @@ create_plots_ne <- function(region = "NewEngland")
     },
     indicator = "calfin_cog",
     width = 6.5,
-    height = 2.75
+    height = 4
   )
   
   # mass inshore survey -- NE only
@@ -111,13 +111,11 @@ create_plots_ne <- function(region = "NewEngland")
     save_plot(
       plot_expression = {
         ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
-          ggplot2::coord_cartesian(xlim = c(1991, 2025))+
-          ggplot2::ylab('Fledged Chicks per Nest')+
-          ggplot2::ggtitle('Common Tern Productivity')
+          ggplot2::coord_cartesian(xlim = c(1991, 2025))
       },
       indicator = "seabird_productivity",
       width = 6.5,
-      height = 2
+      height = 2.5
     )
   }
   
@@ -132,22 +130,24 @@ create_plots_ne <- function(region = "NewEngland")
       },
       indicator = "salmon",
       width = 6.5,
-      height = 3
+      height = 4
     )
   }
   
-  # WBTS Zoo - NE only
-  # if (region == "NewEngland") {
-  #   save_plot(
-  #     plot_expression = {
-  #       ecodata::plot_wbts_zoo(report = region, n = 10)
-  #     },
-  #     indicator = "wbts_zoo",
-  #     width = 6.5,
-  #     height = 4
-  #   )
-  # }
-  
+  #NE only - rec_hms from LPS only, no MRIP
+  save_plot(
+    plot_expression = {
+      rec_lps_sharks_plot <- ecodata::plot_lps_sharks(
+        report = region,
+        n = 10
+      )  +
+        ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
+        ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
+    },
+    indicator = "rec_hms_NE",
+    width = 6.5,
+    height = 4.5
+  )
   
 }
 # create_plots_ne(region = "NewEngland")

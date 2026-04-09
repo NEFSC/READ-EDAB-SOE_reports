@@ -22,6 +22,7 @@ Indicators: Recreational harvest
 ```{r}
 return_plot("rec-landings", region = "NewEngland", mode = "slide")
 ```
+
 ```{r}
 return_plot("rec-hms", region = "NewEngland", mode = "slide")
 ```

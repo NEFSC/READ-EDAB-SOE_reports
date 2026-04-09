@@ -1,4 +1,4 @@
-## Risks: Offshore Wind Development
+## Risks: Offshore Wind Development New England
 
 :::: {.soe-50-50-slide}
 
@@ -27,7 +27,7 @@ return_plot("wea-port-rev", region = "NewEngland", mode = "slide")
 
 ::::
 
-## Risks: Offshore Wind Development
+## Risks: Offshore Wind Development New England
 
 :::: {.soe-50-50-slide}
 
