@@ -243,7 +243,23 @@ create_plots_slides_mab_and_ne <- function(region) {
   if (region == "MidAtlantic") {
     save_plot(
       plot_expression = {
-        ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)
+        custom_legend_grob <- gridtext::richtext_grob(
+          paste(
+            "<span style='color:black;'>NEFSC Bottom Trawl</span>",
+            "<span style='color:red;'>NEAMAP Bottom Trawl</span>",
+            sep = "<br>"
+          ),
+          halign = 0,
+          gp = grid::gpar(fontsize = 10)
+        )
+
+        ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10) +
+          ggplot2::theme(legend.position = "bottom") +
+          ggplot2::guides(
+            custom_legend = ggplot2::guide_custom(
+              grob = custom_legend_grob
+            )
+          )
       },
       indicator = "aggregate_biomass_mab",
       width = 6.5,

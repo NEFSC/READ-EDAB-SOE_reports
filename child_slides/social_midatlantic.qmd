@@ -22,7 +22,7 @@ ecodata::plot_community_factors(report = 'MidAtlantic',plottype = 'Commercial',v
   flextable::flextable()
 ```
 
-- More variability in the most commercially active ports -- Cape May and Reedville
+- More variability in the most commercially active ports (based on dealers, landings, and permits) -- Cape May and Reedville
 - Increasing activity in Shinnecock/Hampton Bays
 - Crew Survey shows inconsistent job satisfaction among crew and evidence of aging of the fleet
 
