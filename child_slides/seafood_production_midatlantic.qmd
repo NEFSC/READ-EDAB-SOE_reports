@@ -6,7 +6,7 @@
 Indicators: Commercial landings, climate vulnerability
 
 ```{r}
-#| out-height: "500px"
+# <!-- #| out-height: "500px" -->
 return_plot("total-landings", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -21,12 +21,12 @@ Mid Atlantic community landings are _moderately dependent_ on species sensitive 
 Indicators: Recreational harvest
 
 ```{r}
-#| out-height: "250px"
+# <!-- #| out-height: "250px" -->
 return_plot("rec-landings", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r}
-#| out-height: "400px"
+# <!-- #| out-height: "400px" -->
 return_plot("rec-hms", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -45,12 +45,12 @@ Drivers: Shifts in fishing behavior (landed vs catch-and-release) and closure of
 Indicator: Stock status
 
 ```{r stock-status}
-#| out-height: "500px"
+# <!-- #| out-height: "500px" -->
 return_plot("stock-status", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r abcacl}
-#| out-height: "250px"
+# <!-- #| out-height: "250px" -->
 return_plot("abcacl-catch", region = "MidAtlantic", mode = "slide")
 ```
 :::

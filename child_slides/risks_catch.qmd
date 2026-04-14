@@ -1,35 +1,3 @@
-## Risks to Setting Catch Limits: Drivers
-
-Environmental: Habitat Quality and Circulation
-
-```{r, eval = TRUE}
-#| fig-align: center
-#| out-height: "350px"
-return_plot("mab-oa", region = "BothReports",mode = 'slide')
-```
-
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-```{r, eval = TRUE}
-#| out-height: "350px"
-return_plot("advection-index", region = params$region, mode = 'slide')
-```
-
-
-:::
-
-::: {.soe-50-column}
-
-* Episodic habitat risk events for scallops and squid present but sparse in 2025
-* New Indicator: Advection off shelf (how much are larvae getting carried offshore?)
-  * Mid and Deep water more likely to leave shore in spring over time
-
-:::
-
-::::
 
 ## Risks to Setting Catch Limits
 

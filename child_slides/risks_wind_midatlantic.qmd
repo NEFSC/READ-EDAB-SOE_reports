@@ -7,12 +7,12 @@
 Indicators: fishery and community specific revenue in lease areas
 
 ```{r}
-#| out-height: "500px"
+# <!-- #| out-height: "500px" -->
 return_plot("wea-spp-rev", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r}
-#| out-height: "350px"
+# <!-- #| out-height: "350px" -->
 return_plot("wind-rev", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -21,7 +21,7 @@ return_plot("wind-rev", region = "MidAtlantic", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r}
-#| out-height: "650px"
+# <!-- #| out-height: "650px" -->
 return_plot("wea-port-rev", region = "MidAtlantic", mode = "slide")
 ```
 
