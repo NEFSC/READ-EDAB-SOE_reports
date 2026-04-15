@@ -156,7 +156,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "stock_status",
     width = 6.5,
-    height = 6
+    height = ifelse(region == "NewEngland", 6, 5)
   )
 
   # 2. ABC/ACL Stacked Plot
@@ -360,7 +360,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "bennet",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 8, 3)
+    height = ifelse(region == "NewEngland", 8, 6)
   )
 
   # bennet all
@@ -404,7 +404,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "bennet_all",
     width = 9,
-    height = 6.5
+    height = ifelse(region == "NewEngland", 6.5, 9)
   )
 
   # 4. Climate Vulnerability Revenue Plot
@@ -738,7 +738,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "traits_k",
     width = 6.5,
-    height = 4.5
+    height = ifelse(region == "NewEngland", 4.5, 4)
   )
 
   # finfish traits -- trophic level
@@ -765,7 +765,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "traits_tl",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 4.5, 4.5)
+    height = ifelse(region == "NewEngland", 4.5, 4)
   )
 
   ## Community social and climate vulnerability ----
@@ -977,7 +977,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "benthos",
     width = 6.5,
-    height = 8
+    height = ifelse(region == "NewEngland", 8, 6)
   )
 
   # 8. Zooplankton Anomaly Plot
