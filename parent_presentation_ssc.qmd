@@ -79,7 +79,7 @@ Looking for feedback from SSC on performance objectives
 <br><br><br>
 2. Are the metrics used appropriate to evaluate these objectives?
 
-```{r, child = here::here("child_slides/highlights_midatlantic_2025.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/highlights_midatlantic_2026.qmd"), eval = params$region != "NewEngland"}
 ```
 
 ```{r, child = here::here("child_slides/highlights_newengland_2026.qmd"), eval = params$region != "MidAtlantic"}
@@ -97,7 +97,7 @@ Looking for feed back from the SSC on using forecast information in the SOE
 
 \vspace{20mm}
 
-2. Are there other "events" or reference points that could be used instead
+2. Are there other "events" or reference points that could be used instead?
 
 \vspace{20mm}
 

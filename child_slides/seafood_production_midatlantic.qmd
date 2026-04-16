@@ -65,9 +65,6 @@ return_plot("abcacl-stacked", region = "MidAtlantic", mode = "slide")
 
 ```
 
-- Two groups of species:
-  - Catch ratios near 1
-  - Catch ratios near 0.3
 - Species with catch ratios near 1 may be constrained by total allowable catch; although most stock biomass is meeting management targets, the amount of catch supported may be lower than historic 
 - Species with lower catch ratios may be constrained by spatial, temporal, or other non-quota-related management factors
 

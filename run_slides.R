@@ -74,7 +74,7 @@ quarto::quarto_render(
     region = "MidAtlantic",
     council = "MAFMC",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
-    date = Sys.Date() |> format("%B %d, %Y"),
+    date = "May 13, 2026",
     author = "Abby Tyrell, lead editor, NEFSC"
   ),
   output_format = "all"
