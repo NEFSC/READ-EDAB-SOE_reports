@@ -41,8 +41,8 @@ return_plot("commvulex", region = "MidAtlantic", mode = "slide")
 ```
 
 - Measures of how dependent communities are on species sensitive to environmental variability (temperature, acidifcation, etc.)
-- Most communities, especially those in the Chesapeake Bay, are highly dependent on species that are very highly sensitive to environmental variability
-- On average, Mid Atlantic communities' landings are _moderately dependent_ on species sensitive to environmental variability, while community revenue is _highly dependent_ on species sensitive to environmental variability. 
+- Many communities, especially those in the Chesapeake Bay, are dependent on species that are _very highly sensitive_ to environmental variability
+- On average, Mid Atlantic communities' landings are composed of species that are _moderately sensitive_ to environmental variability, while community revenue is derived from species that are _highly sensitive_ to environmental variability. 
 
 :::
 

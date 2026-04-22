@@ -12,7 +12,7 @@ return_plot("total-landings", region = "MidAtlantic", mode = "slide")
 
 Multiple potential drivers: ecosystem and stock production, management, market conditions, and environmental change.
 
-Mid Atlantic community landings are _moderately dependent_ on species sensitive to environmental variability, with no trend over time.
+On average, Mid Atlantic community landings are composed of species that are _moderately sensitive_ to environmental variability, with no trend over time.
 
 :::
 
