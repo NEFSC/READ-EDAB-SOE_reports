@@ -25,7 +25,7 @@ return_plot("wind-rev", region = "MidAtlantic", mode = "slide")
 return_plot("wea-port-rev", region = "MidAtlantic", mode = "slide")
 ```
 
-Left: Council request: New England ports relying on Mid-Atlantic managed species
+Left: Council request: New England ports relying on Mid-Atlantic managed species within the Active Projects
 
 :::
 

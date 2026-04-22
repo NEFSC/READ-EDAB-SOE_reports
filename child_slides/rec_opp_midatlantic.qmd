@@ -1,4 +1,4 @@
-## Objective: Mid Atlantic Recreational opportunities: effort:`r I(increasing)` `r I(near_average)`; diversity: `r I(mixed_trend)`, `r I(below_average)` (effort), `r I(above_average)` (catch)
+## Objective: Mid Atlantic Recreational opportunities: effort:`r I(no_trend)` `r I(near_average)`; diversity: `r I(mixed_trend)`, `r I(below_average)` (effort), `r I(above_average)` (catch)
 
 :::: {.soe-50-50-slide}
 

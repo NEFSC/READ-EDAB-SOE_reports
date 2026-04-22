@@ -193,6 +193,8 @@ Looking for feedback from the SSC on fishery and ecosystem stability
 
 <!-- {{< include child_slides/risks_wind.qmd >}} -->
 
+{{< include child_slides/highlights_header.qmd >}}
+
 {{< include child_slides/highlights_conclusions.qmd >}}
 
 ```{r, child = here::here("child_slides/takehome_midatlantic.qmd"), eval = FALSE}

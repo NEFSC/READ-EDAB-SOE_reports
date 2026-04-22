@@ -32,7 +32,7 @@ cat('* Risk element: TechInteract, evaluated by species and sector:  14 <span st
 
 ::::
 
-## Objectives: Coastwide Protected species *Recover endangered populations* `r I(decreasing)` `r I(below_average)`
+## Objectives: Coastwide Protected species *Recover endangered populations* `r I(mixed_trend)` `r I(below_average)`
 
 :::: {.soe-50-50-slide}
 
@@ -59,11 +59,15 @@ Implications:
 * Interactions between North Atlantic Right Whales (NARW) and fixed gear fisheries and offshore wind development
 * Distribution shifts  driven by copepod availability. 
 * Unusual mortality events continue for 3 large whale species.
+* Gray seal population is increasing
 
-* Atlantic salmon return rates continue to decline
+```{r salmon, eval = params$region == "NewEngland", results = "asis"}
+res <- knitr::knit_child(text = '* Atlantic salmon return rates continue to decline
+\n\n
+`r return_plot("salmon", region = "NewEngland")`',
+quiet = TRUE)
 
-```{r}
-return_plot("salmon", region = "NewEngland")
+cat(res, sep = "\n\n")
 ```
 
 :::

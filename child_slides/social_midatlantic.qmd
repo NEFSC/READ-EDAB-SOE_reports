@@ -1,10 +1,10 @@
 ## Mid Atlantic Social and Cultural
 
+Indicators: Commercial port activity, recreational fishery engagement, social vulnerability
+
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
-
-Indicators: Commercial fishery engagement, social vulnerability
 
 ```{r commercial-engagement}
 return_plot("commercial-engagement", region = "MidAtlantic", mode = "slide")
@@ -14,17 +14,15 @@ return_plot("commercial-engagement", region = "MidAtlantic", mode = "slide")
 
 ::: {.soe-50-column}
 
-<br>
-<br>
 
-```{r comvultab}
-ecodata::plot_community_factors(report = 'MidAtlantic',plottype = 'Commercial',varName = 'Social', n = 5) |> 
-  flextable::flextable()
+```{r recreational-engagement, fig.alt= "Recreational engagement and population relative engagement with labels for the top recreationally engaged fishing communities in the Mid-Atlantic."}
+return_plot("recreational-engagement", region = "MidAtlantic", mode = "slide")
 ```
 
 - More variability in the most commercially active ports (based on dealers, landings, and permits) -- Cape May and Reedville
 - Increasing activity in Shinnecock/Hampton Bays
 - Crew Survey shows inconsistent job satisfaction among crew and evidence of aging of the fleet
+- Communities with med-high to high census-derived vulnerability indicators: Bronx, NY, Hampton Bays/Shinnecock, NY, Newport News, VA, Morehead City, NC
 
 :::
 
@@ -51,34 +49,6 @@ return_plot("commvulex", region = "MidAtlantic", mode = "slide")
 ::: {.soe-50-img}
 
 ![CCCVR map total vulnerability](https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/NE_Total_Vulnerability_092624-TarsilaSeara_2025.jpg)
-
-:::
-
-::::
-
-## Mid Atlantic Social and Cultural
-
-Indicators: Recreational fishery engagement, social vulnerability
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-```{r recreational-engagement, fig.alt= "Recreational engagement and population relative engagement with labels for the top recreationally engaged fishing communities in the Mid-Atlantic."}
-return_plot("recreational-engagement", region = "MidAtlantic", mode = "slide")
-```
-
-:::
-
-::: {.soe-50-column}
-
-<br>
-<br>
-
-```{r}
-ecodata::plot_community_factors(report = 'MidAtlantic',plottype = 'Recreational',varName = 'Social', n = 5) |> 
-  flextable::flextable()
-```
 
 :::
 

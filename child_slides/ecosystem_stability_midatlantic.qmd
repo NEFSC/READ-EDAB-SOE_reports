@@ -1,10 +1,10 @@
 ## Objective: Mid Atlantic Ecological Stability: Not Stable
 
+*Ecological* Indicators: Community Composition, zooplankton biomass
+
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
-
-*Ecological* Indicators: Community Composition
 
 ```{r}
 return_plot("exp-n", region = "MidAtlantic", mode = "slide")
@@ -15,18 +15,16 @@ return_plot("zoo-diversity", region = "MidAtlantic", mode = "slide")
 ```
 
 - Long-term changes in community composition 
+- Benthos biomass also shows trends
+- Trends in diversity and biomass would not be expected in a stable system
 
 :::
 
 ::: {.soe-50-column}
 
-*Ecological* Indicators: Zooplankton biomass
-
 ```{r}
 return_plot("zoopanom", region = "MidAtlantic", mode = "slide")
 ```
-
-- Benthos biomass also shows trends
 
 :::
 

@@ -1,5 +1,5 @@
 
-## Revised Risks: Climate and Ecosystem Change 
+## Risks: Climate and Ecosystem Change 
 
 :::: {.soe-50-50-slide}
 
@@ -105,12 +105,6 @@ Forage fish distributions
 return_plot("forageshifts", region = "BothReports", mode = "slide")
 ```
 
-Some species are following their food, but not all.
-Both pelagic and benthic prey are shifting towards the northeast
-
-:::
-
-::: {.soe-50-column}
 
 Macrobenthos (mid-size benthic species) distributions
 
@@ -118,8 +112,15 @@ Macrobenthos (mid-size benthic species) distributions
 return_plot("macrobenthosshifts", region = "BothReports", mode = "slide")
 ```
 
-Not all species are as mobile as their prey. 
-Can cause a mismatch between fish and their prey
+:::
+
+::: {.soe-50-column}
+
+<br><br>
+
+- Some species can follow their food, but not all -- can cause a mismatch between fish and their prey
+- Pelagic prey are shifting towards the northeast
+- Mixed trends in benthic prey shifts
 
 :::
 
@@ -148,7 +149,7 @@ _Calanus_ shifting westward in last decade
 return_plot("smallcopeall-cog", region = "BothReports", mode = "slide")
 ```
 
-Long-term northeast shifts in Small copepods
+Long-term northeast shifts in small copepods
 
 :::
 
@@ -172,7 +173,7 @@ return_plot("GSI", region = "BothReports", mode = "slide")
 
 * The entire shelf is getting warmer with northward shifts in Gulf Stream
 * Since 2023 - sharp drop in Gulf Stream and temperature
-* Changes in currents and temperature can alter habitat suitability for species
+* Changes in currents and temperature can alter habitat suitability
 * Mobile species can follow changes, but others cannot (i.e. scallops)
 :::
 

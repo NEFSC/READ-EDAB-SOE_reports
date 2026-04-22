@@ -7,13 +7,11 @@
 
 Future considerations
 
-*   Processes that control fish productivity and mortality are dynamic, complex, and are the result of the interactions between multiple changing system drivers.
-
-*   Managers should consider that historic environment conditions and productivity may no longer represent likely future scenarios.
+*   Historic environment conditions and productivity may no longer represent likely future scenarios.
 
 *   Assumptions for species’ growth, reproduction, and natural mortality should continue to be evaluated for individual species.
 
-*   With observations of system-wide productivity shifts of multiple managed stocks, more research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management.
+*   More research is needed to determine whether regime shifts or ecosystem reorganization are occurring, and how this should be incorporated into management.
 
 :::
 

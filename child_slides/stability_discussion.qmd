@@ -11,8 +11,6 @@ Stability is measured by:
   - Adaptive Capacity: How well can the system respond to changes?
   - Shifts from Baseline: Is the system shifting to a new status where prior conditions may no longer be the norm?
 
-
-  
 :::
 
 ::: {.soe-50-column}
