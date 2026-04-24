@@ -20,7 +20,7 @@ return_plot("grayseal", region = "BothReports")
 
 Implications: 
 
-* High uncertainty in gray seal bycatch estimates but considered meeting objectives
+* High uncertainty in gray seal bycatch estimates but considered to be meeting objectives
 * Gray seal are among the highest bycatch of any U.S. marine mammal. The increasing trend in gray seal bycatch may be related to an increase in the gray seal population (U.S. pup counts).
 ```{r, eval = FALSE, results = "asis"}
 cat('* Risk element: TechInteract, evaluated by species and sector:  14 <span style="background-color:lightgreen;">low</span>, 7 <span style="background-color:yellow;">low-mod</span>, 2 <span style="background-color:orange;">mod-high</span> risk')
@@ -55,11 +55,11 @@ return_plot("NARW-calf-abundance", region = "BothReports")
 
 Implications:  
 
-* No change in adult populations since 2020 but mortality still above recovery rate
-* Interactions between North Atlantic Right Whales (NARW) and fixed gear fisheries and offshore wind development
-* Distribution shifts  driven by copepod availability. 
+* No change in North Atlantic Right Whales (NARW) adult populations since 2020 but mortality still above recovery rate
+* Interactions between NARW and fixed gear fisheries and offshore wind development
+* Distribution shifts driven by copepod availability. 
 * Unusual mortality events continue for 3 large whale species.
-* Gray seal population is increasing
+* Gray seal population is increasing, according to 2024 stock assessment
 
 ```{r salmon, eval = params$region == "NewEngland", results = "asis"}
 res <- knitr::knit_child(text = '* Atlantic salmon return rates continue to decline

@@ -10,7 +10,7 @@ Indicators: Commercial revenue
 return_plot("comm-revenue", region = "MidAtlantic", mode = "slide")
 ```
 
-On average, Mid Atlantic community revenue is derived species that are _highly sensitive_ to environmental variability, with no trend over time.
+On average, Mid Atlantic community revenue is derived from species that are _highly sensitive_ to environmental variability, with no trend over time.
 
 :::
 

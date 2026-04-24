@@ -1,4 +1,4 @@
-## Objective: Mid Atlantic Seafood production `r I(decreasing)` (total and recreational) `r I(no_trend)` (managed) `r I(below_average)` 
+## Objective: Mid Atlantic Seafood production `r I(decreasing)` (total and recreational) `r I(no_trend)` (managed) `r I(below_average)` (all)
 
 :::: {.soe-50-50-slide}
 

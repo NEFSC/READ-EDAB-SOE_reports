@@ -7,7 +7,7 @@
 
 Future considerations
 
-*   Historic environment conditions and productivity may no longer represent likely future scenarios.
+*   Historic environmental conditions and productivity may no longer represent likely future scenarios.
 
 *   Assumptions for species’ growth, reproduction, and natural mortality should continue to be evaluated for individual species.
 

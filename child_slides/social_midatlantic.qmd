@@ -21,8 +21,8 @@ return_plot("recreational-engagement", region = "MidAtlantic", mode = "slide")
 
 - More variability in the most commercially active ports (based on dealers, landings, and permits) -- Cape May and Reedville
 - Increasing activity in Shinnecock/Hampton Bays
-- Crew Survey shows inconsistent job satisfaction among crew and evidence of aging of the fleet
-- Communities with med-high to high census-derived vulnerability indicators: Bronx, NY, Hampton Bays/Shinnecock, NY, Newport News, VA, Morehead City, NC
+- Crew Survey shows inconsistent job satisfaction and aging of the fleet
+- Highly fishing-engaged communities with med-high to high census-derived vulnerability indicators: Bronx, NY, Hampton Bays/Shinnecock, NY, Newport News, VA, Morehead City, NC
 
 :::
 

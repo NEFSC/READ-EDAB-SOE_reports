@@ -85,8 +85,8 @@ return_plot("protectedspp-dist-shifts", region = "BothReports", mode = "slide")
 
 Changing distributions can impact:
 
-  * spatial allocation & cross-jurisdictional management
-  * effectiveness of bycatch reduction measures
+  * Spatial allocation & cross-jurisdictional management
+  * Effectiveness of bycatch reduction measures
   * Availability to surveys and fisheries
 
 :::
@@ -99,24 +99,27 @@ Changing distributions can impact:
 
 ::: {.soe-50-column}
 
-Forage fish distributions
-
-```{r forageshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity."}
-return_plot("forageshifts", region = "BothReports", mode = "slide")
-```
-
-
 Macrobenthos (mid-size benthic species) distributions
 
 ```{r macrobenthosshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf"}
 return_plot("macrobenthosshifts", region = "BothReports", mode = "slide")
 ```
 
+Megabenthos (larger-size benthic species) distributions
+
+```{r}
+return_plot("megabenthosshifts", region = "BothReports", mode = "slide")
+```
+
 :::
 
 ::: {.soe-50-column}
 
-<br><br>
+Forage fish distributions
+
+```{r forageshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity."}
+return_plot("forageshifts", region = "BothReports", mode = "slide")
+```
 
 - Some species can follow their food, but not all -- can cause a mismatch between fish and their prey
 - Pelagic prey are shifting towards the northeast
