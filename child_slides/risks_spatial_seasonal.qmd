@@ -171,7 +171,7 @@ return_plot("GSI", region = "BothReports", mode = "slide")
 ```
 
 * The entire shelf is getting warmer with northward shifts in Gulf Stream
-* Since 2023 - sharp drop in gulf stream and temperature
+* Since 2023 - sharp drop in Gulf Stream and temperature
 * Changes in currents and temperature can alter habitat suitability for species
 * Mobile species can follow changes, but others cannot (i.e. scallops)
 :::

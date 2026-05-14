@@ -87,11 +87,11 @@ quarto::quarto_render(
   input = here::here("parent_presentation_ECCG.qmd"),
   output_file = "SOE2026_newengland_ECCG",
   execute_params = list(
-    region = "NewEngland",
+    region = "both",
     council = "NEFMC",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
     date = Sys.Date() |> format("%B %d, %Y"),
-    author = "Joe Caracappa, lead editor, NEFSC"
+    author = "Joe Caracappa & Abigail Tyrell: lead editors, NEFSC"
   ),
   output_format = "all"
 )

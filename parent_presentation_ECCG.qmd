@@ -13,7 +13,7 @@ format:
   # This uses the built-in Quarto revealjs format
   revealjs:
     theme: ""
-    footer: "{{< meta footer >}} State of the Ecosystem 2026 | Northeast Fisheries Science Center"
+    footer: "Mid-Atlantic & New England State of the Ecosystem 2026 | Northeast Fisheries Science Center"
     slide-number: true
     # auto-stretch: false
     # Sets the slide aspect ratio
@@ -67,7 +67,7 @@ quarto::write_yaml_metadata_block(footer = region2)
 
 {{< include child_slides/synthesis_meeting_intro.qmd >}}
 
-```{r, child = here::here("child_slides/highlights_midatlantic_2025.qmd"), eval = TRUE}
+```{r, child = here::here("child_slides/highlights_midatlantic_2026.qmd"), eval = TRUE}
 ```
 
 ```{r, child = here::here("child_slides/highlights_newengland_2026.qmd"), eval = TRUE}
@@ -79,44 +79,44 @@ quarto::write_yaml_metadata_block(footer = region2)
 
 {{< include child_slides/performance_header.qmd >}}
 
-```{r, child = here::here("child_slides/seafood_production_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/seafood_production_midatlantic.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/seafood_production_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/seafood_production_newengland.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/commercial_profits_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/commercial_profits_midatlantic.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/commercial_profits_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/commercial_profits_newengland.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/rec_opp_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/rec_opp_midatlantic.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/rec_opp_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/rec_opp_newengland.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/social_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/social_midatlantic.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/social_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/social_newengland.qmd"), eval = TRUE}
 ```
 
 {{< include child_slides/protected_species.qmd >}}
 
 {{< include child_slides/stability_discussion.qmd >}}
 
-```{r, child = here::here("child_slides/fishery_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/fishery_stability_midatlantic.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/fishery_stability_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/fishery_stability_newengland.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/ecosystem_stability_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/ecosystem_stability_midatlantic.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/ecosystem_stability_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/ecosystem_stability_newengland.qmd"), eval = TRUE}
 ```
 
 {{< include child_slides/risks_header.qmd >}}
@@ -125,33 +125,33 @@ quarto::write_yaml_metadata_block(footer = region2)
 
 {{< include child_slides/risks_spatial_seasonal2.qmd >}}
 
-```{r, child = here::here("child_slides/risks_seasonal_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/risks_seasonal_midatlantic.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/risks_seasonal_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/risks_seasonal_newengland.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/risks_catch_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/risks_catch_midatlantic.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/risks_catch_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/risks_catch_newengland.qmd"), eval = TRUE}
 ```
 
-{{< include child_slides/risks_catch.qmd >}}
+{{< include child_slides/risks_catch_shared.qmd >}}
 
 {{< include child_slides/risks_wind_map.qmd >}}
 
-```{r, child = here::here("child_slides/risks_wind_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/risks_wind_midatlantic.qmd"), eval = TRUE}
 ```
 
-```{r, child = here::here("child_slides/risks_wind_newengland.qmd"), eval = params$region != "MidAtlantic"}
+```{r, child = here::here("child_slides/risks_wind_newengland.qmd"), eval = TRUE}
 ```
 
 <!-- {{< include child_slides/risks_wind.qmd >}} -->
 
 {{< include child_slides/highlights_conclusions.qmd >}}
 
-```{r, child = here::here("child_slides/takehome_midatlantic.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/takehome_midatlantic.qmd"), eval = FALSE}
 ```
 
 {{< include child_slides/closing_slides.qmd >}}

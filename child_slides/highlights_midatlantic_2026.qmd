@@ -1,0 +1,22 @@
+## Mid Atlantic: Summary of Performance relative to management objectives
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-img}
+```{r}
+#| out-height: "700px"
+knitr::include_graphics(here::here("images/MidAtlantic/SOE-MA-2026-v5_Page_1_cropped1.png"))
+```
+
+:::
+
+::: {.soe-50-img}
+
+```{r}
+#| out-height: "700px"
+knitr::include_graphics(here::here("images/MidAtlantic/SOE-MA-2026-v5_Page_1_cropped2.png"))
+```
+
+:::
+
+::::
