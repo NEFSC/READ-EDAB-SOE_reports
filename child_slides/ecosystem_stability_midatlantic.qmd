@@ -1,6 +1,6 @@
 ## Objective: Mid Atlantic Ecological Stability: Not Stable
 
-*Ecological* Indicators: Community Composition
+*Ecological* Indicators: Community Composition, zooplankton biomass
 
 :::: {.soe-50-50-slide}
 
@@ -10,61 +10,14 @@
 return_plot("exp-n", region = "MidAtlantic", mode = "slide")
 ```
 
-- Long-term changes in community composition 
-
-:::
-
-::: {.soe-50-column}
-
-```{r}
-return_plot("zoo-community", region = "MidAtlantic", mode = "slide")
-```
-
 ```{r}
 return_plot("zoo-diversity", region = "MidAtlantic", mode = "slide")
 ```
 
-:::
+- Long-term changes in community composition 
+- Benthos biomass also shows trends
+- Trends in diversity and biomass would not be expected in a stable system
 
-::::
-
-## Objective: Mid Atlantic Ecological Stability: Not Stable
-
-*Ecological* Indicators: fish biomass
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-```{r}
-return_plot("nefsc-biomass-mab", region = "MidAtlantic", mode = "slide")
-```
-
-:::
-
-::: {.soe-50-column}
-
-```{r}
-return_plot("foragebio", region = "MidAtlantic", mode = "slide")
-```
-
-- Trends in biomass would not be expected in a stable system
-
-:::
-
-::::
-
-## Objective: Mid Atlantic Ecological Stability: Not Stable
-
-*Ecological* Indicators: benthos and zooplankton biomass
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-```{r}
-return_plot("benthos", region = "MidAtlantic", mode = "slide")
-```
 :::
 
 ::: {.soe-50-column}
@@ -79,18 +32,14 @@ return_plot("zoopanom", region = "MidAtlantic", mode = "slide")
 
 ## Objective: Mid Atlantic Ecological Stability: Not Stable
 
-*Ecological* Indicators: fish traits
+*Ecological* Indicators: fish biomass & traits
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
 ```{r}
-return_plot("traits-k", region = "MidAtlantic")
-```
-
-```{r}
-return_plot("traits", region = "MidAtlantic")
+return_plot("nefsc-biomass-mab", region = "MidAtlantic", mode = "slide")
 ```
 
 :::
@@ -102,31 +51,11 @@ return_plot("traits-tl", region = "MidAtlantic")
 ```
 
 
-* Declines in species trophic level & other life history traits suggests changing ecology
+- Declines in species trophic level & other life history traits suggests changing ecology
+- Trends in biomass would not be expected in a stable system
+- Productivity of managed species is lower than historic levels
 
 :::
 
 ::::
 
-## Objective: Mid Atlantic Ecological Stability: Not Stable
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-*Ecological* Indicators: fish productivity
-
-- Declines in productivity of managed species
-- But no trend in aggregate biomass at the guild level suggests the system is able to adapt to change
-
-:::
-
-::: {.soe-50-column}
-
-```{r}
-return_plot("productivity-anomaly", region = "MidAtlantic", mode = "slide")
-```
-
-:::
-
-::::

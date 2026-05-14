@@ -1,7 +1,7 @@
 ## Risks to Managing Spatially: Future considerations
 
-* Distribution shifts caused by changes in thermal habitat and ocean circulation are likely to continue as long as long-term trends persist. 
-* Episodic and short-term events (see [2025 Highlights](#2025-highlights)) may increase variability in the trends.
+* Distribution shifts caused by changes in thermal habitat and ocean circulation will continue as long as long-term trends persist
+* Episodic and short-term events (see [2025 Highlights](#2025-highlights)) increase variability
 * We need a better understanding of the drivers of distribution shifts to make predictions
 
 :::: {.soe-50-50-slide}
@@ -10,14 +10,15 @@
 
 **Forecasts**
 
-* 10 year oceanographic projections forecast a [temporary pause in warming](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL110946) resulting from variability in circulation and a southward shift of the Gulf Stream **not** a shift in the long-term patterns.
+* 10 year oceanographic projections forecast a [temporary pause in warming](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL110946) resulting from variability in circulation and a southward shift of the Gulf Stream 
+  * **not** a shift in the long-term patterns!
 * Evaluating how well these forecasts can predict episodic and anomalous events that are outside of the long-term patterns.
 
 **Management Considerations**
 
-* Adapting management strategies to changing stock distributions and dynamic ocean processes
-* Continued monitoring of populations in space and evaluating management measures against possible future spatial distributions.
-* Use [East Coast Climate Scenario Planning](https://www.mafmc.org/climate-change-scenario-planning) and the subsequent [East Coast Coordination Group](https://www.mafmc.org/e3cg) to help coordinate management responses to change.
+* Need to adapt management strategies to changing stock distributions and dynamic ocean processes
+* Continue monitoring  populations in space and evaluate management measures against possible future spatial distributions.
+* Use the  [East Coast Coordination Group](https://www.mafmc.org/e3cg) to help coordinate management responses to change
 
 :::
 

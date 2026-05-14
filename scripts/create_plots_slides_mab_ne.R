@@ -2,6 +2,8 @@
 # region <- "NewEngland"
 # region <- "MidAtlantic"
 
+source(here::here("utils/plot_functions.R"))
+
 ###########################################
 #' Run all slide plots
 #'
@@ -23,62 +25,6 @@ create_plots_slides_mab_and_ne <- function(region) {
     region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
     region == "NewEngland" ~ "New England"
   )
-
-  ## functions ----
-
-  # A function to create a standardized filename
-  create_filename <- function(
-    indicator,
-    file_region,
-    dir = out_dir,
-    extension = ".png"
-  ) {
-    file.path(
-      dir,
-      paste0(
-        "slide_",
-        indicator,
-        "_",
-        file_region,
-        "_",
-        Sys.Date(),
-        extension
-      )
-    )
-  }
-
-  # A flexible function to generate and save a plot
-  save_plot <- function(
-    plot_expression,
-    indicator,
-    report = region,
-    save_dir = out_dir,
-    ...
-  ) {
-    # Execute the code to create the plot
-    p <- eval(plot_expression)
-
-    # Check if the plot object is valid before saving
-    if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
-      message(report)
-      message(indicator)
-      message(out_dir)
-      fname <- create_filename(
-        indicator = indicator,
-        file_region = report,
-        dir = save_dir
-      )
-      ggplot2::ggsave(
-        filename = fname,
-        plot = p,
-        bg = "white",
-        ...
-      )
-      message("Plot saved to: ", fname)
-    } else {
-      stop("Plot object is not a valid ggplot or ggarrange object.")
-    }
-  }
 
   ## Commercial & recreational landings ----
 
@@ -210,7 +156,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "stock_status",
     width = 6.5,
-    height = 6
+    height = ifelse(region == "NewEngland", 6, 5)
   )
 
   # 2. ABC/ACL Stacked Plot
@@ -243,7 +189,23 @@ create_plots_slides_mab_and_ne <- function(region) {
   if (region == "MidAtlantic") {
     save_plot(
       plot_expression = {
-        ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10)
+        custom_legend_grob <- gridtext::richtext_grob(
+          paste(
+            "<span style='color:black;'>NEFSC Bottom Trawl</span>",
+            "<span style='color:red;'>NEAMAP Bottom Trawl</span>",
+            sep = "<br>"
+          ),
+          halign = 0,
+          gp = grid::gpar(fontsize = 10)
+        )
+
+        ecodata::plot_aggregate_biomass(report = region, EPU = "MAB", n = 10) +
+          ggplot2::theme(legend.position = "bottom") +
+          ggplot2::guides(
+            custom_legend = ggplot2::guide_custom(
+              grob = custom_legend_grob
+            )
+          )
       },
       indicator = "aggregate_biomass_mab",
       width = 6.5,
@@ -398,7 +360,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "bennet",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 8, 3)
+    height = ifelse(region == "NewEngland", 8, 6)
   )
 
   # bennet all
@@ -442,7 +404,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "bennet_all",
     width = 9,
-    height = 6.5
+    height = ifelse(region == "NewEngland", 6.5, 9)
   )
 
   # 4. Climate Vulnerability Revenue Plot
@@ -776,7 +738,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "traits_k",
     width = 6.5,
-    height = 4.5
+    height = ifelse(region == "NewEngland", 4.5, 4)
   )
 
   # finfish traits -- trophic level
@@ -803,7 +765,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "traits_tl",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 4.5, 4.5)
+    height = ifelse(region == "NewEngland", 4.5, 4)
   )
 
   ## Community social and climate vulnerability ----
@@ -1015,7 +977,7 @@ create_plots_slides_mab_and_ne <- function(region) {
     },
     indicator = "benthos",
     width = 6.5,
-    height = 8
+    height = ifelse(region == "NewEngland", 8, 6)
   )
 
   # 8. Zooplankton Anomaly Plot

@@ -24,6 +24,12 @@ Observations included if:
 
 Please send observations to: <northeast.ecosystem.highlights@noaa.gov>
 
+```{r}
+#| out-height: "100px"
+#| out-width: "100px" 
+knitr::include_graphics(here::here("images/SOE_Fishing_Observations.png"))
+```
+
 :::
 
 ::: {.soe-50-img}
@@ -37,7 +43,7 @@ knitr::include_graphics(here::here("images\\BothReports\\input_request.png"))
 
 ::::
 
-## Highlights: Generally cooler, fresher Northeast Shelf
+## Highlights: Cooler Northeast Shelf
 
 :::: {.soe-50-50-slide}
 
@@ -53,7 +59,7 @@ return_plot("slopesea", region = "BothReports")
 
 Globally, 2025 was the third warmest year on record
 
-BUT, nearly all NE shelf seasonal surface and bottom temperatures were more similar to or cooler than the longer term average
+BUT, nearly all NE shelf seasonal surface and bottom temperatures were similar to or cooler than the longer term average
 
 The Cold Pool was well-developed and more similar to the long-term average in terms of extent and persistence
 
@@ -67,7 +73,7 @@ return_plot("slopewater", region = "BothReports")
 
 ::::
 
-## Highlights
+## Highlights: Notable observations
 
 :::: {.soe-50-50-slide}
 

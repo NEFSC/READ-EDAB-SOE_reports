@@ -46,7 +46,7 @@ return_plot("foragebio", region = "MidAtlantic", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r, fig.alt="Changes in spring (blue) and fall (red) benthos abundance in the MAB for megabenthos (left) and macrobenthos (right)."}
-#| out-height: "650px"
+# <!-- #| out-height: "650px" -->
 return_plot("benthos", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -74,7 +74,7 @@ return_plot("totpp", region = "MidAtlantic", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r, fig.alt="Changes in zooplankton abundance in the MAB for large (top left) and small (top right) copepods, Cnidarians (bottom left), and Euphausiids (bottom right), with significant increases (orange) in small copeods and Cnidarians."}
-#| out-height: "650px"
+# <!-- #| out-height: "650px" -->
 return_plot("zoopanom", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -103,7 +103,7 @@ return_plot("traits-k", region = "MidAtlantic", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r}
-#| out-height: "500px"
+# <!-- #| out-height: "500px" -->
 return_plot("traits-tl", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -115,7 +115,7 @@ return_plot("traits-tl", region = "MidAtlantic", mode = "slide")
 
 ## Risks to Setting Catch Limits: Mid Atlantic Drivers
 
-```{r, eval = TRUE}
+```{r, eval = TRUE, out.width = "60%"}
 #| fig-align: center
 # <!-- #| out-height: "350px" -->
 return_plot("mab-oa", region = "BothReports",mode = 'slide')

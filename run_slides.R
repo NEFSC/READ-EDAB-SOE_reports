@@ -65,6 +65,22 @@ quarto::quarto_render(
 )
 difftime(Sys.time(), now)
 
+## Mid ----
+now <- Sys.time()
+quarto::quarto_render(
+  input = here::here("parent_presentation_ssc.qmd"),
+  output_file = "SOE2026_MAFMC_SSC.html",
+  execute_params = list(
+    region = "MidAtlantic",
+    council = "MAFMC",
+    fig_caption = here::here("utils/figure_captions_summary.csv"),
+    date = "May 13, 2026",
+    author = "Abby Tyrell, lead editor, NEFSC"
+  ),
+  output_format = "all"
+)
+difftime(Sys.time(), now)
+
 ## NEFMC CESC ----
 now <- Sys.time()
 quarto::quarto_render(
