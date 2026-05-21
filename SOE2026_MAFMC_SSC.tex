@@ -2,11 +2,13 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
-%
 \documentclass[
   10pt,
 ]{article}
+\usepackage{xcolor}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -37,8 +39,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -67,7 +67,6 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Set up the fonts
 \usepackage[urw-palatino]{mathdesign}
 \usepackage[T1]{fontenc}
@@ -145,6 +144,7 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{colortbl}
+\usepackage{ulem}
 \usepackage{hhline}
 \newlength\Oldarrayrulewidth
 \newlength\Oldtabcolsep
@@ -501,7 +501,7 @@ In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/recdat.html
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/climatevul_land_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/climatevul_land_MidAtlantic_2026-05-21} 
 
 }
 
@@ -630,7 +630,7 @@ Revenue earned by harvesting resources is a function of both the quantity landed
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bennet_all_MidAtlantic_2026-03-27} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bennet_all_MidAtlantic_2026-05-21} 
 
 }
 
@@ -652,7 +652,7 @@ For Mid-Atlantic ports, \href{https://noaa-edab.github.io/catalog/community_risk
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/climatevul_rev_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/climatevul_rev_MidAtlantic_2026-05-21} 
 
 }
 
