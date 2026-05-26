@@ -30,7 +30,7 @@ difftime(Sys.time(), now)
 now <- Sys.time()
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
-  output_file = "SOE2026_MAFMC_SSC.pdf",
+  output_file = "SOE2026_MAFMC_Council.pdf",
   params = list(
     region = "MidAtlantic",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
