@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "ae539f2")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "01a5511")
 
 # setup ----
 
@@ -139,7 +139,7 @@ save_plot(
   },
   indicator = "climatevul_land",
   width = 6.5,
-  height = 2.5
+  height = 3.5
 )
 
 # rec landings
@@ -406,7 +406,7 @@ save_plot(
     }
   },
   indicator = "bennet_all",
-  height = ifelse(region == "NewEngland", 9, 4),
+  height = ifelse(region == "NewEngland", 9, 6),
   width = 6.5
 )
 
@@ -423,7 +423,7 @@ save_plot(
   },
   indicator = "climatevul_rev",
   width = 6.5,
-  height = 2.5
+  height = 3.5
 )
 
 # Geret's profitability indices (comdat profit) (EPU = MAB)
