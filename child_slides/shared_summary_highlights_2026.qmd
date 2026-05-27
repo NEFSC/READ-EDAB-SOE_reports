@@ -19,6 +19,10 @@ knitr::include_graphics(here::here("images/BothReports/Mom6-OOF-Graphic.png"))
 
 Cooler conditions in the Northeast persisted despite another record warm year globally.
 
+```{r, eval = region == "MidAtlantic", results = "asis"}
+cat("While surface and bottom temperatures in the Mid-Atlantic were generally below or near the long-term average, fall bottom temperatures and spring and summer surface temperatures were above average. The Cold Pool was well-established, with above average persistence and extent.")
+```
+
 ### Fishing observations
 - Reports of record levels of white marlin, and higher abundance of billfish, sandlance, Illex squid and
 Atlantic mackerel than in recent years.

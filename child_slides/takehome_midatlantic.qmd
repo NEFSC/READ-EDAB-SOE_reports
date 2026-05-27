@@ -4,96 +4,37 @@
 
 ::: {.soe-50-column}
 
-**Mostly meeting individual stock objectives.**
+**Mostly meeting biological objectives**
 
 ```{r}
 return_plot("stock-status", region = "MidAtlantic", mode = "slide")
 ```
 
-Species distributions, timing, and productivity have changed. Ocean conditions highly variable year to year.
+Most stocks are meeting their biomass and fishing targets
+- Ecosystem conditions could impact future productivity: species distributions, timing, and productivity have changed; ocean conditions highly variable year to year
+
+*How could MOM6 forecasts be used to inform management decisions?*
 
 :::
 
 ::: {.soe-50-column}
 
-**Ecosystem level management objectives worrying?**
+**Are ecosystem-level objectives being met?**
 
-Declining <span style="background-color:orange;">seafood production</span> 
+Declining seafood production and revenue
+- However, declines in state- and NEFSC-managed species have resulted in MAFMC-managed species making up a larger proportion of the regional landings and revenue
 
-Historically low <span style="background-color:orange;">revenue</span> 
+Most community level revenue comes from species with high climate vulnerability
+- Combined with aging crew and declining fleet count, suggests reduced capacity to adapt to change
 
-Declining range of <span style="background-color:red;">recreational opportunities</span> 
-
-Most community level revenue has high climate vulnerability
+Long-term changes in ecosystem productivity and community composition suggest a shift in the system
+- Managed species seem to have reduced productivity, while ecosystem-level productivity is steady/increasing
 
 ```{r}
 return_plot("commvulex", region = "MidAtlantic", mode = "slide")
 ```
 
-:::
-
-::::
-
-## Discussion
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-<br>
-
-```{r management-objectives-review}
-mng_obj <- data.frame("Objective Categories" = c("Seafood Production",
-                                                 "Commercial Profits","Recreational Opportunities",
-                                                 "Stability","Social & Cultural",
-                                                 "Protected Species",
-                                                 "Management","Biomass", "Environment"
-                                                 #,"Productivity",
-                                                 #"Trophic structure","Habitat"
-                                                 ),
-"Indicators reported" = c("Landings; commercial total and by feeding guild; recreational harvest",
-                               "Revenue decomposed to price and volume",
-                               "Angler trips; recreational fleet diversity",
-                               "Diversity indices (fishery and ecosystem)",
-                               "Community fishing engagement and social vulnerability status",
-                               "Bycatch; population (adult and juvenile) numbers; mortalities",
-                               "Stock status; catch compared with catch limits",
-                               "Biomass or abundance by feeding guild from surveys",
-                               "Climate and ecosystem risk indicators listed in Table 2"
-                          ))
-
-
-
-mng_obj$service <- c(rep("Objectives: Provisioning and Cultural Services", 6), 
-                     rep("Potential Drivers: Supporting and Regulating Services", 3))
-
-mng_obj <- as.tibble(mng_obj)
-
-flextable::as_grouped_data(mng_obj, groups = "service") %>% 
-  flextable::as_flextable(hide_grouplabel=TRUE) %>% 
-  flextable::align(i = ~ !is.na(service), align = "left") %>% 
-  flextable::bold(i = ~ !is.na(service), bold = TRUE) %>%
-  flextable::set_header_labels(Objective.Categories = "Objective categories",
-                               Indicators.reported = "Indicators reported") %>%
-  flextable::set_caption("Ecosystem-scale fishery management objectives") |>
-flextable::fontsize(size = 16,
-part = "all") %>%
-  flextable::autofit() 
-```
-
-:::
-
-::: {.soe-50-column}
-
-**Review objectives: maximum benefit to the Nation in first 3 categories**
-
-*  Is the list complete? 
-
-*  Does the Council have reference points, desired states, or other performance metrics we should address for each objective?
-
-Stability objective: are current indicators addressing Council needs?
-
-Forecasts: what decisions or contexts would ocean forecasts be most useful for?
+*Does the Council have reference points, desired states, or other performance metrics we should assess?*
 
 :::
 
