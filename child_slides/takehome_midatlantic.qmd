@@ -11,6 +11,7 @@ return_plot("stock-status", region = "MidAtlantic", mode = "slide")
 ```
 
 Most stocks are meeting their biomass and fishing targets
+
 - Ecosystem conditions could impact future productivity: species distributions, timing, and productivity have changed; ocean conditions highly variable year to year
 
 *How could MOM6 forecasts be used to inform management decisions?*
@@ -22,17 +23,16 @@ Most stocks are meeting their biomass and fishing targets
 **Are ecosystem-level objectives being met?**
 
 Declining seafood production and revenue
+
 - However, declines in state- and NEFSC-managed species have resulted in MAFMC-managed species making up a larger proportion of the regional landings and revenue
 
 Most community level revenue comes from species with high climate vulnerability
+
 - Combined with aging crew and declining fleet count, suggests reduced capacity to adapt to change
 
 Long-term changes in ecosystem productivity and community composition suggest a shift in the system
-- Managed species seem to have reduced productivity, while ecosystem-level productivity is steady/increasing
 
-```{r}
-return_plot("commvulex", region = "MidAtlantic", mode = "slide")
-```
+- Managed species seem to have reduced productivity, while ecosystem-level productivity is steady/increasing
 
 *Does the Council have reference points, desired states, or other performance metrics we should assess?*
 
