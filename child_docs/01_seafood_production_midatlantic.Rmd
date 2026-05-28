@@ -44,7 +44,7 @@ return_plot("rec-hms", region = "MidAtlantic")
 
 #### Stock Status and Catch Limits
 
-Single species [management objectives](https://noaa-edab.github.io/catalog/stock_status.html) (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are being met for all but two MAFMC-managed species (golden tilefish and Atlantic mackerel) (Fig. \ref{fig:stock-status}). However, the status of 5 stocks is unknown (northern shortfin squid, goosefish GOM/GB, goosefish southern GB/MAB, blueline tilefish, and chub mackerel), and longfin squid does not have an $F/F_{MSY}$ estimate.
+Single species [management objectives](https://noaa-edab.github.io/catalog/stock_status.html) (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are being met for all but one MAFMC-managed species (golden tilefish) (Fig. \ref{fig:stock-status}). However, the status of 5 stocks is unknown (northern shortfin squid, goosefish GOM/GB, goosefish southern GB/MAB, blueline tilefish, and chub mackerel), and longfin squid does not have an $F/F_{MSY}$ estimate.
 
 ```{r stock-status, fig.width = 6.5,  fig.asp = 0.5, fig.cap = return_caption(chunk_name = "stock-status", region = "MidAtlantic")}
 return_plot("stock-status", region = "MidAtlantic")
