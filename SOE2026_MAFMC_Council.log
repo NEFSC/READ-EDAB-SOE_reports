@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.31)  26 MAY 2026 15:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.31)  1 JUN 2026 16:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -863,351 +863,354 @@ Package pdftex.def Info: images/MidAtlantic/commercial_landings_MidAtlantic_2026
 LaTeX Warning: Hyper reference `community-social-and-climate-vulnerability' on page 9 undefined on input line 498.
 
 [9 <./images/MidAtlantic/commercial_landings_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/climatevul_land_MidAtlantic_2026-03-30.png, id=115, 469.755pt x 180.675pt>
-File: images/MidAtlantic/climatevul_land_MidAtlantic_2026-03-30.png Graphic file (type png)
-<use images/MidAtlantic/climatevul_land_MidAtlantic_2026-03-30.png>
-Package pdftex.def Info: images/MidAtlantic/climatevul_land_MidAtlantic_2026-03-30.png  used on input line 504.
-(pdftex.def)             Requested size: 500.484pt x 192.49326pt.
+<images/MidAtlantic/climatevul_land_MidAtlantic_2026-05-21.png, id=115, 469.755pt x 252.945pt>
+File: images/MidAtlantic/climatevul_land_MidAtlantic_2026-05-21.png Graphic file (type png)
+<use images/MidAtlantic/climatevul_land_MidAtlantic_2026-05-21.png>
+Package pdftex.def Info: images/MidAtlantic/climatevul_land_MidAtlantic_2026-05-21.png  used on input line 504.
+(pdftex.def)             Requested size: 500.484pt x 269.49059pt.
 <images/MidAtlantic/rec_landings_MidAtlantic_2026-03-30.png, id=116, 469.755pt x 180.675pt>
 File: images/MidAtlantic/rec_landings_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/rec_landings_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/rec_landings_MidAtlantic_2026-03-30.png  used on input line 513.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/MidAtlantic/rec_hms_MidAtlantic_2026-03-30.png, id=117, 469.755pt x 361.35pt>
+[10 <./images/MidAtlantic/climatevul_land_MidAtlantic_2026-05-21.png>]
+<images/MidAtlantic/rec_hms_MidAtlantic_2026-03-30.png, id=124, 469.755pt x 361.35pt>
 File: images/MidAtlantic/rec_hms_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/rec_hms_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/rec_hms_MidAtlantic_2026-03-30.png  used on input line 522.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[10 <./images/MidAtlantic/climatevul_land_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/rec_landings_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/stock_status_MidAtlantic_2026-03-30.png, id=128, 469.755pt x 433.62pt>
-File: images/MidAtlantic/stock_status_MidAtlantic_2026-03-30.png Graphic file (type png)
-<use images/MidAtlantic/stock_status_MidAtlantic_2026-03-30.png>
-Package pdftex.def Info: images/MidAtlantic/stock_status_MidAtlantic_2026-03-30.png  used on input line 541.
+[11 <./images/MidAtlantic/rec_landings_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/stock_status_MidAtlantic_2026-05-29.png, id=132, 469.755pt x 433.62pt>
+File: images/MidAtlantic/stock_status_MidAtlantic_2026-05-29.png Graphic file (type png)
+<use images/MidAtlantic/stock_status_MidAtlantic_2026-05-29.png>
+Package pdftex.def Info: images/MidAtlantic/stock_status_MidAtlantic_2026-05-29.png  used on input line 541.
 (pdftex.def)             Requested size: 500.484pt x 461.98387pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 545.
-[11{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./images/MidAtlantic/rec_hms_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/abcacl_stacked_MidAtlantic_2026-03-30.png, id=140, 469.755pt x 325.215pt>
+[12 <./images/MidAtlantic/rec_hms_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/abcacl_stacked_MidAtlantic_2026-03-30.png, id=142, 469.755pt x 325.215pt>
 File: images/MidAtlantic/abcacl_stacked_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/abcacl_stacked_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/abcacl_stacked_MidAtlantic_2026-03-30.png  used on input line 552.
 (pdftex.def)             Requested size: 500.484pt x 346.4879pt.
-[12 <./images/MidAtlantic/stock_status_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/abcacl_catch_MidAtlantic_2026-03-30.png, id=150, 469.755pt x 180.675pt>
+[13{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./images/MidAtlantic/stock_status_MidAtlantic_2026-05-29.png>]
+<images/MidAtlantic/abcacl_catch_MidAtlantic_2026-03-30.png, id=154, 469.755pt x 180.675pt>
 File: images/MidAtlantic/abcacl_catch_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/abcacl_catch_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/abcacl_catch_MidAtlantic_2026-03-30.png  used on input line 561.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[13 <./images/MidAtlantic/abcacl_stacked_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/abcacl_catch_MidAtlantic_2026-03-30.png>]
+[14 <./images/MidAtlantic/abcacl_stacked_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/abcacl_catch_MidAtlantic_2026-03-30.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 585.
 (c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-LaTeX Warning: Hyper reference `community-social-and-climate-vulnerability' on page 14 undefined on input line 591.
+LaTeX Warning: Hyper reference `community-social-and-climate-vulnerability' on page 15 undefined on input line 591.
 
-<images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2026-03-30.png, id=163, 469.755pt x 505.89pt>
+<images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2026-03-30.png, id=167, 469.755pt x 505.89pt>
 File: images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2026-03-30.png  used on input line 596.
 (pdftex.def)             Requested size: 500.484pt x 538.98117pt.
-[14{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [15 <./images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/comm_revenue_MidAtlantic_2026-03-30.png, id=183, 469.755pt x 180.675pt>
+[15{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [16 <./images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/comm_revenue_MidAtlantic_2026-03-30.png, id=188, 469.755pt x 180.675pt>
 File: images/MidAtlantic/comm_revenue_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/comm_revenue_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/comm_revenue_MidAtlantic_2026-03-30.png  used on input line 613.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/MidAtlantic/bennet_MidAtlantic_2026-03-30.png, id=187, 469.755pt x 180.675pt>
+<images/MidAtlantic/bennet_MidAtlantic_2026-03-30.png, id=192, 469.755pt x 180.675pt>
 File: images/MidAtlantic/bennet_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/bennet_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/bennet_MidAtlantic_2026-03-30.png  used on input line 624.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[16 <./images/MidAtlantic/comm_revenue_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/bennet_all_MidAtlantic_2026-03-27.png, id=198, 469.755pt x 289.08pt>
-File: images/MidAtlantic/bennet_all_MidAtlantic_2026-03-27.png Graphic file (type png)
-<use images/MidAtlantic/bennet_all_MidAtlantic_2026-03-27.png>
-Package pdftex.def Info: images/MidAtlantic/bennet_all_MidAtlantic_2026-03-27.png  used on input line 633.
-(pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-<images/BothReports/comdat_profit_MidAtlantic_2026-03-30.png, id=199, 469.755pt x 180.675pt>
+[17 <./images/MidAtlantic/comm_revenue_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/bennet_all_MidAtlantic_2026-05-21.png, id=202, 469.755pt x 433.62pt>
+File: images/MidAtlantic/bennet_all_MidAtlantic_2026-05-21.png Graphic file (type png)
+<use images/MidAtlantic/bennet_all_MidAtlantic_2026-05-21.png>
+Package pdftex.def Info: images/MidAtlantic/bennet_all_MidAtlantic_2026-05-21.png  used on input line 633.
+(pdftex.def)             Requested size: 500.484pt x 461.98387pt.
+[18 <./images/MidAtlantic/bennet_MidAtlantic_2026-03-30.png>]
+<images/BothReports/comdat_profit_MidAtlantic_2026-03-30.png, id=207, 469.755pt x 180.675pt>
 File: images/BothReports/comdat_profit_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/BothReports/comdat_profit_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/comdat_profit_MidAtlantic_2026-03-30.png  used on input line 642.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[17 <./images/MidAtlantic/bennet_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/bennet_all_MidAtlantic_2026-03-27.png>]
-<images/MidAtlantic/climatevul_rev_MidAtlantic_2026-03-30.png, id=209, 469.755pt x 180.675pt>
-File: images/MidAtlantic/climatevul_rev_MidAtlantic_2026-03-30.png Graphic file (type png)
-<use images/MidAtlantic/climatevul_rev_MidAtlantic_2026-03-30.png>
-Package pdftex.def Info: images/MidAtlantic/climatevul_rev_MidAtlantic_2026-03-30.png  used on input line 655.
-(pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[18 <./images/BothReports/comdat_profit_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/climatevul_rev_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/rec_op_MidAtlantic_2026-03-30.png, id=227, 469.755pt x 180.675pt>
+[19 <./images/MidAtlantic/bennet_all_MidAtlantic_2026-05-21.png>]
+<images/MidAtlantic/climatevul_rev_MidAtlantic_2026-05-21.png, id=217, 469.755pt x 252.945pt>
+File: images/MidAtlantic/climatevul_rev_MidAtlantic_2026-05-21.png Graphic file (type png)
+<use images/MidAtlantic/climatevul_rev_MidAtlantic_2026-05-21.png>
+Package pdftex.def Info: images/MidAtlantic/climatevul_rev_MidAtlantic_2026-05-21.png  used on input line 655.
+(pdftex.def)             Requested size: 500.484pt x 269.49059pt.
+[20 <./images/BothReports/comdat_profit_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/rec_op_MidAtlantic_2026-03-30.png, id=235, 469.755pt x 180.675pt>
 File: images/MidAtlantic/rec_op_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/rec_op_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/rec_op_MidAtlantic_2026-03-30.png  used on input line 674.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/MidAtlantic/rec_div_MidAtlantic_2026-03-30.png, id=228, 469.755pt x 180.675pt>
+[21 <./images/MidAtlantic/climatevul_rev_MidAtlantic_2026-05-21.png>]
+<images/MidAtlantic/rec_div_MidAtlantic_2026-03-30.png, id=246, 469.755pt x 180.675pt>
 File: images/MidAtlantic/rec_div_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/rec_div_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/rec_div_MidAtlantic_2026-03-30.png  used on input line 683.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[19 <./images/MidAtlantic/rec_op_MidAtlantic_2026-03-30.png>] [20 <./images/MidAtlantic/rec_div_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/commercial_engagement_MidAtlantic_2026-03-30.png, id=248, 505.89pt x 361.35pt>
+[22 <./images/MidAtlantic/rec_op_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/rec_div_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/commercial_engagement_MidAtlantic_2026-03-30.png, id=257, 505.89pt x 361.35pt>
 File: images/MidAtlantic/commercial_engagement_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/commercial_engagement_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/commercial_engagement_MidAtlantic_2026-03-30.png  used on input line 714.
 (pdftex.def)             Requested size: 500.484pt x 357.495pt.
-[21 <./images/MidAtlantic/commercial_engagement_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/recreational_engagement_MidAtlantic_2026-03-30.png, id=257, 469.755pt x 289.08pt>
+[23] [24 <./images/MidAtlantic/commercial_engagement_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/recreational_engagement_MidAtlantic_2026-03-30.png, id=271, 469.755pt x 289.08pt>
 File: images/MidAtlantic/recreational_engagement_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/recreational_engagement_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/recreational_engagement_MidAtlantic_2026-03-30.png  used on input line 827.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[22 <./images/MidAtlantic/recreational_engagement_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/commvulex_MidAtlantic_2026-03-30.png, id=268, 469.755pt x 216.81pt>
+[25 <./images/MidAtlantic/recreational_engagement_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/commvulex_MidAtlantic_2026-03-30.png, id=281, 469.755pt x 216.81pt>
 File: images/MidAtlantic/commvulex_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/commvulex_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/commvulex_MidAtlantic_2026-03-30.png  used on input line 944.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-[23]
-<images/BothReports/harborporpoise_BothReports_2026-03-30.png, id=278, 469.755pt x 216.81pt>
+[26 <./images/MidAtlantic/commvulex_MidAtlantic_2026-03-30.png>]
+<images/BothReports/harborporpoise_BothReports_2026-03-30.png, id=293, 469.755pt x 216.81pt>
 File: images/BothReports/harborporpoise_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/harborporpoise_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/harborporpoise_BothReports_2026-03-30.png  used on input line 967.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-[24 <./images/MidAtlantic/commvulex_MidAtlantic_2026-03-30.png>]
-<images/BothReports/grayseal_BothReports_2026-03-30.png, id=290, 469.755pt x 216.81pt>
+<images/BothReports/grayseal_BothReports_2026-03-30.png, id=296, 469.755pt x 216.81pt>
 File: images/BothReports/grayseal_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/grayseal_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/grayseal_BothReports_2026-03-30.png  used on input line 978.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-[25 <./images/BothReports/harborporpoise_BothReports_2026-03-30.png> <./images/BothReports/grayseal_BothReports_2026-03-30.png>]
-<images/BothReports/narw_abundance_BothReports_2026-03-30.png, id=298, 469.755pt x 180.675pt>
+[27 <./images/BothReports/harborporpoise_BothReports_2026-03-30.png>]
+<images/BothReports/narw_abundance_BothReports_2026-03-30.png, id=306, 469.755pt x 180.675pt>
 File: images/BothReports/narw_abundance_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/narw_abundance_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/narw_abundance_BothReports_2026-03-30.png  used on input line 989.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/BothReports/narw_calves_BothReports_2026-03-30.png, id=301, 469.755pt x 180.675pt>
+<images/BothReports/narw_calves_BothReports_2026-03-30.png, id=309, 469.755pt x 180.675pt>
 File: images/BothReports/narw_calves_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/narw_calves_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/narw_calves_BothReports_2026-03-30.png  used on input line 1000.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[26 <./images/BothReports/narw_abundance_BothReports_2026-03-30.png> <./images/BothReports/narw_calves_BothReports_2026-03-30.png>] [27]
-<images/MidAtlantic/comm_div_fleet_MidAtlantic_2026-03-30.png, id=334, 469.755pt x 180.675pt>
+[28 <./images/BothReports/grayseal_BothReports_2026-03-30.png> <./images/BothReports/narw_abundance_BothReports_2026-03-30.png>] [29 <./images/BothReports/narw_calves_BothReports_2026-03-30.png>]
+<images/MidAtlantic/comm_div_fleet_MidAtlantic_2026-03-30.png, id=340, 469.755pt x 180.675pt>
 File: images/MidAtlantic/comm_div_fleet_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/comm_div_fleet_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/comm_div_fleet_MidAtlantic_2026-03-30.png  used on input line 1035.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/MidAtlantic/commercial_div_species_div_MidAtlantic_2026-03-30.png, id=335, 469.755pt x 180.675pt>
+[30]
+<images/MidAtlantic/commercial_div_species_div_MidAtlantic_2026-03-30.png, id=349, 469.755pt x 180.675pt>
 File: images/MidAtlantic/commercial_div_species_div_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/commercial_div_species_div_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/commercial_div_species_div_MidAtlantic_2026-03-30.png  used on input line 1044.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/MidAtlantic/recdat_div_catch_MidAtlantic_2026-03-30.png, id=336, 469.755pt x 180.675pt>
+<images/MidAtlantic/recdat_div_catch_MidAtlantic_2026-03-30.png, id=350, 469.755pt x 180.675pt>
 File: images/MidAtlantic/recdat_div_catch_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/recdat_div_catch_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/recdat_div_catch_MidAtlantic_2026-03-30.png  used on input line 1053.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[28 <./images/MidAtlantic/comm_div_fleet_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/commercial_div_species_div_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/totpp_MidAtlantic_2026-03-30.png, id=352, 469.755pt x 180.675pt>
+[31 <./images/MidAtlantic/comm_div_fleet_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/commercial_div_species_div_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/totpp_MidAtlantic_2026-03-30.png, id=364, 469.755pt x 180.675pt>
 File: images/MidAtlantic/totpp_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/totpp_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/totpp_MidAtlantic_2026-03-30.png  used on input line 1068.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[29 <./images/MidAtlantic/recdat_div_catch_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/exp_n_MidAtlantic_2026-03-30.png, id=361, 469.755pt x 180.675pt>
+[32 <./images/MidAtlantic/recdat_div_catch_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/exp_n_MidAtlantic_2026-03-30.png, id=373, 469.755pt x 180.675pt>
 File: images/MidAtlantic/exp_n_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/exp_n_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/exp_n_MidAtlantic_2026-03-30.png  used on input line 1077.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/MidAtlantic/zoo_community_MidAtlantic_2026-03-30.png, id=362, 469.755pt x 180.675pt>
+<images/MidAtlantic/zoo_community_MidAtlantic_2026-03-30.png, id=374, 469.755pt x 180.675pt>
 File: images/MidAtlantic/zoo_community_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/zoo_community_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/zoo_community_MidAtlantic_2026-03-30.png  used on input line 1086.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[30 <./images/MidAtlantic/totpp_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/exp_n_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/traits_k_MidAtlantic_2026-03-30.png, id=370, 469.755pt x 180.675pt>
+[33 <./images/MidAtlantic/totpp_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/exp_n_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/traits_k_MidAtlantic_2026-03-30.png, id=382, 469.755pt x 180.675pt>
 File: images/MidAtlantic/traits_k_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/traits_k_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/traits_k_MidAtlantic_2026-03-30.png  used on input line 1097.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/MidAtlantic/traits_tl_MidAtlantic_2026-03-30.png, id=371, 469.755pt x 180.675pt>
+<images/MidAtlantic/traits_tl_MidAtlantic_2026-03-30.png, id=383, 469.755pt x 180.675pt>
 File: images/MidAtlantic/traits_tl_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/traits_tl_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/traits_tl_MidAtlantic_2026-03-30.png  used on input line 1106.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[31 <./images/MidAtlantic/zoo_community_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/traits_k_MidAtlantic_2026-03-30.png>] [32 <./images/MidAtlantic/traits_tl_MidAtlantic_2026-03-30.png>]
-<images/BothReports/species_dist_BothReports_2026-03-30.png, id=392, 469.755pt x 252.945pt>
+[34 <./images/MidAtlantic/zoo_community_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/traits_k_MidAtlantic_2026-03-30.png>] [35 <./images/MidAtlantic/traits_tl_MidAtlantic_2026-03-30.png>]
+<images/BothReports/species_dist_BothReports_2026-03-30.png, id=405, 469.755pt x 252.945pt>
 File: images/BothReports/species_dist_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/species_dist_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/species_dist_BothReports_2026-03-30.png  used on input line 1143.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-<images/BothReports/cetacean_dist_BothReports_2026-03-30.png, id=393, 542.025pt x 289.08pt>
+<images/BothReports/cetacean_dist_BothReports_2026-03-30.png, id=406, 542.025pt x 289.08pt>
 File: images/BothReports/cetacean_dist_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/cetacean_dist_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/cetacean_dist_BothReports_2026-03-30.png  used on input line 1152.
 (pdftex.def)             Requested size: 500.484pt x 266.93605pt.
-[33 <./images/BothReports/species_dist_BothReports_2026-03-30.png>]
-<images/BothReports/forage_dist_BothReports_2026-03-30.png, id=411, 469.755pt x 252.945pt>
+[36 <./images/BothReports/species_dist_BothReports_2026-03-30.png>]
+<images/BothReports/forage_dist_BothReports_2026-03-30.png, id=424, 469.755pt x 252.945pt>
 File: images/BothReports/forage_dist_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/forage_dist_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/forage_dist_BothReports_2026-03-30.png  used on input line 1167.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[34 <./images/BothReports/cetacean_dist_BothReports_2026-03-30.png>]
-<images/BothReports/smallcopeall_cog_BothReports_2026-03-30.png, id=422, 469.755pt x 252.945pt>
+[37 <./images/BothReports/cetacean_dist_BothReports_2026-03-30.png>]
+<images/BothReports/smallcopeall_cog_BothReports_2026-03-30.png, id=434, 469.755pt x 252.945pt>
 File: images/BothReports/smallcopeall_cog_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/smallcopeall_cog_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/smallcopeall_cog_BothReports_2026-03-30.png  used on input line 1176.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-<images/BothReports/megabenthos_dist_BothReports_2026-03-30.png, id=423, 469.755pt x 252.945pt>
+<images/BothReports/megabenthos_dist_BothReports_2026-03-30.png, id=435, 469.755pt x 252.945pt>
 File: images/BothReports/megabenthos_dist_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/megabenthos_dist_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/megabenthos_dist_BothReports_2026-03-30.png  used on input line 1185.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[35 <./images/BothReports/forage_dist_BothReports_2026-03-30.png> <./images/BothReports/smallcopeall_cog_BothReports_2026-03-30.png>]
-<images/BothReports/macrobenthos_dist_BothReports_2026-03-30.png, id=433, 469.755pt x 252.945pt>
+[38 <./images/BothReports/forage_dist_BothReports_2026-03-30.png> <./images/BothReports/smallcopeall_cog_BothReports_2026-03-30.png>]
+<images/BothReports/macrobenthos_dist_BothReports_2026-03-30.png, id=445, 469.755pt x 252.945pt>
 File: images/BothReports/macrobenthos_dist_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/macrobenthos_dist_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/macrobenthos_dist_BothReports_2026-03-30.png  used on input line 1198.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[36 <./images/BothReports/megabenthos_dist_BothReports_2026-03-30.png>]
-<images/BothReports/lgcopeall_cog_BothReports_2026-03-30.png, id=441, 469.755pt x 252.945pt>
+[39 <./images/BothReports/megabenthos_dist_BothReports_2026-03-30.png>]
+<images/BothReports/lgcopeall_cog_BothReports_2026-03-30.png, id=453, 469.755pt x 252.945pt>
 File: images/BothReports/lgcopeall_cog_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/lgcopeall_cog_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/lgcopeall_cog_BothReports_2026-03-30.png  used on input line 1207.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-<images/BothReports/euph_cog_BothReports_2026-03-30.png, id=442, 469.755pt x 252.945pt>
+<images/BothReports/euph_cog_BothReports_2026-03-30.png, id=454, 469.755pt x 252.945pt>
 File: images/BothReports/euph_cog_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/euph_cog_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/euph_cog_BothReports_2026-03-30.png  used on input line 1216.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[37 <./images/BothReports/macrobenthos_dist_BothReports_2026-03-30.png> <./images/BothReports/lgcopeall_cog_BothReports_2026-03-30.png>]
-<images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-03-30.png, id=458, 469.755pt x 325.215pt>
+[40 <./images/BothReports/macrobenthos_dist_BothReports_2026-03-30.png> <./images/BothReports/lgcopeall_cog_BothReports_2026-03-30.png>]
+<images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-03-30.png, id=471, 469.755pt x 325.215pt>
 File: images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-03-30.png  used on input line 1227.
 (pdftex.def)             Requested size: 500.484pt x 346.4879pt.
-[38 <./images/BothReports/euph_cog_BothReports_2026-03-30.png>]
-<images/MidAtlantic/bottom_temp_insitu_MidAtlantic_2026-03-30.png, id=467, 469.755pt x 180.675pt>
+[41 <./images/BothReports/euph_cog_BothReports_2026-03-30.png>]
+<images/MidAtlantic/bottom_temp_insitu_MidAtlantic_2026-03-30.png, id=480, 469.755pt x 180.675pt>
 File: images/MidAtlantic/bottom_temp_insitu_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/bottom_temp_insitu_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/bottom_temp_insitu_MidAtlantic_2026-03-30.png  used on input line 1236.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-03-30.png, id=468, 469.755pt x 325.215pt>
+<images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-03-30.png, id=481, 469.755pt x 325.215pt>
 File: images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-03-30.png  used on input line 1245.
 (pdftex.def)             Requested size: 500.484pt x 346.4879pt.
-[39 <./images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/bottom_temp_insitu_MidAtlantic_2026-03-30.png>]
-<images/BothReports/long_term_sst_BothReports_2026-03-30.png, id=476, 469.755pt x 180.675pt>
+[42 <./images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-03-30.png> <./images/MidAtlantic/bottom_temp_insitu_MidAtlantic_2026-03-30.png>]
+<images/BothReports/long_term_sst_BothReports_2026-03-30.png, id=489, 469.755pt x 180.675pt>
 File: images/BothReports/long_term_sst_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/long_term_sst_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/long_term_sst_BothReports_2026-03-30.png  used on input line 1258.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[40 <./images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-03-30.png>]
-<images/BothReports/west_gsi_BothReports_2026-03-30.png, id=483, 469.755pt x 180.675pt>
+[43 <./images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-03-30.png>]
+<images/BothReports/west_gsi_BothReports_2026-03-30.png, id=495, 469.755pt x 180.675pt>
 File: images/BothReports/west_gsi_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/west_gsi_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/west_gsi_BothReports_2026-03-30.png  used on input line 1267.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/BothReports/cold_pool_BothReports_2026-03-30.png, id=486, 469.755pt x 289.08pt>
+<images/BothReports/cold_pool_BothReports_2026-03-30.png, id=498, 469.755pt x 289.08pt>
 File: images/BothReports/cold_pool_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/cold_pool_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/cold_pool_BothReports_2026-03-30.png  used on input line 1278.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[41 <./images/BothReports/long_term_sst_BothReports_2026-03-30.png> <./images/BothReports/west_gsi_BothReports_2026-03-30.png>] [42 <./images/BothReports/cold_pool_BothReports_2026-03-30.png>]
-<images/BothReports/spawn_timing_BothReports_2026-03-30.png, id=506, 469.755pt x 289.08pt>
+[44 <./images/BothReports/long_term_sst_BothReports_2026-03-30.png> <./images/BothReports/west_gsi_BothReports_2026-03-30.png>] [45 <./images/BothReports/cold_pool_BothReports_2026-03-30.png>]
+<images/BothReports/spawn_timing_BothReports_2026-03-30.png, id=518, 469.755pt x 289.08pt>
 File: images/BothReports/spawn_timing_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/spawn_timing_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/spawn_timing_BothReports_2026-03-30.png  used on input line 1303.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[43 <./images/BothReports/spawn_timing_BothReports_2026-03-30.png>]
-<images/MidAtlantic/transition_date_MidAtlantic_2026-03-30.png, id=518, 469.755pt x 180.675pt>
+[46 <./images/BothReports/spawn_timing_BothReports_2026-03-30.png>]
+<images/MidAtlantic/transition_date_MidAtlantic_2026-03-30.png, id=531, 469.755pt x 180.675pt>
 File: images/MidAtlantic/transition_date_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/transition_date_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/transition_date_MidAtlantic_2026-03-30.png  used on input line 1322.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/BothReports/cold_pool_time_BothReports_2026-03-30.png, id=523, 469.755pt x 180.675pt>
+<images/BothReports/cold_pool_time_BothReports_2026-03-30.png, id=536, 469.755pt x 180.675pt>
 File: images/BothReports/cold_pool_time_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/cold_pool_time_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/cold_pool_time_BothReports_2026-03-30.png  used on input line 1333.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[44 <./images/MidAtlantic/transition_date_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/monthly_chl_MidAtlantic_2026-03-30.png, id=534, 469.755pt x 252.945pt>
+[47 <./images/MidAtlantic/transition_date_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/monthly_chl_MidAtlantic_2026-03-30.png, id=547, 469.755pt x 252.945pt>
 File: images/MidAtlantic/monthly_chl_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/monthly_chl_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/monthly_chl_MidAtlantic_2026-03-30.png  used on input line 1344.
 (pdftex.def)             Requested size: 500.484pt x 269.49059pt.
-[45 <./images/BothReports/cold_pool_time_BothReports_2026-03-30.png> <./images/MidAtlantic/monthly_chl_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-30.png, id=545, 469.755pt x 542.025pt>
+[48 <./images/BothReports/cold_pool_time_BothReports_2026-03-30.png> <./images/MidAtlantic/monthly_chl_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-30.png, id=558, 469.755pt x 542.025pt>
 File: images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-30.png  used on input line 1367.
 (pdftex.def)             Requested size: 500.484pt x 577.47983pt.
-[46]
-<images/MidAtlantic/condition_MidAtlantic_2026-03-30.png, id=555, 469.755pt x 433.62pt>
+[49]
+<images/MidAtlantic/condition_MidAtlantic_2026-03-30.png, id=567, 469.755pt x 433.62pt>
 File: images/MidAtlantic/condition_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/condition_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/condition_MidAtlantic_2026-03-30.png  used on input line 1376.
 (pdftex.def)             Requested size: 500.484pt x 461.98387pt.
-[47 <./images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-30.png>] [48 <./images/MidAtlantic/condition_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/energy_density_MidAtlantic.png, id=568, 1011.78pt x 614.295pt>
+[50 <./images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-30.png>] [51 <./images/MidAtlantic/condition_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/energy_density_MidAtlantic.png, id=580, 1011.78pt x 614.295pt>
 File: images/MidAtlantic/energy_density_MidAtlantic.png Graphic file (type png)
 <use images/MidAtlantic/energy_density_MidAtlantic.png>
 Package pdftex.def Info: images/MidAtlantic/energy_density_MidAtlantic.png  used on input line 1395.
 (pdftex.def)             Requested size: 500.484pt x 303.86606pt.
-<images/MidAtlantic/foragebio_MidAtlantic_2026-03-30.png, id=571, 469.755pt x 180.675pt>
+<images/MidAtlantic/foragebio_MidAtlantic_2026-03-30.png, id=583, 469.755pt x 180.675pt>
 File: images/MidAtlantic/foragebio_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/foragebio_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/foragebio_MidAtlantic_2026-03-30.png  used on input line 1406.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-[49 <./images/MidAtlantic/energy_density_MidAtlantic.png>]
-<images/MidAtlantic/benthos_MidAtlantic_2026-03-30.png, id=580, 469.755pt x 361.35pt>
+[52 <./images/MidAtlantic/energy_density_MidAtlantic.png>]
+<images/MidAtlantic/benthos_MidAtlantic_2026-03-30.png, id=593, 469.755pt x 361.35pt>
 File: images/MidAtlantic/benthos_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/benthos_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/benthos_MidAtlantic_2026-03-30.png  used on input line 1417.
 (pdftex.def)             Requested size: 500.484pt x 384.98656pt.
-[50 <./images/MidAtlantic/foragebio_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/zooplankton_anomaly_MidAtlantic_2026-03-30.png, id=592, 469.755pt x 542.025pt>
+[53 <./images/MidAtlantic/foragebio_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/zooplankton_anomaly_MidAtlantic_2026-03-30.png, id=605, 469.755pt x 542.025pt>
 File: images/MidAtlantic/zooplankton_anomaly_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/zooplankton_anomaly_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/zooplankton_anomaly_MidAtlantic_2026-03-30.png  used on input line 1432.
 (pdftex.def)             Requested size: 500.484pt x 577.47983pt.
-[51 <./images/MidAtlantic/benthos_MidAtlantic_2026-03-30.png>] [52 <./images/MidAtlantic/zooplankton_anomaly_MidAtlantic_2026-03-30.png>]
-<images/MidAtlantic/SOE_2026_MAB_Bottom_MCS.pdf, id=611, 916.97421pt x 466.00328pt>
+[54 <./images/MidAtlantic/benthos_MidAtlantic_2026-03-30.png>] [55 <./images/MidAtlantic/zooplankton_anomaly_MidAtlantic_2026-03-30.png>]
+<images/MidAtlantic/SOE_2026_MAB_Bottom_MCS.pdf, id=623, 916.97421pt x 466.00328pt>
 File: images/MidAtlantic/SOE_2026_MAB_Bottom_MCS.pdf Graphic file (type pdf)
 <use images/MidAtlantic/SOE_2026_MAB_Bottom_MCS.pdf>
 Package pdftex.def Info: images/MidAtlantic/SOE_2026_MAB_Bottom_MCS.pdf  used on input line 1449.
 (pdftex.def)             Requested size: 500.484pt x 254.34006pt.
-<images/BothReports/therm_hab_persist_BothReports_2026-03-30.png, id=612, 469.755pt x 289.08pt>
+<images/BothReports/therm_hab_persist_BothReports_2026-03-30.png, id=624, 469.755pt x 289.08pt>
 File: images/BothReports/therm_hab_persist_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/therm_hab_persist_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/therm_hab_persist_BothReports_2026-03-30.png  used on input line 1458.
 (pdftex.def)             Requested size: 500.484pt x 307.98923pt.
-[53 <./images/MidAtlantic/SOE_2026_MAB_Bottom_MCS.pdf>]
-<images/MidAtlantic/advection_index_MidAtlantic_2026-03-30.png, id=632, 469.755pt x 216.81pt>
+[56 <./images/MidAtlantic/SOE_2026_MAB_Bottom_MCS.pdf>]
+<images/MidAtlantic/advection_index_MidAtlantic_2026-03-30.png, id=644, 469.755pt x 216.81pt>
 File: images/MidAtlantic/advection_index_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/advection_index_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/advection_index_MidAtlantic_2026-03-30.png  used on input line 1469.
 (pdftex.def)             Requested size: 500.484pt x 230.99193pt.
-[54 <./images/BothReports/therm_hab_persist_BothReports_2026-03-30.png>]
-<images/BothReports/final_bottom_omega_2026.png, id=642, 3613.5pt x 1606.0pt>
+[57 <./images/BothReports/therm_hab_persist_BothReports_2026-03-30.png>]
+<images/BothReports/final_bottom_omega_2026.png, id=654, 3613.5pt x 1606.0pt>
 File: images/BothReports/final_bottom_omega_2026.png Graphic file (type png)
 <use images/BothReports/final_bottom_omega_2026.png>
 Package pdftex.def Info: images/BothReports/final_bottom_omega_2026.png  used on input line 1480.
 (pdftex.def)             Requested size: 500.484pt x 222.43692pt.
-[55 <./images/MidAtlantic/advection_index_MidAtlantic_2026-03-30.png>] [56{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./images/BothReports/final_bottom_omega_2026.png>]
-<images/BothReports/OffshoreWindDevelopmentMap_V3_NicoleMucci.pdf, id=672, 614.295pt x 794.97pt>
+[58 <./images/MidAtlantic/advection_index_MidAtlantic_2026-03-30.png>] [59{c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./images/BothReports/final_bottom_omega_2026.png>]
+<images/BothReports/OffshoreWindDevelopmentMap_V3_NicoleMucci.pdf, id=685, 614.295pt x 794.97pt>
 File: images/BothReports/OffshoreWindDevelopmentMap_V3_NicoleMucci.pdf Graphic file (type pdf)
 <use images/BothReports/OffshoreWindDevelopmentMap_V3_NicoleMucci.pdf>
 Package pdftex.def Info: images/BothReports/OffshoreWindDevelopmentMap_V3_NicoleMucci.pdf  used on input line 1515.
 (pdftex.def)             Requested size: 450.43253pt x 582.91916pt.
-[57] [58 <./images/BothReports/OffshoreWindDevelopmentMap_V3_NicoleMucci.pdf>]
-<images/MidAtlantic/wind_revenue_MidAtlantic_2026-03-30.png, id=768, 469.755pt x 180.675pt>
+[60] [61 <./images/BothReports/OffshoreWindDevelopmentMap_V3_NicoleMucci.pdf>]
+<images/MidAtlantic/wind_revenue_MidAtlantic_2026-03-30.png, id=780, 469.755pt x 180.675pt>
 File: images/MidAtlantic/wind_revenue_MidAtlantic_2026-03-30.png Graphic file (type png)
 <use images/MidAtlantic/wind_revenue_MidAtlantic_2026-03-30.png>
 Package pdftex.def Info: images/MidAtlantic/wind_revenue_MidAtlantic_2026-03-30.png  used on input line 1528.
 (pdftex.def)             Requested size: 500.484pt x 192.49326pt.
-<images/MidAtlantic/wea_port_rev_MidAtlantic_2026-03-26.png, id=772, 469.755pt x 415.5525pt>
+<images/MidAtlantic/wea_port_rev_MidAtlantic_2026-03-26.png, id=784, 469.755pt x 415.5525pt>
 File: images/MidAtlantic/wea_port_rev_MidAtlantic_2026-03-26.png Graphic file (type png)
 <use images/MidAtlantic/wea_port_rev_MidAtlantic_2026-03-26.png>
 Package pdftex.def Info: images/MidAtlantic/wea_port_rev_MidAtlantic_2026-03-26.png  used on input line 1643.
@@ -1217,8 +1220,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1643--1644
 
  []
 
-[59 <./images/MidAtlantic/wind_revenue_MidAtlantic_2026-03-30.png>] [60 <./images/MidAtlantic/wea_port_rev_MidAtlantic_2026-03-26.png>]
-<images/MidAtlantic/newengland_mafmc.png, id=791, 469.755pt x 275.5896pt>
+[62 <./images/MidAtlantic/wind_revenue_MidAtlantic_2026-03-30.png>] [63 <./images/MidAtlantic/wea_port_rev_MidAtlantic_2026-03-26.png>]
+<images/MidAtlantic/newengland_mafmc.png, id=803, 469.755pt x 275.5896pt>
 File: images/MidAtlantic/newengland_mafmc.png Graphic file (type png)
 <use images/MidAtlantic/newengland_mafmc.png>
 Package pdftex.def Info: images/MidAtlantic/newengland_mafmc.png  used on input line 1654.
@@ -1228,36 +1231,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 1654--1655
 
  []
 
-[61 <./images/MidAtlantic/newengland_mafmc.png>]
-<images/BothReports/NARW_hotspots_final_2024.jpg, id=802, 614.295pt x 794.97pt>
+[64 <./images/MidAtlantic/newengland_mafmc.png>]
+<images/BothReports/NARW_hotspots_final_2024.jpg, id=815, 614.295pt x 794.97pt>
 File: images/BothReports/NARW_hotspots_final_2024.jpg Graphic file (type jpg)
 <use images/BothReports/NARW_hotspots_final_2024.jpg>
 Package pdftex.def Info: images/BothReports/NARW_hotspots_final_2024.jpg  used on input line 1679.
 (pdftex.def)             Requested size: 275.26772pt x 356.22905pt.
-[62] [63 <./images/BothReports/NARW_hotspots_final_2024.jpg>]
-<images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-NES.png, id=818, 982.6311pt x 481.19775pt>
+[65] [66 <./images/BothReports/NARW_hotspots_final_2024.jpg>]
+<images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-NES.png, id=831, 982.6311pt x 481.19775pt>
 File: images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-NES.png Graphic file (type png)
 <use images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-NES.png>
 Package pdftex.def Info: images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-NES.png  used on input line 1706.
 (pdftex.def)             Requested size: 500.484pt x 245.08453pt.
-<images/BothReports/slopewater_BothReports_2026-03-30.png, id=823, 433.62pt x 180.675pt>
+<images/BothReports/slopewater_BothReports_2026-03-30.png, id=836, 433.62pt x 180.675pt>
 File: images/BothReports/slopewater_BothReports_2026-03-30.png Graphic file (type png)
 <use images/BothReports/slopewater_BothReports_2026-03-30.png>
 Package pdftex.def Info: images/BothReports/slopewater_BothReports_2026-03-30.png  used on input line 1717.
 (pdftex.def)             Requested size: 500.484pt x 208.54654pt.
-[64 <./images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-NES.png>]
-<images/BothReports/processed_Highlights_2026-CHL_Anomaly-202504-NES.png, id=834, 982.6311pt x 481.19775pt>
+[67 <./images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-NES.png>]
+<images/BothReports/processed_Highlights_2026-CHL_Anomaly-202504-NES.png, id=846, 982.6311pt x 481.19775pt>
 File: images/BothReports/processed_Highlights_2026-CHL_Anomaly-202504-NES.png Graphic file (type png)
 <use images/BothReports/processed_Highlights_2026-CHL_Anomaly-202504-NES.png>
 Package pdftex.def Info: images/BothReports/processed_Highlights_2026-CHL_Anomaly-202504-NES.png  used on input line 1728.
 (pdftex.def)             Requested size: 500.484pt x 245.08453pt.
-[65 <./images/BothReports/slopewater_BothReports_2026-03-30.png> <./images/BothReports/processed_Highlights_2026-CHL_Anomaly-202504-NES.png>]
-<images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png, id=845, 254.3904pt x 277.39635pt>
+[68 <./images/BothReports/slopewater_BothReports_2026-03-30.png> <./images/BothReports/processed_Highlights_2026-CHL_Anomaly-202504-NES.png>]
+<images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png, id=857, 254.3904pt x 277.39635pt>
 File: images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png Graphic file (type png)
 <use images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png>
 Package pdftex.def Info: images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png  used on input line 1769.
 (pdftex.def)             Requested size: 250.24199pt x 272.8878pt.
-[66] [67 <./images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png>] [68] (./SOE2026_MAFMC_Council.aux * soulpos - computing points - it may take a few seconds *
+[69] [70 <./images/BothReports/processed_Highlights_2026-SST_Anomaly-202501-Ches_Bay.png.png>] [71] (./SOE2026_MAFMC_Council.aux * soulpos - computing points - it may take a few seconds *
 \openout3 = `SOE2026_MAFMC_Council.upb'.
 
 (./SOE2026_MAFMC_Council.upa))
@@ -1273,18 +1276,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22615 strings out of 469278
- 441091 string characters out of 5461752
- 893606 words of memory out of 5000000
+ 22618 strings out of 469278
+ 441112 string characters out of 5461752
+ 889606 words of memory out of 5000000
  50651 multiletter control sequences out of 15000+600000
  728937 words of font info for 225 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  77i,15n,117p,3136b,629s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/abigail.tyrell/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb>
-Output written on SOE2026_MAFMC_Council.pdf (65 pages, 16813682 bytes).
+Output written on SOE2026_MAFMC_Council.pdf (68 pages, 16855791 bytes).
 PDF statistics:
- 1089 PDF objects out of 1200 (max. 8388607)
- 886 compressed objects within 9 object streams
- 200 named destinations out of 1000 (max. 500000)
+ 1102 PDF objects out of 1200 (max. 8388607)
+ 896 compressed objects within 9 object streams
+ 203 named destinations out of 1000 (max. 500000)
  57959 words of extra memory for PDF output out of 61914 (max. 10000000)
 
