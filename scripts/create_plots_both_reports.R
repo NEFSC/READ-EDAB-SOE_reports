@@ -9,67 +9,15 @@
 
 # region <- "BothReports"
 
+# source(here::here("../ecodata/R/summary_functions.R"))
+# source(here::here("utils/image_functions.R"))
+
 create_plots_both <- function(region = "BothReports") {
   # setup ----
 
   out_dir <- here::here("images", region)
   if (!dir.exists(out_dir)) {
     dir.create(out_dir)
-  }
-
-  ## functions ----
-
-  # A function to create a standardized filename
-  create_filename <- function(
-    indicator,
-    file_region,
-    dir = out_dir,
-    extension = ".png"
-  ) {
-    file.path(
-      dir,
-      paste0(
-        indicator,
-        "_",
-        file_region,
-        "_",
-        Sys.Date(),
-        extension
-      )
-    )
-  }
-
-  # A flexible function to generate and save a plot
-  save_plot <- function(
-    plot_expression,
-    indicator,
-    report = region,
-    save_dir = out_dir,
-    ...
-  ) {
-    # Execute the code to create the plot
-    p <- eval(plot_expression)
-
-    # Check if the plot object is valid before saving
-    if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
-      message(report)
-      message(indicator)
-      message(out_dir)
-      fname <- create_filename(
-        indicator = indicator,
-        file_region = report,
-        dir = save_dir
-      )
-      ggplot2::ggsave(
-        filename = fname,
-        plot = p,
-        bg = "white",
-        ...
-      )
-      message("Plot saved to: ", fname)
-    } else {
-      stop("Plot object is not a valid ggplot or ggarrange object.")
-    }
   }
 
   # 9. Thermal Habitat Persistence Plot
@@ -143,7 +91,7 @@ create_plots_both <- function(region = "BothReports") {
       ecodata::plot_narw(varName = "calf", n = 10) +
         ggplot2::ggtitle("North Atlantic right whale calf abundance")
     },
-    indicator = "narw_calves",
+    indicator = "NARW-calf-abundance",
     width = 6.5,
     height = 2.5
   )
@@ -189,7 +137,7 @@ create_plots_both <- function(region = "BothReports") {
   save_plot(
     plot_expression = {
       ecodata::plot_forage_index(varName = "cog", n = 10) +
-        ggplot2::coord_cartesian(xlim = c(1982, 2023))
+        ggplot2::coord_cartesian(xlim = c(1982, NA))
     },
     indicator = "forage_dist",
     width = 6.5,
