@@ -8,15 +8,20 @@ These documents are in progress and subject to change. Please check back later f
 
 ### Report documents
 
-- [Mid Atlantic](midatlantic.pdf) (*in progress -- has not been updated with 2026 data*)
-- [New England](newengland.pdf) (*in progress -- has not been updated with 2026 data*)
-- [Combined report](bothregions.pdf) (to assist with editing only, will not be published as a final report) (*in progress -- has not been updated with 2026 data*)
+- [2026 Mid Atlantic Council report](SOE2026_MAFMC_Council.pdf) 
+- [2026 Mid Atlantic SSC report](SOE2026_MAFMC_SSC.pdf) 
+- [2026 New England SSC and Council report](SOE2026_NEFMC_IR_Edits.pdf)
+- [2026 Combined report](bothregions.pdf) (to assist with editing only, will not be published as a final report) 
 
 ### Presentation slides
 
-- [Mid Atlantic](midatlantic.html) (*in progress -- has not been updated with 2026 data*)
-- [New England](newengland.html) (*in progress -- has not been updated with 2026 data*)
-- [Combined report](parent_presentation.html) (to assist with editing only, will not be presented as a final report) (*in progress -- has not been updated with 2026 data*)
+- [Mid Atlantic Council slides](SOE2026_MAFMC_Council.html) 
+- [Mid Atlantic SSC slides](SOE2026_MAFMC_SSC.html) 
+- [New England Council slides](SOE2026_NEFMC_final.html) 
+- [New England SSC slides](SOE2026_NEFMC_SSC_final_V2.html) 
+- [CESCC slides](SOE2026_newengland_CESC.html) 
+- [ECCG slides](SOE2026_newengland_ECCG.html) 
+- [Combined report](parent_presentation.html) (to assist with editing only, will not be presented as a final report)
 - [Synthesis meeting slides](parent_presentation_synthesis.html) (*updated as of 1/14/2026*)
 
 ## How to update the reports

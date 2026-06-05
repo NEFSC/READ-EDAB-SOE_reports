@@ -3,8 +3,8 @@
 ## mid slides ----
 now <- Sys.time()
 quarto::quarto_render(
-  input = here::here("parent_presentation.qmd"),
-  output_file = "midatlantic.html",
+  input = here::here("parent_presentation_council.qmd"),
+  output_file = "SOE2026_MAFMC.html",
   execute_params = list(
     region = "MidAtlantic",
     council = "MAFMC",

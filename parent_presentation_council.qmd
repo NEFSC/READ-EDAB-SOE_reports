@@ -70,7 +70,7 @@ quarto::write_yaml_metadata_block(footer = region2)
 
 {{< include child_slides/synthesis_meeting_intro.qmd >}}
 
-```{r, child = here::here("child_slides/highlights_midatlantic_2025.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/highlights_midatlantic_2026.qmd"), eval = params$region != "NewEngland"}
 ```
 
 ```{r, child = here::here("child_slides/highlights_newengland_2026.qmd"), eval = params$region != "MidAtlantic"}
