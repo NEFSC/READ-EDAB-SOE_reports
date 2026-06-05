@@ -15,7 +15,7 @@ These documents are in progress and subject to change. Please check back later f
 
 ### Presentation slides
 
-- [Mid Atlantic Council slides](SOE2026_MAFMC_Council.html) 
+- [Mid Atlantic Council slides](SOE2026_MAFMC.html) 
 - [Mid Atlantic SSC slides](SOE2026_MAFMC_SSC.html) 
 - [New England Council slides](SOE2026_NEFMC_final.html) 
 - [New England SSC slides](SOE2026_NEFMC_SSC_final_V2.html) 
