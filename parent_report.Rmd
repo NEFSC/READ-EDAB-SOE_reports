@@ -273,18 +273,30 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 ## Protected Species
 Fishery management objectives for protected species generally focus on reducing threats and on habitat conservation/restoration. Specific actions include managing bycatch to remain below potential biological removal (PBR) thresholds, recovering endangered populations, and monitoring unusual mortality events (UMEs). Protected species include marine mammals protected under the Marine Mammal Protection Act, endangered and threatened species protected under the Endangered Species Act, and migratory birds protected under the Migratory Bird Treaty Act. In the Northeast U.S., endangered/threatened species include Atlantic salmon, Atlantic and shortnose sturgeon, 5 sea turtle species, giant manta ray, oceanic whitetip shark, and 5 baleen whales. Here we report on performance relative to these objectives, as well as how observed and predicted ecosystem changes in the Northeast U.S may impact these objectives in the future.
 
-### Indicators: bycatch, population (adult and juvenile) numbers, mortalities
+### Indicators and Drivers
 
-The management objective for [harbor porpoise](https://noaa-edab.github.io/catalog/harborporpoise.html) has been met, as the average index (Fig. \ref{fig:harborporpoise}) remains below the current PBR threshold.
+#### Harbor porpoise
+
+The management objective for [harbor porpoise](https://noaa-edab.github.io/catalog/harborporpoise.html) has been met, as the average index (Fig. \ref{fig:harborporpoise}) remains below the current PBR threshold.The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort.
 ```{r harborporpoise, fig.cap=return_caption(chunk_name = "harborporpoise", region = "BothReports"), fig.width=5, fig.asp=0.47}
 return_plot("harborporpoise", region = "BothReports")
 ```
+
+#### Gray seal
 
 The annual estimate for gray seal bycatch, most of which occurs in New England, has generally declined since 2019, in part driven by declining gillnet landings, although post-2019 estimates have greater uncertainty stemming from low observer coverage. The U.S. and Canadian range-wide PBR for [gray seals](https://noaa-edab.github.io/catalog/grayseal.html) is 12,052. While the PBR for the U.S. portion of this stock was reduced to 756 animals (Fig. \ref{fig:grayseal}), bycatch is unlikely to exceed the range-wide PBR due to incomplete data on anthropogenic mortality and serious injury. Thus the bycatch management objective for gray seals has been met.
 
 ```{r grayseal, fig.cap=return_caption(chunk_name = "grayseal", region = "BothReports"), fig.width=5, fig.asp=0.47}
 return_plot("grayseal", region = "BothReports")
 ```
+
+The increasing trend in 5-year average gray seal bycatch may be related to an increase in the gray seal population ([U.S. pup counts](https://noaa-edab.github.io/catalog/seal_pups.html) `r if(params$region == "NewEngland") "; Fig. \\ref{fig:seals})"`, supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
+
+```{r seals, fig.cap = return_caption(chunk_name = "seals", region = "BothReports"),fig.width = 6.5, fig.asp = 0.4, eval = params$region == "NewEngland"}
+return_plot("seals", region = "BothReports")
+```
+
+#### North Atlantic right whale
 
 The [North Atlantic right whale population](https://noaa-edab.github.io/catalog/narw.html) was on a recovery trajectory until a steep decline after 2010 (Fig. \ref{fig:narw-abundance}). While the right whale population has exhibited slow growth since 2020, it continues to experience annual mortalities above recovery thresholds. Reduced survival rates of adult females lead to diverging abundance trends between sexes. It is estimated that there are approximately 70 reproductively active adult females remaining in the population.
 
@@ -298,20 +310,13 @@ North Atlantic right whale [calf counts](https://noaa-edab.github.io/catalog/nar
 return_plot("NARW-calf-abundance", region = "BothReports")
 ```
 
-Human interaction from entanglements or vessel strikes remains the primary cause of death in an ongoing North Atlantic right whale Unusual Mortality Event (UME) since 2017. As of January 5, 2026, [the UME](https://www.fisheries.noaa.gov/national/marine-life-distress/2017-2026-north-atlantic-right-whale-unusual-mortality-event) includes 168 individual whales: 41 confirmed mortalities (19 US; 22 Canada), 40 serious injuries, and 87 sublethal injuries or illnesses. Recent research suggests that many mortalities go unobserved and the true number of mortalities are about three times the count of the observed mortalities. 
+Human interaction from entanglements or vessel strikes remains the primary cause of death in an ongoing North Atlantic right whale Unusual Mortality Event since 2017. Interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. [Recent research](https://noaa-edab.github.io/catalog/narw.html) suggests that climate-driven changes in ocean circulation and associated changes in the [primary right whale prey](https://noaa-edab.github.io/catalog/preyfield_energy.html) have caused right whale distribution changes in the Gulf of Maine. Additional potential stressors include [offshore wind development](#other-ocean-uses-offshore-wind).
 
-There is an ongoing UME for humpback whales (2016-present) and Atlantic minke whales (2018-present); suspected causes include human interactions. A UME for Northeast pinnipeds that began in 2018 for infectious disease is non-active pending closure as of February 2026.
+#### Unusual Mortality Events (UMEs)
+
+In addition to the North Atlantic right whale UME, there is an ongoing UME for humpback whales (2016-present) and Atlantic minke whales (2018-present); suspected causes include human interactions. A UME for Northeast pinnipeds that began in 2018 for infectious disease is non-active pending closure as of February 2026. The UMEs are under investigation and are likely the result of multiple drivers. For all large whale UMEs, human interaction appears to have contributed to increased mortalities, although investigations are not complete.
 
 ### Implications
-Bycatch management measures have been implemented to maintain bycatch below PBR thresholds. The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort. The increasing trend in 5-year average gray seal bycatch may be related to an increase in the gray seal population ([U.S. pup counts](https://noaa-edab.github.io/catalog/seal_pups.html) `r if(params$region == "NewEngland") "; Fig. \\ref{fig:seals})"`, supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
-
-```{r seals, fig.cap = return_caption(chunk_name = "seals", region = "BothReports"),fig.width = 6.5, fig.asp = 0.4, eval = params$region == "NewEngland"}
-return_plot("seals", region = "BothReports")
-```
-
-Strong evidence exists to suggest that interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. Further, right whale distribution has changed since 2010. [Recent research](https://noaa-edab.github.io/catalog/narw.html) suggests that recent climate driven changes in ocean circulation have resulted in right whale distribution changes driven by increased warm water influx through the Northeast Channel, which has reduced the [primary right whale prey](https://noaa-edab.github.io/catalog/preyfield_energy.html) (the copepod *Calanus finmarchicus*) in the central and eastern portions of the Gulf of Maine. Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat. Additional information can be found in the [offshore wind risks section](#other-ocean-uses-offshore-wind).
-
-The UMEs are under investigation and are likely the result of multiple drivers. For all large whale UMEs, human interaction appears to have contributed to increased mortalities, although investigations are not complete.
 
 [A climate vulnerability assessment](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0290643) is published for Atlantic and Gulf marine mammal populations.
 
