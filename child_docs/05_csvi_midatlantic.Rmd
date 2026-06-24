@@ -6,14 +6,19 @@
 <<ma-draft>>
 ```
 
-### Indicators: Port Commercial Fishing Activity and Community Social Vulnerability
+### Indicators
 
-The [Port Commercial Fishing Activity Indicator (PCFA)](https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72) (Fig. \ref{fig:commercial-engagement}) highlights significant shifts in industry engagement across major regional ports. Newport News, VA, Ocean City, MD, Bronx, NY, and Point Pleasant Beach, Cape May, and Barnegat Light, NJ have lower fishing activity compared to their 2007–2011 averages. Because Bronx, NY and Newport News, VA also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions. The other four top communities show higher port activity since 2007-2011; most notably Hampton Bays/Shinnecock, NY showed an increase of 84%. Currently North Carolina communities are not presented due to data limitations.
+#### Community Social Vulnerability Indicators
+
+The Community Social Vulnerability Indicators (CSVI) utilize U.S. Census American Community Survey data to describe social characteristics at the municipality level (i.e., not just the fishing community) and  provide context for the municipalities utilized by commercial fishing industry participants. Fishing industry participants that live in and/or utilize resources in municipalities with relatively concerning socio-demographic conditions may be more vulnerable to changes. The personal disruption index addresses factors that reduce adaptability to change such as unemployment and educational level. The poverty index is a composite index that indicates a community’s financial standing relative to other communities. The population composition index characterizes groups within communities that may be more vulnerable to change. CSVI information is presented for communities described in the following sections. 
+
+#### Port Commercial Fishing Activity and Community Social Vulnerability
+
+A new [Port Commercial Fishing Activity Indicator](https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72) (PCFA) utilizes NOAA data on dealers, fish landings, and commercial permits to explore trends in commercial fishing activity over time in top ports (Fig. \ref{fig:commercial-engagement}). The PCFA shows that Newport News, VA, Ocean City, MD, Bronx, NY, and Point Pleasant Beach, Cape May, and Barnegat Light, NJ have lower fishing activity compared to their 2007–2011 averages. Because Bronx, NY and Newport News, VA also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions. The other four top communities show higher port activity since 2007-2011; most notably Hampton Bays/Shinnecock, NY showed an increase of 84%. Currently North Carolina communities are not presented due to data limitations.
 
 ```{r commercial-engagement, fig.cap= return_caption(chunk_name = "commercial-engagement", region = "MidAtlantic"), fig.width = 6.5, fig.asp = 0.85}
 return_plot("commercial-engagement", region = "MidAtlantic")
 ```
-
 
 ```{r comvultab, tab.cap = "Community Vulnerability factor rankings for the municipalities housing the top 10 commercially active Mid-Atlantic ports."}
 comm_vul_table_ma
@@ -29,9 +34,13 @@ return_plot("recreational-engagement", region = "MidAtlantic")
 rec_vul_table_ma
 ```
 
-### Indicators: Community Environmental Variability Risk  in the Mid-Atlantic
+#### Recreational engagement
 
-[Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_risks.html) (CEVRI) measure risk by linking commercial landings and revenue to specific climate sensitivity factors, including temperature, ocean acidification, and stock status using the Climate Vulnerability Assessment (CVA) scores. These indicators calculate total sensitivity and vulnerability scores based on a community's dependence on species vulnerable to climate change. Risk scores range from low (1) to high (4), increasing as a community relies more heavily on species at higher risk from environmental shifts.
+The recreational engagement index has not been updated from last year and will be updated with similar methods as PCFA in future reports. The recreational [engagement](https://noaa-edab.github.io/catalog/engagement.html) index demonstrates participation levels in recreational fishing in a given community relative to other coastal communities in a region. 
+
+#### Community Environmental Variability Risk  in the Mid-Atlantic
+
+The [Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_risks.html) (CEVRI) were developed to help examine trends in risk related to dependence on species vulnerable to climate and environmental changes. These indicators commercial landings and revenue to specific climate sensitivity factors, including temperature, ocean acidification, and stock status using the Climate Vulnerability Assessment (CVA) scores. These indicators calculate total sensitivity and vulnerability scores based on a community's dependence on species vulnerable to climate change. Risk scores range from low (1) to high (4), increasing as a community relies more heavily on species at higher risk from environmental shifts.
 
 While long-term risk trends across the Mid-Atlantic remain stable, most individual fishing communities currently rank as high or very high risk (Fig. \ref{fig:commvulex}). This high ranking demonstrates that a majority of regional communities depend on species that are highly vulnerable to changing ocean conditions for their commercial revenue. Strategies for management should account for this widespread reliance on climate-sensitive stocks.
 

@@ -256,15 +256,6 @@ child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower
 
 ## Social and Community Risks
 
-Fisheries management seeks to provide for sustained participation of fishing communities and to avoid adverse economic impacts to fishing communities. A new [composite indicator](https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72) (Port Commercial Fishing Activity Indicator or PCFA) utilizes NOAA data on dealers, fish landings, and commercial permits to explore trends in commercial fishing activity over time in top ports. This information can be used to understand how changes in fish stocks, regulations, and other social-ecological factors may have disparately impacted ports throughout the Greater Atlantic region. 
-
-The recreational engagement index has not been updated from last year and will be updated with similar methods as PCFA in future reports. The recreational [engagement](https://noaa-edab.github.io/catalog/engagement.html) index demonstrates participation levels in recreational fishing in a given community relative to other coastal communities in a region. 
-
-The Community Social Vulnerability Indicators (CSVI) utilize U.S. Census American Community Survey data to describe social characteristics at the municipality level (i.e., not just the fishing community) and  provide context for the municipalities utilized by commercial fishing industry participants. Fishing industry participants that live in and/or utilize resources in municipalities with relatively concerning socio-demographic conditions may be more vulnerable to changes. The personal disruption index addresses factors that reduce adaptability to change such as unemployment and educational level. The poverty index is a composite index that indicates a community’s financial standing relative to other communities. The population composition index characterizes groups within communities that may be more vulnerable to change. CSVI information for communities highlighted in the PCFA and recreational engagement index have been updated with the most recent census data from 2023.
-
-Coastal fishing communities worldwide have or are likely to experience social, economic, and cultural impacts from climate change, both negative (e.g., loss of infrastructure, fish stock decline) and positive (e.g., increased abundance of valuable species). Changes in marine fisheries as a consequence of climate change will require adaptation by coastal fishing communities and fisheries managers alike. The Community Environmental Variability Risk Indicators (CEVRI) were developed to help examine trends in risk related to dependence on species vulnerable to climate and environmental changes.
-
-
 ```{r}
 base_child <- "05_csvi_"
 child_file <- here::here(paste0("child_docs/", base_child, stringr::str_to_lower(params$region), ".Rmd"))
