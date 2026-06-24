@@ -368,19 +368,24 @@ save_plot <- function(
       target_plot <- if (inherits(p, "ggarrange")) p$plots[[1]] else p
 
       raw_dat <- return_point_data(target_plot)
+      print(head(raw_dat))
 
-      # extract simple data if there are no facets or colors
+      # extract simple data if there are no facets or colors ----
       if (
         length(unique(raw_dat$colour)) == 1 &
           inherits(target_plot$facet, "FacetNull")
       ) {
         dat <- raw_dat |>
           dplyr::select(x, y)
-      } else if (!inherits(target_plot$facet, "FacetNull")) {
-        # extract data by facet if there are facets
+      } else if (
+        !inherits(target_plot$facet, "FacetNull") &
+          # AND more than 1 facet
+          nrow(ggplot2::ggplot_build(target_plot)$layout$layout) > 1
+      ) {
+        # extract data by facet if there are facets ----
         dat <- return_faceted_plt_data(target_plot, p_dat = raw_dat)
       } else if (length(unique(raw_dat$colour)) > 1) {
-        # extract data by color if there are colors
+        # extract data by color if there are colors ----
         dat <- return_color_plt_data(target_plot, p_dat = raw_dat)
       } else {
         message(paste0(
@@ -392,8 +397,11 @@ save_plot <- function(
         return()
       }
 
+      print(head(dat))
+
       # 5. Group by our new literal labels and execute summary functions
       group <- colnames(dat)[-which(colnames(dat) %in% c("x", "y"))]
+      message(group)
 
       if (length(group) == 0) {
         summary_rows <- dplyr::bind_cols(
