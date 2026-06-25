@@ -19,11 +19,11 @@ wind_interactions <- "Proposed wind development areas interact with the regionâ€
 
 Increased vessel transit between stations may decrease data collections that are already limited by annual days-at-sea day allocations. In the Northeast region, 14 NEFSC surveys overlap with offshore wind development projects at varying capacities, with each of the 38 existing lease areas overlapping between 4-13 surveys. The Active Projects overlap between 10-12 surveys. Implementation of the region-wide survey mitigation program is underway with requirements to mitigate impacts to surveys included as a condition of project approvals."
 
-socio_intro <- "The socio-demographic conditions, and resultant vulnerabilities, of some communities may further exacerbate the impacts of offshore wind development in the Northeast such that the impacts of offshore wind development are expected to differentially [impact specific coastal communities](https://noaa-edab.github.io/catalog/wind_port.html) (Fig. \\ref{fig:wea-port-rev})"
+socio_intro <- "The socio-demographic conditions, and resultant vulnerabilities, of some communities may further exacerbate the impacts of offshore wind development in the Northeast such that the impacts of offshore wind development are expected to differentially [impact specific coastal communities](https://noaa-edab.github.io/catalog/wind_port.html) (Fig. \\ref{fig:wea-port-rev})."
 
-wind_impact <- dplyr::case_when(params$draft ~ "[Up to 6% of maximum annual fisheries revenue for major Mid-Atlantic commercial species] *or* [Up to 13% of total average revenue for major New England commercial species]",
-                                params$region == "MidAtlantic" ~ "Up to 6% of maximum annual fisheries revenue for major Mid-Atlantic commercial species",
-                                params$region == "NewEngland" ~ "Up to 13% of total average revenue for major New England commercial species"
+wind_impact <- dplyr::case_when(params$draft ~ "[Up to 6% of maximum [annual fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) for major Mid-Atlantic commercial species] *or* [Up to 13% of total average [annual fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) for major New England commercial species]",
+                                params$region == "MidAtlantic" ~ "Up to 6% of maximum [annual fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) for major Mid-Atlantic commercial species",
+                                params$region == "NewEngland" ~ "Up to 13% of total average [annual fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) for major New England commercial species"
                                 )
 
 gentrification_ports <-  dplyr::case_when(params$draft ~ "[Beaufort, NC, and Cape May, Barnegat Light, and Long Beach, NJ] *or* [Point Judith and Newport, RI; and Boston and New Bedford, MA]",
