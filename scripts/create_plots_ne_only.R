@@ -148,3 +148,4 @@ create_plots_ne <- function(region = "NewEngland")
       height = 4
     )
   }
+}
