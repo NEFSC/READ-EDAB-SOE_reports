@@ -194,44 +194,113 @@ return_grouped_data <- function(p, p_dat) {
   output <- p_dat |>
     dplyr::select(x, y)
 
-  if ("PANEL" %in% colnames(p_dat)) {
+  has_panel <- "PANEL" %in% colnames(p_dat)
+  has_multiple_colors <- length(unique(p_dat$colour)) > 1
+
+  if (has_panel | has_multiple_colors) {
+    metadata <- ggplot2::ggplot_build(p)
+  }
+
+  if (has_panel) {
     plt_data <- p_dat |>
       dplyr::select(x, y, PANEL)
 
     # get facet data to join
-    metadata <- ggplot2::ggplot_build(p)
     facet_labels <- metadata$layout$layout |>
       dplyr::select(-c(ROW, COL, SCALE_X, SCALE_Y, COORD))
 
-    panel_key <- dplyr::left_join(plt_data, facet_labels, by = "PANEL") |>
+    panel_info <- tibble::tibble(PANEL = p_dat$PANEL) |>
+      dplyr::left_join(facet_labels, by = "PANEL") |>
       dplyr::select(-PANEL)
 
-    output <- dplyr::left_join(output, panel_key)
+    output <- dplyr::bind_cols(output, panel_info)
   }
 
-  if (length(unique(p_dat$colour)) > 1) {
-    plt_data <- p_dat |>
-      # might need to keep more of the columns if the plot is faceted?
-      dplyr::select(x, y, colour)
-
-    # get color data to join
-    metadata <- ggplot2::ggplot_build(p)
+  if (has_multiple_colors) {
     color_scale <- metadata$plot$scales$get_scales("colour")
 
-    # Map the labels to their hex colors
-    color_key <- dplyr::left_join(
-      plt_data,
-      tibble::tibble(
-        colour = color_scale$map(color_scale$get_breaks()),
-        Var = color_scale$get_labels()
-      )
-    )
+    if (!is.null(color_scale)) {
+      # Generate the mapping vectors
+      hex_breaks <- color_scale$map(color_scale$get_breaks())
+      labels <- color_scale$get_labels()
 
-    output <- dplyr::left_join(output, color_key) |>
-      dplyr::select(-colour)
+      # Vectorized lookup instead of left_join
+      color_idx <- match(p_dat$colour, hex_breaks)
+      output$Color <- labels[color_idx]
+    }
   }
 
   return(output)
+}
+
+extract_plot_data <- function(p, fpath, plt_path, ind, reg) {
+  message("Extracting plot data...")
+  target_plot <- p
+
+  raw_dat <- return_point_data(target_plot)
+  # print(head(raw_dat))
+
+  dat <- return_grouped_data(target_plot, p_dat = raw_dat)
+
+  message("Running summary functions...")
+
+  # 5. Group by our new literal labels and execute summary functions
+  group <- colnames(dat)[-which(colnames(dat) %in% c("x", "y"))]
+  # message(group)
+
+  if (length(group) == 0) {
+    summary_rows <- dplyr::bind_cols(
+      dat |> summary_stats(),
+      dat |> trend_summaries()
+    ) |>
+      dplyr::mutate(Group1 = "Unit", Group2 = NA, Group3 = NA, .before = 1)
+  } else {
+    summary_rows <- dat |>
+      dplyr::group_by(dplyr::across(dplyr::all_of(group))) |>
+      dplyr::reframe(
+        stats = summary_stats(dplyr::pick(dplyr::everything())),
+        trends = trend_summaries(dplyr::pick(dplyr::everything()))
+      )
+  }
+
+  # pad out group columns if needed
+  if (length(group) == 1) {
+    summary_rows <- summary_rows |>
+      dplyr::mutate(Group2 = NA, Group3 = NA, .after = 1)
+  }
+
+  if (length(group) == 2) {
+    summary_rows <- summary_rows |>
+      dplyr::mutate(Group3 = NA, .after = 2)
+  }
+
+  output <- summary_rows |>
+    dplyr::rename(Group1 = 1, Group2 = 2, Group3 = 3) |>
+    dplyr::mutate(
+      Indicator = ind,
+      Region = reg,
+      File_Generated = file.path(plt_path),
+      .before = 1
+    )
+
+  # 6. Append to the shared summary CSV file
+
+  summary_path <- file.path(fpath)
+  append_mode <- file.exists(summary_path)
+
+  write.table(
+    output,
+    file = summary_path,
+    append = append_mode,
+    sep = ",",
+    row.names = FALSE,
+    col.names = !append_mode
+  )
+
+  message(
+    "Grouped summary metrics appended to: ",
+    summary_path
+  )
 }
 
 #' Map Faceted Plot Points to Layout Metadata
@@ -324,12 +393,13 @@ save_plot <- function(
   report = region,
   save_dir = out_dir,
   output_summary = TRUE,
-  summary_file = here::here("utils/figure_stats_summaries.csv"),
+  summary_file = here::here("utils/figure_stats_summaries2.csv"),
   key = here::here("utils/figure_captions_summary.csv"),
   ...
 ) {
+  plot_env <- new.env(parent = parent.frame())
   # Execute the code to create the plot
-  p <- eval(plot_expression) |>
+  p <- eval(plot_expression, envir = plot_env) |>
     add_ecodata_name(
       plt_indicator = indicator,
       plt_key = key
@@ -355,73 +425,68 @@ save_plot <- function(
     message("Plot saved to: ", fname)
 
     # extract data for summary table ----
-    message("Extracting plot data...")
     if (output_summary) {
-      target_plot <- if (inherits(p, "ggarrange")) p$plots[[1]] else p
-
-      raw_dat <- return_point_data(target_plot)
-      # print(head(raw_dat))
-
-      dat <- return_grouped_data(target_plot, p_dat = raw_dat)
-
-      message("Running summary functions...")
-
-      # 5. Group by our new literal labels and execute summary functions
-      group <- colnames(dat)[-which(colnames(dat) %in% c("x", "y"))]
-      # message(group)
-
-      if (length(group) == 0) {
-        summary_rows <- dplyr::bind_cols(
-          dat |> summary_stats(),
-          dat |> trend_summaries()
-        ) |>
-          dplyr::mutate(Group1 = "Unit", Group2 = NA, Group3 = NA, .before = 1)
-      } else {
-        summary_rows <- dat |>
-          dplyr::group_by(dplyr::across(dplyr::all_of(group))) |>
-          dplyr::reframe(
-            stats = summary_stats(dplyr::pick(dplyr::everything())),
-            trends = trend_summaries(dplyr::pick(dplyr::everything()))
-          )
-      }
-
-      # pad out group columns if needed
-      if (length(group) == 1) {
-        summary_rows <- summary_rows |>
-          dplyr::mutate(Group2 = NA, Group3 = NA, .after = 1)
-      }
-
-      if (length(group) == 2) {
-        summary_rows <- summary_rows |>
-          dplyr::mutate(Group3 = NA, .after = 1)
-      }
-
-      output <- summary_rows |>
-        dplyr::mutate(
-          Indicator = indicator,
-          Region = report,
-          File_Generated = file.path(fname),
-          .before = 1
+      if (!inherits(p, "ggarrange")) {
+        extract_plot_data(
+          p,
+          fpath = summary_file,
+          plt_path = fname,
+          ind = indicator,
+          reg = region
         )
+      }
 
-      # 6. Append to the shared summary CSV file
+      if (inherits(p, "ggarrange")) {
+        message("Detected ggarrange. Intercepting individual subplots...")
 
-      summary_path <- file.path(summary_file)
-      append_mode <- file.exists(summary_path)
+        ## TODO: some sort of enquote(), quote(), etc to get this to read as the unevaluated lines of code
+        code_string <- plot_expression
+        # extract objects that are assigned a value of "ecodata::plot_..."
+        pattern <- "(?m)^\\s*([a-zA-Z0-9_.]+)\\s*(<-|=) *ecodata::plot_"
 
-      write.table(
-        output,
-        file = summary_path,
-        append = append_mode,
-        sep = ",",
-        row.names = FALSE,
-        col.names = !append_mode
-      )
+        # Extract just the captured variable names
+        ggplot_vars <- stringr::str_match_all(code_string, pattern)[[1]][, 2]
 
-      message(
-        "Grouped summary metrics appended to: ",
-        summary_path
-      )
+        # # Extract all arguments passed to ggarrange() inside the expression
+        # # We look for symbols that represent the plotted objects
+        # all_tokens <- all.names(plot_expression)
+        #
+        # # Find which variables created inside our plot_env are ggplot objects
+        # ggplot_vars <- ls(plot_env)
+        # # Use vapply to strictly enforce a TRUE/FALSE logical vector return
+        # is_ggplot <- vapply(
+        #   ggplot_vars,
+        #   function(v) {
+        #     obj <- get(v, envir = plot_env)
+        #     inherits(obj, "ggplot")
+        #   },
+        #   FUN.VALUE = logical(1)
+        # )
+        #
+        # # Now subset safely
+        # ggplot_vars <- ggplot_vars[is_ggplot]
+
+        if (length(ggplot_vars) > 0) {
+          for (i in seq_along(ggplot_vars)) {
+            var_name <- ggplot_vars[i]
+            subplot_obj <- get(var_name, envir = plot_env)
+            subplot_ind <- paste0(indicator, "_", var_name)
+
+            message("Extracting data from subplot variable: ", var_name)
+            extract_plot_data(
+              p = subplot_obj,
+              fpath = summary_file,
+              plt_path = fname,
+              ind = subplot_ind,
+              reg = region
+            )
+          }
+        } else {
+          warning(
+            "Could not find isolated ggplot variables inside the plot_expression block."
+          )
+        }
+      }
     }
   } else {
     stop("Plot object is not a valid ggplot or ggarrange object.")
