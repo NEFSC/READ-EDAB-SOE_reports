@@ -393,11 +393,12 @@ save_plot <- function(
   report = region,
   save_dir = out_dir,
   output_summary = TRUE,
-  summary_file = here::here("utils/figure_stats_summaries2.csv"),
+  summary_file = here::here("utils/figure_stats_summaries3.csv"),
   key = here::here("utils/figure_captions_summary.csv"),
   ...
 ) {
   plot_env <- new.env(parent = parent.frame())
+  # raw_expr <- substitute(plot_expression)
   # Execute the code to create the plot
   p <- eval(plot_expression, envir = plot_env) |>
     add_ecodata_name(
@@ -439,32 +440,15 @@ save_plot <- function(
       if (inherits(p, "ggarrange")) {
         message("Detected ggarrange. Intercepting individual subplots...")
 
-        ## TODO: some sort of enquote(), quote(), etc to get this to read as the unevaluated lines of code
-        code_string <- plot_expression
+        code_string <- match.call()$plot_expression |>
+          as.character() |>
+          paste(collapse = " ")
+
         # extract objects that are assigned a value of "ecodata::plot_..."
-        pattern <- "(?m)^\\s*([a-zA-Z0-9_.]+)\\s*(<-|=) *ecodata::plot_"
-
-        # Extract just the captured variable names
+        pattern <- "([a-zA-Z0-9_.]+)\\s*(<-|=) *ecodata::plot_"
+        #
+        # # Extract just the captured variable names
         ggplot_vars <- stringr::str_match_all(code_string, pattern)[[1]][, 2]
-
-        # # Extract all arguments passed to ggarrange() inside the expression
-        # # We look for symbols that represent the plotted objects
-        # all_tokens <- all.names(plot_expression)
-        #
-        # # Find which variables created inside our plot_env are ggplot objects
-        # ggplot_vars <- ls(plot_env)
-        # # Use vapply to strictly enforce a TRUE/FALSE logical vector return
-        # is_ggplot <- vapply(
-        #   ggplot_vars,
-        #   function(v) {
-        #     obj <- get(v, envir = plot_env)
-        #     inherits(obj, "ggplot")
-        #   },
-        #   FUN.VALUE = logical(1)
-        # )
-        #
-        # # Now subset safely
-        # ggplot_vars <- ggplot_vars[is_ggplot]
 
         if (length(ggplot_vars) > 0) {
           for (i in seq_along(ggplot_vars)) {
