@@ -96,6 +96,8 @@ create_plots_mab_and_ne <- function(region) {
   )
 
   # rec hms and sharks
+
+  ## TODO: large pelagics plot isn't outputting the same number of columns as the rec hms plot
   save_plot(
     plot_expression = {
       rec_hms_plot <- ecodata::plot_rec_hms(report = region, n = 10) +
@@ -146,7 +148,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "stock_status",
     width = 6.5,
-    height = 6
+    height = 6,
+    output_summary = FALSE
   )
 
   # 2. ABC/ACL Stacked Plot
@@ -159,7 +162,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "abcacl_stacked",
     width = 6.5,
-    height = 4.5
+    height = 4.5,
+    output_summary = FALSE
   )
 
   # 3. ABC/ACL Catch Plot
@@ -172,10 +176,12 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "abcacl_catch",
     width = 6.5,
-    height = 2.5
+    height = 2.5,
+    output_summary = FALSE
   )
 
   # Aggregate biomass
+  ## TODO: update ecodata::plot_aggregate_biomass to use facets
   if (region == "MidAtlantic") {
     save_plot(
       plot_expression = {
@@ -292,7 +298,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "bennet",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 6, 2.5)
+    height = ifelse(region == "NewEngland", 6, 2.5),
+    output_summary = FALSE
   )
 
   # bennet all
@@ -336,7 +343,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "bennet_all",
     width = ifelse(region == "NewEngland", 9, 4),
-    height = 6.5
+    height = 6.5,
+    output_summary = FALSE
   )
 
   # 4. Climate Vulnerability Revenue Plot
@@ -612,7 +620,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "exp_n",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 2.5)
+    height = ifelse(region == "NewEngland", 5, 2.5),
+    output_summary = FALSE
   )
 
   #zooplankton community PCA
@@ -739,7 +748,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "recreational_engagement",
     width = 6.5,
-    height = 4
+    height = 4,
+    output_summary = FALSE
   )
 
   # 3. Community Climate Vulnerability Exposure Plot
@@ -823,7 +833,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "productivity_anomaly",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 8.5, 7.5)
+    height = ifelse(region == "NewEngland", 8.5, 7.5),
+    output_summary = FALSE
   )
 
   # condition factor
@@ -863,7 +874,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "condition",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 7, 6)
+    height = ifelse(region == "NewEngland", 7, 6),
+    output_summary = FALSE
   )
 
   # 5. Energy Density Plot
@@ -874,7 +886,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "energy_density",
     width = 6.5,
-    height = 4
+    height = 4,
+    output_summary = FALSE
   )
 
   # 6. Forage Index Plot
@@ -889,7 +902,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "foragebio",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 2.5)
+    height = ifelse(region == "NewEngland", 5, 2.5),
+    output_summary = FALSE
   )
 
   # 7. Benthos Plot
@@ -916,7 +930,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "benthos",
     width = 6.5,
-    height = 5
+    height = 5,
+    output_summary = FALSE
   )
 
   # 8. Zooplankton Anomaly Plot
@@ -960,7 +975,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "zooplankton_anomaly",
     width = 6.5,
-    height = 7.5
+    height = 7.5,
+    output_summary = FALSE
   )
 
   # Advection Index
@@ -1044,6 +1060,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "wind_revenue",
     width = 6.5,
-    height = 2.5
+    height = 2.5,
+    output_summary = FALSE
   )
 }

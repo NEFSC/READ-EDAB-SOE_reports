@@ -132,16 +132,21 @@ add_ecodata_name <- function(
 return_point_data <- function(p) {
   n_layers <- length(p$layers)
 
+  plt_data <- NULL
+
   for (i in 1:n_layers) {
     dat <- ggplot2::layer_data(p, i)
     # print(head(dat))
     # shape is only for points, so this will grab data from the point layer
-    if ("shape" %in% names(dat)) {
+    if ("shape" %in% colnames(dat)) {
       plt_data <- dat
+      return(plt_data)
     }
   }
 
-  return(plt_data)
+  if (is.null(plt_data)) {
+    stop("No point layer found in the provided ggplot object.")
+  }
 }
 
 #' Extract Data with Facet and Color Group Mapping
@@ -229,6 +234,10 @@ return_grouped_data <- function(p, p_dat) {
       output$Color <- labels[color_idx]
     }
   }
+
+  ## TODO: update to handle cases where points are grouped but not distinguished by color (exp n)
+  # metadata$plot$data gives full dataset
+  # would have to dynamically read colnames and determine which ones were grouping/ important
 
   return(output)
 }
@@ -454,7 +463,7 @@ save_plot <- function(
           for (i in seq_along(ggplot_vars)) {
             var_name <- ggplot_vars[i]
             subplot_obj <- get(var_name, envir = plot_env)
-            subplot_ind <- paste0(indicator, "_", var_name)
+            subplot_ind <- paste0(indicator, "-", var_name)
 
             message("Extracting data from subplot variable: ", var_name)
             extract_plot_data(

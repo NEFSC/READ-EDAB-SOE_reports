@@ -9,8 +9,8 @@
 
 # region <- "BothReports"
 
-# source(here::here("../ecodata/R/summary_functions.R"))
-# source(here::here("utils/image_functions.R"))
+source(here::here("../ecodata/R/summary_functions.R"))
+source(here::here("utils/image_functions.R"))
 
 create_plots_both <- function(region = "BothReports") {
   # setup ----
