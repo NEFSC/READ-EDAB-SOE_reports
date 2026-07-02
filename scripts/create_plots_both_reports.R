@@ -27,7 +27,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "therm-hab-persist-2024",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
 
   # 5. Energy Density Plot
@@ -60,7 +60,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "harborporpoise",
     width = 6.5,
-    height = 3
+    height = 3.25
   )
 
   # gray seal
@@ -70,7 +70,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "grayseal",
     width = 6.5,
-    height = 3
+    height = 3.25
   )
 
   # narw-abundance
@@ -82,7 +82,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "narw-abundance",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
 
   # narw calves
@@ -93,7 +93,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "NARW-calf-abundance",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
 
   # seals
@@ -105,7 +105,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "seals",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
 
   # species dist
@@ -117,7 +117,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "species-dist",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # whale and dolphin dist shifts
@@ -130,7 +130,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "protectedspp-dist-shifts",
     width = 7.5,
-    height = 4
+    height = 4.25
   )
 
   # forage shifts
@@ -141,7 +141,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "forageshifts",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # longterm sst
@@ -151,7 +151,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "long-term-sst",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
 
   # gsi
@@ -161,7 +161,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "GSI",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
 
   # cold pool size
@@ -173,7 +173,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "cold-pool-size",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
 
   # cold pool timing
@@ -183,7 +183,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "cold-pool-time",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
 
   # spawn timing
@@ -193,7 +193,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "spawntiming",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
 
   # development speed
@@ -204,7 +204,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "wind-proposed-dev",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
 
   # slopewater
@@ -215,7 +215,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "slopewater",
     width = 6,
-    height = 2.5
+    height = 2.75
   )
 
   # small cope center of gravity
@@ -231,7 +231,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "smallcopeall-cog",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # large cope center of gravity
@@ -247,7 +247,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "lgcopeall-cog",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # macrobenthos shifts
@@ -269,7 +269,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "macrobenthosshifts",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # megabenthos shifts
@@ -291,7 +291,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "megabenthosshifts",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # euphausiid center of gravity
@@ -314,7 +314,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "euph-cog",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 }
 

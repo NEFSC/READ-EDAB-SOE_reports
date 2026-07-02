@@ -90,7 +90,7 @@ create_plots_ne <- function(region = "NewEngland")
     },
     indicator = "rec-hms",
     width = 6.5,
-    height = 3
+    height = 3.25
   )
   
   # calfin center of gravity -- NE only
@@ -106,7 +106,7 @@ create_plots_ne <- function(region = "NewEngland")
     },
     indicator = "calfin-cog",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
   
   # mass inshore survey -- NE only
@@ -118,7 +118,7 @@ create_plots_ne <- function(region = "NewEngland")
     },
     indicator = "mass-biomass",
     width = 6,
-    height = 6
+    height = 6.25
   )
   
   # seabird productivity -- NE only
@@ -130,7 +130,7 @@ create_plots_ne <- function(region = "NewEngland")
       },
       indicator = "seabird-ne-productivity",
       width = 6.5,
-      height = 2.5
+      height = 2.75
     )
   }
   
@@ -145,7 +145,7 @@ create_plots_ne <- function(region = "NewEngland")
       },
       indicator = "salmon",
       width = 6.5,
-      height = 4
+      height = 4.25
     )
   }
 }
