@@ -82,16 +82,16 @@ create_plots_slides_both <- function(region = "BothReports") {
     height = 4
   )
   
-  # 5. Energy Density Plot
-  save_plot(
-    plot_expression = {
-      # plot is the same even though it takes a region parameter
-      ecodata::plot_energy_density(report = "NewEngland")
-    },
-    indicator = "energy-density",
-    width = 6.5,
-    height = 4
-  )
+  # # 5. Energy Density Plot
+  # save_plot(
+  #   plot_expression = {
+  #     # plot is the same even though it takes a region parameter
+  #     ecodata::plot_energy_density(report = "NewEngland")
+  #   },
+  #   indicator = "energy-density",
+  #   width = 6.5,
+  #   height = 4
+  # )
   
   # GOM ocean acidification
   GOMoa_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf"

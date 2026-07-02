@@ -921,16 +921,16 @@ create_plots_mab_and_ne <- function(region) {
     height = ifelse(region == "NewEngland", 7, 6)
   )
 
-  # 5. Energy Density Plot
-  save_plot(
-    plot_expression = {
-      ecodata::plot_energy_density(report = region) +
-        ggplot2::theme(legend.position = 'bottom')
-    },
-    indicator = "energy-density",
-    width = 6.5,
-    height = 4
-  )
+  # # 5. Energy Density Plot
+  # save_plot(
+  #   plot_expression = {
+  #     ecodata::plot_energy_density(report = region) +
+  #       ggplot2::theme(legend.position = 'bottom')
+  #   },
+  #   indicator = "energy-density",
+  #   width = 6.5,
+  #   height = 4
+  # )
 
   # 6. Forage Index Plot
   save_plot(
