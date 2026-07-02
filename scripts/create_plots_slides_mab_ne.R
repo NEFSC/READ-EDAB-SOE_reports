@@ -788,11 +788,34 @@ create_plots_slides_mab_and_ne <- function(region) {
   # Monthly Chlorophyll Plot
   save_plot(
     plot_expression = {
-      ecodata::plot_chl_pp(
-        report = region,
-        plottype = "monthly",
-        n = 30
-      )
+      if (region == "MidAtlantic") {
+        ecodata::plot_chl_pp(
+          report = region,
+          plottype = "monthly",
+          EPU = "MAB",
+          n = 30
+        )
+      } else {
+        gb <- ecodata::plot_chl_pp(
+          report = region,
+          plottype = "monthly",
+          EPU = "GB",
+          n = 30
+        )
+        gom <- ecodata::plot_chl_pp(
+          report = region,
+          plottype = "monthly",
+          EPU = "GOM",
+          n = 30
+        )
+        ggpubr::ggarrange(
+          gb,
+          gom,
+          ncol = 1,
+          common.legend = TRUE,
+          legend = "bottom"
+        )
+      }
     },
     indicator = "chl-month",
     width = 6.5,
