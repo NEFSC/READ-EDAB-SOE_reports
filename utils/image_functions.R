@@ -140,9 +140,13 @@ return_point_data <- function(p) {
     # shape is only for points, so this will grab data from the point layer
     if ("shape" %in% colnames(dat)) {
       plt_data <- dat
-      return(plt_data)
     }
   }
+
+  # this will return the last point layer found, if multiple exist
+  # caution!!!
+  # allows overwrite for ecodata functions that don't differentiate by color or facet
+  return(plt_data)
 
   if (is.null(plt_data)) {
     stop("No point layer found in the provided ggplot object.")
@@ -249,7 +253,10 @@ extract_plot_data <- function(p, fpath, plt_path, ind, reg) {
   raw_dat <- return_point_data(target_plot)
   # print(head(raw_dat))
 
-  dat <- return_grouped_data(target_plot, p_dat = raw_dat)
+  dat <- return_grouped_data(target_plot, p_dat = raw_dat) |>
+    # remove NAs so max year isn't a year with no data
+    # arfit will pad NAs back in
+    tidyr::drop_na()
 
   message("Running summary functions...")
 
@@ -265,6 +272,8 @@ extract_plot_data <- function(p, fpath, plt_path, ind, reg) {
       dplyr::mutate(Group1 = "Unit", Group2 = NA, Group3 = NA, .before = 1)
   } else {
     summary_rows <- dat |>
+      # na's seem to be duplicated for some reason?
+      dplyr::distinct() |>
       dplyr::group_by(dplyr::across(dplyr::all_of(group))) |>
       dplyr::reframe(
         stats = summary_stats(dplyr::pick(dplyr::everything())),

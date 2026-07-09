@@ -592,7 +592,11 @@ create_plots_mab_and_ne <- function(region) {
         report = region,
         varName = "fall",
         n = 10
-      )
+      ) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Var)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       if (region == "MidAtlantic") {
         exp_n_plot +
           ggplot2::scale_x_continuous(
@@ -620,8 +624,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "exp_n",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 2.5),
-    output_summary = FALSE
+    height = ifelse(region == "NewEngland", 5, 2.5)
   )
 
   #zooplankton community PCA
@@ -893,7 +896,10 @@ create_plots_mab_and_ne <- function(region) {
   # 6. Forage Index Plot
   save_plot(
     plot_expression = {
-      plt <- ecodata::plot_forage_index(report = region, n = 10)
+      plt <- ecodata::plot_forage_index(report = region, n = 10) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
       if (region == "MidAtlantic") {
         plt
       } else {
@@ -902,8 +908,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "foragebio",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5, 2.5),
-    output_summary = FALSE
+    height = ifelse(region == "NewEngland", 5, 2.5)
   )
 
   # 7. Benthos Plot
@@ -914,12 +919,20 @@ create_plots_mab_and_ne <- function(region) {
         varName = "Megabenthos",
         n = 10
       ) +
-        ggplot2::theme(legend.position = "none")
+        ggplot2::theme(legend.position = "none") +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       macrobenthos_plot <- ecodata::plot_benthos_index(
         report = region,
         varName = "Macrobenthos",
         n = 10
-      )
+      ) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       ggpubr::ggarrange(
         megabenthos_plot,
         macrobenthos_plot,
@@ -930,8 +943,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "benthos",
     width = 6.5,
-    height = 5,
-    output_summary = FALSE
+    height = 5
   )
 
   # 8. Zooplankton Anomaly Plot
@@ -944,7 +956,11 @@ create_plots_mab_and_ne <- function(region) {
       ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Large Copepods") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       small_copepod_plot <- ecodata::plot_zooplankton_index(
         report = region,
         varName = "Smallcopeall",
@@ -952,7 +968,11 @@ create_plots_mab_and_ne <- function(region) {
       ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Small Copepods") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       euphausiid_plot <- ecodata::plot_zooplankton_index(
         report = region,
         varName = "Euph",
@@ -963,7 +983,11 @@ create_plots_mab_and_ne <- function(region) {
         ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Euphasiids") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       ggpubr::ggarrange(
         large_copepod_plot,
         small_copepod_plot,
@@ -975,8 +999,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "zooplankton_anomaly",
     width = 6.5,
-    height = 7.5,
-    output_summary = FALSE
+    height = 7.5
   )
 
   # Advection Index

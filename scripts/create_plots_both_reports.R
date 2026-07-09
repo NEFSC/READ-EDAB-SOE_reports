@@ -27,7 +27,8 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "therm_hab_persist",
     width = 6.5,
-    height = 4
+    height = 4,
+    output_summary = FALSE
   )
 
   # 5. Energy Density Plot
@@ -60,7 +61,8 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "harborporpoise",
     width = 6.5,
-    height = 3
+    height = 3,
+    output_summary = FALSE
   )
 
   # gray seal
@@ -70,7 +72,8 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "grayseal",
     width = 6.5,
-    height = 3
+    height = 3,
+    output_summary = FALSE
   )
 
   # narw-abundance
@@ -130,7 +133,8 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "cetacean_dist",
     width = 7.5,
-    height = 4
+    height = 4,
+    output_summary = FALSE
   )
 
   # forage shifts
@@ -197,15 +201,16 @@ create_plots_both <- function(region = "BothReports") {
   )
 
   # development speed
-  save_plot(
-    plot_expression = {
-      ecodata::plot_wind_dev_speed() +
-        ggplot2::theme(legend.position = 'bottom')
-    },
-    indicator = "wind_dev_speed",
-    width = 6.5,
-    height = 4
-  )
+  # not used in 2026
+  # save_plot(
+  #   plot_expression = {
+  #     ecodata::plot_wind_dev_speed() +
+  #       ggplot2::theme(legend.position = 'bottom')
+  #   },
+  #   indicator = "wind_dev_speed",
+  #   width = 6.5,
+  #   height = 4
+  # )
 
   # slopewater
   save_plot(
