@@ -1,4 +1,4 @@
-```{r, eval = FALSE, results = "asis"}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-header>>
 ```
 
@@ -47,6 +47,6 @@ return_plot("wea-port-rev", region = "MidAtlantic")
 return_plot("wind-rev", region = "MidAtlantic")
 ```
 
-```{r, eval = FALSE, results = "asis"}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>
 ```

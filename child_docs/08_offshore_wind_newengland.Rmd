@@ -1,4 +1,4 @@
-```{r, eval = FALSE, results = "asis"}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-header>>
 ```
 
@@ -50,6 +50,6 @@ BOEM reports that cumulative offshore wind development (if all proposed projects
 
 Top fishing communities with high [socio-demographic](https://noaa-edab.github.io/catalog/engagement.html) and/or gentrification concerns such as Little Compton, RI, New Bedford, MA and New London, CT should be recognized as having potential additional vulnerability of the Active Projects and considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of these communities. In addition to fisheries landing overlaps,  New Bedford, MA and New London, CT also support significant offshore wind port infrastructure needs for the Active Projects. Historically, the introduction of new industries can trigger industrial and socioeconomic gentrification of fishing ports. Competition for port space and potential pivoting of space use for offshore wind development should be monitored closely to ensure fishing communities are not adversely impacted. Additionally, offshore wind could increase recreational fishing opportunities at the turbines, potentially creating a demand for additional tourism, recreational fishing and boating port space in communities already balancing these uses with commercial fishing infrastructure, for example Point Judith, RI, and Newport, RI, and Gloucester, MA. Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
 
-```{r, eval = FALSE, results = "asis"}
+```{r, eval = params$id_child_docs, results = "asis"}
 <<child-footer>>
 ```

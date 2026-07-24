@@ -2,13 +2,11 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
 \documentclass[
   10pt,
 ]{article}
-\usepackage{xcolor}
-\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{amsmath,amssymb}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -39,6 +37,8 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
+\usepackage{xcolor}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -67,6 +67,7 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Set up the fonts
 \usepackage[urw-palatino]{mathdesign}
 \usepackage[T1]{fontenc}
@@ -143,7 +144,6 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{colortbl}
-\usepackage{ulem}
 \usepackage{hhline}
 \newlength\Oldarrayrulewidth
 \newlength\Oldtabcolsep
@@ -182,7 +182,7 @@ The information in this report is organized into two main sections; \hyperref[pe
 
 \subsection{Report structure}\label{report-structure}
 
-A glossary of terms\footnote{\url{https://noaa-edab.github.io/tech-doc/glossary.html}}, detailed technical methods documentation\footnote{\url{https://noaa-edab.github.io/tech-doc/}}, indicator data\footnote{\url{https://noaa-edab.github.io/ecodata/}}, and detailed indicator descriptions\footnote{\url{https://noaa-edab.github.io/catalog/index.html}} are available online. We recommend new readers first review the details of standard figure formatting (Fig. \ref{fig:docformat}a), categorization of fish and invertebrate species into feeding guilds (Table \ref{tab:species-groupings}), and definitions of ecological production units (EPUs, including the {[}Mid-Atlantic Bight, MAB{]} \emph{or} {[}Gulf of Maine (GOM) and Georges Bank (GB){]}; Fig. \ref{fig:docformat}b) provided at the end of the document.
+A glossary of terms\footnote{\url{https://noaa-edab.github.io/tech-doc/glossary.html}}, detailed technical methods documentation\footnote{\url{https://noaa-edab.github.io/tech-doc/}}, indicator data\footnote{\url{https://noaa-edab.github.io/ecodata/}}, and detailed indicator descriptions\footnote{\url{https://noaa-edab.github.io/catalog/index.html}} are available online. We recommend new readers first review the details of standard figure formatting (Fig. \ref{fig:docformat}a), categorization of fish and invertebrate species into feeding guilds (Table \ref{tab:species-groupings}), and definitions of ecological production units (EPUs, including the {[}Mid-Atlantic Bight, MAB{]} \emph{or} {[}Gulf of Maine (GOM) and Georges Bank (GB){]}; Fig. \ref{fig:docformat}b) provided in the following section of the report
 
 The two main sections contain subsections for each management objective or potential risk. Within each subsection, we first review observed trends for indicators representing each objective or risk, including the status of the most recent data year relative to a threshold (if available) or relative to the long-term average. Second, we identify potential drivers of observed trends, and synthesize results of indicators related to those drivers to outline potential implications for management. For example, if there are multiple drivers related to an indicator trend, do indicators associated with the drivers have similar trends, and can any drivers be affected by management action(s)? We emphasize that these implications are intended to represent testable hypotheses at present, rather than ``answers,'' because the science behind these indicators and syntheses continues to develop.
 
@@ -495,7 +495,7 @@ In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/comdat.html
 \caption{Total commercial landings in the Mid-Atlantic Bight (black) and Mid-Atlantic Fishery Management Council-managed U.S seafood landings (red) by feeding guild, with significant long-term declines (purple) in total planktivore landings and short-term declines (dark purple) in benthos landings.}\label{fig:comm-landings}
 \end{figure}
 
-Mid-Atlantic ports face a moderate to high risk from environmental variability, as evaluated by the 2025 \href{https://noaa-edab.github.io/catalog/community_risks.html}{Community Environmental Variability Risk Indicators} (Fig. \ref{fig:climatevul-land}). These \hyperref[community-social-and-climate-vulnerability]{indicators} assess port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much a region's landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
+Mid-Atlantic ports face a moderate to high risk from environmental variability, as evaluated by the 2025 \href{https://noaa-edab.github.io/catalog/community_risks.html}{Community Environmental Variability Risk Indicators} (Fig. \ref{fig:climatevul-land}). These \hyperref[community-social-and-climate-vulnerability]{indicators} evaluate port-level risk by combining a community's economic dependence on specific commercial species with those species' regional bioenvironmental vulnerability scores. Total Vulnerability measures how much a region's landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
 
 In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational harvest} (retained fish presumed to be eaten) shows a long-term decline with recent harvest remaining near a time series low (Fig. \ref{fig:rec-landings}). This pattern may indicate a shift towards catch-and-release strategies as opposed to catch for harvest. \href{https://noaa-edab.github.io/catalog/rec_hms.html}{Recreational shark landings} have generally decreased for most shark groups through 2024 (Fig \ref{fig:rec-hms}). The recent low in pelagic shark landings is largely driven by regulatory changes implemented in 2018, followed by the closure of the shortfin mako fishery in 2022. These actions were intended to rebuild the North Atlantic shortfin mako stock and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT).
 
@@ -526,26 +526,30 @@ In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/recdat.html
 \caption{Recreational shark landings in the Mid-Atlantic region from NOAA Fisheries Large Pelagics Survey (top, with short-term sigificant decline in dark purple) and Marine Recreational Information Program (MRIP, bottom) with long-term declining trend (purple). Note that the trend line is associated with the Large Coastal group, which has had no reported MRIP landings after 2020.}\label{fig:rec-hms}
 \end{figure}
 
-\href{https://www.fisheries.noaa.gov/topic/aquaculture}{Aquaculture} can comprise a significant proportion of seafood production in specific communities, but not all aquaculture production is included in total seafood landings above. In 2022, the Northeast region produced approximately 6,300 metric tons of aquacultured shellfish, with revenue of \$133 million.
+While \href{https://www.fisheries.noaa.gov/topic/aquaculture}{aquaculture} can account for a significant portion of seafood production in specific communities, the total landings reported above exclude aquaculture, except where state data sources don't distinguish between aquacultured and wild-caught seafood. In 2022, the Northeast region produced approximately 6,300 metric tons of aquacultured shellfish, with revenue of \$133 million.
 
-\subsubsection{Implications}\label{implications}
-
-Declining commercial landings (total and seafood) and recreational harvest can be attributed to many interacting factors, including combinations of ecosystem and stock production, management actions, market conditions, and environmental change. While we cannot evaluate all possible drivers at present, here we evaluate the extent to which stock status, management, and system biomass trends may play a role.
+\subsubsection{Drivers}\label{drivers}
 
 \paragraph{Stock Status and Catch Limits}\label{stock-status-and-catch-limits}
 
-Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{management objectives} (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are being met for all but two MAFMC-managed species (golden tilefish and Atlantic mackerel) (Fig. \ref{fig:stock-status}). However, the status of 5 stocks is unknown (northern shortfin squid, goosefish GOM/GB, goosefish southern GB/MAB, blueline tilefish, and chub mackerel), and longfin squid does not have an \(F/F_{MSY}\) estimate.
+Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{management objectives} (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are being met for all but one MAFMC-managed species (golden tilefish) (Fig. \ref{fig:stock-status}). However, the status of 5 stocks is unknown (northern shortfin squid, goosefish GOM/GB, goosefish southern GB/MAB, blueline tilefish, and chub mackerel), and longfin squid does not have an \(F/F_{MSY}\) estimate.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/stock_status_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/stock_status_MidAtlantic_2026-05-29} 
 
 }
 
 \caption{Summary of single species status for Mid-Atlantic Fishery Management Council and jointly federally managed stocks (spiny dogfish; goosefish has unknown status). The dotted vertical line is the target biomass reference point of $B_{MSY}$. The dashed lines are the management thresholds of one half $B_{MSY}$ (vertical) or $F_{MSY}$ (horizontal).  Stocks with a $B/B_{MSY}$ estimate but without an $F/F_{MSY}$ estimate are denoted in a separate box plot (top).  Colors denote stocks with $B/B_{MSY}$ < 0.5 or $F/F_{MSY}$>1 (orange), stocks 0.5<$B/B_{MSY}$<1 (blue), and stocks $B/B_{MSY}$>1 (green).}\label{fig:stock-status}
 \end{figure}
 
-Stock status and associated management constraints are unlikely to be driving decreased landings for some species, including quahog, surfclam, and northern shortfin squid. Most stocks are not fully utilizing their associated ABC or ACL, which includes landings and discards (Fig. \ref{fig:abcacl-stacked})(Fig. \ref{fig:abcacl-catch}). Quahog, surfclam, and northern shortfin squid have the largest ABC or ACLs but have low catch ratios, with less than 24\% of ABC or ACL caught in 2024. All other species except chub mackerel and longfin squid have catch ratios over 80\%, indicating that stock status and associated regulations are most likely constraining the landings of some species such as black sea bass, bluefish, and Atlantic mackerel. However, these management actions and regulations are enacted in response to biomass, such that less conservative regulations would not necessarily mean higher landings.
+Stock status and associated management constraints are unlikely to be driving decreased landings, as all but one stock are above the target biomass threshold. Most stocks are not fully utilizing their associated ABC or ACL, which includes landings and discards (Fig. \ref{fig:abcacl-stacked}, \ref{fig:abcacl-catch}).
+
+Quahog, surfclam, and northern shortfin squid have the largest ABC or ACLs but have low catch ratios, with less than 24\% of ABC or ACL caught in 2024. The decline in managed commercial seafood landings of surfclams and quahogs is driven by a combination of population abundance, distribution changes, and market dynamics. Changes in the spatial distribution of surfclams and ocean quahogs may be constraining seafood production, as this results in areas with overlapping distributions and the potential for mixed landings. Mixed landings are currently prohibited by regulations, which could become problematic for harvesters. However, the MAFMC submitted an amendment in August 2025 to NOAA Fisheries to allow mixed surfclam and quahog trips; as of February 2026, the amendment remains under review by NOAA.
+
+Many MAFMC-managed species have catch ratios over 80\%, indicating that regulations may constrain the landings of some species such as black sea bass, bluefish, and Atlantic mackerel. However, since these management actions reflect underlying biomass, easing regulations would not necessarily yield higher catches from stocks that are biologically constrained.
+
+The decrease in regional availability of scallops has contributed to the decline of benthos landings not managed by the MAFMC. The long-term declines in total and planktivore landings is driven in part by Atlantic menhaden fishery dynamics, including a consolidation of processors leading to reduced fishing capacity between the 1990s and mid-2000s.
 
 \begin{figure}
 
@@ -569,28 +573,6 @@ Stock status and associated management constraints are unlikely to be driving de
 
 Major shifts in feeding guilds or ecosystem trophic structure are unlikely to be driving the decline in landings. \href{https://noaa-edab.github.io/catalog/aggregate_biomass.html}{Aggregate biomass} trends derived from scientific resource surveys are mostly stable in the MAB, with long-term increases in spring piscivores, fall benthivores, and fall benthos (Fig. \ref{fig:nefsc-biomass-mab}). While managed species make up varying proportions of aggregate biomass, trends in landings are not mirroring shifts in the overall trophic structure of survey-sampled fish and invertebrates. Future study should investigate whether shifts in the relative abundance of targeted species may be playing a role.
 
-\paragraph{Effect on Seafood Production}\label{effect-on-seafood-production}
-
-Stock status is not likely driving declining seafood production in the MAB, as all but two stocks are above the minimum threshold, and aggregate biomass trends appear stable or increasing. The decline in managed commercial seafood landings of surfclams and quahogs is driven by a combination of population abundance, distribution changes, and market dynamics. Recent catch has been low relative to the quota for these species. The decrease in regional availability of scallops has contributed to the decline of benthos landings not managed by the MAFMC. The long-term declines in total and planktivore landings is driven in part by Atlantic menhaden fishery dynamics, including a consolidation of processors leading to reduced fishing capacity between the 1990s and mid-2000s.
-
-Changes in the spatial distribution of surfclams and ocean quahogs may be constraining seafood production, as this results in areas with overlapping distributions and the potential for mixed landings. Mixed landings are currently prohibited by regulations, which could become problematic for harvesters. However, the MAFMC submitted an amendment in August 2025 to NOAA Fisheries to allow mixed surfclam and quahog trips; as of February 2026, the amendment remains under review by NOAA.
-
-The recent decline in recreational seafood harvest is likely associated with a combination of targeted management actions, shifting social behaviors, and data collection changes. The decline in recreational shark landings can partially be attributed to management actions intended to reduce fishing mortality on mako sharks. The lower than average landings since 2018 for species other than sharks could be driven by either changes in fishing behavior or reflect the modified methodology in NOAA Fisheries' Marine Recreational Information Program survey in 2018.
-
-Future commercial and recreational landings are likely to be driven by environmental changes that require continued monitoring. Overall, the majority of landings from Mid-Atlantic ports is increasingly dependent on species with moderate environmental vulnerability (Fig. \ref{fig:commvulex}). Fisheries and communities rely on different combinations of stocks, and individual stocks will respond differently to these drivers. Some key drivers include:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Unprecedented Climate Shifts}: Global ocean temperatures have reached record highs (see \hyperref[highlights]{2025 Highlights section}) and the Northeast US shelf has experienced long-term warming.
-\item
-  \textbf{Distribution Shifts}: Stocks are shifting towards the northeast and into deeper waters throughout the Northeast US Large Marine Ecosystem (see \hyperref[climate-and-ecosystem-change]{Climate Risks section}).
-\item
-  \textbf{Ecosystem production}: Changes in ecosystem composition and biological production are impacting the stability of the \hyperref[stability]{ecosystem} and pose \hyperref[risks-to-setting-catch-limits]{risks to setting catch limits}.
-\item
-  \textbf{Community Risks}: Changes in the ecosystem can affect the \hyperref[stability]{stability} of fisheries and pose \hyperref[community-social-and-climate-vulnerability]{risks to fishing communities}.
-\end{itemize}
-
 \begin{figure}
 
 {\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2026-03-30} 
@@ -599,6 +581,14 @@ Future commercial and recreational landings are likely to be driven by environme
 
 \caption{Spring (left) and fall (right) surveyed biomass in the Mid-Atlantic Bight. Data from the Northeast Fisheries Science Center Bottom Trawl Survey are shown in black, with the nearshore Northeast Area Monitoring and Assessment Program (NEAMAP) survey shown in red. Long-term significant increases (orange lines) are present for spring piscivore, fall benthivore, and fall benthos biomass. The shaded area around each annual mean represents 2 standard deviations from the mean.}\label{fig:nefsc-biomass-mab}
 \end{figure}
+
+\paragraph{Recreational drivers}\label{recreational-drivers}
+
+The recent decline in recreational seafood harvest is likely associated with a combination of targeted management actions, shifting social behaviors, and data collection changes. The decline in recreational shark landings can partially be attributed to management actions intended to reduce fishing mortality on mako sharks. The lower than average landings since 2018 for species other than sharks could be driven by either changes in fishing behavior or reflect the modified methodology in NOAA Fisheries' Marine Recreational Information Program survey in 2018.
+
+\subsubsection{Implications}\label{implications}
+
+Future commercial and recreational landings are likely to be driven by environmental changes that require continued monitoring. Overall, the majority of landings from Mid-Atlantic ports is increasingly dependent on species with moderate environmental vulnerability (Fig. \ref{fig:commvulex}). Fisheries and communities rely on different combinations of stocks, and individual stocks will respond differently to these drivers. \hyperref[risks-to-meeting-fishery-management-objectives]{Risks to meeting fishery management objectives} are explored later in this report.
 
 \subsubsection{Indicators: Landings; commercial and recreational}\label{indicators-landings-commercial-and-recreational-1}
 
@@ -780,7 +770,7 @@ Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{mana
 
 Declining landings are likely driven by the relative abundance of specific targeted species rather than major shifts in ecosystem trophic structure or feeding guilds. Scientific surveys show that \href{https://noaa-edab.github.io/catalog/aggregate_biomass.html}{Aggregate biomass} has been mostly stable or increasing in both regions (Fig. \ref{fig:nefsc-biomass-gb} \& Fig. \ref{fig:nefsc-biomass-gom}). The benthivores biomass recently peaked due to a large haddock recruitment, but appears to be returning to average levels. Planktivore biomass on GB continues to rise due to increased Atlantic mackerel. On GB, trends in piscivores are mixed, and benthos are increasing in both seasons. State-level data show the Massachusetts survey (Fig. \ref{fig:mass-biomass}) mirroring the increase in fall planktivores but noting a spring decrease in fish-eaters and a year-round decline in benthos; the \href{https://noaa-edab.github.io/catalog/mass_inshore_survey.html?q=survey\#mass_inshore_survey}{New Hampshire/Maine survey} remains too short to establish definitive trends.
 
-\paragraph{Effect on Seafood Production}\label{effect-on-seafood-production-1}
+\paragraph{Effect on Seafood Production}\label{effect-on-seafood-production}
 
 With the poor or unknown stock status of many managed species, the decline in commercial seafood landings in the Gulf of Maine most likely reflects lower catch quotas implemented to rebuild overfished stocks, as well as market dynamics.
 
@@ -833,7 +823,7 @@ Future commercial and recreational landings are likely to be driven by environme
 
 \subsubsection{Indicators: revenue \& net revenue}\label{indicators-revenue-net-revenue}
 
-Total \href{https://noaa-edab.github.io/catalog/comdat.html}{commercial revenue} and MAFMC managed species revenue (2024 USD) within the Mid-Atlantic Bight have declined over the past 20 years. In 2024, total revenue and MAFMC managed species revenue were both near an all-time low (Fig. \ref{fig:comm-revenue}).
+Total \href{https://noaa-edab.github.io/catalog/comdat.html}{commercial revenue} and MAFMC managed species revenue (2024 USD) within the Mid-Atlantic Bight have declined over the past 20 years. Despite these declines, inflation-adjusted revenue from harvested species was still greater than 1982 levels until the past two years (Fig. \ref{fig:bennet}). However, revenue from MAFMC-managed species has been below 2000 levels in several of the past 24 years (Fig. \ref{fig:comdat-profit}). In 2024, total revenue and MAFMC managed species revenue were both near an all-time low (Fig. \ref{fig:comm-revenue}). Declines in landings of surfclams and ocean quahogs since 2012 may reflect changes in surfclam and quahog aggregation or distribution patterns and/or changes to \href{https://noaa-edab.github.io/catalog/effective_sweptarea.html}{landings per unit effort}.
 
 \begin{figure}
 
@@ -844,7 +834,20 @@ Total \href{https://noaa-edab.github.io/catalog/comdat.html}{commercial revenue}
 \caption{Commercial revenue (2024 USD) through 2024 for the Mid-Atlantic region: total (black) and from Mid-Atlantic Fishery Managment Councli managed species (red). Dashed lines represent the long-term annual mean. A short-term significant decrease is present for total revenue (purple).}\label{fig:comm-revenue}
 \end{figure}
 
-Revenue earned by harvesting resources is a function of both the quantity landed of each species and the prices paid for landings. Therefore, total revenue patterns can be driven by harvest levels, the mix of species landed, price changes, or a combination of these. The \href{https://noaa-edab.github.io/catalog/bennet.html}{Bennet Indicator} (BI) decomposes revenue change into two parts, one driven by changing quantities (volumes), and a second driven by changing prices. All changes are in relation to a base year (1982). The 1982 base year was selected because that is the first year the relevant data is available and it allows for an extended period of time to evaluate market trends and dynamics. The BI results demonstrate that relatively high revenues in 2014-2016 were somewhat equally due to higher landings and prices (Fig. \ref{fig:bennet}). In more recent years, both landings and prices have been closer to values from the reference year (1982). Low prices coupled with low volumes landed led to low revenue in 2024. Recent lower than baseline revenues are partially due to lower volumes and prices of benthos species (Fig. \ref{fig:bennet-all}).
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/comdat_profit_MidAtlantic_2026-03-30} 
+
+}
+
+\caption{Profitability indices for Mid-Atlantic federally managed species: cost index (red), profit index (green), and revenue index (blue). Dashed lines represent the long-term annual means for each index. Long-term declining trend (purple) associated with revenue index.}\label{fig:comdat-profit}
+\end{figure}
+
+This year, we present new indicators of \href{https://noaa-edab.github.io/catalog/comdat_profit.html}{profitability}: indices of cost, revenue, and profit based on trips catching federally-managed species. In the Mid-Atlantic, costs have fluctuated, but overall remain near the time series mean, despite some high costs in 2022, 2014 and 2008. The revenue index, however, has declined steadily since 2019 and is driving an overall decline in profits (Fig. \ref{fig:comdat-profit}).
+
+\subsubsection{Drivers: Bennet Index}\label{drivers-bennet-index}
+
+Revenue earned by harvesting resources is a function of both the quantity landed of each species and the prices paid for landings. Therefore, total revenue patterns can be driven by harvest levels, the mix of species landed, price changes, or a combination of these. The \href{https://noaa-edab.github.io/catalog/bennet.html}{Bennet Indicator} (BI) decomposes revenue change into two parts, one driven by changing quantities (volumes), and a second driven by changing prices. Relatively high revenues in 2014-2016 were somewhat equally due to higher landings and prices (Fig. \ref{fig:bennet}). In more recent years, both landings and prices have been closer to values from the reference year (1982). Low prices coupled with low volumes landed led to low revenue in 2024. Recent lower than baseline revenues are partially due to lower volumes and prices of benthos species (Fig. \ref{fig:bennet-all}). OVerall, lower landing volumes have not been offset by price increases.
 
 \begin{figure}
 
@@ -857,25 +860,16 @@ Revenue earned by harvesting resources is a function of both the quantity landed
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bennet_all_MidAtlantic_2026-03-27} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bennet_all_MidAtlantic_2026-05-21} 
 
 }
 
 \caption{Total price (top) and volume (bottom) indicators in 2024 dollars (black) for commercial landings, and individual guild contributions to each indicator, in the Mid-Atlantic Bight.}\label{fig:bennet-all}
 \end{figure}
 
-\begin{figure}
+\subsubsection{Implications}\label{implications-2}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/comdat_profit_MidAtlantic_2026-03-30} 
-
-}
-
-\caption{Profitability indices for Mid-Atlantic federally managed species: cost index (red), profit index (green), and revenue index (blue). Dashed lines represent the long-term annual means for each index. Long-term declining trend (purple) associated with revenue index.}\label{fig:comdat-profit}
-\end{figure}
-
-This year, we present new indicators of \href{https://noaa-edab.github.io/catalog/comdat_profit.html}{profitability}: indices of cost, revenue, and profit based on trips catching federally-managed species. In this index, costs pertain to trip costs, excluding labor, estimated for all federal trips in the region. The profit indicator is net-revenue, determined as the difference between trip revenue and trip costs. Trips were spatially allocated to compile regional indices. Indices are presented as values relative to 2000, the first year in the dataset. In the Mid-Atlantic, costs have fluctuated, but overall remain near the time series mean, despite some high costs in 2022, 2014 and 2008. The revenue index, however, has declined steadily since 2019 and is driving an overall decline in profits (Fig. \ref{fig:comdat-profit}).
-
-For Mid-Atlantic ports, \href{https://noaa-edab.github.io/catalog/community_risks.html}{total vulnerability} of revenue is high for the entire time series \hyperref[social-and-community-risks]{(2000-2024)}, with no long-term trend. This suggests that Mid-Atlantic port commercial fishing revenue is highly reliant on climate-sensitive species for the entire time period assessed (Fig. \ref{fig:climatevul-rev}).
+For Mid-Atlantic ports, \href{https://noaa-edab.github.io/catalog/community_risks.html}{total vulnerability} of revenue is high for the entire time series \hyperref[social-and-community-risks]{(2000-2024)}, with no long-term trend (Fig. \ref{fig:climatevul-rev}), reflecting reliance on shellfish, which are sentitive to multiple environmental stressors including \href{https://noaa-edab.github.io/catalog/bottom_temp_insitu.html}{warming} and \href{https://noaa-edab.github.io/catalog/ocean_acidification}{ocean acidification}.
 
 \begin{figure}
 
@@ -885,10 +879,6 @@ For Mid-Atlantic ports, \href{https://noaa-edab.github.io/catalog/community_risk
 
 \caption{Mid-Atlantic region total vulnerability of commercial revenue (sum of Mid-Atlantic port revenue weighted  by species vulnerability scores). Horizontal colored bars show different environmental variability risk levels. }\label{fig:climatevul-rev}
 \end{figure}
-
-\subsubsection{Implications}\label{implications-2}
-
-Although the Mid-Atlantic region shows declining revenue since 2016 (Fig. \ref{fig:comm-revenue}), inflation-adjusted revenue from harvested species was still greater than 1982 levels until the past two years (Fig. \ref{fig:bennet}). However, revenue from MAFMC-managed species has been below 2000 levels in several of the past 24 years (Fig. \ref{fig:comdat-profit}). The Bennet Index demonstrates that this decline is driven by lower landing volumes, which were not offset by price increases. Declines in landings of surfclams and ocean quahogs since 2012 may reflect changes in surfclam and quahog aggregation or distribution patterns and/or changes to \href{https://noaa-edab.github.io/catalog/effective_sweptarea.html}{landings per unit effort}. Changes in other indicators, particularly those driving landings and those related to climate change, require monitoring as they may become important drivers of revenue in the future. Multiple stressors including \href{https://noaa-edab.github.io/catalog/bottom_temp_insitu.html}{warming} and \href{https://noaa-edab.github.io/catalog/ocean_acidification}{ocean acidification} are interacting in Mid-Atlantic shellfish habitats, particularly for surfclams, ocean quahogs, and scallops. This is reflected by the high environmental risk for landings from Mid-Atlantic ports.
 
 \subsubsection{Indicators: revenue (a proxy for profits)}\label{indicators-revenue-a-proxy-for-profits}
 
@@ -962,7 +952,7 @@ The overall volume of lobster and scallops, quahogs and surfclams have dictated 
 
 \subsubsection{Indicators: Angler trips, fleet diversity}\label{indicators-angler-trips-fleet-diversity}
 
-\href{https://noaa-edab.github.io/catalog/recdat.html}{Recreational effort} (angler trips) in the MAB increased from 1982 to 2010, but has since declined to near the long-term average (Fig. \ref{fig:rec-op}). However, there is a long-term declining trend in recreational fleet diversity (i.e., effort by shoreside, private boat, and for-hire anglers) (Fig. \ref{fig:rec-div}). Billfish landings were notably high in 2025 (See \href{https://noaa-edab.github.io/catalog/observation_synthesis_2025.html}{2025 Highlights} Section), and indicator time series are in development.
+\href{https://noaa-edab.github.io/catalog/recdat.html}{Recreational effort} (angler trips) in the MAB increased from 1982 to 2010, but has since declined to near the long-term average (Fig. \ref{fig:rec-op}). However, there is a long-term declining trend in recreational fleet diversity (i.e., effort by shoreside, private boat, and for-hire anglers) (Fig. \ref{fig:rec-div}). Billfish landings were notably high in 2025 (See \href{https://noaa-edab.github.io/catalog/observation_synthesis_2025.html}{2025 Highlights} Section), and indicator time series are in development; current recreational landings indicators do not include billfish.
 
 \begin{figure}
 
@@ -1018,17 +1008,15 @@ The absence of a long-term trend in recreational angler trips and fleet effort d
 
 \subsection{Social and Community Risks}\label{social-and-community-risks}
 
-Fisheries management seeks to provide for sustained participation of fishing communities and to avoid adverse economic impacts to fishing communities. A new \href{https://noaa-edab.github.io/catalog/engagement.html?q=engage\#introduction-to-indicator-72}{composite indicator} (Port Commercial Fishing Activity Indicator or PCFA) utilizes NOAA data on dealers, fish landings, and commercial permits to explore trends in commercial fishing activity over time in top ports. This information can be used to understand how changes in fish stocks, regulations, and other social-ecological factors may have disparately impacted ports throughout the Greater Atlantic region.
+\subsubsection{Indicators}\label{indicators}
 
-The recreational engagement index has not been updated from last year and will be updated with similar methods as PCFA in future reports. The recreational \href{https://noaa-edab.github.io/catalog/engagement.html}{engagement} index demonstrates participation levels in recreational fishing in a given community relative to other coastal communities in a region.
+\paragraph{Community Social Vulnerability Indicators}\label{community-social-vulnerability-indicators}
 
-The Community Social Vulnerability Indicators (CSVI) utilize U.S. Census American Community Survey data to describe social characteristics at the municipality level (i.e., not just the fishing community) and provide context for the municipalities utilized by commercial fishing industry participants. Fishing industry participants that live in and/or utilize resources in municipalities with relatively concerning socio-demographic conditions may be more vulnerable to changes. The personal disruption index addresses factors that reduce adaptability to change such as unemployment and educational level. The poverty index is a composite index that indicates a community's financial standing relative to other communities. The population composition index characterizes groups within communities that may be more vulnerable to change. CSVI information for communities highlighted in the PCFA and recreational engagement index have been updated with the most recent census data from 2023.
+The Community Social Vulnerability Indicators (CSVI) utilize U.S. Census American Community Survey data to describe social characteristics at the municipality level (i.e., not just the fishing community) and provide context for the municipalities utilized by commercial fishing industry participants. Fishing industry participants that live in and/or utilize resources in municipalities with relatively concerning socio-demographic conditions may be more vulnerable to changes. The personal disruption index addresses factors that reduce adaptability to change such as unemployment and educational level. The poverty index is a composite index that indicates a community's financial standing relative to other communities. The population composition index characterizes groups within communities that may be more vulnerable to change. CSVI information is presented for communities described in the following sections.
 
-Coastal fishing communities worldwide have or are likely to experience social, economic, and cultural impacts from climate change, both negative (e.g., loss of infrastructure, fish stock decline) and positive (e.g., increased abundance of valuable species). Changes in marine fisheries as a consequence of climate change will require adaptation by coastal fishing communities and fisheries managers alike. The Community Environmental Variability Risk Indicators (CEVRI) were developed to help examine trends in risk related to dependence on species vulnerable to climate and environmental changes.
+\paragraph{Port Commercial Fishing Activity and Community Social Vulnerability}\label{port-commercial-fishing-activity-and-community-social-vulnerability}
 
-\subsubsection{Indicators: Port Commercial Fishing Activity and Community Social Vulnerability}\label{indicators-port-commercial-fishing-activity-and-community-social-vulnerability}
-
-The \href{https://noaa-edab.github.io/catalog/engagement.html?q=engage\#introduction-to-indicator-72}{Port Commercial Fishing Activity Indicator (PCFA)} (Fig. \ref{fig:commercial-engagement}) highlights significant shifts in industry engagement across major regional ports. Newport News, VA, Ocean City, MD, Bronx, NY, and Point Pleasant Beach, Cape May, and Barnegat Light, NJ have lower fishing activity compared to their 2007--2011 averages. Because Bronx, NY and Newport News, VA also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions. The other four top communities show higher port activity since 2007-2011; most notably Hampton Bays/Shinnecock, NY showed an increase of 84\%. Currently North Carolina communities are not presented due to data limitations.
+A new \href{https://noaa-edab.github.io/catalog/engagement.html?q=engage\#introduction-to-indicator-72}{Port Commercial Fishing Activity Indicator} (PCFA) utilizes NOAA data on dealers, fish landings, and commercial permits to explore trends in commercial fishing activity over time in top ports (Fig. \ref{fig:commercial-engagement}). The PCFA shows that Newport News, VA, Ocean City, MD, Bronx, NY, and Point Pleasant Beach, Cape May, and Barnegat Light, NJ have lower fishing activity compared to their 2007--2011 averages. Because Bronx, NY and Newport News, VA also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions. The other four top communities show higher port activity since 2007-2011; most notably Hampton Bays/Shinnecock, NY showed an increase of 84\%. Currently North Carolina communities are not presented due to data limitations.
 
 \begin{figure}
 
@@ -1254,9 +1242,13 @@ Of those included in the top-ranked recreational communities, both Morehead City
 
 \renewcommand*{\arraystretch}{1}
 
-\subsubsection{Indicators: Community Environmental Variability Risk in the Mid-Atlantic}\label{indicators-community-environmental-variability-risk-in-the-mid-atlantic}
+\paragraph{Recreational engagement}\label{recreational-engagement}
 
-\href{https://noaa-edab.github.io/catalog/community_risks.html}{Community Environmental Variability Risk Indicators} (CEVRI) measure risk by linking commercial landings and revenue to specific climate sensitivity factors, including temperature, ocean acidification, and stock status using the Climate Vulnerability Assessment (CVA) scores. These indicators calculate total sensitivity and vulnerability scores based on a community's dependence on species vulnerable to climate change. Risk scores range from low (1) to high (4), increasing as a community relies more heavily on species at higher risk from environmental shifts.
+The recreational engagement index has not been updated from last year and will be updated with similar methods as PCFA in future reports. The recreational \href{https://noaa-edab.github.io/catalog/engagement.html}{engagement} index demonstrates participation levels in recreational fishing in a given community relative to other coastal communities in a region.
+
+\paragraph{Community Environmental Variability Risk in the Mid-Atlantic}\label{community-environmental-variability-risk-in-the-mid-atlantic}
+
+The \href{https://noaa-edab.github.io/catalog/community_risks.html}{Community Environmental Variability Risk Indicators} (CEVRI) were developed to help examine trends in risk related to dependence on species vulnerable to climate and environmental changes. These indicators commercial landings and revenue to specific climate sensitivity factors, including temperature, ocean acidification, and stock status using the Climate Vulnerability Assessment (CVA) scores. These indicators calculate total sensitivity and vulnerability scores based on a community's dependence on species vulnerable to climate change. Risk scores range from low (1) to high (4), increasing as a community relies more heavily on species at higher risk from environmental shifts.
 
 While long-term risk trends across the Mid-Atlantic remain stable, most individual fishing communities currently rank as high or very high risk (Fig. \ref{fig:commvulex}). This high ranking demonstrates that a majority of regional communities depend on species that are highly vulnerable to changing ocean conditions for their commercial revenue. Strategies for management should account for this widespread reliance on climate-sensitive stocks.
 
@@ -1275,7 +1267,7 @@ A range of socioeconomic and environmental variability risk concerns are found t
 
 A majority of Mid-Atlantic communities have high to very high total environmental variability risk based on revenue. Coastal fishing communities are greatly affected by environmental change, both because of their physical location and because of their frequent social, cultural, and economic dependence on fishing. These impacts are expected to become more pressing as changes become more extensive. Changes in \href{https://noaa-edab.github.io/catalog/bottom_temp_insitu.html}{ocean temperature} and \href{https://noaa-edab.github.io/catalog/ocean_acidification.html}{acidification} affecting marine life have the potential to directly impact fisheries and fishery dependent livelihoods.
 
-\subsubsection{Indicators: Port Commercial Fishing Activity and Community Social Vulnerability}\label{indicators-port-commercial-fishing-activity-and-community-social-vulnerability-1}
+\subsubsection{Indicators: Port Commercial Fishing Activity and Community Social Vulnerability}\label{indicators-port-commercial-fishing-activity-and-community-social-vulnerability}
 
 The \href{https://noaa-edab.github.io/catalog/engagement.html?q=engage\#introduction-to-indicator-72}{Port Commercial Fishing Activity Indicator (PCFA)} (Fig. \ref{fig:commercial-engagement-ne}) highlights significant shifts in industry engagement across major regional ports. New Bedford, Gloucester, and Boston, MA and Portland, ME, have lower fishing activity compared to their 2007--2011 averages. Because New Bedford and Boston also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions. Conversely, several communities show substantial growth in fishing activity. Chatham, MA, along with Stonington, Friendship, Harpswell, ME, are seeing increased port activity since 2007-2011.
 
@@ -1524,9 +1516,11 @@ Social and demographic indicators highlight potential vulnerabilities in New Eng
 
 Fishery management objectives for protected species generally focus on reducing threats and on habitat conservation/restoration. Specific actions include managing bycatch to remain below potential biological removal (PBR) thresholds, recovering endangered populations, and monitoring unusual mortality events (UMEs). Protected species include marine mammals protected under the Marine Mammal Protection Act, endangered and threatened species protected under the Endangered Species Act, and migratory birds protected under the Migratory Bird Treaty Act. In the Northeast U.S., endangered/threatened species include Atlantic salmon, Atlantic and shortnose sturgeon, 5 sea turtle species, giant manta ray, oceanic whitetip shark, and 5 baleen whales. Here we report on performance relative to these objectives, as well as how observed and predicted ecosystem changes in the Northeast U.S may impact these objectives in the future.
 
-\subsubsection{Indicators: bycatch, population (adult and juvenile) numbers, mortalities}\label{indicators-bycatch-population-adult-and-juvenile-numbers-mortalities}
+\subsubsection{Indicators and Drivers}\label{indicators-and-drivers}
 
-The management objective for \href{https://noaa-edab.github.io/catalog/harborporpoise.html}{harbor porpoise} has been met, as the average index (Fig. \ref{fig:harborporpoise}) remains below the current PBR threshold.
+\paragraph{Harbor porpoise}\label{harbor-porpoise}
+
+The management objective for \href{https://noaa-edab.github.io/catalog/harborporpoise.html}{harbor porpoise} has been met, as the average index (Fig. \ref{fig:harborporpoise}) remains below the current PBR threshold.The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort.
 
 \begin{figure}
 
@@ -1536,6 +1530,8 @@ The management objective for \href{https://noaa-edab.github.io/catalog/harborpor
 
 \caption{Harbor porpoise average bycatch estimate for Mid-Atlantic and New England gillnet fisheries (blue, confidence interval shaded) and the potential biological removal (red). The dashed line (black) represents the annual estimated bycatch. }\label{fig:harborporpoise}
 \end{figure}
+
+\paragraph{Gray seal}\label{gray-seal}
 
 The annual estimate for gray seal bycatch, most of which occurs in New England, has generally declined since 2019, in part driven by declining gillnet landings, although post-2019 estimates have greater uncertainty stemming from low observer coverage. The U.S. and Canadian range-wide PBR for \href{https://noaa-edab.github.io/catalog/grayseal.html}{gray seals} is 12,052. While the PBR for the U.S. portion of this stock was reduced to 756 animals (Fig. \ref{fig:grayseal}), bycatch is unlikely to exceed the range-wide PBR due to incomplete data on anthropogenic mortality and serious injury. Thus the bycatch management objective for gray seals has been met.
 
@@ -1547,6 +1543,10 @@ The annual estimate for gray seal bycatch, most of which occurs in New England, 
 
 \caption{Gray seal five-year average bycatch estimate for New England and Mid-Atlantic U.S. gillnet fisheries (blue, with confidence interval shaded) and the potential U.S. biological removal (red). The range-wide potential biological removal (PBR), including both U.S. and Canadian portions of the population, is 12,052 in the draft 2024 SAR. The dashed line (black) represents the annual estimated bycatch.}\label{fig:grayseal}
 \end{figure}
+
+The increasing trend in 5-year average gray seal bycatch may be related to an increase in the gray seal population (\href{https://noaa-edab.github.io/catalog/seal_pups.html}{U.S. pup counts} , supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
+
+\paragraph{North Atlantic right whale}\label{north-atlantic-right-whale}
 
 The \href{https://noaa-edab.github.io/catalog/narw.html}{North Atlantic right whale population} was on a recovery trajectory until a steep decline after 2010 (Fig. \ref{fig:narw-abundance}). While the right whale population has exhibited slow growth since 2020, it continues to experience annual mortalities above recovery thresholds. Reduced survival rates of adult females lead to diverging abundance trends between sexes. It is estimated that there are approximately 70 reproductively active adult females remaining in the population.
 
@@ -1570,17 +1570,13 @@ North Atlantic right whale \href{https://noaa-edab.github.io/catalog/narw.html}{
 \caption{Number of North Atlantic right whale calf births since 1980. }\label{fig:NARW-calf-abundance}
 \end{figure}
 
-Human interaction from entanglements or vessel strikes remains the primary cause of death in an ongoing North Atlantic right whale Unusual Mortality Event (UME) since 2017. As of January 5, 2026, \href{https://www.fisheries.noaa.gov/national/marine-life-distress/2017-2026-north-atlantic-right-whale-unusual-mortality-event}{the UME} includes 168 individual whales: 41 confirmed mortalities (19 US; 22 Canada), 40 serious injuries, and 87 sublethal injuries or illnesses. Recent research suggests that many mortalities go unobserved and the true number of mortalities are about three times the count of the observed mortalities.
+Human interaction from entanglements or vessel strikes remains the primary cause of death in an ongoing North Atlantic right whale Unusual Mortality Event since 2017. Interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. \href{https://noaa-edab.github.io/catalog/narw.html}{Recent research} suggests that climate-driven changes in ocean circulation and associated changes in the \href{https://noaa-edab.github.io/catalog/preyfield_energy.html}{primary right whale prey} have caused right whale distribution changes in the Gulf of Maine. Additional potential stressors include \hyperref[other-ocean-uses-offshore-wind]{offshore wind development}.
 
-There is an ongoing UME for humpback whales (2016-present) and Atlantic minke whales (2018-present); suspected causes include human interactions. A UME for Northeast pinnipeds that began in 2018 for infectious disease is non-active pending closure as of February 2026.
+\paragraph{Unusual Mortality Events (UMEs)}\label{unusual-mortality-events-umes}
+
+In addition to the North Atlantic right whale UME, there is an ongoing UME for humpback whales (2016-present) and Atlantic minke whales (2018-present); suspected causes include human interactions. A UME for Northeast pinnipeds that began in 2018 for infectious disease is non-active pending closure as of February 2026. The UMEs are under investigation and are likely the result of multiple drivers. For all large whale UMEs, human interaction appears to have contributed to increased mortalities, although investigations are not complete.
 
 \subsubsection{Implications}\label{implications-8}
-
-Bycatch management measures have been implemented to maintain bycatch below PBR thresholds. The downward trend in harbor porpoise bycatch could also be due to a decrease in harbor porpoise abundance in U.S. waters, reducing their overlap with fisheries, and a decrease in gillnet effort. The increasing trend in 5-year average gray seal bycatch may be related to an increase in the gray seal population (\href{https://noaa-edab.github.io/catalog/seal_pups.html}{U.S. pup counts} , supported by the dramatic rise over the last three decades in observed numbers of gray seal pups born at U.S. breeding sites plus an increase in adult seals at the breeding sites, some of which are supplemented by Canadian adults.
-
-Strong evidence exists to suggest that interactions between right whales and both the fixed gear fisheries in the U.S. and Canada and vessel strikes in the U.S. are contributing substantially to the decline of the species. Further, right whale distribution has changed since 2010. \href{https://noaa-edab.github.io/catalog/narw.html}{Recent research} suggests that recent climate driven changes in ocean circulation have resulted in right whale distribution changes driven by increased warm water influx through the Northeast Channel, which has reduced the \href{https://noaa-edab.github.io/catalog/preyfield_energy.html}{primary right whale prey} (the copepod \emph{Calanus finmarchicus}) in the central and eastern portions of the Gulf of Maine. Additional potential stressors include offshore wind development, which overlaps with important habitat areas used year-round by right whales, including mother and calf migration corridors and foraging habitat. Additional information can be found in the \hyperref[other-ocean-uses-offshore-wind]{offshore wind risks section}.
-
-The UMEs are under investigation and are likely the result of multiple drivers. For all large whale UMEs, human interaction appears to have contributed to increased mortalities, although investigations are not complete.
 
 \href{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0290643}{A climate vulnerability assessment} is published for Atlantic and Gulf marine mammal populations.
 
@@ -1588,15 +1584,14 @@ The UMEs are under investigation and are likely the result of multiple drivers. 
 
 This year, we have updated the definition of stability for fisheries and ecosystems to represent how consistent we expect the system to be over time. Three components of stability are considered for the purpose of this report: volatility, adaptive capacity, and a shift from baseline. Volatility is a measure of predictability, where volatile conditions indicate that future years are more likely to be different than the recent past. Adaptive capacity refers to a system's ability to respond to changes without fundamentally changing its composition or structure. A shift from baseline refers to a systemic shift in a system towards a new status, where prior conditions may no longer be the norm. Measures of volatility are currently being developed. Therefore, we assess fisheries and ecosystem stability as ``stable'' if there is no notable change in adaptive capacity or shifts from a historic baseline, and ``not stable'' if there are changes in either of these components.
 
-This year, we have updated the definition of stability for fisheries and ecosystems as a measure of how consistent we expect the system to be over time. Three components of stability are considered for the purpose of this report: volatility, adaptive capacity, and a shift from baseline. Volatility is a measure of predictability, where volatile conditions indicate that future years are more likely to be different than the recent past. Adaptive capacity refers to a system's ability to respond to changes without fundamentally changing its composition or structure. A shift from baseline refers to a systemic shift in a system towards a new status, where prior conditions may no longer be the norm. Measures of volatility are currently being developed. Therefore, we assess fisheries and ecosystem stability as ``stable'' if there is no notable change in adaptive capacity or shifts from a historic baseline, and ``not stable'' if there are changes in either of these components.
-
 \paragraph{Fishery Stability}\label{fishery-stability}
 
-Indicators suggest that Mid-Atlantic fisheries have broadly shifted from the historic baseline. Commercial fishery fleet count has declined while fleet revenue diversity has been stable over time in the MAB, but current fleet revenue diversity is above the long-term average (Fig. \ref{fig:comm-div-fleet}). This indicates that the commercial fleet composition has changed, but the portfolio of species targeted is similar over time (Fig. \ref{fig:commercial-div-species-div}). \href{https://noaa-edab.github.io/catalog/effective_sweptarea.html}{Revenue per unit effort} remains steady or increasing over time for most gear types, indicating financial viability of current fishing operations. Target species such as Atlantic mackerel and quahog have had reduced catch limits in recent years, resulting in reduced landings in these fisheries, and a decline in scallop catch within the MAB has severely reduced the total revenue generated in the region. Because non-MAFMC managed landings and revenue have declined, a larger share of the regional landings and revenue come from Council-managed fisheries.
+Mid-Atlantic fisheries have broadly shifted from the historic baseline. Commercial fishery fleet count has declined, suggesting lower capacity to respond to the current range of fishing opportunities. Fleet revenue diversity has been stable over time in the MAB, but current fleet revenue diversity is above the long-term average (Fig. \ref{fig:comm-div-fleet}). This indicates that the commercial fleet composition has changed, but the portfolio of species targeted is similar over time (Fig. \ref{fig:commercial-div-species-div}).
+\href{https://noaa-edab.github.io/catalog/effective_sweptarea.html}{Revenue per unit effort} remains steady or increasing over time for most gear types, indicating financial viability of current fishing operations. Target species such as Atlantic mackerel and quahog have had reduced catch limits in recent years, resulting in reduced landings in these fisheries, and a decline in scallop catch within the MAB has severely reduced the total revenue generated in the region. Because non-MAFMC managed landings and revenue have declined, a larger share of the regional landings and revenue come from Council-managed fisheries.
 
 The \href{https://noaa-edab.github.io/catalog/crew_survey.html}{Crew Survey} shows that specific aspects pertaining to sustainability and resilience of the fishing lifestyle are declining: predictability of earnings, the amount of time away from home, the physical fatigue of the job, and the personal health impacts have all been cited as dissatisfaction rates increase. Overall job satisfaction remains relatively stable over time, but unveils vulnerability as additional survey results show an aging population, particularly an increase in the 55+ crew cohort, and fewer individuals entering the fishery. This suggests a reduced capacity for Mid-Atlantic commercial fisheries to adapt to future uncertainties and change. New \href{https://noaa-edab.github.io/catalog/communities_at_sea.html}{Communities at Sea} indicators that assess fishing communities' ability to adapt to change are in development and will provide additional fishing industry indicators in future reports.
 
-Despite reduced \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational landings} (Fig. \ref{fig:rec-landings}), the number of recreational trips is near average (Fig. \ref{fig:rec-op}), suggesting a shift to catch-and-release fishing. Billfish (i.e., white marlin) catch-and-release was especially high, possibly due to shifting effort due to the closure of the recreational bluefin tuna fishery in August 2025. Shark and large sport fish regulations and environmental conditions, among other circumstances, may also contribute to reduced recreational landings. As noted above, \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational fleet effort diversity} is declining (Fig. \ref{fig:rec-div}), suggesting a shift in modes of recreational fishery participation. The Mid-Atlantic has experienced a contraction of the party and charter sectors, with more recreational angling occurring from shore. Recreational species catch diversity has no long-term trend and has been at or above the long-term average since 2016 (Fig. \ref{fig:recdat-div-catch}), indicating that anglers continue to catch a mix of species.
+Despite reduced \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational landings} (Fig. \ref{fig:rec-landings}), the number of recreational trips is near average (Fig. \ref{fig:rec-op}), suggesting a shift to catch-and-release fishing. Billfish (i.e., white marlin) catch-and-release was especially high, possibly due to shifting effort due to the closure of the recreational bluefin tuna fishery in August 2025. Shark and large sport fish regulations and environmental conditions, among other circumstances, may also contribute to reduced recreational landings. As noted above, \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational fleet effort diversity} is declining (Fig. \ref{fig:rec-div}), suggesting a shift in modes of recreational fishery participation. The Mid-Atlantic has experienced a contraction of the party and charter sectors, with more recreational angling occurring from shore. Stability in recreational species catch diversity has been maintained by a different set of species over time. Since the 1990s, there has been an increase in Atlantic States Marine Fisheries Commission (ASMFC) and South Atlantic Fishery Management Council (SAFMC) managed species in recreational catch, concomitant with a decline in MAFMC and New England Fishery Management Council (NEFMC) managed species. These changes in effort and species trends may necessitate new or changing management considerations to ensure effective tools and opportunities are in place to support recreational fisheries.
 
 \begin{figure}
 
@@ -1627,9 +1622,9 @@ Despite reduced \href{https://noaa-edab.github.io/catalog/recdat.html}{recreatio
 
 \paragraph{Ecological Stability}\label{ecological-stability}
 
-Long-term changes in biological processes suggest the Mid-Atlantic ecosystem is experiencing a systemic shift. Total annual \href{https://noaa-edab.github.io/catalog/chl_pp.html}{primary production}, a measure of the total amount of carbon (i.e., energy) produced by phytoplankton per year, has no clear trend (Fig. \ref{fig:totpp}), suggesting stability in energy at the base of the food web. However, we are monitoring for shifts in the phytoplankton community, which can affect the amount of primary production available to higher trophic levels. \href{https://noaa-edab.github.io/catalog/zoo_diversity.html}{Zooplankton diversity} is increasing in the MAB, and measures of zooplankton community composition also indicate a long-term shift in \href{https://noaa-edab.github.io/catalog/zoo_community.html}{zooplankton communities} (Fig. \ref{fig:zoo-community}). Together, these indicators show a gradual but systemic change in lower trophic levels towards a community with a higher proportion of euphausiids and less dominated by copepods, which would not be expected in a stable ecosystem.
+Long-term changes in biological processes suggest the Mid-Atlantic ecosystem is experiencing a systemic shift. Total annual \href{https://noaa-edab.github.io/catalog/chl_pp.html}{primary production}, a measure of the total amount of carbon (i.e., energy) produced by phytoplankton per year, is variable with no clear trend (Fig. \ref{fig:totpp}), suggesting stability in energy at the base of the food web. \href{https://noaa-edab.github.io/catalog/zoo_diversity.html}{Zooplankton diversity} is increasing in the MAB, and measures of zooplankton community composition also indicate a long-term shift in \href{https://noaa-edab.github.io/catalog/zoo_community.html}{zooplankton communities} (Fig. \ref{fig:zoo-community}). Together, these indicators show a gradual but systemic change in lower trophic levels towards a community with a higher proportion of euphausiids and less dominated by copepods, which would not be expected in a stable ecosystem.
 
-There are long-term increases in the biomass of the euphausid, benthivore, and benthos \href{https://noaa-edab.github.io/catalog/aggregate_biomass.html}{guilds} (Fig. \ref{fig:nefsc-biomass-mab}). These lower trophic groups have similar roles within the ecosystem and these changes indicate a shift towards an ecosystem with a higher representation of those functional groups. \href{https://noaa-edab.github.io/catalog/exp_n.html}{Adult fish diversity}, the expected number of species in a standard number of individuals sampled from the NEFSC bottom trawl survey, had no trend when the Albatross vessel was used for sampling, but shows a short-term declining trend since switching to the Bigelow vessel in 2008. However, the expected number of species observed is currently within one standard deviation from most historic estimates (Fig. \ref{fig:exp-n}). This suggests that biomass increases in some guilds is due to an overall producivity increase rather than an influx of new species.
+There are long-term increases in the biomass of the euphausid, benthivore, and benthos \href{https://noaa-edab.github.io/catalog/aggregate_biomass.html}{guilds} (Fig. \ref{fig:nefsc-biomass-mab}). These lower trophic groups have similar roles within the ecosystem and these changes indicate a shift towards an ecosystem with a higher representation of those functional groups. \href{https://noaa-edab.github.io/catalog/exp_n.html}{Adult fish diversity}, the expected number of species in a standard number of individuals sampled from the NEFSC bottom trawl survey, had no trend when the Albatross vessel was used for sampling, but shows a short-term declining trend since switching to the Bigelow vessel in 2008. However, the expected number of species observed is currently within one standard deviation from most historic estimates (Fig. \ref{fig:exp-n}). The stable long-term diversity indicates that these guild biomass increases are driven by enhanced local productivity rather than changes in community composition. Mid-Atlantic species composition is changing, shifting towards a higher proportion of benthic and demersal fish. Stable adult fish diversity indicates the same overall number and evenness over time, but doesn't rule out species substitutions (e.g., warm-water species replacing cold-water species).
 
 \begin{figure}
 
@@ -1658,7 +1653,7 @@ There are long-term increases in the biomass of the euphausid, benthivore, and b
 \caption{Principal component analysis of zooplankton community composition in the Mid-Atlantic Bight. Lines show the first two principal components (colors). The long-term declining trendline (purple) is associated with the first principal component. This trend is driven by an increasing abundance of sea butterflies, hyperiid amphipods, echinoderm larvae, arrow worms, and the copepod \textit{Calanus minor}, and a decreasing abundance of the copepods \textit{Pseudocalanus spp.}, \textit{Centropages hamatus}, \textit{Acartia spp.}, and \textit{Temora longicornis}.}\label{fig:zoo-community}
 \end{figure}
 
-\href{https://noaa-edab.github.io/catalog/finfish_traits.html}{Functional traits}, such as length at maturity, maximum body size, and fecundity, serve to synthesize change in complex, diverse communities by looking beyond species-specific trends. Furthermore, shifts in functional trait distributions for the fish community can indicate changes in ecosystem-scale resilience. There is evidence of long-term change in trait distributions in the MAB, particularly in the fall season (Fig. \ref{fig:traits-k}, \ref{fig:traits-tl}). The fall finfish community in the MAB is showing long-term shifts towards faster life history strategies with lower trophic levels, smaller offspring, younger age and shorter length at maturity, and faster growth rates. This indicates shifts in a system increasingly composed of smaller, fast-growing species. The long-term trends in the spring season are, however, more equivocal, with some evidence in shifts towards slower life history strategies, including larger length-at-maturity and offspring size. The lack of trend in finfish diversity suggests that these changes in fish communities are not due to a change in the total number of species.
+\href{https://noaa-edab.github.io/catalog/finfish_traits.html}{Functional traits}, such as length at maturity, maximum body size, and fecundity, serve to synthesize change in complex, diverse communities by looking beyond species-specific trends. Furthermore, shifts in functional trait distributions for the fish community can indicate changes in ecosystem-scale resilience. There is evidence of long-term change in trait distributions in the MAB, particularly in the fall season (Fig. \ref{fig:traits-k}, \ref{fig:traits-tl}). The fall finfish community in the MAB is showing long-term shifts towards faster life history strategies with lower trophic levels, smaller offspring, younger age and shorter length at maturity, and faster growth rates. This indicates shifts in a system increasingly composed of smaller, fast-growing species. The long-term trends in the spring season are, however, more equivocal, with some evidence in shifts towards slower life history strategies, including larger length-at-maturity and offspring size.
 
 \begin{figure}
 
@@ -1680,13 +1675,7 @@ There are long-term increases in the biomass of the euphausid, benthivore, and b
 
 \subsubsection{Implications}\label{implications-9}
 
-Fleet diversity indices are used by the MAFMC in their EAFM risk assessment to evaluate stability objectives, as well as risks to fishery resilience and maintaining equity in access to fishery resources. Instability in the commercial fleet count metric suggests lower capacity to respond to the current range of fishing opportunities. Commercial species permit revenue diversity is relatively stable (Fig. \ref{fig:commercial-div-species-div}) but comparisons are limited by missing historical (pre-2003) clam fishery data.
-
-Declining recreational fleet effort diversity indicates that the party/charter boat sector continues to contract, with shoreside angling becoming a greater percentage of recreational angler trips. Stability in recreational species catch diversity has been maintained by a different set of species over time. Since the 1990s, there has been an increase in Atlantic States Marine Fisheries Commission (ASMFC) and South Atlantic Fishery Management Council (SAFMC) managed species in recreational catch, concomitant with a decline in MAFMC and New England Fishery Management Council (NEFMC) managed species. These changes in effort and species trends may necessitate new or changing management considerations to ensure effective tools and opportunities are in place to support recreational fisheries.
-
-Production at the base of the food web is variable but stable over time. Mid-Atlantic species composition is changing, shifting towards a higher proportion of benthic and demersal fish. Stable adult fish diversity indicates the same overall number and evenness over time, but doesn't rule out species substitutions (e.g., warm-water species replacing cold-water species). There is evidence for long-term change in finfish trait distributions in the Mid-Atlantic. Future research should consider how changes in single species abundances may influence ecosystem stability.
-
-In the MAB, both the fisheries and ecosystem are exhibiting long-term systemic shifts away from historical norms. While these changes don't appear abrupt like one would expect during a regime shift, they do indicate a potential change in baseline conditions.
+In the MAB, both the fisheries and ecosystem are exhibiting long-term systemic shifts away from historical norms. While these changes don't appear abrupt like one would expect during a regime shift, they do indicate a potential change in baseline conditions. Future research should consider how changes in single species abundances may influence ecosystem stability.
 
 \paragraph{Fishery Stability}\label{fishery-stability-1}
 
@@ -1822,7 +1811,7 @@ As noted in the \hyperref[implications]{Seafood Production Implications section}
 \caption{Direction and magnitude of core habitat shifts, represented by the length of the line of the seasonal weighted centroid for species with more than 70 km difference between 2010 and 2017 (tip of arrow).}\label{fig:protectedspp-dist-shifts}
 \end{figure}
 
-\paragraph{Drivers:}\label{drivers}
+\paragraph{Drivers:}\label{drivers-1}
 
 Mobile populations shift distributions to maintain suitable habitat and prey fields, possibly expanding ranges if new suitable habitat exists. Changes in managed species distribution is partially related to the \href{https://noaa-edab.github.io/catalog/forage_index.html}{distribution of forage biomass}. Since 1982, the fall center of gravity of forage fish (20 species combined) has moved to the north and east (Fig. \ref{fig:forageshifts}). Spring forage fish center of gravity has moved northward but without an eastward trend. Some of the whale and dolphin distribution shifts (Fig. \ref{fig:protectedspp-dist-shifts}) are likely in response to these forage fish shifts. \href{https://noaa-edab.github.io/catalog/zooplankton_index.html\#key-results-and-visualizations-4}{Small copepods}, widespread prey of many larval and juvenile fish, show a similar shift in center of gravity as forage fish, to the north and east in the fall, as well as northward in spring (Fig. \ref{fig:smallcopeall-cog}.
 
@@ -1977,7 +1966,7 @@ Indicators of phenological changes in fish populations require regular sampling 
 
 Understanding whether seasonal patterns are changing for stocks requires regular observations throughout the year. For example, baseline work on \href{https://noaa-edab.github.io/catalog/cetacean_acoustic.html}{cetacean presence in Southern New England} shows different seasonal use patterns for whale and dolphin species. Despite the importance of understanding seasonal patterns, we have few indicators that directly assess timing shifts of species. We plan on incorporating more indicators of timing shifts and phenology in future reports.
 
-\paragraph{Drivers:}\label{drivers-1}
+\paragraph{Drivers:}\label{drivers-2}
 
 The drivers of timing shifts in managed stocks are generally coupled to shifts in environmental or biological conditions, since these can result in changes in habitat quality or food availability within the year. Changes in the timing of fall phytoplankton blooms and seasonal shifts in zooplankton communities are indicators of changes in seasonal food availability to stocks.
 
@@ -2068,7 +2057,7 @@ The health of individual fish (i.e., fish condition, measured as weight for a gi
 \caption{Condition factor for fish species in the Mid-Atlantic Bight (MAB) based on fall Northeast Fisheries Science Center bottom trawl survey data. MAB data are missing for 2017 due to survey delays, and no survey was conducted in 2020.}\label{fig:mab-cf}
 \end{figure}
 
-\paragraph{Drivers:}\label{drivers-2}
+\paragraph{Drivers:}\label{drivers-3}
 
 Fish productivity and condition are the cumulative effects of physiological, ecological, and environmental factors. Major factors include increased metabolic demands from increasing temperature and changes in the availability and quality of prey. Long-term environmental trends and episodic extreme temperatures, ocean acidification, and low oxygen events represent multiple stressors that can affect growth rates, reproductive success, recruitment, and cause mortality.
 
@@ -2222,7 +2211,7 @@ The health of individual fish (i.e., fish condition) can contribute to populatio
 \caption{Condition factor for fish species in New England (top: Georges Bank, GB; bottom: Gulf of Maine, GOM) based on fall Northeast Fisheries Science Center bottom trawl survey data. No survey was conducted in 2020.}\label{fig:ne-cf}
 \end{figure}
 
-\paragraph{Drivers}\label{drivers-3}
+\paragraph{Drivers}\label{drivers-4}
 
 Fish productivity and condition are the cumulative effects of physiological, ecological, and environmental factors. Major factors include increased metabolic demands from increasing temperature and changes in the availability and quality of prey. Long-term environmental trends and episodic extreme temperatures, ocean acidification, and low oxygen events represent multiple stressors that can affect growth rates, reproductive success, recruitment, and cause mortality.
 
@@ -2366,15 +2355,17 @@ The processes that control fish productivity and mortality are dynamic, complex,
 
 Offshore wind development is active and dynamic throughout the region. The following section reflects the status of projects as of the end of January 2026.
 
-\subsubsection{Indicators: development timeline, revenue in lease areas, coastal community vulnerability}\label{indicators-development-timeline-revenue-in-lease-areas-coastal-community-vulnerability}
+\subsubsection{Indicators}\label{indicators-1}
 
-Offshore wind indicators are used to quantify the influence of offshore wind on fisheries and ecosystems. They are based on BOEM's Offshore Renewable Activities page and projects' Final Environmental Impact Statements. In 2025, Presidential Memorandum 90 FR 8363 removed existing planning areas and excluded the establishment of additional lease areas.
+\paragraph{Development timeline}\label{development-timeline}
 
-As of January 2026, 38 offshore \href{https://noaa-edab.github.io/catalog/wind_dev_speed.html}{wind development} leases are under different stages of development in the Northeast (Fig. \ref{fig:wind-dev-cumul}). One project (South Fork Wind Farm) is fully operational and another (Vineyard Wind 1) is partially operational while construction finishes. The southern New England region has two other projects currently under construction (Revolution Wind and Sunrise Wind). Empire Wind and Coastal Virginia Offshore Wind (CVOW) are currently under construction in the New York Bight and Mid-Atlantic Region, respectively, with CVOW expected to start generating power in early 2026.
+As of January 2026, 38 offshore \href{https://noaa-edab.github.io/catalog/wind_dev_speed.html}{wind development} leases are under different stages of development in the Northeast (Fig. \ref{fig:wind-dev-cumul}). One project (South Fork Wind Farm) is fully operational and another (Vineyard Wind 1) is partially operational while construction finishes. The southern New England region has two other projects currently under construction (Revolution Wind and Sunrise Wind). Empire Wind and Coastal Virginia Offshore Wind (CVOW) are currently under construction in the New York Bight and Mid-Atlantic Region, respectively, with CVOW expected to start generating power in early 2026. In 2025, Presidential Memorandum 90 FR 8363 removed existing planning areas and excluded the establishment of additional lease areas.
 
 Construction of these projects during 2025 affected fisheries managed by the {[}Mid-Atlantic{]} \emph{or} {[}New England{]} Fishery Management Council. There are eight additional projects that have Construction and Operations Plan (COP) approvals (three in Southern New England and five in the Mid-Atlantic/New York Bight) that could begin construction in 2026, however, construction schedules are highly uncertain at this time. Seven additional projects have submitted COPs and are pending approval, while the remaining projects are under the site assessment phase and have not submitted COPs to date (Fig. \ref{fig:wind-dev-cumul}).
 
-With the first offshore wind energy projects now under construction and operation, all indicator analyses in this section follow a different reporting format than in previous years. Where previous years reported data for all lease areas, this year we investigate impacts of the six commercial scale projects currently under construction or operation, (i.e., Active Projects: South Fork Wind Farm, Revolution Wind, Sunrise Wind, Empire Wind 1, Vineyard Wind 1, and CVOW-Commercial).
+\paragraph{Revenue in wind lease areas}\label{revenue-in-wind-lease-areas}
+
+With the first offshore wind energy projects now under construction and operation, all indicator analyses in this section follow a different reporting format than in previous years. Where previous years reported data for all lease areas, this year we investigate impacts of the six commercial scale projects currently under construction or operation, (i.e., Active Projects: South Fork Wind Farm, Revolution Wind, Sunrise Wind, Empire Wind 1, Vineyard Wind 1, and CVOW-Commercial). Offshore wind indicators are based on federal logbook data and do not include all data for all fisheries.
 
 \begin{figure}
 
@@ -2385,9 +2376,9 @@ With the first offshore wind energy projects now under construction and operatio
 \caption{All Northeast wind energy lease areas, colored by lease construction status.}\label{fig:wind-dev-cumul}
 \end{figure}
 
-Offshore wind indicators are based on federal logbook data and do not include all data for all fisheries; therefore a complete evaluation of potential offshore wind energy development impacts would need to be supplemented by other data sources. For further information on the utility of the data, see the \href{https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development}{socioeconomic impacts of offshore wind development data reports page}.
+\section{08\_offshore\_wind\_midatlantic.Rmd}\label{offshore_wind_midatlantic.rmd}
 
-\href{https://noaa-edab.github.io/catalog/wind_revenue.html}{Commercial fishery revenue} from trips within Active Projects have varied annually from 2008-2024, with less than \$500,000 in maximum annual revenue overlapping with these areas for most fisheries with the exception of longfin squid (\$2 million), monkfish (\$1.1 million), ocean quahog (\$783,000), and summer flounder (\$556,000) in specific years (Fig. \ref{fig:wea-spp-rev}).
+{[}Up to 6\% of maximum \href{https://noaa-edab.github.io/catalog/wind_revenue.html}{annual fishery revenue} for major Mid-Atlantic commercial species{]} \emph{or} {[}Up to 13\% of total average \href{https://noaa-edab.github.io/catalog/wind_revenue.html}{annual fishery revenue} for major New England commercial species{]} in lease areas could be forgone or reduced and associated effort displaced when the Active Projects are developed. Commercial fishery revenue from trips within Active Projects have varied annually from 2008-2024, with less than \$500,000 in maximum annual revenue overlapping with these areas for most fisheries with the exception of longfin squid (\$2 million), monkfish (\$1.1 million), ocean quahog (\$783,000), and summer flounder (\$556,000) in specific years (Fig. \ref{fig:wea-spp-rev}). By percent of revenue affected, specific fisheries include chub mackerel (6\% of revenue), bluefish (5\%), butterfish (4\%), and monkfish, scup, black sea bass, and longfin squid (3\% each) (Table \ref{tab:wea-landings-rev}). Displaced fishing effort can alter fishing area, timing, and method patterns, which can in turn change habitat, species (managed and protected), and fleet interactions. Several factors, including fishery regulations, fishery availability, and user conflicts affect where, when, and how fishing effort may be displaced, along with impacts to and responses of affected fish species. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings and/or revenue.
 
 \begin{figure}
 
@@ -2398,7 +2389,7 @@ Offshore wind indicators are based on federal logbook data and do not include al
 \caption{Revenue of species managed by the Mid-Atlantic Fishery Management Council within Active Projects. The declining trendline (purple) is associated with monkfish. }\label{fig:wea-spp-rev}
 \end{figure}
 
-Based on revenue between 2008-2024, MAFMC-managed fisheries derived a maximum of 6\% of annual regional fishery revenue from the Active Project areas. The specific fisheries affected include chub mackerel (6\% of revenue), bluefish (5\%), butterfish (4\%), and monkfish, scup, black sea bass, and longfin squid (3\% each) (Table \ref{tab:wea-landings-rev}). Future offshore wind development may increase effects on these and additional species if more projects begin construction. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings and/or revenue.
+Point Lookout, NY (5.5\% average, 17\% maximum) and Virginia Beach, VA (3\% average, 7.5\% maximum) have the highest potential revenue loss from the Active Projects based on 2008-2024 total port fisheries revenue. In response to Council request, we also \href{https://noaa-edab.github.io/catalog/wind_port.html}{present information} on the New England ports that land MAFMC-managed species within the wind lease areas. This information can help fisheries managers better understand how MAFMC-managed species may be more broadly affected by offshore wind development. Seven New England ports attribute the majority of their landings within the wind lease areas to MAFMC-managed species (Fig. \ref{fig:wind-rev}); note that two of these ports do not have a majority of MAFMC-managed landings when only the Active Project areas are considered. Additionally, the Active Projects account for less than 8\% of total revenue in these seven ports. Future analyses should also consider that the impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean.
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -2502,7 +2493,11 @@ Based on revenue between 2008-2024, MAFMC-managed fisheries derived a maximum of
 
 \renewcommand*{\arraystretch}{1}
 
-The socio-demographic conditions, and resultant vulnerabilities, of some communities may further exacerbate the impacts of offshore wind development in the Northeast such that the impacts of offshore wind development are expected to differentially \href{https://noaa-edab.github.io/catalog/wind_port.html}{impact specific coastal communities} (Fig. \ref{fig:wea-port-rev})
+\paragraph{Coastal community vulnerability}\label{coastal-community-vulnerability}
+
+The socio-demographic conditions, and resultant vulnerabilities, of some communities may further exacerbate the impacts of offshore wind development in the Northeast such that the impacts of offshore wind development are expected to differentially \href{https://noaa-edab.github.io/catalog/wind_port.html}{impact specific coastal communities} (Fig. \ref{fig:wea-port-rev}). Point Lookout, NY and Newport News, VA have \href{https://noaa-edab.github.io/catalog/engagement.html}{socio-demographic or gentrification concerns} and should be recognized as having additional vulnerability from Active Projects. If all proposed projects are developed, BOEM reports that cumulative offshore wind development could have moderate impacts on low-income members of communities who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation and increased vessel traffic, and exacerbation of existing vulnerabilities of low-income workers to economic impacts. Historically, the introduction of new industries can trigger industrial and socioeconomic gentrification of fishing ports. Some of the communities with the highest fisheries revenue overlap with offshore wind development areas that are also vulnerable to gentrification pressure are {[}Beaufort, NC, and Cape May, Barnegat Light, and Long Beach, NJ{]} \emph{or} {[}Point Judith and Newport, RI; and Boston and New Bedford, MA{]}. Competition for port space and potential pivoting of space use for offshore wind development should be monitored closely to ensure fishing communities are not adversely impacted.
+
+Additionally, offshore wind could increase recreational fishing opportunities at the turbines, potentially creating a demand for additional tourism, recreational fishing and boating port space in communities already balancing these uses with commercial fishing infrastructure (e.g., Virginia Beach, VA, Montauk, NY and Barnegat Light, NJ).
 
 \begin{figure}
 
@@ -2511,10 +2506,6 @@ The socio-demographic conditions, and resultant vulnerabilities, of some communi
 \caption{Percent of Mid-Atlantic port revenue from wind lease areas from leases not under construction (blue) and active leases (orange). Note that North Carolina fisheries management is split between the Northeast and Southeast, and this plot only includes data reported to the Northeast Fisheries Science Center.}\label{fig:wea-port-rev}
 \end{figure}
 
-Based on federal vessel logbook data, Point Lookout, NY (5.5\% average, 17\% maximum) and Virginia Beach, VA (3\% average, 7.5\% maximum) have the highest potential revenue loss from the Active Projects based on 2008-2024 total port fisheries revenue. Fewer Mid-Atlantic ports are affected by the Active Projects to date, as most are in the southern New England region, with the exception of CVOW and Empire Wind 1 (Fig. \ref{fig:wea-port-rev}). Additional fishing revenue may be affected as more areas historically used for fishing are developed for offshore wind energy.
-
-In response to Council request, we also \href{https://noaa-edab.github.io/catalog/wind_port.html}{present information} on the New England ports that land MAFMC-managed species within the wind lease areas. This information can help fisheries managers better understand how MAFMC-managed species may be more broadly affected by offshore wind development. Seven New England ports attribute the majority of their landings within the wind lease areas to MAFMC-managed species (Fig. \ref{fig:wind-rev}); note that two of these ports do not have a majority of MAFMC-managed landings when only the Active Project areas are considered. Additionally, the Active Projects account for less than 8\% of total revenue in these seven ports. Future analyses should also consider that the impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean.
-
 \begin{figure}
 
 \includegraphics[width=1\linewidth,]{images/MidAtlantic/newengland_mafmc} \hfill{}
@@ -2522,9 +2513,9 @@ In response to Council request, we also \href{https://noaa-edab.github.io/catalo
 \caption{Percent of port revenue from wind lease areas for New England ports that land a majority of Mid-Atlantic Fishery Management Council-managed species within the wind lease areas. Percent of revenue is shown for leases not under construction (blue), active leases (orange), and all leases (green).}\label{fig:wind-rev}
 \end{figure}
 
-If all proposed projects are developed, BOEM reports that cumulative offshore wind development could have moderate impacts on low-income members of communities who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation and increased vessel traffic, and exacerbation of existing vulnerabilities of low-income workers to economic impacts.
+\section{parent\_report.Rmd}\label{parent_report.rmd}
 
-Top fishing communities with both landings from the Active Projects (i.e., Point Lookout, NY and Newport News, VA) and \href{https://noaa-edab.github.io/catalog/engagement.html}{socio-demographic or gentrification concerns} should be recognized as having additional vulnerability from Active Projects. To reduce further social and economic impacts and aid in the resilience and adaptive capacity of these communities, this vulnerability should be considered in decision making. Historically, the introduction of new industries can trigger industrial and socioeconomic gentrification of fishing ports. Competition for port space and potential pivoting of space use for offshore wind development should be monitored closely to ensure fishing communities are not adversely impacted. Additionally, offshore wind could increase recreational fishing opportunities at the turbines, potentially creating a demand for additional tourism, recreational fishing and boating port space in communities already balancing these uses with commercial fishing infrastructure (e.g., Virginia Beach, VA, Montauk, NY and Barnegat Light, NJ). Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
+\section{08\_offshore\_wind\_newengland.Rmd}\label{offshore_wind_newengland.rmd}
 
 Offshore wind indicators are based on federal logbook data and do not include all data for all fisheries; therefore a complete evaluation of potential offshore wind energy development impacts would need to be supplemented by other data sources. For further information on the utility of the data, see the \href{https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development}{socioeconomic impacts of offshore wind development data reports page}.
 
@@ -2641,7 +2632,7 @@ Based on federal vessel logbook data, \href{https://noaa-edab.github.io/catalog/
 
 \renewcommand*{\arraystretch}{1}
 
-The socio-demographic conditions, and resultant vulnerabilities, of some communities may further exacerbate the impacts of offshore wind development in the Northeast such that the impacts of offshore wind development are expected to differentially \href{https://noaa-edab.github.io/catalog/wind_port.html}{impact specific coastal communities} (Fig. \ref{fig:wea-port-rev})
+The socio-demographic conditions, and resultant vulnerabilities, of some communities may further exacerbate the impacts of offshore wind development in the Northeast such that the impacts of offshore wind development are expected to differentially \href{https://noaa-edab.github.io/catalog/wind_port.html}{impact specific coastal communities} (Fig. \ref{fig:wea-port-rev}).
 
 \begin{figure}
 
@@ -2663,19 +2654,13 @@ BOEM reports that cumulative offshore wind development (if all proposed projects
 
 Top fishing communities with high \href{https://noaa-edab.github.io/catalog/engagement.html}{socio-demographic} and/or gentrification concerns such as Little Compton, RI, New Bedford, MA and New London, CT should be recognized as having potential additional vulnerability of the Active Projects and considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of these communities. In addition to fisheries landing overlaps, New Bedford, MA and New London, CT also support significant offshore wind port infrastructure needs for the Active Projects. Historically, the introduction of new industries can trigger industrial and socioeconomic gentrification of fishing ports. Competition for port space and potential pivoting of space use for offshore wind development should be monitored closely to ensure fishing communities are not adversely impacted. Additionally, offshore wind could increase recreational fishing opportunities at the turbines, potentially creating a demand for additional tourism, recreational fishing and boating port space in communities already balancing these uses with commercial fishing infrastructure, for example Point Judith, RI, and Newport, RI, and Gloucester, MA. Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
 
+\section{parent\_report.Rmd}\label{parent_report.rmd-1}
+
 \subsubsection{Implications}\label{implications-11}
 
-Current plans for buildout of offshore wind in a patchwork of areas spreads the impacts differentially throughout the region (Fig. \ref{fig:wind-dev-cumul}). {[}Up to 6\% of maximum annual fisheries revenue for major Mid-Atlantic commercial species{]} \emph{or} {[}Up to 13\% of total average revenue for major New England commercial species{]} in lease areas could be forgone or reduced and associated effort displaced when the Active Projects are developed. Displaced fishing effort can alter fishing area, timing, and method patterns, which can in turn change habitat, species (managed and protected), and fleet interactions. Several factors, including fishery regulations, fishery availability, and user conflicts affect where, when, and how fishing effort may be displaced, along with impacts to and responses of affected fish species.
+In addition to the impacts on fisheries revenue described above, the proposed wind development areas interact with the region's federal scientific surveys. Increased vessel transit between stations may decrease data collections that are already limited by annual days-at-sea day allocations. In the Northeast region, 14 \href{https://noaa-edab.github.io/catalog/osw_survey_impact.html}{NEFSC surveys} overlap with offshore wind development projects at varying capacities, with each of the 38 existing lease areas overlapping between 4-14 surveys. The Active Projects overlap between 10-12 surveys. Implementation of the region-wide \href{https://repository.library.noaa.gov/view/noaa/47925}{survey mitigation program} is underway with requirements to mitigate impacts to surveys included as a condition of most project approvals.
 
-Proposed wind development areas interact with the region's federal scientific surveys. Scientific surveys are impacted by offshore wind in four ways:
-1. Exclusion of NOAA Fisheries' sampling platforms from the wind development area due to operational and safety limitations.
-2. Impacts on the random-stratified statistical design that is the basis for scientific assessments, advice, and analyses.
-3. Alteration of benthic and pelagic habitats, and airspace in and around the wind energy development, requiring new designs and methods to sample new habitats.
-4. Reduced sampling productivity through navigation impacts of wind energy infrastructure on aerial and vessel survey operations.
-
-Increased vessel transit between stations may decrease data collections that are already limited by annual days-at-sea day allocations. In the Northeast region, 14 \href{https://noaa-edab.github.io/catalog/osw_survey_impact.html}{NEFSC surveys} overlap with offshore wind development projects at varying capacities, with each of the 38 existing lease areas overlapping between 4-14 surveys. The Active Projects overlap between 10-12 surveys. Implementation of the region-wide survey mitigation program is underway with requirements to mitigate impacts to surveys included as a condition of most project approvals.
-
-Planned development \href{https://noaa-edab.github.io/catalog/persistent_hotspots.html}{overlaps NARW} mother and calf migration corridors and a significant foraging habitat that is used throughout the year (Fig. \ref{fig:whales-wind}). Turbine presence and extraction of energy from the system could alter local oceanography and may affect right whale prey availability. For example, persistent foraging hotspots of right whales and seabirds overlap on Nantucket Shoals, where unique hydrography aggregates enhanced prey densities. Two wind projects, SouthCoast Wind and Vineyard Northeast, currently intersect these hotspots on the southwestern corner of Nantucket Shoals and a prominent tidal front associated with invertebrate prey swarms important to seabirds and possibly right whales. However, neither of these projects have begun construction as of January 2026. Proposed wind development areas also bring increased vessel strike risk from construction and operation vessels. In addition, there are a number of potential impacts to whales from pile driving and operational noise such as displacement, increased levels of communication masking, and elevated stress hormones.
+Planned development \href{https://noaa-edab.github.io/catalog/persistent_hotspots.html}{overlaps NARW} mother and calf migration corridors and a significant foraging habitat that is used throughout the year (Fig. \ref{fig:whales-wind}). Turbine presence and extraction of energy from the system could alter local oceanography and may affect right whale prey availability. Two wind projects, SouthCoast Wind and Vineyard Northeast, currently intersect whale hotspots on the southwestern corner of Nantucket Shoals. However, neither of these projects have begun construction as of January 2026. Proposed wind development areas also bring increased vessel strike risk from construction and operation vessels. In addition, there are a number of potential impacts to whales from pile driving and operational noise such as displacement, increased levels of communication masking, and elevated stress hormones.
 
 \begin{figure}
 
@@ -2685,8 +2670,6 @@ Planned development \href{https://noaa-edab.github.io/catalog/persistent_hotspot
 
 \caption{North Atlantic Right Whale persistent hotspots (red shading) and wind lease areas (black outlines).}\label{fig:whales-wind}
 \end{figure}
-
-The increase of offshore wind development can have both positive (e.g., employment opportunities) and negative (e.g., space-use conflicts) effects. Continued increase in coastal development and gentrification pressure has resulted in loss of fishing infrastructure space within ports. Understanding these existing pressures can allow for avoiding and mitigating negative impacts to our shore support industry and communities dependent on fishing. Some of the communities with the highest fisheries revenue overlap with offshore wind development areas that are also vulnerable to gentrification pressure are {[}Beaufort, NC, and Cape May, Barnegat Light, and Long Beach, NJ{]} \emph{or} {[}Point Judith and Newport, RI; and Boston and New Bedford, MA{]}.
 
 \paragraph{Marine Aquaculture}\label{marine-aquaculture}
 
