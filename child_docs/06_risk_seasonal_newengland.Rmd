@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -6,18 +6,18 @@
 <<ne-draft>>
 ```
 
-The Middle Atlantic Bight [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html) is a summer to early fall feature that creates seasonally suitable habitat for many species, including some managed by the NEFMC. Since the mid-2000s, the Cold Pool has persisted for a shorter portion of the year (Fig. \ref{fig:cold-pool-time-ne}). In 2024, however, all Cold Pool indices were near the long-term average and likely related to the influx of northern waters into the system (see 2024 highlights section). A change in the timing of the autumn breakdown of the Cold Pool may impact the recruitment of species that rely on it for seasonal cues and habitat. Southern New England-Mid Atlantic yellowtail flounder recruitment and settlement are related to the strength of the MAB Cold Pool (a factor of extent and persistence). The correlation of pre-recruit settlers to the Cold Pool is thought to represent a bottleneck in yellowtail flounder life history, whereby a local and temporary increase in bottom temperature can negatively impact the survival of settlers. Including the effect of Cold Pool variations on yellowtail recruitment reduced retrospective patterns and improved predictive skill in a stock assessment model. This is especially important given the long-term decline in the duration of the Cold Pool. 
+The Mid-Atlantic Bight [Cold Pool](https://noaa-edab.github.io/catalog/cold_pool.html) is a summer to early fall feature that creates seasonally suitable habitat for many species, including some managed by the NEFMC. Cold pool persistence has decreased, indicating that the duration of the cold pool habitat is shorter compared to the 1960s (Fig. \ref{fig:cold-pool-time-ne}). However, all cold pool indices were near or above the long-term average in 2025 and likely related to the influx of northern waters into the system (see [2024 Highlights](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html) ).  A change in the timing of the autumn breakdown of the Cold Pool may impact the recruitment of species that rely on it for seasonal cues and habitat. Southern New England-Mid Atlantic yellowtail flounder recruitment and settlement are related to the strength of the Cold Pool (a factor of extent and persistence). The correlation of pre-recruit settlers to the Cold Pool is thought to represent a bottleneck in yellowtail flounder life history, whereby a local and temporary increase in bottom temperature can negatively impact the survival of settlers. Including the effect of Cold Pool variations on yellowtail recruitment reduced retrospective patterns and improved predictive skill in a stock assessment model. This connection is especially important given the long-term decline in the duration of the Cold Pool.
 
 ```{r cold-pool-time-ne, fig.cap=return_caption(chunk_name = "cold-pool-time", region = "BothReports"), fig.width = 6.5, fig.asp=.3}
 return_plot("cold-pool-time", region = "BothReports")
 ```
 
-The seasonal timing of [phytoplankton](https://noaa-edab.github.io/catalog/chl_pp.html) blooms shows a tendency towards an increased fall bloom over time in the GOM and GB, with chlorophyll significantly increasing October and November (GB) and December (GOM) (Fig. \ref{fig:chl-month-ne}). January concentrations are trending higher since the late 1990s, but they are still below the mean spring and fall bloom values.
+The seasonal timing of [phytoplankton](https://noaa-edab.github.io/catalog/chl_pp.html) blooms shows a tendency towards an increased fall bloom over time in the GOM and GB, with chlorophyll concentrations significantly increasing in October and November (GB) and January and October (GOM) (Fig. \ref{fig:chl-month-ne}). This increased production at the base of the food web may increase prey availability, and fall blooms in particular have been associated with increased recruitment for species such as haddock.
 
 ```{r chl-month-ne, fig.cap=return_caption(chunk_name = "chl-month", region = "NewEngland"), fig.width =6.5, fig.height = 8}
 return_plot("chl-month", region = "NewEngland")
 ```
 
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```

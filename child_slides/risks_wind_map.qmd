@@ -1,0 +1,21 @@
+## Risks: Offshore Wind Development
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r}
+knitr::include_graphics(here::here("images/BothReports/OffshoreWindDevelopmentMap_V3_NicoleMucci.png"))
+```
+
+:::
+
+::: {.soe-50-column}
+
+- Only one operational commercial-scale wind project (South Fork, NY)
+- Most wind lease areas that have had construction activities are in the NY Bight
+- Construction timelines are uncertain
+
+:::
+
+::::

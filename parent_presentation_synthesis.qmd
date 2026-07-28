@@ -1,0 +1,193 @@
+---
+title: 'State of the Ecosystem <br /> January Synthesis Meeting'
+subtitle: "EDAB/NEFSC <br /> 13-15 January 2025"
+editor: source
+params:
+  region: "Both"
+  council: "MAFMC"
+  fig_caption: "utils/figure_captions_summary.csv"
+format:
+  # This uses the built-in Quarto revealjs format
+  revealjs:
+    theme: ""
+    slide-number: true
+    # auto-stretch: false
+    # Sets the slide aspect ratio
+    # aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
+    width: 1600
+    height: 900
+    margin: 0.05
+    min-scale: 0.2
+    max-scale: 1.0
+    
+    # CSS files for styling
+    css:                         # Equivalent to css: [...]
+      - libs/EDAB_theme_2026.css
+      - libs/cols.css
+      
+    # Syntax highlighting style
+    highlight-style: github      # Equivalent to highlightStyle: githubp (Using Quarto's built-in 'github')
+    
+    # Allows highlighting specific lines in code blocks
+    code-line-numbers: true      # Equivalent to highlightLines: true
+    
+    # Custom JavaScript files (macros) are included in the header
+    include-in-header:
+      - text: |
+          <!-- <link href="libs/EDAB_theme_2026.css" rel="stylesheet" /> -->
+          <script src="libs/macros.js"></script>
+          <script src="libs/cols_macro.js"></script>
+          
+    # --- Mapped from revealjs::revealjs_presentation ---
+    # Controls if resources are embedded or linked
+    embed-resources: false       # Equivalent to self_contained: false
+
+    title-slide-attributes:
+      # Use the path relative to the .qmd file (project root)
+      data-background-image: libs/SOEtitleslide.png
+      data-background-size: 60%
+      data-background-position: left top
+      data-background-class: right-align-title
+    
+    # --- Other important Quarto options ---
+    # This prevents the render process from counting step-by-step reveals as separate slides
+    incremental: false           # Equivalent to countIncrementalSlides: false
+---
+
+# Day 1: Tuesday, 13 January 2025
+
+# Overview of SOE structure (Tuesday, 9:20-9:45)
+
+{{< include child_slides/setup.qmd >}}
+
+{{< include child_slides/synthesis_meeting_intro.qmd >}}
+
+{{< include child_slides/request_memo.qmd >}}
+
+## 2026 Report Timeline
+
+**All participants:**
+
+This meeting, Jan 13-15
+
+Group edit, Jan 16-26
+
+**Lead editors:**
+
+Internal review, Feb 2-13
+
+Document public: March
+
+SSC and Council presentations: March-June
+
+NOAA IR: May
+
+# Review of Management Applications (Tuesday, 9:45-10:15)
+
+# Review of 2025 Summary results (Tuesday, 10:15-10:30)
+
+These are the basis of 2026--discuss what to change
+
+{{< include child_slides/highlights_midatlantic_2025.qmd >}}
+
+{{< include child_slides/highlights_newengland_2025.qmd >}}
+
+{{< include child_slides/shared_summary_highlights_2025.qmd >}}
+
+# Break! 10:30-10:45
+
+# Overview of new and revised indicators (Tuesday, 10:45-12)
+
+# Lunch! 12-1:30
+
+# Performance Relative to Management Objectives (Tuesday, 1:30-3:30)
+
+{{< include child_slides/seafood_production_midatlantic.qmd >}}
+
+{{< include child_slides/seafood_production_newengland.qmd >}}
+
+{{< include child_slides/commercial_profits_midatlantic.qmd >}}
+
+{{< include child_slides/commercial_profits_newengland.qmd >}}
+
+{{< include child_slides/rec_opp_midatlantic.qmd >}}
+
+{{< include child_slides/rec_opp_newengland.qmd >}}
+
+{{< include child_slides/fishery_stability_midatlantic.qmd >}}
+
+{{< include child_slides/fishery_stability_newengland.qmd >}}
+
+## New indicator: Crew survey
+
+How could crew survey information be integrated into fisheries stability analyses?
+
+{{< include child_slides/ecosystem_stability_midatlantic.qmd >}}
+
+{{< include child_slides/ecosystem_stability_newengland.qmd >}}
+
+{{< include child_slides/social_midatlantic.qmd >}}
+
+{{< include child_slides/social_newengland.qmd >}}
+
+{{< include child_slides/protected_species.qmd >}}
+
+# Break! 3:30-3:45
+
+# Develop summary page 1 -- summary tables (Tuesday, 3:45-4:30)
+
+# Wrap up (Tuesday, 4:30-4:45)
+
+{{< include child_slides/closing_slides.qmd >}}
+
+# Day 2: Wednesday, 14 January 2025
+
+# Risks to meeting fisheries management objectives (Wednesday, 9:15-11:45 with break at 10:45)
+
+{{< include child_slides/risks_spatial_seasonal.qmd >}}
+
+<!-- {{< include child_slides/risks_spatial_newengland.qmd >}} -->
+
+{{< include child_slides/risks_spatial_seasonal2.qmd >}}
+
+{{< include child_slides/risks_seasonal_midatlantic.qmd >}}
+
+{{< include child_slides/risks_seasonal_newengland.qmd >}}
+
+{{< include child_slides/risks_wind_map.qmd >}}
+
+{{< include child_slides/risks_wind_midatlantic.qmd >}}
+
+{{< include child_slides/risks_wind_newengland.qmd >}}
+
+{{< include child_slides/risks_wind.qmd >}}
+
+# Break! 10:45-11:00
+
+# Risk to setting catch limits (Wednesday, 11:00-11:45)
+
+{{< include child_slides/risks_catch_midatlantic.qmd >}}
+
+{{< include child_slides/risks_catch_newengland.qmd >}}
+
+{{< include child_slides/risks_catch_newzoo.qmd >}}
+
+{{< include child_slides/risks_catch.qmd >}}
+
+# Discussion of Forecast Summary Page (Wednesday, 11:45-12:15)
+
+# Review of Management Applications -- East Coast Coordination Group (Wednesday, 12:15-12:30)
+
+# Lunch! 12:30-1:30
+
+# Develop summary page 2 -- risk summary bullets (Wednesday, 1:30-2:15)
+
+# Develop summary page 2 -- forecast infographic summary bullets (Wednesday, 2:15-3:00)
+
+# Break! 3:00-3:15
+
+# Develop summary page 3 -- highlights (Wednesday, 3:15-4:30)
+
+# Wrap up (Wednesday, 4:30-4:45)
+
+{{< include child_slides/closing_slides.qmd >}}

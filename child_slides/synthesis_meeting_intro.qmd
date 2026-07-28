@@ -1,0 +1,251 @@
+## State of the Ecosystem (SOE) reporting
+### Improving ecosystem information and synthesis for fishery managers
+
+:::: {.soe-50-50-slide}
+
+::: {}
+
+- Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
+    + Contextual information
+    + Report evolving since 2016
+    + Fishery-relevant subset of full Ecosystem Status Reports
+
+- Open science emphasis `r Cite(myBib, "bastille_improving_2020")`
+
+- Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, "muffley_there_2020")`
+
+:::
+
+::: {.soe-50-column}
+
+```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks", out.width = "70%"}
+knitr::include_graphics(here::here("images/iea-loop.png"))
+```
+*The IEA Loop[^1]*
+
+[^1]: https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach
+
+:::
+
+::::
+
+## Ecosystem reporting at different levels of organization
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+**The SOE provides information at the ecosystem level**
+
+```{r, fig.alt = "NE shelf map", out.width = "80%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/MAFMC_NE_SHELF_MAP.png")
+```
+
+:::
+
+::: {.soe-50-column}
+
+**Ecosystem and Socioeconomic Profiles (ESPs) provide information at the stock level**
+
+Ecosystem and Socioeconomic Profiles support fisheries science and management by providing additional context that can help inform the development of the stock assessment model, as well as by communicating contextual information to fisheries managers.
+
+::: {layout-nrow=1}
+
+```{r, out.width = "100%"}
+knitr::include_graphics(here::here("images/bsb_report_card_Page_1.png"))
+```
+
+
+```{r, out.width = "100%"}
+knitr::include_graphics(here::here("images/bsb_report_card_Page_2.png"))
+```
+
+:::
+
+:::
+
+::::
+
+## State of the Ecosystem: Maintain 2025 structure for 2026
+
+### 2026 Report Structure
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+1. Graphical summary
+    + Page 1 report card re: performance metrics &rarr;
+    + Page 2 risk summary bullets
+    + Page 3 2025 snapshot
+1. Performance relative to management objectives
+    - *What* does the indicator say--up, down, stable?
+    - *Why* do we think it is changing: explore drivers
+1. Risks to meeting management objectives
+    - Same *What* and *Why* as Performance Section
+1. 2025 Highlights
+
+::: {layout-nrow=1}
+
+```{r, fig.alt = "State of the Ecosystem page 1 summary table", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-performance.png")
+```
+
+```{r, fig.alt = "State of the Ecosystem page 2 risk bullets", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png")
+```
+
+```{r, fig.alt = "State of the Ecosystem page 3 highlights", out.width = "100%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-highlights.png")
+```
+
+:::
+
+:::
+
+::: {.soe-50-column}
+
+```{r management-objectives}
+perf_metrics <- tibble::tibble(
+  "Objective Categories" = c("Seafood Production",
+                             "Profits","Recreation",
+                             "Stability","Social & Cultural",
+                             "Protected Species"),
+  "Indicators reported" = c("Landings; commercial total and by feeding guild; recreational harvest",
+                           "Revenue decomposed to price and volume",
+                           "Angler trips; recreational fleet diversity",
+                           "Diversity indices (fishery and ecosystem)",
+                           "Community engagement/reliance and environmental justice status",
+                           "Bycatch; population (adult and juvenile) numbers, mortalities"),
+  service = "Performance Metrics"
+)
+
+drivers <- tibble::tibble(
+  "Objective Categories" = c("Biomass","Productivity",
+                             "Trophic structure","Habitat"),
+  "Indicators reported" = c("Biomass or abundance by feeding guild from surveys",
+                           "Condition and recruitment of managed species, primary productivity",
+                           "Relative biomass of feeding guilds, zooplankton",
+                           "Estuarine and offshore habitat conditions"),
+  service = "Drivers of Performance"
+)
+
+risks <- tibble::tibble("Objective Categories" = c(
+  "Risks to Managing Spatially",
+  "Risks to Managing Seasonally",
+  "Risks to Setting Catch Limits",
+  "Other Ocean Uses"
+),
+"Indicators reported" = c(
+  "Fish and cetacean distribution shifts",
+  "Spawning and migration timing",
+  "Fish condition and recruitment",
+  "Fishery revenue and landings from wind lease areas by species and port"
+),
+service = "Risks to Meeting Objectives"
+)
+
+drivers_risk <- tibble::tibble("Objective Categories" = c(
+  "Habitat and prey quality",
+  "Phenology",
+  "Drivers of productivity",
+  "Other Ocean Uses"
+),
+"Indicators reported" = c(
+  "Benthic and pelagic forage distribution; ocean temperature; changes in currents and cold pool",
+  "Habitat timing: length of ocean summer, cold pool seasonal persistence",
+  "Benthic and pelagic forage quality and abundance; ocean temperature and acidification",
+  "Wind development map; protected species presence and hotspots"
+),
+service = "Drivers of Risks"
+)
+
+mng_obj <- rbind(perf_metrics, drivers, risks, drivers_risk)
+
+flextable::as_grouped_data(mng_obj, groups = "service") |> 
+  flextable::as_flextable(hide_grouplabel=TRUE) |>
+  flextable::align(i = ~ !is.na(service), align = "left") |> 
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) |>
+  flextable::set_header_labels(Objective.Categories = "Objective categories",
+                               Indicators.reported = "Indicators reported") |>
+  
+  flextable::set_caption("Ecosystem-scale fishery management objectives") |>
+  flextable::fontsize(size = 12,
+                      part = "all") |>
+  flextable::autofit() 
+```
+
+:::
+
+::::
+
+
+## Ecosystem synthesis framework
+
+Characterizing ecosystem change for fishery management -- how do we synthesize multiple indicators to explain ecosystem dynamics?
+
+* Societal, biological, physical and chemical factors comprise the **multiple system drivers** that influence marine ecosystems through a variety of different pathways. 
+* Changes in the multiple drivers can lead to **regime shifts** — large, abrupt and persistent changes in the structure and function of an ecosystem. While we don't yet incorporate statistical tests for regime shifts, we qualitatively assess whether multiple indicators suggest a regime shift may have occurred.
+* Regime shifts and changes in how the multiple system drivers interact can result in **ecosystem reorganization** as species and humans respond and adapt to the new environment. We qualitatively consider whether ecosystem reorganization has occured by assessing changes in species distributions, community composition, food web structure, and fishery dynamics.
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r, fig.alt = ""}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//SystemDrivers_v5.jpg")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r, fig.alt = ""}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//RegimeShift_V5.jpg")
+```
+
+:::
+
+::::
+
+## State of the Ecosystem report scale and figures
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r, fig.alt = "NEFSC survey strata used to calculate Ecosystem Production Unit biomass", out.width = "80%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//EPU_Designations_Map.jpg")
+```
+
+A [glossary of terms](https://noaa-edab.github.io/tech-doc/glossary.html) (2021 Memo 5), detailed [technical methods documentation](https://NOAA-EDAB.github.io/tech-doc) and [indicator data](https://github.com/NOAA-EDAB/ecodata) are available online.  
+:::
+
+::: {.soe-50-column}
+
+Key to figures
+
+```{r , eval = FALSE}
+a <- ecodata::plot_species_dist(varName = "along", n=10) + ggplot2::coord_cartesian(expand = FALSE)
+b <- ecodata::plot_species_dist(varName = "depth", n=10) + ggplot2::coord_cartesian(expand = FALSE) 
+
+ggpubr::ggarrange(a, b, ncol = 2)
+```  
+
+```{r}
+knitr::include_graphics(here::here("images/plot_key.png"))
+```
+
+Long-term trends assessed only for 30+ years: [more information](https://noaa-edab.github.io/tech-doc/trend-analysis.html)
+
+Short-term trends assessed for last 10 years of data OR a full time series <30 years
+
+<p style="color:#FF8C00;">Orange line = significant increase</p>
+<p style="color:#9932CC;">Purple line = significant decrease</p>
+<p>No color line = not significant or < 30 years</p>
+<p style="background-color:#D3D3D3;">Grey background = last 10 years</p>
+
+:::
+
+::::
+

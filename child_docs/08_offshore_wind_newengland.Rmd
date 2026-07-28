@@ -1,4 +1,4 @@
-```{r, eval = params$id_child_docs, results = "asis"}
+```{r, eval = FALSE, results = "asis"}
 <<child-header>>
 ```
 
@@ -6,26 +6,32 @@
 <<ne-draft>>
 ```
 
-Offshore floating wind is expected to be developed in the GOM. The Bureau of Ocean Energy Management (BOEM) leased four areas within the GOM for commercial development on October 29, 2024 (Fig. \ref{fig:wind-dev-cumul}). BOEM also approved  the state of Maine’s application to lease 9,700 acres (15 square miles) for the first floating offshore wind research site in federal waters of the GOM, which could have up to 12 turbines. 
+With the first offshore wind energy projects now under construction and operation, all indicator analyses in this section follow a different reporting format than in previous years. Where previous years reported data for all lease areas, this year we investigate impacts of the six commercial-scale projects currently under construction or operation (i.e., Active Projects: South Fork Wind Farm, Revolution Wind, Sunrise Wind, Empire Wind 1, Vineyard Wind 1, and CVOW-Commercial). 
 
-NEFSC has partnered with the Responsible Ocean Development Alliance (RODA) and the University of Rhode Island to conduct an Integrated Ecosystem Assessment (IEA) of the interactions between offshore wind, fisheries, and the environment in the GOM. The IEA report will be similar to the State of the Ecosystem, but fully dedicated to impacts of offshore wind. Data from the IEA will be suitable for inclusion in the environmental impact statements for any projects in the GOM.
+Offshore wind indicators are based on federal logbook data and do not include all data for all fisheries; therefore a complete evaluation of potential offshore wind energy development impacts would need to be supplemented by other data sources. For further information on the utility of the data, see the [socioeconomic impacts of offshore wind development data reports page](https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development).
 
-Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) from trips in the current offshore wind lease areas represents 2-15% of the total annual revenue for fisheries managed by the NEFMC from 2008-2023 (Table \ref{tab:wea-landings-rev-ne}).Fishing revenue affected by offshore wind lease areas varies over time, but has largely declined over time. Maximum annual revenue for the fisheries with the most overlap with wind lease areas peaked at over \$52 million for the sea scallop fishery, \$2.5 million for monkfish, \$1.1 million for haddock, \$943,000 for pollock, \$840,000 for cod, just under \$700,000 for skates and redfish, \$662,000 for silver hake, and nearly \$600,000 for Atlantic herring (Fig. \ref{fig:wea-spp-rev-ne}). The scallop fishery is mainly affected by lease areas in the Mid-Atlantic, as the Northern Area scallop fishery is outside of the GOM lease areas. However, substantial groundfish landings/revenues overlap with the GOM lease areas, as noted above. Individual groundfish species are more affected than others, with up to 15% of historical annual revenues overlapping with existing lease areas for species such as yellowtail flounder (15%), pollock (11%) and 9% for redfish and white hake (Table \ref{tab:wea-landings-rev-ne}). Future fishery resource overlap with wind leases, especially scallops, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.
-
-`r wind_indicator_paragraph`
+Based on federal vessel logbook data, [commercial fishery revenue](https://noaa-edab.github.io/catalog/wind_revenue.html) from trips within Active Projects varied annually from 2008-2024. Maximum annual revenue for the fisheries with the most overlap with Active Projects peaked at over \$8.7 million for the sea scallop fishery, \$1.1 million for monkfish, \$477,000 for skates, \$377,000 for yellowtail flounder, and $344,000 for Atlantic herring (Fig. 92). Individual groundfish species are more affected on a percentage basis, with up to 13% of historical annual revenues overlapping with Active Projects for species such as little skate (13%), barndoor skate (11%), yellowtail flounder (10%), and 6% each for red hake, clearnose skate, and winter skate, respectively (Table \ref{tab:wea-landings-rev-ne}). Future fishery resource overlap with wind leases, especially scallops, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.
 
 ```{r wea-spp-rev-ne, fig.cap=return_caption(chunk_name = "wea-spp-rev", region = "NewEngland"),  fig.width=6, fig.asp=.6}
 return_plot("wea-spp-rev", region = "NewEngland")
 ```
 
 ```{r wea-landings-rev-ne, ft.arraystretch = 1}
+spp.mark = c('Barndoor Skate','Bluefish','Smooth Skate','Windowpane Flounder','Atlantic Cod','Conch','Offshore Hake','Cobia','Haddock','Atlantic Croaker','Witch Flounder')
+
 create_wea_landings_rev_table(council = "NEFMC") |>
+  dplyr::arrange(desc(`Maximum Percent Total Annual Regional Species Revenue`)) |> 
+  dplyr::slice_head(n = 10) |>
+  dplyr::mutate(
+    `NEFMC, MAFMC, and ASMFC Managed Species` = dplyr::case_when(
+      `NEFMC, MAFMC, and ASMFC Managed Species` %in% spp.mark ~ paste0(`NEFMC, MAFMC, and ASMFC Managed Species`, "*"),
+      TRUE ~ `NEFMC, MAFMC, and ASMFC Managed Species`
+    )
+  ) |>
   flextable::flextable() %>%
-  flextable::set_caption("New England managed species Landings and Revenue from Wind Energy Areas. Skates includes barndoor, winter, clearnose, smooth, little, and general skates reported in logbooks. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species..") %>%
+  flextable::set_caption("Top 10 New England managed species Landings and Revenue from Wind Energy Areas. Skates includes barndoor, winter, clearnose, smooth, little, and general skates reported in logbooks. *Less than a maximum of 50,000 lb was reported landed annually in wind energy lease areas for these species..") %>%
   flextable::width(width = c(2,2,2))
 ```
-
-`r wind_interactions`
 
 `r socio_intro`
 
@@ -33,17 +39,19 @@ create_wea_landings_rev_table(council = "NEFMC") |>
 return_plot("wea-port-rev", region = "NewEngland")
 ```
 
-For example, Little Compton, RI had a minimum of 17% and maximum of 32% overlap of wind energy revenue to the total port revenue between 2008-2023 (Fig. \ref{fig:wea-port-rev}). BOEM reports that cumulative offshore wind development (if all proposed projects are developed) could have moderate impacts on low-income members of vulnerable communities who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation, and increased vessel traffic as well as existing vulnerabilities of low-income workers to economic impacts.
+\newpage
 
-Top fishing communities with high [socio-demographic concerns](https://noaa-edab.github.io/catalog/engagement.html) such as New Bedford, MA and New London, CT should be considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of underserved communities. These two ports are also undergoing significant changes to support offshore wind development port infrastructure needs. Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
-
-Some ports in the Mid-Atlantic land New England-managed species from wind areas as well. For the maximum percent value reported in each Mid-Atlantic port, the majority (at least 50% based on both value and pounds) of those landings were New England managed species within wind areas for nine communities (Fig. \ref{fig:wind-rev}).
-
+Based on federal vessel logbook data, Little Compton, RI (13% average and 24% maximum) and Westport, MA (6% average and 12% maximum) have the highest potential revenue loss from Active Projects based on 2008-2024 total port fisheries revenue, with all other New England communities having less than 5% (Fig. \ref{fig:wea-port-rev}). Additional fishing revenue may be lost as more areas historically used for fishing are developed for offshore wind energy. In seven Mid-Atlantic ports, New England managed species account for at least 50% of landings from the Active Project areas by value or weight (Fig. \ref{fig:wind-rev}). Furthermore, impacts of offshore wind development may unevenly affect individual operators, with some permit holders deriving a much higher proportion of revenue from wind areas than the port-based mean.
 
 ```{r wind-rev, fig.cap=return_caption(chunk_name = "wind-rev", region = "NewEngland"), fig.width=6.5, fig.asp=.35, fig.align='left'}
 return_plot("wind-rev", region = "NewEngland")
 ```
 
-```{r, eval = params$id_child_docs, results = "asis"}
+
+BOEM reports that cumulative offshore wind development (if all proposed projects are developed) could have moderate impacts on low-income members of vulnerable communities who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation, and increased vessel traffic as well as existing vulnerabilities of low-income workers to economic impacts.
+
+Top fishing communities with high [socio-demographic](https://noaa-edab.github.io/catalog/engagement.html) and/or gentrification concerns such as Little Compton, RI, New Bedford, MA and New London, CT should be recognized as having potential additional vulnerability of the Active Projects and considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of these communities. In addition to fisheries landing overlaps,  New Bedford, MA and New London, CT also support significant offshore wind port infrastructure needs for the Active Projects. Historically, the introduction of new industries can trigger industrial and socioeconomic gentrification of fishing ports. Competition for port space and potential pivoting of space use for offshore wind development should be monitored closely to ensure fishing communities are not adversely impacted. Additionally, offshore wind could increase recreational fishing opportunities at the turbines, potentially creating a demand for additional tourism, recreational fishing and boating port space in communities already balancing these uses with commercial fishing infrastructure, for example Point Judith, RI, and Newport, RI, and Gloucester, MA. Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
+
+```{r, eval = FALSE, results = "asis"}
 <<child-footer>>
 ```

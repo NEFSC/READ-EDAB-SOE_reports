@@ -21,14 +21,14 @@ rmarkdown::render(
     number_sections = FALSE
   )
 )
-difftime(Sys.time(), now) 
+difftime(Sys.time(), now)
 
 
 ## mid report (pdf) ----
 now <- Sys.time()
 rmarkdown::render(
   input = here::here("parent_report.Rmd"),
-  output_file = "midatlantic.pdf",
+  output_file = "SOE2026_MAFMC_IR_Final.pdf",
   params = list(
     region = "MidAtlantic",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
@@ -48,11 +48,11 @@ rmarkdown::render(
 )
 difftime(Sys.time(), now)
 
-## NE report (pdf) ----
+## NE report (pdf) ---- 
 now <- Sys.time()
 rmarkdown::render(
   here::here("parent_report.Rmd"),
-  output_file = here::here("newengland.pdf"),
+  output_file = here::here("SOE2026_NEFMC_IR_Final.pdf"),
   params = list(
     region = "NewEngland",
     fig_caption = here::here("utils/figure_captions_summary.csv"),

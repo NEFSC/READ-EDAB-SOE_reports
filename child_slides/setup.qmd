@@ -56,13 +56,13 @@ source(here::here("utils/functions.R"))
 
 ```{r, load_refs, include=FALSE, cache=FALSE}
 library(RefManageR)
-BibOptions(check.entries = FALSE,
+RefManageR::BibOptions(check.entries = FALSE,
            bib.style = "authoryear",
            cite.style = "authoryear",
            longnamesfirst = FALSE,
            max.names = 1,
            style = "markdown")
-myBib <- ReadBib(here::here("utils/MidSOE.bib"), check = FALSE)
+myBib <- RefManageR::ReadBib(here::here("utils/MidSOE.bib"), check = FALSE)
 ```
 
 ```{r icons}
