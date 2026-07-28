@@ -44,7 +44,7 @@ format:
           
     # --- Mapped from revealjs::revealjs_presentation ---
     # Controls if resources are embedded or linked
-    embed-resources: false       # Equivalent to self_contained: false
+    embed-resources: true        # create self-contained html for archiving
 
     title-slide-attributes:
       # Use the path relative to the .qmd file (project root)
