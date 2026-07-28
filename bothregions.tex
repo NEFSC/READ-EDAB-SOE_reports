@@ -51,17 +51,15 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi%
-}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 % Set default figure placement to htbp
+\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -152,6 +150,9 @@
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{wrapfig}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -391,7 +392,7 @@ This year, we present updated indicators for total \href{https://noaa-edab.githu
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,alt={This is sample alt text}]{images/MidAtlantic/total_landings_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth,alt={This is sample alt text}]{images/MidAtlantic/slide_total_landings_MidAtlantic_2025-12-10} 
 
 }
 
@@ -402,7 +403,7 @@ Commercial landings by guild include all species and all uses, and are reported 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/commercial_landings_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/commercial_landings_MidAtlantic_2025-11-03} 
 
 }
 
@@ -413,7 +414,7 @@ Commercial landings by guild include all species and all uses, and are reported 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/climatevul_land_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/climatevul_land_MidAtlantic_2025-11-03} 
 
 }
 
@@ -424,7 +425,7 @@ Although total \href{https://noaa-edab.github.io/catalog/recdat.html}{recreation
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/rec_landings_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/rec_landings_MidAtlantic_2025-09-24} 
 
 }
 
@@ -435,11 +436,11 @@ Although total \href{https://noaa-edab.github.io/catalog/recdat.html}{recreation
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/rec_hms_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/rec_hms_MidAtlantic_2025-12-19} 
 
 }
 
-\caption{Recreational shark landings from Marine Recreational Information Program (left) and Large Pelagics Survey (right) with declining trends (purple).}\label{fig:rec-hms}
+\caption{Recreational shark landings from Marine Recreational Information Program (top) and Large Pelagics Survey (bottom) with declining trends (purple).}\label{fig:rec-hms}
 \end{figure}
 
 Aquaculture production is not yet included in total seafood landings. Available \href{https://noaa-edab.github.io/catalog/aquaculture.html}{aquaculture production} of oysters for a subset of Mid-Atlantic states indicates a decline in recent years.
@@ -454,7 +455,7 @@ Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{mana
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/stock_status_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_stock_status_MidAtlantic_2025-12-19} 
 
 }
 
@@ -543,18 +544,18 @@ Stock status affects catch limits established by the Council, which in turn may 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/abcacl_stacked_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/abcacl_stacked_MidAtlantic_2025-12-12} 
 
 }
 
-\caption{Sum of catch limits across all MAFMC managed commercial (C) and recreational (R) fisheries.}\label{fig:abcacl-stacked}
+\caption{Top: Sum of catch limits across all MAFMC managed species. Bottom: Catch limits by species for MAFMC commercial (C) and recreational (R) fisheries.}\label{fig:abcacl-stacked}
 \end{figure}
 
 Nevertheless, the percentage caught (landings and discards) for each stock's ABC/ACL suggests that these catch limits are not generally constraining as most species are well below the 1/1 ratio (Fig. \ref{fig:abcacl-catch}). Therefore, stock status and associated management constraints are unlikely to be driving decreased landings for the majority of species.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/abcacl_catch_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/abcacl_catch_MidAtlantic_2025-09-24} 
 
 }
 
@@ -567,7 +568,7 @@ Although \href{https://noaa-edab.github.io/catalog/aggregate_biomass.html}{aggre
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2025-12-22} 
 
 }
 
@@ -606,7 +607,7 @@ This year, we present updated indicators for total \href{https://noaa-edab.githu
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/total_landings_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/slide_total_landings_NewEngland_2025-12-16} 
 
 }
 
@@ -619,7 +620,7 @@ Commercial landings by guild include all species and all uses, and are reported 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/commercial_landings_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/commercial_landings_NewEngland_2025-10-30} 
 
 }
 
@@ -630,7 +631,7 @@ Commercial landings by guild include all species and all uses, and are reported 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/climatevul_land_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/climatevul_land_NewEngland_2025-10-30} 
 
 }
 
@@ -641,7 +642,7 @@ Overall, \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational har
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/rec_landings_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/rec_landings_NewEngland_2025-09-24} 
 
 }
 
@@ -650,11 +651,11 @@ Overall, \href{https://noaa-edab.github.io/catalog/recdat.html}{recreational har
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/rec_hms_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/rec_hms_NewEngland_2025-12-19} 
 
 }
 
-\caption{Recreational shark landings from Marine Recreational Information Program (left) and Large Pelagics Survey (right)}\label{fig:rec-hms-64}
+\caption{Recreational shark landings from Marine Recreational Information Program (top) and Large Pelagics Survey (bottom)}\label{fig:rec-hms-64}
 \end{figure}
 
 \subsubsection{Implications}\label{implications-1}
@@ -667,7 +668,7 @@ Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{mana
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/stock_status_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/slide_stock_status_NewEngland_2025-12-19} 
 
 }
 
@@ -848,7 +849,7 @@ Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{mana
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/aggregate_biomass_gb_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/aggregate_biomass_gb_NewEngland_2025-12-22} 
 
 }
 
@@ -857,7 +858,7 @@ Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{mana
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/aggregate_biomass_gom_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/aggregate_biomass_gom_NewEngland_2025-12-22} 
 
 }
 
@@ -872,7 +873,7 @@ The decline in recreational seafood harvest stems from multiple drivers. Some of
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/mass_inshore_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/mass_inshore_NewEngland_2025-10-30} 
 
 }
 
@@ -905,7 +906,7 @@ Total \href{https://noaa-edab.github.io/catalog/comdat.html}{commercial revenue}
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/comm_revenue_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/comm_revenue_MidAtlantic_2025-11-03} 
 
 }
 
@@ -918,16 +919,16 @@ In the Mid-Atlantic region revenues were above the 1982 baseline for all years i
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/bennet_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/bennet_MidAtlantic_2025-12-19} 
 
 }
 
-\caption{Revenue change from 1982 values in 2023 dollars (black); Price (PI), and Volume Indicators (VI) for total commercial landings in the Mid-Atlantic Bight.}\label{fig:bennet}
+\caption{Revenue change from 1982 values in 2023 dollars (black); Price (blue), and Volume Indicators (green) for total commercial landings in the Mid-Atlantic Bight.}\label{fig:bennet}
 \end{figure}
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/bennet_all_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/bennet_all_MidAtlantic_2025-11-21} 
 
 }
 
@@ -938,7 +939,7 @@ For ports combined across Mid-Atlantic states, \href{https://noaa-edab.github.io
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/climatevul_rev_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/climatevul_rev_MidAtlantic_2025-11-03} 
 
 }
 
@@ -967,7 +968,7 @@ Total \href{https://noaa-edab.github.io/catalog/comdat.html}{commercial revenues
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/comm_revenue_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/comm_revenue_NewEngland_2025-10-30} 
 
 }
 
@@ -980,16 +981,16 @@ In the GB region, revenues have been consistently lower than the 1982 baseline t
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/bennet_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/bennet_NewEngland_2025-12-19} 
 
 }
 
-\caption{Revenue change from the 1982 baseline in 2023 dollars (black), price, and volume for commercial landings from Georges Bank (GB: left) and the Gulf of Maine (GOM: right)}\label{fig:bennet-ne}
+\caption{Revenue change from the 1982 baseline in 2023 dollars (black), price, and volume for commercial landings from Georges Bank (GB: top) and the Gulf of Maine (GOM: bottom)}\label{fig:bennet-ne}
 \end{figure}
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/bennet_all_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/bennet_all_NewEngland_2025-12-19} 
 
 }
 
@@ -1000,7 +1001,7 @@ For New England, \href{https://noaa-edab.github.io/catalog/community_climate_vul
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/climatevul_rev_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/climatevul_rev_NewEngland_2025-10-30} 
 
 }
 
@@ -1023,7 +1024,7 @@ The continued dependence on lobster in the GOM and sea scallops on GB is affecte
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/rec_op_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/rec_op_MidAtlantic_2025-09-29} 
 
 }
 
@@ -1032,7 +1033,7 @@ The continued dependence on lobster in the GOM and sea scallops on GB is affecte
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/rec_div_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/rec_div_MidAtlantic_2025-11-03} 
 
 }
 
@@ -1057,7 +1058,7 @@ Changes in recreational fleet diversity can be considered when managers seek opt
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/rec_op_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/rec_op_NewEngland_2025-09-29} 
 
 }
 
@@ -1066,7 +1067,7 @@ Changes in recreational fleet diversity can be considered when managers seek opt
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/rec_div_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/rec_div_NewEngland_2025-10-30} 
 
 }
 
@@ -1093,18 +1094,18 @@ Several \href{https://noaa-edab.github.io/catalog/commercial_div.html}{diversity
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/comm_div_fleet_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/comm_div_fleet_MidAtlantic_2025-12-22} 
 
 }
 
-\caption{Commercial fleet count (left) and fleet diversity in revenue (right) in the Mid-Atlantic (black) with significant decline in fleet count (purple line).}\label{fig:comm-div-fleet}
+\caption{Commercial fleet count (top) and fleet diversity in revenue (bottom) in the Mid-Atlantic (black) with significant decline in fleet count (purple line).}\label{fig:comm-div-fleet}
 \end{figure}
 
 This indicates different commercial fleet composition but similar diversity in species targeting opportunities over time, for those fleets continuing to fish (Fig. \ref{fig:commercial-div-species-div}). Of note is that the current lack of vessel data available for surf clam and ocean quahog prior to 2003 precludes the assessment of longer term dynamics with these indicators.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/commercial_div_species_div_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/commercial_div_species_div_MidAtlantic_2025-11-03} 
 
 }
 
@@ -1115,7 +1116,7 @@ As noted \hyperref[recreational-opportunities]{above}, \href{https://noaa-edab.g
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/recdat_div_catch_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/recdat_div_catch_MidAtlantic_2025-09-29} 
 
 }
 
@@ -1128,7 +1129,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/totpp_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_totpp_MidAtlantic_2025-12-10} 
 
 }
 
@@ -1139,7 +1140,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/zoo_diversity_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_zoo_diversity_MidAtlantic_2025-12-10} 
 
 }
 
@@ -1148,7 +1149,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/exp_n_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/exp_n_MidAtlantic_2025-12-19} 
 
 }
 
@@ -1159,7 +1160,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/traits_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_traits_MidAtlantic_2025-12-16} 
 
 }
 
@@ -1192,7 +1193,7 @@ While there are many potential metrics of stability, we use diversity indices to
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/commercial_div_species_div_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/commercial_div_species_div_NewEngland_2025-10-30} 
 
 }
 
@@ -1203,7 +1204,7 @@ As noted above, \href{https://noaa-edab.github.io/catalog/recdat.html}{recreatio
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/recdat_div_catch_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/recdat_div_catch_NewEngland_2025-09-29} 
 
 }
 
@@ -1216,7 +1217,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/totpp_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/slide_totpp_NewEngland_2025-12-16} 
 
 }
 
@@ -1227,7 +1228,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/zoo_diversity_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/slide_zoo_diversity_NewEngland_2025-12-16} 
 
 }
 
@@ -1236,7 +1237,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/exp_n_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/exp_n_NewEngland_2025-10-30} 
 
 }
 
@@ -1247,7 +1248,7 @@ Ecological diversity indices show mixed trends. Total annual \href{https://noaa-
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/traits_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/slide_traits_NewEngland_2025-12-18} 
 
 }
 
@@ -1282,7 +1283,7 @@ Manteo, Vandemere, and Hobuken, NC are no longer listed as top ten recreational 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/commercial_engagement_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/commercial_engagement_MidAtlantic_2025-12-19} 
 
 }
 
@@ -1443,7 +1444,7 @@ Several communities ranked in the top communities for both commercial and recrea
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/recreational_engagement_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/recreational_engagement_MidAtlantic_2025-12-19} 
 
 }
 
@@ -1624,7 +1625,7 @@ The \href{https://noaa-edab.github.io/catalog/community_climate_vulnerability.ht
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/commvulex_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/commvulex_MidAtlantic_2025-11-04} 
 
 }
 
@@ -1651,7 +1652,7 @@ In 2022, New Bedford, MA stands out as having a particularly high engagement in 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/commercial_engagement_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/commercial_engagement_NewEngland_2025-12-19} 
 
 }
 
@@ -1813,7 +1814,7 @@ Narragansett/Point Judith, RI; Newington, NH; and Gloucester, MA ranked as top c
 \newpage
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/recreational_engagement_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/recreational_engagement_NewEngland_2025-12-19} 
 
 }
 
@@ -1994,7 +1995,7 @@ The \href{https://noaa-edab.github.io/catalog/community_climate_vulnerability.ht
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/commvulex_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/commvulex_NewEngland_2025-10-31} 
 
 }
 
@@ -2017,7 +2018,7 @@ Average indices for both \href{https://noaa-edab.github.io/catalog/harborporpois
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/harborporpoise_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/harborporpoise_BothReports_2025-12-19} 
 
 }
 
@@ -2028,7 +2029,7 @@ The annual estimate for gray seal bycatch, most of which occurs in New England, 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/grayseal_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/grayseal_BothReports_2025-12-19} 
 
 }
 
@@ -2039,7 +2040,7 @@ The \href{https://noaa-edab.github.io/catalog/narw.html}{North Atlantic right wh
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/narw_abundance_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/narw_abundance_BothReports_2025-10-29} 
 
 }
 
@@ -2050,7 +2051,7 @@ North Atlantic right whale \href{https://noaa-edab.github.io/catalog/narw.html}{
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/narw_calves_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/narw_calves_BothReports_2025-10-29} 
 
 }
 
@@ -2089,7 +2090,7 @@ As noted in the \hyperref[implications]{Seafood Production Implications section 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/species_dist_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_species_dist_BothReports_2025-12-17} 
 
 }
 
@@ -2098,7 +2099,7 @@ As noted in the \hyperref[implications]{Seafood Production Implications section 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/cetacean_dist_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/cetacean_dist_BothReports_2025-10-29} 
 
 }
 
@@ -2111,29 +2112,29 @@ Mobile populations shift distributions to maintain suitable temperature and prey
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/forage_dist_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/forage_dist_BothReports_2025-10-29} 
 
 }
 
-\caption{Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity.}\label{fig:forageshifts}
+\caption{Eastward (top) and northward (bottom) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity.}\label{fig:forageshifts}
 \end{figure}
 
 In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macrobenthos} center of gravity has shifted westward (Fig. \ref{fig:macrobenthosshifts}). Macrobenthos are small bottom-dwelling invertebrates including polychaete worms, small crustaceans, bivalves (non-commercial), gastropods, nemerteans, tunicates, cnidarians, brittle stars, sea cucumbers, and sand dollars, and are prey for many managed species. \href{https://noaa-edab.github.io/catalog/zooplankton_index.html\#key-results-and-visualizations-4}{Large copepods} have a similar pattern to macrobenthos, trending westward in fall.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/macrobenthos_dist_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/macrobenthos_dist_BothReports_2025-10-29} 
 
 }
 
-\caption{Eastward (left) and northward (right) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf}\label{fig:macrobenthosshifts}
+\caption{Eastward (top) and northward (bottom) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf}\label{fig:macrobenthosshifts}
 \end{figure}
 
 Ocean temperatures influence the distribution, seasonal timing, and productivity of managed species (see sections below). The Northeast US shelf, including the Mid-Atlantic, has experienced a continued warming trend for both the \href{https://noaa-edab.github.io/catalog/long_term_sst.html}{long term annual sea surface} (Fig. \ref{fig:long-term-sst}) and \href{https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html}{seasonal surface} and \href{https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html}{bottom temperature}. However, 2024 surface and bottom temperatures were near normal to cooler than normal conditions in all seasons in the MAB (see also the \hyperref[highlights]{2024 Highlights section}).
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/long_term_sst_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/long_term_sst_BothReports_2025-09-29} 
 
 }
 
@@ -2144,7 +2145,7 @@ Species suitable habitat can expand or contract when changes in temperature and 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/west_gsi_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_west_gsi_BothReports_2025-12-15} 
 
 }
 
@@ -2155,11 +2156,11 @@ Changes in ocean temperature and circulation alter habitat features such as the 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/cold_pool_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/cold_pool_BothReports_2025-09-29} 
 
 }
 
-\caption{Seasonal cold pool mean temperature (left) and spatial extent index (right), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple).}\label{fig:cold-pool-size}
+\caption{Seasonal cold pool mean temperature (top) and spatial extent index (bottom), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple).}\label{fig:cold-pool-size}
 \end{figure}
 
 \paragraph{Future Considerations}\label{future-considerations}
@@ -2180,7 +2181,7 @@ The effectiveness of seasonal management actions (fishing seasons or area openin
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/spawn_timing_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_spawn_timing_BothReports_2025-12-17} 
 
 }
 
@@ -2199,7 +2200,7 @@ Along with the overall warming trends in {[}the Mid-Atlantic Bight{]} \emph{or} 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/transition_date_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_transition_date_MidAtlantic_2025-12-10} 
 
 }
 
@@ -2208,7 +2209,7 @@ Along with the overall warming trends in {[}the Mid-Atlantic Bight{]} \emph{or} 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/transition_date_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/slide_transition_date_NewEngland_2025-12-16} 
 
 }
 
@@ -2221,7 +2222,7 @@ As noted above, the Middle Atlantic \href{https://noaa-edab.github.io/catalog/co
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/cold_pool_time_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/cold_pool_time_BothReports_2025-09-29} 
 
 }
 
@@ -2232,7 +2233,7 @@ The seasonal timing of Mid-Atlantic \href{https://noaa-edab.github.io/catalog/ch
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/monthly_chl_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/monthly_chl_MidAtlantic_2025-11-04} 
 
 }
 
@@ -2247,7 +2248,7 @@ The Middle Atlantic Bight \href{https://noaa-edab.github.io/catalog/cold_pool.ht
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/cold_pool_time_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/cold_pool_time_BothReports_2025-09-29} 
 
 }
 
@@ -2258,7 +2259,7 @@ The seasonal timing of \href{https://noaa-edab.github.io/catalog/chl_pp.html}{ph
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/monthly_chl_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/monthly_chl_NewEngland_2025-10-31} 
 
 }
 
@@ -2283,18 +2284,18 @@ Indicators of \href{https://noaa-edab.github.io/catalog/productivity_anomaly.htm
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/productivity_anomaly_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/productivity_anomaly_MidAtlantic_2025-12-19} 
 
 }
 
-\caption{Fish productivity measures. Left: Small fish per large fish survey biomass anomaly in the Mid-Atlantic Bight. Right: assessment recruitment per spawning stock biomass anomaly for stocks mainly in the Mid-Atlantic. The summed anomaly across species is shown by the black line, drawn across all years with the same number of stocks analyzed.}\label{fig:productivity-anomaly}
+\caption{Fish productivity measures. Top: assessment recruitment per spawning stock biomass anomaly for stocks mainly in the Mid-Atlantic. The summed anomaly across species is shown by the black line, drawn across all years with the same number of stocks analyzed. Bottom: Small fish per large fish survey biomass anomaly in the Mid-Atlantic Bight. }\label{fig:productivity-anomaly}
 \end{figure}
 
 The health of individual fish (i.e.~fish condition, measured as weight for a given length) can contribute to population productivity through improved growth, reproduction and survival. \href{https://noaa-edab.github.io/catalog/condition.html}{Fish condition} in the MAB was generally good prior to 2000, poor from 2001-2010 (concurrent with declines in productivity, Fig. \ref{fig:productivity-anomaly}), and a mix of good and poor since 2011. In 2024, condition continued to be mixed, with general improvement since a relatively low condition year in 2021 (Fig. \ref{fig:mab-cf}). Preliminary analyses show that changes in temperature, zooplankton, fishing pressure, and population size influence the condition of different fish species.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/condition_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/condition_MidAtlantic_2025-11-18} 
 
 }
 
@@ -2313,18 +2314,18 @@ The \href{https://noaa-edab.github.io/catalog/energy_density.html}{energy conten
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/energy_density_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/energy_density_BothReports_2025-10-31} 
 
 }
 
-\caption{Forage fish energy density (mean and standard deviation) of eight forage species from NEFSC bottom trawl surveys by season and year, compared with 1980s (solid line; Steimle and Terranove 1985) and 1990s (dashed line; Lawson et al. 1998) values.}\label{fig:energy-density}
+\caption{Energy density (mean and standard deviation) of eight forage species from NEFSC bottom trawl surveys by season and year, compared with limited data available from the 1980s (solid line; Steimle and Terranove 1985) and 1990s (dashed line; Lawson et al. 1998) values.}\label{fig:energy-density}
 \end{figure}
 
 Changes in the overall abundance of forage fish can influence managed species productivity as it relates to changes in food availability. A spatially-explicit \href{https://noaa-edab.github.io/catalog/forage_index.html}{forage index} for the Mid-Atlantic shows a long term declining trend in fall, with higher forage biomass in fall than spring (Fig. \ref{fig:foragebio}). Forage biomass was highest during fall in the early-1980s.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/foragebio_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/foragebio_MidAtlantic_2025-11-04} 
 
 }
 
@@ -2335,7 +2336,7 @@ Changes in the overall abundance of forage fish can influence managed species pr
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/benthos_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/benthos_MidAtlantic_2025-12-19} 
 
 }
 
@@ -2350,7 +2351,7 @@ Changes in the overall abundance of forage fish can influence managed species pr
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/zooplankton_anomaly_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_zooplankton_anomaly_MidAtlantic_2025-12-10} 
 
 }
 
@@ -2365,7 +2366,7 @@ In 2024, there were no \href{https://noaa-edab.github.io/catalog/heatwave.html}{
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/therm_hab_persist_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_therm_hab_persist_BothReports_2025-12-10} 
 
 }
 
@@ -2401,7 +2402,7 @@ Indicators of \href{https://noaa-edab.github.io/catalog/productivity_anomaly.htm
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/productivity_anomaly_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/productivity_anomaly_NewEngland_2025-12-19} 
 
 }
 
@@ -2410,7 +2411,7 @@ Indicators of \href{https://noaa-edab.github.io/catalog/productivity_anomaly.htm
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/seabird_productivity_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/seabird_productivity_NewEngland_2025-10-30} 
 
 }
 
@@ -2419,7 +2420,7 @@ Indicators of \href{https://noaa-edab.github.io/catalog/productivity_anomaly.htm
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/salmon_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/salmon_NewEngland_2025-11-24} 
 
 }
 
@@ -2430,7 +2431,7 @@ The health of individual fish (i.e., fish condition) can contribute to populatio
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/condition_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/condition_NewEngland_2025-12-19} 
 
 }
 
@@ -2449,29 +2450,29 @@ The \href{https://noaa-edab.github.io/catalog/energy_density.html}{energy conten
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/energy_density_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/energy_density_BothReports_2025-10-31} 
 
 }
 
-\caption{Forage fish energy density (mean and standard deviation) of eight forage species from NEFSC bottom trawl surveys by season and year, compared with 1980s (solid line; Steimle and Terranove 1985) and 1990s (dashed line; Lawson et al. 1998) values.}\label{fig:energy-density-219}
+\caption{Energy density (mean and standard deviation) of eight forage species from NEFSC bottom trawl surveys by season and year, compared with limited data available from the 1980s (solid line; Steimle and Terranove 1985) and 1990s (dashed line; Lawson et al. 1998) values.}\label{fig:energy-density-219}
 \end{figure}
 
 Changes in the overall abundance of forage fish can influence managed species productivity as it relates to changes in food availability. New England \href{https://noaa-edab.github.io/catalog/forage_index.html}{fall forage biomass} is stable with long-term increases in the spring GOM (Fig. \ref{fig:foragebio-ne}). Forage biomass was highest during fall in the 1980s.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/foragebio_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/foragebio_NewEngland_2025-10-31} 
 
 }
 
-\caption{Forage fish index in GB (left) and GOM (right) for spring (blue) and fall (red) surveys. Index values are relative to the maximum observation within a region across surveys.}\label{fig:foragebio-ne}
+\caption{Forage fish index in GB (top) and GOM (bottom) for spring (blue) and fall (red) surveys. Index values are relative to the maximum observation within a region across surveys.}\label{fig:foragebio-ne}
 \end{figure}
 
 \href{https://noaa-edab.github.io/catalog/benthos_index.html}{Benthic invertebrates} are extremely important forage for some managed species (e.g.~flatfish, juvenile cod and haddock) Macrobenthos indices show long term declines in spring. In contrast, megabenthos indices show long-term increases during the fall in both GB and GOM (Fig. \ref{fig:benthos-ne}).
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/benthos_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/benthos_NewEngland_2025-12-19} 
 
 }
 
@@ -2499,7 +2500,7 @@ Since 2010, the abundance of the lipid-rich older stages of \href{https://noaa-e
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/zooplankton_anomaly_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/slide_zooplankton_anomaly_NewEngland_2025-12-16} 
 
 }
 
@@ -2523,7 +2524,7 @@ In 2024, only one \href{https://noaa-edab.github.io/catalog/heatwave_year.html}{
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/therm_hab_persist_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_therm_hab_persist_BothReports_2025-12-10} 
 
 }
 
@@ -2569,7 +2570,7 @@ As of January 2025, 30 offshore \href{https://noaa-edab.github.io/catalog/wind_d
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/wind_dev_speed_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_wind_dev_speed_BothReports_2025-12-10} 
 
 }
 
@@ -2593,11 +2594,11 @@ Based on federal vessel logbook data, \href{https://noaa-edab.github.io/catalog/
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/wind_revenue_MidAtlantic_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/MidAtlantic/slide_wind_revenue_MidAtlantic_2025-12-10} 
 
 }
 
-\caption{Fishery revenue in wind energy lease areas in the Mid-Atlantic.}\label{fig:wea-spp-rev}
+\caption{Fishery revenues from MAFMC managed species in the Wind energy lease areas.}\label{fig:wea-spp-rev}
 \end{figure}
 
 Of MAFMC managed fisheries, the surfclam fishery would be the most affected by offshore wind development, with a maximum of 15\% of annual regional fishery revenue occurring within existing wind lease areas during 2008-2023 (see Table \ref{tab:wea-landings-rev}). It should be noted that 2023 surfclam landings/revenue within lease areas may be artificially low due to potential misreporting issues. Future fishery resource overlap with wind leases, especially surfclams and ocean quahogs, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.
@@ -2748,9 +2749,9 @@ The socio-demographic conditions, and resultant vulnerabilities, of some communi
 
 \begin{figure}
 
-\includegraphics[width=1\linewidth]{images/MidAtlantic/wea_port_rev_MidAtlantic_2025-09-16} \hfill{}
+\includegraphics[width=1\linewidth]{images/MidAtlantic/slide_wea_port_rev_MidAtlantic_2025-12-18} \hfill{}
 
-\caption{Percent of Mid-Atlantic port revenue from Wind Energy Areas (WEA) in descending order from most to least port revenue from WEA.}\label{fig:wea-port-rev}
+\caption{Percent of Mid-Atlantic port revenue from Wind Energy Areas (WEA) from all leases (active + non-active; green), non-active leases (blue), and active leases (orange).}\label{fig:wea-port-rev}
 \end{figure}
 
 For example, Atlantic City, NJ was in the top three potential revenue loss (historical minimum of 3\% and maximum of 24\%, respectively) from potential wind development areas based on 2008-2023 total port fisheries revenue. BOEM reports that cumulative offshore wind development (if all proposed projects are developed) could have moderate impacts on low-income members of communities with socio-demographic concerns who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation and increased vessel traffic, as well as existing vulnerabilities of low-income workers to economic impacts.
@@ -2759,9 +2760,9 @@ Some ports in New England land Mid-Atlantic managed species from wind areas as w
 
 \begin{figure}
 
-\includegraphics[width=1\linewidth]{bothregions_files/figure-latex/wind-rev-1} \hfill{}
+\includegraphics[width=1\linewidth]{images/MidAtlantic/slide_wind_rev_MidAtlantic_2025-12-10} \hfill{}
 
-\caption{Percent of New England port revenue with majority MAFMC landings from Wind Energy Areas (WEA) in descending order from most to least port fisheries revenue from WEA.}\label{fig:wind-rev}
+\caption{Percent of New England port revenue with majority MAFMC landings from Wind Energy Areas (WEA) from all leases (green), leases not under construction (blue), and leases under construction or operational (orange). }\label{fig:wind-rev}
 \end{figure}
 
 Top fishing communities with \href{https://noaa-edab.github.io/catalog/engagement.html}{socio-demographic concerns} (i.e., Atlantic City, NJ, and Hampton Bays, NY) should be considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of underserved communities. These are communities where we need to provide further resources to reach underserved and underrepresented groups and create opportunities for and directly involve these groups in the decision-making process.
@@ -2774,13 +2775,13 @@ Offshore floating wind is expected to be developed in the GOM. The Bureau of Oce
 
 NEFSC has partnered with the Responsible Ocean Development Alliance (RODA) and the University of Rhode Island to conduct an Integrated Ecosystem Assessment (IEA) of the interactions between offshore wind, fisheries, and the environment in the GOM. The IEA report will be similar to the State of the Ecosystem, but fully dedicated to impacts of offshore wind. Data from the IEA will be suitable for inclusion in the environmental impact statements for any projects in the GOM.
 
-Based on federal vessel logbook data, \href{https://noaa-edab.github.io/catalog/wind_revenue.html}{commercial fishery revenue} from trips in the current offshore wind lease areas represents 2-15\% of the total annual revenue for fisheries managed by the NEFMC from 2008-2023 (Table \ref{tab:wea-landings-rev}).Fishing revenue affected by offshore wind lease areas varies over time, but has largely declined over time. Maximum annual revenue for the fisheries with the most overlap with wind lease areas peaked at over \$52 million for the sea scallop fishery, \$2.5 million for monkfish, \$1.1 million for haddock, \$943,000 for pollock, \$840,000 for cod, just under \$700,000 for skates and redfish, \$662,000 for silver hake, and nearly \$600,000 for Atlantic herring (Fig. \ref{fig:wea-spp-rev-ne}). The scallop fishery is mainly affected by lease areas in the Mid-Atlantic, as the Northern Area scallop fishery is outside of the GOM lease areas. However, substantial groundfish landings/revenues overlap with the GOM lease areas, as noted above. Individual groundfish species are more affected than others, with up to 15\% of historical annual revenues overlapping with existing lease areas for species such as yellowtail flounder (15\%), pollock (11\%) and 9\% for redfish and white hake (Table \ref{tab:wea-landings-rev-ne}). Future fishery resource overlap with wind leases, especially scallops, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.
+Based on federal vessel logbook data, \href{https://noaa-edab.github.io/catalog/wind_revenue.html}{commercial fishery revenue} from trips in the current offshore wind lease areas represents 2-15\% of the total annual revenue for fisheries managed by the NEFMC from 2008-2023 (Table \ref{tab:wea-landings-rev-ne}).Fishing revenue affected by offshore wind lease areas varies over time, but has largely declined over time. Maximum annual revenue for the fisheries with the most overlap with wind lease areas peaked at over \$52 million for the sea scallop fishery, \$2.5 million for monkfish, \$1.1 million for haddock, \$943,000 for pollock, \$840,000 for cod, just under \$700,000 for skates and redfish, \$662,000 for silver hake, and nearly \$600,000 for Atlantic herring (Fig. \ref{fig:wea-spp-rev-ne}). The scallop fishery is mainly affected by lease areas in the Mid-Atlantic, as the Northern Area scallop fishery is outside of the GOM lease areas. However, substantial groundfish landings/revenues overlap with the GOM lease areas, as noted above. Individual groundfish species are more affected than others, with up to 15\% of historical annual revenues overlapping with existing lease areas for species such as yellowtail flounder (15\%), pollock (11\%) and 9\% for redfish and white hake (Table \ref{tab:wea-landings-rev-ne}). Future fishery resource overlap with wind leases, especially scallops, may change due to species distribution shifts attributable to climate change and recruitment and larval dispersion pattern changes caused by hydrodynamic flow disruptions from turbine foundations, which could also affect fishery landings/revenue.
 
 Offshore wind indicators are based on federal logbook data and do not include all data for all fisheries; therefore a complete evaluation of potential offshore wind energy development impacts would need to be supplemented by other data sources. For further information on the utility of the data, see the \href{https://www.fisheries.noaa.gov/resource/data/socioeconomic-impacts-atlantic-offshore-wind-development}{socioeconomic impacts of offshore wind development data reports page}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/NewEngland/wind_revenue_NewEngland_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/NewEngland/slide_wind_revenue_NewEngland_2025-12-16} 
 
 }
 
@@ -3003,22 +3004,22 @@ The socio-demographic conditions, and resultant vulnerabilities, of some communi
 
 \begin{figure}
 
-\includegraphics[width=1\linewidth]{images/NewEngland/wea_port_rev_NewEngland_2025-09-16} \hfill{}
+\includegraphics[width=1\linewidth]{images/NewEngland/slide_wea_port_rev_NewEngland_2025-12-18} \hfill{}
 
-\caption{Percent of port fisheries revenue from Wind Energy Areas (WEA) in descending order from most to least port fisheries revenue from WEA.}\label{fig:wea-port-rev-252}
+\caption{Percent of port fisheries revenue from Wind Energy Areas (WEA) from all leases (active + non-active; green), non-active leases (blue), and active leases (orange).}\label{fig:wea-port-rev-252}
 \end{figure}
 
 For example, Little Compton, RI had a minimum of 17\% and maximum of 32\% overlap of wind energy revenue to the total port revenue between 2008-2023 (Fig. \ref{fig:wea-port-rev}). BOEM reports that cumulative offshore wind development (if all proposed projects are developed) could have moderate impacts on low-income members of vulnerable communities who work in the commercial fishing and for-hire fishing industry due to disruptions to fish populations, restrictions on navigation, and increased vessel traffic as well as existing vulnerabilities of low-income workers to economic impacts.
 
 Top fishing communities with high \href{https://noaa-edab.github.io/catalog/engagement.html}{socio-demographic concerns} such as New Bedford, MA and New London, CT should be considered in decision making to reduce the social and economic impacts and aid in the resilience and adaptive capacity of underserved communities. These two ports are also undergoing significant changes to support offshore wind development port infrastructure needs. Socio-demographic concerns also highlight communities where further resources are needed to reach underserved and underrepresented groups and create opportunities for, and directly involve, these groups in the decision-making process.
 
-Some ports in the Mid-Atlantic land New England-managed species from wind areas as well. For the maximum percent value reported in each Mid-Atlantic port, the majority (at least 50\% based on both value and pounds) of those landings were New England managed species within wind areas for nine communities (Fig. \ref{fig:wind-rev-ne}).
+Some ports in the Mid-Atlantic land New England-managed species from wind areas as well. For the maximum percent value reported in each Mid-Atlantic port, the majority (at least 50\% based on both value and pounds) of those landings were New England managed species within wind areas for nine communities (Fig. \ref{fig:wind-rev}).
 
 \begin{figure}
 
-\includegraphics[width=1\linewidth]{bothregions_files/figure-latex/wind-rev-ne-1} \hfill{}
+\includegraphics[width=1\linewidth]{images/NewEngland/slide_wind_rev_NewEngland_2025-12-18} \hfill{}
 
-\caption{Percent of Mid Atlantic port revenue with majority NEFMC landings from Wind Energy Areas (WEA) in descending order from most to least port revenue from WEA.}\label{fig:wind-rev-ne}
+\caption{Percent of Mid-Atlantic port revenue with majority NEFMC landings from Wind Energy Areas (WEA) from all leases (green), leases not under construction (blue), and leases under construction or operational (orange). }\label{fig:wind-rev-253}
 \end{figure}
 
 \section{parent\_report.Rmd}\label{parent_report.rmd-16}
@@ -3067,7 +3068,7 @@ In 2023, Labrador Slope water accounted for more than 50\% of the \href{https://
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/BothReports/slopewater_BothReports_2025-09-16} 
+{\centering \includegraphics[width=1\linewidth]{images/BothReports/slide_slopewater_BothReports_2025-12-10} 
 
 }
 

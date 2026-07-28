@@ -46,50 +46,7 @@ set_flextable_defaults(
   font.family = "Palatino"
 )
 
-FitFlextableToPage <- function(ft, pgwidth = 6) {
-  ft_out <- ft %>% autofit()
-
-  ft_out <- width(ft_out, width = dim(ft_out)$widths * pgwidth / (flextable_dim(ft_out)$widths))
-  return(ft_out)
-}
-
-return_caption <- function(key = caption_key,
-                           chunk_name,
-                           region) {
-  col <- dplyr::case_when(region == "MidAtlantic" ~ "fig_cap_ma",
-                          region == "NewEngland" ~ "fig_cap_ne",
-                          region == "BothReports" ~ "fig_cap_both")
-  # caption <- key$caption[which(key$chunk_name == chunk_name)]
-  caption <- key |>
-    dplyr::filter(.data$chunkName == chunk_name) |>
-    dplyr::pull(col)
-  return(caption)
-}
-
-
-return_filepath <- function(key = caption_key,
-                           chunk_name,
-                           region) {
-  col <- dplyr::case_when(region == "MidAtlantic" ~ "fig_path_ma",
-                          region == "NewEngland" ~ "fig_path_ne",
-                          region == "BothReports" ~ "fig_path_both")
-  filepath <- key |>
-    dplyr::filter(.data$chunkName == chunk_name) |>
-    dplyr::pull(col)
-  return(filepath)
-}
-
-return_plot <- function(name, cap_key = caption_key, ...) {
-  file <- return_filepath(key = cap_key, chunk_name = name, ...) |>
-    here::here() 
-  
-  if(file.exists(file) & file.info(file)$isdir == FALSE) {
-    file |>
-  knitr::include_graphics(dpi = 300)
-  } else {
-    stop(paste0("Cannot find file specified: ", file))
-  }
-}
+source(here::here("utils/functions.R"))
 ```
 
 

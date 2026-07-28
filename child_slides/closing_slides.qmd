@@ -1,0 +1,148 @@
+## THANK YOU! SOEs made possible by (at least) 88 contributors from 20+ institutions {.small-text-slide}
+
+:::: {.columns}
+
+::: {.column width="25%"}
+
+Andrew Applegate (NEFMC)<br>
+Kimberly Bastille<br>
+Aaron Beaver (Anchor QEA)<br>
+Andy Beet<br>
+Brandon Beltz<br>
+Ruth Boettcher (Virginia Department of Game and Inland Fisheries)<br>
+Mandy Bromilow (NOAA Chesapeake Bay Office)<br>
+Joseph Caracappa<br>
+Samuel Chavez-Rosales<br>
+Baoshan Chen (Stony Brook University)<br>
+Zhuomin Chen (UConn)<br>
+Doug Christel (GARFO)<br>
+Patricia Clay<br>
+Lisa Colburn<br>
+Jennifer Cudney (NMFS Atlantic HMS Management Division)<br>
+Tobey Curtis (NMFS Atlantic HMS Management Division)<br>
+Art Degaetano (Cornell U)<br>
+Geret DePiper<br>
+Bart DiFiore (GMRI)<br>
+Emily Farr (NMFS Office of Habitat Conservation)<br>
+Michael Fogarty<br>
+Paula Fratantoni<br>
+Kevin Friedland
+
+:::
+
+::: {.column width="25%"}
+    
+Marjy Friedrichs (VIMS)<br>
+Sarah Gaichas<br>
+Ben Galuardi (GAFRO)<br>
+Avijit Gangopadhyay (SMAST UMass Dartmouth)<br>
+James Gartland (VIMS)<br>
+Lori Garzio (Rutgers University)<br>
+Glen Gawarkiewicz (WHOI)<br>
+Laura Gruenburg<br>
+Sean Hardison<br>
+Dvora Hart<br>
+Cliff Hutt (NMFS Atlantic HMS Management Division)<br>
+Kimberly Hyde<br>
+John Kocik<br>
+Steve Kress (National Audubon Society’s Seabird Restoration Program)<br>
+Young-Oh Kwon (Woods Hole Oceanographic Institution)<br>
+Scott Large<br>
+Gabe Larouche (Cornell U)<br>
+Daniel Linden<br>
+Andrew Lipsky<br>
+Sean Lucey (RWE)<br>
+Don Lyons (National Audubon Society’s Seabird Restoration Program)<br>
+Chris Melrose<br>
+Anna Mercer
+
+:::
+
+::: {.column width="25%"}
+    
+Shannon Meseck<br>
+Ryan Morse<br>
+Ray Mroch (SEFSC)<br>
+Brandon Muffley (MAFMC)<br>
+Robert Murphy<br>
+Kimberly Murray<br>
+NEFSC staff<br>
+David Moe Nelson (NCCOS)<br>
+Chris Orphanides<br>
+Richard Pace<br>
+Debi Palka<br>
+Tom Parham (Maryland DNR)<br>
+CJ Pellerin (NOAA Chesapeake Bay Office)<br>
+Charles Perretti<br>
+Kristin Precoda<br>
+Grace Roskar (NMFS Office of Habitat Conservation)<br>
+Jeffrey Runge (U Maine)<br>
+Grace Saba (Rutgers University)<br>
+Vincent Saba<br>
+Sarah Salois<br>
+Chris Schillaci (GARFO)<br>
+Amy Schueller (SEFSC)<br>
+Teresa Schwemmer (URI)<br>
+Tarsila Seara<br>
+Dave Secor (CBL)<br>
+Emily Slesinger<br>
+
+:::
+
+::: {.column width="25%"}
+    
+Angela Silva<br>
+Adrienne Silver (UMass/SMAST)<br>
+Talya tenBrink (GARFO)<br>
+Abigail Tyrell<br>
+Rebecca Van Hoeck<br>
+Bruce Vogt (NOAA Chesapeake Bay Office)<br>
+Ron Vogel (University of Maryland Cooperative Institute for Satellite Earth System Studies and NOAA/NESDIS Center for Satellite Applications and Research)<br>
+John Walden<br>
+Harvey Walsh<br>
+Sarah Weisberg<br>
+Changhua Weng<br>
+Dave Wilcox (VIMS)<br>
+Timothy White (Environmental Studies Program BOEM)<br>
+Sarah Wilkin (NMFS Office of Protected Resources)<br>
+Mark Wuenschel<br>
+Qian Zhang (U Maryland)
+
+![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//noaa-iea.png){width="400px"}
+
+:::
+
+::::
+
+## References
+
+```{r refs, echo=FALSE, results="asis"}
+PrintBibliography(myBib)
+```
+
+### Additional resources
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+* [ecodata R package](https://github.com/noaa-edab/ecodata)
+
+* [Indicator catalog](https://noaa-edab.github.io/catalog/)
+
+* [SOE Technical Documentation](https://noaa-edab.github.io/tech-doc)
+
+:::
+
+::: {.soe-50-column}
+
+* [SOE Reports on the web](https://www.fisheries.noaa.gov/new-england-mid-atlantic/ecosystems/state-ecosystem-reports-northeast-us-shelf)
+
+* Slides available at <https://nefsc.github.io/READ-EDAB-SOE_reports/>
+
+```{r}
+soe_contact_info <- dplyr::case_when(params$region == "NewEngland" ~ "<joseph.caracappa@noaa.gov>",
+                                     params$region == "MidAtlantic" ~ "<abigail.tyrell@noaa.gov>",
+                                     TRUE ~ "<abigail.tyrell@noaa.gov>, <joseph.caracappa@noaa.gov>")
+```
+* Contact: `r soe_contact_info`

@@ -1,0 +1,11 @@
+:::: {.columns}
+
+::: {.column width="{{w1}}%"}
+{{col1_content}}
+:::
+
+::: {.column width="{{w2}}%"}
+{{col2_content}}
+:::
+
+::::

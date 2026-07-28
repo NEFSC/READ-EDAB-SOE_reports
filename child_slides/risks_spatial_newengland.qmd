@@ -1,0 +1,34 @@
+## New Spatial Shift Indicators: [Benthos](https://noaa-edab.github.io/catalog/benthos_index.html), [Zooplankton](https://noaa-edab.github.io/catalog/zooplankton_index.html)
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Benthos center of gravity from fish stomachs
+
+```{r}
+return_plot("macrobenthosshifts", region = "BothReports", mode = "slide")
+```
+
+```{r}
+# megabenthos shifts will go here
+```
+
+:::
+
+::: {.soe-50-column}
+
+Copepods center of gravity from ECOMON
+
+```{r}
+# small copepod shifts will go here
+```
+
+```{r}
+# large copepod shifts will go here
+```
+
+:::
+
+::::
+

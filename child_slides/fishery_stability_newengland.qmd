@@ -1,0 +1,36 @@
+## Objective: New England Fishery Stability: Not Stable 
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+*Fishery*  Indicators: Commercial fleet count, fleet diversity
+
+```{r}
+return_plot("comm-div-fleet", region = "NewEngland", mode = "slide")
+```
+
+Fishery Implications:
+
+* Commercial fishery diversity driven by small number of species; less capacity to respond to new opportunities
+
+:::
+
+::: {.soe-50-column}
+
+*Fishery*  Indicators: commercial species revenue diversity, recreational species catch diversity
+
+```{r}
+return_plot("commercial-div-species-div", region = "NewEngland", mode = "slide")
+```
+
+
+```{r}
+return_plot("recdat-div-catch", region = "NewEngland", mode = "slide")
+```
+
+* Recreational diversity increase due to increase in ASFMC and MAFMC managed species
+
+:::
+
+::::

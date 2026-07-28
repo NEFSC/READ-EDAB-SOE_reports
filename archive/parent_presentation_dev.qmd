@@ -1,0 +1,272 @@
+---
+title: 'State of the Ecosystem <br /> `r dplyr::case_when(
+  params$draft ~ "[Mid-Atlantic] *or* [New England]",
+  params$region == "MidAtlantic" ~ "Mid-Atlantic",
+  params$region == "NewEngland" ~ "New England")` 2025'
+subtitle: "`r params$council` <br /> `r params$date`"
+author: "`r params$author`"
+editor: source
+params:
+  region: "MidAtlantic"
+  council: "MAFMC"
+  fig_caption: "utils/figure_captions_summary.csv"
+  cache: FALSE
+  id_child_docs: FALSE
+  draft: FALSE
+  date: "8 April 2025"
+  author: "Abigail Tyrell, lead editor, NEFSC"
+format:
+  # This uses the built-in Quarto revealjs format
+  revealjs:
+    theme: ""
+    # --- Mapped from xaringan::moon_reader ---
+    # Sets the slide aspect ratio
+    aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
+    
+    # CSS files for styling
+    css:                         # Equivalent to css: [...]
+      - libs/EDAB_theme_2026.css
+      - libs/cols.css
+      
+    # Syntax highlighting style
+    highlight-style: github      # Equivalent to highlightStyle: githubp (Using Quarto's built-in 'github')
+    
+    # Allows highlighting specific lines in code blocks
+    code-line-numbers: true      # Equivalent to highlightLines: true
+    
+    # Custom JavaScript files (macros) are included in the header
+    include-in-header:
+      - text: |
+          <!-- <link href="libs/EDAB_theme_2026.css" rel="stylesheet" /> -->
+          <script src="libs/macros.js"></script>
+          <script src="libs/cols_macro.js"></script>
+          
+    # --- Mapped from revealjs::revealjs_presentation ---
+    # Controls if resources are embedded or linked
+    embed-resources: false       # Equivalent to self_contained: false
+    
+    # Other revealjs options
+    # The 'notes' and 'search' plugins are standard and usually included by default
+    
+    # --- Customization for Quarto/revealjs (similar to titleSlideClass) ---
+    # This requires a slight change but is the Quarto way to customize the title slide.
+    # The specific classes like "right" and "middle" are often handled by 
+    # custom CSS applied via the `css` option above.
+    
+    # New section for title slide
+    title-slide-attributes:
+      # Use the path relative to the .qmd file (project root)
+      data-background-image: libs/SOEtitleslide.png
+      data-background-size: 60%
+      data-background-position: left top
+      data-background-class: right-align-title
+    
+    # --- Other important Quarto options ---
+    # This prevents the render process from counting step-by-step reveals as separate slides
+    incremental: false           # Equivalent to countIncrementalSlides: false
+---
+
+```{r conditional-values}
+epus <- dplyr::case_when(
+  params$draft ~ "[Mid-Atlantic Bight, MAB] *or* [Gulf of Maine (GOM) and Georges Bank (GB)]",
+  params$region == "MidAtlantic" ~ "Mid-Atlantic Bight, MAB",
+  params$region == "NewEngland" ~ "Gulf of Maine (GOM) and Georges Bank (GB)"
+)
+
+region <- dplyr::case_when(
+  params$draft ~ "[the Mid-Atlantic Bight] *or* [New England]",
+  params$region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
+  params$region == "NewEngland" ~ "New England"
+)
+
+region2 <- dplyr::case_when(
+  params$draft ~ "[Mid-Atlantic] *or* [New England]",
+  params$region == "MidAtlantic" ~ "Mid-Atlantic",
+  params$region == "NewEngland" ~ "New England"
+)
+
+caption_key <- read.csv(params$fig_caption) 
+```
+
+```{r setup, include=FALSE}
+
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = F,
+                      fig.retina = 3,
+                      #fig.width = 4,
+                      #fig.height = 2,
+                      fig.asp = 0.45,
+                      warning = F,
+                      message = F,
+                      out.width = "60%")
+#Plotting and data libraries
+library(tidyverse)
+library(tidyr)
+library(here)
+library(kableExtra)
+library(ecodata)
+library(readxl); library(data.table)
+library(DT)
+library(widgetframe)
+library(patchwork)
+
+# if figure output defaults to docs/imaages/ replace with this before moving to 
+# presentations/docs in both the html output (search and replace)
+# and folder name
+# 20220316_MAFMCSSC_Gaichas_files/figure-html/
+
+```
+
+```{r, load_refs, include=FALSE, cache=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "authoryear",
+           longnamesfirst = FALSE,
+           max.names = 1,
+           style = "markdown")
+myBib <- ReadBib(here::here("utils/MidSOE.bib"), check = FALSE)
+```
+
+```{r, functions}
+create_slide <- function(col1, col2,
+                         width1 = 40,
+                         width2 = 60) {
+  res <- knitr::knit_child(text = knitr::knit_expand(file = here::here("child_slide.qmd"),
+                                                     col1_content = col1,
+                                                     col2_content = col2,
+                                                     w1 = width1,
+                                                     w2 = width2),
+                           quiet = TRUE)
+  cat(res, sep = "\n\n")
+}
+
+as_chunk <- function(chunk_options,
+                     code) {
+  output <- paste("```{r,", chunk_options, "}\n\n",
+                  code,
+                  "\n\n```\n\n")
+  return(output)
+}
+
+```
+
+## 1: State of the Ecosystem (SOE) reporting
+### Improving ecosystem information and synthesis for fishery managers
+:::: {.soe-60-40-slide}
+
+::: {.soe-60-column}
+- Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
+    + Contextual information
+    + Report evolving since 2016
+    + Fishery-relevant subset of full Ecosystem Status Reports
+
+- Open science emphasis `r Cite(myBib, "bastille_improving_2020")`
+
+- Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, "muffley_there_2020")`
+:::
+
+::: {.soe-40-column}
+```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks"}
+knitr::include_graphics(here::here("images/iea-loop.png"))
+```
+*The IEA Loop[^1]*
+
+[^1]: https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach
+:::
+
+::::
+
+## 2: State of the Ecosystem (SOE) reporting
+### Improving ecosystem information and synthesis for fishery managers
+```{r, results = "asis"}
+create_slide(col1 = "- Ecosystem indicators linked to management objectives `r Cite(myBib, 'depiper_operationalizing_2017')`
+    + Contextual information
+    + Report evolving since 2016
+    + Fishery-relevant subset of full Ecosystem Status Reports
+
+- Open science emphasis `r Cite(myBib, 'bastille_improving_2020')`
+
+- Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, 'muffley_there_2020')`",
+             col2 = paste(as_chunk(chunk_options = 'fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks", out.width = "60%"',
+                     code = 'knitr::include_graphics(here::here("images/iea-loop.png"))'),
+              '*The IEA Loop[^1]* \n\n
+[^1]: https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach'))
+```
+
+## 3: State of the Ecosystem (SOE) reporting
+### Improving ecosystem information and synthesis for fishery managers
+
+::: {.text-image-slide}
+
+```{r}
+# This function applies standard styling and centering to an image.
+include_slide_image <- function(image_path, caption = "", alt_text = "") {
+  # Quarto handles markdown interpretation inside the image column
+  cat('::: {.image-column} \n\n') 
+  
+  # Using knitr::include_graphics for consistent sizing and captions
+  # Note: The figure formatting is largely controlled by your Quarto YAML/CSS
+  cat(paste0('![', alt_text, '](', image_path, '){.r-stretch width="60%"}\n\n'))
+  
+  # Add the image caption class you defined earlier
+  if (nchar(caption) > 0) {
+    cat(caption, '\n\n')
+  }
+  
+  cat('\n\n :::')
+}
+```
+
+::: {.text-column}
+- Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
+    + Contextual information
+    + Report evolving since 2016
+    + Fishery-relevant subset of full Ecosystem Status Reports
+
+- Open science emphasis `r Cite(myBib, "bastille_improving_2020")`
+
+- Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, "muffley_there_2020")`
+:::
+
+`r include_slide_image(image_path = "images/iea-loop.png", caption = "*The IEA Loop[^1]* \n\n[^1]: https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach", alt_text = "IEA process from goal setting to assessment to strategy evaluation with feedbacks")`
+
+:::
+
+## 4: State of the Ecosystem (SOE) reporting
+### Improving ecosystem information and synthesis for fishery managers
+
+::: {.text-image-slide}
+
+::: {.text-column}
+- Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
+    + Contextual information
+    + Report evolving since 2016
+    + Fishery-relevant subset of full Ecosystem Status Reports
+
+- Open science emphasis `r Cite(myBib, "bastille_improving_2020")`
+
+- Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, "muffley_there_2020")`
+:::
+
+::: {.image-column}
+![IEA process from goal setting to assessment to strategy evaluation with feedbacks](images/iea-loop.png){.r-stretch width="60%"}
+
+*The IEA Loop[^1]* 
+
+[^1]: https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach
+
+:::
+
+:::
+
+## Test Slide: Standard Quarto Column
+
+::: {.columns}
+::: {.column width="50%"}
+Text content here.
+:::
+::: {.column width="50%"}
+![Description of image](images/iea-loop.png){.r-stretch width="90%"}
+:::
+:::

@@ -1,0 +1,85 @@
+```{r conditional-values, include = FALSE}
+epus <- dplyr::case_when(
+  params$region == "MidAtlantic" ~ "Mid-Atlantic Bight, MAB",
+  params$region == "NewEngland" ~ "Gulf of Maine (GOM) and Georges Bank (GB)",
+  TRUE ~ "[Mid-Atlantic Bight, MAB] *or* [Gulf of Maine (GOM) and Georges Bank (GB)]"
+)
+
+region <- dplyr::case_when(
+  params$region == "MidAtlantic" ~ "the Mid-Atlantic Bight",
+  params$region == "NewEngland" ~ "New England",
+  TRUE ~ "[the Mid-Atlantic Bight] *or* [New England]"
+)
+
+region2 <- dplyr::case_when(
+  params$region == "MidAtlantic" ~ "Mid-Atlantic",
+  params$region == "NewEngland" ~ "New England",
+  TRUE ~ "[Mid-Atlantic] *or* [New England]"
+)
+
+caption_key <- read.csv(params$fig_caption) 
+```
+
+```{r setup, include=FALSE}
+
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = F,
+                      fig.retina = 3,
+                      #fig.width = 4,
+                      #fig.height = 2,
+                      fig.asp = 0.45,
+                      warning = F,
+                      message = F
+                      # out.width = "80%"
+                      )
+options(knitr.duplicate.label = "allow")
+#Plotting and data libraries
+library(tidyverse)
+library(tidyr)
+library(here)
+library(kableExtra)
+library(ecodata)
+library(readxl)
+library(data.table)
+library(DT)
+library(widgetframe)
+library(patchwork)
+
+# if figure output defaults to docs/imaages/ replace with this before moving to 
+# presentations/docs in both the html output (search and replace)
+# and folder name
+# 20220316_MAFMCSSC_Gaichas_files/figure-html/
+
+source(here::here("utils/functions.R"))
+
+```
+
+```{r, load_refs, include=FALSE, cache=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "authoryear",
+           longnamesfirst = FALSE,
+           max.names = 1,
+           style = "markdown")
+myBib <- ReadBib(here::here("utils/MidSOE.bib"), check = FALSE)
+```
+
+```{r icons}
+# read in icons so they can be easily reused
+no_trend <- "![no trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//no trend.png){.inline-icon}"
+
+decreasing <- "![decreasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//decrease.png){.inline-icon}"
+
+increasing <- "![increasing arrow icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//increase.png){.inline-icon}"
+
+below_average <- "![below average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//below long term ave.png){.inline-icon} "
+
+above_average <- "![above average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//above long term ave.png){.inline-icon}"
+
+near_average <- "![near average icon icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//near-long-term-average.png){.inline-icon}"
+
+mixed_trend <- "![mixed trend icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//Mixed trends.png){.inline-icon}"
+
+meeting_objectives <- "![meeting objectives icon](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//checked.png){.inline-icon}"
+```

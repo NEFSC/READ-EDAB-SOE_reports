@@ -1,0 +1,336 @@
+/* Let's load some fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+/* Generic stuff */
+
+.remark-code, .remark-inline-code { font-family: 'Open Sans'; }
+
+/* Increase specificity for body font */
+.reveal body { 
+  font-family: 'Open Sans' 
+  }
+
+/* MAX SPECIFICITY: Targeting paragraphs and list items inside columns */
+
+.reveal p,
+.reveal li,
+.reveal .column p,
+.reveal .column li {
+    font-size: 26px !important; 
+    line-height: 1.3em !important;
+}
+
+/* Ensure the base slide content size is also set */
+.reveal .slide-content, .reveal .remark-slide-content {
+    font-size: 14px !important;
+}
+
+.grViz {
+  margin-left:auto; margin-right:auto; display:block;
+}
+
+/* Pretty sure this is all me messing with the title slide */
+
+/* INCREASED SPECIFICITY: Targeting elements inside the main reveal container */
+.reveal div.remark-slide-container h1,
+.reveal h1 { /* Added .reveal h1 for generic H1s */
+	font-family: 'Open Sans', sans-serif;
+	color: #522D80 !important; /* Added !important as a safety measure for color */
+	letter-spacing: -1px;
+    font-size: 60px !important;
+  text-align: center;
+}
+
+/* INCREASED SPECIFICITY: Targeting H2 */
+.reveal div.remark-slide-container h2,
+.reveal h2 { /* Added .reveal h2 for generic H2s */
+	font-family: 'Open Sans', sans-serif;
+	color: #522D80 !important; /* Added !important as a safety measure for color */
+	letter-spacing: -1px;
+	font-size: 36px;
+}
+
+/* INCREASED SPECIFICITY: Targeting H3 */
+.reveal div.remark-slide-container h3,
+.reveal h3 { /* Added .reveal h3 for generic H3s */
+	font-family: 'Open Sans', sans-serif;
+	color: #000 !important; /* Added !important as a safety measure for color */
+	letter-spacing: -1px;
+	font-size: 26px;
+	padding-top: 50px;
+}
+
+/* INCREASED SPECIFICITY: Targeting the title slide background/border */
+.reveal .title-slide {
+	background-color: #fff !important;
+  background-image: url('libs/SOEtitleslide.png') !important;
+  background-size: 60%;
+  background-position: left top;
+	border-bottom: 0px solid  #522D80;
+	box-shadow:  0 55px 0 #fff;
+}
+
+/* Custom Alignment for Title Slide -- this doesn't work */
+.reveal .right-align-title, 
+.reveal .right-align-title h1,
+.reveal .right-align-title h2,
+.reveal .right-align-title .subtitle,
+.reveal .right-align-title .author {
+  /* Set text alignment for the entire content block */
+  text-align: right !important;
+}
+
+/* Optional: Adjust width if the text block isn't full width */
+.reveal .right-align-title {
+  width: 100%; /* Ensure the container takes full width before aligning */
+}
+
+/* Let's play with .inverse and a new class, .fullscale, a little more -- not sure this is necessary */
+
+.reveal .inverse {
+    color: #fafafa;
+    text-shadow: 0 0 0px #333;
+}
+
+.reveal .inverse a{
+      color: #FFFF99; 
+     }
+
+.reveal div.remark-slide-container .fullscale {
+    color: #d6d6d6;
+    text-shadow: 0 0 20px #333;
+}
+
+.reveal div.remark-slide-container .fullscale h1 {
+	color: #fff !important;
+}
+
+.reveal div.remark-slide-container .fullscale p {
+	color: #000 !important;
+}
+
+.reveal .table {
+  font-size: 80%;
+}
+
+/* increase footnote text size for 508 compliance -- don't think this is working */
+
+.reveal .footnote {
+  position: absolute;
+  bottom: 1em;
+  padding-right: 4em;
+  font-size: 60% !important;
+}
+
+/* INCREASED SPECIFICITY: Targeting image and contributor classes */
+.reveal .image-cap{
+  font-size: 60%;
+}
+
+.reveal .contrib{
+  font-size: 60%;
+}
+
+/* INCREASED SPECIFICITY: Targeting inline code */
+.reveal .remark-inline-code{
+  background: #e7e8e2; /* darker */
+  border-radius: 3px;
+  padding: 0px;
+}
+
+.reveal .box-highlight{
+  border: thick double #32a1ce;
+  margin: 6rem;
+  padding: 1rem;
+}
+
+/*change link color for 508 compliance */
+/* CSS to change all link colors to #c20a0a */
+
+.reveal a {
+    color: #c20a0a !important;
+}
+
+/* Optional: Change the color when the link is hovered over */
+.reveal a:hover {
+    color: #9e0808 !important; /* A slightly darker red for visual feedback */
+}
+
+/*alter risk assessment table formatting*/
+.reveal .risktable {
+    border-collapse: collapse;
+}
+.reveal .risktable th {
+    padding: 2px;
+}
+.reveal .risktable td {
+    padding: 1px;
+}
+.reveal .risktable tbody tr:nth-of-type(even) {
+  background-color:transparent;
+}
+
+/*text colors*/
+.reveal .bluetext { color: blue; }
+.reveal .greentext { color: green; }
+
+/* New CSS for Two-Column 50-50 Slide */
+
+/* 1. Define the Container (High Specificity) */
+.reveal .soe-50-50-slide {
+    display: flex !important;      /* Use Flexbox for robust layout */
+    width: 100% !important;        /* Ensure container spans full width */
+    height: 100% !important;       /* Ensure container spans full height of content area */
+    align-items: flex-start !important; /* Align content to the top */
+    margin-top: 0 !important;
+}
+
+/* 2. Define the Column (Fixing Width) */
+.reveal .soe-50-column {
+    flex: 0 0 50% !important;      /* Fix width at 45% (use flex-basis) */
+    max-width: 50% !important;     /* Max width also 45% */
+    padding-right: 20px !important; 
+    box-sizing: border-box !important; /* Crucial for correct width calculation */
+}
+
+
+/* 4. Ensure Images within the column are responsive and visible */
+.reveal .soe-50-column img {
+    /* Set max dimensions so the image scales to fit the column */
+    max-width: 95% !important;
+    max-height: 95% !important;
+    display: block !important;
+    margin: auto auto !important; /* Center the image within its column */
+}
+
+/* 2. Define the Column for images that take up the whole column */
+.reveal .soe-50-img {
+    flex: 0 0 55% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    box-sizing: border-box !important;
+    
+    /* NEW: Use flexbox inside the column to center the image */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* Vertical center */
+    align-items: center !important;     /* Horizontal center */
+}
+
+/* Rule to constrain figure, paragraph, or div wrappers */
+/* 1. Constrain ALL nested wrappers (the most critical step) */
+.reveal .soe-50-img .cell,
+.reveal .soe-50-img .cell-output-display,
+.reveal .soe-50-img figure,
+.reveal .soe-50-img p,
+.reveal .soe-50-img div {
+    /* Ensures every layer inside the column respects the 100% boundary */
+    max-width: 100% !important; 
+    
+    /* Remove any default margins/padding that might cause overflow */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 2. Target the Image */
+.reveal .soe-50-img img {
+  
+    width: auto !important; 
+    max-height: 85vh !important;
+    
+    /* Ensure the image is centered within its now-constrained wrappers */
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* 3. Constrain the outer column wrapper */
+.reveal .soe-50-img {
+    /* Your existing column rules remain necessary */
+    flex: 0 0 55% !important;
+    max-width: 55% !important;
+    /* ... other column rules ... */
+}
+
+/* Rule to vertically center content ONLY on slides with the custom class -- this doesn't work */
+.reveal .center-table-slide {
+    /* Use grid display on the slide section for full control */
+    display: grid !important; 
+    
+    /* Center the child content horizontally and vertically */
+    place-items: center !important; 
+    
+    /* Ensure the grid spans the full content area */
+    height: 100% !important;
+}
+
+/* Optional: Constrain the table itself to prevent overflow */
+.reveal .center-table-slide .table-wrapper {
+    max-width: 90% !important;
+}
+
+/* Additional center class for inline icons */
+img.inline-icon {
+  margin: 0!important;
+  height: 30px;
+}
+
+.center-images {
+  text-align: center !important;
+}
+.center-images img {
+  /* Optional: Add some margin between images */
+  margin: 0 5px;
+}
+
+
+/* 1. Force the custom wrapper (.inline-icon) to be an inline element */
+.reveal section .inline-icon {
+    /* Use inline-flex for robust vertical alignment and to stay inline */
+    display: inline-flex !important; 
+    
+    /* Ensure no margins or padding push it to a new line */
+    margin: 0 !important;
+    padding: 0 !important;
+    
+    /* Center the icon vertically relative to the text line */
+    align-items: center !important; 
+}
+
+/* 2. Target the image and ensure it has no block properties */
+.reveal section .inline-icon img {
+    /* Explicitly use the inline value */
+    display: inline !important; 
+    
+    /* Remove any margins/padding that might cause implicit line breaks */
+    margin: 0 !important; 
+    padding: 0 !important;
+
+    /* Keep sizing constraints */
+    max-width: 1.5em !important; 
+    max-height: 1.5em !important; 
+    width: auto !important; 
+    height: auto !important; 
+}
+
+/* 3. Aggressive Overrides (Targeting potential parent wrappers) */
+/* If the image is wrapped in a <p> tag, we ensure the image doesn't act as a block inside it. */
+.reveal p img {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Custom CSS to increase font size on slides with the class 'small-text-slide' */
+
+/* Target the main text wrapper for paragraphs and lists */
+.reveal .small-text-slide p, 
+.reveal .small-text-slide li,
+.reveal .small-text-slide ul,
+.reveal .small-text-slide ol {
+    /* Set the font size relative to the slide's default font size (1.3em = 130%) */
+    font-size: 20px !important; 
+}
+

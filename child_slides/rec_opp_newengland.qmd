@@ -1,0 +1,27 @@
+## Objective: New England Recreational opportunities `r I(no_trend)` `r I(near_average)`
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Indicators: Recreational effort and fleet diversity  
+
+```{r}
+return_plot("rec-op", region = "NewEngland", mode = "slide")
+```
+
+```{r }
+return_plot("rec-div", region = "NewEngland", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Implications
+
+* Absence of a long-term trend in recreational effort suggests relative stability in the overall number of recreational opportunities in New England
+
+:::
+
+::::

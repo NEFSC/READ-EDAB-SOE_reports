@@ -1,0 +1,115 @@
+## Risks to Managing Seasonally: Mid-Atlantic
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: thermal transition, habitat persistence, bloom timing
+
+```{r transition, fig.alt="Ocean summer length: the annual total number of days between the spring thermal transition date and the fall thermal transition date (black), with an increasing trend (orange)."}
+return_plot("transition", region = "MidAtlantic", mode = "slide")
+```
+
+Cold pool seasonal persistence
+
+```{r cold-pool-time, fig.alt="Cold pool persistence index based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles)."}
+return_plot("cold-pool-time", region = "BothReports", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Bloom timing
+
+```{r montlychl, fig.alt="Monthly median chlorophyll a concentration in the MAB (black) with significant increase in January (orange line) and decrease in September (purple line)."}
+return_plot("chl-month", region = "MidAtlantic", mode = "slide")
+```
+
+Future considerations 
+
+*  Management actions that rely on effective alignment of fisheries availability and biological processes should continue to evaluate whether prior assumptions on seasonal timings still hold.
+
+*  New indicators should be developed to monitor timing shifts for stocks.
+
+:::
+
+::::
+
+## Risks to Setting Catch Limits: Mid-Atlantic
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Indicators: fish productivity and condition
+
+```{r productivity-anomaly, fig.alt = "Fish productivity measures. Left: Small fish per large fish survey biomass anomaly in the Mid-Atlantic Bight. Right: assessment recruitment per spawning stock biomass anomaly for stocks mainly in the Mid-Atlantic. The summed anomaly across species is shown by the black line, drawn across all years with the same number of stocks analyzed."}
+return_plot("productivity-anomaly", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r mab-cf, fig.alt = "Condition factor for fish species in the MAB based on fall NEFSC bottom trawl survey data. MAB data are missing for 2017 due to survey delays, and no survey was conducted in 2020."}
+return_plot("mab-cf", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::::
+
+## Risks to Setting Catch Limits: Mid Atlantic Drivers
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: Forage Quality and Abundance
+
+```{r energy-density, fig.alt="Forage fish energy density mean and standard deviation by season and year, compared with 1980s (solid line) and 1990s (dashed line) values."}
+return_plot("energy-density", region = "BothReports", mode = "slide")
+```
+
+```{r foragebio, fig.alt = "Forage fish index in the MAB for spring (blue) and fall (red) surveys, with a decline (purple) in fall. Index values are relative to the maximum observation within a region across surveys."}
+return_plot("foragebio", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+New indicators: benthos abundance
+
+```{r benthos, fig.alt="Changes in spring (blue) and fall (red) benthos abundance in the MAB for megabenthos (left) and macrobenthos (right)."}
+return_plot("benthos", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::::
+
+## Risks to Setting Catch Limits: Mid Atlantic Drivers
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Drivers: Low trophic levels
+
+```{r totppagain, fig.alt="Total areal annual primary production for the MAB. The dashed line represents the long-term (1998-2024) annual mean.", fig.pos = "center"}
+return_plot("totpp", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r zoopanom, fig.alt="Changes in zooplankton abundance in the MAB for large (top left) and small (top right) copepods, Cnidarians (bottom left), and Euphausiids (bottom right), with significant increases (orange) in small copeods and Cnidarians."}
+return_plot("zoopanom", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::::

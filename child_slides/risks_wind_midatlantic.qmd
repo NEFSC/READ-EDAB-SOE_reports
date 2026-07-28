@@ -1,0 +1,30 @@
+## Risks: Offshore Wind Development Mid Atlantic &emsp; Elements: OSW1 and OSW2
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Indicators: fishery and community specific revenue in lease areas
+
+```{r}
+return_plot("wea-spp-rev", region = "MidAtlantic", mode = "slide")
+```
+
+Council request: New England ports relying on Mid-Atlantic managed species
+
+```{r}
+return_plot("wind-rev", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r}
+return_plot("wea-port-rev", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::::
+
