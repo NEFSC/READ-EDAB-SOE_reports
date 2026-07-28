@@ -1,46 +1,8 @@
-## Objective: Mid Atlantic Ecological Stability `r I(mixed_trend)` `r I(above_average)`
+## Objective: Mid Atlantic Ecological Stability: Not Stable
+
+*Ecological* Indicators: Community Composition, zooplankton biomass
 
 :::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-*Ecological* Indicators: zooplankton communities and total primary production
-
-```{r}
-return_plot("zoopanom", region = "MidAtlantic", mode = "slide")
-```
-
-:::
-
-::: {.soe-50-column}
-
-```{r}
-return_plot("totpp", region = "MidAtlantic", mode = "slide")
-```
-
-
-```{r}
-return_plot("zoo-comm", region = "MidAtlantic", mode = "slide")
-```
-
-
-:::
-
-::::
-
-## Objective: Mid Atlantic Ecological Stability (Cont.)
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-*Ecological* Indicators: fish richness and traits
-
-```{r}
-return_plot("traits", region = "MidAtlantic", mode = "slide")
-```
-
-:::
 
 ::: {.soe-50-column}
 
@@ -48,9 +10,52 @@ return_plot("traits", region = "MidAtlantic", mode = "slide")
 return_plot("exp-n", region = "MidAtlantic", mode = "slide")
 ```
 
+```{r}
+return_plot("zoo-diversity", region = "MidAtlantic", mode = "slide")
+```
 
-* Declines in species trophic level & other life history traits suggests changing ecology
+- Long-term changes in community composition 
+- Benthos biomass also shows trends
+- Trends in diversity and biomass would not be expected in a stable system
+
+:::
+
+::: {.soe-50-column}
+
+```{r}
+return_plot("zoopanom", region = "MidAtlantic", mode = "slide")
+```
 
 :::
 
 ::::
+
+## Objective: Mid Atlantic Ecological Stability: Not Stable
+
+*Ecological* Indicators: fish biomass & traits
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r}
+return_plot("nefsc-biomass-mab", region = "MidAtlantic", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+```{r}
+return_plot("traits-tl", region = "MidAtlantic")
+```
+
+
+- Declines in species trophic level & other life history traits suggests changing ecology
+- Trends in biomass would not be expected in a stable system
+- Productivity of managed species is lower than historic levels
+
+:::
+
+::::
+

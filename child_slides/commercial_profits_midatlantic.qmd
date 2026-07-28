@@ -1,25 +1,57 @@
+## Objective: Mid Atlantic Commercial Profits `r I(decreasing)` (revenue) `r I(no_trend)` (profitability) `r I(below_average)` (all)
+
+:::: { .soe-50-50-slide}
+
+::: {.soe-50-column}
+Indicators: Commercial revenue
+
+```{r}
+#| out-height: "500px"
+return_plot("comm-revenue", region = "MidAtlantic", mode = "slide")
+```
+
+On average, Mid Atlantic community revenue is derived from species that are _highly sensitive_ to environmental variability, with no trend over time.
+
+:::
+
+::: {.soe-50-column}
+
+New Indicator: Index of Revenue, Costs, and Profits from *federal trips only*
+
+```{r}
+return_plot("comdat-profit", region = "MidAtlantic", mode = "slide")
+```
+
+- Revenue shows a significant long-term decline, but profitability does not yet show a statistically significant decline.
+- Trip costs do not include labor
+
+:::
+
+::::
+
+
 ## Objective: Mid Atlantic Commercial Profits `r I(no_trend)`  `r I(below_average)` 
 
 ::: { .soe-50-50-slide}
 
 ::: {.soe-50-column}
-Indicator: Commercial Revenue; profit indicators under SSC review
 
-```{r}
-return_plot("comm-revenue", region = "MidAtlantic", mode = "slide")
+Indicator: Bennet--price and volume indices
+
+```{r bennet}
+# <!-- #| out-height: "350px" -->
+return_plot("bennet", region = "MidAtlantic", mode = "slide")
 ```
 
-```{r, fig.alt="Mid-Atlantic region total climate vulnerability of commercial revenue (sum of Mid-Atlantic port revenue weighted by species climate vulnerability from Hare et al. 2016)."}
-return_plot("climatevul-rev", region = "MidAtlantic")
-```
+- Recent low prices and volumes
+- Especially in benthos (shellfish)
 
 :::
 
 ::: {.soe-50-column}
-Indicator: Bennet--price and volume indices
 
-```{r bennet}
-return_plot("bennet", region = "MidAtlantic", mode = "slide")
+```{r bennet-guild}
+# <!-- #| out-height: "400px" -->
 return_plot("bennet-all", region = "MidAtlantic", mode = "slide")
 ```
 

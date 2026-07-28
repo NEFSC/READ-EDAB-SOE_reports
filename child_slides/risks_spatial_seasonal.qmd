@@ -1,5 +1,5 @@
 
-## Revised Risks: Climate and Ecosystem Change 
+## Risks: Climate and Ecosystem Change 
 
 :::: {.soe-50-50-slide}
 
@@ -19,7 +19,7 @@ mng_obj <- data.frame("Risks" = c("Risks to Managing Spatially",
                       "Potential Driver Indicators" = c("Benthic and pelagic forage distribution; ocean temperature, changes in currents and cold pool",
                                                         "Habitat timing: Length of ocean summer, cold pool seasonal persistence",
                                                         "Benthic and pelagic forage quality & abundance: ocean temperature & acidification ",
-                                                        "Wind development speed; Protected species presence and  hotspots"
+                                                        "Wind development map; Protected species presence and  hotspots"
                       ))
 
 mng_obj$service <- c(rep("Climate and Ecosystem Risks", 3), 
@@ -48,19 +48,19 @@ FitFlextableToPage(tab)
 ::: {.soe-50-column}
 
 ### Risks to Managing Spatially
-Potential Impacts: Spatial misallocation of quotas within and across jurisdictions, leading to unmet quotas and/or increased discards. Specification of gear management areas may not utilize quotas and minimize bycatch.
+Potential Impacts: Spatial mis-allocation of quotas may lead to unmet quotas, increased discards, and/or miscalculated fishing targets. 
 
 ### Risks to Managing Seasonally
-Potential Impacts: Spawning closures are less effective if peak spawning occurs outside the seasonal closure. Seasonal openings of exemption areas may be inconsistent with species presence. Seasonal quota allocations may be misaligned with availability.
+Potential Impacts: Spawning closures, seasonal openings, and seasonal quota allocations may be less effective if mis-timed with biological events, resulting in decreased seafood production.
 
 ### Risks to Setting Catch Limits
-Potential Impacts: Changes in environmental conditions can affect stock reference points and short-term stock projections. When productivity changes are not accounted for, they can lead to misspecified quotas and rebuilding plans.
+Potential Impacts: Unaccounted for and unknown productivity changes may lead to mis-specified quotas and rebuilding plans, especially if they are not considered in stock reference points and short-term stock projections.
 
 :::
 
 ::::
 
-## Risks to Managing Spatially: Coastwide
+## Risks to Managing Spatially: Indicators
 
 :::: {.soe-50-50-slide}
 
@@ -72,12 +72,7 @@ Fish distribution shifts
 return_plot("species-dist", region = "BothReports", mode = "slide")
 ```  
 
-Megabenthos distribution shifts
-
-```{r}
-return_plot("megabenthosshifts", region = "BothReports", mode = "slide")
-```  
-
+Significant species distributions seen for fish, HMS, and mammals
 :::
 
 ::: {.soe-50-column}
@@ -88,37 +83,55 @@ Cetacean distribution shifts
 return_plot("protectedspp-dist-shifts", region = "BothReports", mode = "slide")
 ```
 
+Changing distributions can impact:
+
+  * Spatial allocation & cross-jurisdictional management
+  * Effectiveness of bycatch reduction measures
+  * Availability to surveys and fisheries
+
 :::
 
 ::::
 
-## Risks to Managing Spatially: Coastwide
+## Risks to Managing Spatially: Biological Drivers
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
-Drivers: Forage shifts, pelagic and benthic
-
-```{r forageshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity."}
-return_plot("forageshifts", region = "BothReports", mode = "slide")
-```
+Macrobenthos (mid-size benthic species) distributions
 
 ```{r macrobenthosshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf"}
 return_plot("macrobenthosshifts", region = "BothReports", mode = "slide")
+```
+
+Megabenthos (larger-size benthic species) distributions
+
+```{r}
+return_plot("megabenthosshifts", region = "BothReports", mode = "slide")
 ```
 
 :::
 
 ::: {.soe-50-column}
 
+Forage fish distributions
+
+```{r forageshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity."}
+return_plot("forageshifts", region = "BothReports", mode = "slide")
+```
+
+- Some species can follow their food, but not all -- can cause a mismatch between fish and their prey
+- Pelagic prey are shifting towards the northeast
+- Mixed trends in benthic prey shifts
+
 :::
 
 ::::
 
-## Risks to Managing Spatially: Coastwide
+## Risks to Managing Spatially: Biological Drivers
 
-Drivers: shifts in zooplankton -- Copepods center of gravity from ECOMON
+Shifts in zooplankton (from ECOMON)
 
 :::: {.soe-50-50-slide}
 
@@ -128,9 +141,7 @@ Drivers: shifts in zooplankton -- Copepods center of gravity from ECOMON
 return_plot("calfin-cog", region = "NewEngland", mode = "slide")
 ```
 
-```{r}
-return_plot("megabenthosshifts", region = "BothReports", mode = "slide")
-```
+_Calanus_ shifting westward in last decade
 
 :::
 
@@ -141,17 +152,15 @@ return_plot("megabenthosshifts", region = "BothReports", mode = "slide")
 return_plot("smallcopeall-cog", region = "BothReports", mode = "slide")
 ```
 
-```{r}
-return_plot("lgcopeall-cog", region = "BothReports", mode = "slide")
-```
+Long-term northeast shifts in small copepods
 
 :::
 
 ::::
 
-## Risks to managing spatially: Coastwide
+## Risks to managing spatially: Environmental Drivers
 
-Drivers: changing ocean habitat  
+Thermal Habitat Changes 
 
 :::: {.soe-50-50-slide}
 
@@ -165,15 +174,24 @@ return_plot("long-term-sst", region = "BothReports", mode = "slide")
 return_plot("GSI", region = "BothReports", mode = "slide")
 ```
 
-```{r cold-pool-size, fig.alt="Seasonal cold pool mean temperature (left) and spatial extent index (right), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple)."}
-return_plot("cold-pool-size", region = "BothReports", mode = "slide")
-```
-
+* The entire shelf is getting warmer with northward shifts in Gulf Stream
+* Since 2023 - sharp drop in Gulf Stream and temperature
+* Changes in currents and temperature can alter habitat suitability
+* Mobile species can follow changes, but others cannot (i.e. scallops)
 :::
 
 ::: {.soe-50-column}
 
-Add things on heatwaves, cold spells, thermal habitat here?
+```{r cold-pool-size, fig.alt="Seasonal cold pool mean temperature (left) and spatial extent index (right), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple)."}
+#| out-height: "500px"
+return_plot("cold-pool-size", region = "BothReports", mode = "slide")
+```
+
+
+* Some changes can be local and variable
+  * Mid-Atlantic Cold pool important regional feature that is shrinking and warming habitat
+  * Last 3 years saw an improvement in cold pool conditions
+
 
 :::
 

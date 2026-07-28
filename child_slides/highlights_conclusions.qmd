@@ -1,4 +1,4 @@
-## 2024 Highlights: Methods
+## Highlights Methods
 
 :::: {.soe-50-50-slide}
 
@@ -12,9 +12,6 @@ Observations solicited from:
 *  Management partners
 *  Fishing industry
 
-We welcome your observations! <northeast.ecosystem.highlights@noaa.gov>
-
-
 Observations included if:
 
 *  Record high or low observations
@@ -25,25 +22,28 @@ Observations included if:
 
 *Not exhaustive list; Full impacts remain to be seen*
 
-Reprinted from [Cape Cod Commercial Fisherman's Alliance](https://capecodfishermen.org/) February 2025 Newsletter &rarr;
+Please send observations to: <northeast.ecosystem.highlights@noaa.gov>
 
 :::
 
 ::: {.soe-50-img}
 
-![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/CCCFA-Feb2025-highlight.png)
+```{r}
+knitr::include_graphics(here::here("images\\BothReports\\input_request.png"))
+```
 
+[See the call here](https://www.mafmc.org/newsfeed/2025/fishing-industry-input-needed-for-annual-state-of-the-ecosystem-report)
 :::
 
 ::::
 
-## 2024 Highlights: generally cooler, fresher Northeast Shelf
+## Highlights: Cooler Northeast Shelf
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-img}
 
-```{r slopesea, fig.alt="February 2024 sea surface temperature difference compared to the February 2000-2020 long-term mean from the NOAA Advanced Clear-Sky Processor for Ocean (ACSPO) Super-collated SST."}
+```{r slopesea, fig.alt="January 2025 sea surface temperature difference compared to the February 2000-2020 long-term mean from the NOAA Advanced Clear-Sky Processor for Ocean (ACSPO) Super-collated SST."}
 return_plot("slopesea", region = "BothReports")
 ```
 
@@ -51,59 +51,59 @@ return_plot("slopesea", region = "BothReports")
 
 ::: {.soe-50-column}
 
-Globally, 2024 warmest year on record (above previous record 2023)
+Globally, 2025 was the third warmest year on record
 
-BUT, nearly all NE shelf seasonal surface and bottom temperatures back to longer term average
+BUT, nearly all NE shelf seasonal surface and bottom temperatures were similar to or cooler than the longer term average
 
-2023-2024 data suggest more Labrador slope water into the GOM `r Cite(myBib, "record_early_2024")`
+The Cold Pool was well-developed and more similar to the long-term average in terms of extent and persistence
+
+In 2024, relative contributions of Labrador Slope Water and Warm Slope Water more similar to the long-term averages
 
 ```{r slopewater, fig.alt="The proportion of Warm Slope Water (WSW) and Labrador Slope Water (LSW) enter the Gulf of Maine through the Northeast Channel. The orange and teal dashed lines represent the long-term proportion averages for the WSW and LSW, respectively."}
 return_plot("slopewater", region = "BothReports")
 ```
 
-Linked to well-developed 2024 Mid Atlantic Cold Pool
-
 :::
 
 ::::
 
-## 2024 Highlights
+## Highlights: Notable observations
 
 :::: {.soe-50-50-slide}
 
-::: {.soe-50-column}
+::: {.soe-50-img}
 
-```{r mab-oa2, fig.alt = "Locations where bottom aragonite saturation state ($\\Omega_{Arag}$; summer only: June-August) were at or below the laboratory-derived sensitivity level for Atlantic sea scallop (left panel) and longfin squid (right panel) for the time periods 2007-2022 (dark cyan), 2023 only (magenta) and 2024 only (cyan). Gray circles indicate locations where bottom $\\Omega_{Arag}$ values were above the species specific sensitivity values.", out.width = "100%"}
-magick::image_read("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/dev/data-raw/workshop/images/SeasonalBottomAragoniteLongfin-GraceSaba_2025.png")
+\
+\
+
+::: {layout-nrow=1}
+
+```{r, out.width = "20%", fig.pos = "l"}
+knitr::include_graphics(here::here("images\\BothReports\\Chris-Jobes-Tagging-Marlin-500x750.jpg"))
 ```
 
-Extreme observation of ocean acidification risk off NJ
+```{r, out.width = "70%", fig.pos = "l"}
+knitr::include_graphics(here::here("images\\BothReports\\Chris-Jobes-tagged-White-Marlin-750x500.jpg"))
+```
 
-Multiple summer upwelling events off NJ
+:::
+
+\
+\
+Images from [this NOAA webstory](https://www.fisheries.noaa.gov/feature-story/celebrating-our-top-taggers-citizen-science-month)
 
 :::
 
 ::: {.soe-50-column}
 
-Unusual timing, location, abundance:
+Observations on timing, location, and abundance:
 
-*  Fishery observations
-    *  Delayed migration of longfin squid, black sea bass, haddock
-    *  Unusual locations for pollock, bluefin tuna, Atlantic mackerel, longfin squid, bluefish, and bonito
-    *  Local abundance of Atlantic mackerel
-    *  Record catches of red drum in Chesapeake Bay
-
-*  Good scallop recruitment in Nantucket lightship
-
-*  Arctic copepods in GOM
-
-*  Cocolithophore bloom off NY
-
-*  Large whale aggregations
-
-```{r cocobloom, fig.alt="An OLCI Sentinel 3A true color image with enhanced contrast captured on July 2, 2024. Coccolithophores shed their coccolith plates during the later stages of the bloom cycle, which results in the milky turquoise water color (Image credit: NOAA STAR, OCView and Ocean Color Science Team).", out.width="50%"}
-return_plot("cocobloom", region = "BothReports")
-```
+* Fishers reported delayed migration of black sea bass and the absence of bluefish off of Rhode Island
+* Good year for billfish, with >23,000 white marlin caught and released
+* Fishers reported low catch and cold stunned red drum and spotted sea trout
+* Fishers reported higher abundance and wider distributions of Atlantic mackerel, Illex squid, and sandlance
+* Good scallop survival in the Elephant Trunk region according to the scallop survey
+* Arctic copepods in GOM observed in the EcoMon survey
 
 :::
 

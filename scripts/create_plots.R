@@ -1,5 +1,5 @@
 # reinstall ecodata
-devtools::install_github("NOAA-EDAB/ecodata", ref = "a66530e")
+devtools::install_github("NOAA-EDAB/ecodata", ref = "ae539f2")
 
 # setup ----
 
@@ -107,7 +107,7 @@ save_plot(
   },
   indicator = "total_landings",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 3),
+  height = ifelse(region == "NewEngland", 5, 2.5),
 )
 
 # commercial landings
@@ -129,12 +129,12 @@ save_plot(
 # climate vulnerability landings
 save_plot(
   plot_expression = {
-    ecodata::plot_community_climate_vulnerability(
+    ecodata::plot_community_risks(
       report = region,
       plottype = "regionland",
       n = 30
     ) +
-      ggplot2::ylab("Total Climate Vulnerability \n (Regional Landings)") +
+      ggplot2::ylab("Total Vulnerability \n (Regional Landings)") +
       ggplot2::theme(legend.position = 'bottom')
   },
   indicator = "climatevul_land",
@@ -370,7 +370,7 @@ save_plot(
   },
   indicator = "bennet",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 6, 3)
+  height = ifelse(region == "NewEngland", 6, 2.5)
 ) 
 
 # bennet all
@@ -406,20 +406,20 @@ save_plot(
     }
   },
   indicator = "bennet_all",
-  width = ifelse(region == "NewEngland", 9, 6.5),
-  height = 6.5
+  height = ifelse(region == "NewEngland", 9, 4),
+  width = 6.5
 )
 
 # 4. Climate Vulnerability Revenue Plot
 save_plot(
   plot_expression = {
-    ecodata::plot_community_climate_vulnerability(
+    ecodata::plot_community_risks(
       report = region,
       plottype = "regionrev",
       n = 24
     ) +
          ggplot2::theme(legend.position = "bottom") +
-        ggplot2::ylab("Total Climate Vulnerability \n (Regional Revenue)") 
+        ggplot2::ylab("Total Vulnerability \n (Regional Revenue)") 
   },
   indicator = "climatevul_rev",
   width = 6.5,
@@ -468,7 +468,7 @@ save_plot(
   },
   indicator = "comdat_profit",
   width = 6.5,
-  height = ifelse (region == "NewEngland", 8, 4.5)
+  height = ifelse (region == "NewEngland", 8, 4)
 )
 
 
@@ -517,11 +517,19 @@ save_plot(
 # 1. Commercial Diversity Fleet Plot
 save_plot(
   plot_expression = {
+    if (region == "MidAtlantic") {
     a <- ecodata::plot_commercial_div(
       report = region,
       varName = "Fleet count",
       n = 22
     ) +
+         ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
+    } else {
+      a <- ecodata::plot_commercial_div(
+        report = region,
+        varName = "Fleet count",
+        n = 22
+      ) +
          ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     b <- ecodata::plot_commercial_div(
       report = region,
@@ -530,10 +538,11 @@ save_plot(
     ) +
          ggplot2::theme(plot.margin = ggplot2::unit(c(0.25, 0.5, 0.25, 0.5), "cm"))
     ggpubr::ggarrange(a, b, nrow = 2)
+    }
   },
   indicator = "comm_div_fleet",
   width = 6.5,
-  height = 5
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 # 2. Commercial Diversity Species Diversity Plot
@@ -646,7 +655,7 @@ save_plot(
   },
   indicator = "exp_n",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 3.5)
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 #zooplankton community PCA
@@ -665,7 +674,7 @@ save_plot(
   },
   indicator = "zoo_community",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 3.5)
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 
@@ -674,30 +683,30 @@ save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
       ecodata::plot_finfish_traits(report = region, varName = "length_maturity", n = 10)  +
-             ggplot2::theme(legend.position = 'bottom')
+        ggplot2::theme(legend.position = 'bottom')
     } else {
       ecodata::plot_finfish_traits(
         report = region,
         varName = 'fecundity',
         n = 10
       )   +
-             ggplot2::ylab('Fecundity (number of \noffspring per mature female)') +
-            ggplot2::theme(legend.position = 'bottom') +
-           ggplot2::facet_wrap(~EPU, nrow = 2)
+        ggplot2::ylab('Fecundity (number of \noffspring per mature female)') +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
     }
   },
   indicator = "traits",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 5, 3.5)
+  height = ifelse(region == "NewEngland", 5, 2.5)
 )
 
 #finfish traits - trophic level
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-    ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
-         ggplot2::theme(legend.position = 'bottom') +
-         ggplot2::ylab('Trophic Level')
+      ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::ylab('Trophic Level')
     } else {
       ecodata::plot_finfish_traits(report = region, varName = "trophic_level", n = 10)  +
         ggplot2::theme(legend.position = 'bottom') +
@@ -705,18 +714,18 @@ save_plot(
         ggplot2::facet_wrap(~EPU, nrow = 2)
     }
   },
-  indicator = "traits_trophic_level",
+  indicator = "traits_tl",
   width = 6.5,
-  height = 4.5
+  height = 2.5
 )
 
 #finfish traits - growth rate
 save_plot(
   plot_expression = {
     if (region == "MidAtlantic") {
-    ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
-         ggplot2::theme(legend.position = 'bottom') +
-         ggplot2::ylab('Growth coefficient (k)')
+      ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
+        ggplot2::theme(legend.position = 'bottom') +
+        ggplot2::ylab('Growth coefficient (k)')
     } else {
       ecodata::plot_finfish_traits(report = region, varName = "k", n = 10)  +
         ggplot2::theme(legend.position = 'bottom') +
@@ -724,9 +733,9 @@ save_plot(
         ggplot2::facet_wrap(~EPU, nrow = 2)
     }
   },
-  indicator = "traits_growth_rate",
+  indicator = "traits_k",
   width = 6.5,
-  height = 4.5
+  height = 2.5
 )
 
 ## Community social and climate vulnerability ----
@@ -734,11 +743,12 @@ save_plot(
 # 1. Commercial Engagement Plot
 save_plot(
   plot_expression = {
-    commercial_engagement_plot <- plot_engagement(
+    commercial_engagement_plot <- ecodata::plot_engagement(
       report = region,
       varName = "Commercial"
     ) +
-      ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0)) 
+      ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0),
+                     legend.title = ggplot2::element_blank()) 
   },
   indicator = "commercial_engagement",
   width = 7,
@@ -762,9 +772,9 @@ save_plot(
 # 3. Community Climate Vulnerability Exposure Plot
 save_plot(
   plot_expression = {
-    ecodata::plot_community_climate_vulnerability(
+    ecodata::plot_community_risks(
       report = region,
-      n = 24
+      n = 30
     ) +
         ggplot2::theme(legend.position = 'bottom')
   },
@@ -780,7 +790,7 @@ save_plot(
   plot_expression = {
       ecodata::plot_trans_dates(report = region, 
                                 varName = "length",
-                                n = 10)
+                                n = 10) 
   },
   indicator = "transition_date",
   width = 6.5,
@@ -798,18 +808,24 @@ save_plot(
   },
   indicator = "monthly_chl",
   width = 6.5,
-  height = ifelse(region == "NewEngland", 7, 4)
+  height = ifelse(region == "NewEngland", 7, 3.5)
 )
 
 ### Risks to setting catch limits ----
 # productivity anomaly
 save_plot(
   plot_expression = {
-      anomaly <- plot_productivity_anomaly(report = region, 
+      anomaly <- ecodata::plot_productivity_anomaly(report = region, 
                                 varName = "anomaly", 
-                                plottype = "council") 
+                                plottype = "council") + 
+        ggplot2::labs(title = paste0(region, " Productivity Anomaly from Survey Data")) + 
+        if (region == "MidAtlantic") {
+          ggplot2::labs(subtitle = "MAFMC managed species")
+        } else {
+          ggplot2::labs(subtitle = "NEFMC managed species")
+        }
 
-      assessment <- plot_productivity_anomaly(report = region, 
+      assessment <- ecodata::plot_productivity_anomaly(report = region, 
                                               varName = "assessment", 
                                               plottype = "council") 
       if (region == "MidAtlantic") {
@@ -828,7 +844,7 @@ save_plot(
       },
       indicator = "productivity_anomaly",
       width = 6.5,
-      height = ifelse(region == "NewEngland", 9.5, 8.5)
+      height = ifelse(region == "NewEngland", 8.5, 8)
     )
 
 # condition factor
@@ -862,8 +878,7 @@ save_plot(
   },
   indicator = "condition",
   width = 6.5,
- #  height = 7
-  height = ifelse(region == "NewEngland", 10, 6)
+  height = ifelse(region == "NewEngland", 7, 6)
 )
 
 # 5. Energy Density Plot
@@ -915,7 +930,7 @@ save_plot(
   },
   indicator = "benthos",
   width = 6.5,
-  height = 6
+  height = 5
 )
 
 # 8. Zooplankton Anomaly Plot
@@ -997,6 +1012,25 @@ save_plot(
   width = 6.5,
   height = 4.5
 )
+
+# In situ bottom temperature
+save_plot(
+  plot_expression = {
+    if (region == "MidAtlantic") {
+      ecodata::plot_bottom_temp_insitu(report = region, n = 10)  
+    } else {
+      ecodata::plot_bottom_temp_insitu(
+        report = region,
+        n = 10
+      )   +
+        ggplot2::facet_wrap(~EPU, nrow = 2)
+    }
+  },
+  indicator = "bottom_temp_insitu",
+  width = 6.5,
+  height = ifelse(region == "NewEngland", 5, 2.5)
+)
+
 # Other ocean uses: offshore wind ----
 
 # 1. Wind Species Revenue Plot
@@ -1008,6 +1042,7 @@ save_plot(
       plottype = "nofacets",
       n = 16
     )    +
+      ecodata::geom_gls()+
          ggplot2::theme(legend.position = "bottom") +
       if (region == "MidAtlantic") {
         ggplot2::ggtitle("Mid Atlantic: Fishery Revenue in Active Projects") 
@@ -1093,16 +1128,17 @@ save_plot(
   height = 4
 )
 
-# 5. Energy Density Plot
-save_plot(
-  plot_expression = {
-    # plot is the same even though it takes a region parameter
-    ecodata::plot_energy_density(report = "NewEngland")
-  },
-  indicator = "energy_density",
-  width = 6.5,
-  height = 4
-)
+# # 5. Energy Density Plot
+# IN 2026 REPORT AS A STATIC PLOT
+# save_plot(
+#   plot_expression = {
+#     # plot is the same even though it takes a region parameter
+#     ecodata::plot_energy_density(report = "NewEngland")
+#   },
+#   indicator = "energy_density",
+#   width = 6.5,
+#   height = 4
+# )
 
 # GOM ocean acidification
 GOMoa_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf"
@@ -1122,7 +1158,7 @@ save_plot(
   },
   indicator = "harborporpoise",
   width = 6.5,
-  height = 3
+  height = 2.5
 )
 
 # gray seal
@@ -1132,7 +1168,7 @@ save_plot(
   },
   indicator = "grayseal",
   width = 6.5,
-  height = 3
+  height = 2.5
 )
 
 # narw-abundance
@@ -1173,15 +1209,13 @@ save_plot(
 # species dist
 save_plot(
   plot_expression = {
-    a <- ecodata::plot_species_dist(varName = "along", n = 10) +
-      ggplot2::coord_cartesian(xlim = c(1969, 2021))
-    b <- ecodata::plot_species_dist(varName = "depth", n = 10) +
-      ggplot2::coord_cartesian(xlim = c(1969, 2021))
-    ggpubr::ggarrange(a, b, ncol = 2)
+    a <- ecodata::plot_species_dist(varName = "along", n = 10) 
+    b <- ecodata::plot_species_dist(varName = "depth", n = 10) 
+    ggpubr::ggarrange(a, b, ncol = 1)
   },
   indicator = "species_dist",
   width = 6.5,
-  height = 5
+  height = 3.5
 )
 
 # whale and dolphin dist shifts
@@ -1200,33 +1234,11 @@ save_plot(
 # forage shifts
 save_plot(
   plot_expression = {
-    ecodata::plot_forage_index(varName = "cog", n = 10) +
-      ggplot2::coord_cartesian(xlim = c(1982, 2023)) 
+    ecodata::plot_forage_index(varName = "cog", n = 10)
   },
   indicator = "forage_dist",
   width = 6.5,
-  height = 5
-)
-
-# macrobenthos shifts
-save_plot(
-  plot_expression = {
-    ecodata::plot_benthos_index(
-      plottype = "cog",
-      varName = "Macrobenthos",
-      n = 10
-    )  +
-         ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
-        ggplot2::ggtitle("Northeast U.S. Macrobenthos Distribution") +
-       ggplot2::ylab("Center of Gravity, km") +
-      ggplot2::geom_point(ggplot2::aes(color = .data$Season)) + 
-     ggplot2::geom_line(ggplot2::aes(color = .data$Season)) +
-          ggplot2::theme(legend.position = 'bottom') +
-         ggplot2::facet_grid(cols = ggplot2::vars(Season), rows = ggplot2::vars(Direction), scales = "free_y")
-  },
-  indicator = "macrobenthos_dist",
-  width = 6.5,
-  height = 5
+  height = 3.5
 )
 
 # longterm sst
@@ -1317,7 +1329,7 @@ save_plot(
   },
   indicator = "smallcopeall_cog",
   width = 6.5,
-  height = 4
+  height = 3.5
 )
 
 # large cope center of gravity
@@ -1333,7 +1345,7 @@ save_plot(
   },
   indicator = "lgcopeall_cog",
   width = 6.5,
-  height = 4
+  height = 3.5
 )
 
 # macrobenthos shifts
@@ -1344,7 +1356,6 @@ save_plot(
       varName = "Macrobenthos",
       n = 10
     ) +
-      ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
       ggplot2::ggtitle("Northeast U.S. Macrobenthos Distribution") +
       ggplot2::ylab("Center of Gravity, km") +
     ggplot2::theme(legend.position = 'bottom') +
@@ -1367,7 +1378,6 @@ save_plot(
       varName = "Megabenthos",
       n = 10
     ) +
-      # ggplot2::coord_cartesian(xlim = c(1980, 2023)) +
       ggplot2::ggtitle("Northeast U.S. Megabenthos Distribution") +
       ggplot2::ylab("Center of Gravity, km") +
       ggplot2::facet_grid(
@@ -1401,7 +1411,7 @@ save_plot(
   },
   indicator = "euph_cog",
   width = 6.5,
-  height = 4
+  height = 3.5
 )
 
 
@@ -1466,14 +1476,15 @@ if (region == "NewEngland") {
   )
 }
 
-# WBTS Zoo - NE only
-if (region == "NewEngland") {
-  save_plot(
-    plot_expression = {
-      ecodata::plot_wbts_zoo(report = region, n = 10)
-    },
-    indicator = "wbts_zoo",
-    width = 6.5,
-    height = 4
-  )
-}
+# # WBTS Zoo - NE only
+## NOTE: THIS PLOT IS NO LONGER CREATED IN ECODATA. WILL NEED TO BE READ IN AS AN IMAGE.
+# if (region == "NewEngland") {
+#   save_plot(
+#     plot_expression = {
+#       ecodata::plot_wbts_zoo(report = region, n = 10)
+#     },
+#     indicator = "wbts_zoo",
+#     width = 6.5,
+#     height = 4
+#   )
+# }

@@ -1,0 +1,173 @@
+---
+title: "State of the Ecosystem 2026: Request Tracking Memo"
+geometry: left=2cm, right=2cm, top=2cm, bottom=2cm, footskip = .5cm
+output:
+  pdf_document:
+    includes:
+      in_header: "utils/header1_memo.tex"
+    keep_tex: yes
+# bibliography: SOE2023.bib
+# csl: plos.csl
+link-citations: yes
+fontsize: 10pt
+subparagraph: yes
+urlcolor: blue
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+#Default Rmd options
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      dev = "cairo_pdf",
+                      fig.align = 'center') #allows for inserting R code into captions
+
+library(tidyverse)
+library(readxl)
+library(kableExtra)
+library(ecodata)
+# library(googledrive)
+# library(pacman)
+# p_load(repmis, RCurl, DT, magrittr, gsubfn, stringr, tidyverse)
+
+library(flextable)
+
+set_flextable_defaults(
+  font.size = 9,
+  padding.bottom = 0,  
+  padding.top = 1, 
+  line_spacing = 1,
+  font.family = "Palatino")
+```
+
+```{r, results='hide'}
+source(here::here("utils/memo_utils.R"))
+```
+
+# Introduction
+
+In this document, we summarize a running list of comments and requests from the Mid Atlantic Fishery Management council (MAFMC), New England Fishery Management Council (NEFMC), and both Science and Statistical Committees (SSCs). The memo is organized by task based on its current status and topic category. The Priority column (formerly called Rank) has been updated based on quantitative scoring guidelines that were developed following the publication of 2025 State of the Ecosystem (SOE) reports. Priority determination methods and scores were discussed with Council staff and SSC members at the July 2025 State of the Ecosystem Prioritization meeting. We first show requests that have been completed as of the 2026 SOE reports (Table 1), research requests that are in progress or not yet started (Table 2), and requests that have been removed from tracking due to being out of scope or not well-defined (Table 3).
+
+```{r, ft.arraystretch = 1}
+completed
+```
+
+\newpage
+
+```{r, ft.arraystretch = 1}
+requests |>
+dplyr::filter(!Status %in% c("Done", "Not feasible"),
+              Status != "",
+              Status != "Removed",
+              Priority != "Lowest") |>
+  dplyr::group_by(Category) |>
+  dplyr::mutate(n = dplyr::n()) |>
+  dplyr::arrange(n) |>
+  dplyr::arrange(n, Category, desc(Priority)) |>
+  dplyr::select(-n) |>
+  create_table(widths = c(4.5, ret_widths(3)),
+               cap = "Remaining research requests for the State of the Ecosystem reports.")
+```
+
+\newpage
+
+```{r, ft.arraystretch = 1}
+requests |>
+  dplyr::filter(Status == "Not feasible" |
+                  Priority == "Lowest") |>
+  dplyr::select(-c(Status, Priority)) |>
+  create_table(widths = c(4.5, ret_widths(1)),
+               cap = "Requests that have been removed from tracking due to being out of scope or not well-defined.")
+```
+
+# Quantitative priority rating criteria
+In order to use time more effectively, we developed criteria to guide and speed up the prioritization of requests. These criteria are framed around the impact of the request on the scientific content of the SOE, combined with the impact on fisheries management decision making, regardless of currently available resources. Improvements to the scientific content of the SOE were considered on the ecosystem scale, not on the scale of how that information would affect a single species. Impact on management decision making was characterized as how well the information would fit into a well-defined on-ramp into the management process, such as a risk assessment. Requests that had been previously ranked as "lowest priority" were re-assessed according to the new criteria, and were removed from the tracking list if the request was out of scope or not well-defined.
+
+The new priority definitions are:
+
+- Highest: Significant scientific improvement to the SOE **and** maximum impact on management decision making
+- High: Significant scientific improvement to SOE **or** maximum impact on management decision making
+- Moderate: The impact on management decision making is unclear, but potentially impactful
+- Low: Negligible scientific improvement to SOE and minimal impact on management decision making
+
+Please note that some requests are currently marked as "low priority" due to the imprecise or vague wording, which could be updated in the future if the request is made more specific. All rankings can continue to be discussed and refined in the next SOE Prioritization meeting.
+
+\newpage
+
+# Overview of requests
+
+## Request categories
+
+This memo is organized into categories by topic. The former category called "Regime shifts" has been absorbed into the "System level thresholds/reference points" category. The ability to work on requests subject to resource limitations and staffing. The request categories are:
+
+#### Short term forecasts 
+Includes requests for biological and environmental forecasts, including MOM6 oceanographic model products.
+
+#### Management
+Includes analyses related to management performance.
+
+#### Stock level indicators
+Includes requests for information on the scale of a single species or stock. Requests for this information may be more appropriately directed to stock specific ecosystem products such as [Ecosystem and Socioeconomic Profiles (ESPs)](https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/ecosystem-and-socioeconomic-profiles-northeast-united-states).
+
+#### Functional group level status/thresholds/reference points
+Includes requests for information on the scale of functional groups or guilds. 
+
+#### SOE admin
+Includes requests relating to the structure and methods of the creation of the SOE reports.
+
+#### System level thresholds/reference points
+Includes requests to develop analytical methods that can be applied across all indicator types and operationalized for management advice. 
+
+#### Multiple system drivers
+Includes requests for information about oceanographic, ecological, social, and economic processes that impact fisheries.
+
+We welcome further feedback on planned and continuing work.
+
+## Adjustments to general SOE report structure
+
+Based on feedback and requests for information surrounding our Stability section, we revised both the ecosystem and fishery stability sections to focus on Changes From Baseline, Adaptive Capacity, and Volatility. This reframing is intended to better communicate how the system has changed from historic observations, how well-prepared the system is for future change, and how variable the system is.
+
+We have retained and updated the [online indicator catalog](https://noaa-edab.github.io/catalog/index.html) that provides a "deep dive" into each indicator, with multiple visualizations of the data and clearer links to the datasets in the [ecodata R package](https://noaa-edab.github.io/ecodata/) for increased transparency and ease of use by investigators throughout the region. We are also updating the [online technical documentation](https://noaa-edab.github.io/tech-doc/).  
+
+## Summary of completed requests by category
+
+### SOE admin
+
+We have reformatted the memo to identify which requests have been completed in the last year, as well as which requests have been dropped from future tracking. 
+
+### System level thresholds/reference points
+
+A refined trend analysis is now systematically incorporated into the SOE and the ecodata R package. Both long-term and short-term trends are assessed and plotted if statistically significant at the p < 0.05 level. To minimize bias introduced by small sample size, time series with less than 30 years are assessed using the short-term trend methodology applied over the extent of the time period.
+
+[OA and hypoxia indicators](placeholder URL for catalog) have been developed through collaboration with the FishBot team. Estuarine water quality is described in the [Chesapeake Bay Water Quality Standards Attainment catalog page](https://noaa-edab.github.io/catalog/ches_bay_wq.html).
+
+### Multiple system drivers
+
+The profitability indicator developed by Geret DePiper (TAMUCC) has been incorporated into the report for the second year in a row, and this request has been removed from tracking. 
+
+Experts from the Social Sciences Branch contributed edits, information, and updated methods to the fishing community social indicators. Part of this effort included the development of time series of fishing activity by port. We have also begun including Committees at Sea indicators for both regions to address alternative community definitions. Although methods will continue to be updated, we consider the basic requirements of the social indicator requests to have been met and remove them from tracking. 
+
+Aquaculture has been added to the Other Ocean Uses section of the reports. We will continue to expand this section in future reports.
+
+Productivity anomaly indicators have been included for small fish to large fish biomass and recruitment anomalies from stock assessments. 
+
+## Requests in Progress
+
+Of the 90 requests we are actively tracking, 28 of them are currently *in progress*. Instead of providing a detailed summary of the status of each request, below is a high level summary of the ongoing activities that we are aware of. The following activities represent active work that relates to specific requests, but is not comprehensive of all research being done elsewhere.
+
+### SOE admin
+
+The SOE Team has been expanding the reach of their SOE Highlights section and is planning on revising the inclusion criteria following a workshop during the 2026 Cooperative Research Summit. 
+
+### System level thresholds/reference points
+
+The revision of the Ecosystem and Fishery Stability section has led to discussions about how to add or modify existing indicators to better suit this definition. Research on ecosystem overfishing is also being conducted with ecosystem models that may lead to revisions to prior ecosystem overfishing indicators and the establishment of ecosystem thresholds in the SOE. As work concludes on the Climate Vulnerability Assessment (CVA) 2.0, the SOE Team is considering how to develop related indicators.
+
+### Multiple system drivers
+
+There is ongoing research at the NEFSC on fishery adaptation strategies, demographic shifts, and shifts in fishing behavior that may lead to future indicators. Species distribution models from the CVA2.0 may address requests to quantify species distribution shifts. Work continues to evaluate changes in social and ecosystem changes relating to highly migratory and protected species.
+
+### Short term forecasts
+
+An operational Northwest Atlantic MOM6 forecast model has been developed which provides quarterly 12-month forecasts of temperature and other oceanographic variables for the entire Northeast U.S. A high-level infographic has been included into the SOE summary page presenting the 2026 bottom temperature forecasts and the 10 year projection. We plan to continue integrating forecast results into the SOE when appropriate.

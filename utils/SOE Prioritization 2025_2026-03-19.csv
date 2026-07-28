@@ -1,0 +1,97 @@
+Category,Request,Year,Status,Priority
+,System level thresholds/ref pts,,,
+system_level,Ecosystem Overfishing Indicators: compare to empirical thresholds; assess informativeness of indicators using simulation analysis; assess impact of phytoplankton size composition on EOF thresholds; determine optimum yield,2021-2024,In progress,Highest
+system_level,Trend Analysis,2019 - 2024,Done,Highest
+system_level,"Develop regime shift analysis methods (e.g., inflection point analysis, influence statistics, break point analysis, early warning variance)",2019-2025,Not started,Highest
+system_level,"Conduct regime shift analysis of relevant indicators (e.g., zooplankton, forage fish, socioeconomic, etc). Use influence statistics to identify whether we are approaching tipping points.",2019-2025,Not started,Highest
+system_level,Create volatility indices to assess system stability,2025,Not started,High
+system_level,Present normalized indicators to more clearly show variability; incorporate into assessment of system stability,2025,Not started,Moderate
+system_level,Use community and port level information to inform fleet stability indicator,2025,In progress,Highest
+system_level,"Improve language around status and trends (e.g., assumed baselines, contextualize long v short trends, contextualize local influences)",2025,In progress,High
+system_level,Explore stock assessment indices as measure of stability,2025,Not started,Moderate
+system_level,Update CVA and explore trend changes when a new CVA is applied,2025,In progress,Highest
+system_level,Better evaluation of one-time observations (i.e. address persistence of observations),2025,Not started,Low
+system_level,Include standardized language about uncertainty from e.g. IPCC or NCA applicable to each indicator or data input,2024,Not started,Highest
+system_level,Sum of TAC/ Landings relative to TAC,"2021, 2024",In progress,High
+system_level,"Nutrient input, Benthic Flux and POC (particulate organic carbon) to inform benthic productivity by something other than surface indicators","2021, 2023",Not started,Low
+system_level,Reduce indicator dimensionality with multivariate statistics,2020,In progress,Lowest
+,Management,,,
+management,Ensure that indicators are formatted in a way that is useable for risk work,2024,Not started,High
+management,Management complexity,2019,In progress,Moderate
+management,Recreational bycatch mortality as an indicator of regulatory waste,2021,Not started,Moderate
+management,Re-evaluate EPUs,2020,Not started,Lowest
+management,"conduct a tradeoff analysis to determine which management objectives have the largest impact and should be prioritized for monitoring, similar to the summer flounder MSE.",2025,Not feasible,Low
+management,Identify technical interactions within fisheries so management does not cause underfishing,2025,Not feasible,Lowest
+,Short term forecasts,,,
+forecasts,"Short term forecasting from CEFI (water temp, productivity); Characterize current conditions in context of expected short term change","2022, 2024, 2025",In progress,Highest
+forecasts,Using phytoplankton trends to forecast fish stocks,2022,Not started,Moderate
+,Multiple system drivers,,,
+system_drivers,Profits vs Revenue: net revenue indicator incomplete and different trend from gross,2023-2024,Done,Highest
+system_drivers,"Clarify objectives, terminology and presentation for fishing community engagement/reliance/social indicators","2022, 2024",Done,Highest
+system_drivers,Time series of social indicators,2023-2024,Done,Highest
+system_drivers,Consider appropriate scale for social and economic indicators,2024,Done,Highest
+system_drivers,Add social and economic considerations in the Climate and Ecosystem risks section,2024,Done,Highest
+system_drivers,Include community affordability in port level vulnerability,2024,Done,High
+system_drivers,Evaluate port level landings considering home port vs out of state vessel landings,2024,Not started,High
+system_drivers,"Clarify community definitions and consider indicators beyond landings to employment, subsistence",2024,Done,Highest
+system_drivers,Linking Condition,2020,In progress,Moderate
+system_drivers,"New diet indicators: average weight of diet components by feeding group, mean stomach weight across feeding guilds",2019,Not started,Moderate
+system_drivers,Consider including indicators of predator prey relationships / predator pressure,2024,In progress,High
+system_drivers,Cumulative weather index,2020,In progress,Moderate
+system_drivers,Modeling cold pool/warm core ring and wind development interactions,2022,Not started,Moderate
+system_drivers,Impact of climate on data streams (changes in catchability of survey),2022,In progress,Moderate
+system_drivers,Young of Year index from multiple surveys,2019,Not started,High
+system_drivers,Links between species availability inshore/offshore (estuarine conditions) and trends in recreational fishing effort?,2021,In progress,Low
+system_drivers,Tell Social stories like we try to tell biological stories,2022,Not started,High
+system_drivers,"What determines a ""risk""? Include aquaculture as a risk?",2022,Done,Unranked
+system_drivers,OA linked to scallop harvest in areas where aragonite saturation is highlighted.,2023,Not started,Moderate
+system_drivers,Stability indicator - yield over time in NE,2023,Not started,Moderate
+system_drivers,Vessel-level diversity vs fleet level diversity. Recontextualize fishery stability as adaptive capacity/flexibility.,2023,In progress,High
+system_drivers,Inclusion of upcoming HMS climate vulnerability assessment,2023,Not started,Moderate
+system_drivers,Report changes in small fish and large fish biomass along with production anomalies,2024,Done,Moderate
+system_drivers,Aggregate surplus production and avg length of inds at recruitment age to productivity section,2024,Not started,Moderate
+system_drivers,Inclusion of additional environmental justice indicators from National Academies,2024,Not feasible,Lowest
+system_drivers,"Distribution shifts: percent of species shifting in similar directions and magnitude of the change, id cross jurisdictional shifts",2024,In progress,High
+system_drivers,Track subsequent impacts of 2023 phytoplankton bloom in GOM. Track anomalous events from previous years. ,2024,In progress,Low
+system_drivers,Consider state managed fishery production instead of recreational shark harvest,2024,Not started,Lowest
+system_drivers,Consider HMS recreational effort in effort trends,2024,In progress,Moderate
+system_drivers,Consider HMS predation pressure,2024,In progress,Lowest
+system_drivers,Changing per capita seafood consumption as driver of revenue?,2021,Not started,Moderate
+system_drivers,"Relate OA to nutrient input; are there ""dead zones"" (hypoxia)?",2021,Done,Low
+system_drivers,Estuarine Water Quality,2020,Done,Low
+system_drivers,Decomposition of diversity drivers highlighting social components,2021,Not started,Moderate
+system_drivers,Indicators of chemical pollution in offshore waters,2021,Not started,Lowest
+system_drivers,Estuarine condition relative to power plants and temp,2019,Not feasible,Lowest
+system_drivers,Assess connection between community vulnerability indicators and recreational fleet diversity and shore-based fishing mode,2025,Not started,Moderate
+system_drivers,Assess if there is generational shift in fishing activity; test if this is linked to shore-based fishing,2025,In progress,Moderate
+system_drivers,Relate declining commercial landings to interactions with Council and non-Council species. Especially focus on larger vessels with multiple permits that can shift fishing targets from year to year,2025,Not started,High
+system_drivers,Assess if species distributions and processing capacity are drivers of profitibility,2025,Not started,High
+system_drivers,Capture risks to climate for shore anglers in cultural objectives/risk metrics,2025,Not started,Moderate
+system_drivers,Qualify the linkage between slope water and cold pool persistence,2025,Not started,Moderate
+system_drivers,Consider and account for the role of labor in cost calculations,2025,Not started,Low
+system_drivers,Investigate the role of spatial distribution of costs and consolidation of industry into fewer ports,2025,Not started,Moderate
+system_drivers,"Explore the impact of changed timing on reproductive success, climate change vulnerability and recruits",2025,Not started,Moderate
+,Functional group level status/thresholds/ref pts,,,
+functional_group,VAST,2020,In progress,Moderate
+functional_group,Consider expanding species included in seabird productivity indicators--Roseate tern,2024,Not started,Low
+functional_group,Uncertainty,2020,Not started,Lowest
+functional_group,"Biomass+landings trends by (aggregated) Council managed species, stock status, cold vs warm water spp",2024,In progress,High
+functional_group,"Seal index, Apex predator index (pinnipeds, time series of marine mammal species abundance","2020, 2021, 2024",In progress,Low
+functional_group,Biomass of spp not included in BTS,2020,Not started,Lowest
+functional_group,Expand HMS and rec indicators to include tunas and commercially caught HMS species to explore further evidence of distribution shifts,2025,In progress,Moderate
+,Stock level indicators,,,
+stock_level,Shellfish growth/distribution linked to climate (system productivity),2019,In progress,Moderate
+stock_level,Indicator of scallop pred pops poorly sampled by bottom trawls,2021,Not started,Moderate
+stock_level,Evaluate if NARW hotspots changing over time,2024,Not started,Low
+stock_level,"Update text around NARW trend drivers, specifically recent stabilization (for PSD)",2024,Not started,Moderate
+stock_level,"Include cross references to stock specific products (ECSA/ESP), ensure consistent approaches; Establish more links between events and consequences (e.g. temp ranges for more species)",2024,In progress,Highest
+stock_level,Sturgeon Bycatch,2021,Not started,Lowest
+,SOE admin,,,
+admin,SOE usage tracking,2022-2023,In progress,Low
+admin,Include estimates of inclusion years in request memo,2022,Done,Lowest
+admin,Include statement on reliance on contributors for evaluation of data quality,2024,Not started,High
+admin,Establish criteria for inclusion of events in the Year Highlights section,2024,In progress,High
+admin,More frequent indicator updates in web based product,2024,Not started,Lowest
+admin,Present the SOE highlights page to Advisory Panels for feedback,2025,Not started,Moderate
+admin,Present relevant MA information in NE report,2025,In progress,Highest
+admin,Improve context and definitions of Management Objectives,2025,Not started,Highest

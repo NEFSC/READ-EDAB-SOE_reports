@@ -1,0 +1,8 @@
+# 2025 Highlights
+
+::: {.center-images}
+
+![Cooperative Research icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//23.COOPERATIVE_RESEARCH.png){width=25%} &nbsp; &nbsp; &nbsp; ![Multiple drivers icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//18.MULTIPLE_SYSTEM_DRIVERS.png){width=25%} &nbsp; &nbsp; &nbsp; ![Fishing industry icon made by EDAB](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//6_INDUSTRY.png){width=25%} 
+
+:::
+

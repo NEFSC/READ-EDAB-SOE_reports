@@ -1,0 +1,39 @@
+## Summary of Risks to meeting fishery management objectives
+
+```{r, fig.alt = ""}
+knitr::include_graphics(here::here("images/BothReports/SOE-NE-2026-v5_Page_4.png"))
+```
+
+## New this year: Ocean Forecasts
+
+```{r, fig.alt = ""}
+knitr::include_graphics(here::here("images/BothReports/Mom6-OOF-Graphic.png"))
+```
+
+## 2025 Highlights
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+### Ecosystem observations
+
+Cooler conditions in the Northeast persisted despite another record warm year globally.
+
+### Fishing observations
+- Reports of record levels of white marlin, and higher abundance of billfish, sandlance, Illex squid and
+Atlantic mackerel than in recent years.
+- Observations of some species (Atlantic mackerel, striped bass, red drum, bluefish, and other gamefish) showed shifting distributions and unpredictable timing.
+- Good hook and line fishing near the wind turbines.
+
+We welcome your observations! <northeast.ecosystem.highlights@noaa.gov>
+
+:::
+
+::: {.soe-50-img}
+
+```{r, fig.alt = ""}
+knitr::include_graphics(here::here("images/BothReports/Observations-Map-V8.png"))
+```
+:::
+
+::::

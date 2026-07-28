@@ -14,7 +14,7 @@ mng_obj <- data.frame(
     "Revenue decomposed to price and volume",
     "Angler trips; recreational fleet diversity",
     "Fishery and ecosystem volatility, adaptive capacity, and shifts from baseline",
-    "Community fishing engagement and social vulnerability status",
+    "Community commercial fishing activity and risk factors",
     "Bycatch; population (adult and juvenile) numbers; mortalities",
     "Stock status; catch compared with catch limits",
     "Biomass or abundance by feeding guild from surveys",
@@ -43,7 +43,7 @@ flextable::as_grouped_data(mng_obj, groups = "service") |>
   flextable::set_caption(paste("Ecosystem-scale fishery management objectives in", region)) |>
   flextable::autofit()
 ```
- \newpage
+<!-- \newpage -->
 ```{r management-risks, ft.arraystretch = 1.5}
 mng_obj <- data.frame(
   "Risks" = c(
@@ -59,10 +59,10 @@ mng_obj <- data.frame(
     "Fishery revenue and landings from wind lease areas by species and port"
   ),
   "Potential Driver Indicators" = c(
-    "Benthic and pelagic forage distribution; ocean temperature, changes in currents and cold pool",
-    "Habitat timing: Length of ocean summer, cold pool seasonal persistence",
-    "Benthic and pelagic forage quality & abundance: ocean temperature & acidification ",
-    "Wind development speed; Protected species presence and  hotspots"
+    "Benthic and pelagic forage distribution; ocean temperature, changes in currents and Cold Pool",
+    "Habitat timing: Length of ocean summer, Cold Pool seasonal persistence",
+    "Benthic and pelagic forage quality & abundance; ocean temperature & acidification ",
+    "Wind development map; Protected species presence and hotspots"
   )
 )
 

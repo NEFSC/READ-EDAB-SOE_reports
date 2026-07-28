@@ -7,16 +7,16 @@
 
 Indicators: fish productivity and condition
 
-```{r, fig.alt = "Fish productivity measures. Left: Small fish per large fish survey biomass anomaly in the Mid-Atlantic Bight. Right: assessment recruitment per spawning stock biomass anomaly for stocks mainly in the Mid-Atlantic. The summed anomaly across species is shown by the black line, drawn across all years with the same number of stocks analyzed."}
-return_plot("productivity-anomaly", region = "MidAtlantic", mode = "slide")
+```{r, fig.alt = "Condition factor for fish species in the MAB based on fall NEFSC bottom trawl survey data. MAB data are missing for 2017 due to survey delays, and no survey was conducted in 2020."}
+return_plot("mab-cf", region = "MidAtlantic", mode = "slide")
 ```
 
 :::
 
 ::: {.soe-50-column}
 
-```{r, fig.alt = "Condition factor for fish species in the MAB based on fall NEFSC bottom trawl survey data. MAB data are missing for 2017 due to survey delays, and no survey was conducted in 2020."}
-return_plot("mab-cf", region = "MidAtlantic", mode = "slide")
+```{r, fig.alt = "Fish productivity measures. Left: Small fish per large fish survey biomass anomaly in the Mid-Atlantic Bight. Right: assessment recruitment per spawning stock biomass anomaly for stocks mainly in the Mid-Atlantic. The summed anomaly across species is shown by the black line, drawn across all years with the same number of stocks analyzed."}
+return_plot("productivity-anomaly", region = "MidAtlantic", mode = "slide")
 ```
 
 :::
@@ -25,27 +25,28 @@ return_plot("mab-cf", region = "MidAtlantic", mode = "slide")
 
 ## Risks to Setting Catch Limits: Mid Atlantic Drivers
 
+Drivers: Forage Quality and Abundance
+
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
-Drivers: Forage Quality and Abundance
-
-```{r, fig.alt="Forage fish energy density mean and standard deviation by season and year, compared with 1980s (solid line) and 1990s (dashed line) values."}
-return_plot("energy-density", region = "BothReports", mode = "slide")
+```{r, fig.alt="Forage fish energy density mean and standard deviation by season and year, compared with 1980s (solid line) and 1990s (dashed line) values.",eval = FALSE}
+return_plot("energy-density", region = "NewEngland")
 ```
 
 ```{r, fig.alt = "Forage fish index in the MAB for spring (blue) and fall (red) surveys, with a decline (purple) in fall. Index values are relative to the maximum observation within a region across surveys."}
 return_plot("foragebio", region = "MidAtlantic", mode = "slide")
 ```
 
+- Changes in diet quality and quantity of forage fish and benthos prey could impact the productivity of managed species
+
 :::
 
 ::: {.soe-50-column}
 
-New indicators: benthos abundance
-
 ```{r, fig.alt="Changes in spring (blue) and fall (red) benthos abundance in the MAB for megabenthos (left) and macrobenthos (right)."}
+# <!-- #| out-height: "650px" -->
 return_plot("benthos", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -65,11 +66,15 @@ Drivers: Low trophic levels
 return_plot("totpp", region = "MidAtlantic", mode = "slide")
 ```
 
+* Primary production determines the energy available to the ecosystem
+* Forage and juvenile fish and marine mammals rely on zooplankton to grow. Shifts in zooplankton communities can change the overall quality of food. 
+
 :::
 
 ::: {.soe-50-column}
 
 ```{r, fig.alt="Changes in zooplankton abundance in the MAB for large (top left) and small (top right) copepods, Cnidarians (bottom left), and Euphausiids (bottom right), with significant increases (orange) in small copeods and Cnidarians."}
+# <!-- #| out-height: "650px" -->
 return_plot("zoopanom", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -86,6 +91,10 @@ Changes in fish traits
 ::: {.soe-50-column}
 
 ```{r}
+return_plot("traits", region = "MidAtlantic", mode = "slide")
+```
+
+```{r}
 return_plot("traits-k", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -94,9 +103,45 @@ return_plot("traits-k", region = "MidAtlantic", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r}
+# <!-- #| out-height: "500px" -->
 return_plot("traits-tl", region = "MidAtlantic", mode = "slide")
 ```
+
+- Changing fish traits could signal changes to system productivity
 
 :::
 
 ::::
+
+## Risks to Setting Catch Limits: Mid Atlantic Drivers
+
+```{r, eval = TRUE, out.width = "60%"}
+#| fig-align: center
+# <!-- #| out-height: "350px" -->
+return_plot("mab-oa", region = "BothReports",mode = 'slide')
+```
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r, eval = TRUE}
+# <!-- #| out-height: "350px" -->
+return_plot("advection-index", region = 'MidAtlantic', mode = 'slide')
+```
+
+:::
+
+::: {.soe-50-column}
+
+Environmental Indicators: Habitat Quality and Circulation
+
+* Episodic habitat risk events for scallops and squid present but sparse in 2025
+* New Indicator: Advection off shelf (how much are larvae getting carried offshore?)
+  * Shallow and Deep water more likely to leave shore in spring over time
+
+:::
+
+::::
+
+

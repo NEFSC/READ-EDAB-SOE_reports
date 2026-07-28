@@ -1,0 +1,35 @@
+
+## Objective: Fishery and Ecosystem Stability
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+In 2025 we moved from increasing/decreasing stability to stable/not-stable and have refined the criteria
+
+Stability is measured by:
+
+  - Volatility: How much do we expect the system to change year to year and is it predicatable?
+  - Adaptive Capacity: How well can the system respond to changes?
+  - Shifts from Baseline: Is the system shifting to a new status where prior conditions may no longer be the norm?
+
+:::
+
+::: {.soe-50-column}
+
+"Not-stable" **doesn't** mean:
+
+* we are experiencing a regime shift necessarily
+* we are experiencing negative impacts
+
+"Stable" **doesn't** mean:
+
+* There are no changes in the system
+* All is well
+
+"Not Stable" **does** mean:
+
+* There are large changes in multiple ecosystem components
+* These changes are altering the structure or function of the ecosystem
+
+:::
+
+::::

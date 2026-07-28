@@ -6,9 +6,17 @@
 
 *Fishery*  Indicators: Commercial fleet count, fleet diversity   
 
+
+
 ```{r}
 return_plot("comm-div-fleet", region = "MidAtlantic", mode = "slide")
 ```
+
+Changes in who is fishing:
+
+- Crews are aging, inconsistent job satisfaction
+- Lack of new entrants to fisheries
+- The size and activity of fishing communities are changing
 
 :::
 
@@ -24,6 +32,12 @@ return_plot("commercial-div-species-div", region = "MidAtlantic", mode = "slide"
 ```{r}
 return_plot("recdat-div-catch", region = "MidAtlantic", mode = "slide")
 ```
+
+Changes in how people are fishing:
+
+- Changes in recreational fishing behavior
+- Declines in state-managed species and scallops
+- Declining fleet count suggests a reduced capacity to adapt to future change
 
 :::
 

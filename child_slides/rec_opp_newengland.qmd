@@ -1,17 +1,44 @@
-## Objective: New England Recreational opportunities `r I(no_trend)` `r I(near_average)`
+## Objective: New England Recreational opportunities: Effort `r I(no_trend)` `r I(below_average)`
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
-Indicators: Recreational effort and fleet diversity  
+Indicators: Recreational effort
 
 ```{r}
 return_plot("rec-op", region = "NewEngland", mode = "slide")
 ```
 
+
+:::
+
+::: {.soe-50-column}
+
+Implications
+
+* Recreational effort peaked in 2010 but is now stable
+
+* Lack of a long-term trend suggests a consistent amount of recreational opportunities in New England
+
+:::
+
+::::
+
+## Objective: New England Recreational opportunities: Fleet and Catch Diversity `r I(mixed_trend)` `r I(near_average)`
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Indicators: Recreational catch and fleet diversity  
+
 ```{r }
 return_plot("rec-div", region = "NewEngland", mode = "slide")
+```
+
+```{r }
+return_plot("recdat-div-catch", region = "NewEngland", mode = "slide")
 ```
 
 :::
@@ -20,7 +47,9 @@ return_plot("rec-div", region = "NewEngland", mode = "slide")
 
 Implications
 
-* Absence of a long-term trend in recreational effort suggests relative stability in the overall number of recreational opportunities in New England
+* No long-term change in types of recreational trips
+* *But* there is an increase in diversity of species caught recreationally
+* This suggests recreational fishers are catching a wider variety of species
 
 :::
 

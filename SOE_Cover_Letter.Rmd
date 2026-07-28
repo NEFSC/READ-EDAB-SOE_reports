@@ -1,0 +1,68 @@
+---
+# --- 1. MUST DECLARE PARAMS HERE ---
+params:
+  region: "NewEngland"
+  signature: ""
+  cache: FALSE
+  id_child_docs: TRUE
+
+# --- Conditional Letter-Specific Fields ---
+author:
+  - "`r if(params$region == 'MidAtlantic') 'Abigail Tyrell, PhD' else 'Joseph Caracappa, PhD'`"
+  - "Research Fishery Biologist"
+  - "Ecosystem Dynamics and Assessment Branch"
+  - "Northeast Fisheries Science Center"
+
+address:
+  - "`r if(params$region == 'MidAtlantic') 'Mid-Atlantic Fishery Management Council' else 'New England Fishery Management Council'`"
+  - "`r if(params$region == 'MidAtlantic') '800 N. State St., Suite 201' else '50 Water St No. 2'`"
+  - "`r if(params$region == 'MidAtlantic') 'Dover, DE 19901' else 'Newburyport, MA 01950'`"
+
+signature: "`r params$signature`"
+
+opening: To the SSC,
+closing: Sincerely,
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+encl:
+ - "State of the Ecosystem 2026: Request Tracking Memo"
+cc:
+- Jon Hare
+letterhead: utils/NEFSCletterhead.pdf
+signature-before: -8ex
+
+# --- Document Settings & Dependencies ---
+fontsize: 10pt
+link-citations: yes
+geometry: left=2cm, right=2cm, top=3.5cm, bottom=2cm, footskip = .5cm
+subparagraph: yes
+urlcolor: blue
+always_allow_html: true
+
+# --- 2. OUTPUT DEFINED ONLY HERE ---
+output: 
+  linl::linl:
+    keep_tex: true
+    extra_dependencies: ["float"]
+---
+
+In this memo we list comments and requests received on the 2019-2025 State of the Ecosystem (SOE) reports, and how we responded to those requests. We include comments from both Councils because adjustments to the report were made in response to both. We welcome feedback on whether this memo is useful and how to improve it for future SOE reporting.
+
+This year, the memo is reorganized into three tables. Table 1 shows all completed requests, Table 2 shows all pending requests, and Table 3 shows all request removed from tracking. Request priorities and the decision that items were out of scope for the SOE were discussed with both Councils' SSCs during a July 2025 prioritization meeting.
+
+The SOE team is also requesting that the Council and SSC consider some of the following items relating to recent changes to the SOE
+
+1. **Performance metrics**: For each management objective category are the performance metrics  clearly articulated and are the metrics used appropriate?
+
+2. **Specific objectives and indicators**: 
+
+    * The framework of the *Stability objective* has been revised for both ecosystem and fishery indicators to focus on *Changes From Baseline*, *Adaptive Capacity*, and *Volatility*.
+    * Does this reframing of stability better address the Council needs? Comment on how they could be refined 
+    
+3. The SOE team has integrated  **ocean model forecasts** from MOM6 into an SOE graphic summary  
+
+    * Are presenting forecast information as probabilities of deviating from historical average a useful format for the Council? Are there other reference points or “events” that could be used instead of historical averages?
+    * How should uncertainty be discussed alongside observations? 
+    * Are there any research questions or Council decisions that forecast information could assist?
+
+We welcome comments on the entire SOE report as well as information included in this memo, and look forward to feedback from the SSC and Council.
+

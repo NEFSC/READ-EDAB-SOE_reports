@@ -7,10 +7,12 @@
 Indicators: fishery and community specific revenue in lease areas
 
 ```{r}
+# <!-- #| out-height: "500px" -->
 return_plot("wea-spp-rev", region = "MidAtlantic", mode = "slide")
 ```
 
 ```{r}
+# <!-- #| out-height: "350px" -->
 return_plot("wind-rev", region = "MidAtlantic", mode = "slide")
 ```
 
@@ -19,10 +21,13 @@ return_plot("wind-rev", region = "MidAtlantic", mode = "slide")
 ::: {.soe-50-column}
 
 ```{r}
+# <!-- #| out-height: "650px" -->
 return_plot("wea-port-rev", region = "MidAtlantic", mode = "slide")
 ```
 
-Left: Council request: New England ports relying on Mid-Atlantic managed species
+* Based on historic data, revenue at the port and fishery level in the Active Project areas has been relatively low
+
+* Left: Council request: New England ports relying on Mid-Atlantic managed species within the Active Projects
 
 :::
 

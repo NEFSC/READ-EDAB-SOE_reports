@@ -66,16 +66,14 @@ knitr::include_graphics(here::here("images/bsb_report_card_Page_2.png"))
 
 ::::
 
-## State of the Ecosystem: Maintain 2025 structure for 2026
-
-### 2026 Report Structure
+## 2026 Report Structure
 
 :::: {.soe-50-50-slide}
 
 ::: {.soe-50-column}
 
 1. Graphical summary
-    + Page 1 report card re: performance metrics &rarr;
+    + Page 1 report card re: performance metrics
     + Page 2 risk summary bullets
     + Page 3 2025 snapshot
 1. Performance relative to management objectives
@@ -85,48 +83,44 @@ knitr::include_graphics(here::here("images/bsb_report_card_Page_2.png"))
     - Same *What* and *Why* as Performance Section
 1. 2025 Highlights
 
-::: {layout-nrow=1}
-
-```{r, fig.alt = "State of the Ecosystem page 1 summary table", out.width = "100%"}
-knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-performance.png")
-```
-
-```{r, fig.alt = "State of the Ecosystem page 2 risk bullets", out.width = "100%"}
-knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-risks.png")
-```
-
-```{r, fig.alt = "State of the Ecosystem page 3 highlights", out.width = "100%"}
-knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/SOE-MA-02282025-508-highlights.png")
-```
-
-:::
-
 :::
 
 ::: {.soe-50-column}
+
+```{r, fig.alt = ""}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//SystemDrivers_v5.jpg")
+```
+
+:::
+
+::::
+
+## Metrics, risks, drivers, and indicators
 
 ```{r management-objectives}
 perf_metrics <- tibble::tibble(
   "Objective Categories" = c("Seafood Production",
                              "Profits","Recreation",
-                             "Stability","Social & Cultural",
+                             "Stability",
+                             "Social & Cultural",
                              "Protected Species"),
   "Indicators reported" = c("Landings; commercial total and by feeding guild; recreational harvest",
-                           "Revenue decomposed to price and volume",
-                           "Angler trips; recreational fleet diversity",
-                           "Diversity indices (fishery and ecosystem)",
-                           "Community engagement/reliance and environmental justice status",
+                           "Revenue decomposed to price and volume, profitability",
+                           "Angler trips; recreational fleet diversity; recreational catch diversity",
+                           "Fishery and ecosystem volatility, adaptive capacity, and shifts from baseline",
+                           "Community commercial fishing activity and risk factors
+",
                            "Bycatch; population (adult and juvenile) numbers, mortalities"),
   service = "Performance Metrics"
 )
 
 drivers <- tibble::tibble(
-  "Objective Categories" = c("Biomass","Productivity",
-                             "Trophic structure","Habitat"),
-  "Indicators reported" = c("Biomass or abundance by feeding guild from surveys",
-                           "Condition and recruitment of managed species, primary productivity",
-                           "Relative biomass of feeding guilds, zooplankton",
-                           "Estuarine and offshore habitat conditions"),
+  "Objective Categories" = c("Management",
+                             "Biomass",
+                             "Environment"),
+  "Indicators reported" = c("Stock status; catch compared with catch limits",
+                           "Biomass or abundance by feeding guild from surveys",
+                           "Climate and ecosystem risk indicators listed below"),
   service = "Drivers of Performance"
 )
 
@@ -152,7 +146,7 @@ drivers_risk <- tibble::tibble("Objective Categories" = c(
   "Other Ocean Uses"
 ),
 "Indicators reported" = c(
-  "Benthic and pelagic forage distribution; ocean temperature; changes in currents and cold pool",
+  "Benthic and pelagic forage distribution; ocean temperature; changes in currents and Cold Pool",
   "Habitat timing: length of ocean summer, cold pool seasonal persistence",
   "Benthic and pelagic forage quality and abundance; ocean temperature and acidification",
   "Wind development map; protected species presence and hotspots"
@@ -172,41 +166,11 @@ flextable::as_grouped_data(mng_obj, groups = "service") |>
   flextable::set_caption("Ecosystem-scale fishery management objectives") |>
   flextable::fontsize(size = 12,
                       part = "all") |>
+    flextable::theme_zebra() |>
+    flextable::bg(i = ~ !is.na(service), bg = "beige", part = "body") |>
+    flextable::hline(i = ~ !is.na(service)) |>
   flextable::autofit() 
 ```
-
-:::
-
-::::
-
-
-## Ecosystem synthesis framework
-
-Characterizing ecosystem change for fishery management -- how do we synthesize multiple indicators to explain ecosystem dynamics?
-
-* Societal, biological, physical and chemical factors comprise the **multiple system drivers** that influence marine ecosystems through a variety of different pathways. 
-* Changes in the multiple drivers can lead to **regime shifts** — large, abrupt and persistent changes in the structure and function of an ecosystem. While we don't yet incorporate statistical tests for regime shifts, we qualitatively assess whether multiple indicators suggest a regime shift may have occurred.
-* Regime shifts and changes in how the multiple system drivers interact can result in **ecosystem reorganization** as species and humans respond and adapt to the new environment. We qualitatively consider whether ecosystem reorganization has occured by assessing changes in species distributions, community composition, food web structure, and fishery dynamics.
-
-:::: {.soe-50-50-slide}
-
-::: {.soe-50-column}
-
-```{r, fig.alt = ""}
-knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//SystemDrivers_v5.jpg")
-```
-
-:::
-
-::: {.soe-50-column}
-
-```{r, fig.alt = ""}
-knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//RegimeShift_V5.jpg")
-```
-
-:::
-
-::::
 
 ## State of the Ecosystem report scale and figures
 
@@ -233,6 +197,7 @@ ggpubr::ggarrange(a, b, ncol = 2)
 ```  
 
 ```{r}
+#| out-height: "450px"
 knitr::include_graphics(here::here("images/plot_key.png"))
 ```
 
