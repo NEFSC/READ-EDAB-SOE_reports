@@ -24,6 +24,12 @@ Observations included if:
 
 Please send observations to: <northeast.ecosystem.highlights@noaa.gov>
 
+```{r}
+#| out-height: "100px"
+#| out-width: "100px" 
+knitr::include_graphics(here::here("images/SOE_Fishing_Observations.png"))
+```
+
 :::
 
 ::: {.soe-50-img}

@@ -17,15 +17,20 @@ knitr::include_graphics(here::here("images/BothReports/Mom6-OOF-Graphic.png"))
 
 ### Ecosystem observations
 
-Cooler conditions in the Northeast persisted despite another record warm year globally.
+```{r}
+txt <- ifelse(params$region == 'MidAtlantic', "While surface and bottom temperatures in the Mid-Atlantic were generally below or near the long-term average, fall bottom temperatures and spring and summer surface temperatures were above average. The Cold Pool was well-established, with above average persistence and extent.", "")
+```
 
-### Fishing observations
+Cooler conditions in the Northeast persisted despite another record warm year globally. `r txt`
+
+### Fishing observations {.nostretch}
 - Reports of record levels of white marlin, and higher abundance of billfish, sandlance, Illex squid and
 Atlantic mackerel than in recent years.
 - Observations of some species (Atlantic mackerel, striped bass, red drum, bluefish, and other gamefish) showed shifting distributions and unpredictable timing.
 - Good hook and line fishing near the wind turbines.
 
-We welcome your observations! <northeast.ecosystem.highlights@noaa.gov>
+We welcome your observations! <northeast.ecosystem.highlights@noaa.gov> 
+![](images/SOE_Fishing_Observations.png){.absolute top="80%" left="40%" width="100px" height="100px"}
 
 :::
 

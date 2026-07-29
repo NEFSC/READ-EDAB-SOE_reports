@@ -3,8 +3,8 @@
 ## mid slides ----
 now <- Sys.time()
 quarto::quarto_render(
-  input = here::here("parent_presentation.qmd"),
-  output_file = "midatlantic.html",
+  input = here::here("parent_presentation_council.qmd"),
+  output_file = "SOE2026_MAFMC.html",
   execute_params = list(
     region = "MidAtlantic",
     council = "MAFMC",
@@ -32,21 +32,6 @@ quarto::quarto_render(
 )
 difftime(Sys.time(), now)
 
-## all slides ----
-now <- Sys.time()
-quarto::quarto_render(
-  input = here::here("parent_presentation.qmd"),
-  execute_params = list(
-    region = "Both",
-    council = "NEFMC, MAFMC",
-    fig_caption = here::here("utils/figure_captions_summary.csv"),
-    date = Sys.Date() |> format("%B %d, %Y"),
-    author = "NEFSC"
-  ),
-  output_format = "all"
-)
-difftime(Sys.time(), now)
-
 # SSC slides ----
 
 ## NE ----
@@ -58,7 +43,7 @@ quarto::quarto_render(
     region = "NewEngland",
     council = "NEFMC",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
-    date = Sys.Date() |> format("%B %d, %Y"),
+    date = "Marcy 2025, 2026",
     author = "Joe Caracappa, lead editor, NEFSC"
   ),
   output_format = "all"
@@ -81,6 +66,12 @@ quarto::quarto_render(
 )
 difftime(Sys.time(), now)
 
+# Other presentations ----
+
+## Synthesis meeting ----
+
+# made by knitting the qmd directly: parent_presentation_synthesis.qmd
+
 ## NEFMC CESC ----
 now <- Sys.time()
 quarto::quarto_render(
@@ -90,14 +81,14 @@ quarto::quarto_render(
     region = "NewEngland",
     council = "NEFMC",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
-    date = Sys.Date() |> format("%B %d, %Y"),
+    date = "March 27, 2026",
     author = "Joe Caracappa, lead editor, NEFSC"
   ),
   output_format = "all"
 )
 difftime(Sys.time(), now)
 
-## Core Team Presenation ----
+## Core Team Presentation ----
 now <- Sys.time()
 quarto::quarto_render(
   input = here::here("parent_presentation_ECCG.qmd"),
@@ -106,9 +97,13 @@ quarto::quarto_render(
     region = "both",
     council = "NEFMC",
     fig_caption = here::here("utils/figure_captions_summary.csv"),
-    date = Sys.Date() |> format("%B %d, %Y"),
+    date = "April 9, 2026",
     author = "Joe Caracappa & Abigail Tyrell: lead editors, NEFSC"
   ),
   output_format = "all"
 )
 difftime(Sys.time(), now)
+
+## Library presentation ----
+
+# made by knitting the qmd directly: parent_presentation_overview_seminar.qmd

@@ -20,7 +20,7 @@ return_plot("total-landings", region = "MidAtlantic")
 return_plot("comm-landings", region = "MidAtlantic")
 ```
 
-Mid-Atlantic ports face a moderate to high risk from environmental variability, as evaluated by the 2025 [Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_risks.html) (Fig. \ref{fig:climatevul-land}). These [indicators](#community-social-and-climate-vulnerability) assess port level risk to environmental variability based on dependence on species and their respective bioenvironmental vulnerabilities as assessed by regional experts. Total Vulnerability measures how much a region’s landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
+Mid-Atlantic ports face a moderate to high risk from environmental variability, as evaluated by the 2025 [Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_risks.html) (Fig. \ref{fig:climatevul-land}). These [indicators](#community-social-and-climate-vulnerability) evaluate port-level risk by combining a community's economic dependence on specific commercial species with those species' regional bioenvironmental vulnerability scores. Total Vulnerability measures how much a region’s landings (or revenue) is dependent on species that are sensitive to different climate and environmental change factors including temperature and acidification.
 
 In the Mid-Atlantic, total [recreational harvest](https://noaa-edab.github.io/catalog/recdat.html) (retained fish presumed to be eaten) shows a long-term decline with recent harvest remaining near a time series low (Fig. \ref{fig:rec-landings}). This pattern may indicate a shift towards catch-and-release strategies as opposed to catch for harvest. [Recreational shark landings](https://noaa-edab.github.io/catalog/rec_hms.html) have generally decreased for most shark groups through 2024 (Fig \ref{fig:rec-hms}). The recent low in pelagic shark landings is largely driven by regulatory changes implemented in 2018, followed by the closure of the shortfin mako fishery in 2022. These actions were intended to rebuild the North Atlantic shortfin mako stock and comply with binding recommendations by the International Commission for the Conservation of Atlantic Tunas (ICCAT). 
 
@@ -36,7 +36,7 @@ return_plot("rec-landings", region = "MidAtlantic")
 return_plot("rec-hms", region = "MidAtlantic")
 ```
 
-[Aquaculture](https://www.fisheries.noaa.gov/topic/aquaculture) can comprise a significant proportion of seafood production in specific communities, but not all aquaculture production is included in total seafood landings above. In 2022, the Northeast region produced approximately 6,300 metric tons of aquacultured shellfish, with revenue of $133 million. 
+While [aquaculture](https://www.fisheries.noaa.gov/topic/aquaculture) can account for a significant portion of seafood production in specific communities, the total landings reported above exclude aquaculture, except where state data sources don't distinguish between aquacultured and wild-caught seafood. In 2022, the Northeast region produced approximately 6,300 metric tons of aquacultured shellfish, with revenue of $133 million. 
 
 ### Implications
 
@@ -44,7 +44,7 @@ return_plot("rec-hms", region = "MidAtlantic")
 
 #### Stock Status and Catch Limits
 
-Single species [management objectives](https://noaa-edab.github.io/catalog/stock_status.html) (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are being met for all but two MAFMC-managed species (golden tilefish and Atlantic mackerel) (Fig. \ref{fig:stock-status}). However, the status of 5 stocks is unknown (northern shortfin squid, goosefish GOM/GB, goosefish southern GB/MAB, blueline tilefish, and chub mackerel), and longfin squid does not have an $F/F_{MSY}$ estimate.
+Single species [management objectives](https://noaa-edab.github.io/catalog/stock_status.html) (1. maintaining biomass above minimum thresholds and 2. maintaining fishing mortality below overfishing limits) are being met for all but one MAFMC-managed species (golden tilefish) (Fig. \ref{fig:stock-status}). However, the status of 5 stocks is unknown (northern shortfin squid, goosefish GOM/GB, goosefish southern GB/MAB, blueline tilefish, and chub mackerel), and longfin squid does not have an $F/F_{MSY}$ estimate.
 
 ```{r stock-status, fig.width = 6.5,  fig.asp = 0.5, fig.cap = return_caption(chunk_name = "stock-status", region = "MidAtlantic")}
 return_plot("stock-status", region = "MidAtlantic")
@@ -73,7 +73,7 @@ return_plot("stock-status", region = "MidAtlantic")
 <!-- #   flextable::autofit() -->
 <!-- # ``` -->
 
-Stock status and associated management constraints are unlikely to be driving decreased landings for some species, including quahog, surfclam, and northern shortfin squid. Most stocks are not fully utilizing their associated ABC or ACL, which includes landings and discards (Fig. \ref{fig:abcacl-stacked})(Fig. \ref{fig:abcacl-catch}). Quahog, surfclam, and northern shortfin squid have the largest ABC or ACLs but have low catch ratios, with less than 24% of ABC or ACL caught in 2024. All other species except chub mackerel and longfin squid have catch ratios over 80%, indicating that stock status and associated regulations are most likely constraining the landings of some species such as black sea bass, bluefish, and Atlantic mackerel. However, these management actions and regulations are enacted in response to biomass, such that less conservative regulations would not necessarily mean higher landings. 
+Stock status and associated management constraints are unlikely to be driving decreased landings for some species, including ocean quahog, surfclam, and northern shortfin squid. Most stocks are not fully utilizing their associated ABC or ACL, which includes landings and discards (Fig. \ref{fig:abcacl-stacked}, \ref{fig:abcacl-catch}). Quahog, surfclam, and northern shortfin squid have the largest ABC or ACLs but have low catch ratios, with less than 24% of ABC or ACL caught in 2024. All other species except chub mackerel and longfin squid have catch ratios over 80%, indicating that stock status and associated regulations are most likely constraining the landings of some species such as black sea bass, bluefish, and Atlantic mackerel. However, since these management actions reflect underlying biomass, easing regulations would not necessarily yield higher catches from stocks that are biologically constrained.
 
 ```{r abcacl-stacked, fig.cap=return_caption(chunk_name = "abcacl-stacked", region = "MidAtlantic"), fig.width = 6, fig.asp = 0.4, fig.height = 4}
 return_plot("abcacl-stacked", region = "MidAtlantic")

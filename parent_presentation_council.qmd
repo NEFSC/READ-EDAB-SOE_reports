@@ -3,7 +3,7 @@ title: 'State of the Ecosystem <br /> `r dplyr::case_when(
   params$region == "MidAtlantic" ~ "Mid-Atlantic",
   params$region == "NewEngland" ~ "New England",
   TRUE ~  "[Mid-Atlantic] *or* [New England]")` 2026'
-subtitle: "`r params$council` Update <br /> `April 15, 2026`"
+subtitle: "Presentation to the `r params$council` <br /> `June 16, 2026`"
 author: "`r params$author`"
 editor: source
 params:
@@ -47,7 +47,7 @@ format:
           
     # --- Mapped from revealjs::revealjs_presentation ---
     # Controls if resources are embedded or linked
-    embed-resources: false       # Equivalent to self_contained: false
+    embed-resources: true       # create self-contained html for archiving
 
     title-slide-attributes:
       # Use the path relative to the .qmd file (project root)
@@ -70,7 +70,7 @@ quarto::write_yaml_metadata_block(footer = region2)
 
 {{< include child_slides/synthesis_meeting_intro.qmd >}}
 
-```{r, child = here::here("child_slides/highlights_midatlantic_2025.qmd"), eval = params$region != "NewEngland"}
+```{r, child = here::here("child_slides/highlights_midatlantic_2026.qmd"), eval = params$region != "NewEngland"}
 ```
 
 ```{r, child = here::here("child_slides/highlights_newengland_2026.qmd"), eval = params$region != "MidAtlantic"}
