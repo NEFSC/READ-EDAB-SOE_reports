@@ -6,26 +6,26 @@ This repository contains code used to create the State of the Ecosystem reports 
 
 ### Report documents
 
-- [2026 Mid-Atlantic Council report](SOE2026_MAFMC_Council.pdf) 
-- [2026 Mid-Atlantic SSC report](SOE2026_MAFMC_SSC.pdf) 
-- [2026 New England SSC and Council report](SOE2026_NEFMC_IR_Edits.pdf)
+- [2026 Mid-Atlantic Council report](2026/SOE2026_MAFMC_Council.pdf) 
+- [2026 Mid-Atlantic SSC report](2026/SOE2026_MAFMC_SSC.pdf) 
+- [2026 New England SSC and Council report](2026/SOE2026_NEFMC_IR_Edits.pdf)
 
 ### Supporting documents
 
-- [2026 Research Response Memo](SOE_Response_Memo.pdf)
-- [2026 Mid-Atlantic Cover Letter](SOE2026_MAFMC_Cover_Letter.pdf)
-- [2026 New England Cover Letter](SOE2026_NEFMC_Cover_Letter.pdf)
+- [2026 Research Response Memo](2026/SOE_Response_Memo.pdf)
+- [2026 Mid-Atlantic Cover Letter](2026/SOE2026_MAFMC_Cover_Letter.pdf)
+- [2026 New England Cover Letter](2026/SOE2026_NEFMC_Cover_Letter.pdf)
 
 ### Presentation slides
 
-- [Mid Atlantic Council slides](SOE2026_MAFMC.html) 
-- [Mid Atlantic SSC slides](SOE2026_MAFMC_SSC.html) 
-- [New England Council slides](SOE2026_NEFMC_final.html) 
-- [New England SSC slides](SOE2026_NEFMC_SSC_final_V2.html)
-- [SOE 2026 Overview Seminar](parent_presentation_overview_seminar.html) 
-- [CESCC slides](SOE2026_newengland_CESC.html) 
-- [ECCG slides](SOE2026_newengland_ECCG.html) 
-- [Synthesis meeting slides](parent_presentation_synthesis.html) (*updated as of 1/14/2026*)
+- [Mid Atlantic Council slides](2026/SOE2026_MAFMC.html) 
+- [Mid Atlantic SSC slides](2026/SOE2026_MAFMC_SSC.html) 
+- [New England Council slides](2026/SOE2026_NEFMC_final.html) 
+- [New England SSC slides](2026/SOE2026_NEFMC_SSC_final_V2.html)
+- [SOE 2026 Overview Seminar](2026/parent_presentation_overview_seminar.html) 
+- [CESCC slides](2026/SOE2026_newengland_CESC.html) 
+- [ECCG slides](2026/SOE2026_newengland_ECCG.html) 
+- [Synthesis meeting slides](2026/parent_presentation_synthesis.html) (*updated as of 1/14/2026*)
 
 ## How to update the reports
 
