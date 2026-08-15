@@ -9,6 +9,9 @@
 
 # region <- "BothReports"
 
+# source(here::here("../ecodata/R/summary_functions.R"))
+# source(here::here("utils/image_functions.R"))
+
 create_plots_both <- function(region = "BothReports") {
   # setup ----
 
@@ -17,69 +20,14 @@ create_plots_both <- function(region = "BothReports") {
     dir.create(out_dir)
   }
 
-  ## functions ----
-
-  # A function to create a standardized filename
-  create_filename <- function(
-    indicator,
-    file_region,
-    dir = out_dir,
-    extension = ".png"
-  ) {
-    file.path(
-      dir,
-      paste0(
-        indicator,
-        "_",
-        file_region,
-        "_",
-        Sys.Date(),
-        extension
-      )
-    )
-  }
-
-  # A flexible function to generate and save a plot
-  save_plot <- function(
-    plot_expression,
-    indicator,
-    report = region,
-    save_dir = out_dir,
-    ...
-  ) {
-    # Execute the code to create the plot
-    p <- eval(plot_expression)
-
-    # Check if the plot object is valid before saving
-    if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
-      message(report)
-      message(indicator)
-      message(out_dir)
-      fname <- create_filename(
-        indicator = indicator,
-        file_region = report,
-        dir = save_dir
-      )
-      ggplot2::ggsave(
-        filename = fname,
-        plot = p,
-        bg = "white",
-        ...
-      )
-      message("Plot saved to: ", fname)
-    } else {
-      stop("Plot object is not a valid ggplot or ggarrange object.")
-    }
-  }
-
   # 9. Thermal Habitat Persistence Plot
   save_plot(
     plot_expression = {
       plt <- ecodata::plot_thermal_habitat_gridded(region)
     },
-    indicator = "therm_hab_persist",
+    indicator = "therm-hab-persist-2024",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
 
   # 5. Energy Density Plot
@@ -89,7 +37,7 @@ create_plots_both <- function(region = "BothReports") {
   #     # plot is the same even though it takes a region parameter
   #     ecodata::plot_energy_density(report = "NewEngland")
   #   },
-  #   indicator = "energy_density",
+  #   indicator = "energy-density",
   #   width = 6.5,
   #   height = 4
   # )
@@ -112,7 +60,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "harborporpoise",
     width = 6.5,
-    height = 3
+    height = 3.25
   )
 
   # gray seal
@@ -122,7 +70,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "grayseal",
     width = 6.5,
-    height = 3
+    height = 3.25
   )
 
   # narw-abundance
@@ -132,9 +80,9 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::ggtitle("North Atlantic right whale abundance") +
         ggplot2::scale_x_continuous(limits = c(1980, 2025))
     },
-    indicator = "narw_abundance",
+    indicator = "narw-abundance",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
 
   # narw calves
@@ -143,9 +91,9 @@ create_plots_both <- function(region = "BothReports") {
       ecodata::plot_narw(varName = "calf", n = 10) +
         ggplot2::ggtitle("North Atlantic right whale calf abundance")
     },
-    indicator = "narw_calves",
+    indicator = "NARW-calf-abundance",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
 
   # seals
@@ -155,9 +103,9 @@ create_plots_both <- function(region = "BothReports") {
       ecodata::plot_seal_pups(report = "NewEngland") +
         ggplot2::theme(legend.position = 'bottom')
     },
-    indicator = "seal_pups",
+    indicator = "seals",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
 
   # species dist
@@ -167,9 +115,9 @@ create_plots_both <- function(region = "BothReports") {
       b <- ecodata::plot_species_dist(varName = "depth", n = 10)
       ggpubr::ggarrange(a, b, ncol = 1)
     },
-    indicator = "species_dist",
+    indicator = "species-dist",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # whale and dolphin dist shifts
@@ -180,20 +128,20 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::facet_wrap(~season, nrow = 1) +
         ggplot2::theme(legend.position = "bottom")
     },
-    indicator = "cetacean_dist",
+    indicator = "protectedspp-dist-shifts",
     width = 7.5,
-    height = 4
+    height = 4.25
   )
 
   # forage shifts
   save_plot(
     plot_expression = {
       ecodata::plot_forage_index(varName = "cog", n = 10) +
-        ggplot2::coord_cartesian(xlim = c(1982, 2023))
+        ggplot2::coord_cartesian(xlim = c(1982, NA))
     },
-    indicator = "forage_dist",
+    indicator = "forageshifts",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # longterm sst
@@ -201,9 +149,9 @@ create_plots_both <- function(region = "BothReports") {
     plot_expression = {
       ecodata::plot_long_term_sst(n = 10)
     },
-    indicator = "long_term_sst",
+    indicator = "long-term-sst",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
 
   # gsi
@@ -211,9 +159,9 @@ create_plots_both <- function(region = "BothReports") {
     plot_expression = {
       ecodata::plot_gsi(varName = "westgsi", n = 10)
     },
-    indicator = "west_gsi",
+    indicator = "GSI",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
 
   # cold pool size
@@ -223,9 +171,9 @@ create_plots_both <- function(region = "BothReports") {
       b <- ecodata::plot_cold_pool(varName = "extent", n = 10)
       ggpubr::ggarrange(a, b, nrow = 2)
     },
-    indicator = "cold_pool",
+    indicator = "cold-pool-size",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
 
   # cold pool timing
@@ -233,9 +181,9 @@ create_plots_both <- function(region = "BothReports") {
     plot_expression = {
       ecodata::plot_cold_pool(varName = "persistence", n = 10)
     },
-    indicator = "cold_pool_time",
+    indicator = "cold-pool-time",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
 
   # spawn timing
@@ -243,9 +191,9 @@ create_plots_both <- function(region = "BothReports") {
     plot_expression = {
       ecodata::plot_spawn_timing(n = 10)
     },
-    indicator = "spawn_timing",
+    indicator = "spawntiming",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
 
   # development speed
@@ -254,9 +202,9 @@ create_plots_both <- function(region = "BothReports") {
       ecodata::plot_wind_dev_speed() +
         ggplot2::theme(legend.position = 'bottom')
     },
-    indicator = "wind_dev_speed",
+    indicator = "wind-proposed-dev",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
 
   # slopewater
@@ -267,7 +215,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "slopewater",
     width = 6,
-    height = 2.5
+    height = 2.75
   )
 
   # small cope center of gravity
@@ -281,9 +229,9 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::ggtitle("Northeast U.S. Small Copepod Distribution") +
         ggplot2::ylab("Center of Gravity, km")
     },
-    indicator = "smallcopeall_cog",
+    indicator = "smallcopeall-cog",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # large cope center of gravity
@@ -297,9 +245,9 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::ggtitle("Northeast U.S. Large Copepod Distribution") +
         ggplot2::ylab("Center of Gravity, km")
     },
-    indicator = "lgcopeall_cog",
+    indicator = "lgcopeall-cog",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # macrobenthos shifts
@@ -319,9 +267,9 @@ create_plots_both <- function(region = "BothReports") {
           scales = "free_y"
         )
     },
-    indicator = "macrobenthos_dist",
+    indicator = "macrobenthosshifts",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # megabenthos shifts
@@ -341,9 +289,9 @@ create_plots_both <- function(region = "BothReports") {
         ) +
         ggplot2::theme(legend.position = 'bottom')
     },
-    indicator = "megabenthos_dist",
+    indicator = "megabenthosshifts",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 
   # euphausiid center of gravity
@@ -364,9 +312,9 @@ create_plots_both <- function(region = "BothReports") {
           scales = "free_y"
         )
     },
-    indicator = "euph_cog",
+    indicator = "euph-cog",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
 }
 

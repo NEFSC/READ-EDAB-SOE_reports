@@ -89,9 +89,9 @@ create_plots_slides_ne <- function(region = "NewEngland")
         ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
         ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
     },
-    indicator = "rec_hms",
+    indicator = "rec-hms",
     width = 6.5,
-    height = 3
+    height = 3.25
   )
   
   # calfin center of gravity -- NE only
@@ -105,9 +105,9 @@ create_plots_slides_ne <- function(region = "NewEngland")
       )+
         ggplot2::theme(legend.position = 'bottom')
     },
-    indicator = "calfin_cog",
+    indicator = "calfin-cog",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
   
   # mass inshore survey -- NE only
@@ -117,9 +117,9 @@ create_plots_slides_ne <- function(region = "NewEngland")
         ggplot2::geom_point() +
         ggplot2::geom_line()
     },
-    indicator = "mass_inshore",
+    indicator = "mass-biomass",
     width = 6,
-    height = 6
+    height = 6.25
   )
   
   # seabird productivity -- NE only
@@ -129,9 +129,9 @@ create_plots_slides_ne <- function(region = "NewEngland")
         ecodata::plot_seabird_ne(varName = "productivity", n = 10) +
           ggplot2::coord_cartesian(xlim = c(1991, 2025))
       },
-      indicator = "seabird_productivity",
+      indicator = "seabird-ne-productivity",
       width = 6.5,
-      height = 2.5
+      height = 2.75
     )
   }
   
@@ -146,7 +146,7 @@ create_plots_slides_ne <- function(region = "NewEngland")
       },
       indicator = "salmon",
       width = 6.5,
-      height = 4
+      height = 4.25
     )
   }
 }
