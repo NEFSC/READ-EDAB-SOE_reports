@@ -423,7 +423,6 @@ create_plots_slides_mab_and_ne <- function(region) {
     height = 2.75
   )
 
-
   ## Recreational opportunities ----
 
   ### Indicators ----
@@ -1086,5 +1085,15 @@ create_plots_slides_mab_and_ne <- function(region) {
     indicator = "wea-spp-rev",
     width = 6.5,
     height = 4.25
+  )
+
+  # 2. Wind Port Revenue
+  save_plot(
+    plot_expression = {
+      ecodata::plot_wind_port(report = region)
+    },
+    indicator = "wea-port-rev",
+    width = 6.5,
+    height = 7.25
   )
 }

@@ -101,7 +101,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "total-landings",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5/25, 2.75),
+    height = ifelse(region == "NewEngland", 5 / 25, 2.75),
   )
 
   # commercial landings
@@ -275,7 +275,7 @@ create_plots_mab_and_ne <- function(region) {
   ## Commercial profits ----
 
   ### Indicators ----
-  
+
   # Geret's profitability indices (comdat profit) (EPU = MAB)
   save_plot(
     plot_expression = {
@@ -303,7 +303,7 @@ create_plots_mab_and_ne <- function(region) {
             labels = c("Cost Index", "Profit Index", "Revenue Index")
           ) +
           ggplot2::theme(legend.position = "none")
-        
+
         gom <- ecodata::plot_comdat_profit(
           report = region,
           EPU = "GOM",
@@ -1123,5 +1123,15 @@ create_plots_mab_and_ne <- function(region) {
     indicator = "wea-spp-rev",
     width = 6.5,
     height = 2.75
+  )
+
+  # 2. Wind Port Revenue
+  save_plot(
+    plot_expression = {
+      ecodata::plot_wind_port(report = region)
+    },
+    indicator = "wea-port-rev",
+    width = 6.5,
+    height = 7.25
   )
 }
