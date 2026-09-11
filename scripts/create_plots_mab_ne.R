@@ -1079,10 +1079,10 @@ create_plots_mab_and_ne <- function(region) {
     height = 4.75
   )
 
-  # Seasonal Bottom Temp Anomaly - MAB ONLY
-  if (region == "MidAtlantic") {
-    save_plot(
-      plot_expression = {
+  # Seasonal Bottom Temp Anomaly
+  save_plot(
+    plot_expression = {
+      if (region == "MidAtlantic") {
         ecodata::plot_bottom_temp_model_anom(
           report = region,
           n = 10,
@@ -1091,12 +1091,34 @@ create_plots_mab_and_ne <- function(region) {
           plottype = "GLORYS"
         ) +
           ggplot2::theme(legend.position = 'bottom')
-      },
-      indicator = "bottom-temp-anom",
-      width = 6.5,
-      height = 4.75
-    )
-  }
+      } else {
+        gb <- ecodata::plot_bottom_temp_model_anom(
+          report = region,
+          n = 10,
+          varName = "seasonal",
+          EPU = "GB",
+          plottype = "GLORYS"
+        )
+        gom <- ecodata::plot_bottom_temp_model_anom(
+          report = region,
+          n = 10,
+          varName = "seasonal",
+          EPU = "GOM",
+          plottype = "GLORYS"
+        )
+        ggpubr::ggarrange(
+          gb,
+          gom,
+          nrow = 2,
+          common.legend = TRUE,
+          legend = "bottom"
+        )
+      }
+    },
+    indicator = "bottom-temp-anom",
+    width = 6.5,
+    height = 4.75
+  )
 
   # In situ bottom temperature
   save_plot(
