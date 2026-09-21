@@ -4,27 +4,26 @@
 #' This function creates all plots that are solely for the NE report
 #'
 #' @param region Region for which to create report plots ("NewEngland")
-#' 
+#'
 
 # region <- "NewEngland"
-create_plots_ne <- function(region = "NewEngland")
-{
+create_plots_ne <- function(region = "NewEngland") {
   out_dir <- here::here("images", region)
-  
+
   if (!dir.exists(out_dir)) {
     dir.create(out_dir)
   }
-  
+
   region2 <- dplyr::case_when(
     region == "NewEngland" ~ "New England"
   )
-  
+
   full_region <- dplyr::case_when(
     region == "NewEngland" ~ "New England"
   )
-  
+
   ## functions ----
-  
+
   # A function to create a standardized filename
   create_filename <- function(
     indicator,
@@ -44,7 +43,7 @@ create_plots_ne <- function(region = "NewEngland")
       )
     )
   }
-  
+
   # A flexible function to generate and save a plot
   save_plot <- function(
     plot_expression,
@@ -55,7 +54,7 @@ create_plots_ne <- function(region = "NewEngland")
   ) {
     # Execute the code to create the plot
     p <- eval(plot_expression)
-    
+
     # Check if the plot object is valid before saving
     if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
       message(report)
@@ -77,22 +76,27 @@ create_plots_ne <- function(region = "NewEngland")
       stop("Plot object is not a valid ggplot or ggarrange object.")
     }
   }
-  
+
   #NE only - rec_hms from LPS only, no MRIP
   save_plot(
     plot_expression = {
       rec_lps_sharks_plot <- ecodata::plot_lps_sharks(
         report = region,
         n = 10
-      )  +
-        ggplot2::ggtitle(paste(region2, "Large Pelagics Survey Rec. Shark Landings")) +
-        ggplot2::theme(legend.background = ggplot2::element_rect(fill = "white"))
+      ) +
+        ggplot2::ggtitle(paste(
+          region2,
+          "Large Pelagics Survey Rec. Shark Landings"
+        )) +
+        ggplot2::theme(
+          legend.background = ggplot2::element_rect(fill = "white")
+        )
     },
-    indicator = "rec-hms",
+    indicator = "rec-hms-NE",
     width = 6.5,
     height = 3.25
   )
-  
+
   # calfin center of gravity -- NE only
   save_plot(
     plot_expression = {
@@ -101,26 +105,26 @@ create_plots_ne <- function(region = "NewEngland")
         varName = 'Calfin',
         plottype = 'cog',
         n = 10
-      )+
+      ) +
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "calfin-cog",
     width = 6.5,
     height = 4.25
   )
-  
+
   # mass inshore survey -- NE only
   save_plot(
     plot_expression = {
       ecodata::plot_mass_inshore_survey(report = region, n = 10) +
-        ggplot2::geom_point()+
+        ggplot2::geom_point() +
         ggplot2::geom_line()
     },
     indicator = "mass-biomass",
     width = 6,
     height = 6.25
   )
-  
+
   # seabird productivity -- NE only
   if (region == "NewEngland") {
     save_plot(
@@ -133,15 +137,22 @@ create_plots_ne <- function(region = "NewEngland")
       height = 2.75
     )
   }
-  
+
   # salmon -- NE only
   if (region == "NewEngland") {
     save_plot(
       plot_expression = {
         ecodata::plot_gom_salmon(n = 10) +
-          ggplot2::facet_wrap(~Var, nrow = 2, scales = "free_y",
-                              strip.position = "left",
-                              labeller = ggplot2::as_labeller(c(Total = "Number of Salmon", PSAR = "Percent Return Rate")))
+          ggplot2::facet_wrap(
+            ~Var,
+            nrow = 2,
+            scales = "free_y",
+            strip.position = "left",
+            labeller = ggplot2::as_labeller(c(
+              Total = "Number of Salmon",
+              PSAR = "Percent Return Rate"
+            ))
+          )
       },
       indicator = "salmon",
       width = 6.5,

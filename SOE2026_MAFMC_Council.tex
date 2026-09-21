@@ -2,11 +2,13 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
-%
 \documentclass[
   10pt,
 ]{article}
+\usepackage{xcolor}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -37,8 +39,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -67,7 +67,6 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Set up the fonts
 \usepackage[urw-palatino]{mathdesign}
 \usepackage[T1]{fontenc}
@@ -145,6 +144,7 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{colortbl}
+\usepackage{ulem}
 \usepackage{hhline}
 \newlength\Oldarrayrulewidth
 \newlength\Oldtabcolsep
@@ -479,7 +479,7 @@ In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/comdat.html
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,alt={This is sample alt text},]{images/MidAtlantic/total_landings_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,alt={This is sample alt text},]{images/MidAtlantic/total-landings_MidAtlantic_2026-06-25} 
 
 }
 
@@ -488,7 +488,7 @@ In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/comdat.html
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/commercial_landings_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/comm-landings_MidAtlantic_2026-06-25} 
 
 }
 
@@ -501,7 +501,7 @@ In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/recdat.html
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/climatevul_land_MidAtlantic_2026-05-21} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/climatevul-land_MidAtlantic_2026-06-25} 
 
 }
 
@@ -510,7 +510,7 @@ In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/recdat.html
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/rec_landings_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/rec-landings_MidAtlantic_2026-06-25} 
 
 }
 
@@ -519,7 +519,7 @@ In the Mid-Atlantic, total \href{https://noaa-edab.github.io/catalog/recdat.html
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/rec_hms_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/rec-hms_MidAtlantic_2026-06-25} 
 
 }
 
@@ -538,7 +538,7 @@ Single species \href{https://noaa-edab.github.io/catalog/stock_status.html}{mana
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/stock_status_MidAtlantic_2026-05-29} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/stock-status_MidAtlantic_2026-06-25} 
 
 }
 
@@ -549,7 +549,7 @@ Stock status and associated management constraints are unlikely to be driving de
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/abcacl_stacked_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/abcacl-stacked_MidAtlantic_2026-06-25} 
 
 }
 
@@ -558,7 +558,7 @@ Stock status and associated management constraints are unlikely to be driving de
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/abcacl_catch_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/abcacl-catch_MidAtlantic_2026-06-25} 
 
 }
 
@@ -593,7 +593,7 @@ Future commercial and recreational landings are likely to be driven by environme
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/aggregate_biomass_mab_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/nefsc-biomass-mab_MidAtlantic_2026-06-25} 
 
 }
 
@@ -610,7 +610,7 @@ Total \href{https://noaa-edab.github.io/catalog/comdat.html}{commercial revenue}
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/comm_revenue_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/comm-revenue_MidAtlantic_2026-06-25} 
 
 }
 
@@ -621,7 +621,7 @@ Revenue earned by harvesting resources is a function of both the quantity landed
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bennet_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bennet_MidAtlantic_2026-06-25} 
 
 }
 
@@ -630,7 +630,7 @@ Revenue earned by harvesting resources is a function of both the quantity landed
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bennet_all_MidAtlantic_2026-05-21} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bennet-all_MidAtlantic_2026-06-25} 
 
 }
 
@@ -639,7 +639,7 @@ Revenue earned by harvesting resources is a function of both the quantity landed
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/comdat_profit_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/comdat-profit_MidAtlantic_2026-06-25} 
 
 }
 
@@ -652,7 +652,7 @@ For Mid-Atlantic ports, \href{https://noaa-edab.github.io/catalog/community_risk
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/climatevul_rev_MidAtlantic_2026-05-21} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/climatevul-rev_MidAtlantic_2026-06-25} 
 
 }
 
@@ -671,7 +671,7 @@ Although the Mid-Atlantic region shows declining revenue since 2016 (Fig. \ref{f
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/rec_op_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/rec-op_MidAtlantic_2026-06-25} 
 
 }
 
@@ -680,7 +680,7 @@ Although the Mid-Atlantic region shows declining revenue since 2016 (Fig. \ref{f
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/rec_div_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/rec-div_MidAtlantic_2026-06-25} 
 
 }
 
@@ -711,7 +711,7 @@ The \href{https://noaa-edab.github.io/catalog/engagement.html?q=engage\#introduc
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/commercial_engagement_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/commercial-engagement_MidAtlantic_2026-06-25} 
 
 }
 
@@ -824,7 +824,7 @@ Of those included in the top-ranked recreational communities, both Morehead City
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/recreational_engagement_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/recreational-engagement_MidAtlantic_2026-06-25} 
 
 }
 
@@ -941,7 +941,7 @@ While long-term risk trends across the Mid-Atlantic remain stable, most individu
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/commvulex_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/commvulex_MidAtlantic_2026-06-25} 
 
 }
 
@@ -964,7 +964,7 @@ The management objective for \href{https://noaa-edab.github.io/catalog/harborpor
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/harborporpoise_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/harborporpoise_BothReports_2026-06-25} 
 
 }
 
@@ -975,7 +975,7 @@ The annual estimate for gray seal bycatch, most of which occurs in New England, 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/grayseal_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/grayseal_BothReports_2026-06-25} 
 
 }
 
@@ -986,7 +986,7 @@ The \href{https://noaa-edab.github.io/catalog/narw.html}{North Atlantic right wh
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/narw_abundance_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/narw-abundance_BothReports_2026-06-25} 
 
 }
 
@@ -997,7 +997,7 @@ North Atlantic right whale \href{https://noaa-edab.github.io/catalog/narw.html}{
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/narw_calves_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/NARW-calf-abundance_BothReports_2026-06-25} 
 
 }
 
@@ -1032,7 +1032,7 @@ Despite reduced \href{https://noaa-edab.github.io/catalog/recdat.html}{recreatio
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/comm_div_fleet_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/comm-div-fleet_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1041,7 +1041,7 @@ Despite reduced \href{https://noaa-edab.github.io/catalog/recdat.html}{recreatio
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/commercial_div_species_div_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/commercial-div-species-div_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1050,7 +1050,7 @@ Despite reduced \href{https://noaa-edab.github.io/catalog/recdat.html}{recreatio
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/recdat_div_catch_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/recdat-div-catch_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1065,7 +1065,7 @@ There are long-term increases in the biomass of the euphausid, benthivore, and b
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/totpp_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/totpp_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1074,7 +1074,7 @@ There are long-term increases in the biomass of the euphausid, benthivore, and b
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/exp_n_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/exp-n_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1083,7 +1083,7 @@ There are long-term increases in the biomass of the euphausid, benthivore, and b
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/zoo_community_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/zoo-community_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1094,7 +1094,7 @@ There are long-term increases in the biomass of the euphausid, benthivore, and b
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/traits_k_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/traits-k_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1103,7 +1103,7 @@ There are long-term increases in the biomass of the euphausid, benthivore, and b
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/traits_tl_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/traits-tl_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1140,7 +1140,7 @@ As noted in the \hyperref[implications]{Seafood Production Implications section}
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/species_dist_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/species-dist_BothReports_2026-06-25} 
 
 }
 
@@ -1149,7 +1149,7 @@ As noted in the \hyperref[implications]{Seafood Production Implications section}
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cetacean_dist_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/protectedspp-dist-shifts_BothReports_2026-06-25} 
 
 }
 
@@ -1164,7 +1164,7 @@ Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/forage_dist_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/forageshifts_BothReports_2026-06-25} 
 
 }
 
@@ -1173,7 +1173,7 @@ Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/smallcopeall_cog_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/smallcopeall-cog_BothReports_2026-06-25} 
 
 }
 
@@ -1182,7 +1182,7 @@ Megabenthos center of gravity shows a short-term eastward trend in spring (Fig. 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/megabenthos_dist_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/megabenthosshifts_BothReports_2026-06-25} 
 
 }
 
@@ -1195,7 +1195,7 @@ In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macro
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/macrobenthos_dist_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/macrobenthosshifts_BothReports_2026-06-25} 
 
 }
 
@@ -1204,7 +1204,7 @@ In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macro
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/lgcopeall_cog_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/lgcopeall-cog_BothReports_2026-06-25} 
 
 }
 
@@ -1213,7 +1213,7 @@ In contrast, \href{https://noaa-edab.github.io/catalog/benthos_index.html}{macro
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/euph_cog_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/euph-cog_BothReports_2026-06-25} 
 
 }
 
@@ -1224,7 +1224,7 @@ Ocean temperatures influence the distribution, seasonal timing, and productivity
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/seasonal_oisst_anom_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/seasonal-oisst-anom_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1233,7 +1233,7 @@ Ocean temperatures influence the distribution, seasonal timing, and productivity
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bottom_temp_insitu_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bottom-temp-insitu_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1242,7 +1242,7 @@ Ocean temperatures influence the distribution, seasonal timing, and productivity
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bottom_temp_anom_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/bottom-temp-anom_MidAtlantic_2026-09-11} 
 
 }
 
@@ -1255,7 +1255,7 @@ The \href{https://noaa-edab.github.io/catalog/gsi.html}{Gulf Stream} has been sh
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/long_term_sst_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/long-term-sst_BothReports_2026-06-25} 
 
 }
 
@@ -1264,7 +1264,7 @@ The \href{https://noaa-edab.github.io/catalog/gsi.html}{Gulf Stream} has been sh
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/west_gsi_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/GSI_BothReports_2026-06-25} 
 
 }
 
@@ -1275,7 +1275,7 @@ Changes in ocean temperature and circulation alter habitat features such as the 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cold_pool_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cold-pool-size_BothReports_2026-06-25} 
 
 }
 
@@ -1300,7 +1300,7 @@ Indicators of phenological changes in fish populations require regular sampling 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/spawn_timing_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/spawntiming_BothReports_2026-06-25} 
 
 }
 
@@ -1319,7 +1319,7 @@ Along with the overall warming trends in the Mid-Atlantic Bight, ocean summer co
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/transition_date_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/transition_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1330,7 +1330,7 @@ Along with the overall warming trends in the Mid-Atlantic Bight, ocean summer co
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cold_pool_time_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/cold-pool-time_BothReports_2026-06-25} 
 
 }
 
@@ -1341,7 +1341,7 @@ The seasonal timing of Mid-Atlantic \href{https://noaa-edab.github.io/catalog/ch
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/monthly_chl_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/chl-month_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1364,7 +1364,7 @@ The health of individual fish (i.e., fish condition, measured as weight for a gi
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/productivity_anomaly_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/productivity-anomaly_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1373,7 +1373,7 @@ The health of individual fish (i.e., fish condition, measured as weight for a gi
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/condition_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/mab-cf_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1392,7 +1392,7 @@ Forage fish \href{https://noaa-edab.github.io/catalog/energy_density.html}{energ
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/energy_density_MidAtlantic} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/energy-density_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1403,7 +1403,7 @@ Changes in the overall abundance of forage fish can influence managed species pr
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/foragebio_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/foragebio_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1414,7 +1414,7 @@ Changes in the overall abundance of forage fish can influence managed species pr
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/benthos_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/benthos_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1429,7 +1429,7 @@ Changing \href{https://noaa-edab.github.io/catalog/zoo_abundance_anom.html}{zoop
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/zooplankton_anomaly_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/zoopanom_MidAtlantic_2026-09-11} 
 
 }
 
@@ -1455,7 +1455,7 @@ Lower ocean temperatures near long-term averages will affect species differently
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/therm_hab_persist_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/therm-hab-persist-2024_BothReports_2026-06-25} 
 
 }
 
@@ -1466,7 +1466,7 @@ The newly-developed \href{https://noaa-edab.github.io/catalog/advection.html}{ad
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/advection_index_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/advection-index_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1525,7 +1525,7 @@ Offshore wind indicators are based on federal logbook data and do not include al
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/wind_revenue_MidAtlantic_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/MidAtlantic/wea-spp-rev_MidAtlantic_2026-06-25} 
 
 }
 
@@ -1640,7 +1640,7 @@ The socio-demographic conditions, and resultant vulnerabilities, of some communi
 
 \begin{figure}
 
-\includegraphics[width=1\linewidth,]{images/MidAtlantic/wea_port_rev_MidAtlantic_2026-03-26} \hfill{}
+\includegraphics[width=1\linewidth,]{images/MidAtlantic/wea-port-rev_MidAtlantic_2026-09-11} \hfill{}
 
 \caption{Percent of Mid-Atlantic port revenue from wind lease areas from leases not under construction (blue) and active leases (orange). Note that North Carolina fisheries management is split between the Northeast and Southeast, and this plot only includes data reported to the Northeast Fisheries Science Center.}\label{fig:wea-port-rev}
 \end{figure}
@@ -1714,7 +1714,7 @@ In 2024, the Gulf of Maine \href{https://noaa-edab.github.io/catalog/slopewater.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,]{images/BothReports/slopewater_BothReports_2026-03-30} 
+{\centering \includegraphics[width=1\linewidth,]{images/BothReports/slopewater_BothReports_2026-06-25} 
 
 }
 

@@ -101,7 +101,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "total-landings",
     width = 6.5,
-    height = ifelse(region == "NewEngland", 5/25, 2.75),
+    height = ifelse(region == "NewEngland", 5 / 25, 2.75),
   )
 
   # commercial landings
@@ -275,7 +275,7 @@ create_plots_mab_and_ne <- function(region) {
   ## Commercial profits ----
 
   ### Indicators ----
-  
+
   # Geret's profitability indices (comdat profit) (EPU = MAB)
   save_plot(
     plot_expression = {
@@ -303,7 +303,7 @@ create_plots_mab_and_ne <- function(region) {
             labels = c("Cost Index", "Profit Index", "Revenue Index")
           ) +
           ggplot2::theme(legend.position = "none")
-        
+
         gom <- ecodata::plot_comdat_profit(
           report = region,
           EPU = "GOM",
@@ -1052,22 +1052,37 @@ create_plots_mab_and_ne <- function(region) {
     height = 3.25
   )
 
-  # Seasonal OISST Anomaly - MAB ONLY
-  if (region == "MidAtlantic") {
-    save_plot(
-      plot_expression = {
-        ecodata::plot_seasonal_oisst_anom(report = region, n = 10)
-      },
-      indicator = "seasonal-oisst-anom",
-      width = 6.5,
-      height = 4.75
-    )
-  }
+  # Seasonal OISST Anomaly -
+  save_plot(
+    plot_expression = {
+      if (region == "MidAtlantic") {
+        ecodata::plot_seasonal_oisst_anom(
+          report = region,
+          n = 10
+        )
+      } else {
+        gb <- ecodata::plot_seasonal_oisst_anom(
+          report = region,
+          EPU = "GB",
+          n = 10
+        )
+        gom <- ecodata::plot_seasonal_oisst_anom(
+          report = region,
+          EPU = "GOM",
+          n = 10
+        )
+        ggpubr::ggarrange(gb, gom, nrow = 2)
+      }
+    },
+    indicator = "seasonal-oisst-anom",
+    width = 6.5,
+    height = 4.75
+  )
 
-  # Seasonal Bottom Temp Anomaly - MAB ONLY
-  if (region == "MidAtlantic") {
-    save_plot(
-      plot_expression = {
+  # Seasonal Bottom Temp Anomaly
+  save_plot(
+    plot_expression = {
+      if (region == "MidAtlantic") {
         ecodata::plot_bottom_temp_model_anom(
           report = region,
           n = 10,
@@ -1076,12 +1091,34 @@ create_plots_mab_and_ne <- function(region) {
           plottype = "GLORYS"
         ) +
           ggplot2::theme(legend.position = 'bottom')
-      },
-      indicator = "bottom-temp-anom",
-      width = 6.5,
-      height = 4.75
-    )
-  }
+      } else {
+        gb <- ecodata::plot_bottom_temp_model_anom(
+          report = region,
+          n = 10,
+          varName = "seasonal",
+          EPU = "GB",
+          plottype = "GLORYS"
+        )
+        gom <- ecodata::plot_bottom_temp_model_anom(
+          report = region,
+          n = 10,
+          varName = "seasonal",
+          EPU = "GOM",
+          plottype = "GLORYS"
+        )
+        ggpubr::ggarrange(
+          gb,
+          gom,
+          nrow = 2,
+          common.legend = TRUE,
+          legend = "bottom"
+        )
+      }
+    },
+    indicator = "bottom-temp-anom",
+    width = 6.5,
+    height = 4.75
+  )
 
   # In situ bottom temperature
   save_plot(
@@ -1123,5 +1160,15 @@ create_plots_mab_and_ne <- function(region) {
     indicator = "wea-spp-rev",
     width = 6.5,
     height = 2.75
+  )
+
+  # 2. Wind Port Revenue
+  save_plot(
+    plot_expression = {
+      ecodata::plot_wind_port(report = region)
+    },
+    indicator = "wea-port-rev",
+    width = 6.5,
+    height = 7.25
   )
 }

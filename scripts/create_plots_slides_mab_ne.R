@@ -423,7 +423,6 @@ create_plots_slides_mab_and_ne <- function(region) {
     height = 2.75
   )
 
-
   ## Recreational opportunities ----
 
   ### Indicators ----
@@ -1016,17 +1015,32 @@ create_plots_slides_mab_and_ne <- function(region) {
     height = 3.25
   )
 
-  # Seasonal OISST Anomaly - MAB ONLY
-  if (region == "MidAtlantic") {
-    save_plot(
-      plot_expression = {
-        ecodata::plot_seasonal_oisst_anom(report = region, n = 10)
-      },
-      indicator = "seasonal-oisst-anom",
-      width = 6.5,
-      height = 4.75
-    )
-  }
+  # Seasonal OISST Anomaly
+  save_plot(
+    plot_expression = {
+      if (region == "MidAtlantic") {
+        ecodata::plot_seasonal_oisst_anom(
+          report = region,
+          n = 10
+        )
+      } else {
+        gb <- ecodata::plot_seasonal_oisst_anom(
+          report = region,
+          EPU = "GB",
+          n = 10
+        )
+        gom <- ecodata::plot_seasonal_oisst_anom(
+          report = region,
+          EPU = "GOM",
+          n = 10
+        )
+        ggpubr::ggarrange(gb, gom, nrow = 2)
+      }
+    },
+    indicator = "seasonal-oisst-anom",
+    width = 6.5,
+    height = 4.75
+  )
 
   # Seasonal Bottom Temp Anomaly - MAB ONLY
   if (region == "MidAtlantic") {
@@ -1086,5 +1100,15 @@ create_plots_slides_mab_and_ne <- function(region) {
     indicator = "wea-spp-rev",
     width = 6.5,
     height = 4.25
+  )
+
+  # 2. Wind Port Revenue
+  save_plot(
+    plot_expression = {
+      ecodata::plot_wind_port(report = region)
+    },
+    indicator = "wea-port-rev",
+    width = 6.5,
+    height = 7.25
   )
 }
