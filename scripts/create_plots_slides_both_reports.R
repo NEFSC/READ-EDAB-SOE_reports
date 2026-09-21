@@ -77,21 +77,21 @@ create_plots_slides_both <- function(region = "BothReports") {
     plot_expression = {
       plt <- ecodata::plot_thermal_habitat_gridded(region)
     },
-    indicator = "therm_hab_persist",
+    indicator = "therm-hab-persist-2024",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
   
-  # 5. Energy Density Plot
-  save_plot(
-    plot_expression = {
-      # plot is the same even though it takes a region parameter
-      ecodata::plot_energy_density(report = "NewEngland")
-    },
-    indicator = "energy_density",
-    width = 6.5,
-    height = 4
-  )
+  # # 5. Energy Density Plot
+  # save_plot(
+  #   plot_expression = {
+  #     # plot is the same even though it takes a region parameter
+  #     ecodata::plot_energy_density(report = "NewEngland")
+  #   },
+  #   indicator = "energy-density",
+  #   width = 6.5,
+  #   height = 4
+  # )
   
   # GOM ocean acidification
   GOMoa_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf"
@@ -111,7 +111,7 @@ create_plots_slides_both <- function(region = "BothReports") {
     },
     indicator = "harborporpoise",
     width = 6.5,
-    height = 3
+    height = 3.25
   )
   
   # gray seal
@@ -121,7 +121,7 @@ create_plots_slides_both <- function(region = "BothReports") {
     },
     indicator = "grayseal",
     width = 6.5,
-    height = 3
+    height = 3.25
   )
   
   # narw-abundance
@@ -131,9 +131,9 @@ create_plots_slides_both <- function(region = "BothReports") {
         ggplot2::ggtitle("North Atlantic right whale abundance") +
         ggplot2::scale_x_continuous(limits = c(1980, 2025))
     },
-    indicator = "narw_abundance",
+    indicator = "narw-abundance",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
   
   # narw calves
@@ -142,9 +142,9 @@ create_plots_slides_both <- function(region = "BothReports") {
       ecodata::plot_narw(varName = "calf", n = 10) +
         ggplot2::ggtitle("North Atlantic right whale calf abundance")
     },
-    indicator = "narw_calves",
+    indicator = "NARW-calf-abundance",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
   
   # seals
@@ -154,9 +154,9 @@ create_plots_slides_both <- function(region = "BothReports") {
       ecodata::plot_seal_pups(report = "NewEngland") +
         ggplot2::theme(legend.position = 'bottom')
     },
-    indicator = "seal_pups",
+    indicator = "seals",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
   
   # species dist
@@ -166,9 +166,9 @@ create_plots_slides_both <- function(region = "BothReports") {
       b <- ecodata::plot_species_dist(varName = "depth", n = 10) 
       ggpubr::ggarrange(a, b, ncol = 1)
     },
-    indicator = "species_dist",
+    indicator = "species-dist",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
   
   # whale and dolphin dist shifts
@@ -179,9 +179,9 @@ create_plots_slides_both <- function(region = "BothReports") {
         ggplot2::facet_wrap(~season, nrow = 1) +
         ggplot2::theme(legend.position = "bottom") 
     },
-    indicator = "cetacean_dist",
+    indicator = "protectedspp-dist-shifts",
     width = 7.5,
-    height = 4
+    height = 4.25
   )
   
   # forage shifts
@@ -189,9 +189,9 @@ create_plots_slides_both <- function(region = "BothReports") {
     plot_expression = {
       ecodata::plot_forage_index(varName = "cog", n = 10)
     },
-    indicator = "forage_dist",
+    indicator = "forageshifts",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
   
   # longterm sst
@@ -199,9 +199,9 @@ create_plots_slides_both <- function(region = "BothReports") {
     plot_expression = {
       ecodata::plot_long_term_sst(n = 10)
     },
-    indicator = "long_term_sst",
+    indicator = "long-term-sst",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
   
   # gsi
@@ -209,9 +209,9 @@ create_plots_slides_both <- function(region = "BothReports") {
     plot_expression = {
       ecodata::plot_gsi(varName = "westgsi", n = 10)
     },
-    indicator = "west_gsi",
+    indicator = "GSI",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
   
   # cold pool size
@@ -221,9 +221,9 @@ create_plots_slides_both <- function(region = "BothReports") {
       b <- ecodata::plot_cold_pool(varName = "extent", n = 10)
       ggpubr::ggarrange(a, b, nrow = 2)
     },
-    indicator = "cold_pool",
+    indicator = "cold-pool-size",
     width = 6.5,
-    height = 5
+    height = 5.25
   )
   
   # cold pool timing
@@ -231,9 +231,9 @@ create_plots_slides_both <- function(region = "BothReports") {
     plot_expression = {
       ecodata::plot_cold_pool(varName = "persistence", n = 10)
     },
-    indicator = "cold_pool_time",
+    indicator = "cold-pool-time",
     width = 6.5,
-    height = 2.5
+    height = 2.75
   )
   
   # spawn timing
@@ -241,9 +241,9 @@ create_plots_slides_both <- function(region = "BothReports") {
     plot_expression = {
       ecodata::plot_spawn_timing(n = 10) 
     },
-    indicator = "spawn_timing",
+    indicator = "spawntiming",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
   
   
@@ -253,9 +253,9 @@ create_plots_slides_both <- function(region = "BothReports") {
       ecodata::plot_wind_dev_speed() +
         ggplot2::theme(legend.position = 'bottom')
     },
-    indicator = "wind_dev_speed",
+    indicator = "wind-proposed-dev",
     width = 6.5,
-    height = 4
+    height = 4.25
   )
   
   # slopewater
@@ -266,7 +266,7 @@ create_plots_slides_both <- function(region = "BothReports") {
     },
     indicator = "slopewater",
     width = 6,
-    height = 4
+    height = 4.25
   )
   
   # small cope center of gravity
@@ -280,9 +280,9 @@ create_plots_slides_both <- function(region = "BothReports") {
         ggplot2::ggtitle("Northeast U.S. Small Copepod Distribution") +
         ggplot2::ylab("Center of Gravity, km") 
     },
-    indicator = "smallcopeall_cog",
+    indicator = "smallcopeall-cog",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
   
   # large cope center of gravity
@@ -296,9 +296,9 @@ create_plots_slides_both <- function(region = "BothReports") {
         ggplot2::ggtitle("Northeast U.S. Large Copepod Distribution") +
         ggplot2::ylab("Center of Gravity, km") 
     },
-    indicator = "lgcopeall_cog",
+    indicator = "lgcopeall-cog",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
   
   # macrobenthos shifts
@@ -318,9 +318,9 @@ create_plots_slides_both <- function(region = "BothReports") {
           scales = "free_y"
         )
     },
-    indicator = "macrobenthos_dist",
+    indicator = "macrobenthosshifts",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
   
   # megabenthos shifts
@@ -339,9 +339,9 @@ create_plots_slides_both <- function(region = "BothReports") {
           scales = "free_y") +
         ggplot2::theme(legend.position = 'bottom')
     },
-    indicator = "megabenthos_dist",
+    indicator = "megabenthosshifts",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
   
   # euphausiid center of gravity
@@ -362,9 +362,9 @@ create_plots_slides_both <- function(region = "BothReports") {
           scales = "free_y"
         )
     },
-    indicator = "euph_cog",
+    indicator = "euph-cog",
     width = 6.5,
-    height = 3.5
+    height = 3.75
   )
   
 }
