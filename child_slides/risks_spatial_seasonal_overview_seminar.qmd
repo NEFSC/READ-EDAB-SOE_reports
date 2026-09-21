@@ -1,0 +1,137 @@
+
+## Risks to Managing Spatially: Indicators
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Fish distribution shifts
+
+```{r}
+return_plot("species-dist", region = "BothReports", mode = "slide")
+```  
+
+Significant species distributions seen for fish, HMS, and mammals
+:::
+
+::: {.soe-50-column}
+
+Cetacean distribution shifts 
+
+```{r}
+return_plot("protectedspp-dist-shifts", region = "BothReports", mode = "slide")
+```
+
+Changing distributions can impact:
+
+  * Spatial allocation & cross-jurisdictional management
+  * Effectiveness of bycatch reduction measures
+  * Availability to surveys and fisheries
+
+:::
+
+::::
+
+## Risks to Managing Spatially: Biological Drivers
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+Macrobenthos (mid-size benthic species) distributions
+
+```{r macrobenthosshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for macrobenthos species on the Northeast U.S. Shelf"}
+return_plot("macrobenthosshifts", region = "BothReports", mode = "slide")
+```
+
+Megabenthos (larger-size benthic species) distributions
+
+```{r}
+return_plot("megabenthosshifts", region = "BothReports", mode = "slide")
+```
+
+:::
+
+::: {.soe-50-column}
+
+Forage fish distributions
+
+```{r forageshifts, fig.alt="Eastward (left) and northward (right) shifts in the center of gravity for 20 forage fish species on the Northeast U.S. Shelf, with increasing trend (orange) for fall eastward and northward center of gravity."}
+return_plot("forageshifts", region = "BothReports", mode = "slide")
+```
+
+- Some species can follow their food, but not all -- can cause a mismatch between fish and their prey
+- Pelagic prey are shifting towards the northeast
+- Mixed trends in benthic prey shifts
+
+:::
+
+::::
+
+## Risks to Managing Spatially: Biological Drivers
+
+Shifts in zooplankton (from ECOMON)
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r}
+return_plot("calfin-cog", region = "NewEngland", mode = "slide")
+```
+
+_Calanus_ shifting westward in last decade
+
+:::
+
+::: {.soe-50-column}
+
+
+```{r}
+return_plot("smallcopeall-cog", region = "BothReports", mode = "slide")
+```
+
+Long-term northeast shifts in small copepods
+
+:::
+
+::::
+
+## Risks to managing spatially: Environmental Drivers
+
+Thermal Habitat Changes 
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r long-term-sst, fig.alt="Northeast US annual sea surface temperature (SST, black), with increasing trend (orange)."}
+return_plot("long-term-sst", region = "BothReports", mode = "slide")
+```
+
+```{r GSI, fig.alt = "Index representing changes in the location of the Gulf Stream north wall (black). Positive values represent a more northerly Gulf Stream position, NO LONGER HAS increasing trend."}
+return_plot("GSI", region = "BothReports", mode = "slide")
+```
+
+* The entire shelf is getting warmer with northward shifts in Gulf Stream
+* Since 2023 - sharp drop in Gulf Stream and temperature
+* Changes in currents and temperature can alter habitat suitability
+* Mobile species can follow changes, but others cannot (i.e. scallops)
+:::
+
+::: {.soe-50-column}
+
+```{r cold-pool-size, fig.alt="Seasonal cold pool mean temperature (left) and spatial extent index (right), based on bias-corrected ROMS-NWA (open circles) and GLORYS (closed circles), with declining trends (purple)."}
+#| out-height: "500px"
+return_plot("cold-pool-size", region = "BothReports", mode = "slide")
+```
+
+
+* Some changes can be local and variable
+  * Mid-Atlantic Cold pool important regional feature that is shrinking and warming habitat
+  * Last 3 years saw an improvement in cold pool conditions
+
+
+:::
+
+::::

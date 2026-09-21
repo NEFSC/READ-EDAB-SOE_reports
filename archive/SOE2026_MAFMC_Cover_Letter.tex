@@ -1,0 +1,146 @@
+\documentclass[10pt,]{letter}
+\usepackage{mathpazo}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[left=2cm, right=2cm, top=3.5cm, bottom=2cm, footskip =
+.5cm]{geometry}
+\usepackage[unicode=true]{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{
+            pdfauthor={Abigail Tyrell, PhD; Research Fishery Biologist; Ecosystem Dynamics and Assessment Branch; Northeast Fisheries Science Center},
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{graphicx,grffile}
+\signature{\vspace*{-8ex}\includegraphics{C:/Users/abigail.tyrell/Documents/code/READ-EDAB-SOE\_reports/utils/signature\_tyrell.jpg}\\Abigail
+Tyrell, PhD\\Research Fishery Biologist\\Ecosystem Dynamics and
+Assessment Branch\\Northeast Fisheries Science Center}
+
+\date{31 March, 2026}
+
+\usepackage{float}
+\address{}
+
+\usepackage{mdframed} % color is loaded by mdframed
+\definecolor{greyborder}{RGB}{221,221,221}
+\definecolor{greytext}{RGB}{119,119,119}
+\newmdenv[rightline=false,bottomline=false,topline=false,linewidth=3pt,linecolor=greyborder,skipabove=\parskip]{blockquote}
+\renewenvironment{quote}{\begin{blockquote}\list{}{\rightmargin=0em\leftmargin=0em}%
+\item\relax\color{greytext}\ignorespaces}{\unskip\unskip\endlist\end{blockquote}}
+
+\usepackage{wallpaper}
+\ThisULPositionWallPaper{1}{0pt}{0pt}{utils/NEFSCletterhead.pdf}
+
+
+\begin{document}
+
+
+\begin{letter}{Mid-Atlantic Fishery Management Council\\800 N. State
+St., Suite 201\\Dover, DE 19901}
+\opening{To the SSC,}
+
+In this memo we list comments and requests received on the 2019-2025
+State of the Ecosystem (SOE) reports, and how we responded to those
+requests. We include comments from both Councils because adjustments to
+the report were made in response to both. We welcome feedback on whether
+this memo is useful and how to improve it for future SOE reporting.
+
+This year, the memo is reorganized into three tables. Table 1 shows all
+completed requests, Table 2 shows all pending requests, and Table 3
+shows all request removed from tracking. Request priorities and the
+decision that items were out of scope for the SOE were discussed with
+both Councils' SSCs during a July 2025 prioritization meeting.
+
+The SOE team is also requesting that the Council and SSC consider some
+of the following items relating to recent changes to the SOE
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Performance metrics}: For each management objective category
+  are the performance metrics clearly articulated and are the metrics
+  used appropriate?
+\item
+  \textbf{Specific objectives and indicators}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The framework of the \emph{Stability objective} has been revised for
+    both ecosystem and fishery indicators to focus on \emph{Changes From
+    Baseline}, \emph{Adaptive Capacity}, and \emph{Volatility}.
+  \item
+    Does this reframing of stability better address the Council needs?
+    Comment on how they could be refined
+  \end{itemize}
+\item
+  The SOE team has integrated \textbf{ocean model forecasts} from MOM6
+  into an SOE graphic summary
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Are presenting forecast information as probabilities of deviating
+    from historical average a useful format for the Council? Are there
+    other reference points or ``events'' that could be used instead of
+    historical averages?
+  \item
+    How should uncertainty be discussed alongside observations?
+  \item
+    Are there any research questions or Council decisions that forecast
+    information could assist?
+  \end{itemize}
+\end{enumerate}
+
+We welcome comments on the entire SOE report as well as information
+included in this memo, and look forward to feedback from the SSC and
+Council.
+
+\longindentation=0pt
+\closing{Sincerely,}
+\encl{State of the Ecosystem 2026: Request Tracking Memo}
+\cc{Jon Hare}
+
+\end{letter}
+
+\end{document}

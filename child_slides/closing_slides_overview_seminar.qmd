@@ -1,0 +1,89 @@
+## THANK YOU! SOEs made possible by (at least) 88 contributors from 20+ institutions {.small-text-slide}
+
+```{r, results = "asis"}
+contr <- c(create_contributors(contrib.file = here::here('utils', 'contributors_list.csv'), mode = "slide"), "NEFSC staff")
+
+total <- length(contr)
+len <- ceiling(total/4)
+seqs <- seq(1, total, by = len)
+```
+
+:::: {.columns}
+
+::: {.column width="25%"}
+
+```{r, results = "asis"}
+contr[seqs[1]:seqs[2]] |> 
+  cat(sep = "<br>")
+```
+
+:::
+
+::: {.column width="25%"}
+
+```{r, results = "asis"}
+contr[(seqs[2]+1):seqs[3]] |> 
+  cat(sep = "<br>")
+```
+
+:::
+
+::: {.column width="25%"}
+
+```{r, results = "asis"}
+contr[(seqs[3]+1):seqs[4]] |> 
+  cat(sep = "<br>")
+```
+
+:::
+
+::: {.column width="25%"}
+
+```{r, results = "asis"}
+contr[(seqs[4]+1):total] |> 
+  cat(sep = "<br>")
+```
+
+![](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//noaa-iea.png){width="400px"}
+
+:::
+
+::::
+
+## References
+
+```{r, echo=FALSE, results="asis"}
+PrintBibliography(myBib)
+```
+
+### Additional resources
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+* [ecodata R package](https://github.com/noaa-edab/ecodata)
+
+* [Indicator catalog](https://noaa-edab.github.io/catalog/)
+
+* [SOE Technical Documentation](https://noaa-edab.github.io/tech-doc)
+
+:::
+
+::: {.soe-50-column}
+
+```{r}
+soe_contact_info <- dplyr::case_when(params$region == "NewEngland" ~ "<joseph.caracappa@noaa.gov>",
+                                     params$region == "MidAtlantic" ~ "<abigail.tyrell@noaa.gov>",
+                                     TRUE ~ "<abigail.tyrell@noaa.gov>, <joseph.caracappa@noaa.gov>")
+```
+
+* [SOE Reports on the web](https://www.fisheries.noaa.gov/new-england-mid-atlantic/ecosystems/state-ecosystem-reports-northeast-us-shelf)
+
+* Slides available at <https://nefsc.github.io/READ-EDAB-SOE_reports/>
+
+* Contact: <brandon.beltz@noaa.gov> or <nefsc.soe.leads@noaa.gov>
+
+:::
+
+::::

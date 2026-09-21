@@ -1,0 +1,179 @@
+## State of the Ecosystem (SOE) reporting
+### Improving ecosystem information and synthesis for fishery managers
+
+:::: {.soe-50-50-slide}
+
+::: {}
+
+- Ecosystem indicators linked to management objectives `r Cite(myBib, "depiper_operationalizing_2017")`
+    + Contextual information
+    + Report evolving since 2016
+    + Fishery-relevant subset of full Ecosystem Status Reports
+
+- Open science emphasis `r Cite(myBib, "bastille_improving_2020")`
+
+- Used within Mid-Atlantic Fishery Management Council's Ecosystem Process `r Cite(myBib, "muffley_there_2020")`
+
+:::
+
+::: {.soe-50-column}
+
+```{r, fig.alt = "IEA process from goal setting to assessment to strategy evaluation with feedbacks", out.width = "70%"}
+knitr::include_graphics(here::here("images/iea-loop.png"))
+```
+*The IEA Loop[^1]*
+
+[^1]: https://www.integratedecosystemassessment.noaa.gov/national/IEA-approach
+
+:::
+
+::::
+
+## 2026 Report Structure
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+1. Graphical summary
+    + Page 1 report card re: performance metrics
+    + Page 2 risk summary bullets
+    + Page 3 2025 snapshot
+1. Performance relative to management objectives
+    - *What* does the indicator say--up, down, stable?
+    - *Why* do we think it is changing: explore drivers
+1. Risks to meeting management objectives
+    - Same *What* and *Why* as Performance Section
+1. 2025 Highlights
+
+:::
+
+::: {.soe-50-column}
+
+```{r, fig.alt = ""}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//SystemDrivers_v5.jpg")
+```
+
+:::
+
+::::
+
+## Metrics, risks, drivers, and indicators
+
+```{r management-objectives}
+perf_metrics <- tibble::tibble(
+  "Objective Categories" = c("Seafood Production",
+                             "Profits","Recreation",
+                             "Stability",
+                             "Social & Cultural",
+                             "Protected Species"),
+  "Indicators reported" = c("Landings; commercial total and by feeding guild; recreational harvest",
+                           "Revenue decomposed to price and volume, profitability",
+                           "Angler trips; recreational fleet diversity; recreational catch diversity",
+                           "Fishery and ecosystem volatility, adaptive capacity, and shifts from baseline",
+                           "Community commercial fishing activity and risk factors
+",
+                           "Bycatch; population (adult and juvenile) numbers, mortalities"),
+  service = "Performance Metrics"
+)
+
+drivers <- tibble::tibble(
+  "Objective Categories" = c("Management",
+                             "Biomass",
+                             "Environment"),
+  "Indicators reported" = c("Stock status; catch compared with catch limits",
+                           "Biomass or abundance by feeding guild from surveys",
+                           "Climate and ecosystem risk indicators listed below"),
+  service = "Drivers of Performance"
+)
+
+risks <- tibble::tibble("Objective Categories" = c(
+  "Risks to Managing Spatially",
+  "Risks to Managing Seasonally",
+  "Risks to Setting Catch Limits",
+  "Other Ocean Uses"
+),
+"Indicators reported" = c(
+  "Fish and cetacean distribution shifts",
+  "Spawning and migration timing",
+  "Fish condition and recruitment",
+  "Fishery revenue and landings from wind lease areas by species and port"
+),
+service = "Risks to Meeting Objectives"
+)
+
+drivers_risk <- tibble::tibble("Objective Categories" = c(
+  "Habitat and prey quality",
+  "Phenology",
+  "Drivers of productivity",
+  "Other Ocean Uses"
+),
+"Indicators reported" = c(
+  "Benthic and pelagic forage distribution; ocean temperature; changes in currents and Cold Pool",
+  "Habitat timing: length of ocean summer, cold pool seasonal persistence",
+  "Benthic and pelagic forage quality and abundance; ocean temperature and acidification",
+  "Wind development map; protected species presence and hotspots"
+),
+service = "Drivers of Risks"
+)
+
+mng_obj <- rbind(perf_metrics, drivers, risks, drivers_risk)
+
+flextable::as_grouped_data(mng_obj, groups = "service") |> 
+  flextable::as_flextable(hide_grouplabel=TRUE) |>
+  flextable::align(i = ~ !is.na(service), align = "left") |> 
+  flextable::bold(i = ~ !is.na(service), bold = TRUE) |>
+  flextable::set_header_labels(Objective.Categories = "Objective categories",
+                               Indicators.reported = "Indicators reported") |>
+  
+  flextable::set_caption("Ecosystem-scale fishery management objectives") |>
+  flextable::fontsize(size = 12,
+                      part = "all") |>
+    flextable::theme_zebra() |>
+    flextable::bg(i = ~ !is.na(service), bg = "beige", part = "body") |>
+    flextable::hline(i = ~ !is.na(service)) |>
+  flextable::autofit() 
+```
+
+## State of the Ecosystem report scale and figures
+
+:::: {.soe-50-50-slide}
+
+::: {.soe-50-column}
+
+```{r, fig.alt = "NEFSC survey strata used to calculate Ecosystem Production Unit biomass", out.width = "80%"}
+knitr::include_graphics("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images//EPU_Designations_Map.jpg")
+```
+
+A [glossary of terms](https://noaa-edab.github.io/tech-doc/glossary.html) (2021 Memo 5), detailed [technical methods documentation](https://NOAA-EDAB.github.io/tech-doc) and [indicator data](https://github.com/NOAA-EDAB/ecodata) are available online.  
+:::
+
+::: {.soe-50-column}
+
+Key to figures
+
+```{r , eval = FALSE}
+a <- ecodata::plot_species_dist(varName = "along", n=10) + ggplot2::coord_cartesian(expand = FALSE)
+b <- ecodata::plot_species_dist(varName = "depth", n=10) + ggplot2::coord_cartesian(expand = FALSE) 
+
+ggpubr::ggarrange(a, b, ncol = 2)
+```  
+
+```{r}
+#| out-height: "450px"
+knitr::include_graphics(here::here("images/plot_key.png"))
+```
+
+Long-term trends assessed only for 30+ years: [more information](https://noaa-edab.github.io/tech-doc/trend-analysis.html)
+
+Short-term trends assessed for last 10 years of data OR a full time series <30 years
+
+<p style="color:#FF8C00;">Orange line = significant increase</p>
+<p style="color:#9932CC;">Purple line = significant decrease</p>
+<p>No color line = not significant or < 30 years</p>
+<p style="background-color:#D3D3D3;">Grey background = last 10 years</p>
+
+:::
+
+::::
+
