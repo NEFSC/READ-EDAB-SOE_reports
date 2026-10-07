@@ -1,0 +1,28 @@
+---
+title: "Test doc"
+output: 
+  bookdown::pdf_document2:
+    includes:
+      in_header: "utils/header1_midatlantic.tex"
+date: "2026-10-07"
+fontsize: 10pt
+geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
+subparagraph: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source(here::here("utils/functions.R"))
+```
+
+## Testing automated captions
+
+This is a test of the automated caption code. 
+
+```{r exp-n, fig.cap = return_caption(chunk_name = "exp-n", region = "MidAtlantic", key = here::here("utils/figure_captions_summary.csv") |> read.csv()), echo = FALSE, fig.width=5, fig.asp=.4}
+return_plot("exp-n", region = "MidAtlantic",
+            cap_key = here::here("utils/figure_captions_summary.csv") |>
+              read.csv())
+```
+
+Here is text beneath the caption. 
