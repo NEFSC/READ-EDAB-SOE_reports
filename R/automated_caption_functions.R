@@ -33,7 +33,7 @@ get_series_label <- function(df_row) {
 #'
 #' @param row A single row data.frame / tibble
 #' @param lt_model Choice of long-term model: "ar1" (default), "normal", or "aicc" (select lower AICc)
-describe_series <- function(row, lt_model = "ar1") {
+describe_series <- function(row, lt_model = "aicc") {
   label <- get_series_label(row)
   recent_yr <- row$stats.recent_year
   status <- row$stats.status
@@ -54,9 +54,8 @@ describe_series <- function(row, lt_model = "ar1") {
     lt_text <- "Long-term trends were not evaluated (< 30 years of data)"
   } else {
     # Determine model preference
-    ## TODO: the default is manually passed model preference
-    ## we might prefer to automatically select the model with the lowest AICc if both were run (lt_model = "aicc")
-    ## or select the model that is statistically significant if it has higher AICc
+    ## TODO: the default is to automatically select the model with the lowest AICc if both were run (lt_model = "aicc")
+    ## we might prefer to select the model that is statistically significant if it has higher AICc
     use_ar1 <- TRUE
     if (
       lt_model == "aicc" &&
@@ -125,7 +124,7 @@ describe_series <- function(row, lt_model = "ar1") {
 #'
 #' @param plot_df Data frame containing rows corresponding to a single plot
 #' @param lt_model Long-term model choice ("ar1", "normal", "aicc")
-generate_plot_caption <- function(plot_df, lt_model = "ar1") {
+generate_plot_caption <- function(plot_df, lt_model = "aicc") {
   n_series <- nrow(plot_df)
   file_name <- basename(plot_df$File_Generated[1])
   region <- plot_df$Region[1]
