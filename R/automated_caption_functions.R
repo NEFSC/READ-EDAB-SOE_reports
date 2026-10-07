@@ -54,6 +54,9 @@ describe_series <- function(row, lt_model = "ar1") {
     lt_text <- "Long-term trends were not evaluated (< 30 years of data)"
   } else {
     # Determine model preference
+    ## TODO: the default is manually passed model preference
+    ## we might prefer to automatically select the model with the lowest AICc if both were run (lt_model = "aicc")
+    ## or select the model that is statistically significant if it has higher AICc
     use_ar1 <- TRUE
     if (
       lt_model == "aicc" &&
