@@ -183,4 +183,4 @@ generate_all_plot_captions <- function(csv_file) {
 # cat("\n\n-----------------------------------\n\n")
 # cat(captions$Caption[2])
 # #
-# # write.csv(captions, here::here("utils/automated.captions.csv"))
+# write.csv(captions, here::here("utils/automated.captions.csv"))

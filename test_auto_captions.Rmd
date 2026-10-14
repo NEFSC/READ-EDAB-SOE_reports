@@ -12,7 +12,10 @@ subparagraph: yes
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-source(here::here("utils/functions.R"))
+# source(here::here("R/automated_caption_functions.R"))
+list.files(here::here("R"),
+           full.names = TRUE) |>
+  purrr::walk(source)
 ```
 
 ## Testing automated captions

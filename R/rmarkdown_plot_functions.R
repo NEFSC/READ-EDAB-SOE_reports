@@ -39,7 +39,7 @@ return_caption <- function(
     )) |>
     dplyr::pull(Caption)
 
-  output <- paste0(caption, auto_cap)
+  output <- paste(caption, auto_cap)
   return(output)
 }
 
