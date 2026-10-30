@@ -91,7 +91,7 @@ cat('#', knitr::current_input())
 cat('# parent_report.Rmd')
 ```
 
-`r if(params$region == "NewEngland") "\\setcounter{page}{6}"`
+`r if(params$region == "NewEngland") "\\setcounter{page}{5}"`
 `r if(params$region == "MidAtlantic") "\\setcounter{page}{4}"`
 
 
