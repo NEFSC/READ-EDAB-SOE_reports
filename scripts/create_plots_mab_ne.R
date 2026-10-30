@@ -25,61 +25,6 @@ create_plots_mab_and_ne <- function(region) {
     region == "NewEngland" ~ "New England"
   )
 
-  ## functions ----
-
-  # A function to create a standardized filename
-  create_filename <- function(
-    indicator,
-    file_region,
-    dir = out_dir,
-    extension = ".png"
-  ) {
-    file.path(
-      dir,
-      paste0(
-        indicator,
-        "_",
-        file_region,
-        "_",
-        Sys.Date(),
-        extension
-      )
-    )
-  }
-
-  # A flexible function to generate and save a plot
-  save_plot <- function(
-    plot_expression,
-    indicator,
-    report = region,
-    save_dir = out_dir,
-    ...
-  ) {
-    # Execute the code to create the plot
-    p <- eval(plot_expression)
-
-    # Check if the plot object is valid before saving
-    if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
-      message(report)
-      message(indicator)
-      message(out_dir)
-      fname <- create_filename(
-        indicator = indicator,
-        file_region = report,
-        dir = save_dir
-      )
-      ggplot2::ggsave(
-        filename = fname,
-        plot = p,
-        bg = "white",
-        ...
-      )
-      message("Plot saved to: ", fname)
-    } else {
-      stop("Plot object is not a valid ggplot or ggarrange object.")
-    }
-  }
-
   ### Indicators ----
 
   # total landings
@@ -151,6 +96,8 @@ create_plots_mab_and_ne <- function(region) {
   )
 
   # rec hms and sharks
+
+  ## TODO: large pelagics plot isn't outputting the same number of columns as the rec hms plot
   save_plot(
     plot_expression = {
       rec_hms_plot <- ecodata::plot_rec_hms(report = region, n = 10) +
@@ -201,7 +148,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "stock-status",
     width = 6.5,
-    height = 6.25
+    height = 6.25,
+    output_summary = FALSE
   )
 
   # 2. ABC/ACL Stacked Plot
@@ -214,7 +162,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "abcacl-stacked",
     width = 6.5,
-    height = 4.75
+    height = 4.75,
+    output_summary = FALSE
   )
 
   # 3. ABC/ACL Catch Plot
@@ -227,10 +176,12 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "abcacl-catch",
     width = 6.5,
-    height = 2.75
+    height = 2.75,
+    output_summary = FALSE
   )
 
   # Aggregate biomass
+  ## TODO: update ecodata::plot_aggregate_biomass to use facets
   if (region == "MidAtlantic") {
     save_plot(
       plot_expression = {
@@ -396,6 +347,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "bennet",
     width = 6.5,
+    output_summary = FALSE
     height = ifelse(region == "NewEngland", 6.25, 2.75)
   )
 
@@ -438,6 +390,8 @@ create_plots_mab_and_ne <- function(region) {
         )
       }
     },
+    indicator = "bennet_all",
+    output_summary = FALSE
     indicator = "bennet-all",
     width = ifelse(region == "NewEngland", 9.25, 4.25),
     height = 6.5
@@ -639,7 +593,11 @@ create_plots_mab_and_ne <- function(region) {
         report = region,
         varName = "fall",
         n = 10
-      )
+      ) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Var)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       if (region == "MidAtlantic") {
         exp_n_plot +
           ggplot2::scale_x_continuous(
@@ -794,7 +752,8 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "recreational-engagement",
     width = 6.5,
-    height = 4.25
+    height = 4.25,
+    output_summary = FALSE
   )
 
   # 3. Community Climate Vulnerability Exposure Plot
@@ -901,6 +860,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "productivity-anomaly",
     width = 6.5,
+    output_summary = FALSE
     height = ifelse(region == "NewEngland", 8.75, 7.75)
   )
 
@@ -942,23 +902,28 @@ create_plots_mab_and_ne <- function(region) {
     indicator = ifelse(region == "NewEngland", "ne-cf", "mab-cf"),
     width = 6.5,
     height = ifelse(region == "NewEngland", 7.25, 6.25)
+    output_summary = FALSE
   )
 
-  # # 5. Energy Density Plot
-  # save_plot(
-  #   plot_expression = {
-  #     ecodata::plot_energy_density(report = region) +
-  #       ggplot2::theme(legend.position = 'bottom')
-  #   },
-  #   indicator = "energy-density",
-  #   width = 6.5,
-  #   height = 4
-  # )
+  # 5. Energy Density Plot
+  save_plot(
+    plot_expression = {
+      ecodata::plot_energy_density(report = region) +
+        ggplot2::theme(legend.position = 'bottom')
+    },
+    indicator = "energy_density",
+    width = 6.5,
+    height = 4,
+    output_summary = FALSE
+  )
 
   # 6. Forage Index Plot
   save_plot(
     plot_expression = {
-      plt <- ecodata::plot_forage_index(report = region, n = 10)
+      plt <- ecodata::plot_forage_index(report = region, n = 10) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
       if (region == "MidAtlantic") {
         plt
       } else {
@@ -978,12 +943,20 @@ create_plots_mab_and_ne <- function(region) {
         varName = "Megabenthos",
         n = 10
       ) +
-        ggplot2::theme(legend.position = "none")
+        ggplot2::theme(legend.position = "none") +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       macrobenthos_plot <- ecodata::plot_benthos_index(
         report = region,
         varName = "Macrobenthos",
         n = 10
-      )
+      ) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       ggpubr::ggarrange(
         megabenthos_plot,
         macrobenthos_plot,
@@ -1007,7 +980,11 @@ create_plots_mab_and_ne <- function(region) {
       ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Large Copepods") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       small_copepod_plot <- ecodata::plot_zooplankton_index(
         report = region,
         varName = "Smallcopeall",
@@ -1015,7 +992,11 @@ create_plots_mab_and_ne <- function(region) {
       ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Small Copepods") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       euphausiid_plot <- ecodata::plot_zooplankton_index(
         report = region,
         varName = "Euph",
@@ -1026,7 +1007,11 @@ create_plots_mab_and_ne <- function(region) {
         ) +
         ggplot2::ylab("Relative Biomass") +
         ggplot2::labs(title = "Euphasiids") +
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10))
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size = 10)) +
+        # force different colors for stats
+        ggplot2::geom_point(ggplot2::aes(color = Season)) +
+        ggplot2::scale_color_manual(values = c("tomato4", "deepskyblue4"))
+
       ggpubr::ggarrange(
         large_copepod_plot,
         small_copepod_plot,
@@ -1169,6 +1154,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "wea-port-rev",
     width = 6.5,
+    output_summary = FALSE
     height = 7.25
   )
 }

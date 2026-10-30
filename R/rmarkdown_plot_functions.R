@@ -10,7 +10,12 @@ FitFlextableToPage <- function(ft, pgwidth = 6) {
   return(ft_out)
 }
 
-return_caption <- function(key = caption_key, chunk_name, region) {
+return_caption <- function(
+  key = caption_key,
+  chunk_name,
+  region,
+  automated_cap = here::here("utils/automated.captions.csv")
+) {
   col <- dplyr::case_when(
     region == "MidAtlantic" ~ "fig_cap_ma",
     region == "NewEngland" ~ "fig_cap_ne",
@@ -18,9 +23,24 @@ return_caption <- function(key = caption_key, chunk_name, region) {
   )
   # caption <- key$caption[which(key$chunk_name == chunk_name)]
   caption <- key |>
-    dplyr::filter(.data$chunkName == chunk_name) |>
+    dplyr::filter(chunkName == chunk_name) |>
     dplyr::pull(col)
-  return(caption)
+
+  ## TODO: this matching relies on the Indicator column in the automated captions file being a substring of the chunk_name.
+  # relies on updated chunkName column in the manual caption spreadsheet
+  auto_cap <- read.csv(automated_cap) |>
+    dplyr::filter(stringr::str_detect(
+      Indicator |>
+        stringr::str_remove_all("_") |>
+        stringr::str_remove_all("-"),
+      chunk_name |>
+        stringr::str_remove_all("_") |>
+        stringr::str_remove_all("-")
+    )) |>
+    dplyr::pull(Caption)
+
+  output <- paste(caption, auto_cap)
+  return(output)
 }
 
 
@@ -151,72 +171,4 @@ return_plot <- function(
 
   # 6. Return the single combined image
   knitr::include_graphics(processed_name, dpi = 300)
-}
-
-find_all_files <- function(text, path = here::here()) {
-  all_files <- c(
-    list.files(path, recursive = TRUE, full.names = TRUE) |>
-      stringr::str_subset("\\.R$"),
-    list.files(path, recursive = TRUE, full.names = TRUE) |>
-      stringr::str_subset("\\.Rmd$"),
-    list.files(path, recursive = TRUE, full.names = TRUE) |>
-      stringr::str_subset("\\.qmd$")
-  )
-  out <- c()
-  for (i in seq_len(length(all_files))) {
-    results <- grep(text, readLines(all_files[i]), value = FALSE) |>
-      suppressWarnings()
-    if (length(results) > 0) {
-      results <- paste(results, collapse = ", ")
-      this_data <- c(all_files[i], results)
-      out <- rbind(out, this_data)
-    }
-    percent <- (i / length(all_files) * 100) |> round(digits = 0)
-    if ((i %% 10) == 0) {
-      print(paste(i, " files searched, ", percent, "% done", ".....", sep = ""))
-    }
-  }
-  if (is.null(out)) {
-    print("Not found")
-  } else {
-    colnames(out) <- c("file", "line(s)")
-    return(out)
-  }
-}
-
-create_contributors <- function(contrib.file, mode = "") {
-  if (file.exists(contrib.file)) {
-    contributors <- read.csv(contrib.file, stringsAsFactors = FALSE)
-
-    # 1. Rejoin the names and apply the NEFSC logic
-    reconstructed_entries <- contributors |>
-      dplyr::arrange(Last_Name, .locale = "en") |>
-      dplyr::mutate(
-        # Combine names and trim in case Last_Name is empty
-        Full_Name = stringr::str_trim(paste(First_Name, Last_Name)),
-        # If affiliation is NEFSC, just show name; otherwise, show Name (Affiliation)
-        formatted = ifelse(
-          Affiliation == "NEFSC",
-          Full_Name,
-          paste0(Full_Name, " (", Affiliation, ")")
-        )
-      ) |>
-      dplyr::pull(formatted)
-
-    if (mode == "slide") {
-      return(reconstructed_entries)
-    }
-
-    # 2. Collapse into a single comma-separated string
-    final_string <- paste(
-      c(reconstructed_entries, "NEFSC staff"),
-      collapse = ", "
-    )
-
-    # 3. Add the header and render as Markdown
-    prefix <- "**Contributors** (NEFSC unless otherwise noted): "
-    cat(paste0(prefix, final_string))
-  } else {
-    cat("Contributor list file not found.")
-  }
 }

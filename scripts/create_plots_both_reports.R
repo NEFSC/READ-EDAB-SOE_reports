@@ -9,8 +9,8 @@
 
 # region <- "BothReports"
 
-# source(here::here("../ecodata/R/summary_functions.R"))
-# source(here::here("utils/image_functions.R"))
+source(here::here("../ecodata/R/summary_functions.R"))
+source(here::here("utils/image_functions.R"))
 
 create_plots_both <- function(region = "BothReports") {
   # setup ----
@@ -27,6 +27,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "therm-hab-persist-2024",
     width = 6.5,
+    output_summary = FALSE
     height = 4.25
   )
 
@@ -60,6 +61,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "harborporpoise",
     width = 6.5,
+    output_summary = FALSE
     height = 3.25
   )
 
@@ -70,6 +72,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "grayseal",
     width = 6.5,
+    output_summary = FALSE
     height = 3.25
   )
 
@@ -130,6 +133,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "protectedspp-dist-shifts",
     width = 7.5,
+    output_summary = FALSE
     height = 4.25
   )
 
@@ -197,15 +201,16 @@ create_plots_both <- function(region = "BothReports") {
   )
 
   # development speed
-  save_plot(
-    plot_expression = {
-      ecodata::plot_wind_dev_speed() +
-        ggplot2::theme(legend.position = 'bottom')
-    },
-    indicator = "wind-proposed-dev",
-    width = 6.5,
-    height = 4.25
-  )
+  # not used in 2026
+  # save_plot(
+  #   plot_expression = {
+  #     ecodata::plot_wind_dev_speed() +
+  #       ggplot2::theme(legend.position = 'bottom')
+  #   },
+  #   indicator = "wind_dev_speed",
+  #   width = 6.5,
+  #   height = 4.25
+  # )
 
   # slopewater
   save_plot(

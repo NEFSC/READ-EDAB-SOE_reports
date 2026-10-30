@@ -132,16 +132,193 @@ add_ecodata_name <- function(
 return_point_data <- function(p) {
   n_layers <- length(p$layers)
 
+  plt_data <- NULL
+
   for (i in 1:n_layers) {
     dat <- ggplot2::layer_data(p, i)
     # print(head(dat))
     # shape is only for points, so this will grab data from the point layer
-    if ("shape" %in% names(dat)) {
+    if ("shape" %in% colnames(dat)) {
       plt_data <- dat
     }
   }
 
+  # this will return the last point layer found, if multiple exist
+  # caution!!!
+  # allows overwrite for ecodata functions that don't differentiate by color or facet
   return(plt_data)
+
+  if (is.null(plt_data)) {
+    stop("No point layer found in the provided ggplot object.")
+  }
+}
+
+#' Extract Data with Facet and Color Group Mapping
+#'
+#' Evaluates a built plot layer and conditionally appends literal labeling variables
+#' by checking for the presence of multiple structural groupings (facets via \code{PANEL}
+#' and mapping color hex-codes back to categorical scale breaks).
+#'
+#' @details
+#' This function dynamically handles data frames from plots that are simultaneously
+#' faceted and colored. It automatically filters out unneeded structural aesthetics like
+#' internal hex hashes (\code{colour}) and index indicators (\code{PANEL}) before returning.
+#'
+#' \strong{Warning regarding natural joins:} The function utilizes \code{\link[dplyr]{left_join}}
+#' without an explicit \code{by} specification when binding \code{panel_key} and \code{color_key}
+#' back to the baseline data frame. This defaults to a natural join matching on common columns
+#' (\code{x} and \code{y}), which assumes coordinate pairings are unique identifiers across groups.
+#'
+#' @param p A \code{ggplot2} plot object.
+#' @param p_dat A data frame representing a built plot layer (typically extracted from
+#'   \code{ggplot2::ggplot_build(p)$data[[i]]}) containing coordinates and group variables.
+#'
+#' @return A data frame or tibble matching the dimensions of \code{p_dat} with raw
+#'   coordinates (\code{x}, \code{y}) combined with any active layout labels and scale variables
+#'   (\code{Var}).
+#'
+#' @importFrom dplyr select left_join
+#' @importFrom tibble tibble
+#' @importFrom ggplot2 ggplot_build
+#' @export
+#'
+#' @seealso
+#' \code{\link{return_faceted_plt_data}}, \code{\link{return_color_plt_data}}
+#'
+#' @examples
+#' \dontrun{
+#' library(ggplot2)
+#' # Complex plot with both facets and color aesthetics
+#' p <- ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+#'   geom_point() +
+#'   facet_wrap(~Species)
+#'
+#' layer_dat <- ggplot_build(p)$data[[1]]
+#'
+#' # Extract clean dataset with layout and color categories decoded
+#' return_grouped_data(p, layer_dat)
+#' }
+
+return_grouped_data <- function(p, p_dat) {
+  output <- p_dat |>
+    dplyr::select(x, y)
+
+  has_panel <- "PANEL" %in% colnames(p_dat)
+  has_multiple_colors <- length(unique(p_dat$colour)) > 1
+
+  if (has_panel | has_multiple_colors) {
+    metadata <- ggplot2::ggplot_build(p)
+  }
+
+  if (has_panel) {
+    plt_data <- p_dat |>
+      dplyr::select(x, y, PANEL)
+
+    # get facet data to join
+    facet_labels <- metadata$layout$layout |>
+      dplyr::select(-c(ROW, COL, SCALE_X, SCALE_Y, COORD))
+
+    panel_info <- tibble::tibble(PANEL = p_dat$PANEL) |>
+      dplyr::left_join(facet_labels, by = "PANEL") |>
+      dplyr::select(-PANEL)
+
+    output <- dplyr::bind_cols(output, panel_info)
+  }
+
+  if (has_multiple_colors) {
+    color_scale <- metadata$plot$scales$get_scales("colour")
+
+    if (!is.null(color_scale)) {
+      # Generate the mapping vectors
+      hex_breaks <- color_scale$map(color_scale$get_breaks())
+      labels <- color_scale$get_labels()
+
+      # Vectorized lookup instead of left_join
+      color_idx <- match(p_dat$colour, hex_breaks)
+      output$Color <- labels[color_idx]
+    }
+  }
+
+  ## TODO: update to handle cases where points are grouped but not distinguished by color (exp n)
+  # metadata$plot$data gives full dataset
+  # would have to dynamically read colnames and determine which ones were grouping/ important
+
+  return(output)
+}
+
+extract_plot_data <- function(p, fpath, plt_path, ind, reg) {
+  message("Extracting plot data...")
+  target_plot <- p
+
+  raw_dat <- return_point_data(target_plot)
+  # print(head(raw_dat))
+
+  dat <- return_grouped_data(target_plot, p_dat = raw_dat) |>
+    # remove NAs so max year isn't a year with no data
+    # arfit will pad NAs back in
+    tidyr::drop_na()
+
+  message("Running summary functions...")
+
+  # 5. Group by our new literal labels and execute summary functions
+  group <- colnames(dat)[-which(colnames(dat) %in% c("x", "y"))]
+  # message(group)
+
+  if (length(group) == 0) {
+    summary_rows <- dplyr::bind_cols(
+      dat |> summary_stats(),
+      dat |> trend_summaries()
+    ) |>
+      dplyr::mutate(Group1 = "Unit", Group2 = NA, Group3 = NA, .before = 1)
+  } else {
+    summary_rows <- dat |>
+      # na's seem to be duplicated for some reason?
+      dplyr::distinct() |>
+      dplyr::group_by(dplyr::across(dplyr::all_of(group))) |>
+      dplyr::reframe(
+        stats = summary_stats(dplyr::pick(dplyr::everything())),
+        trends = trend_summaries(dplyr::pick(dplyr::everything()))
+      )
+  }
+
+  # pad out group columns if needed
+  if (length(group) == 1) {
+    summary_rows <- summary_rows |>
+      dplyr::mutate(Group2 = NA, Group3 = NA, .after = 1)
+  }
+
+  if (length(group) == 2) {
+    summary_rows <- summary_rows |>
+      dplyr::mutate(Group3 = NA, .after = 2)
+  }
+
+  output <- summary_rows |>
+    dplyr::rename(Group1 = 1, Group2 = 2, Group3 = 3) |>
+    dplyr::mutate(
+      Indicator = ind,
+      Region = reg,
+      File_Generated = file.path(plt_path),
+      .before = 1
+    )
+
+  # 6. Append to the shared summary CSV file
+
+  summary_path <- file.path(fpath)
+  append_mode <- file.exists(summary_path)
+
+  write.table(
+    output,
+    file = summary_path,
+    append = append_mode,
+    sep = ",",
+    row.names = FALSE,
+    col.names = !append_mode
+  )
+
+  message(
+    "Grouped summary metrics appended to: ",
+    summary_path
+  )
 }
 
 #' Map Faceted Plot Points to Layout Metadata
@@ -170,101 +347,6 @@ return_point_data <- function(p) {
 #' facet_data <- return_faceted_plt_data(p, built_p$data[[1]])
 #' }
 
-return_faceted_plt_data <- function(p, p_dat) {
-  plt_data <- p_dat |>
-    dplyr::select(x, y, PANEL)
-
-  # get facet data to join
-  metadata <- ggplot2::ggplot_build(p)
-  facet_labels <- metadata$layout$layout |>
-    dplyr::select(-c(ROW, COL, SCALE_X, SCALE_Y, COORD))
-
-  output <- dplyr::left_join(plt_data, facet_labels, by = "PANEL") |>
-    dplyr::select(-PANEL)
-
-  return(output)
-}
-
-#' Decode Hex Colors to Categorical Scale Labels
-#'
-#' Extracts built layer data containing hexadecimal color assignments and cross-references
-#' them against the plot's active color scale mapping key to append the human-readable
-#' variable label names.
-#'
-#' @param p A \code{ggplot2} plot object containing an active discrete or continuous color scale.
-#' @param p_dat A data frame representing a built plot layer (typically extracted from
-#'   \code{ggplot2::ggplot_build(p)$data[[i]]}) containing columns \code{x}, \code{y}, and \code{colour}.
-#'
-#' @return A data frame/tibble containing the coordinates (\code{x} and \code{y})
-#'   bound to a new column \code{Var} containing the decoded categorical text labels,
-#'   with the internal \code{colour} hex values removed.
-#'
-#' @export
-#'
-#' @examples
-#' \dontrun{
-#' library(ggplot2)
-#' p <- ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) + geom_point()
-#' built_p <- ggplot_build(p)
-#'
-#' # Extract layer 1 data and map hex values back to "Species" categories
-#' colored_data <- return_color_plt_data(p, built_p$data[[1]])
-#' }
-
-return_color_plt_data <- function(p, p_dat) {
-  plt_data <- p_dat |>
-    # might need to keep more of the columns if the plot is faceted?
-    dplyr::select(x, y, colour)
-
-  # get color data to join
-  metadata <- ggplot2::ggplot_build(p)
-  color_scale <- metadata$plot$scales$get_scales("colour")
-
-  # Map the labels to their hex colors
-  color_key <- tibble::tibble(
-    hex = color_scale$map(color_scale$get_breaks()),
-    Var = color_scale$get_labels()
-  )
-
-  output <- dplyr::left_join(plt_data, color_key, by = c("colour" = "hex")) |>
-    dplyr::select(-colour)
-
-  return(output)
-}
-
-# # A flexible function to generate and save a plot
-# save_plot <- function(
-#   plot_expression,
-#   indicator,
-#   report = region,
-#   save_dir = out_dir,
-#   ...
-# ) {
-#   # Execute the code to create the plot
-#   p <- eval(plot_expression)
-#
-#   # Check if the plot object is valid before saving
-#   if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
-#     message(report)
-#     message(indicator)
-#     message(out_dir)
-#     fname <- create_filename(
-#       indicator = indicator,
-#       file_region = report,
-#       dir = save_dir
-#     )
-#     ggplot2::ggsave(
-#       filename = fname,
-#       plot = p,
-#       bg = "white",
-#       ...
-#     )
-#     message("Plot saved to: ", fname)
-#   } else {
-#     stop("Plot object is not a valid ggplot or ggarrange object.")
-#   }
-# }
-
 #' Evaluate, Save, and Log Plot Trend Metrics
 #'
 #' Evaluates a plot expression, annotates it with data source information, exports the
@@ -277,10 +359,6 @@ return_color_plt_data <- function(p, p_dat) {
 #' to isolate stratification layers. It relies heavily on parent environment variables if
 #' default parameters are left unassigned.
 #'
-#' \strong{Warning:} There is a typographical bug in an internal error message (\code{inidcator}
-#' instead of \code{indicator}). If a structural extraction fails, a console notification will
-#' print but execution won't break so the image asset is preserved.
-#'
 #' @param plot_expression An unevaluated R expression or language object that returns a
 #'   \code{ggplot} or \code{ggarrange} object when evaluated (e.g., \code{quote(my_plot_function())}).
 #' @param indicator A character string defining the target metric code name. Used both for
@@ -292,7 +370,7 @@ return_color_plt_data <- function(p, p_dat) {
 #' @param output_summary A logical value indicating whether the internal data matrix should
 #'   be reverse-engineered to yield statistical and trend records. Defaults to \code{TRUE}.
 #' @param summary_file A character string defining the storage path for the aggregated project
-#'   statistics summary spreadsheet. Defaults to \code{"figure_stats_summaries.csv"} inside
+#'   statistics summary spreadsheet. Defaults to \code{"figure_stats_summaries3.csv"} inside
 #'   \code{utils/} via \code{here::here()}.
 #' @param key A character string mapping the location of the figure captions indexing CSV.
 #'   Defaults to \code{"figure_captions_summary.csv"} inside \code{utils/} via \code{here::here()}.
@@ -333,12 +411,14 @@ save_plot <- function(
   report = region,
   save_dir = out_dir,
   output_summary = TRUE,
-  summary_file = here::here("utils/figure_stats_summaries.csv"),
+  summary_file = here::here("utils/figure_stats_summaries3.csv"),
   key = here::here("utils/figure_captions_summary.csv"),
   ...
 ) {
+  plot_env <- new.env(parent = parent.frame())
+  # raw_expr <- substitute(plot_expression)
   # Execute the code to create the plot
-  p <- eval(plot_expression) |>
+  p <- eval(plot_expression, envir = plot_env) |>
     add_ecodata_name(
       plt_indicator = indicator,
       plt_key = key
@@ -363,84 +443,52 @@ save_plot <- function(
     )
     message("Plot saved to: ", fname)
 
-    #### extract data for summary table ============================================
+    # extract data for summary table ----
     if (output_summary) {
-      target_plot <- if (inherits(p, "ggarrange")) p$plots[[1]] else p
-
-      raw_dat <- return_point_data(target_plot)
-
-      # extract simple data if there are no facets or colors
-      if (
-        length(unique(raw_dat$colour)) == 1 &
-          inherits(target_plot$facet, "FacetNull")
-      ) {
-        dat <- raw_dat |>
-          dplyr::select(x, y)
-      } else if (!inherits(target_plot$facet, "FacetNull")) {
-        # extract data by facet if there are facets
-        dat <- return_faceted_plt_data(target_plot, p_dat = raw_dat)
-      } else if (length(unique(raw_dat$colour)) > 1) {
-        # extract data by color if there are colors
-        dat <- return_color_plt_data(target_plot, p_dat = raw_dat)
-      } else {
-        message(paste0(
-          "Unable to extract plot data for ",
-          inidcator,
-          ". The underlying ggplot may be missing the geom_point aesthetic, or the plot structure may be too complex for the current extraction functions."
-        ))
-        # exit without throwing error so the plot can still be saved without summary stats
-        return()
-      }
-
-      # 5. Group by our new literal labels and execute summary functions
-      group <- colnames(dat)[-which(colnames(dat) %in% c("x", "y"))]
-
-      if (length(group) == 0) {
-        summary_rows <- dplyr::bind_cols(
-          dat |> summary_stats(),
-          dat |> trend_summaries()
-        ) |>
-          dplyr::mutate(Group1 = "Unit", Group2 = NA, .before = 1)
-      } else {
-        summary_rows <- dat |>
-          dplyr::group_by(dplyr::across(dplyr::all_of(group))) |>
-          dplyr::reframe(
-            stats = summary_stats(dplyr::pick(dplyr::everything())),
-            trends = trend_summaries(dplyr::pick(dplyr::everything()))
-          )
-      }
-
-      if (length(group) == 1) {
-        summary_rows <- summary_rows |>
-          # add dummy group 2 col so they line up
-          dplyr::mutate(Group2 = NA, .after = 1)
-      }
-
-      output <- summary_rows |>
-        dplyr::mutate(
-          Indicator = indicator,
-          Region = report,
-          File_Generated = file.path(fname),
-          .before = 1
+      if (!inherits(p, "ggarrange")) {
+        extract_plot_data(
+          p,
+          fpath = summary_file,
+          plt_path = fname,
+          ind = indicator,
+          reg = region
         )
+      }
 
-      # 6. Append to the shared summary CSV file
-      summary_path <- file.path(summary_file)
-      append_mode <- file.exists(summary_path)
+      if (inherits(p, "ggarrange")) {
+        message("Detected ggarrange. Intercepting individual subplots...")
 
-      write.table(
-        output,
-        file = summary_path,
-        append = append_mode,
-        sep = ",",
-        row.names = FALSE,
-        col.names = !append_mode
-      )
+        code_string <- match.call()$plot_expression |>
+          as.character() |>
+          paste(collapse = " ")
 
-      message(
-        "Grouped summary metrics appended to: ",
-        summary_path
-      )
+        # extract objects that are assigned a value of "ecodata::plot_..."
+        pattern <- "([a-zA-Z0-9_.]+)\\s*(<-|=) *ecodata::plot_"
+        #
+        # # Extract just the captured variable names
+        ggplot_vars <- stringr::str_match_all(code_string, pattern)[[1]][, 2]
+
+        if (length(ggplot_vars) > 0) {
+          for (i in seq_along(ggplot_vars)) {
+            var_name <- ggplot_vars[i]
+            subplot_obj <- get(var_name, envir = plot_env)
+            subplot_ind <- paste0(indicator, "-", var_name)
+
+            message("Extracting data from subplot variable: ", var_name)
+            extract_plot_data(
+              p = subplot_obj,
+              fpath = summary_file,
+              plt_path = fname,
+              ind = subplot_ind,
+              reg = region
+            )
+          }
+        } else {
+          warning(
+            "Could not find isolated ggplot variables inside the plot_expression block."
+          )
+        }
+      }
     }
   } else {
     stop("Plot object is not a valid ggplot or ggarrange object.")
