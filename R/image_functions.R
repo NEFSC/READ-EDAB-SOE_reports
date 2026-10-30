@@ -370,7 +370,7 @@ extract_plot_data <- function(p, fpath, plt_path, ind, reg) {
 #' @param output_summary A logical value indicating whether the internal data matrix should
 #'   be reverse-engineered to yield statistical and trend records. Defaults to \code{TRUE}.
 #' @param summary_file A character string defining the storage path for the aggregated project
-#'   statistics summary spreadsheet. Defaults to \code{"figure_stats_summaries.csv"} inside
+#'   statistics summary spreadsheet. Defaults to \code{"figure_stats_summaries3.csv"} inside
 #'   \code{utils/} via \code{here::here()}.
 #' @param key A character string mapping the location of the figure captions indexing CSV.
 #'   Defaults to \code{"figure_captions_summary.csv"} inside \code{utils/} via \code{here::here()}.
