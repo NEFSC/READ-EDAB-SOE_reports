@@ -21,7 +21,8 @@ rmarkdown::render(
     keep_tex = FALSE,
     toc = FALSE,
     number_sections = FALSE
-  )
+  ),
+  clean = TRUE
 )
 difftime(Sys.time(), now)
 
