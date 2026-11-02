@@ -42,7 +42,7 @@ set_flextable_defaults(
 ```
 
 ```{r, results='hide'}
-source(here::here("utils/memo_utils.R"))
+source(here::here("R/memo_utils.R"))
 ```
 
 # Introduction

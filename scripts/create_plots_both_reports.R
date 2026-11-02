@@ -9,8 +9,11 @@
 
 # region <- "BothReports"
 
-source(here::here("../ecodata/R/summary_functions.R"))
-source(here::here("utils/image_functions.R"))
+source(here::here("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/refs/heads/feature/i201-export-stats/R/summary_functions.R"))
+list.files(here::here("R"),
+           full.names = TRUE) |>
+  purrr::walk(source)
+
 
 create_plots_both <- function(region = "BothReports") {
   # setup ----

@@ -18,7 +18,7 @@ rmarkdown::render(
     includes = rmarkdown::includes(
       in_header = here::here("utils/header1_bothreports.tex")
     ),
-    keep_tex = TRUE,
+    keep_tex = FALSE,
     toc = FALSE,
     number_sections = FALSE
   )
