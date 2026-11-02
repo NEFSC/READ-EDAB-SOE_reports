@@ -193,7 +193,8 @@ create_plots_both <- function(region = "BothReports") {
   # spawn timing
   save_plot(
     plot_expression = {
-      ecodata::plot_spawn_timing(n = 10)
+      ecodata::plot_spawn_timing(n = 10) + 
+        ggplot2::facet_wrap(~plt_var, ncol = 2, dir = "v")
     },
     indicator = "spawntiming",
     width = 6.5,
