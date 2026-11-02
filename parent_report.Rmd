@@ -15,10 +15,6 @@ params:
   id_child_docs: FALSE
   draft: FALSE
   date: "March 2026"
-# output:
-#   pdf_document:
-#     extra_dependencies: ["float"]
-
 ---
 
 

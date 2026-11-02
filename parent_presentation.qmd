@@ -13,29 +13,19 @@ params:
   date: !expr Sys.Date() |> format("%B %d, %Y")
   author: "Abigail Tyrell, lead editor, NEFSC"
 format:
-  # This uses the built-in Quarto revealjs format
   revealjs:
     theme: ""
     slide-number: true
-    # auto-stretch: false
-    # Sets the slide aspect ratio
-    # aspect-ratio: 16-9           # Equivalent to ratio: "16:9"
     width: 1600
     height: 900
     margin: 0.05
     min-scale: 0.2
     max-scale: 1.0
-    
-    # CSS files for styling
-    css:                         # Equivalent to css: [...]
+    css: 
       - libs/EDAB_theme_2026.css
       - libs/cols.css
-      
-    # Syntax highlighting style
-    highlight-style: github      # Equivalent to highlightStyle: githubp (Using Quarto's built-in 'github')
-    
-    # Allows highlighting specific lines in code blocks
-    code-line-numbers: true      # Equivalent to highlightLines: true
+    highlight-style: github 
+    code-line-numbers: true 
     
     # Custom JavaScript files (macros) are included in the header
     include-in-header:
@@ -43,21 +33,16 @@ format:
           <!-- <link href="libs/EDAB_theme_2026.css" rel="stylesheet" /> -->
           <script src="libs/macros.js"></script>
           <script src="libs/cols_macro.js"></script>
-          
-    # --- Mapped from revealjs::revealjs_presentation ---
-    # Controls if resources are embedded or linked
-    embed-resources: false       # Equivalent to self_contained: false
-
-    title-slide-attributes:
-      # Use the path relative to the .qmd file (project root)
+    embed-resources: true # create a single html output, no supporting folders
+   
+       title-slide-attributes:
       data-background-image: libs/SOEtitleslide.png
       data-background-size: 60%
       data-background-position: left top
       data-background-class: right-align-title
-    
-    # --- Other important Quarto options ---
-    # This prevents the render process from counting step-by-step reveals as separate slides
-    incremental: false           # Equivalent to countIncrementalSlides: false
+      
+      # might not be necessary?
+      incremental: false # This prevents the render process from counting step-by-step reveals as separate slides
 ---
 
 {{< include child_slides/setup.qmd >}}
