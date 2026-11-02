@@ -50,7 +50,9 @@ set_flextable_defaults(
   font.family = "Palatino"
 )
 
-source(here::here("utils/functions.R"))
+list.files(here::here("R"),
+           full.names = TRUE) |>
+  purrr::walk(source)
 ```
 
 
