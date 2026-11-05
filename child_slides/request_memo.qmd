@@ -1,7 +1,7 @@
 ## Request tracking memo: Completed requests
 
 ```{r}
-source(here::here("R/memo_utils.R"))
+source(here::here("scripts/memo_utils.R"))
 ```
   
 ::: {.column-screen}
