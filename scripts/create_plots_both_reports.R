@@ -9,9 +9,10 @@
 
 # region <- "BothReports"
 
-source(here::here("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/refs/heads/feature/i201-export-stats/R/summary_functions.R"))
-list.files(here::here("R"),
-           full.names = TRUE) |>
+source(here::here(
+  "https://raw.githubusercontent.com/NOAA-EDAB/ecodata/refs/heads/feature/i201-export-stats/R/summary_functions.R"
+))
+list.files(here::here("R"), full.names = TRUE) |>
   purrr::walk(source)
 
 
@@ -30,7 +31,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "therm-hab-persist-2024",
     width = 6.5,
-    output_summary = FALSE
+    output_summary = FALSE,
     height = 4.25
   )
 
@@ -64,7 +65,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "harborporpoise",
     width = 6.5,
-    output_summary = FALSE
+    output_summary = FALSE,
     height = 3.25
   )
 
@@ -75,7 +76,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "grayseal",
     width = 6.5,
-    output_summary = FALSE
+    output_summary = FALSE,
     height = 3.25
   )
 
@@ -136,7 +137,7 @@ create_plots_both <- function(region = "BothReports") {
     },
     indicator = "protectedspp-dist-shifts",
     width = 7.5,
-    output_summary = FALSE
+    output_summary = FALSE,
     height = 4.25
   )
 
@@ -196,7 +197,7 @@ create_plots_both <- function(region = "BothReports") {
   # spawn timing
   save_plot(
     plot_expression = {
-      ecodata::plot_spawn_timing(n = 10) + 
+      ecodata::plot_spawn_timing(n = 10) +
         ggplot2::facet_wrap(~plt_var, ncol = 2, dir = "v")
     },
     indicator = "spawntiming",

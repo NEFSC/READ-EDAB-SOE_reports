@@ -83,13 +83,13 @@ add_ecodata_name <- function(
         packageDescription("ecodata")$RemoteRef,
         " branch, commit ",
         packageDescription("ecodata")$RemoteSha |> substr(1, 7),
-        ", packaged ",
-        packageDescription("ecodata")$Packaged |> substr(1, 10),
+        ", built ",
+        packageDescription("ecodata")$Built |> substr(12, 21),
         ")"
       ) |>
         stringr::str_wrap(width = 50)
     ) +
-    ggplot2::theme(plot.caption = ggplot2::element_text(size = 8))
+    ggplot2::theme(plot.caption = ggplot2::element_text(size = 8, hjust = 1))
 
   return(p)
 }
@@ -277,7 +277,10 @@ extract_plot_data <- function(p, fpath, plt_path, ind, reg) {
       dplyr::group_by(dplyr::across(dplyr::all_of(group))) |>
       dplyr::reframe(
         stats = summary_stats(dplyr::pick(dplyr::everything())),
-        trends = trend_summaries(dplyr::pick(dplyr::everything()))
+        trends = trend_summaries(
+          dplyr::pick(dplyr::everything()),
+          format = "wide"
+        )
       )
   }
 
@@ -446,12 +449,27 @@ save_plot <- function(
     # extract data for summary table ----
     if (output_summary) {
       if (!inherits(p, "ggarrange")) {
-        extract_plot_data(
-          p,
-          fpath = summary_file,
-          plt_path = fname,
-          ind = indicator,
-          reg = region
+        tryCatch(
+          {
+            extract_plot_data(
+              p,
+              fpath = summary_file,
+              plt_path = fname,
+              ind = indicator,
+              reg = region
+            )
+          },
+          error = function(e) {
+            # print as message so it's not buried under ggplot warnings
+            message(
+              "Failed to extract plot data for summary metrics for ",
+              indicator,
+              " in region ",
+              region,
+              ". This may be due to the plot not containing a point layer or having an unsupported structure. Error details: ",
+              e$message
+            )
+          }
         )
       }
 

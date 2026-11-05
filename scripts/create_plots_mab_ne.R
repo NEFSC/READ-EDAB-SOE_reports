@@ -181,7 +181,7 @@ create_plots_mab_and_ne <- function(region) {
   )
 
   # Aggregate biomass
-  ## TODO: update ecodata::plot_aggregate_biomass to use facets
+  ## TODO: ecodata::plot_aggregate_biomass facet update has not been integrated yet
   if (region == "MidAtlantic") {
     save_plot(
       plot_expression = {
@@ -347,7 +347,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "bennet",
     width = 6.5,
-    output_summary = FALSE
+    output_summary = FALSE,
     height = ifelse(region == "NewEngland", 6.25, 2.75)
   )
 
@@ -390,8 +390,7 @@ create_plots_mab_and_ne <- function(region) {
         )
       }
     },
-    indicator = "bennet_all",
-    output_summary = FALSE
+    output_summary = FALSE,
     indicator = "bennet-all",
     width = ifelse(region == "NewEngland", 9.25, 4.25),
     height = 6.5
@@ -860,7 +859,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "productivity-anomaly",
     width = 6.5,
-    output_summary = FALSE
+    output_summary = FALSE,
     height = ifelse(region == "NewEngland", 8.75, 7.75)
   )
 
@@ -901,7 +900,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = ifelse(region == "NewEngland", "ne-cf", "mab-cf"),
     width = 6.5,
-    height = ifelse(region == "NewEngland", 7.25, 6.25)
+    height = ifelse(region == "NewEngland", 7.25, 6.25),
     output_summary = FALSE
   )
 
@@ -1126,6 +1125,9 @@ create_plots_mab_and_ne <- function(region) {
   # Other ocean uses: offshore wind ----
 
   # 1. Wind Species Revenue Plot
+  ## TODO: ocean quahog is breaking in short term trend, only 3 data points
+  ## and only one data point when filtering to last 10 years
+  ## should fix data handling in the stats function
   save_plot(
     plot_expression = {
       ecodata::plot_wind_revenue(
@@ -1154,7 +1156,7 @@ create_plots_mab_and_ne <- function(region) {
     },
     indicator = "wea-port-rev",
     width = 6.5,
-    output_summary = FALSE
+    output_summary = FALSE,
     height = 7.25
   )
 }
