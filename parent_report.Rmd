@@ -15,10 +15,6 @@ params:
   id_child_docs: FALSE
   draft: FALSE
   date: "March 2026"
-# output:
-#   pdf_document:
-#     extra_dependencies: ["float"]
-
 ---
 
 
@@ -54,7 +50,9 @@ set_flextable_defaults(
   font.family = "Palatino"
 )
 
-source(here::here("utils/functions.R"))
+list.files(here::here("R"),
+           full.names = TRUE) |>
+  purrr::walk(source)
 ```
 
 

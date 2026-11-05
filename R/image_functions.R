@@ -267,7 +267,7 @@ extract_plot_data <- function(p, fpath, plt_path, ind, reg) {
   if (length(group) == 0) {
     summary_rows <- dplyr::bind_cols(
       dat |> summary_stats(),
-      dat |> trend_summaries()
+      dat |> trend_summaries(format = "wide")
     ) |>
       dplyr::mutate(Group1 = "Unit", Group2 = NA, Group3 = NA, .before = 1)
   } else {

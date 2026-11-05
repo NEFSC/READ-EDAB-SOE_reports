@@ -25,14 +25,14 @@ create_wea_landings_rev_table(council = "MAFMC") |>
   dplyr::arrange(desc(`Maximum Percent Total Annual Regional Species Revenue`)) |> 
   dplyr::slice_head(n = 10) |>
   dplyr::mutate(
-    `NEFMC, MAFMC, and ASMFC Managed Species` = dplyr::case_when(
-      `NEFMC, MAFMC, and ASMFC Managed Species` %in% spp.mark ~ paste0(`NEFMC, MAFMC, and ASMFC Managed Species`, "*"),
-      TRUE ~ `NEFMC, MAFMC, and ASMFC Managed Species`
+    Species = dplyr::case_when(
+      Species %in% spp.mark ~ paste0(Species, "*"),
+      TRUE ~ Species
     )
   ) |>
   flextable::flextable() %>%
-  flextable::set_caption("Top 10 Mid-Atlantic managed species landings and revenue from Active Projects. *These species did not have more than 50,000 lbs landed from the Active Project areas in any year.") %>%
-  flextable::width(width = c(2,2,2))
+  flextable::set_caption("Top 10 Mid-Atlantic managed species landings and revenue from Active Projects. *These species did not have more than 50,000 lbs landed from the Active Project areas in any year.")# %>%
+  # flextable::width(width = c(2,2,2))
 ```
 
 `r socio_intro`
