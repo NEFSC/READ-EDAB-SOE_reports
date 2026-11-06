@@ -9,12 +9,11 @@
 
 # region <- "BothReports"
 
-source(here::here(
-  "https://raw.githubusercontent.com/NOAA-EDAB/ecodata/refs/heads/feature/i201-export-stats/R/summary_functions.R"
-))
-list.files(here::here("R"), full.names = TRUE) |>
-  purrr::walk(source)
-
+# source(here::here(
+#   "https://raw.githubusercontent.com/NOAA-EDAB/ecodata/refs/heads/feature/i201-export-stats/R/summary_functions.R"
+# ))
+# list.files(here::here("R"), full.names = TRUE) |>
+#   purrr::walk(source)
 
 create_plots_both <- function(region = "BothReports") {
   # setup ----
@@ -27,9 +26,11 @@ create_plots_both <- function(region = "BothReports") {
   # 9. Thermal Habitat Persistence Plot
   save_plot(
     plot_expression = {
-      plt <- ecodata::plot_thermal_habitat_gridded(region)
+      plt <- ecodata::plot_thermal_habitat_gridded(report = "MidAtlantic")
     },
     indicator = "therm-hab-persist-2024",
+    report = region,
+    save_dir = out_dir,
     width = 6.5,
     output_summary = FALSE,
     height = 4.25
@@ -48,14 +49,25 @@ create_plots_both <- function(region = "BothReports") {
   # )
 
   # GOM ocean acidification
-  GOMoa_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf"
+  ## skip -- image isn't available
+  tryCatch(
+    {
+      GOMoa_image <- "https://github.com/NOAA-EDAB/ecodata/raw/dev/data-raw/workshop/images/Hunt_WBD_2024_pCO2_OMa_Weekly_Climatology-ChrisH_2025.pdf"
 
-  img <- magick::image_read_pdf(GOMoa_image) |>
-    magick::image_crop("1650x1100+400+1650")
-  magick::image_write(
-    img,
-    path = here::here("images/BothReports/GOMoa_image.png"),
-    format = "png"
+      img <- magick::image_read_pdf(GOMoa_image) |>
+        magick::image_crop("1650x1100+400+1650")
+      magick::image_write(
+        img,
+        path = here::here("images/BothReports/GOMoa_image.png"),
+        format = "png"
+      )
+    },
+    error = function(e) {
+      message(
+        "Error downloading or processing GOM ocean acidification image: ",
+        e$message
+      )
+    }
   )
 
   # harbor porpoise
@@ -64,6 +76,8 @@ create_plots_both <- function(region = "BothReports") {
       ecodata::plot_harborporpoise()
     },
     indicator = "harborporpoise",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     output_summary = FALSE,
     height = 3.25
@@ -75,6 +89,8 @@ create_plots_both <- function(region = "BothReports") {
       ecodata::plot_grayseal()
     },
     indicator = "grayseal",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     output_summary = FALSE,
     height = 3.25
@@ -88,6 +104,8 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::scale_x_continuous(limits = c(1980, 2025))
     },
     indicator = "narw-abundance",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 2.75
   )
@@ -99,6 +117,8 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::ggtitle("North Atlantic right whale calf abundance")
     },
     indicator = "NARW-calf-abundance",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 2.75
   )
@@ -111,6 +131,8 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "seals",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 4.25
   )
@@ -123,6 +145,8 @@ create_plots_both <- function(region = "BothReports") {
       ggpubr::ggarrange(a, b, ncol = 1)
     },
     indicator = "species-dist",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 3.75
   )
@@ -136,6 +160,8 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::theme(legend.position = "bottom")
     },
     indicator = "protectedspp-dist-shifts",
+    save_dir = out_dir,
+    report = region,
     width = 7.5,
     output_summary = FALSE,
     height = 4.25
@@ -148,6 +174,8 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::coord_cartesian(xlim = c(1982, NA))
     },
     indicator = "forageshifts",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 3.75
   )
@@ -158,6 +186,8 @@ create_plots_both <- function(region = "BothReports") {
       ecodata::plot_long_term_sst(n = 10)
     },
     indicator = "long-term-sst",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 2.75
   )
@@ -168,6 +198,8 @@ create_plots_both <- function(region = "BothReports") {
       ecodata::plot_gsi(varName = "westgsi", n = 10)
     },
     indicator = "GSI",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 2.75
   )
@@ -180,6 +212,8 @@ create_plots_both <- function(region = "BothReports") {
       ggpubr::ggarrange(a, b, nrow = 2)
     },
     indicator = "cold-pool-size",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 4.25
   )
@@ -190,6 +224,8 @@ create_plots_both <- function(region = "BothReports") {
       ecodata::plot_cold_pool(varName = "persistence", n = 10)
     },
     indicator = "cold-pool-time",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 2.75
   )
@@ -201,6 +237,8 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::facet_wrap(~plt_var, ncol = 2, dir = "v")
     },
     indicator = "spawntiming",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 4.25
   )
@@ -224,6 +262,8 @@ create_plots_both <- function(region = "BothReports") {
       ecodata::plot_slopewater(report = "NewEngland", n = 10)
     },
     indicator = "slopewater",
+    save_dir = out_dir,
+    report = region,
     width = 6,
     height = 2.75
   )
@@ -240,6 +280,8 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::ylab("Center of Gravity, km")
     },
     indicator = "smallcopeall-cog",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 3.75
   )
@@ -256,6 +298,8 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::ylab("Center of Gravity, km")
     },
     indicator = "lgcopeall-cog",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 3.75
   )
@@ -278,6 +322,8 @@ create_plots_both <- function(region = "BothReports") {
         )
     },
     indicator = "macrobenthosshifts",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 3.75
   )
@@ -300,6 +346,8 @@ create_plots_both <- function(region = "BothReports") {
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "megabenthosshifts",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 3.75
   )
@@ -323,6 +371,8 @@ create_plots_both <- function(region = "BothReports") {
         )
     },
     indicator = "euph-cog",
+    save_dir = out_dir,
+    report = region,
     width = 6.5,
     height = 3.75
   )

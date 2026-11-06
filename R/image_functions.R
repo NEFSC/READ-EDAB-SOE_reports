@@ -74,19 +74,28 @@ add_ecodata_name <- function(
 ) {
   key <- read.csv(plt_key)
   name <- key$ecodata_object[key$chunkName == plt_indicator]
+
+  cap <- paste0(
+    "Source: ecodata::",
+    name,
+    " (",
+    dplyr::case_when(
+      !is.null(packageDescription("ecodata")$RemoteRef) ~
+        paste0(
+          packageDescription("ecodata")$RemoteRef,
+          " branch, commit ",
+          packageDescription("ecodata")$RemoteSha |> substr(1, 7)
+        ),
+      TRUE ~ paste("version", packageDescription("ecodata")$Version)
+    ),
+    ", built ",
+    packageDescription("ecodata")$Built |> substr(12, 21),
+    ")"
+  )
+
   p <- p +
     ggplot2::labs(
-      caption = paste0(
-        "Source: ecodata::",
-        name,
-        " (",
-        packageDescription("ecodata")$RemoteRef,
-        " branch, commit ",
-        packageDescription("ecodata")$RemoteSha |> substr(1, 7),
-        ", built ",
-        packageDescription("ecodata")$Built |> substr(12, 21),
-        ")"
-      ) |>
+      caption = cap |>
         stringr::str_wrap(width = 50)
     ) +
     ggplot2::theme(plot.caption = ggplot2::element_text(size = 8, hjust = 1))
@@ -411,8 +420,8 @@ extract_plot_data <- function(p, fpath, plt_path, ind, reg) {
 save_plot <- function(
   plot_expression,
   indicator,
-  report = region,
-  save_dir = out_dir,
+  report,
+  save_dir,
   output_summary = TRUE,
   summary_file = here::here("utils/figure_stats_summaries3.csv"),
   key = here::here("utils/figure_captions_summary.csv"),
@@ -430,7 +439,7 @@ save_plot <- function(
   if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
     message(report)
     message(indicator)
-    message(out_dir)
+    message(save_dir)
 
     fname <- create_filename(
       indicator = indicator,
@@ -456,7 +465,7 @@ save_plot <- function(
               fpath = summary_file,
               plt_path = fname,
               ind = indicator,
-              reg = region
+              reg = report
             )
           },
           error = function(e) {
@@ -465,7 +474,7 @@ save_plot <- function(
               "Failed to extract plot data for summary metrics for ",
               indicator,
               " in region ",
-              region,
+              report,
               ". This may be due to the plot not containing a point layer or having an unsupported structure. Error details: ",
               e$message
             )
@@ -498,7 +507,7 @@ save_plot <- function(
               fpath = summary_file,
               plt_path = fname,
               ind = subplot_ind,
-              reg = region
+              reg = report
             )
           }
         } else {
