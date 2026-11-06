@@ -148,19 +148,115 @@ return_point_data <- function(p) {
     # print(head(dat))
     # shape is only for points, so this will grab data from the point layer
     if ("shape" %in% colnames(dat)) {
+      # this will return the last point layer found, if multiple exist
+      # caution!!!
+      # allows overwrite for ecodata functions that don't differentiate by color or facet
       plt_data <- dat
     }
   }
 
-  # this will return the last point layer found, if multiple exist
-  # caution!!!
-  # allows overwrite for ecodata functions that don't differentiate by color or facet
-  return(plt_data)
-
   if (is.null(plt_data)) {
     stop("No point layer found in the provided ggplot object.")
   }
+
+  return(plt_data)
 }
+
+#' Extract Data from a Primary Line Layer in a ggplot Object
+#'
+#' @description
+#' `return_line_data()` inspects each layer of a `ggplot` object and extracts
+#' the evaluated layer data (via \code{\link[ggplot2]{layer_data}}) corresponding
+#' to a solid black line layer (e.g., standard time series or observation lines),
+#' excluding colored trend lines or dashed horizontal reference lines.
+#'
+#' @details
+#' The function iterates through all layers ($1 \dots n$) in `p$layers` and identifies
+#' candidate layers satisfying all of the following conditions:
+#' \itemize{
+#'   \item The layer contains at least one row of data (`nrow(dat) > 0`).
+#'   \item Both \code{colour} and \code{linetype} columns are present in the built data.
+#'   \item The \code{colour} aesthetic has exactly one unique, non-missing value equal to `"black"`.
+#'   \item The \code{linetype} aesthetic has exactly one unique, non-missing value equal to `1` (solid line).
+#' }
+#'
+#' If multiple layers meet these criteria, subsequent matches overwrite prior ones,
+#' returning the data from the **last matching layer**.
+#'
+#' @param p A \code{ggplot} object to extract layer data from.
+#'
+#' @return A \code{data.frame} containing the evaluated aesthetic mappings
+#'   (such as \code{x}, \code{y}, \code{colour}, \code{linetype}, \code{group})
+#'   of the targeted line layer, or \code{NULL} if no matching layer is found.
+#'
+#' @note
+#' \strong{Code Execution Notice:}
+#' \itemize{
+#'   \item Exact match on `"black"` relies on `ggplot2` assigning the named color
+#'         string rather than a hexadecimal representation (`"#000000"`).
+#' }
+#'
+#' @importFrom ggplot2 layer_data
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' library(ggplot2)
+#'
+#' # Example plot with observation line and a dashed reference line
+#' p <- ggplot(airquality, aes(x = Day, y = Temp)) +
+#'   geom_line(colour = "black", linetype = 1) +
+#'   geom_hline(yintercept = 75, linetype = 2, colour = "red")
+#'
+#' # Extract data from the solid black line layer
+#' line_df <- return_line_data(p)
+#' head(line_df)
+#' }
+
+return_line_data <- function(p) {
+  n_layers <- length(p$layers)
+
+  plt_data <- NULL
+
+  for (i in 1:n_layers) {
+    # print(i)
+    dat <- ggplot2::layer_data(p, i)
+
+    # only get black line layers (linetype 1) to avoid grabbing the trend lines or hlines
+
+    # only if layer has data
+    if (nrow(dat) > 0) {
+      # and layer has a color and linetype with only one value for each
+      if ("colour" %in% colnames(dat) && "linetype" %in% colnames(dat)) {
+        if (
+          length(unique(dat$colour)) == 1 &&
+            !is.na(unique(dat$colour)) &&
+            length(unique(dat$linetype)) == 1 &&
+            !is.na(unique(dat$linetype))
+        ) {
+          # line must be black and lty 1
+          if (
+            unique(dat$colour) == "black" &
+              unique(dat$linetype) == 1
+          ) {
+            # this will return the last line layer found, if multiple exist
+            # caution!!!
+            # allows overwrite for ecodata functions that don't differentiate by color or facet
+            plt_data <- dat
+          }
+        }
+      }
+    }
+  }
+
+  if (is.null(plt_data)) {
+    stop("No line layer found in the provided ggplot object.")
+  }
+
+  return(plt_data)
+}
+
 
 #' Extract Data with Facet and Color Group Mapping
 #'
@@ -255,12 +351,24 @@ return_grouped_data <- function(p, p_dat) {
   return(output)
 }
 
-extract_plot_data <- function(p, fpath, plt_path, ind, reg) {
+extract_plot_data <- function(
+  p,
+  fpath,
+  plt_path,
+  ind,
+  reg,
+  type = c("point", "line")
+) {
   message("Extracting plot data...")
   target_plot <- p
 
-  raw_dat <- return_point_data(target_plot)
-  # print(head(raw_dat))
+  if (type == "point") {
+    raw_dat <- return_point_data(target_plot)
+  } else if (type == "line") {
+    raw_dat <- return_line_data(target_plot)
+  } else {
+    stop("Must specify point or line for type argument.")
+  }
 
   dat <- return_grouped_data(target_plot, p_dat = raw_dat) |>
     # remove NAs so max year isn't a year with no data
@@ -422,7 +530,7 @@ save_plot <- function(
   indicator,
   report,
   save_dir,
-  output_summary = TRUE,
+  output_summary = "point",
   summary_file = here::here("utils/figure_stats_summaries3.csv"),
   key = here::here("utils/figure_captions_summary.csv"),
   ...
@@ -456,7 +564,7 @@ save_plot <- function(
     message("Plot saved to: ", fname)
 
     # extract data for summary table ----
-    if (output_summary) {
+    if (output_summary == "point" || output_summary == "line") {
       if (!inherits(p, "ggarrange")) {
         tryCatch(
           {
@@ -465,7 +573,8 @@ save_plot <- function(
               fpath = summary_file,
               plt_path = fname,
               ind = indicator,
-              reg = report
+              reg = report,
+              type = output_summary
             )
           },
           error = function(e) {
@@ -475,7 +584,7 @@ save_plot <- function(
               indicator,
               " in region ",
               report,
-              ". This may be due to the plot not containing a point layer or having an unsupported structure. Error details: ",
+              ". This may be due to the plot not containing a point or line layer or having an unsupported structure. Error details: ",
               e$message
             )
           }
@@ -516,6 +625,8 @@ save_plot <- function(
           )
         }
       }
+    } else {
+      message("No data type specified; output summary extraction skipped.")
     }
   } else {
     stop("Plot object is not a valid ggplot or ggarrange object.")

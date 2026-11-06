@@ -882,6 +882,7 @@ create_plots_mab_and_ne <- function(region) {
     indicator = "chl-month",
     report = region,
     save_dir = out_dir,
+    output_summary = "line",
     width = 6.5,
     height = ifelse(region == "NewEngland", 7.25, 3.75)
   )
