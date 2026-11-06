@@ -49,6 +49,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "total-landings",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 5.25, 4.25),
   )
@@ -65,6 +68,9 @@ create_plots_slides_mab_and_ne <- function(region) {
         ggplot2::geom_line(size = 0.05)
     },
     indicator = "comm-landings",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 6.25, 5.25)
   )
@@ -81,6 +87,9 @@ create_plots_slides_mab_and_ne <- function(region) {
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "climatevul-land",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 2.75
   )
@@ -95,6 +104,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       )
     },
     indicator = "rec-landings",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 2.25
   )
@@ -136,6 +148,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "rec-hms",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == 'MidAtlantic', 5.25, 2.25)
   )
@@ -156,6 +171,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "stock-status",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 6.25, 5.25)
   )
@@ -169,6 +187,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       )
     },
     indicator = "abcacl-stacked",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 4.25
   )
@@ -182,6 +203,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       )
     },
     indicator = "abcacl-catch",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 2.75
   )
@@ -209,6 +233,9 @@ create_plots_slides_mab_and_ne <- function(region) {
           )
       },
       indicator = "nefsc-biomass-mab",
+      report = region,
+      save_dir = out_dir,
+      output_summary = FALSE,
       width = 6.5,
       height = 7.25
     )
@@ -226,6 +253,9 @@ create_plots_slides_mab_and_ne <- function(region) {
           ggplot2::theme(panel.spacing = grid::unit(0, 'lines'))
       },
       indicator = "nefsc-biomass-gb",
+      report = region,
+      save_dir = out_dir,
+      output_summary = FALSE,
       width = 6,
       height = 7.25
     )
@@ -239,6 +269,9 @@ create_plots_slides_mab_and_ne <- function(region) {
         )
       },
       indicator = "nefsc-biomass-gom",
+      report = region,
+      save_dir = out_dir,
+      output_summary = FALSE,
       width = 6,
       height = 7.25
     )
@@ -283,6 +316,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "comdat-profit",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 5.75, 4.25)
   )
@@ -314,6 +350,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "comm-revenue",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 4.75, 4.75)
   )
@@ -360,6 +399,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "bennet",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 8.25, 6.25)
   )
@@ -404,6 +446,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "bennet-all",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 9,
     height = ifelse(region == "NewEngland", 6.75, 9.25)
   )
@@ -420,6 +465,9 @@ create_plots_slides_mab_and_ne <- function(region) {
         ggplot2::ylab("Total Vulnerability \n (Regional Revenue)")
     },
     indicator = "climatevul-rev",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 2.75
   )
@@ -438,6 +486,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       )
     },
     indicator = "rec-op",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 2.75
   )
@@ -458,6 +509,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "rec-div",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 2.75
   )
@@ -499,6 +553,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "comm-div-fleet",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 4.25
   )
@@ -518,6 +575,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "commercial-div-species-div",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 2.75
   )
@@ -528,6 +588,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       ecodata::plot_recdat(report = region, varName = "catchdiversity", n = 10)
     },
     indicator = "recdat-div-catch",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 2.75
   )
@@ -573,6 +636,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "totpp",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 4.25, 2.75)
   )
@@ -593,6 +659,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "zoo-diversity",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 4.25, 2.75)
   )
@@ -631,6 +700,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "exp-n",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 3.75, 4.25)
   )
@@ -650,6 +722,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "zoo-community",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 5.25, 3.75)
   )
@@ -676,6 +751,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "traits",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 3.75, 4.25)
   )
@@ -695,6 +773,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "traits-k",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 4.75, 4.25)
   )
@@ -722,6 +803,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "traits-tl",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 4.75, 4.25)
   )
@@ -741,6 +825,9 @@ create_plots_slides_mab_and_ne <- function(region) {
         )
     },
     indicator = "commercial-engagement",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 7,
     height = 5.25
   )
@@ -755,6 +842,9 @@ create_plots_slides_mab_and_ne <- function(region) {
         ggplot2::theme(plot.title = ggplot2::element_text(vjust = 0))
     },
     indicator = "recreational-engagement",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 3.75
   )
@@ -769,6 +859,9 @@ create_plots_slides_mab_and_ne <- function(region) {
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "commvulex",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 4.25
   )
@@ -781,6 +874,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       ecodata::plot_trans_dates(report = region, varName = "length", n = 10)
     },
     indicator = "transition",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 5.25, 2.75)
   )
@@ -818,6 +914,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "chl-month",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 5.75, 4.25)
   )
@@ -862,6 +961,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "productivity-anomaly",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 9.75, 8.75)
   )
@@ -902,6 +1004,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = ifelse(region == "NewEngland", "ne-cf", "mab-cf"),
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = ifelse(region == "NewEngland", 13, 6.5),
     # width = 6.5,
     height = 7.25
@@ -930,6 +1035,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "foragebio",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 5.25, 2.75)
   )
@@ -957,6 +1065,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       )
     },
     indicator = "benthos",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 8.25, 6.25)
   )
@@ -1001,6 +1112,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       )
     },
     indicator = "zoopanom",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 7.75
   )
@@ -1012,6 +1126,9 @@ create_plots_slides_mab_and_ne <- function(region) {
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "advection-index",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 3.25
   )
@@ -1039,6 +1156,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "seasonal-oisst-anom",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 4.75
   )
@@ -1057,6 +1177,9 @@ create_plots_slides_mab_and_ne <- function(region) {
           ggplot2::theme(legend.position = 'bottom')
       },
       indicator = "bottom-temp-anom",
+      report = region,
+      save_dir = out_dir,
+      output_summary = FALSE,
       width = 6.5,
       height = 4.75
     )
@@ -1076,6 +1199,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       }
     },
     indicator = "bottom-temp-insitu",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = ifelse(region == "NewEngland", 5.25, 2.75)
   )
@@ -1099,6 +1225,9 @@ create_plots_slides_mab_and_ne <- function(region) {
         }
     },
     indicator = "wea-spp-rev",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 4.25
   )
@@ -1109,6 +1238,9 @@ create_plots_slides_mab_and_ne <- function(region) {
       ecodata::plot_wind_port(report = region)
     },
     indicator = "wea-port-rev",
+    report = region,
+    save_dir = out_dir,
+    output_summary = FALSE,
     width = 6.5,
     height = 7.25
   )
