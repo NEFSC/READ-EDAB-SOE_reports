@@ -6,11 +6,17 @@
 <<ne-draft>>
 ```
 
-### Indicators: Port Commercial Fishing Activity and Community Social Vulnerability
+### Indicators
+
+#### Community Social Vulnerability Indicators
+
+The Community Social Vulnerability Indicators (CSVI) utilize U.S. Census American Community Survey data to describe social characteristics at the municipality level (i.e., not just the fishing community) and  provide context for the municipalities utilized by commercial fishing industry participants. Fishing industry participants that live in and/or utilize resources in municipalities with relatively concerning socio-demographic conditions may be more vulnerable to changes. The personal disruption index addresses factors that reduce adaptability to change such as unemployment and educational level. The poverty index is a composite index that indicates a community’s financial standing relative to other communities. The population composition index characterizes groups within communities that may be more vulnerable to change. CSVI information is presented for communities described in the following sections. 
+
+#### Port Commercial Fishing Activity
 
 The [Port Commercial Fishing Activity Indicator (PCFA)](https://noaa-edab.github.io/catalog/engagement.html?q=engage#introduction-to-indicator-72) (Fig. \ref{fig:commercial-engagement-ne}) highlights significant shifts in industry engagement across major regional ports. New Bedford, Gloucester, and Boston, MA and Portland, ME, have lower fishing activity compared to their 2007–2011 averages. Because New Bedford and Boston also rank medium-high for socio-demographic vulnerability, industry participants in these municipalities face a higher risk from these changing conditions. Conversely, several communities show substantial growth in fishing activity. Chatham, MA, along with Stonington, Friendship, Harpswell, ME, are seeing increased port activity since 2007-2011. 
 
-Of the top 10 most active recreational communities, only Seabrook, NH had medium or higher ranks for at least one socio-demographic indicator (Table \ref{tab:recvultab}) (Fig. \ref{fig:recreational-engagement-ne})examined here (poverty, personal disruption, population composition). This suggests that future changes to recreational fishing conditions may disproportionately impact Seabrook.
+Of the top 10 most active recreational communities, only Seabrook, NH had medium or higher ranks for at least one socio-demographic indicator (Table \ref{tab:recvultab}, Fig. \ref{fig:recreational-engagement-ne}) examined here (poverty, personal disruption, population composition). This suggests that future changes to recreational fishing conditions may disproportionately impact Seabrook.
 
 ```{r commercial-engagement-ne, fig.cap= return_caption(chunk_name = "commercial-engagement", region = "NewEngland"), fig.width = 7, fig.asp = 0.5}
 return_plot("commercial-engagement", region = "NewEngland")
@@ -33,9 +39,13 @@ rec_vul_table_ne |>
 
 <!-- \newpage -->
 
-### Indicators: Community Environmental Variability Risk in New England
+#### Recreational engagement
 
-[Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_risks.html) (CEVRI) measure risk by linking commercial landings and revenue to specific climate sensitivity factors, including temperature, ocean acidification, and stock status using the [Climate Vulnerability Assessment](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0290643) (CVA) scores. These indicators calculate total sensitivity and vulnerability scores based on a community's dependence on species vulnerable to climate change. Risk scores range from low (1) to high (4), increasing as a community relies more heavily on species at higher risk from environmental shifts.While there is no long-term trend in risk across New England communities,  the proportion of communities with moderate risk is decreasing and shifting more towards high or very high risk scores (Fig. \ref{fig:commvulex-ne}). This shift  demonstrates that regional communities are increasing their dependence on species that are highly vulnerable to changing ocean conditions for their commercial revenue. Strategies for management should account for this increased reliance on climate-sensitive stocks.
+The recreational engagement index has not been updated from last year and will be updated with similar methods as PCFA in future reports. The recreational [engagement](https://noaa-edab.github.io/catalog/engagement.html) index demonstrates participation levels in recreational fishing in a given community relative to other coastal communities in a region. 
+
+#### Community Environmental Variability Risk in New England
+
+[Community Environmental Variability Risk Indicators](https://noaa-edab.github.io/catalog/community_risks.html) (CEVRI) measure risk by linking commercial landings and revenue to specific climate sensitivity factors, including temperature, ocean acidification, and stock status using the [Climate Vulnerability Assessment](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0290643) (CVA) scores. These indicators calculate total sensitivity and vulnerability scores based on a community's dependence on species vulnerable to climate change. Risk scores range from low (1) to high (4), increasing as a community relies more heavily on species at higher risk from environmental shifts.While there is no long-term trend in risk across New England communities,  the proportion of communities with moderate risk is decreasing and shifting more towards high or very high risk scores (Fig. \ref{fig:commvulex-ne}). This shift demonstrates that regional communities are increasing their dependence on species that are highly vulnerable to changing ocean conditions for their commercial revenue. Strategies for management should account for this increased reliance on climate-sensitive stocks.
 
 ```{r commvulex-ne, fig.width = 6.5, fig.asp=.5, fig.cap=return_caption(chunk_name = "commvulex", region = "NewEngland")}
 return_plot("commvulex", region = "NewEngland")
