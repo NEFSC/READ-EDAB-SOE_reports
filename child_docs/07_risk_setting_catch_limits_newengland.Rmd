@@ -6,7 +6,7 @@
 <<ne-draft>>
 ```
 
-#### Indicators: Fish productivity and condition shifts
+### Indicators: Fish productivity and condition shifts
 Indicators of [fish productivity](https://noaa-edab.github.io/catalog/productivity_anomaly.html) derived from observations (surveys) or models (stock assessments) show variability over the time series. Since 2020, fish productivity has been below the long-term average productivity (derived from NEFSC bottom trawl survey), and 2025 was below average for all managed species (Fig. \ref{fig:productivity-anomaly-ne}). A similar analysis based on stock assessment model outputs shows a decline in productivity over the time series with relatively high productivity in the 1990s and relatively low productivity in the 2000s (recruitment per spawning stock biomass anomaly). Fish productivity can be affected by parental condition, environmental conditions, timing and availability of prey for recruits, as well as retention of recruits within favorable habitat. In years where offshore advection is high in a depth range and month when a fish species spawns, fish productivity and recruitment may be reduced. Other signs of changing productivity in New England are the declines in [common tern chicks](https://noaa-edab.github.io/catalog/seabird_ne.html) per nest (Fig. \ref{fig:seabird-ne-productivity}) and continued low overall [Atlantic salmon](https://noaa-edab.github.io/catalog/gom_salmon.html) abundance (Fig. \ref{fig:salmon}) despite short-term increases in return rates and salmon numbers.
 
 ```{r productivity-anomaly-ne, fig.cap = return_caption(chunk_name = "productivity-anomaly", region = "NewEngland"), fig.width=6.5, fig.asp=1}
@@ -27,11 +27,11 @@ The health of individual fish (i.e., fish condition) can contribute to populatio
 return_plot("ne-cf", region = "NewEngland")
 ```
 
-#### Drivers 
+### Drivers 
 
 `r risks_setting_catch_drivers`
 
-##### Biological Drivers: Forage quality and abundance
+#### Biological Drivers: Forage quality and abundance
 
 Management should account for energetic links between prey and predators, as shifts in forage quality and abundance directly alter the health, productivity, and movement of managed and protected species. The total energy available to higher trophic level predators is determined by the mass and energy density (ED) of prey. Protecting this forage base is essential for maintaining overall ecosystem function and continued stock productivity and condition.
 
@@ -55,7 +55,7 @@ return_plot("foragebio", region = "NewEngland")
 
 [Benthic invertebrates](https://noaa-edab.github.io/catalog/benthos_index.html) are extremely important forage for some managed species (e.g., flatfish, juvenile cod and haddock) Macrobenthos indices show long-term declines in spring. In contrast, megabenthos indices show long-term increases during the fall in both GB and GOM (Fig. \ref{fig:benthos-ne}). Fish productivity may be negatively impacted in recent years for fish such as flounders and juvenile fish that target macrobenthos such as small crustaceans and polychaetes in the spring, and positively impacted for fish such as larger skates, hakes and gadids that target megabenthos such as crabs.
 
-##### Biological Drivers: Lower trophic levels
+#### Biological Drivers: Lower trophic levels
 
 Phytoplankton are the foundation of the marine food web and are the primary food source for zooplankton and filter feeders such as shellfish. Multiple environmental and oceanographic drivers affect the abundance, composition, spatial distribution, and productivity of phytoplankton. While changes in phytoplankton productivity could affect fish productivity (including forage), there is no clear long-term trend in New England total primary production (Fig. \ref{fig:totpp-ne}).
 
@@ -83,7 +83,7 @@ return_plot("zoopanom", region = "NewEngland")
 return_plot("wbts-zoo", region = "NewEngland")
 ```
 
-##### Environmental Drivers
+#### Environmental Drivers
 
 Fish production can also be directly related to the prevailing environmental conditions by altering metabolic (growth) and reproductive processes. Many species possess thermal tolerances and can experience stressful or lethal conditions if temperatures exceed certain levels. Extreme temperature at both the [surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) (Fig. \ref{fig:long-term-sst}) and [bottom](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html) can exceed [thermal tolerance](https://noaa-edab.github.io/catalog/thermal_habitat_gridded.html) limits for some fish. For example, 2012 had among the warmest surface and bottom temperatures (GB) in New England. A large proportion of the Georges Bank and Mid-Atlantic regions had bottom temperatures above the 15℃ thermal tolerance for most groundfish, with some days in the Mid-Atlantic exceeding the 24℃ potential mortality limit (Fig. \ref{fig:therm-hab-persist-2024-ne}). 
 
@@ -115,7 +115,7 @@ return_plot("mab-oa", region = "BothReports")
 
 Biological and oceanographic processes can affect the amount of oxygen present in the water column. During low oxygen (hypoxic) events, species' growth is negatively affected and very low oxygen can result in mortality. In 2025, [aggregated demersal DO observations](https://ondeckdata.com/database/soe_hypoxic_days_2025.html) collected by a variety of programs were examined simultaneously. These programs include glider deployments, fishery-independent surveys, and cooperative ocean observing efforts aboard commercial fishing vessels. Coastal hypoxia was observed in Narragansett Bay in September and October where water temperatures were warm and stagnant. There were no reports of mass mortality events from the fishing industry. The duration and extent of hypoxic events is being monitored, but long-term shelf-wide observations are not yet available. However, [hypoxic events](https://noaa-edab.github.io/catalog/observation_synthesis_2023.html) were detected in Cape Cod Bay in 2019 and 2020 and off the coast of New Jersey in 2023 and were potentially responsible for fish, lobster, and crab [mortalities](https://sebsnjaesnews.rutgers.edu/2023/12/rutgers-scientists-observe-unusual-ocean-conditions-possibly-linked-to-mortality-in-marine-life-off-new-jersey/).
 
-##### Drivers: Predation
+#### Drivers: Predation
 
 The abundance and distribution of predators can affect both the productivity and mortality rates on managed stocks. Predators can consume managed species or compete for the same resources resulting in increased natural mortality or declining productivity, respectively. The northeast shift in some [highly cetacean migratory species](https://noaa-edab.github.io/catalog/cetacean_dist.html) (Fig. \ref{fig:protectedspp-dist-shifts}) indicates a change in the overlap between predators and prey. Managed fishes also act as predators on other managed species. Since we also observe distribution shifts in both managed and forage species, the effect of changing predator distributions alone is difficult to quantify.
 

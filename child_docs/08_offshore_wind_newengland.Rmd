@@ -31,6 +31,8 @@ create_wea_landings_rev_table(council = "NEFMC") |>
   flextable::width(width = c(2,2,2))
 ```
 
+#### Coastal community vulnerability
+
 `r socio_intro`
 
 ```{r wea-port-rev, fig.cap=return_caption(chunk_name = "wea-port-rev", region = "NewEngland"),  fig.width=6.5, fig.asp=.6, fig.align='left'}

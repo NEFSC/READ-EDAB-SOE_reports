@@ -6,7 +6,7 @@
 <<ma-draft>>
 ```
 
-#### Indicators: Fish productivity and condition shifts
+### Indicators: Fish productivity and condition shifts
 Indicators of [fish productivity](https://noaa-edab.github.io/catalog/productivity_anomaly.html) are derived from observations (surveys) or models (stock assessments). Fish productivity declined during the 1990s and 2000s with declining production of summer flounder and has been variable since, as described by the small-fish-per-large-fish anomaly indicator (derived from NEFSC bottom trawl survey) (Fig. \ref{fig:productivity-anomaly}). Bluefish, black sea bass, and goosefish have sporadic years with large positive anomalies, but most years have small negative anomalies. This decline in fish productivity is also shown by a similar analysis based on stock assessment model outputs (recruitment per spawning stock biomass anomaly). Most species had positive recruitment anomalies in the 1990s and 2000s and are currently showing negative anomalies, indicating a decline in productivity. Fish productivity can be affected by parental condition, environmental conditions, timing and availability of prey for recruits, as well as retention of recruits within favorable habitat. High offshore advection during spawning seasons can reduce recruitment success and affect overall fish productivity.
 
 The health of individual fish (i.e., fish condition, measured as weight for a given length) can contribute to population productivity through improved growth, reproduction and survival. Mid-Atlantic [fish condition](https://noaa-edab.github.io/catalog/condition.html) was generally high to very high prior to 2000, low to very low from 2001-2010 (concurrent with declines in productivity, Fig. \ref{fig:productivity-anomaly}), and mixed since 2011. In 2025, condition continued to be mixed, with general improvement since a relatively low condition year in 2021 (Fig. \ref{fig:mab-cf}). Preliminary analyses show that years dominated by small copepods and warmer spring temperatures may improve fish condition for Atlantic mackerel and butterfish. Similar environmental drivers may be important to other species.
@@ -23,11 +23,11 @@ return_plot("mab-cf", region = "MidAtlantic")
 
 <!-- \newpage -->
 
-#### Drivers:
+### Drivers
 
 `r risks_setting_catch_drivers`
 
-##### Biological Drivers: Forage quality and abundance
+#### Biological Drivers: Forage quality and abundance
 
 `r forage_quality`
 
@@ -51,7 +51,7 @@ return_plot("foragebio", region = "MidAtlantic")
 return_plot("benthos", region = "MidAtlantic")
 ```
 
-##### Biological Drivers: Lower trophic levels
+#### Biological Drivers: Lower trophic levels
 
 [Phytoplankton](https://noaa-edab.github.io/catalog/chl_pp.html) are the foundation of the food web and are the primary food source for zooplankton and filter feeders such as shellfish. Multiple environmental and oceanographic drivers affect the abundance, [composition](https://noaa-edab.github.io/catalog/chl_pp.html), spatial distribution, and productivity of phytoplankton. While changes in phytoplankton productivity could affect fish productivity (including the productivity of forage fish), there is no clear long-term trend in Mid-Atlantic total primary production (Fig. \ref{fig:totpp}).
 
@@ -61,7 +61,7 @@ Changing [zooplankton abundance](https://noaa-edab.github.io/catalog/zoo_abundan
 return_plot("zoopanom", region = "MidAtlantic")
 ```
 
-##### Environmental Drivers
+#### Environmental Drivers
 
 Fish production can also be directly related to the prevailing environmental conditions by altering metabolism (growth), reproductive processes, and survival. Marine species possess thermal tolerances and can experience stressful or lethal conditions if water temperatures exceed certain levels. We have observed in past years extreme temperatures at both the [surface](https://noaa-edab.github.io/catalog/seasonal_oisst_anom.html) and [bottom](https://noaa-edab.github.io/catalog/bottom_temp_model_anom.html) that exceed [thermal tolerance](https://noaa-edab.github.io/catalog/thermal_habitat_gridded.html) limits for some fish and shellfish. However, in 2025, Mid-Atlantic surface and bottom temperatures were near or below the long-term average and the amount of habitat exceeding a 24°C thermal tolerance was limited to the southern MAB, where those conditions occurred for fewer than 30 days (Fig. \ref{fig:therm-hab-persist-2024}).
 
@@ -91,7 +91,7 @@ return_plot("mab-oa", region = "BothReports")
 
 [Low dissolved oxygen levels](https://noaa-edab.github.io/catalog/dissolved_oxygen.html) (< 5 mg/L) remained localized and brief on the [MAB shelf in 2025](https://noaa-edab.github.io/catalog/observation_synthesis_2023.html), resulting in no industry-reported mass mortality events despite the potential for hypoxia to reduce species growth or cause death. Localized hypoxia (< 2 mg/L) occurred nearshore east of Point Pleasant, NJ, southwest of Newport, RI, and at the western end of the Cape Cod Canal, while broader shelf-wide levels below 5 mg/L were not widespread. This contrast follows previous years where [hypoxic](https://noaa-edab.github.io/catalog/observation_synthesis_2023.html) events in Cape Cod Bay (2019, 2020) and off New Jersey (2023) potentially caused fish, lobster, and crab [mortality](https://sebsnjaesnews.rutgers.edu/2023/12/rutgers-scientists-observe-unusual-ocean-conditions-possibly-linked-to-mortality-in-marine-life-off-new-jersey/). While shelf-wide monitoring data is currently limited, biological and oceanographic drivers of oxygen levels continue to be tracked to assess the duration and extent of future events.
 
-##### Drivers: Predation
+#### Drivers: Predation
 The abundance and distribution of marine mammal, shark , and other Atlantic Highly Migratory Species (HMS) predators, can affect both the productivity and mortality rates on managed stocks. Predators can consume managed species or compete for the same resources, resulting in increased natural mortality or decreased productivity. The northeast shift in [whales and dolphins](https://noaa-edab.github.io/catalog/cetacean_dist.html) (Fig. \ref{fig:protectedspp-dist-shifts}) indicates a change in the overlap between marine mammals and managed fishes. Managed fishes also act as predators on other managed species. Since we also observe distribution shifts in managed species as well as forage species, the effect of changing predator distributions alone is difficult to quantify.
 
 Indicators for shark populations, combined with information on gray seals (see [Protected Species Implications section, above](#protected-species)), suggests predator populations range from stable ([sharks](https://noaa-edab.github.io/catalog/hms_cpue.html)) to increasing ([gray seals](https://noaa-edab.github.io/catalog/seal_pups.html))  in the MAB. [Stock status](https://noaa-edab.github.io/catalog/hms_stock_status.html) is mixed for HMS stocks (including sharks, swordfish, billfish, and tunas) occurring throughout the Northeast U.S. shelf. While there are several HMS species considered to be overfished or that have unknown stock status, the population status for some managed Atlantic sharks and tunas is at or above the biomass target, suggesting the potential for robust (or rebuilt) predator populations and subsequent predation pressure on managed species. Increasing predator populations or changing distribution of predators may result in increased predation pressure.
