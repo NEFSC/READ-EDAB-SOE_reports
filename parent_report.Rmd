@@ -578,7 +578,8 @@ Planned development [overlaps NARW](https://noaa-edab.github.io/catalog/persiste
 return_plot("whales-wind", region = "BothReports")
 ```
 
-#### Marine Aquaculture
+## Other Ocean Uses: Marine Aquaculture
+
 Aquaculture fisheries and federally-managed fisheries could compete with or benefit each other  with spatial access, shoreside infrastructure, or the supply of seafood. Unlike offshore wind, offshore aquaculture is not regulated by any federal leasing program but is permitted via the U.S. Army Corps of Engineers and the U.S. EPA. Currently, there are no federally-permitted aquaculture projects in the Northeast U.S. The marine aquaculture industry of the Northeast currently occurs in nearshore waters which are regulated by state leasing and permitting processes and federal permitting processes, as applicable. Analyses are needed to quantify the nearshore spatial distribution of aquaculture in the Northeast. 
 
 \newpage
