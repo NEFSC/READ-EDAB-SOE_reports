@@ -23,8 +23,7 @@ New Indicator: Port Activity based on dealers, landings, and permits
 return_plot("recreational-engagement", region = "NewEngland", mode = "slide")
 ```
 ```{r}
-ecodata::plot_community_factors(report = 'NewEngland',plottype = 'Commercial',varName = 'Social', n = 5) |> 
-  flextable::flextable()
+ecodata::plot_community_factors(report = 'NewEngland',plottype = 'Commercial',varName = 'Social', n = 5)
 ```
 
 
