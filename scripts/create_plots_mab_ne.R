@@ -578,7 +578,7 @@ create_plots_mab_and_ne <- function(region) {
         ) +
           # ggplot2::coord_cartesian(ylim = c(2e+07, 4e+07)) +
           ggplot2::ggtitle("MAB Primary Production") +
-          ggplot2::ylab("Carbon (mt)")
+          ggplot2::ylab("Carbon (million mt)")
       } else {
         a <- ecodata::plot_annual_chl_pp(
           report = region,
@@ -588,7 +588,7 @@ create_plots_mab_and_ne <- function(region) {
           n = 30
         ) +
           ggplot2::ggtitle('Georges Bank total Primary Production') +
-          ggplot2::ylab("Carbon (mt)")
+          ggplot2::ylab("Carbon (million mt)")
         b <- ecodata::plot_annual_chl_pp(
           report = region,
           varName = "pp",
@@ -597,7 +597,7 @@ create_plots_mab_and_ne <- function(region) {
           n = 30
         ) +
           ggplot2::ggtitle('Gulf of Maine total Primary Production') +
-          ggplot2::ylab("Carbon (mt)")
+          ggplot2::ylab("Carbon (million mt)")
 
         ggpubr::ggarrange(a, b, nrow = 2)
       }
