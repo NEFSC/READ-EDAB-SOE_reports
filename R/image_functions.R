@@ -394,9 +394,21 @@ extract_plot_data <- function(
       dplyr::group_by(dplyr::across(dplyr::all_of(group))) |>
       dplyr::reframe(
         stats = summary_stats(dplyr::pick(dplyr::everything())),
-        trends = trend_summaries(
-          dplyr::pick(dplyr::everything()),
-          format = "wide"
+        # wrap error message if stats don't work
+        trends = tryCatch(
+          {
+            trend_summaries(
+              dplyr::pick(dplyr::everything()),
+              format = "wide"
+            )
+          },
+          error = function(e) {
+            # print as message so it's not buried under ggplot warnings
+            message(
+              "Failed to extract trend metrics for ",
+              ind
+            )
+          }
         )
       )
   }
@@ -616,7 +628,8 @@ save_plot <- function(
               fpath = summary_file,
               plt_path = fname,
               ind = subplot_ind,
-              reg = report
+              reg = report,
+              type = output_summary
             )
           }
         } else {
@@ -629,6 +642,9 @@ save_plot <- function(
       message("No data type specified; output summary extraction skipped.")
     }
   } else {
-    stop("Plot object is not a valid ggplot or ggarrange object.")
+    message(
+      "Plot object is not a valid ggplot or ggarrange object. Skipping:",
+      indicator
+    )
   }
 }

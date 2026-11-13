@@ -110,8 +110,8 @@ create_plots_mab_and_ne <- function(region) {
     plot_expression = {
       rec_hms_plot <- ecodata::plot_rec_hms(report = region, n = 10) +
         ggplot2::scale_color_discrete(
-          limits = c("LargeCoastal", "SmallCoastal", "Prohibited"),
-          labels = c("Large Coastal", "Small Coastal", "Prohibited")
+          limits = c("LargeCoastal", "Prohibited"),
+          labels = c("Large Coastal", "Prohibited")
         ) +
         ggplot2::ggtitle(paste(
           region2,
@@ -306,8 +306,6 @@ create_plots_mab_and_ne <- function(region) {
       comm_revenue_plot <- ecodata::plot_comdat(
         report = region,
         varName = "revenue",
-        report = region,
-        save_dir = out_dir,
         n = 10
       )
       if (region == "MidAtlantic") {
@@ -978,18 +976,21 @@ create_plots_mab_and_ne <- function(region) {
   )
 
   # 5. Energy Density Plot
-  save_plot(
-    plot_expression = {
-      ecodata::plot_energy_density(report = region) +
-        ggplot2::theme(legend.position = 'bottom')
-    },
-    indicator = "energy_density",
-    report = region,
-    save_dir = out_dir,
-    width = 6.5,
-    height = 4,
-    output_summary = FALSE
-  )
+  ## mid only
+  if (region == "MidAtlantic") {
+    save_plot(
+      plot_expression = {
+        ecodata::plot_energy_density(report = region) +
+          ggplot2::theme(legend.position = 'bottom')
+      },
+      indicator = "energy_density",
+      report = region,
+      save_dir = out_dir,
+      width = 6.5,
+      height = 4,
+      output_summary = FALSE
+    )
+  }
 
   # 6. Forage Index Plot
   save_plot(
