@@ -22,61 +22,6 @@ create_plots_ne <- function(region = "NewEngland") {
     region == "NewEngland" ~ "New England"
   )
 
-  ## functions ----
-
-  # A function to create a standardized filename
-  create_filename <- function(
-    indicator,
-    file_region,
-    dir = out_dir,
-    extension = ".png"
-  ) {
-    file.path(
-      dir,
-      paste0(
-        indicator,
-        "_",
-        file_region,
-        "_",
-        Sys.Date(),
-        extension
-      )
-    )
-  }
-
-  # A flexible function to generate and save a plot
-  save_plot <- function(
-    plot_expression,
-    indicator,
-    report = region,
-    save_dir = out_dir,
-    ...
-  ) {
-    # Execute the code to create the plot
-    p <- eval(plot_expression)
-
-    # Check if the plot object is valid before saving
-    if (inherits(p, "ggplot") || inherits(p, "ggarrange")) {
-      message(report)
-      message(indicator)
-      message(out_dir)
-      fname <- create_filename(
-        indicator = indicator,
-        file_region = report,
-        dir = save_dir
-      )
-      ggplot2::ggsave(
-        filename = fname,
-        plot = p,
-        bg = "white",
-        ...
-      )
-      message("Plot saved to: ", fname)
-    } else {
-      stop("Plot object is not a valid ggplot or ggarrange object.")
-    }
-  }
-
   #NE only - rec_hms from LPS only, no MRIP
   save_plot(
     plot_expression = {
@@ -93,6 +38,8 @@ create_plots_ne <- function(region = "NewEngland") {
         )
     },
     indicator = "rec-hms-NE",
+    report = region,
+    save_dir = out_dir,
     width = 6.5,
     height = 3.25
   )
@@ -109,6 +56,8 @@ create_plots_ne <- function(region = "NewEngland") {
         ggplot2::theme(legend.position = 'bottom')
     },
     indicator = "calfin-cog",
+    report = region,
+    save_dir = out_dir,
     width = 6.5,
     height = 4.25
   )
@@ -121,6 +70,8 @@ create_plots_ne <- function(region = "NewEngland") {
         ggplot2::geom_line()
     },
     indicator = "mass-biomass",
+    report = region,
+    save_dir = out_dir,
     width = 6,
     height = 6.25
   )
@@ -133,6 +84,8 @@ create_plots_ne <- function(region = "NewEngland") {
           ggplot2::coord_cartesian(xlim = c(1991, 2025))
       },
       indicator = "seabird-ne-productivity",
+      report = region,
+      save_dir = out_dir,
       width = 6.5,
       height = 2.75
     )
@@ -155,6 +108,8 @@ create_plots_ne <- function(region = "NewEngland") {
           )
       },
       indicator = "salmon",
+      report = region,
+      save_dir = out_dir,
       width = 6.5,
       height = 4.25
     )
