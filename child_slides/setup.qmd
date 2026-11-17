@@ -50,7 +50,9 @@ library(patchwork)
 # and folder name
 # 20220316_MAFMCSSC_Gaichas_files/figure-html/
 
-source(here::here("utils/functions.R"))
+list.files(here::here("R"),
+           full.names = TRUE) |>
+  purrr::walk(source)
 
 ```
 

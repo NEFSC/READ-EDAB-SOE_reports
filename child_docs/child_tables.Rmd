@@ -5,7 +5,7 @@ tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = l
 
 # Mid-Atlantic Table
 comm_vul_table_ma <- ecodata::plot_community_factors(report = "MidAtlantic", varName = "Social", plottype = "Commercial") |>
-  flextable::flextable() |>
+  # flextable::flextable() |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
                                pop_composition_rank = "Population Composition",
                                poverty_rank = "Poverty") |>
@@ -15,7 +15,7 @@ comm_vul_table_ma <- ecodata::plot_community_factors(report = "MidAtlantic", var
 
 # New England Table
 comm_vul_table_ne <- ecodata::plot_community_factors(report = "NewEngland", varName = "Social", plottype = "Commercial") |>
-  flextable::flextable() |>
+  # flextable::flextable() |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
                                pop_composition_rank = "Population Composition",
                                poverty_rank = "Poverty") |>
@@ -30,7 +30,7 @@ tbl_caption <- paste("Socio-demographic indicator rankings (ranging from low = l
 
 # Mid-Atlantic Table
 rec_vul_table_ma <- ecodata::plot_community_factors(report = params$region, varName = "Social", plottype = "Recreational") |>
-  flextable::flextable() |>
+  # flextable::flextable() |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
                                pop_composition_rank = "Population Composition",
                                poverty_rank = "Poverty") |>
@@ -40,7 +40,7 @@ rec_vul_table_ma <- ecodata::plot_community_factors(report = params$region, varN
 
 # New England Table
 rec_vul_table_ne <- ecodata::plot_community_factors(report = "NewEngland", varName = "Social", plottype = "Recreational") |>
-  flextable::flextable() |>
+  # flextable::flextable() |>
   flextable::set_header_labels(personal_disruption_rank = "Personal Disruption",
                                pop_composition_rank = "Population Composition",
                                poverty_rank = "Poverty") |>
@@ -54,11 +54,14 @@ rec_vul_table_ne <- ecodata::plot_community_factors(report = "NewEngland", varNa
 
 create_wea_landings_rev_table <- function(council){
   tbl <- ecodata::wea_landings_rev |>
-    dplyr::filter(Council %in% c(council, "MAFMC/NEFMC")) |>
-    dplyr::select("NEFMC, MAFMC, and ASMFC Managed Species", "perc_landings_max",
-                  "perc_revenue_max" ) %>%
-    dplyr::rename("Maximum Percent Total Annual Regional Species Landings"="perc_landings_max",
-                  "Maximum Percent Total Annual Regional Species Revenue"="perc_revenue_max")
+    dplyr::filter(Jurisdiction %in% c(council, "MAFMC/NEFMC")) |>
+    # dplyr::select("NEFMC, MAFMC, and ASMFC Managed Species", "perc_landings_max",
+    #               "perc_revenue_max" ) %>%
+    tidyr::separate_wider_delim(cols = "Var", delim = "_", names = c("Species", "Var")) |>
+    tidyr::pivot_wider(names_from = "Var", values_from = "Value") |>
+    dplyr::rename("Maximum Percent Total Annual Regional Species Landings"="perc landings max",
+                  "Maximum Percent Total Annual Regional Species Revenue"="perc revenue max") |>
+    dplyr::select(-Time, -Units)
   return(tbl)
 }
 # wea_landings_rev_table <- ecodata::wea_landings_rev |>

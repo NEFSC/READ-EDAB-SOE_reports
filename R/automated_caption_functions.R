@@ -165,7 +165,9 @@ generate_all_plot_captions <- function(csv_file) {
         Indicator = indicator_name,
         Region = region_name,
         Num_Datasets = num_datasets,
-        Caption = caption
+        Caption = caption |>
+          # underscore breaks latex
+          stringr::str_replace_all("_", "-")
       )
     })
 
