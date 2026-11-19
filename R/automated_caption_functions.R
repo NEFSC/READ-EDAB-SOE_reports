@@ -148,7 +148,8 @@ generate_plot_caption <- function(plot_df, line_break = "markdown") {
 #'
 #' @param csv_file Path to figure_stats_summaries3.csv
 generate_all_plot_captions <- function(csv_file) {
-  df <- read.csv(csv_file, stringsAsFactors = FALSE)
+  df <- read.csv(csv_file, stringsAsFactors = FALSE) |>
+    dplyr::distinct()
 
   captions_df <- df %>%
     group_by(File_Generated) %>%
@@ -175,14 +176,14 @@ generate_all_plot_captions <- function(csv_file) {
 }
 
 ## run code ----
-# # Load data and run caption generation
+# # # Load data and run caption generation
 # captions <- generate_all_plot_captions(
 #   here::here("utils/figure_stats_summaries3.csv")
 # )
-#
-# # # Display first few generated plot captions
-# cat(captions$Caption[1])
-# cat("\n\n-----------------------------------\n\n")
-# cat(captions$Caption[2])
 # #
+# # # # Display first few generated plot captions
+# # cat(captions$Caption[1])
+# # cat("\n\n-----------------------------------\n\n")
+# # cat(captions$Caption[2])
+# # #
 # write.csv(captions, here::here("utils/automated.captions.csv"))
