@@ -2,9 +2,6 @@
 # region <- "NewEngland"
 # region <- "MidAtlantic"
 
-list.files(here::here("R"), full.names = TRUE) |>
-  purrr::walk(source)
-
 ###########################################
 #' Run all slide plots
 #'
